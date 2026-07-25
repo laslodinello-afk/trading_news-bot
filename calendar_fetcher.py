@@ -195,14 +195,51 @@ def _stringify(value) -> str | None:
     return str(value)
 
 
+# --- Cache GitHub Action (contourne le blocage IP de Render sur ForexFactory) ---
+
+def _fetch_github_cache_raw() -> list[dict]:
+    if not config.GITHUB_CALENDAR_CACHE_URL:
+        raise RuntimeError("GITHUB_CALENDAR_CACHE_URL non configurée.")
+    resp = requests.get(config.GITHUB_CALENDAR_CACHE_URL, headers=HEADERS, timeout=TIMEOUT)
+    resp.raise_for_status()
+    cache = resp.json()
+    if not isinstance(cache, dict) or "events" not in cache or "fetched_at" not in cache:
+        raise ValueError("Format de cache GitHub inattendu (events/fetched_at manquant).")
+
+    fetched_at = datetime.fromisoformat(cache["fetched_at"])
+    age_hours = (datetime.now(timezone.utc) - fetched_at).total_seconds() / 3600
+    if age_hours > config.GITHUB_CACHE_MAX_AGE_HOURS:
+        raise RuntimeError(
+            f"Cache GitHub trop vieux ({age_hours:.1f}h, la GitHub Action semble en panne)."
+        )
+
+    events = cache["events"]
+    if not isinstance(events, list):
+        raise ValueError(f"Format 'events' inattendu dans le cache GitHub: {type(events)}")
+    logger.info("Cache GitHub à jour (rafraîchi il y a %.1fh)", age_hours)
+    return events
+
+
 # --- API publique ---------------------------------------------------------------
 
 def refresh_calendar() -> tuple[list[dict], str]:
     """
     Récupère et normalise le calendrier économique de la semaine en cours.
+    Ordre des sources : cache GitHub Action (contourne le blocage IP de Render sur
+    ForexFactory) -> ForexFactory en direct (utile si l'agent tourne ailleurs que
+    sur Render, ou si le blocage se lève) -> FMP (secours historique, souvent
+    indisponible sur les plans gratuits actuels).
     Retourne (events, source_utilisée). Lève une exception seulement si
     TOUTES les sources ont échoué (à charge pour l'appelant d'alerter Telegram).
     """
+    try:
+        raw = _fetch_github_cache_raw()
+        events = _normalize_forexfactory(raw)
+        logger.info("Calendrier récupéré via cache GitHub (%d events filtrés)", len(events))
+        return events, "github_cache"
+    except Exception as exc:
+        logger.warning("Cache GitHub indisponible (%s), bascule sur ForexFactory direct", exc)
+
     try:
         raw = _fetch_forexfactory_raw()
         events = _normalize_forexfactory(raw)
@@ -222,7 +259,7 @@ def refresh_calendar() -> tuple[list[dict], str]:
     except Exception as exc:
         logger.error("FMP également indisponible: %s", exc)
         raise RuntimeError(
-            f"Impossible de récupérer le calendrier économique (ForexFactory ET FMP en échec: {exc})"
+            f"Impossible de récupérer le calendrier économique (cache GitHub, ForexFactory ET FMP en échec: {exc})"
         ) from exc
 
 

@@ -1,0 +1,48 @@
+name: Rafraîchir le cache du calendrier économique
+
+# Contourne le blocage de l'IP partagée de Render sur nfs.faireconomy.media :
+# GitHub Actions récupère le JSON depuis son infrastructure (IP différente) et
+# le commit dans le repo. Render lit ensuite ce fichier en HTTP simple (jamais
+# bloqué) au lieu d'appeler ForexFactory directement. Voir calendar_fetcher.py.
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Récupérer le calendrier ForexFactory
+        run: |
+          set -e
+          curl -sf --retry 3 --retry-delay 5 \
+            -H "User-Agent: Mozilla/5.0 (trading-news-agent-cache-refresher)" \
+            "https://nfs.faireconomy.media/ff_calendar_thisweek.json" \
+            -o ff_raw.json
+          python3 -c "import json; data=json.load(open('ff_raw.json')); assert isinstance(data, list) and len(data) > 0, 'JSON vide ou invalide'"
+
+      - name: Construire calendar_cache.json (avec horodatage)
+        run: |
+          python3 -c "
+          import json
+          from datetime import datetime, timezone
+          events = json.load(open('ff_raw.json'))
+          cache = {'fetched_at': datetime.now(timezone.utc).isoformat(), 'events': events}
+          json.dump(cache, open('calendar_cache.json', 'w'), ensure_ascii=False, indent=2)
+          "
+          rm ff_raw.json
+
+      - name: Commit si changement
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add calendar_cache.json
+          git diff --staged --quiet && echo "Rien de nouveau à commiter." || git commit -m "Rafraîchissement automatique du cache calendrier"
+          git push

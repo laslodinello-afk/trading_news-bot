@@ -24,6 +24,13 @@ NEWSAPI_KEY = os.getenv("NEWSAPI_KEY", "")
 # (abonnement Stars) se configure entièrement côté app Telegram, pas ici.
 TELEGRAM_CHANNEL_ID = os.getenv("TELEGRAM_CHANNEL_ID", "")
 
+# URL brute du cache calendrier maintenu par la GitHub Action (.github/workflows/
+# refresh-calendar.yml), qui contourne le blocage de l'IP Render sur ForexFactory.
+# Vide par défaut (source ignorée) ; à définir une fois le dépôt GitHub en place, ex :
+# https://raw.githubusercontent.com/<user>/<repo>/main/calendar_cache.json
+GITHUB_CALENDAR_CACHE_URL = os.getenv("GITHUB_CALENDAR_CACHE_URL", "")
+GITHUB_CACHE_MAX_AGE_HOURS = 12  # au-delà, le cache est jugé trop vieux (Action en panne ?)
+
 # --- Modèle IA ---------------------------------------------------------------
 # Gemini Flash a un palier gratuit permanent (pas un essai limité dans le temps),
 # largement suffisant pour cet agent. gemini-3.1-flash-lite est choisi précisément
