@@ -71,6 +71,12 @@ _DAILY_OVERVIEW_SCHEMA = {
     "properties": {"apercu": {"type": "STRING"}},
 }
 
+_EVENING_DEBRIEF_SCHEMA = {
+    "type": "OBJECT",
+    "required": ["recap"],
+    "properties": {"recap": {"type": "STRING"}},
+}
+
 _BREAKING_NEWS_SCHEMA = {
     "type": "OBJECT",
     "required": ["items"],
@@ -166,6 +172,38 @@ Donne un aperçu de la journée en maximum 4 lignes courtes en français (champ 
     if not result:
         return None
     return result.get("apercu")
+
+
+# --- Débrief du soir (23h, clôture NY) -------------------------------------------
+
+def evening_debrief(events: list[dict], news_items: list[dict]) -> str | None:
+    if not events and not news_items:
+        return None
+
+    sections = []
+    if events:
+        lines = "\n".join(
+            f"- {e['time_local']} | {e['currency']} | {e['title']} | "
+            f"réel={e.get('actual') or 'N/A'} prévision={e.get('forecast') or 'N/A'} précédent={e.get('previous') or 'N/A'}"
+            for e in events
+        )
+        sections.append(f"News économiques publiées aujourd'hui :\n{lines}")
+    if news_items:
+        lines = "\n".join(f"- {n['title']} — {n.get('resume', '')}" for n in news_items)
+        sections.append(f"Breaking news du jour :\n{lines}")
+
+    prompt = f"""Voici le récapitulatif brut de la journée de trading qui se termine (clôture de la
+session de New York) pour un daytrader SMC qui suit : {", ".join(config.TRADING_PAIRS)}.
+
+{chr(10).join(sections)}
+
+Fais un débrief de fin de journée en français, maximum 5-6 lignes courtes : comment la
+journée s'est globalement déroulée pour ces paires, quels ont été les principaux moteurs,
+et un point de vigilance pour la suite. Champ "recap"."""
+    result = _call_gemini(prompt, _EVENING_DEBRIEF_SCHEMA, max_tokens=600)
+    if not result:
+        return None
+    return result.get("recap")
 
 
 # --- Alerte "30 min avant" -------------------------------------------------------

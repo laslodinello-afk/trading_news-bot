@@ -248,7 +248,7 @@ Tu peux garder tes alertes personnelles privées (comme configuré) et **en plus
 2. Active **"Frais mensuel"** (Require Monthly Fee) et choisis le prix en Telegram Stars.
 3. Partage ce lien d'invitation à tes futurs abonnés — Telegram gère 100% de la facturation mensuelle, l'ajout et le retrait automatique des abonnés qui ne paient plus. Tu reçois 100% des Stars (convertibles ensuite via l'app Telegram).
 
-Le code ne change rien d'autre : tes alertes personnelles (chat perso) continuent d'arriver normalement, et sont maintenant aussi copiées vers le canal. Les messages internes (démarrage de l'agent, erreurs techniques) restent perso uniquement — les abonnés du canal ne voient que le contenu (résumé quotidien, alertes avant/après news, breaking news).
+Le code ne change rien d'autre : tes alertes personnelles (chat perso) continuent d'arriver normalement, et sont maintenant aussi copiées vers le canal. Les messages internes (démarrage de l'agent, erreurs techniques) restent perso uniquement — les abonnés du canal ne voient que le contenu (résumé quotidien, débrief du soir, alertes avant/après news, breaking news).
 
 ---
 
@@ -258,6 +258,7 @@ Tout se règle dans `.env` (valeurs) ou `config.py` (réglages avancés) :
 
 - **Paires suivies** : variable `TRADING_PAIRS` dans `.env` (par défaut : `XAUUSD,EURUSD,GBPUSD,US30,BTCUSD,ETHUSD,DAX,SP500,NASDAQ,BRENT,CAC40`). Si tu ajoutes une paire (ex : `SOLUSD`, `USDJPY`), ajoute aussi son mapping de devises dans `PAIR_CURRENCIES` en haut de `config.py` — sinon elle apparaîtra dans les résumés mais ne recevra jamais de biais IA.
 - **Horaire du résumé quotidien** : `DAILY_SUMMARY_HOUR` / `DAILY_SUMMARY_MINUTE` dans `config.py` (8h00 par défaut).
+- **Horaire du débrief du soir** : `EVENING_DEBRIEF_HOUR` / `EVENING_DEBRIEF_MINUTE` dans `config.py` (23h00 par défaut, calé sur la clôture de la session de New York) — récapitule les news publiées et les breaking news de la journée avec une analyse IA rétrospective.
 - **Délai de l'alerte "avant news"** : `ALERT_BEFORE_MINUTES` (30 min par défaut).
 - **Mots-clés de la veille breaking news** : variable `BREAKING_NEWS_KEYWORDS` dans `.env`, séparés par des virgules.
 - **Fréquence de la veille breaking news** : `BREAKING_NEWS_INTERVAL_MINUTES` dans `config.py` (15 min par défaut — ne descends pas trop bas, le quota NewsAPI gratuit est de 100 requêtes/jour).
@@ -284,7 +285,7 @@ Pour que tu saches exactement ce que fait (et ne fait pas) l'agent :
 
 - **Render + cron-job.org + ForexFactory + GDELT** : 0 €, sans limite de temps.
 - **FMP + NewsAPI** : 0 € (plans gratuits). Pour FMP, le plan gratuit ne couvre plus le calendrier économique (voir "Limites honnêtes" plus haut) — la clé reste gratuite à créer, elle est juste actuellement sans effet pour cette fonctionnalité précise.
-- **Google Gemini** : 0 € (1500 requêtes/jour offertes en continu ; cet agent en utilise typiquement quelques dizaines par jour avec les réglages par défaut — résumé quotidien, alertes calendrier ~5-15/semaine, veille breaking news toutes les 15 min mais IA appelée seulement si un nouvel article correspond aux mots-clés).
+- **Google Gemini** : 0 € (1500 requêtes/jour offertes en continu ; cet agent en utilise typiquement quelques dizaines par jour avec les réglages par défaut — résumé quotidien + débrief du soir (2 appels/jour), alertes calendrier ~5-15/semaine, veille breaking news toutes les 15 min mais IA appelée seulement si un nouvel article correspond aux mots-clés).
 
 ⚠️ Nuance honnête : un palier "gratuit" chez un fournisseur cloud peut toujours changer dans le futur (Google comme les autres). Si ça arrivait, `--test` te le signalera immédiatement (❌ sur l'appel IA) — il suffira d'ajuster `GEMINI_MODEL` dans `.env` ou de vérifier les conditions à jour sur [ai.google.dev/pricing](https://ai.google.dev/pricing).
 

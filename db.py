@@ -2,6 +2,8 @@
 Couche SQLite : cache du calendrier économique + déduplication des alertes déjà
 envoyées (sinon un redémarrage ou un tick de scheduler renverrait tout en double).
 """
+from __future__ import annotations
+
 import sqlite3
 from contextlib import contextmanager
 from datetime import datetime, timedelta, timezone
@@ -30,7 +32,9 @@ CREATE TABLE IF NOT EXISTS sent_alerts (
 
 CREATE TABLE IF NOT EXISTS sent_news (
     news_key TEXT PRIMARY KEY,
-    sent_at TEXT NOT NULL
+    sent_at TEXT NOT NULL,
+    title TEXT,
+    resume TEXT
 );
 
 CREATE TABLE IF NOT EXISTS error_alerts (
@@ -54,6 +58,17 @@ def get_conn():
 def init_db() -> None:
     with get_conn() as conn:
         conn.executescript(SCHEMA)
+        _migrate(conn)
+
+
+def _migrate(conn: sqlite3.Connection) -> None:
+    """Ajoute les colonnes manquantes sur une base existante (CREATE TABLE IF NOT
+    EXISTS ne modifie pas une table déjà présente)."""
+    existing = {row["name"] for row in conn.execute("PRAGMA table_info(sent_news)")}
+    if "title" not in existing:
+        conn.execute("ALTER TABLE sent_news ADD COLUMN title TEXT")
+    if "resume" not in existing:
+        conn.execute("ALTER TABLE sent_news ADD COLUMN resume TEXT")
 
 
 def _now_iso() -> str:
@@ -172,12 +187,31 @@ def already_sent_news(news_key: str) -> bool:
         return cur.fetchone() is not None
 
 
-def mark_sent_news(news_key: str) -> None:
+def mark_sent_news(news_key: str, title: str | None = None, resume: str | None = None) -> None:
+    """
+    title/resume ne sont renseignés que pour les articles jugés pertinents par
+    l'IA (ceux réellement envoyés) : ça permet au débrief du soir de les
+    récapituler. Les candidats écartés restent avec title/resume=NULL.
+    """
     with get_conn() as conn:
         conn.execute(
-            "INSERT OR IGNORE INTO sent_news (news_key, sent_at) VALUES (?, ?)",
-            (news_key, _now_iso()),
+            "INSERT OR IGNORE INTO sent_news (news_key, sent_at, title, resume) VALUES (?, ?, ?, ?)",
+            (news_key, _now_iso(), title, resume),
         )
+
+
+def get_news_for_day(day_start_utc: datetime, day_end_utc: datetime) -> list[sqlite3.Row]:
+    """Breaking news réellement envoyées (title non NULL) dans la fenêtre donnée."""
+    with get_conn() as conn:
+        cur = conn.execute(
+            """
+            SELECT * FROM sent_news
+            WHERE sent_at >= ? AND sent_at < ? AND title IS NOT NULL
+            ORDER BY sent_at ASC
+            """,
+            (day_start_utc.isoformat(), day_end_utc.isoformat()),
+        )
+        return cur.fetchall()
 
 
 # --- throttle des alertes d'erreur ---------------------------------------------

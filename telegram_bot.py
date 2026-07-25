@@ -138,6 +138,35 @@ def format_daily_summary(events: list[dict], overview: str | None) -> str:
     return msg
 
 
+def format_evening_debrief(events: list[dict], news_items: list[dict], recap: str | None) -> str:
+    today_str = datetime.now(config.TIMEZONE).strftime("%d/%m/%Y")
+    parts = [f"🌙 *Débrief du soir — {today_str}*", "_Clôture de la session de New York_"]
+
+    if events:
+        parts.append(f"\n📊 {len(events)} news publiées aujourd'hui :")
+        for e in events:
+            emoji = IMPACT_EMOJI.get(e["impact"], "⚪")
+            actual = e.get("actual") or "indisponible"
+            forecast = e.get("forecast") or "N/A"
+            previous = e.get("previous") or "N/A"
+            parts.append(
+                f"{emoji} {_time_local(e['event_dt_utc'])} — {escape_md(e['title'])} ({e['currency']}) : "
+                f"réel {actual} | prévision {forecast} | précédent {previous}"
+            )
+    else:
+        parts.append("\n📊 Aucune news à impact fort/moyen publiée aujourd'hui.")
+
+    if news_items:
+        parts.append(f"\n🚨 {len(news_items)} breaking news aujourd'hui :")
+        for n in news_items:
+            parts.append(f"• {escape_md(n['title'])}")
+
+    if recap:
+        parts.append(f"\n💡 {recap}")
+
+    return "\n".join(parts)
+
+
 def format_before_alert(event: dict, concerned_pairs: list[str], ai: dict | None) -> str:
     emoji = IMPACT_EMOJI.get(event["impact"], "🔴")
     minutes = _minutes_until(event["event_dt_utc"])

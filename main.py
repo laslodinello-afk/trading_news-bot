@@ -4,8 +4,9 @@ Point d'entrée de l'agent.
 Lance :
 - un petit serveur HTTP "keep-alive" (nécessaire pour tourner gratuitement 24/7
   sur Render sans que le service ne se mette en veille, voir README.md)
-- un scheduler APScheduler avec 5 jobs : rafraîchissement du calendrier,
-  résumé quotidien 8h, alertes avant/après publication, veille breaking news.
+- un scheduler APScheduler avec 6 jobs : rafraîchissement du calendrier,
+  résumé quotidien 8h, débrief du soir 23h, alertes avant/après publication,
+  veille breaking news.
 
 Usage :
     python main.py            # lance l'agent en continu
@@ -118,6 +119,29 @@ def job_daily_summary() -> None:
         notify_error("résumé quotidien", exc)
 
 
+def job_evening_debrief() -> None:
+    try:
+        now_local = datetime.now(config.TIMEZONE)
+        day_start_local = now_local.replace(hour=0, minute=0, second=0, microsecond=0)
+        day_end_local = day_start_local + timedelta(days=1)
+        day_start_utc = day_start_local.astimezone(timezone.utc)
+        day_end_utc = day_end_local.astimezone(timezone.utc)
+
+        event_rows = db.get_events_for_day(day_start_utc, day_end_utc)
+        events = [_event_row_to_dict(r) for r in event_rows]
+        for e in events:
+            e["time_local"] = datetime.fromisoformat(e["event_dt_utc"]).astimezone(config.TIMEZONE).strftime("%Hh%M")
+
+        news_rows = db.get_news_for_day(day_start_utc, day_end_utc)
+        news_items = [{"title": r["title"], "resume": r["resume"]} for r in news_rows]
+
+        recap = ai_analyzer.evening_debrief(events, news_items) if (events or news_items) else None
+        telegram_bot.broadcast(telegram_bot.format_evening_debrief(events, news_items, recap))
+        logger.info("Débrief du soir envoyé (%d events, %d breaking news)", len(events), len(news_items))
+    except Exception as exc:
+        notify_error("débrief du soir", exc)
+
+
 def job_check_before_alerts() -> None:
     try:
         now = datetime.now(timezone.utc)
@@ -175,7 +199,7 @@ def job_check_breaking_news() -> None:
             return
 
         relevant = ai_analyzer.filter_breaking_news(new_candidates)
-        relevant_keys = {a["news_key"] for a in relevant}
+        relevant_by_key = {a["news_key"]: a for a in relevant}
         sent_keys = set()
         for article in relevant:
             if telegram_bot.broadcast(telegram_bot.format_breaking_news_alert(article)):
@@ -185,10 +209,14 @@ def job_check_breaking_news() -> None:
                 logger.warning("Échec d'envoi breaking news pour %s, nouvel essai au prochain tick.", article["title"])
 
         # On marque comme "vus" : les candidats écartés par l'IA (jamais re-soumis à
-        # l'IA ensuite) + ceux effectivement envoyés. Un candidat retenu par l'IA mais
-        # dont l'envoi Telegram a échoué reste "non vu" pour être retenté au prochain tick.
+        # l'IA ensuite, title/resume=NULL) + ceux effectivement envoyés (title/resume
+        # renseignés pour le débrief du soir). Un candidat retenu par l'IA mais dont
+        # l'envoi Telegram a échoué reste "non vu" pour être retenté au prochain tick.
         for c in new_candidates:
-            if c["news_key"] not in relevant_keys or c["news_key"] in sent_keys:
+            if c["news_key"] in sent_keys:
+                article = relevant_by_key[c["news_key"]]
+                db.mark_sent_news(c["news_key"], title=article["title"], resume=article.get("resume"))
+            elif c["news_key"] not in relevant_by_key:
                 db.mark_sent_news(c["news_key"])
     except Exception as exc:
         notify_error("veille breaking news", exc)
@@ -305,6 +333,11 @@ def main() -> None:
         job_daily_summary,
         CronTrigger(hour=config.DAILY_SUMMARY_HOUR, minute=config.DAILY_SUMMARY_MINUTE, timezone=config.TIMEZONE),
         id="daily_summary",
+    )
+    scheduler.add_job(
+        job_evening_debrief,
+        CronTrigger(hour=config.EVENING_DEBRIEF_HOUR, minute=config.EVENING_DEBRIEF_MINUTE, timezone=config.TIMEZONE),
+        id="evening_debrief",
     )
     scheduler.add_job(
         job_check_before_alerts,
