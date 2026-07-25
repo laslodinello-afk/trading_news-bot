@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: trading-news-agent
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python main.py
+    envVars:
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: TELEGRAM_CHAT_ID
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: FMP_API_KEY
+        sync: false
+      - key: NEWSAPI_KEY
+        sync: false
+      - key: TRADING_PAIRS
+        value: XAUUSD,EURUSD,GBPUSD,US30,BTCUSD,ETHUSD,DAX,SP500,NASDAQ,BRENT,CAC40

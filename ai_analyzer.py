@@ -1,0 +1,260 @@
+"""
+Toute l'intelligence "analyse marché" passe par ici, via l'API Google Gemini
+(palier gratuit permanent, contrairement à l'API Anthropic — voir README).
+
+Principe de robustesse : une panne ou une réponse mal formée de l'IA ne doit
+JAMAIS empêcher l'envoi de l'alerte factuelle (prévision/précédent/actual).
+Chaque fonction publique renvoie None (ou [] pour filter_breaking_news) en cas
+d'échec plutôt que de lever une exception qui remonterait jusqu'au scheduler —
+c'est à l'appelant (main.py) d'afficher "analyse IA indisponible" le cas échéant.
+"""
+from __future__ import annotations
+
+import json
+import logging
+
+from google import genai
+from google.genai import types
+
+import config
+
+logger = logging.getLogger("ai_analyzer")
+
+_client = genai.Client(api_key=config.GEMINI_API_KEY) if config.GEMINI_API_KEY else None
+
+DANGER_LABELS = {
+    "ok": "🟢 OK",
+    "prudence": "🟠 Prudence",
+    "danger": "🔴 Ne pas trader",
+}
+
+BIAS_EMOJI = {
+    "haussier": "📈 Haussier",
+    "baissier": "📉 Baissier",
+    "neutre": "➖ Neutre",
+}
+
+_SYSTEM_PROMPT = (
+    "Tu es un analyste marché spécialisé forex, indices, matières premières et crypto "
+    f"({', '.join(config.TRADING_PAIRS)}) pour un daytrader qui utilise les Smart Money "
+    "Concepts (SMC). Réponds en français, sois concis, concret, et évite le jargon inutile."
+)
+
+# Schéma générique "biais par paire" : un tableau plutôt qu'un objet à clés
+# dynamiques, pour rester compatible avec le mode JSON structuré de Gemini.
+_BIAS_SCHEMA = {
+    "type": "ARRAY",
+    "items": {
+        "type": "OBJECT",
+        "required": ["paire", "direction"],
+        "properties": {
+            "paire": {"type": "STRING"},
+            "direction": {"type": "STRING"},
+        },
+    },
+}
+
+_ANALYSIS_SCHEMA = {
+    "type": "OBJECT",
+    "required": ["resume", "biais", "raisonnement", "danger"],
+    "properties": {
+        "resume": {"type": "STRING"},
+        "biais": _BIAS_SCHEMA,
+        "raisonnement": {"type": "STRING"},
+        "danger": {"type": "STRING"},
+    },
+}
+
+_DAILY_OVERVIEW_SCHEMA = {
+    "type": "OBJECT",
+    "required": ["apercu"],
+    "properties": {"apercu": {"type": "STRING"}},
+}
+
+_BREAKING_NEWS_SCHEMA = {
+    "type": "OBJECT",
+    "required": ["items"],
+    "properties": {
+        "items": {
+            "type": "ARRAY",
+            "items": {
+                "type": "OBJECT",
+                "required": ["index", "resume", "biais", "raisonnement", "danger"],
+                "properties": {
+                    "index": {"type": "INTEGER"},
+                    "resume": {"type": "STRING"},
+                    "biais": _BIAS_SCHEMA,
+                    "raisonnement": {"type": "STRING"},
+                    "danger": {"type": "STRING"},
+                },
+            },
+        }
+    },
+}
+
+
+def _call_gemini(user_prompt: str, response_schema: dict, max_tokens: int = 500) -> dict | None:
+    if _client is None:
+        logger.warning("GEMINI_API_KEY absente, analyse IA ignorée.")
+        return None
+    try:
+        response = _client.models.generate_content(
+            model=config.GEMINI_MODEL,
+            contents=user_prompt,
+            config=types.GenerateContentConfig(
+                system_instruction=_SYSTEM_PROMPT,
+                temperature=0.3,
+                max_output_tokens=max_tokens,
+                response_mime_type="application/json",
+                response_json_schema=response_schema,
+            ),
+        )
+        text = response.text
+        if not text:
+            logger.error("Réponse Gemini vide (probablement coupée par max_output_tokens).")
+            return None
+        return json.loads(text)
+    except json.JSONDecodeError as exc:
+        logger.error("Réponse IA non-JSON: %s | texte reçu: %r", exc, text[:300] if text else "")
+        return None
+    except Exception as exc:
+        logger.error("Appel Gemini échoué: %s", exc)
+        return None
+
+
+def _format_bias(bias_raw: list) -> dict:
+    formatted = {}
+    for item in bias_raw or []:
+        pair = item.get("paire")
+        direction = item.get("direction", "")
+        if not pair:
+            continue
+        formatted[pair] = BIAS_EMOJI.get(str(direction).lower(), f"➖ {direction}")
+    return formatted
+
+
+def _format_danger(danger_raw: str) -> str:
+    return DANGER_LABELS.get(str(danger_raw).lower(), "🟠 Prudence")
+
+
+def _format_analysis(result: dict | None) -> dict | None:
+    if not result:
+        return None
+    return {
+        "resume": result.get("resume", ""),
+        "biais": _format_bias(result.get("biais", [])),
+        "raisonnement": result.get("raisonnement", ""),
+        "danger": _format_danger(result.get("danger", "prudence")),
+    }
+
+
+# --- Résumé quotidien (08h00) ---------------------------------------------------
+
+def daily_overview(events: list[dict]) -> str | None:
+    if not events:
+        return None
+    lines = "\n".join(
+        f"- {e['time_local']} | {e['currency']} | {e['impact']} | {e['title']}" for e in events
+    )
+    prompt = f"""Voici les news économiques du jour (heure Bruxelles) pour un daytrader SMC
+qui suit ces paires : {", ".join(config.TRADING_PAIRS)}.
+
+{lines}
+
+Donne un aperçu de la journée en maximum 4 lignes courtes en français (champ "apercu")."""
+    result = _call_gemini(prompt, _DAILY_OVERVIEW_SCHEMA, max_tokens=300)
+    if not result:
+        return None
+    return result.get("apercu")
+
+
+# --- Alerte "30 min avant" -------------------------------------------------------
+
+def analyze_before(event: dict, concerned_pairs: list[str]) -> dict | None:
+    prompt = f"""News économique à venir dans {config.ALERT_BEFORE_MINUTES} minutes :
+- Titre : {event['title']}
+- Devise : {event['currency']}
+- Impact : {event['impact']}
+- Prévision : {event.get('forecast') or 'N/A'}
+- Précédent : {event.get('previous') or 'N/A'}
+- Paires concernées : {", ".join(concerned_pairs)}
+
+Réponds avec :
+- "resume" : 1 phrase courte expliquant l'enjeu de cette news pour un trader
+- "biais" : pour CHAQUE paire concernée, un objet {{"paire": "...", "direction": "haussier" | "baissier" | "neutre"}}
+- "raisonnement" : 1 phrase expliquant le biais le plus probable et pourquoi
+- "danger" : "ok" | "prudence" | "danger" """
+    result = _call_gemini(prompt, _ANALYSIS_SCHEMA, max_tokens=400)
+    return _format_analysis(result)
+
+
+# --- Alerte "juste après publication" --------------------------------------------
+
+def analyze_after(event: dict, concerned_pairs: list[str], actual: str | None) -> dict | None:
+    prompt = f"""News économique qui vient d'être publiée :
+- Titre : {event['title']}
+- Devise : {event['currency']}
+- Impact : {event['impact']}
+- Réel : {actual or "pas encore disponible"}
+- Prévision : {event.get('forecast') or 'N/A'}
+- Précédent : {event.get('previous') or 'N/A'}
+- Paires concernées : {", ".join(concerned_pairs)}
+
+Analyse la surprise (réel vs prévision) et son effet probable. Réponds avec :
+- "resume" : résumé de la surprise et de son sens (meilleur/pire que prévu, etc.), maximum 4 lignes courtes en français
+- "biais" : pour CHAQUE paire concernée, un objet {{"paire": "...", "direction": "haussier" | "baissier" | "neutre"}}
+- "raisonnement" : 1 phrase expliquant le biais
+- "danger" : "ok" | "prudence" | "danger" """
+    result = _call_gemini(prompt, _ANALYSIS_SCHEMA, max_tokens=400)
+    return _format_analysis(result)
+
+
+# --- Filtrage des breaking news --------------------------------------------------
+
+MAX_CANDIDATES_PER_BATCH = 25
+
+
+def filter_breaking_news(candidates: list[dict]) -> list[dict]:
+    """
+    Prend une liste brute d'articles (title/url/source) et ne renvoie que ceux
+    jugés réellement pertinents pour le trading, enrichis de l'analyse IA.
+    Renvoie [] (jamais None) en cas d'échec IA : on préfère rater une news
+    "choc" plutôt que spammer sur un batch entier non filtré.
+    """
+    if not candidates:
+        return []
+    batch = candidates[:MAX_CANDIDATES_PER_BATCH]
+    articles_block = "\n".join(f"{i+1}. [{a['source']}] {a['title']}" for i, a in enumerate(batch))
+    pairs = ", ".join(config.TRADING_PAIRS)
+    prompt = f"""Voici des titres d'articles de presse récents. Ne garde QUE ceux qui peuvent avoir un
+impact réel et à court terme sur les marchés suivis ({pairs}). Exemples de sujets pertinents :
+- Déclarations ou tweets de responsables politiques/banques centrales US-UE-UK sur l'économie, les taux ou les droits de douane
+- Conflits armés, attentats, événements géopolitiques majeurs (y compris zones de production pétrolière)
+- Démission/limogeage de dirigeant économique clé, défaut de paiement souverain
+- Crypto : décision SEC/CFTC sur un ETF ou une régulation, hack ou faillite d'exchange, dépeg d'un stablecoin majeur
+- Pétrole : décision OPEP/OPEP+, coupure de production, tensions dans une zone de production/transit majeure
+Ignore tout le reste (sport, people, faits divers locaux, analyses techniques, opinions).
+
+Articles :
+{articles_block}
+
+Renvoie un tableau "items" (vide si rien de pertinent). Pour chaque article retenu :
+"index" (son numéro dans la liste ci-dessus), "resume" (1 phrase en français), "biais"
+(un objet {{"paire": "...", "direction": "haussier"|"baissier"|"neutre"}} par paire concernée),
+"raisonnement" (1 phrase), "danger" ("ok"|"prudence"|"danger")."""
+
+    result = _call_gemini(prompt, _BREAKING_NEWS_SCHEMA, max_tokens=1500)
+    items = (result or {}).get("items", [])
+
+    enriched = []
+    for item in items:
+        idx = item.get("index")
+        if not idx or not (1 <= idx <= len(batch)):
+            continue
+        article = dict(batch[idx - 1])
+        article["resume"] = item.get("resume", "")
+        article["biais"] = _format_bias(item.get("biais", []))
+        article["raisonnement"] = item.get("raisonnement", "")
+        article["danger"] = _format_danger(item.get("danger", "prudence"))
+        enriched.append(article)
+    return enriched

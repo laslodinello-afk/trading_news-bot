@@ -1,0 +1,184 @@
+"""
+Envoi des messages Telegram + mise en forme des 3 templates d'alerte.
+Utilise directement l'API HTTP Telegram (pas de lib dédiée) pour rester léger.
+"""
+from __future__ import annotations
+
+import logging
+import time
+from datetime import datetime, timezone
+
+import requests
+
+import config
+
+logger = logging.getLogger("telegram_bot")
+
+API_URL = "https://api.telegram.org/bot{token}/sendMessage"
+TIMEOUT = 15
+MAX_RETRIES = 3
+
+IMPACT_EMOJI = {"High": "🔴", "Medium": "🟠"}
+
+
+def escape_md(text: str) -> str:
+    """Échappe les caractères spéciaux du Markdown Telegram (mode legacy)."""
+    if not text:
+        return ""
+    for char in ("_", "*", "`", "["):
+        text = text.replace(char, f"\\{char}")
+    return text
+
+
+def _post(payload: dict) -> requests.Response | None:
+    url = API_URL.format(token=config.TELEGRAM_BOT_TOKEN)
+    try:
+        return requests.post(url, json=payload, timeout=TIMEOUT)
+    except requests.RequestException as exc:
+        logger.warning("Échec réseau envoi Telegram: %s", exc)
+        return None
+
+
+def send(text: str) -> bool:
+    if not config.TELEGRAM_BOT_TOKEN or not config.TELEGRAM_CHAT_ID:
+        logger.error("TELEGRAM_BOT_TOKEN ou TELEGRAM_CHAT_ID manquant, message non envoyé.")
+        return False
+
+    base_payload = {
+        "chat_id": config.TELEGRAM_CHAT_ID,
+        "text": text,
+        "disable_web_page_preview": True,
+    }
+
+    for attempt in range(1, MAX_RETRIES + 1):
+        resp = _post({**base_payload, "parse_mode": "Markdown"})
+        if resp is not None and resp.status_code == 200:
+            return True
+
+        if resp is not None and resp.status_code == 400 and "parse" in resp.text.lower():
+            # Un caractère dans une news externe a cassé le Markdown : on renvoie
+            # en texte brut plutôt que de perdre l'alerte.
+            logger.warning("Markdown invalide, repli en texte brut: %s", resp.text[:300])
+            plain_resp = _post(base_payload)
+            if plain_resp is not None and plain_resp.status_code == 200:
+                return True
+            break  # inutile de réessayer, le texte brut a déjà échoué
+
+        if resp is not None:
+            logger.warning("Telegram a répondu %s (tentative %d/%d): %s", resp.status_code, attempt, MAX_RETRIES, resp.text[:300])
+        if attempt < MAX_RETRIES:
+            time.sleep(2 * attempt)
+
+    logger.error("Échec définitif de l'envoi Telegram.")
+    return False
+
+
+def _time_local(event_dt_utc_iso: str) -> str:
+    dt = datetime.fromisoformat(event_dt_utc_iso).astimezone(config.TIMEZONE)
+    return dt.strftime("%Hh%M")
+
+
+def _minutes_until(event_dt_utc_iso: str) -> int:
+    dt = datetime.fromisoformat(event_dt_utc_iso)
+    delta = dt - datetime.now(timezone.utc)
+    return max(0, round(delta.total_seconds() / 60))
+
+
+def _ai_block(ai: dict | None) -> str:
+    if not ai:
+        return "💡 _Analyse IA indisponible pour cette news._"
+    lines = [f"💡 {ai['resume']}"]
+    if ai.get("biais"):
+        # Une paire par ligne plutôt qu'une liste séparée par virgules : reste
+        # lisible sur mobile même quand une news USD concerne 8-9 paires
+        # (XAUUSD, indices, BTC/ETH...) d'un coup.
+        lines.append("📐 Biais :")
+        lines.extend(f"   {pair} {label}" for pair, label in ai["biais"].items())
+    if ai.get("raisonnement"):
+        lines.append(f"🧠 {ai['raisonnement']}")
+    if ai.get("danger"):
+        lines.append(ai["danger"])
+    return "\n".join(lines)
+
+
+# --- Templates --------------------------------------------------------------------
+
+def format_daily_summary(events: list[dict], overview: str | None) -> str:
+    today_str = datetime.now(config.TIMEZONE).strftime("%d/%m/%Y")
+    if not events:
+        body = "Aucune news à impact fort/moyen (USD/EUR/GBP) prévue aujourd'hui."
+    else:
+        lines = []
+        for e in events:
+            emoji = IMPACT_EMOJI.get(e["impact"], "⚪")
+            lines.append(f"{emoji} {_time_local(e['event_dt_utc'])} — {escape_md(e['title'])} ({e['currency']})")
+        body = f"{len(events)} news à surveiller aujourd'hui (heure Bruxelles) :\n\n" + "\n".join(lines)
+
+    msg = f"☀️ *Résumé du jour — {today_str}*\n\n{body}"
+    if overview:
+        msg += f"\n\n💡 {overview}"
+    return msg
+
+
+def format_before_alert(event: dict, concerned_pairs: list[str], ai: dict | None) -> str:
+    emoji = IMPACT_EMOJI.get(event["impact"], "🔴")
+    minutes = _minutes_until(event["event_dt_utc"])
+    header = f"{emoji} *{escape_md(event['title'])} — {event['currency']}*"
+    meta = f"🕒 {_time_local(event['event_dt_utc'])} (Bruxelles) — dans {minutes} min"
+    forecast = event.get("forecast") or "N/A"
+    previous = event.get("previous") or "N/A"
+    data_line = f"📊 Prévision : {forecast} | Précédent : {previous}"
+    risk_line = "⚠️ Pas de nouvelle position | Ferme les positions en cours | Attention au spread"
+    pairs_line = f"📌 Paires concernées : {', '.join(concerned_pairs)}" if concerned_pairs else ""
+
+    parts = [header, meta, data_line, risk_line]
+    if pairs_line:
+        parts.append(pairs_line)
+    parts.append(_ai_block(ai))
+    return "\n".join(p for p in parts if p)
+
+
+def format_after_alert(event: dict, actual: str | None, concerned_pairs: list[str], ai: dict | None) -> str:
+    emoji = IMPACT_EMOJI.get(event["impact"], "🔴")
+    header = f"{emoji} *{escape_md(event['title'])} — {event['currency']}* (résultat)"
+    meta = f"🕒 {_time_local(event['event_dt_utc'])} (Bruxelles)"
+    forecast = event.get("forecast") or "N/A"
+    previous = event.get("previous") or "N/A"
+    actual_str = actual if actual else "indisponible pour l'instant"
+    data_line = f"📊 Réel : {actual_str} | Prévision : {forecast} | Précédent : {previous}"
+    risk_line = f"⚠️ Attends {config.NO_TRADE_WINDOW_MINUTES} min avant de retrader (volatilité/spread)"
+
+    parts = [header, meta, data_line, risk_line, _ai_block(ai)]
+    return "\n".join(p for p in parts if p)
+
+
+def format_breaking_news_alert(article: dict) -> str:
+    header = "🚨 *Breaking News*"
+    title_line = f"📰 {escape_md(article['title'])}"
+    source_line = f"🗞️ Source : {escape_md(article['source'])}"
+    # Les champs d'analyse IA (resume/biais/...) sont mergés dans le même dict que
+    # les métadonnées (title/source/url) : on isole ici ce qui va dans le bloc IA
+    # pour que _ai_block affiche correctement le repli si l'IA n'a rien produit.
+    ai = {k: article[k] for k in ("resume", "biais", "raisonnement", "danger") if article.get(k)}
+    parts = [header, title_line, source_line, _ai_block(ai or None)]
+    if article.get("url"):
+        parts.append(f"🔗 [Lire l'article]({article['url']})")
+    return "\n".join(p for p in parts if p)
+
+
+def format_error_alert(source: str, message: str) -> str:
+    return (
+        f"⚠️ *Erreur agent — {escape_md(source)}*\n"
+        f"{escape_md(message)}\n\n"
+        f"L'agent continue de tourner normalement pour le reste."
+    )
+
+
+def format_startup_message() -> str:
+    pairs = ", ".join(config.TRADING_PAIRS)
+    return (
+        "🟢 *Agent trading news démarré*\n"
+        f"Paires suivies : {pairs}\n"
+        f"Résumé quotidien : {config.DAILY_SUMMARY_HOUR:02d}h{config.DAILY_SUMMARY_MINUTE:02d} (Bruxelles)\n"
+        "Alertes calendrier + breaking news actives H24."
+    )
