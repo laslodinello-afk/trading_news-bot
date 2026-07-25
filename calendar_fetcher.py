@@ -19,6 +19,7 @@ from __future__ import annotations
 import difflib
 import hashlib
 import logging
+import time
 from datetime import datetime, timedelta, timezone
 
 import requests
@@ -78,13 +79,25 @@ def _normalize_impact(raw: str) -> str | None:
 
 # --- ForexFactory (source primaire) --------------------------------------------
 
+_RETRY_DELAYS_SECONDS = (3, 8)  # petits backoffs pour absorber un 429/5xx transitoire
+
+
 def _fetch_forexfactory_raw() -> list[dict]:
-    resp = requests.get(FF_FEED_URL, headers=HEADERS, timeout=TIMEOUT)
-    resp.raise_for_status()
-    data = resp.json()
-    if not isinstance(data, list):
-        raise ValueError(f"Format ForexFactory inattendu: {type(data)}")
-    return data
+    last_exc = None
+    for attempt, delay in enumerate((0, *_RETRY_DELAYS_SECONDS)):
+        if delay:
+            time.sleep(delay)
+        try:
+            resp = requests.get(FF_FEED_URL, headers=HEADERS, timeout=TIMEOUT)
+            resp.raise_for_status()
+            data = resp.json()
+            if not isinstance(data, list):
+                raise ValueError(f"Format ForexFactory inattendu: {type(data)}")
+            return data
+        except Exception as exc:
+            last_exc = exc
+            logger.warning("ForexFactory tentative %d échouée: %s", attempt + 1, exc)
+    raise last_exc
 
 
 def _normalize_forexfactory(raw_events: list[dict]) -> list[dict]:

@@ -20,7 +20,7 @@ Il tourne indépendamment de ton ordinateur une fois déployé (voir Étape 9).
 |---|--------|-----------|----------------|
 | 1 | Bot Telegram (@BotFather) | ✅ | Oui |
 | 2 | Google AI Studio (Gemini) | ✅ Palier gratuit permanent | Oui |
-| 3 | Financial Modeling Prep (FMP) | ✅ | Recommandé |
+| 3 | Financial Modeling Prep (FMP) | ✅ mais fonctionnalité limitée (voir Étape 4) | Facultatif |
 | 4 | NewsAPI.org | ✅ | Recommandé |
 | 5 | Render.com (hébergement 24/7) | ✅ | Oui, pour le 24/7 |
 
@@ -75,14 +75,16 @@ Le palier gratuit de Gemini (modèle Flash) offre 1500 requêtes par jour — ce
 
 ## Étape 4 — Clés gratuites recommandées (FMP + NewsAPI)
 
-Ces deux clés sont **optionnelles** mais fortement recommandées : sans elles, l'agent fonctionne quand même (calendrier via ForexFactory) mais :
-- il ne pourra pas récupérer le **résultat réel** des news publiées (juste prévision/précédent) sans FMP,
-- il ne fera **aucune veille breaking news** (tweets choc, conflits...) sans NewsAPI.
+Ces deux clés sont **optionnelles** : sans elles, l'agent fonctionne quand même (calendrier via ForexFactory) mais sans veille breaking news (voir NewsAPI ci-dessous).
 
 ### FMP (Financial Modeling Prep)
+⚠️ **Mise à jour (testé en conditions réelles) : le plan gratuit FMP ne donne plus du tout accès au calendrier économique**, ni via l'ancien endpoint ("réservé aux abonnés antérieurs à août 2025") ni via le nouveau ("réservé aux plans payants"). Concrètement, tant que tu n'as pas un compte FMP payant, le **"résultat réel" après publication restera indisponible** — l'agent continue de fonctionner normalement pour tout le reste (calendrier ForexFactory, prévision/précédent, alertes avant/après, IA), juste sans cette donnée précise.
+
+Tu peux quand même créer une clé gratuite au cas où FMP changerait sa politique (l'agent l'utilisera automatiquement si ça redevient accessible, sans rien à reconfigurer) :
 1. Va sur [site.financialmodelingprep.com/register](https://site.financialmodelingprep.com/register) et crée un compte gratuit.
-2. Une fois connecté, ton **Dashboard** affiche directement ta clé API. Copie-la → `FMP_API_KEY`.
-3. Le plan gratuit donne 250 requêtes/jour, largement suffisant pour cet agent.
+2. Ton **Dashboard** affiche directement ta clé API. Copie-la → `FMP_API_KEY`.
+
+Ou saute complètement cette clé (laisse `FMP_API_KEY` vide dans `.env`) — ça ne change rien d'autre.
 
 ### NewsAPI.org
 1. Va sur [newsapi.org/register](https://newsapi.org/register) et crée un compte gratuit.
@@ -237,7 +239,7 @@ Après modification, redéploie sur Render (un `git push` suffit, Render redépl
 Pour que tu saches exactement ce que fait (et ne fait pas) l'agent :
 
 - **Breaking news = best-effort, pas du vrai temps réel.** Il n'existe aucune API gratuite fiable pour capter un tweet ou une déclaration à la seconde près (l'API X/Twitter coûte ~100$/mois). L'agent combine GDELT et NewsAPI, avec un délai typique de 5 à 15 minutes, et un tri par IA pour limiter les fausses alertes — mais des faux négatifs (rien détecté) et faux positifs (alerte peu pertinente) restent possibles.
-- **Le "résultat réel" dépend de FMP.** Le calendrier ForexFactory (source principale, gratuite et fiable pour les horaires/prévisions) ne publie jamais le résultat réel après coup. Sans clé `FMP_API_KEY`, les alertes "après publication" afficheront "indisponible".
+- **Le "résultat réel" après publication ne fonctionne pas actuellement (confirmé).** Le calendrier ForexFactory (source principale, gratuite et fiable pour les horaires/prévisions) ne publie jamais le résultat réel après coup, et FMP a retiré cette donnée de son plan gratuit courant 2025 — testé en conditions réelles, l'accès est refusé même avec une clé FMP valide. Les alertes "après publication" afficheront donc "indisponible" tant que tu n'as pas un compte FMP payant (ou une autre source que tu voudrais brancher toi-même).
 - **Le calendrier ForexFactory se décale le week-end.** Le flux gratuit utilisé ne couvre que la semaine calendaire en cours ; le nouveau contenu de la semaine suivante apparaît généralement dimanche soir/lundi matin.
 - **Crypto (BTC/ETH), indices (US30/SP500/NASDAQ/DAX/CAC40) et pétrole (BRENT) n'ont PAS de calendrier économique dédié.** Il n'existe pas de source gratuite équivalente à ForexFactory pour ces instruments (ex : pas d'heure précise pour "prochaine décision SEC sur un ETF"). Ils reçoivent : (1) le biais IA généré automatiquement à chaque news USD ou EUR existante (le crypto et les indices US sont très corrélés au dollar), et (2) une couverture best-effort via la veille breaking news (mots-clés SEC/CFTC/OPEP/exchange hack...). En clair : pas d'alerte "30 min avant" programmée pour ces instruments, seulement des alertes réactives.
 - **L'IA peut se tromper.** Le biais directionnel et le niveau de danger sont des indications générées automatiquement, pas des conseils financiers personnalisés — la décision de trader reste la tienne.
@@ -249,7 +251,7 @@ Pour que tu saches exactement ce que fait (et ne fait pas) l'agent :
 **0 € — tout est sur un palier gratuit permanent, aucune carte bancaire nulle part.**
 
 - **Render + cron-job.org + ForexFactory + GDELT** : 0 €, sans limite de temps.
-- **FMP + NewsAPI** : 0 € (plans gratuits, largement suffisants pour cet usage).
+- **FMP + NewsAPI** : 0 € (plans gratuits). Pour FMP, le plan gratuit ne couvre plus le calendrier économique (voir "Limites honnêtes" plus haut) — la clé reste gratuite à créer, elle est juste actuellement sans effet pour cette fonctionnalité précise.
 - **Google Gemini** : 0 € (1500 requêtes/jour offertes en continu ; cet agent en utilise typiquement quelques dizaines par jour avec les réglages par défaut — résumé quotidien, alertes calendrier ~5-15/semaine, veille breaking news toutes les 15 min mais IA appelée seulement si un nouvel article correspond aux mots-clés).
 
 ⚠️ Nuance honnête : un palier "gratuit" chez un fournisseur cloud peut toujours changer dans le futur (Google comme les autres). Si ça arrivait, `--test` te le signalera immédiatement (❌ sur l'appel IA) — il suffira d'ajuster `GEMINI_MODEL` dans `.env` ou de vérifier les conditions à jour sur [ai.google.dev/pricing](https://ai.google.dev/pricing).
