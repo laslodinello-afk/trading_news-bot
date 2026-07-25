@@ -17,6 +17,7 @@ from __future__ import annotations
 
 import hashlib
 import logging
+import time
 from datetime import datetime, timedelta, timezone
 
 import requests
@@ -76,10 +77,45 @@ def _fetch_gdelt(lookback_minutes: int) -> list[dict]:
     return results
 
 
+# NewsAPI limite le paramètre "q" à 500 caractères (documenté). Avec la liste de
+# mots-clés élargie (crypto, pétrole...), une seule requête OR-jointe dépasse cette
+# limite (constaté : 570 caractères -> 400 Bad Request). On répartit donc les
+# mots-clés en plusieurs groupes qui tournent au fil des passages : chaque
+# mot-clé reste couvert, juste vérifié un peu moins souvent qu'à chaque tick.
+NEWSAPI_MAX_QUERY_LEN = 450
+
+
+def _chunk_keywords(keywords: list[str], max_len: int) -> list[list[str]]:
+    chunks: list[list[str]] = []
+    current: list[str] = []
+    current_len = 0
+    for kw in keywords:
+        piece = f'"{kw}"' if " " in kw else kw
+        added_len = len(piece) + (len(" OR ") if current else 0)
+        if current and current_len + added_len > max_len:
+            chunks.append(current)
+            current, current_len = [], 0
+            added_len = len(piece)
+        current.append(kw)
+        current_len += added_len
+    if current:
+        chunks.append(current)
+    return chunks
+
+
+def _current_keyword_chunk() -> list[str]:
+    chunks = _chunk_keywords(config.BREAKING_NEWS_KEYWORDS, NEWSAPI_MAX_QUERY_LEN)
+    if len(chunks) <= 1:
+        return chunks[0] if chunks else []
+    # Rotation stateless basée sur l'heure : pas besoin de persister un index.
+    slot = int(time.time() // (config.BREAKING_NEWS_INTERVAL_MINUTES * 60))
+    return chunks[slot % len(chunks)]
+
+
 def _fetch_newsapi(lookback_minutes: int) -> list[dict]:
     if not config.NEWSAPI_KEY:
         return []
-    query = " OR ".join(f'"{kw}"' if " " in kw else kw for kw in config.BREAKING_NEWS_KEYWORDS)
+    query = " OR ".join(f'"{kw}"' if " " in kw else kw for kw in _current_keyword_chunk())
     since = (datetime.now(timezone.utc) - timedelta(minutes=lookback_minutes)).strftime("%Y-%m-%dT%H:%M:%S")
     params = {
         "q": query,
