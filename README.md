@@ -220,6 +220,38 @@ Sur le plan gratuit, le disque de Render est **temporaire** : si Render redémar
 
 ---
 
+## Monétiser : diffuser vers un canal payant
+
+Tu peux garder tes alertes personnelles privées (comme configuré) et **en plus** diffuser les mêmes alertes vers un canal Telegram séparé, payant, ouvert à d'autres personnes.
+
+⚠️ **Avant de facturer qui que ce soit** : diffuser des news économiques accompagnées d'un biais IA généré automatiquement peut, selon comment c'est présenté et le pays, être encadré par la réglementation sur le conseil en investissement. Ce n'est pas la même chose que vendre des "signaux de trading", mais ça reste une zone grise selon la présentation — vérifie ça avec un professionnel (avocat/comptable spécialisé) avant de lancer une offre payante réelle. Ajoute a minima un disclaimer clair ("contenu informatif, pas un conseil personnalisé, aucune garantie") dans la description de ton canal.
+
+### 1. Créer le canal et y ajouter le bot
+1. Dans Telegram, crée un nouveau **canal** (pas un groupe) : Menu → Nouveau canal → donne-lui un nom → mets-le en **Privé**.
+2. Va dans les paramètres du canal → **Administrateurs** → **Ajouter un administrateur** → cherche ton bot (le même que celui créé à l'Étape 1) → donne-lui le droit **Publier des messages**.
+3. Poste n'importe quel message dans le canal (juste pour que Telegram enregistre une activité).
+
+### 2. Récupérer l'ID du canal
+1. Ouvre dans ton navigateur (remplace `<TOKEN>` par ton `TELEGRAM_BOT_TOKEN`) :
+   ```
+   https://api.telegram.org/bot<TOKEN>/getUpdates
+   ```
+2. Cherche une section `"channel_post":{"chat":{"id":-100xxxxxxxxxx, ...}}` — le nombre (négatif, il commence par `-100`) est ton `TELEGRAM_CHANNEL_ID`.
+3. Ajoute-le dans `.env` (en local) et dans les variables d'environnement Render :
+   ```
+   TELEGRAM_CHANNEL_ID=-100xxxxxxxxxx
+   ```
+4. Relance `python main.py --test` pour vérifier : le terminal doit indiquer "Canal payant configuré", et les messages de test doivent apparaître aussi dans le canal.
+
+### 3. Activer le paiement (Telegram Stars — aucun code requis)
+1. Dans les paramètres du canal → **Type de canal** → **Gérer les liens d'invitation** → **Créer un nouveau lien**.
+2. Active **"Frais mensuel"** (Require Monthly Fee) et choisis le prix en Telegram Stars.
+3. Partage ce lien d'invitation à tes futurs abonnés — Telegram gère 100% de la facturation mensuelle, l'ajout et le retrait automatique des abonnés qui ne paient plus. Tu reçois 100% des Stars (convertibles ensuite via l'app Telegram).
+
+Le code ne change rien d'autre : tes alertes personnelles (chat perso) continuent d'arriver normalement, et sont maintenant aussi copiées vers le canal. Les messages internes (démarrage de l'agent, erreurs techniques) restent perso uniquement — les abonnés du canal ne voient que le contenu (résumé quotidien, alertes avant/après news, breaking news).
+
+---
+
 ## Personnaliser l'agent
 
 Tout se règle dans `.env` (valeurs) ou `config.py` (réglages avancés) :

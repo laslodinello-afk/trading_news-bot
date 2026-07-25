@@ -39,13 +39,15 @@ def _post(payload: dict) -> requests.Response | None:
         return None
 
 
-def send(text: str) -> bool:
-    if not config.TELEGRAM_BOT_TOKEN or not config.TELEGRAM_CHAT_ID:
-        logger.error("TELEGRAM_BOT_TOKEN ou TELEGRAM_CHAT_ID manquant, message non envoyé.")
+def send(text: str, chat_id: str | None = None) -> bool:
+    """Envoie à un chat_id donné (message perso par défaut)."""
+    target = chat_id or config.TELEGRAM_CHAT_ID
+    if not config.TELEGRAM_BOT_TOKEN or not target:
+        logger.error("TELEGRAM_BOT_TOKEN ou chat_id manquant, message non envoyé.")
         return False
 
     base_payload = {
-        "chat_id": config.TELEGRAM_CHAT_ID,
+        "chat_id": target,
         "text": text,
         "disable_web_page_preview": True,
     }
@@ -71,6 +73,22 @@ def send(text: str) -> bool:
 
     logger.error("Échec définitif de l'envoi Telegram.")
     return False
+
+
+def broadcast(text: str) -> bool:
+    """
+    Envoie une alerte "contenu" (résumé, avant/après news, breaking news) au
+    chat perso ET au canal payant si TELEGRAM_CHANNEL_ID est configuré. Les
+    messages opérationnels (démarrage, erreurs) doivent utiliser send()
+    directement pour rester perso uniquement.
+    Renvoie True si l'envoi perso a réussi (le canal est secondaire : son échec
+    est loggé mais ne doit pas faire perdre l'alerte perso).
+    """
+    ok = send(text)
+    if config.TELEGRAM_CHANNEL_ID:
+        if not send(text, chat_id=config.TELEGRAM_CHANNEL_ID):
+            logger.warning("Échec de la diffusion vers le canal payant (l'envoi perso a été tenté séparément).")
+    return ok
 
 
 def _time_local(event_dt_utc_iso: str) -> str:

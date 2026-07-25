@@ -112,7 +112,7 @@ def job_daily_summary() -> None:
             e["time_local"] = datetime.fromisoformat(e["event_dt_utc"]).astimezone(config.TIMEZONE).strftime("%Hh%M")
 
         overview = ai_analyzer.daily_overview(events) if events else None
-        telegram_bot.send(telegram_bot.format_daily_summary(events, overview))
+        telegram_bot.broadcast(telegram_bot.format_daily_summary(events, overview))
         logger.info("Résumé quotidien envoyé (%d events)", len(events))
     except Exception as exc:
         notify_error("résumé quotidien", exc)
@@ -129,7 +129,7 @@ def job_check_before_alerts() -> None:
             event = _event_row_to_dict(row)
             concerned_pairs = config.pairs_for_currency(event["currency"])
             ai = ai_analyzer.analyze_before(event, concerned_pairs)
-            if telegram_bot.send(telegram_bot.format_before_alert(event, concerned_pairs, ai)):
+            if telegram_bot.broadcast(telegram_bot.format_before_alert(event, concerned_pairs, ai)):
                 db.mark_sent(event["event_key"], "before")
                 logger.info("Alerte 'avant' envoyée: %s", event["title"])
             else:
@@ -158,7 +158,7 @@ def job_check_after_alerts() -> None:
 
             concerned_pairs = config.pairs_for_currency(event["currency"])
             ai = ai_analyzer.analyze_after(event, concerned_pairs, actual)
-            if telegram_bot.send(telegram_bot.format_after_alert(event, actual, concerned_pairs, ai)):
+            if telegram_bot.broadcast(telegram_bot.format_after_alert(event, actual, concerned_pairs, ai)):
                 db.mark_sent(event["event_key"], "after")
                 logger.info("Alerte 'après' envoyée: %s (actual=%s)", event["title"], actual)
             else:
@@ -178,7 +178,7 @@ def job_check_breaking_news() -> None:
         relevant_keys = {a["news_key"] for a in relevant}
         sent_keys = set()
         for article in relevant:
-            if telegram_bot.send(telegram_bot.format_breaking_news_alert(article)):
+            if telegram_bot.broadcast(telegram_bot.format_breaking_news_alert(article)):
                 sent_keys.add(article["news_key"])
                 logger.info("Alerte breaking news envoyée: %s", article["title"])
             else:
@@ -223,8 +223,11 @@ def run_test_mode() -> None:
     )
     print("   ✅ OK" if results["connexion"] else "   ❌ Échec — vérifie TELEGRAM_BOT_TOKEN et TELEGRAM_CHAT_ID dans .env")
 
+    if config.TELEGRAM_CHANNEL_ID:
+        print(f"   ℹ️  Canal payant configuré ({config.TELEGRAM_CHANNEL_ID}) — les alertes ci-dessous y seront aussi envoyées.")
+
     print("2/6 — Résumé quotidien (exemple)...")
-    results["resume"] = telegram_bot.send(
+    results["resume"] = telegram_bot.broadcast(
         telegram_bot.format_daily_summary([sample_event], "Exemple d'aperçu généré par l'IA chaque matin à 8h.")
     )
     print("   ✅ OK" if results["resume"] else "   ❌ Échec")
@@ -234,11 +237,11 @@ def run_test_mode() -> None:
     print("   ✅ Gemini a répondu correctement" if ai_result else "   ❌ Pas de réponse IA — vérifie GEMINI_API_KEY")
 
     print("4/6 — Alerte 'avant news' (exemple)...")
-    results["avant"] = telegram_bot.send(telegram_bot.format_before_alert(sample_event, concerned_pairs, ai_result))
+    results["avant"] = telegram_bot.broadcast(telegram_bot.format_before_alert(sample_event, concerned_pairs, ai_result))
     print("   ✅ OK" if results["avant"] else "   ❌ Échec")
 
     print("5/6 — Alerte 'après publication' (exemple)...")
-    results["apres"] = telegram_bot.send(
+    results["apres"] = telegram_bot.broadcast(
         telegram_bot.format_after_alert(sample_event, "206K", concerned_pairs, ai_result)
     )
     print("   ✅ OK" if results["apres"] else "   ❌ Échec")
@@ -251,7 +254,7 @@ def run_test_mode() -> None:
     }
     if ai_result:
         sample_article.update(ai_result)
-    results["breaking"] = telegram_bot.send(telegram_bot.format_breaking_news_alert(sample_article))
+    results["breaking"] = telegram_bot.broadcast(telegram_bot.format_breaking_news_alert(sample_article))
     print("   ✅ OK" if results["breaking"] else "   ❌ Échec")
 
     telegram_bot.send(

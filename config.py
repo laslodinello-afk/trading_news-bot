@@ -18,6 +18,12 @@ GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
 FMP_API_KEY = os.getenv("FMP_API_KEY", "")
 NEWSAPI_KEY = os.getenv("NEWSAPI_KEY", "")
 
+# Canal Telegram séparé (optionnel) : les alertes "contenu" (résumé, avant/après
+# news, breaking news) y sont aussi envoyées en plus du chat perso. Les messages
+# opérationnels (démarrage, erreurs) restent perso uniquement. Le paywall lui-même
+# (abonnement Stars) se configure entièrement côté app Telegram, pas ici.
+TELEGRAM_CHANNEL_ID = os.getenv("TELEGRAM_CHANNEL_ID", "")
+
 # --- Modèle IA ---------------------------------------------------------------
 # Gemini Flash a un palier gratuit permanent (pas un essai limité dans le temps),
 # largement suffisant pour cet agent. gemini-3.1-flash-lite est choisi précisément

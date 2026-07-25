@@ -16,5 +16,7 @@ services:
         sync: false
       - key: NEWSAPI_KEY
         sync: false
+      - key: TELEGRAM_CHANNEL_ID
+        sync: false
       - key: TRADING_PAIRS
         value: XAUUSD,EURUSD,GBPUSD,US30,BTCUSD,ETHUSD,DAX,SP500,NASDAQ,BRENT,CAC40
