@@ -245,7 +245,7 @@ def run_test_mode() -> None:
     concerned_pairs = config.pairs_for_currency("USD")
     results = {}
 
-    print("1/6 — Message de connexion Telegram...")
+    print("1/7 — Message de connexion Telegram...")
     results["connexion"] = telegram_bot.send(
         "🧪 *Test de l'agent trading news*\nSi tu vois ce message, la connexion Telegram fonctionne !"
     )
@@ -254,27 +254,27 @@ def run_test_mode() -> None:
     if config.TELEGRAM_CHANNEL_ID:
         print(f"   ℹ️  Canal payant configuré ({config.TELEGRAM_CHANNEL_ID}) — les alertes ci-dessous y seront aussi envoyées.")
 
-    print("2/6 — Résumé quotidien (exemple)...")
+    print("2/7 — Résumé quotidien (exemple)...")
     results["resume"] = telegram_bot.broadcast(
         telegram_bot.format_daily_summary([sample_event], "Exemple d'aperçu généré par l'IA chaque matin à 8h.")
     )
     print("   ✅ OK" if results["resume"] else "   ❌ Échec")
 
-    print("3/6 — Appel réel à Gemini (vérifie GEMINI_API_KEY)...")
+    print("3/7 — Appel réel à Gemini (vérifie GEMINI_API_KEY)...")
     ai_result = ai_analyzer.analyze_before(sample_event, concerned_pairs)
     print("   ✅ Gemini a répondu correctement" if ai_result else "   ❌ Pas de réponse IA — vérifie GEMINI_API_KEY")
 
-    print("4/6 — Alerte 'avant news' (exemple)...")
+    print("4/7 — Alerte 'avant news' (exemple)...")
     results["avant"] = telegram_bot.broadcast(telegram_bot.format_before_alert(sample_event, concerned_pairs, ai_result))
     print("   ✅ OK" if results["avant"] else "   ❌ Échec")
 
-    print("5/6 — Alerte 'après publication' (exemple)...")
+    print("5/7 — Alerte 'après publication' (exemple)...")
     results["apres"] = telegram_bot.broadcast(
         telegram_bot.format_after_alert(sample_event, "206K", concerned_pairs, ai_result)
     )
     print("   ✅ OK" if results["apres"] else "   ❌ Échec")
 
-    print("6/6 — Alerte breaking news (exemple)...")
+    print("6/7 — Alerte breaking news (exemple)...")
     sample_article = {
         "title": "Exemple : déclaration surprise d'un responsable de la Fed sur les taux",
         "source": "Exemple News",
@@ -284,6 +284,15 @@ def run_test_mode() -> None:
         sample_article.update(ai_result)
     results["breaking"] = telegram_bot.broadcast(telegram_bot.format_breaking_news_alert(sample_article))
     print("   ✅ OK" if results["breaking"] else "   ❌ Échec")
+
+    print("7/7 — Débrief du soir (exemple, 23h)...")
+    sample_debrief_event = dict(sample_event, actual="206K")
+    sample_news_items = [{"title": sample_article["title"], "resume": sample_article.get("resume", "")}]
+    debrief_recap = ai_analyzer.evening_debrief([sample_debrief_event], sample_news_items)
+    results["debrief"] = telegram_bot.broadcast(
+        telegram_bot.format_evening_debrief([sample_debrief_event], sample_news_items, debrief_recap)
+    )
+    print("   ✅ OK" if results["debrief"] else "   ❌ Échec")
 
     telegram_bot.send(
         "✅ *Test terminé.* Si tu as reçu tous les messages ci-dessus, l'agent est prêt à tourner "
