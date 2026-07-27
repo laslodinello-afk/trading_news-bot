@@ -34,11 +34,6 @@ TELEGRAM_CHANNEL_ID = os.getenv("TELEGRAM_CHANNEL_ID", "")
 GITHUB_CALENDAR_CACHE_URL = os.getenv("GITHUB_CALENDAR_CACHE_URL", "")
 GITHUB_CACHE_MAX_AGE_HOURS = 12  # au-delà, le cache est jugé trop vieux (Action en panne ?)
 
-# Même principe pour GDELT (.github/workflows/refresh-breaking-news.yml), qui
-# contourne le même type de blocage IP Render, cette fois sur l'API GDELT.
-GDELT_CACHE_URL = os.getenv("GDELT_CACHE_URL", "")
-GDELT_CACHE_MAX_AGE_MINUTES = 45  # ~3x l'intervalle de l'Action (15 min) avant de juger le cache trop vieux
-
 # --- Modèle IA ---------------------------------------------------------------
 # Gemini Flash a un palier gratuit permanent (pas un essai limité dans le temps),
 # largement suffisant pour cet agent. gemini-3.1-flash-lite est choisi précisément

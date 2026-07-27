@@ -41,9 +41,15 @@ def _build_keyword_query(keywords: list[str]) -> str:
     return "(" + " OR ".join(parts) + ")"
 
 
-def _fetch_gdelt_direct(lookback_minutes: int) -> list[dict]:
-    """Appel direct à l'API GDELT. Utilisé en secours, et par la GitHub Action
-    (.github/workflows/refresh-breaking-news.yml) qui alimente le cache."""
+def _fetch_gdelt(lookback_minutes: int) -> list[dict]:
+    """
+    GDELT rate-limite aussi bien l'IP partagée de Render que celle des
+    runners GitHub Actions (testé : les deux reçoivent un 429/réponse non-JSON
+    en production) — contrairement à ForexFactory, le relais via GitHub Action
+    ne fonctionne pas pour cette source. On se contente donc d'un appel direct
+    qui dégrade proprement (retourne []) si GDELT est indisponible ; NewsAPI
+    (ci-dessous) reste la source fiable de la veille breaking news.
+    """
     query = _build_keyword_query(config.BREAKING_NEWS_KEYWORDS)
     params = {
         "query": f"{query} sourcelang:english",
@@ -53,9 +59,13 @@ def _fetch_gdelt_direct(lookback_minutes: int) -> list[dict]:
         "sort": "DateDesc",
         "timespan": f"{max(lookback_minutes, 15)}min",
     }
-    resp = requests.get(GDELT_URL, params=params, headers=HEADERS, timeout=TIMEOUT)
-    resp.raise_for_status()
-    data = resp.json()
+    try:
+        resp = requests.get(GDELT_URL, params=params, headers=HEADERS, timeout=TIMEOUT)
+        resp.raise_for_status()
+        data = resp.json()
+    except Exception as exc:
+        logger.warning("GDELT indisponible: %s", exc)
+        return []
 
     articles = data.get("articles", []) if isinstance(data, dict) else []
     results = []
@@ -73,45 +83,6 @@ def _fetch_gdelt_direct(lookback_minutes: int) -> list[dict]:
             }
         )
     return results
-
-
-def _fetch_gdelt_from_cache() -> list[dict]:
-    if not config.GDELT_CACHE_URL:
-        raise RuntimeError("GDELT_CACHE_URL non configurée.")
-    resp = requests.get(config.GDELT_CACHE_URL, headers=HEADERS, timeout=TIMEOUT)
-    resp.raise_for_status()
-    cache = resp.json()
-    if not isinstance(cache, dict) or "articles" not in cache or "fetched_at" not in cache:
-        raise ValueError("Format de cache GDELT inattendu (articles/fetched_at manquant).")
-
-    fetched_at = datetime.fromisoformat(cache["fetched_at"])
-    age_minutes = (datetime.now(timezone.utc) - fetched_at).total_seconds() / 60
-    if age_minutes > config.GDELT_CACHE_MAX_AGE_MINUTES:
-        raise RuntimeError(f"Cache GDELT trop vieux ({age_minutes:.1f} min, la GitHub Action semble en panne).")
-
-    articles = cache["articles"]
-    if not isinstance(articles, list):
-        raise ValueError(f"Format 'articles' inattendu dans le cache GDELT: {type(articles)}")
-    return articles
-
-
-def _fetch_gdelt(lookback_minutes: int) -> list[dict]:
-    """
-    Contourne un éventuel blocage de l'IP Render sur GDELT (constaté en
-    production) : lit d'abord le cache maintenu par la GitHub Action, avec
-    repli sur l'appel direct si le cache n'est pas configuré/disponible.
-    """
-    if config.GDELT_CACHE_URL:
-        try:
-            return _fetch_gdelt_from_cache()
-        except Exception as exc:
-            logger.warning("Cache GDELT indisponible (%s), bascule sur appel direct", exc)
-
-    try:
-        return _fetch_gdelt_direct(lookback_minutes)
-    except Exception as exc:
-        logger.warning("GDELT indisponible: %s", exc)
-        return []
 
 
 # NewsAPI limite le paramètre "q" à 500 caractères (documenté). Avec la liste de
