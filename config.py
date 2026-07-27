@@ -40,6 +40,13 @@ TELEGRAM_CHANNEL_ID = os.getenv("TELEGRAM_CHANNEL_ID", "")
 GITHUB_CALENDAR_CACHE_URL = os.getenv("GITHUB_CALENDAR_CACHE_URL", "")
 GITHUB_CACHE_MAX_AGE_HOURS = 12  # au-delà, le cache est jugé trop vieux (Action en panne ?)
 
+# Même principe pour FXStreet (.github/workflows/refresh-fxstreet.yml) : Render
+# reçoit un 403 direct (IP partagée bloquée), la GitHub Action non. Vide par
+# défaut (repli sur l'appel direct, qui échouera depuis Render) ; à définir ex :
+# https://raw.githubusercontent.com/<user>/<repo>/main/fxstreet_cache.json
+FXSTREET_CACHE_URL = os.getenv("FXSTREET_CACHE_URL", "")
+FXSTREET_CACHE_MAX_AGE_MINUTES = 30  # au-delà, le cache est jugé trop vieux (Action en panne ?)
+
 # --- Modèle IA ---------------------------------------------------------------
 # Gemini Flash a un palier gratuit permanent (pas un essai limité dans le temps),
 # largement suffisant pour cet agent. gemini-3.1-flash-lite est choisi précisément
@@ -225,6 +232,16 @@ VIDEO_CARD_ACCENT_COLOR = "#3b82f6"
 # Sous-titres dynamiques : nombre de mots affichés ensemble à l'écran, synchros
 # avec la voix (timing réel via edge-tts, pas une approximation).
 VIDEO_CAPTION_MAX_WORDS_PER_CHUNK = 3
+
+# Structure du DEBRIEF : deux sections distinctes (événements macro publiés vs
+# breaking news), voir video_templates/debrief.txt et video_scripts._assemble_script
+# (qui regroupe et trie les blocs par section — jamais mélangés). Utilisé pour la
+# légende affichée en haut de chaque bloc corps (--render) et pour la petite carte
+# de transition entre les deux sections quand les deux sont présentes ce soir-là.
+VIDEO_SECTION_LABEL_EVENEMENT = "ÉVÉNEMENTS DU JOUR"
+VIDEO_SECTION_LABEL_BREAKING = "BREAKING NEWS"
+VIDEO_SECTION_BREAKING_ACCENT_COLOR = "#ef4444"  # rouge, distinct du bleu VIDEO_CARD_ACCENT_COLOR
+VIDEO_SECTION_TRANSITION_SECONDS = 1.3  # durée de la carte de transition (silencieuse)
 
 # Fond vidéo en boucle (optionnel, nécessite PEXELS_API_KEY ci-dessus). Thème de
 # recherche Pexels par format — modifiable librement, pas besoin de toucher au code.

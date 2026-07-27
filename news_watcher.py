@@ -8,6 +8,9 @@ Sources combinées en best-effort :
   sans clé, GENUINEMENT temps réel (25-60 min de délai constaté, contre ~24h
   pour NewsAPI gratuit — voir plus bas). Déjà centrés sur le trading, donc
   moins de bruit à filtrer que les recherches par mot-clé ci-dessous.
+  FXStreet bloque spécifiquement l'IP partagée de Render (403 constaté) : on
+  passe donc par le cache maintenu par .github/workflows/refresh-fxstreet.yml
+  (voir FXSTREET_CACHE_URL dans config.py), avec repli sur l'appel direct.
 - GDELT (aucune clé, gratuit, illimité) : rate-limite l'IP partagée de Render
   en pratique (constaté), résultats peu fiables depuis ce type d'hébergeur.
 - NewsAPI.org (clé gratuite, 100 req/jour) : le plan gratuit a ~24h de délai
@@ -217,6 +220,46 @@ def _fetch_rss_feed(source_name: str, url: str, lookback_minutes: int) -> list[d
     return results
 
 
+def _fetch_fxstreet_from_cache(lookback_minutes: int) -> list[dict]:
+    """
+    Lit le cache FXStreet maintenu par la GitHub Action (.github/workflows/
+    refresh-fxstreet.yml, toutes les 15 min, fenêtre de 180 min côté Action).
+    Ce cache est volontairement plus large que lookback_minutes : on refiltre
+    ici à la fenêtre réellement voulue, ce qui laisse une marge si l'Action a
+    un peu de retard sans jamais faire remonter un article trop vieux.
+    Lève une exception si l'URL n'est pas configurée ou le cache trop vieux :
+    l'appelant retombe alors sur l'appel RSS direct (qui échouera depuis
+    Render mais sert de filet de sécurité).
+    """
+    if not config.FXSTREET_CACHE_URL:
+        raise RuntimeError("FXSTREET_CACHE_URL non configurée.")
+
+    resp = requests.get(config.FXSTREET_CACHE_URL, headers=HEADERS, timeout=TIMEOUT)
+    resp.raise_for_status()
+    cache = resp.json()
+
+    fetched_at_raw = cache.get("fetched_at") if isinstance(cache, dict) else None
+    articles = cache.get("articles") if isinstance(cache, dict) else None
+    if not fetched_at_raw or articles is None:
+        raise ValueError("Format de cache FXStreet inattendu.")
+
+    fetched_at = datetime.fromisoformat(fetched_at_raw)
+    age_minutes = (datetime.now(timezone.utc) - fetched_at).total_seconds() / 60
+    if age_minutes > config.FXSTREET_CACHE_MAX_AGE_MINUTES:
+        raise RuntimeError(f"Cache FXStreet trop vieux ({age_minutes:.1f} min).")
+
+    cutoff = datetime.now(timezone.utc) - timedelta(minutes=lookback_minutes)
+    return [a for a in articles if datetime.fromisoformat(a["published_at"]) >= cutoff]
+
+
+def _fetch_fxstreet(lookback_minutes: int) -> list[dict]:
+    try:
+        return _fetch_fxstreet_from_cache(lookback_minutes)
+    except Exception as exc:
+        logger.warning("Cache FXStreet indisponible (%s), tentative directe.", exc)
+        return _fetch_rss_feed("FXStreet", "https://www.fxstreet.com/rss/news", lookback_minutes)
+
+
 def fetch_candidates() -> list[dict]:
     """
     Récupère les articles récents de toutes les sources et dédupe par URL.
@@ -226,7 +269,10 @@ def fetch_candidates() -> list[dict]:
     lookback = config.BREAKING_NEWS_LOOKBACK_MINUTES
     combined = _fetch_gdelt(lookback) + _fetch_newsapi(lookback)
     for source_name, url in RSS_FEEDS:
-        combined += _fetch_rss_feed(source_name, url, lookback)
+        if source_name == "FXStreet":
+            combined += _fetch_fxstreet(lookback)
+        else:
+            combined += _fetch_rss_feed(source_name, url, lookback)
 
     seen_urls = set()
     deduped = []
