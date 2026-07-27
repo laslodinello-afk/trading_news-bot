@@ -1,0 +1,20 @@
+Écris le script d'une vidéo courte de type SEMAINE : un aperçu des événements
+économiques à surveiller dans les 7 prochains jours à partir d'aujourd'hui
+({date_str}).
+
+Événements économiques prévus cette semaine (sélectionne les 3 à 5 plus importants
+pour cette audience, ne les cite pas tous) :
+{events_block}
+
+Paires/actifs suivis par l'audience : {pairs}.
+
+{extra_notes_block}
+
+Angle : un calendrier commenté, pas juste une liste — pour chaque événement
+retenu, dis pourquoi il compte et ce qu'il faut surveiller (quel scénario serait
+haussier/baissier pour les actifs concernés, sans jamais donner de conseil de
+position). Structure chronologique, du plus proche au plus lointain dans la
+semaine, en 3 à 5 blocs.
+
+Le texte oral total (hook + corps + chute) doit faire {word_min} à {word_max} mots,
+calibré pour {duration_label} à l'oral.

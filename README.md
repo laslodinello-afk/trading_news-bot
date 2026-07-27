@@ -1,7 +1,7 @@
 # 🤖 Agent de veille news économiques pour trading
 
 Cet agent surveille en continu (24h/24, 7j/7) :
-- le **calendrier économique** (USD, EUR, GBP — impact fort 🔴 et moyen 🟠)
+- le **calendrier économique** (USD, EUR, GBP — impact fort 🔴 et moyen 🟠, plus les événements "faible" 🤖 que l'IA juge sous-évalués par ForexFactory — voir plus bas)
 - les **news "choc"** hors calendrier (déclaration surprise, tweet à impact, conflit, régulation crypto, choc pétrolier, etc.)
 
 ... et t'envoie des **alertes Telegram** avec une analyse IA (Google Gemini) : résumé, biais probable sur tes paires (par défaut XAUUSD, EURUSD, GBPUSD, US30, BTCUSD, ETHUSD, DAX, SP500, NASDAQ, BRENT, CAC40 — 100% configurable), et niveau de danger pour trader.
@@ -252,6 +252,151 @@ Le code ne change rien d'autre : tes alertes personnelles (chat perso) continuen
 
 ---
 
+## Scripts vidéo courts (TikTok/Reels/Shorts)
+
+L'agent peut transformer les données qu'il collecte déjà (calendrier économique, breaking news) en scripts prêts à tourner pour des vidéos courtes. Il ne publie rien nulle part : il écrit des fichiers dans `video_output/<date>/`, à toi de les relire et de tourner.
+
+**`DEBRIEF` est LE format généré automatiquement chaque soir** — le récapitulatif complet de la journée (événements macro publiés + breaking news), 75 à 90 secondes. 5 autres formats existent pour un usage ponctuel, à la demande uniquement :
+
+| Format | Durée | Contenu | Génération |
+|---|---|---|---|
+| `DEBRIEF` | 75-90s | Le débrief complet de la journée (événements + breaking news) | **Automatique, chaque soir** |
+| `REACTION` | 45s | Réaction factuelle à une publication économique majeure du jour | À la demande |
+| `POURQUOI` | 45-60s | Explique le mécanisme derrière un mouvement de marché du jour | À la demande |
+| `PEDAGO` | 30s | Définit un concept économique simplement | À la demande |
+| `FACTCHECK` | 45s | Remet en contexte un titre de presse à partir des vrais chiffres | À la demande |
+| `SEMAINE` | 60s | Calendrier commenté des événements de la semaine à venir | À la demande |
+
+Chaque format a son propre prompt éditable dans `video_templates/*.txt` (zéro texte éditorial codé en dur — modifie le `.txt`, pas le `.py`).
+
+### Utilisation
+
+```bash
+python video_scripts.py --format DEBRIEF                      # le débrief du jour
+python video_scripts.py --format SEMAINE --date 2026-07-20    # une autre date, un autre format
+python video_scripts.py --format PEDAGO --concept "Taux BCE"  # concept imposé
+python video_scripts.py --format ALL --dry-run                # aperçu de tous les formats, rien n'est écrit
+python video_scripts.py --format DEBRIEF --notes "Insiste sur le pétrole"  # remarque prise en compte par l'IA
+```
+
+`--notes` te permet de glisser une remarque libre (angle à privilégier, sujet à
+mettre en avant, ton à adopter...) qui est injectée dans le prompt envoyé à
+l'IA pour ce script précis — sans toucher aux fichiers `.txt` dans
+`video_templates/`. Fonctionne avec tous les formats, combinable avec `--render`.
+
+Chaque script génère un `.md` (lisible tel quel sur mobile) et un `.json` (structure complète, pour un usage automatisé ultérieur) dans `video_output/<YYYY-MM-DD>/<format>.md`/`.json`.
+
+`DEBRIEF` est généré automatiquement chaque soir après le débrief texte (23h30 par défaut, réglable via `VIDEO_SCRIPTS_HOUR`/`VIDEO_SCRIPTS_MINUTE` dans `config.py`) — mais uniquement s'il existe au moins un événement du jour avec un résultat publié (`actual`) OU une breaking news captée. Vu la limite connue sur le "résultat réel" (voir "Limites honnêtes à connaître" plus bas), ça peut rester silencieux certains soirs tant que cette donnée n'est pas fiable côté source — ce n'est pas un bug : le module logue "aucune donnée exploitable" et ne génère rien plutôt que d'inventer un script vide. **Seul le texte est généré automatiquement** (le rendu vidéo reste local, voir plus bas) : `python video_scripts.py --format DEBRIEF --render` le soir pour obtenir la vidéo.
+
+### Avant ta première génération réelle
+
+Édite dans `config.py` :
+- **`VIDEO_CTA_TEXT`** : la formule d'appel à l'action redite sur chaque script — la valeur par défaut contient un `[NOM_DU_CANAL]` à remplacer.
+- **`VIDEO_DISCLAIMER`** : ajouté en fin de légende de chaque script (reprend la formule recommandée en section "Monétiser" ci-dessus).
+
+Ces deux valeurs sont injectées par le code, jamais par l'IA : elles apparaissent mot pour mot sur chaque script, quoi qu'ait produit le modèle.
+
+### Générer la vidéo (voix + visuel), pas juste le script
+
+Le flag `--render` transforme le script en vraie vidéo verticale (1080×1920, mp4) :
+- **Voix** : synthèse française gratuite (`edge-tts`, aucune clé requise).
+- **Sous-titres dynamiques** : le texte à l'écran défile par petits groupes de
+  mots (~1s chacun), synchros avec la voix — jamais une légende figée pour tout
+  un bloc. edge-tts ne fournit pas de vrai timing mot-par-mot pour le français
+  (seulement phrase par phrase), donc le rythme des mots à l'intérieur d'une
+  phrase est interpolé à partir de leur longueur — pas exact à la milliseconde
+  près, mais ça défile.
+- **Fond vidéo en boucle qui suit le sujet** (optionnel, voir juste en dessous) :
+  chaque bloc du script a son propre mot-clé de fond généré par l'IA en fonction
+  de CE dont il parle à ce moment précis (ex. un bloc sur la BCE cherche une
+  vidéo différente d'un bloc sur le pétrole) — pas un seul fond fixe pour toute
+  la vidéo. Fond uni sombre par défaut sans clé Pexels.
+- **Graphique réel** (prévision/précédent vs réel) pour DEBRIEF/REACTION/POURQUOI
+  quand l'événement du jour a de vraies données numériques — jamais inventé.
+- **Carte de fin dédiée** pour le CTA : contrairement au reste, un écran stable
+  (pas de fond vidéo, pas de sous-titres qui défilent) — un appel à l'action doit
+  rester lisible, pas clignoter.
+
+Toujours **0€** : pas d'API payante.
+
+```bash
+pip install -r requirements-video.txt   # une fois — dépendances lourdes, séparées
+python video_scripts.py --format DEBRIEF --render
+```
+
+**Fond vidéo animé (optionnel)** : sans rien faire, le fond est uni. Pour un
+fond vidéo en boucle, ajoute une clé gratuite dans `.env` :
+```
+# Clé gratuite sur https://www.pexels.com/api/ (200 req/h, 20 000/mois)
+PEXELS_API_KEY=
+```
+Le hook et la chute utilisent le thème générique du format
+(`STOCK_FOOTAGE_THEME_BY_FORMAT` dans `config.py`, éditable) ; chaque bloc du
+corps utilise son propre mot-clé généré par l'IA pour ce bloc précis (voir
+`video_templates/_system.txt`, champ `visual_keyword`). Les clips sont
+téléchargés et mis en cache localement dans `stock_footage/<mot-clé>/` — une
+petite réserve pour un mot-clé de contenu ponctuel (peut ne jamais revenir),
+une réserve plus large pour le thème générique du format (réutilisé tous les
+soirs). Un rendu classique ne refait donc pas d'appel réseau pour un mot-clé
+déjà rencontré. Licence Pexels : usage libre, y compris commercial, sans
+attribution requise.
+
+À savoir :
+- **Toujours en local, jamais sur Render** : `requirements-video.txt` n'est pas
+  installé sur le service déployé, et le job automatique de 23h30 ne génère que le
+  texte. Le rendu vidéo est trop lourd (CPU/mémoire) pour le plan gratuit Render.
+- **`--render` et `--dry-run` sont incompatibles** (dry-run n'écrit rien).
+- **Pas besoin d'installer ffmpeg toi-même** : `imageio-ffmpeg` (dans
+  `requirements-video.txt`) fournit un binaire ffmpeg autonome automatiquement.
+- **Changer de voix** : `edge-tts --list-voices | grep fr-FR` liste les voix
+  françaises disponibles, puis modifie `VIDEO_TTS_VOICE` dans `config.py`.
+- **Le graphique n'apparaît que pour DEBRIEF/REACTION/POURQUOI**, et seulement
+  s'il existe un événement du jour avec au moins 2 valeurs numériques
+  exploitables (prévision/précédent + réel) — sinon, texte seul. Vu la limite
+  déjà mentionnée sur le "résultat réel" (souvent indisponible), ça peut rester
+  texte seul un moment.
+- Un `DEBRIEF` (4 à 7 blocs, jusqu'à 90s) prend plus longtemps à rendre qu'un
+  format court : plus de segments à synthétiser et potentiellement plus de
+  mots-clés de fond différents à chercher sur Pexels la première fois. Compte
+  quelques minutes plutôt qu'une pour les formats courts (~45s).
+
+### Raccourci bureau — générer la vidéo sans passer par le Terminal
+
+Un double-clic sur **`Générer Vidéo Débrief.app`** (sur ton Bureau) suffit pour
+produire la vidéo DEBRIEF d'un jour donné, sans ouvrir de Terminal :
+
+1. Une première fenêtre demande la **date** (pré-remplie avec la date du jour —
+   modifiable si tu veux régénérer un autre jour).
+2. Une deuxième fenêtre te propose d'ajouter une **remarque optionnelle**
+   (ex. "insiste sur le pétrole", "reste optimiste sur la chute") — laisse vide
+   si tu n'as rien de particulier à préciser. C'est exactement le `--notes`
+   décrit ci-dessus.
+3. L'app rafraîchit d'abord le calendrier économique local (voir
+   `generate_debrief.sh` à la racine du projet), puis génère et rend la vidéo.
+   Compte quelques minutes.
+4. À la fin :
+   - **Si une vidéo a été produite** : une notification macOS te le confirme et
+     le fichier s'ouvre directement dans le Finder (`video_output/<date>/debrief.mp4`).
+   - **Si aucune vidéo n'a été produite** : une fenêtre t'explique que c'est très
+     probablement parce qu'il n'y avait aucune donnée exploitable ce jour-là
+     (voir "Limites honnêtes à connaître" plus bas — ce n'est pas un bug), avec
+     le détail technique en dessous si besoin.
+
+À savoir :
+- L'app appelle `generate_debrief.sh`, qui rafraîchit **la base locale**
+  uniquement — elle n'a aucun lien avec ce qui tourne sur Render (voir
+  "Limites honnêtes à connaître"). Si tu veux le débrief d'un jour où le bot
+  déployé a capté des données que tu n'as pas en local, il faudra les
+  récupérer autrement.
+- Aucune donnée sensible n'est demandée par l'app — elle réutilise simplement
+  ton `.env` et ta base SQLite locale existants.
+- Pour changer la date ou les remarques par défaut, ou modifier le comportement,
+  le script source est `GenerateDebrief.applescript` (à ouvrir avec
+  l'app **Éditeur de scripts** sur macOS, puis "Exporter..." en type
+  "Application" pour recompiler après modification).
+
+---
+
 ## Personnaliser l'agent
 
 Tout se règle dans `.env` (valeurs) ou `config.py` (réglages avancés) :
@@ -259,7 +404,9 @@ Tout se règle dans `.env` (valeurs) ou `config.py` (réglages avancés) :
 - **Paires suivies** : variable `TRADING_PAIRS` dans `.env` (par défaut : `XAUUSD,EURUSD,GBPUSD,US30,BTCUSD,ETHUSD,DAX,SP500,NASDAQ,BRENT,CAC40`). Si tu ajoutes une paire (ex : `SOLUSD`, `USDJPY`), ajoute aussi son mapping de devises dans `PAIR_CURRENCIES` en haut de `config.py` — sinon elle apparaîtra dans les résumés mais ne recevra jamais de biais IA.
 - **Horaire du résumé quotidien** : `DAILY_SUMMARY_HOUR` / `DAILY_SUMMARY_MINUTE` dans `config.py` (8h00 par défaut).
 - **Horaire du débrief du soir** : `EVENING_DEBRIEF_HOUR` / `EVENING_DEBRIEF_MINUTE` dans `config.py` (23h00 par défaut, calé sur la clôture de la session de New York) — récapitule les news publiées et les breaking news de la journée avec une analyse IA rétrospective.
+- **Horaire de génération des scripts vidéo** : `VIDEO_SCRIPTS_HOUR` / `VIDEO_SCRIPTS_MINUTE` dans `config.py` (23h30 par défaut, après le débrief) — voir section "Scripts vidéo courts" plus haut pour le CTA/disclaimer à personnaliser avant la première utilisation.
 - **Délai de l'alerte "avant news"** : `ALERT_BEFORE_MINUTES` (30 min par défaut).
+- **Taille max du lot soumis à la reclassification IA** : `MAX_RECLASSIFY_BATCH` dans `ai_analyzer.py` (60 par défaut, une semaine chargée peut approcher les 40-45 events "Low" — augmente si le log affiche un avertissement de troncature).
 - **Mots-clés de la veille breaking news** : variable `BREAKING_NEWS_KEYWORDS` dans `.env`, séparés par des virgules.
 - **Fréquence de la veille breaking news** : `BREAKING_NEWS_INTERVAL_MINUTES` dans `config.py` (15 min par défaut — ne descends pas trop bas, le quota NewsAPI gratuit est de 100 requêtes/jour).
 
@@ -274,8 +421,10 @@ Pour que tu saches exactement ce que fait (et ne fait pas) l'agent :
 - **Breaking news = best-effort, pas du vrai temps réel.** Il n'existe aucune API gratuite fiable pour capter un tweet ou une déclaration à la seconde près (l'API X/Twitter coûte ~100$/mois). L'agent combine GDELT et NewsAPI, avec un délai typique de 5 à 15 minutes, et un tri par IA pour limiter les fausses alertes — mais des faux négatifs (rien détecté) et faux positifs (alerte peu pertinente) restent possibles.
 - **Le "résultat réel" après publication ne fonctionne pas actuellement (confirmé).** Le calendrier ForexFactory (source principale, gratuite et fiable pour les horaires/prévisions) ne publie jamais le résultat réel après coup, et FMP a retiré cette donnée de son plan gratuit courant 2025 — testé en conditions réelles, l'accès est refusé même avec une clé FMP valide. Les alertes "après publication" afficheront donc "indisponible" tant que tu n'as pas un compte FMP payant (ou une autre source que tu voudrais brancher toi-même).
 - **Le calendrier ForexFactory se décale le week-end.** Le flux gratuit utilisé ne couvre que la semaine calendaire en cours ; le nouveau contenu de la semaine suivante apparaît généralement dimanche soir/lundi matin.
+- **La classification "impact" de ForexFactory sous-évalue parfois des events réellement suivis** (constaté : Durable Goods Orders, Ifo Business Climate classés "Low" alors qu'Investing.com les classe plus haut). L'agent fait relire chaque event "Low" par l'IA à chaque rafraîchissement du calendrier (toutes les 6h) : ceux qu'elle juge sous-évalués sont remontés en Medium/High et marqués 🤖 dans les messages pour rester distinguables d'une classification ForexFactory native. Ce n'est pas une donnée de marché en temps réel, juste le jugement général de l'IA sur ce qui compte habituellement en day trading — à prendre comme un filet de sécurité, pas une garantie absolue.
 - **Crypto (BTC/ETH), indices (US30/SP500/NASDAQ/DAX/CAC40) et pétrole (BRENT) n'ont PAS de calendrier économique dédié.** Il n'existe pas de source gratuite équivalente à ForexFactory pour ces instruments (ex : pas d'heure précise pour "prochaine décision SEC sur un ETF"). Ils reçoivent : (1) le biais IA généré automatiquement à chaque news USD ou EUR existante (le crypto et les indices US sont très corrélés au dollar), et (2) une couverture best-effort via la veille breaking news (mots-clés SEC/CFTC/OPEP/exchange hack...). En clair : pas d'alerte "30 min avant" programmée pour ces instruments, seulement des alertes réactives.
 - **L'IA peut se tromper.** Le biais directionnel et le niveau de danger sont des indications générées automatiquement, pas des conseils financiers personnalisés — la décision de trader reste la tienne.
+- **Les scripts vidéo générés sur Render peuvent disparaître avant que tu les récupères.** Le disque gratuit de Render est éphémère (voir Étape 9.4) : si le job `video_scripts` tourne sur le service déployé plutôt qu'en local, un redéploiement ou redémarrage peut effacer `video_output/` avant consultation. Le module écrit volontairement des fichiers et ne publie nulle part (voir section "Scripts vidéo courts") — pense à les récupérer rapidement, ou lance la génération en local si tu préfères des fichiers durables.
 
 ---
 
@@ -314,7 +463,16 @@ trading-news-agent/
 ├── news_watcher.py        # Veille breaking news (GDELT + NewsAPI)
 ├── ai_analyzer.py         # Analyse IA (Google Gemini) : résumé, biais, danger
 ├── telegram_bot.py        # Envoi + mise en forme des messages Telegram
+├── video_scripts.py       # Génération de scripts vidéo courts (TikTok/Reels/Shorts)
+├── video_renderer.py      # Rendu voix + visuel (--render), local uniquement
+├── stock_footage.py       # Fond vidéo Pexels (optionnel) : recherche + cache local
+├── video_templates/       # Un prompt éditable par format (REACTION, PEDAGO, ...)
+├── video_output/          # Scripts + vidéos générés (gitignored), un dossier par date
+├── stock_footage/         # Clips de fond mis en cache (gitignored)
+├── tests/                 # Tests pytest
 ├── requirements.txt
+├── requirements-dev.txt   # + pytest, pour lancer les tests
+├── requirements-video.txt # + edge-tts/moviepy/matplotlib, pour --render (local)
 ├── .env.example
 ├── runtime.txt             # Version Python pour Render
 └── render.yaml             # Config de déploiement Render (optionnel)

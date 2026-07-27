@@ -1,0 +1,23 @@
+Écris le script d'une vidéo courte de type FACTCHECK : tu remets en contexte un
+titre de presse en t'appuyant sur les chiffres économiques réels, pour clarifier
+ce qu'il faut vraiment en retenir.
+
+Titre(s) de presse repérés aujourd'hui ({date_str}) — choisis celui qui mérite le
+plus une remise en contexte, ignore les autres :
+{headline_block}
+
+Paires/actifs suivis par l'audience : {pairs}.
+
+{extra_notes_block}
+
+Angle IMPORTANT : tu ne pars PAS du principe que le titre est un mensonge ou une
+manipulation délibérée — un titre de presse simplifie souvent par nature. Ton
+travail est de clarifier la nuance que le titre laisse de côté, en t'appuyant sur
+les chiffres réels et leur vraie portée. Si en creusant ce titre paraît en fait
+exact et non trompeur, dis-le aussi — le but est la clarté, pas de trouver un
+coupable à tout prix.
+
+Structure : découpe le corps en 3 à 5 blocs.
+
+Le texte oral total (hook + corps + chute) doit faire {word_min} à {word_max} mots,
+calibré pour {duration_label} à l'oral.

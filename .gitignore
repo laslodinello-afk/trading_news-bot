@@ -1,7 +1,12 @@
 .env
 alerts.db
 agent.log
+.DS_Store
+video_output/
+stock_footage/
+exemples_demo/
 __pycache__/
 *.pyc
 .venv/
 venv/
+.pytest_cache/

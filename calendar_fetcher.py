@@ -100,12 +100,22 @@ def _fetch_forexfactory_raw() -> list[dict]:
     raise last_exc
 
 
+RELEVANT_IMPACTS = {"High", "Medium", "Low"}  # tout sauf "Holiday" (pas une vraie donnée éco)
+
+
 def _normalize_forexfactory(raw_events: list[dict]) -> list[dict]:
+    """
+    Garde High/Medium/Low pour les devises suivies (pas seulement High/Medium) :
+    les "Low" sont ensuite soumis à l'IA par main.py (voir ai_analyzer.
+    reclassify_low_impact) qui peut les faire remonter si elle les juge plus
+    importants que le tag ForexFactory ne le suggère. Ceux qui restent "Low"
+    après cette relecture sont filtrés plus tard, jamais stockés en base.
+    """
     normalized = []
     for raw in raw_events:
         currency = _normalize_currency(raw.get("country", ""))
         impact = _normalize_impact(raw.get("impact", ""))
-        if currency not in config.WATCHED_CURRENCIES or impact not in config.WATCHED_IMPACTS:
+        if currency not in config.WATCHED_CURRENCIES or impact not in RELEVANT_IMPACTS:
             continue
         try:
             event_dt = datetime.fromisoformat(raw["date"])
@@ -126,6 +136,7 @@ def _normalize_forexfactory(raw_events: list[dict]) -> list[dict]:
                 "forecast": raw.get("forecast") or None,
                 "previous": raw.get("previous") or None,
                 "actual": None,
+                "ai_reclassified": False,
             }
         )
     return normalized
@@ -156,7 +167,7 @@ def _normalize_fmp(raw_events: list[dict]) -> list[dict]:
     for raw in raw_events:
         currency = _normalize_currency(raw.get("currency") or raw.get("country") or "")
         impact = _normalize_impact(raw.get("impact", ""))
-        if currency not in config.WATCHED_CURRENCIES or impact not in config.WATCHED_IMPACTS:
+        if currency not in config.WATCHED_CURRENCIES or impact not in RELEVANT_IMPACTS:
             continue
         raw_date = raw.get("date")
         if not raw_date:
@@ -183,6 +194,7 @@ def _normalize_fmp(raw_events: list[dict]) -> list[dict]:
                 "forecast": _stringify(raw.get("estimate")),
                 "previous": _stringify(raw.get("previous")),
                 "actual": _stringify(raw.get("actual")),
+                "ai_reclassified": False,
                 "_fmp_raw_date": event_dt_utc,
             }
         )

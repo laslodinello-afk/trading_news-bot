@@ -31,6 +31,7 @@ import config
 import db
 import news_watcher
 import telegram_bot
+import video_scripts
 
 logger = logging.getLogger("main")
 
@@ -86,6 +87,7 @@ def _event_row_to_dict(row) -> dict:
         "forecast": row["forecast"],
         "previous": row["previous"],
         "actual": row["actual"],
+        "ai_reclassified": bool(row["ai_reclassified"]),
     }
 
 
@@ -94,19 +96,26 @@ def _event_row_to_dict(row) -> dict:
 def job_refresh_calendar() -> None:
     try:
         events, source = calendar_fetcher.refresh_calendar()
-        for event in events:
+        high_medium = [e for e in events if e["impact"] in ("High", "Medium")]
+        low = [e for e in events if e["impact"] == "Low"]
+
+        upgraded = ai_analyzer.reclassify_low_impact(low) if low else []
+
+        for event in high_medium + upgraded:
             db.upsert_event(event)
-        logger.info("Calendrier rafraîchi (%d events retenus, source=%s)", len(events), source)
+
+        logger.info(
+            "Calendrier rafraîchi (%d High/Medium + %d Low upgradés par l'IA sur %d Low soumis, source=%s)",
+            len(high_medium), len(upgraded), len(low), source,
+        )
     except Exception as exc:
         notify_error("calendrier économique", exc)
 
 
 def job_daily_summary() -> None:
     try:
-        now_local = datetime.now(config.TIMEZONE)
-        day_start_local = now_local.replace(hour=0, minute=0, second=0, microsecond=0)
-        day_end_local = day_start_local + timedelta(days=1)
-        rows = db.get_events_for_day(day_start_local.astimezone(timezone.utc), day_end_local.astimezone(timezone.utc))
+        day_start_utc, day_end_utc = db.local_day_bounds_utc(datetime.now(config.TIMEZONE).date())
+        rows = db.get_events_for_day(day_start_utc, day_end_utc)
 
         events = [_event_row_to_dict(r) for r in rows]
         for e in events:
@@ -121,11 +130,7 @@ def job_daily_summary() -> None:
 
 def job_evening_debrief() -> None:
     try:
-        now_local = datetime.now(config.TIMEZONE)
-        day_start_local = now_local.replace(hour=0, minute=0, second=0, microsecond=0)
-        day_end_local = day_start_local + timedelta(days=1)
-        day_start_utc = day_start_local.astimezone(timezone.utc)
-        day_end_utc = day_end_local.astimezone(timezone.utc)
+        day_start_utc, day_end_utc = db.local_day_bounds_utc(datetime.now(config.TIMEZONE).date())
 
         event_rows = db.get_events_for_day(day_start_utc, day_end_utc)
         events = [_event_row_to_dict(r) for r in event_rows]
@@ -140,6 +145,14 @@ def job_evening_debrief() -> None:
         logger.info("Débrief du soir envoyé (%d events, %d breaking news)", len(events), len(news_items))
     except Exception as exc:
         notify_error("débrief du soir", exc)
+
+
+def job_generate_video_scripts() -> None:
+    try:
+        video_scripts.generate_daily_batch(datetime.now(config.TIMEZONE).date())
+        logger.info("Script du débrief vidéo quotidien généré.")
+    except Exception as exc:
+        notify_error("scripts vidéo", exc)
 
 
 def job_check_before_alerts() -> None:
@@ -347,6 +360,11 @@ def main() -> None:
         job_evening_debrief,
         CronTrigger(hour=config.EVENING_DEBRIEF_HOUR, minute=config.EVENING_DEBRIEF_MINUTE, timezone=config.TIMEZONE),
         id="evening_debrief",
+    )
+    scheduler.add_job(
+        job_generate_video_scripts,
+        CronTrigger(hour=config.VIDEO_SCRIPTS_HOUR, minute=config.VIDEO_SCRIPTS_MINUTE, timezone=config.TIMEZONE),
+        id="video_scripts",
     )
     scheduler.add_job(
         job_check_before_alerts,

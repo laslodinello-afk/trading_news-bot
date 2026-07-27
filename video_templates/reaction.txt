@@ -1,0 +1,20 @@
+Écris le script d'une vidéo courte de type RÉACTION : un commentaire factuel et
+incisif sur UNE publication économique majeure qui vient de tomber aujourd'hui
+({date_str}).
+
+Événements économiques publiés aujourd'hui (choisis le plus marquant pour cette
+audience, ignore les autres — ne parle QUE de celui-ci) :
+{events_block}
+
+Paires/actifs suivis par l'audience : {pairs}.
+
+{extra_notes_block}
+
+Angle : réaction à chaud à ce chiffre précis — ce qu'il dit, en quoi il surprend
+(ou pas) par rapport à ce qui était attendu, et pourquoi ça compte aujourd'hui.
+Ton direct, un peu tranchant, jamais putaclic ni alarmiste.
+
+Structure : découpe le corps en 3 à 5 blocs.
+
+Le texte oral total (hook + corps + chute) doit faire {word_min} à {word_max} mots,
+calibré pour {duration_label} à l'oral.

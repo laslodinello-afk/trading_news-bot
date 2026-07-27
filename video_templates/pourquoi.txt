@@ -1,0 +1,22 @@
+Écris le script d'une vidéo courte de type POURQUOI : tu expliques pourquoi les
+marchés ont bougé aujourd'hui ({date_str}), avec une vraie explication causale
+(le mécanisme), pas juste une réaction au chiffre.
+
+Événements économiques publiés aujourd'hui, à utiliser comme matière pour ton
+explication (tu peux en relier plusieurs si ça sert la démonstration, mais reste
+concentré sur UN seul fil explicatif cohérent) :
+{events_block}
+
+Paires/actifs suivis par l'audience : {pairs}.
+
+{extra_notes_block}
+
+Angle : pédagogique et causal — pas "voici ce qui s'est passé" (ça, c'est
+RÉACTION) mais "voici pourquoi ça s'est passé", le mécanisme derrière le
+mouvement, en partant du chiffre publié vs attendu jusqu'à sa conséquence sur les
+marchés suivis.
+
+Structure : découpe le corps en 3 à 5 blocs.
+
+Le texte oral total (hook + corps + chute) doit faire {word_min} à {word_max} mots,
+calibré pour {duration_label} à l'oral.

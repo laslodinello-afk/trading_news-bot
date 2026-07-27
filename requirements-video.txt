@@ -1,0 +1,10 @@
+-r requirements.txt
+# Rendu vidéo, LOCAL UNIQUEMENT — jamais installé sur Render (voir requirements.txt).
+# Versions plafonnées : l'écosystème (numpy/Pillow/matplotlib) a laissé tomber le
+# support Python 3.9 courant 2025-2026. À desserrer si le Python local change.
+edge-tts>=7.0,<8
+moviepy==2.2.1
+imageio-ffmpeg>=0.6.0
+numpy>=2.0,<2.1
+Pillow>=11.0,<12
+matplotlib>=3.9,<3.10

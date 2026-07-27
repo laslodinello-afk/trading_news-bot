@@ -18,6 +18,9 @@ GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
 FMP_API_KEY = os.getenv("FMP_API_KEY", "")
 NEWSAPI_KEY = os.getenv("NEWSAPI_KEY", "")
 
+# Optionnelle (fond vidéo pour --render) : gratuite sur https://www.pexels.com/api/
+PEXELS_API_KEY = os.getenv("PEXELS_API_KEY", "")
+
 # Canal Telegram séparé (optionnel) : les alertes "contenu" (résumé, avant/après
 # news, breaking news) y sont aussi envoyées en plus du chat perso. Les messages
 # opérationnels (démarrage, erreurs) restent perso uniquement. Le paywall lui-même
@@ -127,6 +130,106 @@ BREAKING_NEWS_KEYWORDS = [
     ).split(",")
     if kw.strip()
 ]
+
+# --- Scripts vidéo courts (TikTok/Reels/Shorts) -------------------------------
+# Génération quotidienne automatique de DEBRIEF (le débrief vidéo du soir),
+# calée après le débrief texte (23h00). Les autres formats (REACTION/POURQUOI/
+# PEDAGO/FACTCHECK/SEMAINE) restent disponibles à la demande via
+# `python video_scripts.py --format ...` (voir README) mais ne sont plus générés
+# automatiquement.
+VIDEO_SCRIPTS_HOUR = 23
+VIDEO_SCRIPTS_MINUTE = 30
+
+VIDEO_OUTPUT_DIR = os.path.join(os.path.dirname(__file__), "video_output")
+
+# Formulation fixe, redite à l'identique sur chaque script.
+VIDEO_CTA_TEXT = "Retrouve toutes les news de trading en direct, le calendrier économique et les breaking news : le lien est en bio."
+
+# Accroche courte affichée en grand sur la carte de fin (--render), au-dessus de
+# VIDEO_CTA_TEXT affiché plus petit en dessous — jamais parlée séparément (le
+# texte parlé reste VIDEO_CTA_TEXT seul, pour ne pas répéter deux fois le CTA à
+# l'oral).
+VIDEO_CTA_HEADLINE = "Le lien est en bio"
+
+# Titre affiché ET dit en ouverture de chaque vidéo (--render), suivi de la date
+# du jour ("{VIDEO_INTRO_TITLE}, du 26 juillet 2026.").
+VIDEO_INTRO_TITLE = "Récap news éco & trading"
+
+# Ajouté en fin de légende de chaque script (voir README, section "Monétiser",
+# pour le contexte réglementaire derrière cette formulation).
+VIDEO_DISCLAIMER = "Contenu informatif, pas un conseil personnalisé, aucune garantie."
+
+# (secondes_min, secondes_max) par format — seul POURQUOI couvre 2 paliers de durée.
+VIDEO_FORMAT_DURATIONS = {
+    "REACTION": (45, 45),
+    "POURQUOI": (45, 60),
+    "PEDAGO": (30, 30),
+    "FACTCHECK": (45, 45),
+    "SEMAINE": (60, 60),
+    "DEBRIEF": (75, 90),  # débrief vidéo du soir : événements du jour + breaking news
+}
+
+VIDEO_WORDS_PER_SECOND_FR = 2.5
+
+# Fourchette de mots "texte oral" attendue par palier de durée. Un format à cheval
+# sur 2 paliers (POURQUOI 45-60s, DEBRIEF 75-90s) prend l'union : (min du palier
+# bas, max du palier haut).
+VIDEO_DURATION_WORD_RANGES = {
+    30: (70, 85),
+    45: (105, 125),
+    60: (140, 160),
+    75: (172, 203),
+    90: (207, 243),
+}
+
+VIDEO_RECOMMENDED_POST_TIME = {
+    "REACTION": "le soir même, 18h-20h",
+    "POURQUOI": "le soir même, 18h-20h",
+    "PEDAGO": "en semaine, 12h-14h",
+    "FACTCHECK": "dès génération (réactivité)",
+    "SEMAINE": "dimanche, 18h-20h",
+    "DEBRIEF": "chaque soir, dès que tu as validé le rendu",
+}
+
+# --- Rendu vidéo (local uniquement, à la demande via --render) ---------------
+# Jamais utilisé par le job automatique du soir (Render) : dépendances lourdes,
+# voir requirements-video.txt. `edge-tts --list-voices` liste les voix dispo.
+VIDEO_TTS_VOICE = "fr-FR-HenriNeural"
+# Vitesse de la voix, format edge-tts ("+0%" = normale, "+10%" = 10% plus vite).
+VIDEO_TTS_RATE = "+8%"
+VIDEO_RENDER_RESOLUTION = (1080, 1920)  # 9:16, TikTok/Reels/Shorts
+VIDEO_RENDER_FPS = 30
+VIDEO_RENDER_BG_COLOR = (15, 20, 30)  # fond uni sombre par défaut (repli sans clé Pexels)
+VIDEO_RENDER_FONT_PATH = None  # None = auto-détection (polices macOS système)
+
+# Carte d'intro/de fin (--render) : dégradé + liseré, pour un habillage plus
+# soigné qu'un simple fond uni. Le bleu accent reprend la couleur "Réel" du
+# graphique (voir video_renderer.build_chart_image) pour rester cohérent.
+VIDEO_CARD_GRADIENT_TOP = (10, 14, 22)
+VIDEO_CARD_GRADIENT_BOTTOM = (30, 41, 59)
+VIDEO_CARD_ACCENT_COLOR = "#3b82f6"
+
+# Sous-titres dynamiques : nombre de mots affichés ensemble à l'écran, synchros
+# avec la voix (timing réel via edge-tts, pas une approximation).
+VIDEO_CAPTION_MAX_WORDS_PER_CHUNK = 3
+
+# Fond vidéo en boucle (optionnel, nécessite PEXELS_API_KEY ci-dessus). Thème de
+# recherche Pexels par format — modifiable librement, pas besoin de toucher au code.
+STOCK_FOOTAGE_DIR = os.path.join(os.path.dirname(__file__), "stock_footage")
+STOCK_FOOTAGE_THEME_BY_FORMAT = {
+    "REACTION": "stock market finance",
+    "POURQUOI": "stock market finance",
+    "FACTCHECK": "newspaper finance",
+    "PEDAGO": "office work business",
+    "SEMAINE": "office work business",
+    "DEBRIEF": "stock market finance",
+}
+# Nombre de clips téléchargés au premier passage pour un thème de secours
+# (format-level, réutilisé souvent) vs. un mot-clé de contenu ponctuel généré par
+# l'IA pour un bloc précis (voir video_renderer._background_clip) — pas besoin
+# d'une grosse réserve pour un mot-clé qui ne reviendra peut-être jamais.
+STOCK_FOOTAGE_FALLBACK_CLIP_COUNT = 5
+STOCK_FOOTAGE_CONTENT_CLIP_COUNT = 2
 
 # --- Divers -------------------------------------------------------------------
 DB_PATH = os.getenv("DB_PATH", os.path.join(os.path.dirname(__file__), "alerts.db"))

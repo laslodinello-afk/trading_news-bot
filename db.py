@@ -6,7 +6,7 @@ from __future__ import annotations
 
 import sqlite3
 from contextlib import contextmanager
-from datetime import datetime, timedelta, timezone
+from datetime import date, datetime, time, timedelta, timezone
 
 import config
 
@@ -20,6 +20,7 @@ CREATE TABLE IF NOT EXISTS events (
     forecast TEXT,
     previous TEXT,
     actual TEXT,
+    ai_reclassified INTEGER NOT NULL DEFAULT 0,
     updated_at TEXT NOT NULL
 );
 
@@ -64,27 +65,46 @@ def init_db() -> None:
 def _migrate(conn: sqlite3.Connection) -> None:
     """Ajoute les colonnes manquantes sur une base existante (CREATE TABLE IF NOT
     EXISTS ne modifie pas une table déjà présente)."""
-    existing = {row["name"] for row in conn.execute("PRAGMA table_info(sent_news)")}
-    if "title" not in existing:
+    existing_news = {row["name"] for row in conn.execute("PRAGMA table_info(sent_news)")}
+    if "title" not in existing_news:
         conn.execute("ALTER TABLE sent_news ADD COLUMN title TEXT")
-    if "resume" not in existing:
+    if "resume" not in existing_news:
         conn.execute("ALTER TABLE sent_news ADD COLUMN resume TEXT")
+
+    existing_events = {row["name"] for row in conn.execute("PRAGMA table_info(events)")}
+    if "ai_reclassified" not in existing_events:
+        conn.execute("ALTER TABLE events ADD COLUMN ai_reclassified INTEGER NOT NULL DEFAULT 0")
 
 
 def _now_iso() -> str:
     return datetime.now(timezone.utc).isoformat()
 
 
+def local_day_bounds_utc(local_date: date) -> tuple[datetime, datetime]:
+    """Bornes UTC [début, fin) d'une journée calendaire locale (fuseau config.TIMEZONE),
+    pour les requêtes get_events_for_day / get_news_for_day."""
+    day_start_local = datetime.combine(local_date, time.min, tzinfo=config.TIMEZONE)
+    day_end_local = day_start_local + timedelta(days=1)
+    return day_start_local.astimezone(timezone.utc), day_end_local.astimezone(timezone.utc)
+
+
 # --- events (cache calendrier) ------------------------------------------------
 
 def upsert_event(event: dict) -> None:
+    """
+    event peut inclure "ai_reclassified" (bool) : main.py n'appelle cette
+    fonction que pour les events retenus (High/Medium natifs, ou Low upgradés
+    par l'IA ce cycle-ci) — un event Low non retenu n'est simplement jamais
+    upserté, donc un event déjà upgradé ne peut pas être "redescendu" par un
+    refresh ultérieur qui le reverrait Low sans le ré-upgrader.
+    """
     with get_conn() as conn:
         conn.execute(
             """
             INSERT INTO events (event_key, title, currency, impact, event_dt_utc,
-                                 forecast, previous, actual, updated_at)
+                                 forecast, previous, actual, ai_reclassified, updated_at)
             VALUES (:event_key, :title, :currency, :impact, :event_dt_utc,
-                    :forecast, :previous, :actual, :updated_at)
+                    :forecast, :previous, :actual, :ai_reclassified, :updated_at)
             ON CONFLICT(event_key) DO UPDATE SET
                 title=excluded.title,
                 currency=excluded.currency,
@@ -93,9 +113,10 @@ def upsert_event(event: dict) -> None:
                 forecast=excluded.forecast,
                 previous=excluded.previous,
                 actual=COALESCE(excluded.actual, events.actual),
+                ai_reclassified=excluded.ai_reclassified,
                 updated_at=excluded.updated_at
             """,
-            {**event, "updated_at": _now_iso()},
+            {**event, "ai_reclassified": int(bool(event.get("ai_reclassified", False))), "updated_at": _now_iso()},
         )
 
 

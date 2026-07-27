@@ -1,0 +1,19 @@
+Écris le script d'une vidéo courte de type PEDAGO : tu expliques UN concept
+économique, simplement, à quelqu'un qui n'y connaît rien.
+
+Concept à expliquer aujourd'hui ({date_str}) : {concept}
+
+Paires/actifs suivis par l'audience : {pairs} — si pertinent, ancre ton exemple
+sur l'un d'entre eux, mais seulement si ça aide à comprendre (pas obligatoire).
+
+{extra_notes_block}
+
+Angle : pédagogique pur, zéro actualité nécessaire. Pars d'une question ou d'une
+confusion fréquente sur ce concept, puis explique-le avec une image concrète ou
+un exemple chiffré simple. Pas de jargon non défini.
+
+Structure : découpe le corps en 3 à 5 blocs.
+
+Le texte oral total (hook + corps + chute) doit faire {word_min} à {word_max} mots,
+calibré pour {duration_label} à l'oral — c'est court, va à l'essentiel : UNE idée,
+pas trois.

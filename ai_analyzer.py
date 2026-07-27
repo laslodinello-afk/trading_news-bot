@@ -99,7 +99,19 @@ _BREAKING_NEWS_SCHEMA = {
 }
 
 
-def _call_gemini(user_prompt: str, response_schema: dict, max_tokens: int = 500) -> dict | None:
+def call_gemini(
+    user_prompt: str,
+    response_schema: dict,
+    max_tokens: int = 500,
+    system_prompt: str | None = None,
+) -> dict | None:
+    """
+    Point d'entrée public partagé pour tout appel structuré à Gemini. system_prompt
+    permet à un autre module (ex. video_scripts.py) de fournir ses propres règles
+    éditoriales sans toucher à _SYSTEM_PROMPT (réservé aux analyses de marché
+    ci-dessous). Ne réessaie jamais : voir le principe de robustesse en tête de
+    fichier — c'est à l'appelant de décider s'il retente.
+    """
     if _client is None:
         logger.warning("GEMINI_API_KEY absente, analyse IA ignorée.")
         return None
@@ -108,7 +120,7 @@ def _call_gemini(user_prompt: str, response_schema: dict, max_tokens: int = 500)
             model=config.GEMINI_MODEL,
             contents=user_prompt,
             config=types.GenerateContentConfig(
-                system_instruction=_SYSTEM_PROMPT,
+                system_instruction=system_prompt or _SYSTEM_PROMPT,
                 temperature=0.3,
                 max_output_tokens=max_tokens,
                 response_mime_type="application/json",
@@ -168,10 +180,91 @@ qui suit ces paires : {", ".join(config.TRADING_PAIRS)}.
 {lines}
 
 Donne un aperçu de la journée en maximum 4 lignes courtes en français (champ "apercu")."""
-    result = _call_gemini(prompt, _DAILY_OVERVIEW_SCHEMA, max_tokens=300)
+    result = call_gemini(prompt, _DAILY_OVERVIEW_SCHEMA, max_tokens=300)
     if not result:
         return None
     return result.get("apercu")
+
+
+# --- Reclassification des events "Low" -------------------------------------------
+
+_RECLASSIFY_SCHEMA = {
+    "type": "OBJECT",
+    "required": ["evaluations"],
+    "properties": {
+        "evaluations": {
+            "type": "ARRAY",
+            "items": {
+                "type": "OBJECT",
+                "required": ["index", "importance"],
+                "properties": {
+                    "index": {"type": "INTEGER"},
+                    "importance": {"type": "STRING"},
+                    "raison": {"type": "STRING"},
+                },
+            },
+        }
+    },
+}
+
+_IMPORTANCE_TO_IMPACT = {"moyenne": "Medium", "elevee": "High"}
+# Une semaine chargée peut compter 40+ events "Low" (constaté) : marge large pour
+# ne pas en tronquer silencieusement une partie hors évaluation.
+MAX_RECLASSIFY_BATCH = 60
+
+
+def reclassify_low_impact(events: list[dict]) -> list[dict]:
+    """
+    Fait juger par l'IA les events tagués "Low" par ForexFactory : certains
+    indicateurs (Ifo, Durable Goods...) sont couramment sous-évalués par ce tag
+    pour un day trader, alors que d'autres (M3 Money Supply, ECOFIN...) le
+    méritent vraiment. Renvoie uniquement ceux que l'IA upgrade en Medium/High
+    (impact modifié + ai_reclassified=True) ; les autres sont ignorés (jamais
+    stockés en base, comme avant). Renvoie [] en cas d'échec IA — on ne prend
+    pas de risque à l'aveugle sur un event que ForexFactory juge déjà mineur.
+    """
+    if not events:
+        return []
+    batch = events[:MAX_RECLASSIFY_BATCH]
+    if len(events) > MAX_RECLASSIFY_BATCH:
+        logger.warning(
+            "%d events Low reçus, seuls les %d premiers sont soumis à l'IA (MAX_RECLASSIFY_BATCH).",
+            len(events), MAX_RECLASSIFY_BATCH,
+        )
+    liste = "\n".join(
+        f"{i+1}. {e['currency']} | {e['title']} | prévision={e.get('forecast') or 'N/A'} précédent={e.get('previous') or 'N/A'}"
+        for i, e in enumerate(batch)
+    )
+    prompt = f"""ForexFactory classe ces événements économiques comme impact FAIBLE (Low). Pour un
+daytrader forex/indices/crypto/matières premières ({", ".join(config.TRADING_PAIRS)}),
+évalue si ce classement est juste ou sous-estimé, en te basant sur le potentiel réel de
+surprise et de mouvement de prix à la publication (pas juste l'importance économique
+générale au sens large) :
+
+{liste}
+
+Pour CHAQUE événement, renvoie "index" (son numéro ci-dessus) et "importance" :
+"faible" (le tag Low est juste, on l'ignore), "moyenne" ou "elevee" (sous-évalué, à
+surveiller). N'upgrade que si tu es réellement confiant, pas par excès de prudence —
+la plupart des events Low doivent rester "faible"."""
+
+    result = call_gemini(prompt, _RECLASSIFY_SCHEMA, max_tokens=3000)
+    if not result:
+        return []
+
+    upgraded = []
+    for item in result.get("evaluations", []):
+        idx = item.get("index")
+        if not idx or not (1 <= idx <= len(batch)):
+            continue
+        new_impact = _IMPORTANCE_TO_IMPACT.get(str(item.get("importance", "")).lower())
+        if not new_impact:
+            continue
+        event = dict(batch[idx - 1])
+        event["impact"] = new_impact
+        event["ai_reclassified"] = True
+        upgraded.append(event)
+    return upgraded
 
 
 # --- Débrief du soir (23h, clôture NY) -------------------------------------------
@@ -200,7 +293,7 @@ session de New York) pour un daytrader SMC qui suit : {", ".join(config.TRADING_
 Fais un débrief de fin de journée en français, maximum 5-6 lignes courtes : comment la
 journée s'est globalement déroulée pour ces paires, quels ont été les principaux moteurs,
 et un point de vigilance pour la suite. Champ "recap"."""
-    result = _call_gemini(prompt, _EVENING_DEBRIEF_SCHEMA, max_tokens=600)
+    result = call_gemini(prompt, _EVENING_DEBRIEF_SCHEMA, max_tokens=600)
     if not result:
         return None
     return result.get("recap")
@@ -222,7 +315,7 @@ Réponds avec :
 - "biais" : pour CHAQUE paire concernée, un objet {{"paire": "...", "direction": "haussier" | "baissier" | "neutre"}}
 - "raisonnement" : 1 phrase expliquant le biais le plus probable et pourquoi
 - "danger" : "ok" | "prudence" | "danger" """
-    result = _call_gemini(prompt, _ANALYSIS_SCHEMA, max_tokens=400)
+    result = call_gemini(prompt, _ANALYSIS_SCHEMA, max_tokens=400)
     return _format_analysis(result)
 
 
@@ -243,7 +336,7 @@ Analyse la surprise (réel vs prévision) et son effet probable. Réponds avec :
 - "biais" : pour CHAQUE paire concernée, un objet {{"paire": "...", "direction": "haussier" | "baissier" | "neutre"}}
 - "raisonnement" : 1 phrase expliquant le biais
 - "danger" : "ok" | "prudence" | "danger" """
-    result = _call_gemini(prompt, _ANALYSIS_SCHEMA, max_tokens=400)
+    result = call_gemini(prompt, _ANALYSIS_SCHEMA, max_tokens=400)
     return _format_analysis(result)
 
 
@@ -281,7 +374,7 @@ Renvoie un tableau "items" (vide si rien de pertinent). Pour chaque article rete
 (un objet {{"paire": "...", "direction": "haussier"|"baissier"|"neutre"}} par paire concernée),
 "raisonnement" (1 phrase), "danger" ("ok"|"prudence"|"danger")."""
 
-    result = _call_gemini(prompt, _BREAKING_NEWS_SCHEMA, max_tokens=1500)
+    result = call_gemini(prompt, _BREAKING_NEWS_SCHEMA, max_tokens=1500)
     items = (result or {}).get("items", [])
 
     enriched = []

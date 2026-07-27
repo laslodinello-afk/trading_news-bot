@@ -1,0 +1,33 @@
+Écris le script d'une vidéo de type DEBRIEF : le récapitulatif complet de la
+journée économique et financière d'aujourd'hui ({date_str}) — à la fois les
+chiffres macro publiés et les actualités de dernière minute. C'est LA vidéo du
+soir, celle qui remplace toutes les autres : elle doit donner une vision
+complète de la journée, pas un focus sur un seul événement.
+
+Événements économiques publiés aujourd'hui (prévision/précédent vs réel) :
+{events_block}
+
+Actualités de dernière minute captées aujourd'hui :
+{headlines_block}
+
+Paires/actifs suivis par l'audience : {pairs}.
+
+{extra_notes_block}
+
+Angle : un vrai débrief de fin de journée, pas une liste énumérée — relie les
+événements entre eux quand c'est pertinent (ex. "cette donnée explique en
+partie cette actualité"), hiérarchise (ce qui compte vraiment vs le détail
+secondaire), et referme sur ce qu'il faut surveiller dans les prochains jours
+si c'est pertinent.
+
+Structure : découpe le corps en 4 à 7 blocs (plus que les autres formats — ce
+DEBRIEF couvre plus de terrain, un bloc par sujet distinct plutôt que de tout
+mélanger). Pour CHAQUE bloc, le "visual_keyword" doit correspondre précisément
+au sujet de CE bloc, pas un mot-clé générique répété partout : un bloc sur une
+décision de banque centrale appelle un mot-clé différent d'un bloc sur une
+donnée de l'emploi ou sur une actualité géopolitique.
+
+Le texte oral total (hook + corps + chute) doit faire {word_min} à {word_max}
+mots, calibré pour {duration_label} à l'oral — sensiblement plus long que les
+autres formats : prends le temps de développer chaque point plutôt que de
+rester superficiel.
