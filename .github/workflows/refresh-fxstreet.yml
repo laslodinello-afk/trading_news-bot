@@ -1,0 +1,47 @@
+name: Rafraîchir le cache FXStreet (breaking news)
+
+# Même principe que refresh-calendar.yml : FXStreet bloque l'IP partagée de
+# Render (403 constaté) mais pas forcément celle des runners GitHub Actions.
+# Si ça marche, Render lit ce cache au lieu d'appeler FXStreet directement.
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Installer les dépendances minimales
+        run: pip install -q requests python-dotenv
+
+      - name: Récupérer le flux FXStreet et construire le cache
+        run: |
+          python3 -c "
+          import json
+          from datetime import datetime, timezone
+          import news_watcher
+
+          articles = news_watcher._fetch_rss_feed('FXStreet', 'https://www.fxstreet.com/rss/news', lookback_minutes=180)
+          cache = {'fetched_at': datetime.now(timezone.utc).isoformat(), 'articles': articles}
+          json.dump(cache, open('fxstreet_cache.json', 'w'), ensure_ascii=False, indent=2)
+          print(f'{len(articles)} articles récupérés')
+          "
+
+      - name: Commit si changement
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add fxstreet_cache.json
+          git diff --staged --quiet && echo "Rien de nouveau à commiter." || git commit -m "Rafraîchissement automatique du cache FXStreet"
+          git push
