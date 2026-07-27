@@ -88,6 +88,8 @@ Seule source trouvée qui donne vraiment le **résultat réel** après publicati
 
 Pour EUR/GBP, ou pour les versions "Core", le résultat réel reste indisponible (pas de source gratuite fiable trouvée).
 
+⚠️ **Bug corrigé (à savoir)** : Alpha Vantage peut avoir jusqu'à un mois de retard sur la publication ForexFactory (constaté sur Durable Goods Orders). L'agent vérifie maintenant que le dernier point de données correspond bien au mois attendu (mois de la publication moins un) avant de l'afficher — sinon "indisponible" plutôt qu'un chiffre calculé sur le mauvais mois.
+
 1. Va sur [alphavantage.co/support/#api-key](https://www.alphavantage.co/support/#api-key), entre juste ton email.
 2. La clé s'affiche immédiatement. Copie-la → `ALPHAVANTAGE_API_KEY`.
 3. Le plan gratuit donne 25 requêtes/jour (1/seconde max) — l'agent met chaque indicateur en cache 20h, donc largement suffisant (5-6 requêtes/jour au maximum).

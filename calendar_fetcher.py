@@ -378,7 +378,34 @@ def _compute_alphavantage_actual(data: list[dict], transform: str) -> str | None
     return None
 
 
-def fetch_actual_from_alphavantage(currency: str, title: str) -> str | None:
+def _expected_reference_month(event_dt_utc: datetime) -> tuple[int, int]:
+    """
+    NFP/CPI/Durable Goods/Retail Sales/Unemployment rapportent tous le mois
+    CALENDAIRE PRÉCÉDENT leur publication (ex : publié le 27 juillet -> donnée
+    de juin). Renvoie (année, mois) du mois attendu.
+    """
+    year, month = event_dt_utc.year, event_dt_utc.month - 1
+    if month == 0:
+        year, month = year - 1, 12
+    return (year, month)
+
+
+def _latest_point_covers_expected_month(data: list[dict], event_dt_utc: datetime) -> bool:
+    """
+    Bug réel constaté : Alpha Vantage peut avoir 1 mois de retard sur la
+    publication ForexFactory (ex : Durable Goods encore sur mai alors que la
+    publication du jour concerne juin). Sans cette vérification, on calculerait
+    une variation sur le MAUVAIS mois et l'afficherait comme si c'était le bon
+    résultat — mieux vaut "indisponible" qu'un chiffre confiant mais faux.
+    """
+    if not data:
+        return False
+    latest = datetime.fromisoformat(data[0]["date"])
+    expected_year, expected_month = _expected_reference_month(event_dt_utc)
+    return (latest.year, latest.month) >= (expected_year, expected_month)
+
+
+def fetch_actual_from_alphavantage(currency: str, title: str, event_dt_utc: datetime) -> str | None:
     if currency != "USD" or not config.ALPHAVANTAGE_API_KEY:
         return None
     match = _match_alphavantage_series(title)
@@ -387,6 +414,13 @@ def fetch_actual_from_alphavantage(currency: str, title: str) -> str | None:
     function, transform = match
     try:
         data = _fetch_alphavantage_series(function)
+        if not _latest_point_covers_expected_month(data, event_dt_utc):
+            expected = _expected_reference_month(event_dt_utc)
+            logger.warning(
+                "Alpha Vantage pas encore à jour pour %s (%s) : dernier point %s, attendu %04d-%02d",
+                title, function, data[0]["date"] if data else "aucun", expected[0], expected[1],
+            )
+            return None
         return _compute_alphavantage_actual(data, transform)
     except Exception as exc:
         logger.warning("Alpha Vantage indisponible pour %s (%s): %s", title, function, exc)
@@ -400,7 +434,7 @@ def fetch_actual_result(currency: str, title: str, event_dt_utc: datetime) -> st
     haut), puis FMP en secours. Retourne None si aucune source ne peut
     répondre (l'appelant doit gérer ce cas proprement plutôt que d'échouer).
     """
-    actual = fetch_actual_from_alphavantage(currency, title)
+    actual = fetch_actual_from_alphavantage(currency, title, event_dt_utc)
     if actual:
         return actual
 
