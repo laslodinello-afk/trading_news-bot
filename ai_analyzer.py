@@ -85,9 +85,10 @@ _BREAKING_NEWS_SCHEMA = {
             "type": "ARRAY",
             "items": {
                 "type": "OBJECT",
-                "required": ["index", "resume", "biais", "raisonnement", "danger"],
+                "required": ["index", "importance", "resume", "biais", "raisonnement", "danger"],
                 "properties": {
                     "index": {"type": "INTEGER"},
+                    "importance": {"type": "INTEGER"},
                     "resume": {"type": "STRING"},
                     "biais": _BIAS_SCHEMA,
                     "raisonnement": {"type": "STRING"},
@@ -97,6 +98,15 @@ _BREAKING_NEWS_SCHEMA = {
         }
     },
 }
+
+IMPORTANCE_STARS = {1: "⭐", 2: "⭐⭐", 3: "⭐⭐⭐"}
+
+
+def _format_importance(value) -> str:
+    try:
+        return IMPORTANCE_STARS.get(int(value), "⭐⭐")
+    except (TypeError, ValueError):
+        return "⭐⭐"
 
 
 def call_gemini(
@@ -384,10 +394,19 @@ Articles :
 {articles_block}
 
 Renvoie un tableau "items" (vide si rien de pertinent). Pour chaque article retenu :
-"index" (son numéro dans la liste ci-dessus), "resume" (1 phrase en français), "biais"
-(un objet {{"paire": "...", "direction": "haussier"|"baissier"|"neutre"}} par paire concernée),
-"raisonnement" (1 phrase), "danger" ("ok"|"prudence"|"danger" — "ok" est normal pour une
-news "économie ordinaire" sans urgence, ne force pas "prudence" par défaut)."""
+- "index" : son numéro dans la liste ci-dessus
+- "importance" : note de 1 à 3 sur la portée de la news pour un daytrader —
+  1 = mineur, juste bon à savoir, sans effet notable attendu ; 2 = modérément
+  important, peut créer un peu de mouvement ; 3 = fort impact attendu, à
+  surveiller de près. Ne mets pas systématiquement 3, sois discriminant.
+- "resume" : 1 phrase en français qui résume la news elle-même
+- "biais" : un objet {{"paire": "...", "direction": "haussier"|"baissier"|"neutre"}} par paire concernée
+- "raisonnement" : 1 phrase CONCRÈTE sur ce qui va probablement se passer sur les marchés
+  dans les prochaines heures à cause de cette news (pas juste "pourquoi", mais "et donc quoi
+  ensuite" — ex : "Le dollar devrait s'affaiblir à court terme, les indices US pourraient
+  monter sur fond d'anticipation de baisse des taux.")
+- "danger" : "ok"|"prudence"|"danger" — "ok" est normal pour une news "économie ordinaire"
+  sans urgence, ne force pas "prudence" par défaut."""
 
     result = call_gemini(prompt, _BREAKING_NEWS_SCHEMA, max_tokens=1500)
     items = (result or {}).get("items", [])
@@ -398,6 +417,7 @@ news "économie ordinaire" sans urgence, ne force pas "prudence" par défaut).""
         if not idx or not (1 <= idx <= len(batch)):
             continue
         article = dict(batch[idx - 1])
+        article["importance"] = _format_importance(item.get("importance"))
         article["resume"] = item.get("resume", "")
         article["biais"] = _format_bias(item.get("biais", []))
         article["raisonnement"] = item.get("raisonnement", "")

@@ -292,6 +292,7 @@ def run_test_mode() -> None:
         "title": "Exemple : déclaration surprise d'un responsable de la Fed sur les taux",
         "source": "Exemple News",
         "url": "https://example.com",
+        "importance": "⭐⭐⭐",
     }
     if ai_result:
         sample_article.update(ai_result)
