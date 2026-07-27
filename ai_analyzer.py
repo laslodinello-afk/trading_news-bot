@@ -357,14 +357,28 @@ def filter_breaking_news(candidates: list[dict]) -> list[dict]:
     batch = candidates[:MAX_CANDIDATES_PER_BATCH]
     articles_block = "\n".join(f"{i+1}. [{a['source']}] {a['title']}" for i, a in enumerate(batch))
     pairs = ", ".join(config.TRADING_PAIRS)
-    prompt = f"""Voici des titres d'articles de presse récents. Ne garde QUE ceux qui peuvent avoir un
-impact réel et à court terme sur les marchés suivis ({pairs}). Exemples de sujets pertinents :
+    prompt = f"""Voici des titres d'articles de presse récents. Garde ceux qui peuvent avoir un impact,
+même modéré, sur les marchés suivis ({pairs}) — pas seulement les chocs majeurs. Deux niveaux :
+
+CHOC (danger="danger" ou "prudence") :
 - Déclarations ou tweets de responsables politiques/banques centrales US-UE-UK sur l'économie, les taux ou les droits de douane
 - Conflits armés, attentats, événements géopolitiques majeurs (y compris zones de production pétrolière)
 - Démission/limogeage de dirigeant économique clé, défaut de paiement souverain
 - Crypto : décision SEC/CFTC sur un ETF ou une régulation, hack ou faillite d'exchange, dépeg d'un stablecoin majeur
 - Pétrole : décision OPEP/OPEP+, coupure de production, tensions dans une zone de production/transit majeure
-Ignore tout le reste (sport, people, faits divers locaux, analyses techniques, opinions).
+
+ÉCONOMIE PLUS ORDINAIRE mais non planifiée (danger="ok" si pas d'urgence particulière) :
+- Accord ou tension commerciale, nouveaux droits de douane annoncés (hors clash majeur)
+- Vague de licenciements ou gel d'embauche dans un grand groupe/secteur
+- Commentaire "hawkish"/"dovish" d'un banquier central hors réunion officielle
+- Craintes de récession, ralentissement/accélération de la croissance, révision de prévision GDP
+- Mouvement notable des marchés actions (rally, chute, forte volatilité) sans être un krach
+- Tensions sur les chaînes d'approvisionnement, pénurie (semi-conducteurs...), choc énergétique
+- Shutdown gouvernemental, plafond de la dette, plan de relance budgétaire
+- Données de confiance des consommateurs ou de l'immobilier US quand elles surprennent
+
+Ignore : sport, people, faits divers purement locaux, analyses techniques, opinions, articles
+qui mentionnent juste un mot-clé en passant sans lien réel avec ces sujets.
 
 Articles :
 {articles_block}
@@ -372,7 +386,8 @@ Articles :
 Renvoie un tableau "items" (vide si rien de pertinent). Pour chaque article retenu :
 "index" (son numéro dans la liste ci-dessus), "resume" (1 phrase en français), "biais"
 (un objet {{"paire": "...", "direction": "haussier"|"baissier"|"neutre"}} par paire concernée),
-"raisonnement" (1 phrase), "danger" ("ok"|"prudence"|"danger")."""
+"raisonnement" (1 phrase), "danger" ("ok"|"prudence"|"danger" — "ok" est normal pour une
+news "économie ordinaire" sans urgence, ne force pas "prudence" par défaut)."""
 
     result = call_gemini(prompt, _BREAKING_NEWS_SCHEMA, max_tokens=1500)
     items = (result or {}).get("items", [])

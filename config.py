@@ -120,7 +120,8 @@ BREAKING_NEWS_INTERVAL_MINUTES = 15  # fréquence de veille GDELT/NewsAPI
 BREAKING_NEWS_LOOKBACK_MINUTES = 20  # fenêtre de recherche à chaque passage
 
 # Mots-clés de veille "breaking news" (tweet choc, conflit, discours banque centrale,
-# régulation crypto, choc pétrolier...)
+# régulation crypto, choc pétrolier... + actualité économique plus "ordinaire" mais
+# non planifiée, voir catégorie "Économie générale" ci-dessous)
 BREAKING_NEWS_KEYWORDS = [
     kw.strip()
     for kw in os.getenv(
@@ -132,7 +133,13 @@ BREAKING_NEWS_KEYWORDS = [
         "Bitcoin ETF,SEC crypto,SEC Chair,CFTC crypto,Binance,Coinbase,crypto regulation,"
         "stablecoin,exchange hack,crypto exchange collapse,Bitcoin halving,"
         # Pétrole / matières premières
-        "OPEC,OPEC+,oil production cut,Saudi Arabia oil,Strait of Hormuz",
+        "OPEC,OPEC+,oil production cut,Saudi Arabia oil,Strait of Hormuz,"
+        # Économie générale (non planifiée, impact plus modéré mais réel)
+        "trade deal,trade war,export ban,layoffs,hiring freeze,job cuts,"
+        "recession,economic slowdown,GDP forecast,stock market rally,stock selloff,"
+        "market crash,market volatility,supply chain,chip shortage,energy crisis,"
+        "government shutdown,debt ceiling,stimulus package,hawkish,dovish,"
+        "consumer confidence,housing market",
     ).split(",")
     if kw.strip()
 ]

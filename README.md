@@ -424,7 +424,7 @@ Tout se règle dans `.env` (valeurs) ou `config.py` (réglages avancés) :
 - **Délai de l'alerte "avant news"** : `ALERT_BEFORE_MINUTES` (30 min par défaut).
 - **Taille max du lot soumis à la reclassification IA** : `MAX_RECLASSIFY_BATCH` dans `ai_analyzer.py` (60 par défaut, une semaine chargée peut approcher les 40-45 events "Low" — augmente si le log affiche un avertissement de troncature).
 - **Fraîcheur du cache Alpha Vantage** : `ALPHAVANTAGE_CACHE_MAX_AGE_HOURS` dans `config.py` (20h par défaut — laisse tel quel sauf si tu ajoutes beaucoup d'indicateurs et approches le quota de 25 requêtes/jour).
-- **Mots-clés de la veille breaking news** : variable `BREAKING_NEWS_KEYWORDS` dans `.env`, séparés par des virgules.
+- **Mots-clés de la veille breaking news** : variable `BREAKING_NEWS_KEYWORDS` dans `.env`, séparés par des virgules. Couvre à la fois les chocs majeurs (guerre, démission, hack crypto...) et l'économie plus "ordinaire" non planifiée (licenciements, confiance des consommateurs, pénurie de puces...) — le tri IA (`ai_analyzer.filter_breaking_news`) calibre le niveau de danger en conséquence (🟢 pour du simplement informatif, pas systématiquement alarmiste).
 - **Fréquence de la veille breaking news** : `BREAKING_NEWS_INTERVAL_MINUTES` dans `config.py` (15 min par défaut — ne descends pas trop bas, le quota NewsAPI gratuit est de 100 requêtes/jour).
 
 Après modification, redéploie sur Render (un `git push` suffit, Render redéploie automatiquement) ou relance en local.
