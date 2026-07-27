@@ -4,6 +4,7 @@ envoyées (sinon un redémarrage ou un tick de scheduler renverrait tout en doub
 """
 from __future__ import annotations
 
+import json
 import sqlite3
 from contextlib import contextmanager
 from datetime import date, datetime, time, timedelta, timezone
@@ -41,6 +42,12 @@ CREATE TABLE IF NOT EXISTS sent_news (
 CREATE TABLE IF NOT EXISTS error_alerts (
     error_key TEXT PRIMARY KEY,
     sent_at TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS alphavantage_cache (
+    function TEXT PRIMARY KEY,
+    data_json TEXT NOT NULL,
+    fetched_at TEXT NOT NULL
 );
 """
 
@@ -259,4 +266,31 @@ def mark_error_sent(error_key: str) -> None:
             ON CONFLICT(error_key) DO UPDATE SET sent_at=excluded.sent_at
             """,
             (error_key, _now_iso()),
+        )
+
+
+# --- cache Alpha Vantage (résultats réels USD) ----------------------------------
+
+def get_alphavantage_cache(function: str, max_age_hours: float) -> list | None:
+    """None si absent ou plus vieux que max_age_hours (force un nouvel appel API)."""
+    with get_conn() as conn:
+        row = conn.execute(
+            "SELECT data_json, fetched_at FROM alphavantage_cache WHERE function=?", (function,)
+        ).fetchone()
+    if not row:
+        return None
+    age_hours = (datetime.now(timezone.utc) - datetime.fromisoformat(row["fetched_at"])).total_seconds() / 3600
+    if age_hours > max_age_hours:
+        return None
+    return json.loads(row["data_json"])
+
+
+def set_alphavantage_cache(function: str, data: list) -> None:
+    with get_conn() as conn:
+        conn.execute(
+            """
+            INSERT INTO alphavantage_cache (function, data_json, fetched_at) VALUES (?, ?, ?)
+            ON CONFLICT(function) DO UPDATE SET data_json=excluded.data_json, fetched_at=excluded.fetched_at
+            """,
+            (function, json.dumps(data), _now_iso()),
         )

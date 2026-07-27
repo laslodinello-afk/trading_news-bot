@@ -12,6 +12,8 @@ services:
         sync: false
       - key: GEMINI_API_KEY
         sync: false
+      - key: ALPHAVANTAGE_API_KEY
+        sync: false
       - key: FMP_API_KEY
         sync: false
       - key: NEWSAPI_KEY

@@ -7,8 +7,13 @@ titre, la devise, l'heure exacte, l'impact, la prévision et le précédent —
 mais jamais le résultat réel une fois publié.
 
 Source de secours : Financial Modeling Prep (FMP), utilisée si ForexFactory
-est injoignable, ET utilisée systématiquement pour aller chercher le
-"résultat réel" (actual) d'une news après sa publication.
+est injoignable (le calendrier lui-même — le "résultat réel" n'est plus
+accessible sur son plan gratuit, constaté en production).
+
+"Résultat réel" (actual) après publication : Alpha Vantage en priorité (USD
+uniquement, quelques indicateurs headline reconnus — NFP, CPI, Durable Goods,
+Retail Sales, Unemployment Rate), avec repli sur FMP (généralement
+indisponible, gardé au cas où leur politique changerait).
 
 Toute erreur réseau/format est absorbée ici : une source qui tombe ne doit
 jamais faire planter l'agent, seulement dégrader (voir main.py pour l'alerte
@@ -25,6 +30,7 @@ from datetime import datetime, timedelta, timezone
 import requests
 
 import config
+import db
 
 logger = logging.getLogger("calendar_fetcher")
 
@@ -275,13 +281,129 @@ def refresh_calendar() -> tuple[list[dict], str]:
         ) from exc
 
 
+# --- Alpha Vantage (résultats réels USD : NFP, CPI, Durable Goods...) -----------
+#
+# ForexFactory ne fournit jamais l'"actual", et FMP a fermé cet accès sur son
+# plan gratuit (constaté). Alpha Vantage expose en clair quelques séries macro
+# US, gratuitement mais avec un quota serré (25 requêtes/jour) — d'où le cache
+# DB (1 appel/jour/indicateur maximum, largement dans le quota pour 5 séries).
+#
+# Portée volontairement limitée : uniquement USD, et uniquement les titres
+# HEADLINE (jamais "Core ...") car Alpha Vantage ne distingue pas la version
+# "core" (hors alimentation/énergie ou hors transport) de la version globale —
+# mieux vaut ne rien afficher que d'afficher le mauvais chiffre.
+ALPHAVANTAGE_URL = "https://www.alphavantage.co/query"
+
+# titre ForexFactory (normalisé, minuscules, sans "core") -> (fonction Alpha Vantage, transformation)
+_ALPHAVANTAGE_MAPPING = {
+    "non-farm employment change": ("NONFARM_PAYROLL", "change"),
+    "nonfarm payrolls": ("NONFARM_PAYROLL", "change"),
+    "durable goods orders m/m": ("DURABLES", "pct_mm"),
+    "cpi m/m": ("CPI", "pct_mm"),
+    "cpi y/y": ("CPI", "pct_yy"),
+    "retail sales m/m": ("RETAIL_SALES", "pct_mm"),
+    "unemployment rate": ("UNEMPLOYMENT", "level"),
+}
+
+
+def _match_alphavantage_series(title: str) -> tuple[str, str] | None:
+    normalized = title.strip().lower()
+    if "core" in normalized:
+        return None  # série "core" non distinguée par Alpha Vantage, on ne devine pas
+    return _ALPHAVANTAGE_MAPPING.get(normalized)
+
+
+_alphavantage_last_call_at: float = 0.0
+_ALPHAVANTAGE_MIN_INTERVAL_SECONDS = 1.2  # limite gratuite documentée : 1 req/s
+
+
+def _fetch_alphavantage_series(function: str) -> list[dict]:
+    cached = db.get_alphavantage_cache(function, config.ALPHAVANTAGE_CACHE_MAX_AGE_HOURS)
+    if cached is not None:
+        return cached
+
+    # Si plusieurs indicateurs différents doivent être récupérés le même jour
+    # (plusieurs "cache miss" dans le même passage), on respecte la limite
+    # "1 requête/seconde" plutôt que de les envoyer en rafale.
+    global _alphavantage_last_call_at
+    elapsed = time.monotonic() - _alphavantage_last_call_at
+    if elapsed < _ALPHAVANTAGE_MIN_INTERVAL_SECONDS:
+        time.sleep(_ALPHAVANTAGE_MIN_INTERVAL_SECONDS - elapsed)
+
+    resp = requests.get(
+        ALPHAVANTAGE_URL,
+        params={"function": function, "apikey": config.ALPHAVANTAGE_API_KEY},
+        headers=HEADERS,
+        timeout=TIMEOUT,
+    )
+    _alphavantage_last_call_at = time.monotonic()
+    resp.raise_for_status()
+    payload = resp.json()
+    if "data" not in payload:
+        raise RuntimeError(payload.get("Information") or payload.get("Error Message") or str(payload)[:200])
+
+    data = payload["data"]
+    db.set_alphavantage_cache(function, data)
+    return data
+
+
+def _compute_alphavantage_actual(data: list[dict], transform: str) -> str | None:
+    if transform == "level":
+        if len(data) < 1:
+            return None
+        return f"{float(data[0]['value']):g}%"
+
+    if transform == "change":
+        if len(data) < 2:
+            return None
+        delta = float(data[0]["value"]) - float(data[1]["value"])
+        return f"{delta:+.0f}K"
+
+    if transform == "pct_mm":
+        if len(data) < 2:
+            return None
+        latest, previous = float(data[0]["value"]), float(data[1]["value"])
+        if previous == 0:
+            return None
+        return f"{(latest - previous) / previous * 100:+.1f}%"
+
+    if transform == "pct_yy":
+        if len(data) < 13:
+            return None
+        latest, year_ago = float(data[0]["value"]), float(data[12]["value"])
+        if year_ago == 0:
+            return None
+        return f"{(latest - year_ago) / year_ago * 100:+.1f}%"
+
+    return None
+
+
+def fetch_actual_from_alphavantage(currency: str, title: str) -> str | None:
+    if currency != "USD" or not config.ALPHAVANTAGE_API_KEY:
+        return None
+    match = _match_alphavantage_series(title)
+    if not match:
+        return None
+    function, transform = match
+    try:
+        data = _fetch_alphavantage_series(function)
+        return _compute_alphavantage_actual(data, transform)
+    except Exception as exc:
+        logger.warning("Alpha Vantage indisponible pour %s (%s): %s", title, function, exc)
+        return None
+
+
 def fetch_actual_result(currency: str, title: str, event_dt_utc: datetime) -> str | None:
     """
-    Cherche le résultat réel ("actual") d'une news déjà publiée via FMP.
-    Retourne None si FMP n'est pas configuré, indisponible, ou si aucune
-    correspondance fiable n'est trouvée (l'appelant doit gérer ce cas
-    proprement plutôt que d'échouer).
+    Cherche le résultat réel ("actual") d'une news déjà publiée.
+    Essaie d'abord Alpha Vantage (USD, titres headline reconnus — voir plus
+    haut), puis FMP en secours. Retourne None si aucune source ne peut
+    répondre (l'appelant doit gérer ce cas proprement plutôt que d'échouer).
     """
+    actual = fetch_actual_from_alphavantage(currency, title)
+    if actual:
+        return actual
+
     if not config.FMP_API_KEY:
         return None
     try:

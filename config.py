@@ -18,6 +18,12 @@ GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
 FMP_API_KEY = os.getenv("FMP_API_KEY", "")
 NEWSAPI_KEY = os.getenv("NEWSAPI_KEY", "")
 
+# Résultats réels USD (NFP, CPI, Durable Goods...) : gratuite sur
+# https://www.alphavantage.co/support/#api-key (25 requêtes/jour, mise en cache
+# côté agent pour ne jamais approcher cette limite — voir calendar_fetcher.py).
+ALPHAVANTAGE_API_KEY = os.getenv("ALPHAVANTAGE_API_KEY", "")
+ALPHAVANTAGE_CACHE_MAX_AGE_HOURS = 20
+
 # Optionnelle (fond vidéo pour --render) : gratuite sur https://www.pexels.com/api/
 PEXELS_API_KEY = os.getenv("PEXELS_API_KEY", "")
 

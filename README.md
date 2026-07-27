@@ -14,15 +14,16 @@ Il tourne indépendamment de ton ordinateur une fois déployé (voir Étape 9).
 
 ## Avant de commencer : ce qu'il te faut
 
-**100% gratuit, sans limite de temps, sans carte bancaire.** Tu vas créer 5 comptes/clés au total, ça prend environ 20 minutes :
+**100% gratuit, sans limite de temps, sans carte bancaire.** Tu vas créer plusieurs comptes/clés au total, ça prend environ 25 minutes :
 
 | # | Compte | Gratuit ? | Obligatoire ? |
 |---|--------|-----------|----------------|
 | 1 | Bot Telegram (@BotFather) | ✅ | Oui |
 | 2 | Google AI Studio (Gemini) | ✅ Palier gratuit permanent | Oui |
-| 3 | Financial Modeling Prep (FMP) | ✅ mais fonctionnalité limitée (voir Étape 4) | Facultatif |
-| 4 | NewsAPI.org | ✅ | Recommandé |
-| 5 | Render.com (hébergement 24/7) | ✅ | Oui, pour le 24/7 |
+| 3 | Alpha Vantage | ✅ (25 requêtes/jour) | Recommandé — résultat réel USD (voir Étape 4) |
+| 4 | Financial Modeling Prep (FMP) | ✅ mais fonctionnalité limitée (voir Étape 4) | Facultatif |
+| 5 | NewsAPI.org | ✅ | Recommandé |
+| 6 | Render.com (hébergement 24/7) | ✅ | Oui, pour le 24/7 |
 
 ---
 
@@ -73,14 +74,27 @@ Le palier gratuit de Gemini (modèle Flash) offre 1500 requêtes par jour — ce
 
 ---
 
-## Étape 4 — Clés gratuites recommandées (FMP + NewsAPI)
+## Étape 4 — Clés gratuites recommandées (Alpha Vantage + FMP + NewsAPI)
 
-Ces deux clés sont **optionnelles** : sans elles, l'agent fonctionne quand même (calendrier via ForexFactory) mais sans veille breaking news (voir NewsAPI ci-dessous).
+Ces clés sont **optionnelles** : sans elles, l'agent fonctionne quand même (calendrier via ForexFactory) mais sans résultat réel après publication ni veille breaking news.
+
+### Alpha Vantage (résultat réel — USD uniquement)
+Seule source trouvée qui donne vraiment le **résultat réel** après publication, gratuitement — mais seulement pour les États-Unis, et seulement pour quelques indicateurs "headline" (pas les versions "Core", qu'Alpha Vantage ne distingue pas de la version globale) :
+- Emploi (Non-Farm Employment Change)
+- Inflation (CPI m/m et y/y)
+- Durable Goods Orders m/m
+- Retail Sales m/m
+- Unemployment Rate
+
+Pour EUR/GBP, ou pour les versions "Core", le résultat réel reste indisponible (pas de source gratuite fiable trouvée).
+
+1. Va sur [alphavantage.co/support/#api-key](https://www.alphavantage.co/support/#api-key), entre juste ton email.
+2. La clé s'affiche immédiatement. Copie-la → `ALPHAVANTAGE_API_KEY`.
+3. Le plan gratuit donne 25 requêtes/jour (1/seconde max) — l'agent met chaque indicateur en cache 20h, donc largement suffisant (5-6 requêtes/jour au maximum).
 
 ### FMP (Financial Modeling Prep)
-⚠️ **Mise à jour (testé en conditions réelles) : le plan gratuit FMP ne donne plus du tout accès au calendrier économique**, ni via l'ancien endpoint ("réservé aux abonnés antérieurs à août 2025") ni via le nouveau ("réservé aux plans payants"). Concrètement, tant que tu n'as pas un compte FMP payant, le **"résultat réel" après publication restera indisponible** — l'agent continue de fonctionner normalement pour tout le reste (calendrier ForexFactory, prévision/précédent, alertes avant/après, IA), juste sans cette donnée précise.
+⚠️ **Mise à jour (testé en conditions réelles) : le plan gratuit FMP ne donne plus du tout accès au calendrier économique**, ni via l'ancien endpoint ("réservé aux abonnés antérieurs à août 2025") ni via le nouveau ("réservé aux plans payants"). L'agent l'utilise uniquement comme secours si ForexFactory tombe, et comme filet de sécurité pour le résultat réel (au cas où FMP changerait sa politique) — Alpha Vantage ci-dessus reste la source principale pour ça.
 
-Tu peux quand même créer une clé gratuite au cas où FMP changerait sa politique (l'agent l'utilisera automatiquement si ça redevient accessible, sans rien à reconfigurer) :
 1. Va sur [site.financialmodelingprep.com/register](https://site.financialmodelingprep.com/register) et crée un compte gratuit.
 2. Ton **Dashboard** affiche directement ta clé API. Copie-la → `FMP_API_KEY`.
 
@@ -407,6 +421,7 @@ Tout se règle dans `.env` (valeurs) ou `config.py` (réglages avancés) :
 - **Horaire de génération des scripts vidéo** : `VIDEO_SCRIPTS_HOUR` / `VIDEO_SCRIPTS_MINUTE` dans `config.py` (23h30 par défaut, après le débrief) — voir section "Scripts vidéo courts" plus haut pour le CTA/disclaimer à personnaliser avant la première utilisation.
 - **Délai de l'alerte "avant news"** : `ALERT_BEFORE_MINUTES` (30 min par défaut).
 - **Taille max du lot soumis à la reclassification IA** : `MAX_RECLASSIFY_BATCH` dans `ai_analyzer.py` (60 par défaut, une semaine chargée peut approcher les 40-45 events "Low" — augmente si le log affiche un avertissement de troncature).
+- **Fraîcheur du cache Alpha Vantage** : `ALPHAVANTAGE_CACHE_MAX_AGE_HOURS` dans `config.py` (20h par défaut — laisse tel quel sauf si tu ajoutes beaucoup d'indicateurs et approches le quota de 25 requêtes/jour).
 - **Mots-clés de la veille breaking news** : variable `BREAKING_NEWS_KEYWORDS` dans `.env`, séparés par des virgules.
 - **Fréquence de la veille breaking news** : `BREAKING_NEWS_INTERVAL_MINUTES` dans `config.py` (15 min par défaut — ne descends pas trop bas, le quota NewsAPI gratuit est de 100 requêtes/jour).
 
@@ -419,7 +434,7 @@ Après modification, redéploie sur Render (un `git push` suffit, Render redépl
 Pour que tu saches exactement ce que fait (et ne fait pas) l'agent :
 
 - **Breaking news = best-effort, pas du vrai temps réel.** Il n'existe aucune API gratuite fiable pour capter un tweet ou une déclaration à la seconde près (l'API X/Twitter coûte ~100$/mois). L'agent combine GDELT et NewsAPI, avec un délai typique de 5 à 15 minutes, et un tri par IA pour limiter les fausses alertes — mais des faux négatifs (rien détecté) et faux positifs (alerte peu pertinente) restent possibles.
-- **Le "résultat réel" après publication ne fonctionne pas actuellement (confirmé).** Le calendrier ForexFactory (source principale, gratuite et fiable pour les horaires/prévisions) ne publie jamais le résultat réel après coup, et FMP a retiré cette donnée de son plan gratuit courant 2025 — testé en conditions réelles, l'accès est refusé même avec une clé FMP valide. Les alertes "après publication" afficheront donc "indisponible" tant que tu n'as pas un compte FMP payant (ou une autre source que tu voudrais brancher toi-même).
+- **Le "résultat réel" après publication ne fonctionne que pour certains indicateurs USD.** Le calendrier ForexFactory ne publie jamais le résultat réel, et FMP a retiré cette donnée de son plan gratuit (testé, accès refusé même avec une clé valide). Alpha Vantage (Étape 4) comble une partie du trou : NFP, CPI, Durable Goods Orders, Retail Sales et Unemployment Rate — mais uniquement les versions headline (jamais "Core ..."), et uniquement pour les USD. Pour EUR/GBP ou les versions "Core", ça reste "indisponible" — aucune source gratuite fiable trouvée à ce jour.
 - **Le calendrier ForexFactory se décale le week-end.** Le flux gratuit utilisé ne couvre que la semaine calendaire en cours ; le nouveau contenu de la semaine suivante apparaît généralement dimanche soir/lundi matin.
 - **La classification "impact" de ForexFactory sous-évalue parfois des events réellement suivis** (constaté : Durable Goods Orders, Ifo Business Climate classés "Low" alors qu'Investing.com les classe plus haut). L'agent fait relire chaque event "Low" par l'IA à chaque rafraîchissement du calendrier (toutes les 6h) : ceux qu'elle juge sous-évalués sont remontés en Medium/High et marqués 🤖 dans les messages pour rester distinguables d'une classification ForexFactory native. Ce n'est pas une donnée de marché en temps réel, juste le jugement général de l'IA sur ce qui compte habituellement en day trading — à prendre comme un filet de sécurité, pas une garantie absolue.
 - **Crypto (BTC/ETH), indices (US30/SP500/NASDAQ/DAX/CAC40) et pétrole (BRENT) n'ont PAS de calendrier économique dédié.** Il n'existe pas de source gratuite équivalente à ForexFactory pour ces instruments (ex : pas d'heure précise pour "prochaine décision SEC sur un ETF"). Ils reçoivent : (1) le biais IA généré automatiquement à chaque news USD ou EUR existante (le crypto et les indices US sont très corrélés au dollar), et (2) une couverture best-effort via la veille breaking news (mots-clés SEC/CFTC/OPEP/exchange hack...). En clair : pas d'alerte "30 min avant" programmée pour ces instruments, seulement des alertes réactives.
