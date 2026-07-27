@@ -1,13 +1,18 @@
 """
 Veille "breaking news" : tout ce qui n'est PAS dans le calendrier économique
 mais qui peut faire bouger le marché (tweet choc, discours surprise, conflit
-armé, attentat...).
+armé, attentat, actualité économique plus ordinaire...).
 
-Il n'existe pas d'API gratuite et fiable en vrai temps réel pour ça (l'API
-Twitter/X est payante). On combine donc deux sources gratuites en best-effort :
-
-- GDELT (aucune clé, gratuit, illimité, mais 5-15 min de délai)
-- NewsAPI.org (clé gratuite, 100 req/jour, quelques minutes de délai)
+Sources combinées en best-effort :
+- Flux RSS spécialisés forex/trading (InvestingLive, FXStreet) : gratuits,
+  sans clé, GENUINEMENT temps réel (25-60 min de délai constaté, contre ~24h
+  pour NewsAPI gratuit — voir plus bas). Déjà centrés sur le trading, donc
+  moins de bruit à filtrer que les recherches par mot-clé ci-dessous.
+- GDELT (aucune clé, gratuit, illimité) : rate-limite l'IP partagée de Render
+  en pratique (constaté), résultats peu fiables depuis ce type d'hébergeur.
+- NewsAPI.org (clé gratuite, 100 req/jour) : le plan gratuit a ~24h de délai
+  sur les articles disponibles (constaté, non documenté clairement par
+  NewsAPI) — quasi inutile pour du "breaking" mais gardé en secours.
 
 Les résultats bruts sont ensuite filtrés par l'IA (voir ai_analyzer.py) pour
 ne garder que ce qui a un vrai impact potentiel sur le trading — sinon le
@@ -18,7 +23,9 @@ from __future__ import annotations
 import hashlib
 import logging
 import time
+import xml.etree.ElementTree as ET
 from datetime import datetime, timedelta, timezone
+from email.utils import parsedate_to_datetime
 
 import requests
 
@@ -30,6 +37,12 @@ GDELT_URL = "https://api.gdeltproject.org/api/v2/doc/doc"
 NEWSAPI_URL = "https://newsapi.org/v2/everything"
 HEADERS = {"User-Agent": "Mozilla/5.0 (trading-news-agent; +https://github.com)"}
 TIMEOUT = 15
+
+# (nom affiché, URL du flux) — flux RSS publics, pas de clé requise.
+RSS_FEEDS = [
+    ("InvestingLive", "https://www.forexlive.com/feed/news"),
+    ("FXStreet", "https://www.fxstreet.com/rss/news"),
+]
 
 
 def _news_key(url: str) -> str:
@@ -161,14 +174,59 @@ def _fetch_newsapi(lookback_minutes: int) -> list[dict]:
     return results
 
 
+def _fetch_rss_feed(source_name: str, url: str, lookback_minutes: int) -> list[dict]:
+    """
+    Parse un flux RSS 2.0 standard (xml.etree, stdlib — pas de dépendance
+    supplémentaire) et ne garde que les items publiés dans la fenêtre de
+    lookback. Ces flux étant déjà spécialisés forex/trading, pas de filtrage
+    par mot-clé ici : tout item récent est un candidat, le tri de pertinence
+    se fait plus loin par l'IA (ai_analyzer.filter_breaking_news).
+    """
+    try:
+        resp = requests.get(url, headers=HEADERS, timeout=TIMEOUT)
+        resp.raise_for_status()
+        root = ET.fromstring(resp.content)
+    except Exception as exc:
+        logger.warning("Flux RSS %s indisponible: %s", source_name, exc)
+        return []
+
+    cutoff = datetime.now(timezone.utc) - timedelta(minutes=lookback_minutes)
+    results = []
+    for item in root.findall("./channel/item"):
+        title = (item.findtext("title") or "").strip()
+        link = (item.findtext("link") or "").strip()
+        pub_date_raw = item.findtext("pubDate")
+        if not title or not link or not pub_date_raw:
+            continue
+        try:
+            pub_date = parsedate_to_datetime(pub_date_raw)
+            if pub_date.tzinfo is None:
+                pub_date = pub_date.replace(tzinfo=timezone.utc)
+        except (TypeError, ValueError):
+            continue
+        if pub_date < cutoff:
+            continue
+        results.append(
+            {
+                "title": title,
+                "url": link,
+                "source": source_name,
+                "published_at": pub_date.isoformat(),
+            }
+        )
+    return results
+
+
 def fetch_candidates() -> list[dict]:
     """
-    Récupère les articles récents des deux sources et dédupe par URL.
+    Récupère les articles récents de toutes les sources et dédupe par URL.
     Ne fait AUCUN jugement de pertinence ni de filtrage "déjà envoyé" :
     ça reste au niveau de main.py (dédup DB) et ai_analyzer (pertinence).
     """
     lookback = config.BREAKING_NEWS_LOOKBACK_MINUTES
     combined = _fetch_gdelt(lookback) + _fetch_newsapi(lookback)
+    for source_name, url in RSS_FEEDS:
+        combined += _fetch_rss_feed(source_name, url, lookback)
 
     seen_urls = set()
     deduped = []
