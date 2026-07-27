@@ -1,0 +1,51 @@
+name: Rafraîchir le cache breaking news (GDELT)
+
+# Même principe que refresh-calendar.yml : contourne un blocage de l'IP
+# partagée de Render sur l'API GDELT en récupérant les articles depuis
+# l'infrastructure GitHub Actions, puis en les committant dans le repo. Render
+# lit ce fichier au lieu d'appeler GDELT directement (voir news_watcher.py).
+# Réutilise directement news_watcher._fetch_gdelt() pour ne jamais dupliquer
+# la liste de mots-clés ailleurs que dans .env/config.py.
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Installer les dépendances minimales
+        run: pip install -q requests python-dotenv
+
+      - name: Récupérer les articles GDELT et construire le cache
+        run: |
+          python3 -c "
+          import json
+          from datetime import datetime, timezone
+          import config
+          import news_watcher
+
+          articles = news_watcher._fetch_gdelt_direct(config.BREAKING_NEWS_LOOKBACK_MINUTES)
+          cache = {'fetched_at': datetime.now(timezone.utc).isoformat(), 'articles': articles}
+          json.dump(cache, open('gdelt_cache.json', 'w'), ensure_ascii=False, indent=2)
+          print(f'{len(articles)} articles récupérés')
+          "
+
+      - name: Commit si changement
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add gdelt_cache.json
+          git diff --staged --quiet && echo "Rien de nouveau à commiter." || git commit -m "Rafraîchissement automatique du cache breaking news (GDELT)"
+          git push
