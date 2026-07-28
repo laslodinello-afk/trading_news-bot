@@ -1,131 +1,41 @@
 {
-  "fetched_at": "2026-07-28T16:10:12.997192+00:00",
+  "fetched_at": "2026-07-28T20:53:06.883416+00:00",
   "articles": [
     {
-      "title": "Silver loses ground as hopes for US-Iran deal improve risk appetite",
-      "url": "https://www.fxstreet.com/news/silver-loses-ground-as-hopes-for-us-iran-deal-improve-risk-appetite-202607281605",
+      "title": "United States: Supercore and measurement debates shape Fed path – BNY",
+      "url": "https://www.fxstreet.com/news/united-states-supercore-and-measurement-debates-shape-fed-path-bny-202607282039",
       "source": "FXStreet",
-      "published_at": "2026-07-28T16:05:37+00:00"
+      "published_at": "2026-07-28T20:39:00+00:00"
     },
     {
-      "title": "WTI Price Forecast: Bears target the 200-day SMA after losing the $80 mark",
-      "url": "https://www.fxstreet.com/news/wti-price-forecast-bears-target-the-200-day-sma-after-losing-the-80-mark-202607281601",
+      "title": "Forex Today: US Dollar eases ahead of Fed as Oil and Gold extend losses",
+      "url": "https://www.fxstreet.com/news/forex-today-us-dollar-eases-ahead-of-fed-as-oil-and-gold-extend-losses-202607282015",
       "source": "FXStreet",
-      "published_at": "2026-07-28T16:01:30+00:00"
+      "published_at": "2026-07-28T20:15:14+00:00"
     },
     {
-      "title": "US Dollar Index eases from tops, back to 101.30 ahead of Fed",
-      "url": "https://www.fxstreet.com/news/us-dollar-index-eases-from-tops-back-to-10130-ahead-of-fed-202607281557",
+      "title": "Mexican Peso advances within range against the US Dollar",
+      "url": "https://www.fxstreet.com/news/mexican-peso-advances-within-range-against-the-us-dollar-202607282001",
       "source": "FXStreet",
-      "published_at": "2026-07-28T15:57:16+00:00"
+      "published_at": "2026-07-28T20:01:47+00:00"
     },
     {
-      "title": "Euro skyrockets amid softer US confidence",
-      "url": "https://www.fxstreet.com/news/euro-skyrockets-amid-softer-us-confidence-202607281544",
+      "title": "Silver: Forecast cut but deficit supports upside – Commerzbank",
+      "url": "https://www.fxstreet.com/news/silver-forecast-cut-but-deficit-supports-upside-commerzbank-202607281942",
       "source": "FXStreet",
-      "published_at": "2026-07-28T15:44:03+00:00"
+      "published_at": "2026-07-28T19:42:38+00:00"
     },
     {
-      "title": "Gold: Hawkish Fed delays Gold recovery path – Commerzbank",
-      "url": "https://www.fxstreet.com/news/gold-hawkish-fed-delays-gold-recovery-path-commerzbank-202607281516",
+      "title": "Japanese Yen holds as markets await Tokyo inflation data",
+      "url": "https://www.fxstreet.com/news/japanese-yen-holds-as-markets-await-tokyo-inflation-data-202607281901",
       "source": "FXStreet",
-      "published_at": "2026-07-28T15:16:16+00:00"
+      "published_at": "2026-07-28T19:01:52+00:00"
     },
     {
-      "title": "Oil: Weakens on deal hopes and fragile flows – ING",
-      "url": "https://www.fxstreet.com/news/oil-weakens-on-deal-hopes-and-fragile-flows-ing-202607281508",
+      "title": "Swiss Franc steadies against US Dollar as Fed decision looms",
+      "url": "https://www.fxstreet.com/news/swiss-franc-steadies-against-us-dollar-as-fed-decision-looms-202607281801",
       "source": "FXStreet",
-      "published_at": "2026-07-28T15:08:09+00:00"
-    },
-    {
-      "title": "Australian Dollar holds onto losses after Bullock keeps further rate hikes on the table",
-      "url": "https://www.fxstreet.com/news/australian-dollar-holds-onto-losses-after-bullock-keeps-further-rate-hikes-on-the-table-202607281455",
-      "source": "FXStreet",
-      "published_at": "2026-07-28T14:55:42+00:00"
-    },
-    {
-      "title": "British Pound Sterling has nothing to say in front of two central banks",
-      "url": "https://www.fxstreet.com/news/british-pound-sterling-has-nothing-to-say-in-front-of-two-central-banks-202607281454",
-      "source": "FXStreet",
-      "published_at": "2026-07-28T14:54:03+00:00"
-    },
-    {
-      "title": "British Pound: Bearish reversal extends before BoE – Scotiabank",
-      "url": "https://www.fxstreet.com/news/british-pound-bearish-reversal-extends-before-boe-scotiabank-202607281452",
-      "source": "FXStreet",
-      "published_at": "2026-07-28T14:52:24+00:00"
-    },
-    {
-      "title": "Gold Price Forecast: XAU/USD sits out the panic it was built for",
-      "url": "https://www.fxstreet.com/news/gold-price-forecast-xau-usd-sits-out-the-panic-it-was-built-for-202607281445",
-      "source": "FXStreet",
-      "published_at": "2026-07-28T14:45:39+00:00"
-    },
-    {
-      "title": "Australian Dollar: RBA keeps hike option alive – BNY",
-      "url": "https://www.fxstreet.com/news/australian-dollar-rba-keeps-hike-option-alive-bny-202607281439",
-      "source": "FXStreet",
-      "published_at": "2026-07-28T14:39:31+00:00"
-    },
-    {
-      "title": "Canadian Dollar benefits from softer US Dollar despite lower Oil prices",
-      "url": "https://www.fxstreet.com/news/canadian-dollar-benefits-from-softer-us-dollar-despite-lower-oil-prices-202607281430",
-      "source": "FXStreet",
-      "published_at": "2026-07-28T14:30:36+00:00"
-    },
-    {
-      "title": "Federal Reserve: Knife-edge policy risks surprise – ING",
-      "url": "https://www.fxstreet.com/news/federal-reserve-knife-edge-policy-risks-surprise-ing-202607281424",
-      "source": "FXStreet",
-      "published_at": "2026-07-28T14:24:09+00:00"
-    },
-    {
-      "title": "Euro holds near recent lows as Fed interest rate decision looms",
-      "url": "https://www.fxstreet.com/news/euro-holds-near-recent-lows-against-us-dollar-as-fed-interest-rate-decision-looms-202607281415",
-      "source": "FXStreet",
-      "published_at": "2026-07-28T14:15:16+00:00"
-    },
-    {
-      "title": "Euro: Pressured by softer ECB expectations – Scotiabank",
-      "url": "https://www.fxstreet.com/news/euro-pressured-by-softer-ecb-expectations-scotiabank-202607281410",
-      "source": "FXStreet",
-      "published_at": "2026-07-28T14:10:50+00:00"
-    },
-    {
-      "title": "US CB Consumer Confidence Index eases to 90.8 in July",
-      "url": "https://www.fxstreet.com/news/us-cb-consumer-confidence-index-eases-to-908-in-july-202607281410",
-      "source": "FXStreet",
-      "published_at": "2026-07-28T14:10:16+00:00"
-    },
-    {
-      "title": "Why hot Australian inflation could reignite the Reserve Bank of Australia hike debate",
-      "url": "https://www.fxstreet.com/news/why-hot-australian-inflation-could-reignite-the-reserve-bank-of-australia-hike-debate-202607281401",
-      "source": "FXStreet",
-      "published_at": "2026-07-28T14:01:53+00:00"
-    },
-    {
-      "title": "Swiss Franc: Weak performance tied to carry and Gold – TD Securities",
-      "url": "https://www.fxstreet.com/news/swiss-franc-weak-performance-tied-to-carry-and-gold-td-securities-202607281357",
-      "source": "FXStreet",
-      "published_at": "2026-07-28T13:57:51+00:00"
-    },
-    {
-      "title": "Australian Dollar: RBA pause risk weighs on Aussie – BBH",
-      "url": "https://www.fxstreet.com/news/australian-dollar-rba-pause-risk-weighs-on-aussie-bbh-202607281338",
-      "source": "FXStreet",
-      "published_at": "2026-07-28T13:38:21+00:00"
-    },
-    {
-      "title": "Canadian Dollar: Limited upside for CAD against US Dollar – Scotiabank",
-      "url": "https://www.fxstreet.com/news/canadian-dollar-limited-upside-for-cad-against-us-dollar-scotiabank-202607281323",
-      "source": "FXStreet",
-      "published_at": "2026-07-28T13:23:52+00:00"
-    },
-    {
-      "title": "British Pound: Political risks and BoE stance shape outlook – Rabobank",
-      "url": "https://www.fxstreet.com/news/british-pound-political-risks-and-boe-stance-shape-outlook-rabobank-202607281310",
-      "source": "FXStreet",
-      "published_at": "2026-07-28T13:10:45+00:00"
+      "published_at": "2026-07-28T18:01:29+00:00"
     }
   ]
 }
