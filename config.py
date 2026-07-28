@@ -116,7 +116,7 @@ DAILY_SUMMARY_MINUTE = 0
 EVENING_DEBRIEF_HOUR = 23
 EVENING_DEBRIEF_MINUTE = 0
 
-ALERT_BEFORE_MINUTES = 30  # rappel avant news (impact High uniquement)
+ALERT_BEFORE_MINUTES = 30  # rappel avant news (impact High + Medium)
 NO_TRADE_WINDOW_MINUTES = 15  # conseil "éviter le spread / ne pas trader X min après"
 AFTER_ALERT_MAX_AGE_MINUTES = 60  # au-delà, une news publiée est considérée trop vieille pour être alertée (évite un backlog au premier démarrage)
 

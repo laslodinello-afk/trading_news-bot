@@ -150,13 +150,13 @@ def get_events_for_day(day_start_utc: datetime, day_end_utc: datetime) -> list[s
 
 
 def get_events_needing_before_alert(window_start_utc: datetime, window_end_utc: datetime) -> list[sqlite3.Row]:
-    """News à fort impact (High) dont le déclenchement tombe dans la fenêtre donnée."""
+    """News High/Medium dont le déclenchement tombe dans la fenêtre donnée."""
     with get_conn() as conn:
         cur = conn.execute(
             """
             SELECT e.* FROM events e
             LEFT JOIN sent_alerts sa ON sa.event_key = e.event_key AND sa.alert_type = 'before'
-            WHERE e.impact = 'High'
+            WHERE e.impact IN ('High', 'Medium')
               AND e.event_dt_utc >= ? AND e.event_dt_utc < ?
               AND sa.event_key IS NULL
             ORDER BY e.event_dt_utc ASC
