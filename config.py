@@ -45,7 +45,7 @@ GITHUB_CACHE_MAX_AGE_HOURS = 12  # au-delà, le cache est jugé trop vieux (Acti
 # défaut (repli sur l'appel direct, qui échouera depuis Render) ; à définir ex :
 # https://raw.githubusercontent.com/<user>/<repo>/main/fxstreet_cache.json
 FXSTREET_CACHE_URL = os.getenv("FXSTREET_CACHE_URL", "")
-FXSTREET_CACHE_MAX_AGE_MINUTES = 30  # au-delà, le cache est jugé trop vieux (Action en panne ?)
+FXSTREET_CACHE_MAX_AGE_MINUTES = 15  # au-delà, le cache est jugé trop vieux (Action en panne ?) — l'Action tourne toutes les 5 min, donc 15 min = 2-3 passages ratés d'affilée
 
 # --- Modèle IA ---------------------------------------------------------------
 # Gemini Flash a un palier gratuit permanent (pas un essai limité dans le temps),
@@ -123,8 +123,16 @@ AFTER_ALERT_MAX_AGE_MINUTES = 60  # au-delà, une news publiée est considérée
 CALENDAR_CHECK_INTERVAL_MINUTES = 5  # fréquence de vérification avant/après
 CALENDAR_REFRESH_HOURS = 6  # fréquence de re-téléchargement du calendrier complet
 
-BREAKING_NEWS_INTERVAL_MINUTES = 15  # fréquence de veille GDELT/NewsAPI
-BREAKING_NEWS_LOOKBACK_MINUTES = 20  # fenêtre de recherche à chaque passage
+BREAKING_NEWS_INTERVAL_MINUTES = 5  # fréquence de veille GDELT/RSS (le plus court possible sans gaspiller de quota, voir NewsAPI ci-dessous)
+BREAKING_NEWS_LOOKBACK_MINUTES = 20  # fenêtre de recherche à chaque passage (marge de sécurité ~4x l'intervalle si un tick est manqué)
+
+# NewsAPI a ~24h de délai sur son plan gratuit (constaté, voir news_watcher.py) :
+# l'interroger aussi souvent que GDELT/RSS ne le rendrait pas plus frais, juste
+# plus gourmand en quota (100 requêtes/jour). On le vérifie donc séparément,
+# une fois par heure (24 appels/jour, grosse marge), avec sa propre fenêtre de
+# recherche assortie (60 + marge de sécurité si un passage est manqué).
+NEWSAPI_POLL_INTERVAL_MINUTES = 60
+NEWSAPI_LOOKBACK_MINUTES = 90
 
 # Mots-clés de veille "breaking news" (tweet choc, conflit, discours banque centrale,
 # régulation crypto, choc pétrolier... + actualité économique plus "ordinaire" mais

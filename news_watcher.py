@@ -15,7 +15,10 @@ Sources combinées en best-effort :
   en pratique (constaté), résultats peu fiables depuis ce type d'hébergeur.
 - NewsAPI.org (clé gratuite, 100 req/jour) : le plan gratuit a ~24h de délai
   sur les articles disponibles (constaté, non documenté clairement par
-  NewsAPI) — quasi inutile pour du "breaking" mais gardé en secours.
+  NewsAPI) — quasi inutile pour du "breaking" mais gardé en secours. Interrogé
+  une fois par heure seulement (voir NEWSAPI_POLL_INTERVAL_MINUTES) : vu son
+  délai propre de 24h, le vérifier plus souvent ne le rendrait pas plus frais,
+  juste plus gourmand en quota.
 
 Les résultats bruts sont ensuite filtrés par l'IA (voir ai_analyzer.py) pour
 ne garder que ce qui a un vrai impact potentiel sur le trading — sinon le
@@ -132,13 +135,30 @@ def _current_keyword_chunk() -> list[str]:
     if len(chunks) <= 1:
         return chunks[0] if chunks else []
     # Rotation stateless basée sur l'heure : pas besoin de persister un index.
-    slot = int(time.time() // (config.BREAKING_NEWS_INTERVAL_MINUTES * 60))
+    # Calée sur le rythme réel des appels NewsAPI (1x/heure), pas sur la boucle
+    # rapide GDELT/RSS.
+    slot = int(time.time() // (config.NEWSAPI_POLL_INTERVAL_MINUTES * 60))
     return chunks[slot % len(chunks)]
 
 
+# Dernier appel NewsAPI réussi (mémoire du process, pas besoin de persister en
+# base : au pire un redémarrage déclenche un appel un peu tôt, sans risque pour
+# le quota 100/jour vu la marge — voir NEWSAPI_POLL_INTERVAL_MINUTES).
+_last_newsapi_call_utc: datetime | None = None
+
+
 def _fetch_newsapi(lookback_minutes: int) -> list[dict]:
+    global _last_newsapi_call_utc
     if not config.NEWSAPI_KEY:
         return []
+
+    now = datetime.now(timezone.utc)
+    if _last_newsapi_call_utc is not None:
+        elapsed_minutes = (now - _last_newsapi_call_utc).total_seconds() / 60
+        if elapsed_minutes < config.NEWSAPI_POLL_INTERVAL_MINUTES:
+            return []
+    _last_newsapi_call_utc = now
+
     query = " OR ".join(f'"{kw}"' if " " in kw else kw for kw in _current_keyword_chunk())
     since = (datetime.now(timezone.utc) - timedelta(minutes=lookback_minutes)).strftime("%Y-%m-%dT%H:%M:%S")
     params = {
@@ -267,7 +287,7 @@ def fetch_candidates() -> list[dict]:
     ça reste au niveau de main.py (dédup DB) et ai_analyzer (pertinence).
     """
     lookback = config.BREAKING_NEWS_LOOKBACK_MINUTES
-    combined = _fetch_gdelt(lookback) + _fetch_newsapi(lookback)
+    combined = _fetch_gdelt(lookback) + _fetch_newsapi(config.NEWSAPI_LOOKBACK_MINUTES)
     for source_name, url in RSS_FEEDS:
         if source_name == "FXStreet":
             combined += _fetch_fxstreet(lookback)

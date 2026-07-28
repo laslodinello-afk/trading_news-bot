@@ -6,7 +6,7 @@ name: Rafraîchir le cache FXStreet (breaking news)
 
 on:
   schedule:
-    - cron: "*/15 * * * *"
+    - cron: "*/5 * * * *"
   workflow_dispatch: {}
 
 permissions:
