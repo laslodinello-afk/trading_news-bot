@@ -218,6 +218,8 @@ def job_check_breaking_news() -> None:
         relevant_by_key = {a["news_key"]: a for a in relevant}
         sent_keys = set()
         for article in relevant:
+            if article["importance"].count("⭐") < config.BREAKING_NEWS_MIN_STARS_FOR_ALERT:
+                continue  # trop mineur pour une alerte individuelle, gardé quand même pour le débrief du soir (voir plus bas)
             if telegram_bot.broadcast(telegram_bot.format_breaking_news_alert(article)):
                 sent_keys.add(article["news_key"])
                 logger.info("Alerte breaking news envoyée: %s", article["title"])
@@ -225,15 +227,17 @@ def job_check_breaking_news() -> None:
                 logger.warning("Échec d'envoi breaking news pour %s, nouvel essai au prochain tick.", article["title"])
 
         # On marque comme "vus" : les candidats écartés par l'IA (jamais re-soumis à
-        # l'IA ensuite, title/resume=NULL) + ceux effectivement envoyés (title/resume
-        # renseignés pour le débrief du soir). Un candidat retenu par l'IA mais dont
-        # l'envoi Telegram a échoué reste "non vu" pour être retenté au prochain tick.
+        # l'IA ensuite, title/resume=NULL) + ceux retenus par l'IA, qu'ils aient été
+        # envoyés en alerte OU seulement gardés pour le débrief du soir faute
+        # d'importance suffisante (title/resume renseignés dans les deux cas). Un
+        # candidat retenu ET au-dessus du seuil dont l'envoi Telegram a échoué reste
+        # "non vu" pour être retenté au prochain tick.
         for c in new_candidates:
-            if c["news_key"] in sent_keys:
-                article = relevant_by_key[c["news_key"]]
-                db.mark_sent_news(c["news_key"], title=article["title"], resume=article.get("resume"))
-            elif c["news_key"] not in relevant_by_key:
+            article = relevant_by_key.get(c["news_key"])
+            if article is None:
                 db.mark_sent_news(c["news_key"])
+            elif c["news_key"] in sent_keys or article["importance"].count("⭐") < config.BREAKING_NEWS_MIN_STARS_FOR_ALERT:
+                db.mark_sent_news(c["news_key"], title=article["title"], resume=article.get("resume"))
     except Exception as exc:
         notify_error("veille breaking news", exc)
 

@@ -142,6 +142,12 @@ BREAKING_NEWS_LOOKBACK_MINUTES = 20  # fenêtre de recherche à chaque passage (
 NEWSAPI_POLL_INTERVAL_MINUTES = 60
 NEWSAPI_LOOKBACK_MINUTES = 90
 
+# En dessous de ce seuil d'étoiles (1-3, voir ai_analyzer.filter_breaking_news),
+# une news jugée pertinente n'est PAS envoyée en alerte individuelle — trop
+# mineure pour spammer en temps réel. Elle reste quand même enregistrée pour
+# apparaître dans le débrief du soir (voir main.py job_check_breaking_news).
+BREAKING_NEWS_MIN_STARS_FOR_ALERT = 2
+
 # Mots-clés de veille "breaking news" (tweet choc, conflit, discours banque centrale,
 # régulation crypto, choc pétrolier... + actualité économique plus "ordinaire" mais
 # non planifiée, voir catégorie "Économie générale" ci-dessous)
