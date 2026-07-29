@@ -15,6 +15,7 @@ Usage :
 from __future__ import annotations
 
 import argparse
+import difflib
 import logging
 import sys
 import threading
@@ -207,6 +208,22 @@ def job_check_after_alerts() -> None:
         notify_error("alerte après-publication", exc)
 
 
+# Un même flash est parfois republié par la source sous une URL différente
+# (constaté : ForexLive republie un titre quasi identique à quelques minutes
+# d'intervalle) — ça contourne le dédup par URL ci-dessus. Filet de sécurité
+# supplémentaire : si le TITRE ressemble fortement à une news déjà envoyée
+# récemment, on l'ignore aussi, même si son URL est nouvelle.
+BREAKING_NEWS_DUPLICATE_TITLE_THRESHOLD = 0.85
+BREAKING_NEWS_DUPLICATE_LOOKBACK_HOURS = 6
+
+
+def _is_duplicate_title(title: str, recent_titles: list[str]) -> bool:
+    return any(
+        difflib.SequenceMatcher(None, title.lower(), other.lower()).ratio() >= BREAKING_NEWS_DUPLICATE_TITLE_THRESHOLD
+        for other in recent_titles
+    )
+
+
 def job_check_breaking_news() -> None:
     try:
         candidates = news_watcher.fetch_candidates()
@@ -214,7 +231,19 @@ def job_check_breaking_news() -> None:
         if not new_candidates:
             return
 
-        relevant = ai_analyzer.filter_breaking_news(new_candidates)
+        recent_titles = list(db.get_recently_sent_titles(BREAKING_NEWS_DUPLICATE_LOOKBACK_HOURS))
+        deduped_candidates = []
+        for c in new_candidates:
+            if _is_duplicate_title(c["title"], recent_titles):
+                logger.info("Breaking news ignorée (titre quasi identique à une news déjà envoyée): %s", c["title"])
+                db.mark_sent_news(c["news_key"])  # vu, jamais renvoyé ni re-soumis à l'IA
+                continue
+            recent_titles.append(c["title"])  # évite aussi un doublon entre 2 candidats du même lot
+            deduped_candidates.append(c)
+        if not deduped_candidates:
+            return
+
+        relevant = ai_analyzer.filter_breaking_news(deduped_candidates)
         relevant_by_key = {a["news_key"]: a for a in relevant}
         sent_keys = set()
         for article in relevant:
@@ -232,7 +261,7 @@ def job_check_breaking_news() -> None:
         # d'importance suffisante (title/resume renseignés dans les deux cas). Un
         # candidat retenu ET au-dessus du seuil dont l'envoi Telegram a échoué reste
         # "non vu" pour être retenté au prochain tick.
-        for c in new_candidates:
+        for c in deduped_candidates:
             article = relevant_by_key.get(c["news_key"])
             if article is None:
                 db.mark_sent_news(c["news_key"])

@@ -228,6 +228,22 @@ def mark_sent_news(news_key: str, title: str | None = None, resume: str | None =
         )
 
 
+def get_recently_sent_titles(within_hours: int) -> list[str]:
+    """
+    Titres des breaking news réellement envoyées récemment (title non NULL).
+    Sert à repérer un article quasi identique déjà envoyé sous une URL
+    différente (ex: un flash republié par la source avec un nouveau lien) —
+    voir main.py, _is_duplicate_title.
+    """
+    cutoff = (datetime.now(timezone.utc) - timedelta(hours=within_hours)).isoformat()
+    with get_conn() as conn:
+        cur = conn.execute(
+            "SELECT title FROM sent_news WHERE sent_at >= ? AND title IS NOT NULL",
+            (cutoff,),
+        )
+        return [row["title"] for row in cur.fetchall()]
+
+
 def get_news_for_day(day_start_utc: datetime, day_end_utc: datetime) -> list[sqlite3.Row]:
     """Breaking news réellement envoyées (title non NULL) dans la fenêtre donnée."""
     with get_conn() as conn:
