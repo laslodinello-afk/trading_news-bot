@@ -1,6 +1,66 @@
 {
-  "fetched_at": "2026-07-29T14:49:06.304033+00:00",
+  "fetched_at": "2026-07-29T16:05:10.685982+00:00",
   "articles": [
+    {
+      "title": "Federal Reserve widely expected to stand pat as markets increase bets of imminent interest-rate hike",
+      "url": "https://www.fxstreet.com/news/federal-reserve-set-to-hold-interest-rates-steady-yet-a-hike-cant-be-ruled-out-202607291400",
+      "source": "FXStreet",
+      "published_at": "2026-07-29T14:00:00+00:00"
+    },
+    {
+      "title": "Bank of Japan: Gradual tightening path and neutral rate debate – ING",
+      "url": "https://www.fxstreet.com/news/bank-of-japan-gradual-tightening-path-and-neutral-rate-debate-ing-202607291556",
+      "source": "FXStreet",
+      "published_at": "2026-07-29T15:56:35+00:00"
+    },
+    {
+      "title": "Euro: Options signal downside risk against US Dollar – Scotiabank",
+      "url": "https://www.fxstreet.com/news/euro-options-signal-downside-risk-against-us-dollar-scotiabank-202607291556",
+      "source": "FXStreet",
+      "published_at": "2026-07-29T15:56:02+00:00"
+    },
+    {
+      "title": "Gold remains under pressure near $4,000 as Fed decision looms",
+      "url": "https://www.fxstreet.com/news/gold-remains-under-pressure-near-4-000-as-fed-decision-looms-202607291548",
+      "source": "FXStreet",
+      "published_at": "2026-07-29T15:48:16+00:00"
+    },
+    {
+      "title": "British Pound holds below 1.33 as Trump warns Iran, Oil jumps",
+      "url": "https://www.fxstreet.com/news/british-pound-holds-below-133-as-trump-warns-iran-oil-jumps-202607291530",
+      "source": "FXStreet",
+      "published_at": "2026-07-29T15:30:31+00:00"
+    },
+    {
+      "title": "WTI Oil surges 7% as Middle East war and supply risks fuel rally",
+      "url": "https://www.fxstreet.com/news/wti-oil-surges-7-as-middle-east-war-and-supply-risks-fuel-rally-202607291530",
+      "source": "FXStreet",
+      "published_at": "2026-07-29T15:30:00+00:00"
+    },
+    {
+      "title": "Federal Reserve: Hawkish hold may offer US Dollar limited support – BNY",
+      "url": "https://www.fxstreet.com/news/federal-reserve-hawkish-hold-may-offer-us-dollar-limited-support-bny-202607291517",
+      "source": "FXStreet",
+      "published_at": "2026-07-29T15:17:49+00:00"
+    },
+    {
+      "title": "Japanese Yen faces its moment of truth ahead of Fed decision",
+      "url": "https://www.fxstreet.com/news/japanese-yen-faces-its-moment-of-truth-ahead-of-fed-decision-202607291502",
+      "source": "FXStreet",
+      "published_at": "2026-07-29T15:02:57+00:00"
+    },
+    {
+      "title": "Canadian Dollar: Range holds against USD with Fed and BoC in focus – Scotiabank",
+      "url": "https://www.fxstreet.com/news/canadian-dollar-range-holds-against-usd-with-fed-and-boc-in-focus-scotiabank-202607291454",
+      "source": "FXStreet",
+      "published_at": "2026-07-29T14:54:44+00:00"
+    },
+    {
+      "title": "Australian Dollar extends decline ahead of Fed's decision",
+      "url": "https://www.fxstreet.com/news/australian-dollar-extends-decline-ahead-of-feds-decision-202607291450",
+      "source": "FXStreet",
+      "published_at": "2026-07-29T14:50:05+00:00"
+    },
     {
       "title": "Euro holds below 1.1400 against US Dollar as Fed interest rate decision looms",
       "url": "https://www.fxstreet.com/news/euro-holds-below-11400-against-us-dollar-as-fed-interest-rate-decision-looms-202607291431",
@@ -18,12 +78,6 @@
       "url": "https://www.fxstreet.com/news/natural-gas-europe-faces-tighter-winter-balance-ing-202607291401",
       "source": "FXStreet",
       "published_at": "2026-07-29T14:01:29+00:00"
-    },
-    {
-      "title": "Federal Reserve set to hold interest rates steady, yet a hike can’t be ruled out",
-      "url": "https://www.fxstreet.com/news/federal-reserve-set-to-hold-interest-rates-steady-yet-a-hike-cant-be-ruled-out-202607291400",
-      "source": "FXStreet",
-      "published_at": "2026-07-29T14:00:00+00:00"
     },
     {
       "title": "Swiss National Bank: Rates seen on prolonged hold – Commerzbank",
@@ -48,60 +102,6 @@
       "url": "https://www.fxstreet.com/news/canadian-dollar-strengthens-modestly-against-us-dollar-ahead-of-fed-decision-202607291306",
       "source": "FXStreet",
       "published_at": "2026-07-29T13:06:20+00:00"
-    },
-    {
-      "title": "Oil: Middle East tensions revive inflation channel – BNY",
-      "url": "https://www.fxstreet.com/news/oil-middle-east-tensions-revive-inflation-channel-bny-202607291301",
-      "source": "FXStreet",
-      "published_at": "2026-07-29T13:01:24+00:00"
-    },
-    {
-      "title": "Japanese Yen: Domestic investment shift could support the Yen – BNY",
-      "url": "https://www.fxstreet.com/news/japanese-yen-domestic-investment-shift-could-support-the-yen-bny-202607291243",
-      "source": "FXStreet",
-      "published_at": "2026-07-29T12:43:34+00:00"
-    },
-    {
-      "title": "Copper: Speculative longs rise on tight supply – ING",
-      "url": "https://www.fxstreet.com/news/copper-speculative-longs-rise-on-tight-supply-ing-202607291233",
-      "source": "FXStreet",
-      "published_at": "2026-07-29T12:33:53+00:00"
-    },
-    {
-      "title": "WTI rebounds sharply on fears of renewed escalation in US-Iran war",
-      "url": "https://www.fxstreet.com/news/wti-rebounds-sharply-on-fears-of-renewed-escalation-in-us-iran-war-202607291225",
-      "source": "FXStreet",
-      "published_at": "2026-07-29T12:25:29+00:00"
-    },
-    {
-      "title": "US Dollar: Stretched positioning caps gains against peers – BNY",
-      "url": "https://www.fxstreet.com/news/us-dollar-stretched-positioning-caps-gains-against-peers-bny-202607291222",
-      "source": "FXStreet",
-      "published_at": "2026-07-29T12:22:04+00:00"
-    },
-    {
-      "title": "British Pound consolidates against Japanese Yen ahead of central bank decisions",
-      "url": "https://www.fxstreet.com/news/british-pound-consolidates-against-japanese-yen-ahead-of-central-bank-decisions-202607291215",
-      "source": "FXStreet",
-      "published_at": "2026-07-29T12:15:17+00:00"
-    },
-    {
-      "title": "Australian Dollar: Softer CPI keeps RBA on hold – TD Securities",
-      "url": "https://www.fxstreet.com/news/australian-dollar-softer-cpi-keeps-rba-on-hold-td-securities-202607291212",
-      "source": "FXStreet",
-      "published_at": "2026-07-29T12:12:47+00:00"
-    },
-    {
-      "title": "British Pound languishes below 1.3300 heading into Fed and BoE decisions",
-      "url": "https://www.fxstreet.com/news/british-pound-languishes-below-13300-heading-into-fed-and-boe-decisions-202607291202",
-      "source": "FXStreet",
-      "published_at": "2026-07-29T12:02:21+00:00"
-    },
-    {
-      "title": "Federal Reserve: Hawkish hold could restore Dollar support – BBH",
-      "url": "https://www.fxstreet.com/news/federal-reserve-hawkish-hold-could-restore-dollar-support-bbh-202607291157",
-      "source": "FXStreet",
-      "published_at": "2026-07-29T11:57:24+00:00"
     }
   ]
 }
