@@ -24,6 +24,12 @@ NEWSAPI_KEY = os.getenv("NEWSAPI_KEY", "")
 ALPHAVANTAGE_API_KEY = os.getenv("ALPHAVANTAGE_API_KEY", "")
 ALPHAVANTAGE_CACHE_MAX_AGE_HOURS = 20
 
+# Résultats réels pétrole (Crude/Gasoline/Distillate/Cushing stocks) : gratuite
+# sur https://www.eia.gov/opendata/register.php (agence gouvernementale US,
+# données hebdomadaires officielles — voir calendar_fetcher.py).
+EIA_API_KEY = os.getenv("EIA_API_KEY", "")
+EIA_CACHE_MAX_AGE_HOURS = 20
+
 # Optionnelle (fond vidéo pour --render) : gratuite sur https://www.pexels.com/api/
 PEXELS_API_KEY = os.getenv("PEXELS_API_KEY", "")
 

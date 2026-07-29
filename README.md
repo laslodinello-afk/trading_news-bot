@@ -74,7 +74,7 @@ Le palier gratuit de Gemini (modèle Flash) offre 1500 requêtes par jour — ce
 
 ---
 
-## Étape 4 — Clés gratuites recommandées (Alpha Vantage + FMP + NewsAPI)
+## Étape 4 — Clés gratuites recommandées (Alpha Vantage + EIA + FMP + NewsAPI)
 
 Ces clés sont **optionnelles** : sans elles, l'agent fonctionne quand même (calendrier via ForexFactory) mais sans résultat réel après publication ni veille breaking news.
 
@@ -93,6 +93,14 @@ Pour EUR/GBP, ou pour les versions "Core", l'agent tente un dernier recours : il
 1. Va sur [alphavantage.co/support/#api-key](https://www.alphavantage.co/support/#api-key), entre juste ton email.
 2. La clé s'affiche immédiatement. Copie-la → `ALPHAVANTAGE_API_KEY`.
 3. Le plan gratuit donne 25 requêtes/jour (1/seconde max) — l'agent met chaque indicateur en cache 20h, donc largement suffisant (5-6 requêtes/jour au maximum).
+
+### EIA (résultat réel — stocks pétroliers hebdo)
+Comble le trou d'Alpha Vantage sur le pétrole : Crude Oil Inventories, Gasoline Inventories, Distillate Inventories et Crude Oil Inventories at Cushing (pertinent pour BRENT). Source officielle de l'agence gouvernementale américaine de l'énergie, gratuite, sans limite de quota agressive.
+
+⚠️ Même prudence que pour Alpha Vantage : l'API EIA elle-même peut mettre plus d'une journée à refléter une publication toute fraîche. L'agent vérifie que la donnée la plus récente correspond bien à la semaine attendue avant de l'afficher — sinon "indisponible" plutôt qu'un chiffre calculé sur une semaine plus ancienne. Concrètement : le jour même de la publication, il est possible que ça reste "indisponible" le temps que l'EIA mette son API à jour ; ça devrait apparaître au(x) prochain(s) événement(s) une fois leur API rattrapée.
+
+1. Va sur [eia.gov/opendata/register.php](https://www.eia.gov/opendata/register.php), entre juste ton email.
+2. La clé s'affiche/arrive par email. Copie-la → `EIA_API_KEY`.
 
 ### FMP (Financial Modeling Prep)
 ⚠️ **Mise à jour (testé en conditions réelles) : le plan gratuit FMP ne donne plus du tout accès au calendrier économique**, ni via l'ancien endpoint ("réservé aux abonnés antérieurs à août 2025") ni via le nouveau ("réservé aux plans payants"). L'agent l'utilise uniquement comme secours si ForexFactory tombe, et comme filet de sécurité pour le résultat réel (au cas où FMP changerait sa politique) — Alpha Vantage ci-dessus reste la source principale pour ça.
@@ -436,7 +444,7 @@ Après modification, redéploie sur Render (un `git push` suffit, Render redépl
 Pour que tu saches exactement ce que fait (et ne fait pas) l'agent :
 
 - **Breaking news = best-effort, pas du vrai temps réel.** Il n'existe aucune API gratuite fiable pour capter un tweet ou une déclaration à la seconde près (l'API X/Twitter coûte ~100$/mois). L'agent combine plusieurs sources : flux RSS spécialisés forex (InvestingLive, FXStreet — 25-60 min de délai constaté, les plus fiables), GDELT (souvent bloqué depuis l'IP de Render, constaté) et NewsAPI (plan gratuit avec ~24h de délai, constaté — quasi inutile pour du temps réel mais gardé en secours). Un tri par IA limite les fausses alertes, mais des faux négatifs (rien détecté) et faux positifs (alerte peu pertinente) restent possibles.
-- **Le "résultat réel" après publication reste best-effort, pas garanti à 100%.** Le calendrier ForexFactory ne publie jamais le résultat réel, et FMP a retiré cette donnée de son plan gratuit (testé, accès refusé même avec une clé valide). Trois sources en cascade comblent le trou : Alpha Vantage (NFP, CPI, Durable Goods Orders, Retail Sales, Unemployment Rate — USD headline uniquement), FMP en secours, puis en dernier recours les titres RSS ForexLive/FXStreet relus par l'IA (couvre potentiellement toute devise/indicateur, à condition qu'un article rapporte spécifiquement son chiffre — constaté que ça fonctionne pour des indicateurs suivis comme CB Consumer Confidence). Pour un événement plus confidentiel qu'aucune des trois sources ne couvre, ça reste "indisponible".
+- **Le "résultat réel" après publication reste best-effort, pas garanti à 100%.** Le calendrier ForexFactory ne publie jamais le résultat réel, et FMP a retiré cette donnée de son plan gratuit (testé, accès refusé même avec une clé valide). Quatre sources en cascade comblent le trou : Alpha Vantage (NFP, CPI, Durable Goods Orders, Retail Sales, Unemployment Rate — USD headline uniquement), EIA (stocks pétroliers hebdo — Crude/Gasoline/Distillate/Cushing), FMP en secours, puis en dernier recours les titres RSS ForexLive/FXStreet relus par l'IA (couvre potentiellement toute devise/indicateur, à condition qu'un article rapporte spécifiquement son chiffre — constaté que ça fonctionne pour des indicateurs suivis comme CB Consumer Confidence). Pour un événement plus confidentiel qu'aucune des quatre sources ne couvre, ça reste "indisponible".
 - **Le calendrier ForexFactory se décale le week-end.** Le flux gratuit utilisé ne couvre que la semaine calendaire en cours ; le nouveau contenu de la semaine suivante apparaît généralement dimanche soir/lundi matin.
 - **La classification "impact" de ForexFactory sous-évalue parfois des events réellement suivis** (constaté : Durable Goods Orders, Ifo Business Climate classés "Low" alors qu'Investing.com les classe plus haut). L'agent fait relire chaque event "Low" par l'IA à chaque rafraîchissement du calendrier (toutes les 6h) : ceux qu'elle juge sous-évalués sont remontés en Medium/High et marqués 🤖 dans les messages pour rester distinguables d'une classification ForexFactory native. Ce n'est pas une donnée de marché en temps réel, juste le jugement général de l'IA sur ce qui compte habituellement en day trading — à prendre comme un filet de sécurité, pas une garantie absolue.
 - **Crypto (BTC/ETH), indices (US30/SP500/NASDAQ/DAX/CAC40) et pétrole (BRENT) n'ont PAS de calendrier économique dédié.** Il n'existe pas de source gratuite équivalente à ForexFactory pour ces instruments (ex : pas d'heure précise pour "prochaine décision SEC sur un ETF"). Ils reçoivent : (1) le biais IA généré automatiquement à chaque news USD ou EUR existante (le crypto et les indices US sont très corrélés au dollar), et (2) une couverture best-effort via la veille breaking news (mots-clés SEC/CFTC/OPEP/exchange hack...). En clair : pas d'alerte "30 min avant" programmée pour ces instruments, seulement des alertes réactives.

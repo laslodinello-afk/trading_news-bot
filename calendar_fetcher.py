@@ -12,12 +12,13 @@ accessible sur son plan gratuit, constaté en production).
 
 "Résultat réel" (actual) après publication, dans l'ordre : Alpha Vantage (USD
 uniquement, quelques indicateurs headline reconnus — NFP, CPI, Durable Goods,
-Retail Sales, Unemployment Rate), FMP (généralement indisponible, gardé au cas
-où leur politique changerait), puis les titres RSS ForexLive/FXStreet (voir
-news_watcher.py) passés à l'IA : ces flux publient souvent le chiffre brut
-en quelques minutes après une publication (constaté, ex: "Conference Board
-Consumer Confidence for July 90.8 versus 92.3 estimate") — ça couvre aussi
-EUR/GBP et les indicateurs hors Alpha Vantage.
+Retail Sales, Unemployment Rate), EIA (stocks pétroliers hebdo — Crude/Gasoline/
+Distillate/Cushing, données officielles gouvernementales US), FMP (généralement
+indisponible, gardé au cas où leur politique changerait), puis les titres RSS
+ForexLive/FXStreet (voir news_watcher.py) passés à l'IA : ces flux publient
+souvent le chiffre brut en quelques minutes après une publication (constaté,
+ex: "Conference Board Consumer Confidence for July 90.8 versus 92.3 estimate")
+— ça couvre aussi EUR/GBP et les indicateurs hors Alpha Vantage/EIA.
 
 Toute erreur réseau/format est absorbée ici : une source qui tombe ne doit
 jamais faire planter l'agent, seulement dégrader (voir main.py pour l'alerte
@@ -438,6 +439,104 @@ def fetch_actual_from_alphavantage(currency: str, title: str, event_dt_utc: date
         return None
 
 
+# --- EIA (stocks pétroliers hebdomadaires) ---------------------------------------
+
+EIA_URL = "https://api.eia.gov/v2/petroleum/stoc/wstk/data/"
+
+# Series IDs vérifiés manuellement contre l'API EIA (voir eia.gov/opendata) —
+# la recherche par mot-clé est volontairement souple (substring) plutôt qu'une
+# correspondance exacte de titre : ForexFactory formule ces events de façons
+# légèrement différentes selon les périodes.
+_EIA_CUSHING_SERIES = "W_EPC0_SAX_YCUOK_MBBL"
+_EIA_CRUDE_SERIES = "WCESTUS1"
+_EIA_GASOLINE_SERIES = "WGTSTUS1"
+_EIA_DISTILLATE_SERIES = "WDISTUS1"
+
+
+def _match_eia_series(title: str) -> str | None:
+    normalized = title.strip().lower()
+    if "cushing" in normalized:
+        return _EIA_CUSHING_SERIES
+    if "crude" in normalized and "oil" in normalized:
+        return _EIA_CRUDE_SERIES
+    if "gasoline" in normalized:
+        return _EIA_GASOLINE_SERIES
+    if "distillate" in normalized:
+        return _EIA_DISTILLATE_SERIES
+    return None
+
+
+def _fetch_eia_series(series: str) -> list[dict]:
+    cache_key = f"EIA_{series}"
+    cached = db.get_alphavantage_cache(cache_key, config.EIA_CACHE_MAX_AGE_HOURS)
+    if cached is not None:
+        return cached
+
+    resp = requests.get(
+        EIA_URL,
+        params={
+            "api_key": config.EIA_API_KEY,
+            "frequency": "weekly",
+            "data[0]": "value",
+            "facets[series][]": series,
+            "sort[0][column]": "period",
+            "sort[0][direction]": "desc",
+            "length": 3,
+        },
+        headers=HEADERS,
+        timeout=TIMEOUT,
+    )
+    resp.raise_for_status()
+    rows = resp.json().get("response", {}).get("data", [])
+    if not rows:
+        raise RuntimeError("Réponse EIA vide")
+    db.set_alphavantage_cache(cache_key, rows)
+    return rows
+
+
+def _expected_eia_period(event_dt_utc: datetime) -> str:
+    """
+    Les stats hebdo EIA couvrent la semaine se terminant le VENDREDI précédent
+    leur publication (généralement un mercredi). Renvoie cette date (YYYY-MM-DD,
+    même format que "period" dans la réponse EIA) pour la vérification de
+    fraîcheur ci-dessous.
+    """
+    days_since_friday = (event_dt_utc.weekday() - 4) % 7  # 4 = vendredi
+    if days_since_friday == 0:
+        days_since_friday = 7
+    return (event_dt_utc.date() - timedelta(days=days_since_friday)).isoformat()
+
+
+def fetch_actual_from_eia(title: str, event_dt_utc: datetime) -> str | None:
+    """
+    Comme pour Alpha Vantage (voir plus haut) : l'API EIA elle-même peut mettre
+    plus d'une journée à refléter une publication toute fraîche — mieux vaut
+    "indisponible" qu'un chiffre calculé sur une semaine plus ancienne présenté
+    comme si c'était le résultat du jour.
+    """
+    if not config.EIA_API_KEY:
+        return None
+    series = _match_eia_series(title)
+    if not series:
+        return None
+    try:
+        rows = _fetch_eia_series(series)
+        expected_period = _expected_eia_period(event_dt_utc)
+        if rows[0]["period"] < expected_period:
+            logger.warning(
+                "EIA pas encore à jour pour %s (%s) : dernier point %s, attendu %s",
+                title, series, rows[0]["period"], expected_period,
+            )
+            return None
+        if len(rows) < 2:
+            return None
+        delta_thousand_barrels = float(rows[0]["value"]) - float(rows[1]["value"])
+        return f"{delta_thousand_barrels / 1000:+.1f}M"
+    except Exception as exc:
+        logger.warning("EIA indisponible pour %s (%s): %s", title, series, exc)
+        return None
+
+
 def _fetch_actual_from_fmp(currency: str, title: str, event_dt_utc: datetime) -> str | None:
     if not config.FMP_API_KEY:
         return None
@@ -506,12 +605,16 @@ def fetch_actual_result(
     """
     Cherche le résultat réel ("actual") d'une news déjà publiée. Essaie dans
     l'ordre : Alpha Vantage (USD, titres headline reconnus — voir plus haut),
-    FMP (secours, généralement indisponible en pratique), puis les titres RSS
-    ForexLive/FXStreet (couvre aussi EUR/GBP et les indicateurs hors Alpha
-    Vantage). Retourne None si aucune source ne peut répondre (l'appelant doit
-    gérer ce cas proprement plutôt que d'échouer).
+    EIA (stocks pétroliers hebdo), FMP (secours, généralement indisponible en
+    pratique), puis les titres RSS ForexLive/FXStreet (couvre aussi EUR/GBP et
+    les indicateurs hors Alpha Vantage/EIA). Retourne None si aucune source ne
+    peut répondre (l'appelant doit gérer ce cas proprement plutôt que d'échouer).
     """
     actual = fetch_actual_from_alphavantage(currency, title, event_dt_utc)
+    if actual:
+        return actual
+
+    actual = fetch_actual_from_eia(title, event_dt_utc)
     if actual:
         return actual
 

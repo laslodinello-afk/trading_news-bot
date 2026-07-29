@@ -14,6 +14,8 @@ services:
         sync: false
       - key: ALPHAVANTAGE_API_KEY
         sync: false
+      - key: EIA_API_KEY
+        sync: false
       - key: FMP_API_KEY
         sync: false
       - key: NEWSAPI_KEY
