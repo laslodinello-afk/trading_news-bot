@@ -3,6 +3,13 @@ name: Rafraîchir le cache FXStreet (breaking news)
 # Même principe que refresh-calendar.yml : FXStreet bloque l'IP partagée de
 # Render (403 constaté) mais pas forcément celle des runners GitHub Actions.
 # Si ça marche, Render lit ce cache au lieu d'appeler FXStreet directement.
+#
+# Commit sur la branche "cache-data", PAS sur "main" : Render redéploie sur
+# chaque push vers main (pas de filtre par chemin dispo sur le plan gratuit),
+# ce qui effacerait la base SQLite (disque éphémère) à chaque rafraîchissement
+# du cache, même sans changement de code réel — constaté en conditions réelles.
+# Double checkout ci-dessous : "code" a besoin de main (pour news_watcher.py),
+# "cache" est où le fichier généré est effectivement commité.
 
 on:
   schedule:
@@ -16,7 +23,10 @@ jobs:
   refresh:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Récupérer le code (pour news_watcher.py)
+        uses: actions/checkout@v4
+        with:
+          path: code
 
       - uses: actions/setup-python@v5
         with:
@@ -26,6 +36,7 @@ jobs:
         run: pip install -q requests python-dotenv
 
       - name: Récupérer le flux FXStreet et construire le cache
+        working-directory: code
         run: |
           python3 -c "
           import json
@@ -34,14 +45,22 @@ jobs:
 
           articles = news_watcher._fetch_rss_feed('FXStreet', 'https://www.fxstreet.com/rss/news', lookback_minutes=180)
           cache = {'fetched_at': datetime.now(timezone.utc).isoformat(), 'articles': articles}
-          json.dump(cache, open('fxstreet_cache.json', 'w'), ensure_ascii=False, indent=2)
+          json.dump(cache, open('../fxstreet_cache.json', 'w'), ensure_ascii=False, indent=2)
           print(f'{len(articles)} articles récupérés')
           "
 
+      - name: Récupérer la branche cache-data
+        uses: actions/checkout@v4
+        with:
+          ref: cache-data
+          path: cache
+
       - name: Commit si changement
         run: |
+          cp fxstreet_cache.json cache/fxstreet_cache.json
+          cd cache
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add fxstreet_cache.json
           git diff --staged --quiet && echo "Rien de nouveau à commiter." || git commit -m "Rafraîchissement automatique du cache FXStreet"
-          git push
+          git push origin HEAD:cache-data

@@ -36,14 +36,14 @@ TELEGRAM_CHANNEL_ID = os.getenv("TELEGRAM_CHANNEL_ID", "")
 # URL brute du cache calendrier maintenu par la GitHub Action (.github/workflows/
 # refresh-calendar.yml), qui contourne le blocage de l'IP Render sur ForexFactory.
 # Vide par défaut (source ignorée) ; à définir une fois le dépôt GitHub en place, ex :
-# https://raw.githubusercontent.com/<user>/<repo>/main/calendar_cache.json
+# https://raw.githubusercontent.com/<user>/<repo>/cache-data/calendar_cache.json
 GITHUB_CALENDAR_CACHE_URL = os.getenv("GITHUB_CALENDAR_CACHE_URL", "")
 GITHUB_CACHE_MAX_AGE_HOURS = 12  # au-delà, le cache est jugé trop vieux (Action en panne ?)
 
 # Même principe pour FXStreet (.github/workflows/refresh-fxstreet.yml) : Render
 # reçoit un 403 direct (IP partagée bloquée), la GitHub Action non. Vide par
 # défaut (repli sur l'appel direct, qui échouera depuis Render) ; à définir ex :
-# https://raw.githubusercontent.com/<user>/<repo>/main/fxstreet_cache.json
+# https://raw.githubusercontent.com/<user>/<repo>/cache-data/fxstreet_cache.json
 FXSTREET_CACHE_URL = os.getenv("FXSTREET_CACHE_URL", "")
 FXSTREET_CACHE_MAX_AGE_MINUTES = 15  # au-delà, le cache est jugé trop vieux (Action en panne ?) — l'Action tourne toutes les 5 min, donc 15 min = 2-3 passages ratés d'affilée
 

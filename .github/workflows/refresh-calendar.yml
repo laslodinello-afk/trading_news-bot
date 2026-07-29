@@ -4,6 +4,11 @@ name: Rafraîchir le cache du calendrier économique
 # GitHub Actions récupère le JSON depuis son infrastructure (IP différente) et
 # le commit dans le repo. Render lit ensuite ce fichier en HTTP simple (jamais
 # bloqué) au lieu d'appeler ForexFactory directement. Voir calendar_fetcher.py.
+#
+# Commit sur la branche "cache-data", PAS sur "main" : Render redéploie sur
+# chaque push vers main (pas de filtre par chemin dispo sur le plan gratuit),
+# ce qui effacerait la base SQLite (disque éphémère) à chaque rafraîchissement
+# du cache, même sans changement de code réel — constaté en conditions réelles.
 
 on:
   schedule:
@@ -18,6 +23,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: cache-data
 
       - name: Récupérer le calendrier ForexFactory
         run: |
@@ -45,4 +52,4 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add calendar_cache.json
           git diff --staged --quiet && echo "Rien de nouveau à commiter." || git commit -m "Rafraîchissement automatique du cache calendrier"
-          git push
+          git push origin HEAD:cache-data

@@ -10,3 +10,9 @@ __pycache__/
 .venv/
 venv/
 .pytest_cache/
+
+# Maintenus uniquement sur la branche cache-data (jamais sur main), voir
+# .github/workflows/refresh-*.yml — évite qu'un git add un peu large les
+# recommitte ici par erreur et redéploie Render pour rien.
+calendar_cache.json
+fxstreet_cache.json
