@@ -186,11 +186,14 @@ def job_check_after_alerts() -> None:
 
             actual = event["actual"]
             if not actual:
-                actual = calendar_fetcher.fetch_actual_result(event["currency"], event["title"], event_dt)
+                actual = calendar_fetcher.fetch_actual_result(
+                    event["currency"], event["title"], event_dt,
+                    event.get("forecast"), event.get("previous"),
+                )
                 if actual:
                     db.set_event_actual(event["event_key"], actual)
 
-            if not actual and age_minutes < 10:
+            if not actual and age_minutes < config.ACTUAL_RESULT_GRACE_MINUTES:
                 continue  # laisse une chance au(x) prochain(s) tick(s) de trouver le résultat réel
 
             concerned_pairs = config.pairs_for_currency(event["currency"])

@@ -120,6 +120,14 @@ ALERT_BEFORE_MINUTES = 30  # rappel avant news (impact High + Medium)
 NO_TRADE_WINDOW_MINUTES = 15  # conseil "éviter le spread / ne pas trader X min après"
 AFTER_ALERT_MAX_AGE_MINUTES = 60  # au-delà, une news publiée est considérée trop vieille pour être alertée (évite un backlog au premier démarrage)
 
+# Délai de grâce avant d'envoyer l'alerte "après" même sans résultat réel trouvé
+# (sinon "indisponible") : les sources gratuites (Alpha Vantage, et surtout les
+# titres RSS ForexLive/FXStreet, voir calendar_fetcher.fetch_actual_from_news)
+# peuvent mettre jusqu'à ~20-30 min à publier le chiffre après l'event — mieux
+# vaut attendre un peu que spammer "indisponible" trop vite. Doit rester < que
+# AFTER_ALERT_MAX_AGE_MINUTES ci-dessus.
+ACTUAL_RESULT_GRACE_MINUTES = 45
+
 CALENDAR_CHECK_INTERVAL_MINUTES = 5  # fréquence de vérification avant/après
 CALENDAR_REFRESH_HOURS = 6  # fréquence de re-téléchargement du calendrier complet
 

@@ -10,10 +10,14 @@ Source de secours : Financial Modeling Prep (FMP), utilisée si ForexFactory
 est injoignable (le calendrier lui-même — le "résultat réel" n'est plus
 accessible sur son plan gratuit, constaté en production).
 
-"Résultat réel" (actual) après publication : Alpha Vantage en priorité (USD
+"Résultat réel" (actual) après publication, dans l'ordre : Alpha Vantage (USD
 uniquement, quelques indicateurs headline reconnus — NFP, CPI, Durable Goods,
-Retail Sales, Unemployment Rate), avec repli sur FMP (généralement
-indisponible, gardé au cas où leur politique changerait).
+Retail Sales, Unemployment Rate), FMP (généralement indisponible, gardé au cas
+où leur politique changerait), puis les titres RSS ForexLive/FXStreet (voir
+news_watcher.py) passés à l'IA : ces flux publient souvent le chiffre brut
+en quelques minutes après une publication (constaté, ex: "Conference Board
+Consumer Confidence for July 90.8 versus 92.3 estimate") — ça couvre aussi
+EUR/GBP et les indicateurs hors Alpha Vantage.
 
 Toute erreur réseau/format est absorbée ici : une source qui tombe ne doit
 jamais faire planter l'agent, seulement dégrader (voir main.py pour l'alerte
@@ -29,10 +33,17 @@ from datetime import datetime, timedelta, timezone
 
 import requests
 
+import ai_analyzer
 import config
 import db
+import news_watcher
 
 logger = logging.getLogger("calendar_fetcher")
+
+# Fenêtre de recherche des titres RSS pour le résultat réel : large (le grace
+# period avant envoi de l'alerte "après" est court, voir main.py), pour ne rien
+# rater même si ForexLive/FXStreet publient leur article un peu tard.
+NEWS_ACTUAL_LOOKBACK_MINUTES = 180
 
 FF_BASE = "https://nfs.faireconomy.media"
 # Seul "thisweek" existe réellement sur ce miroir public (thisweek/lastweek/nextweek
@@ -427,17 +438,7 @@ def fetch_actual_from_alphavantage(currency: str, title: str, event_dt_utc: date
         return None
 
 
-def fetch_actual_result(currency: str, title: str, event_dt_utc: datetime) -> str | None:
-    """
-    Cherche le résultat réel ("actual") d'une news déjà publiée.
-    Essaie d'abord Alpha Vantage (USD, titres headline reconnus — voir plus
-    haut), puis FMP en secours. Retourne None si aucune source ne peut
-    répondre (l'appelant doit gérer ce cas proprement plutôt que d'échouer).
-    """
-    actual = fetch_actual_from_alphavantage(currency, title, event_dt_utc)
-    if actual:
-        return actual
-
+def _fetch_actual_from_fmp(currency: str, title: str, event_dt_utc: datetime) -> str | None:
     if not config.FMP_API_KEY:
         return None
     try:
@@ -462,3 +463,60 @@ def fetch_actual_result(currency: str, title: str, event_dt_utc: datetime) -> st
     if time_diff_minutes > 90:
         return None  # pas de correspondance temporelle fiable
     return best["actual"]
+
+
+def fetch_actual_from_news(
+    currency: str,
+    title: str,
+    event_dt_utc: datetime,
+    forecast: str | None = None,
+    previous: str | None = None,
+) -> str | None:
+    """
+    Dernier recours : cherche le chiffre réel dans les titres RSS ForexLive/
+    FXStreet récents via l'IA (voir ai_analyzer.extract_actual_from_headlines).
+    Ne garde que les titres publiés après l'event (ceux d'avant ne peuvent pas
+    rapporter son résultat) avant de les soumettre — évite un faux match sur un
+    article antérieur qui parlerait du même indicateur (prévision, mois passé...).
+    """
+    try:
+        headlines = news_watcher.fetch_rss_headlines(NEWS_ACTUAL_LOOKBACK_MINUTES)
+    except Exception as exc:
+        logger.warning("Impossible de récupérer les titres RSS pour le résultat réel: %s", exc)
+        return None
+
+    published_after = [
+        h for h in headlines
+        if h.get("published_at") and datetime.fromisoformat(h["published_at"]) >= event_dt_utc
+    ]
+    if not published_after:
+        return None
+
+    event = {"title": title, "currency": currency, "forecast": forecast, "previous": previous}
+    return ai_analyzer.extract_actual_from_headlines(event, published_after)
+
+
+def fetch_actual_result(
+    currency: str,
+    title: str,
+    event_dt_utc: datetime,
+    forecast: str | None = None,
+    previous: str | None = None,
+) -> str | None:
+    """
+    Cherche le résultat réel ("actual") d'une news déjà publiée. Essaie dans
+    l'ordre : Alpha Vantage (USD, titres headline reconnus — voir plus haut),
+    FMP (secours, généralement indisponible en pratique), puis les titres RSS
+    ForexLive/FXStreet (couvre aussi EUR/GBP et les indicateurs hors Alpha
+    Vantage). Retourne None si aucune source ne peut répondre (l'appelant doit
+    gérer ce cas proprement plutôt que d'échouer).
+    """
+    actual = fetch_actual_from_alphavantage(currency, title, event_dt_utc)
+    if actual:
+        return actual
+
+    actual = _fetch_actual_from_fmp(currency, title, event_dt_utc)
+    if actual:
+        return actual
+
+    return fetch_actual_from_news(currency, title, event_dt_utc, forecast, previous)

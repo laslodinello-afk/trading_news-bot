@@ -243,7 +243,7 @@ def _fetch_rss_feed(source_name: str, url: str, lookback_minutes: int) -> list[d
 def _fetch_fxstreet_from_cache(lookback_minutes: int) -> list[dict]:
     """
     Lit le cache FXStreet maintenu par la GitHub Action (.github/workflows/
-    refresh-fxstreet.yml, toutes les 15 min, fenêtre de 180 min côté Action).
+    refresh-fxstreet.yml, toutes les 5 min, fenêtre de 180 min côté Action).
     Ce cache est volontairement plus large que lookback_minutes : on refiltre
     ici à la fenêtre réellement voulue, ce qui laisse une marge si l'Action a
     un peu de retard sans jamais faire remonter un article trop vieux.
@@ -306,3 +306,20 @@ def fetch_candidates() -> list[dict]:
 
     logger.info("Veille breaking news: %d articles bruts, %d uniques", len(combined), len(deduped))
     return deduped
+
+
+def fetch_rss_headlines(lookback_minutes: int) -> list[dict]:
+    """
+    Version publique, dédiée aux flux RSS uniquement (pas GDELT/NewsAPI),
+    réutilisée par calendar_fetcher.py pour retrouver le résultat réel d'un
+    event : ForexLive/FXStreet publient souvent un article "chiffre brut" en
+    quelques minutes après une publication économique (constaté, ex :
+    "Conference Board Consumer Confidence for July 90.8 versus 92.3 estimate").
+    """
+    results = []
+    for source_name, url in RSS_FEEDS:
+        if source_name == "FXStreet":
+            results += _fetch_fxstreet(lookback_minutes)
+        else:
+            results += _fetch_rss_feed(source_name, url, lookback_minutes)
+    return results

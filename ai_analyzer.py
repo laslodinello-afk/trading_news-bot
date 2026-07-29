@@ -350,6 +350,61 @@ Analyse la surprise (réel vs prévision) et son effet probable. Réponds avec :
     return _format_analysis(result)
 
 
+# --- Extraction du résultat réel depuis des titres RSS ---------------------------
+
+_ACTUAL_FROM_NEWS_SCHEMA = {
+    "type": "OBJECT",
+    "required": ["actual"],
+    "properties": {
+        "actual": {"type": "STRING"},
+    },
+}
+
+_ACTUAL_NOT_FOUND = "INTROUVABLE"
+
+
+def extract_actual_from_headlines(event: dict, headlines: list[dict]) -> str | None:
+    """
+    Dernier recours pour le "résultat réel" (voir calendar_fetcher.fetch_actual_result) :
+    ForexLive/FXStreet publient souvent le chiffre brut d'une publication économique
+    en quelques minutes (constaté, ex: "Conference Board Consumer Confidence for July
+    90.8 versus 92.3 estimate"), mais sous un intitulé parfois différent de celui de
+    ForexFactory (ex: "Conference Board Consumer Confidence" = "CB Consumer
+    Confidence") — d'où l'IA plutôt qu'une comparaison de texte figée. Le sentinel
+    _ACTUAL_NOT_FOUND (plutôt qu'un champ nullable, mal supporté par le schéma JSON
+    structuré de Gemini) force l'IA à expliciter l'absence de match plutôt que de
+    deviner.
+    """
+    if not headlines:
+        return None
+    titles_block = "\n".join(f"- {h['title']}" for h in headlines)
+    prompt = f"""Événement économique déjà publié :
+- Titre : {event['title']}
+- Devise : {event['currency']}
+- Prévision : {event.get('forecast') or 'N/A'}
+- Précédent : {event.get('previous') or 'N/A'}
+
+Titres d'articles récents (flux RSS forex) :
+{titles_block}
+
+Un de ces titres rapporte-t-il le résultat réel (chiffre publié) de CET événement
+précis ? Les flux utilisent parfois un intitulé différent pour le même indicateur
+(ex: "Conference Board Consumer Confidence" = "CB Consumer Confidence") : base-toi
+sur le sens, pas juste la ressemblance du texte. Si un titre correspond avec
+certitude, renvoie "actual" = le chiffre exact tel qu'écrit dans ce titre (avec son
+unité/signe). Si aucun titre ne correspond avec certitude à CET événement précis,
+renvoie "actual" = "{_ACTUAL_NOT_FOUND}" — ne devine jamais et ne confonds pas avec
+un autre indicateur, même du même pays."""
+
+    result = call_gemini(prompt, _ACTUAL_FROM_NEWS_SCHEMA, max_tokens=200)
+    if not result:
+        return None
+    actual = (result.get("actual") or "").strip()
+    if not actual or actual.upper() == _ACTUAL_NOT_FOUND:
+        return None
+    return actual
+
+
 # --- Filtrage des breaking news --------------------------------------------------
 
 MAX_CANDIDATES_PER_BATCH = 25
