@@ -204,6 +204,15 @@ def format_after_alert(event: dict, actual: str | None, concerned_pairs: list[st
     data_line = f"📊 Réel : {actual_str} | Prévision : {forecast} | Précédent : {previous}"
     risk_line = f"⚠️ Attends {config.NO_TRADE_WINDOW_MINUTES} min avant de retrader (volatilité/spread)"
 
+    if not actual and ai:
+        # Sans résultat réel, un biais "➖ Neutre" ressemblerait à un vrai jugement
+        # ("rien ne bouge") alors qu'on n'a en fait aucune donnée pour juger — on
+        # l'affiche donc explicitement comme indisponible plutôt que de laisser
+        # confondre les deux. Le reste de l'analyse IA (résumé/raisonnement/danger)
+        # reste affiché tel quel, il garde de la valeur même sans le chiffre.
+        ai = dict(ai)
+        ai["biais"] = {pair: "❔ Indisponible" for pair in concerned_pairs}
+
     parts = [header, meta, data_line, risk_line, _ai_block(ai)]
     return "\n".join(p for p in parts if p)
 
