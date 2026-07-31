@@ -410,18 +410,43 @@ un autre indicateur, même du même pays."""
 MAX_CANDIDATES_PER_BATCH = 25
 
 
-def filter_breaking_news(candidates: list[dict]) -> list[dict]:
+def filter_breaking_news(candidates: list[dict], known_calendar_titles: list[str] | None = None) -> list[dict]:
     """
     Prend une liste brute d'articles (title/url/source) et ne renvoie que ceux
     jugés réellement pertinents pour le trading, enrichis de l'analyse IA.
     Renvoie [] (jamais None) en cas d'échec IA : on préfère rater une news
     "choc" plutôt que spammer sur un batch entier non filtré.
+
+    known_calendar_titles : titres des events du calendrier économique du jour
+    (voir main.py) — sert à exclure les articles qui ne font que rapporter le
+    résultat chiffré d'un event déjà couvert par les alertes avant/après,
+    pour éviter d'envoyer la même information deux fois sous deux formats
+    différents (constaté : un article "chiffre brut" pour Crude Oil
+    Inventories peut aussi remonter comme breaking news).
     """
     if not candidates:
         return []
     batch = candidates[:MAX_CANDIDATES_PER_BATCH]
     articles_block = "\n".join(f"{i+1}. [{a['source']}] {a['title']}" for i, a in enumerate(batch))
     pairs = ", ".join(config.TRADING_PAIRS)
+
+    exclusion_block = ""
+    if known_calendar_titles:
+        titles_list = "\n".join(f"- {t}" for t in known_calendar_titles)
+        exclusion_block = f"""
+
+IMPORTANT — À EXCLURE SYSTÉMATIQUEMENT : les événements suivants sont déjà
+couverts aujourd'hui par des alertes calendrier dédiées (avant/après
+publication). Si un article ne fait QUE rapporter le résultat chiffré de l'un
+de ces événements précis (même avec un nom légèrement différent), ignore-le
+complètement — même s'il semble pertinent — pour ne pas envoyer deux fois la
+même information sous deux formats différents. Ne l'exclus que s'il s'agit
+vraiment de CE résultat précis, pas d'un article qui en parle dans un contexte
+plus large (ex: un article qui analyse plusieurs événements de la journée
+reste pertinent).
+Événements déjà couverts aujourd'hui :
+{titles_list}"""
+
     prompt = f"""Voici des titres d'articles de presse récents. Garde ceux qui peuvent avoir un impact,
 même modéré, sur les marchés suivis ({pairs}) — pas seulement les chocs majeurs. Deux niveaux :
 
@@ -443,7 +468,7 @@ CHOC (danger="danger" ou "prudence") :
 - Données de confiance des consommateurs ou de l'immobilier US quand elles surprennent
 
 Ignore : sport, people, faits divers purement locaux, analyses techniques, opinions, articles
-qui mentionnent juste un mot-clé en passant sans lien réel avec ces sujets.
+qui mentionnent juste un mot-clé en passant sans lien réel avec ces sujets.{exclusion_block}
 
 Articles :
 {articles_block}

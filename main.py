@@ -243,7 +243,10 @@ def job_check_breaking_news() -> None:
         if not deduped_candidates:
             return
 
-        relevant = ai_analyzer.filter_breaking_news(deduped_candidates)
+        day_start_utc, day_end_utc = db.local_day_bounds_utc(datetime.now(config.TIMEZONE).date())
+        known_calendar_titles = [row["title"] for row in db.get_events_for_day(day_start_utc, day_end_utc)]
+
+        relevant = ai_analyzer.filter_breaking_news(deduped_candidates, known_calendar_titles)
         relevant_by_key = {a["news_key"]: a for a in relevant}
         sent_keys = set()
         for article in relevant:
