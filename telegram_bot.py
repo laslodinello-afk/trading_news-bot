@@ -213,7 +213,7 @@ def format_breaking_news_alert(article: dict) -> str:
     # _ai_block : faut-il trader ou pas) — les deux répondent à une question différente.
     importance = article.get("importance")
     header = f"🚨 *Breaking News* {importance}" if importance else "🚨 *Breaking News*"
-    title_line = f"📰 {escape_md(article['title'])}"
+    title_line = f"📰 {escape_md(article.get('titre_fr') or article['title'])}"
     source_line = f"🗞️ Source : {escape_md(article['source'])}"
     # Les champs d'analyse IA (resume/biais/...) sont mergés dans le même dict que
     # les métadonnées (title/source/url) : on isole ici ce qui va dans le bloc IA

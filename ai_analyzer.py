@@ -85,10 +85,11 @@ _BREAKING_NEWS_SCHEMA = {
             "type": "ARRAY",
             "items": {
                 "type": "OBJECT",
-                "required": ["index", "importance", "resume", "biais", "raisonnement", "danger"],
+                "required": ["index", "importance", "titre_fr", "resume", "biais", "raisonnement", "danger"],
                 "properties": {
                     "index": {"type": "INTEGER"},
                     "importance": {"type": "INTEGER"},
+                    "titre_fr": {"type": "STRING"},
                     "resume": {"type": "STRING"},
                     "biais": _BIAS_SCHEMA,
                     "raisonnement": {"type": "STRING"},
@@ -479,6 +480,9 @@ Renvoie un tableau "items" (vide si rien de pertinent). Pour chaque article rete
   1 = mineur, juste bon à savoir, sans effet notable attendu ; 2 = modérément
   important, peut créer un peu de mouvement ; 3 = fort impact attendu, à
   surveiller de près. Ne mets pas systématiquement 3, sois discriminant.
+- "titre_fr" : le titre de l'article (souvent en anglais, ces flux sont anglophones)
+  traduit en français, fidèle et naturel — pas une paraphrase ni un résumé,
+  une vraie traduction du titre
 - "resume" : 1 phrase en français qui résume la news elle-même
 - "biais" : un objet {{"paire": "...", "direction": "haussier"|"baissier"|"neutre"}} par paire concernée
 - "raisonnement" : 1 phrase CONCRÈTE sur ce qui va probablement se passer sur les marchés
@@ -498,6 +502,7 @@ Renvoie un tableau "items" (vide si rien de pertinent). Pour chaque article rete
             continue
         article = dict(batch[idx - 1])
         article["importance"] = _format_importance(item.get("importance"))
+        article["titre_fr"] = item.get("titre_fr") or article["title"]
         article["resume"] = item.get("resume", "")
         article["biais"] = _format_bias(item.get("biais", []))
         article["raisonnement"] = item.get("raisonnement", "")
