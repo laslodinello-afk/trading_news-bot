@@ -152,7 +152,7 @@ NEWSAPI_LOOKBACK_MINUTES = 90
 # une news jugée pertinente n'est PAS envoyée en alerte individuelle — trop
 # mineure pour spammer en temps réel. Elle reste quand même enregistrée pour
 # apparaître dans le débrief du soir (voir main.py job_check_breaking_news).
-BREAKING_NEWS_MIN_STARS_FOR_ALERT = 2
+BREAKING_NEWS_MIN_STARS_FOR_ALERT = 3
 
 # Mots-clés de veille "breaking news" (tweet choc, conflit, discours banque centrale,
 # régulation crypto, choc pétrolier... + actualité économique plus "ordinaire" mais

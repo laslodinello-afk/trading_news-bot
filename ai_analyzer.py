@@ -448,28 +448,20 @@ reste pertinent).
 Événements déjà couverts aujourd'hui :
 {titles_list}"""
 
-    prompt = f"""Voici des titres d'articles de presse récents. Garde ceux qui peuvent avoir un impact,
-même modéré, sur les marchés suivis ({pairs}) — pas seulement les chocs majeurs. Deux niveaux :
+    prompt = f"""Voici des titres d'articles de presse récents. Ne garde QUE les vrais chocs susceptibles
+d'avoir un impact réel sur les marchés suivis ({pairs}) — sois sélectif, pas exhaustif :
 
-CHOC (danger="danger" ou "prudence") :
 - Déclarations ou tweets de responsables politiques/banques centrales US-UE-UK sur l'économie, les taux ou les droits de douane
 - Conflits armés, attentats, événements géopolitiques majeurs (y compris zones de production pétrolière)
 - Démission/limogeage de dirigeant économique clé, défaut de paiement souverain
 - Crypto : décision SEC/CFTC sur un ETF ou une régulation, hack ou faillite d'exchange, dépeg d'un stablecoin majeur
 - Pétrole : décision OPEP/OPEP+, coupure de production, tensions dans une zone de production/transit majeure
 
-ÉCONOMIE PLUS ORDINAIRE mais non planifiée (danger="ok" si pas d'urgence particulière) :
-- Accord ou tension commerciale, nouveaux droits de douane annoncés (hors clash majeur)
-- Vague de licenciements ou gel d'embauche dans un grand groupe/secteur
-- Commentaire "hawkish"/"dovish" d'un banquier central hors réunion officielle
-- Craintes de récession, ralentissement/accélération de la croissance, révision de prévision GDP
-- Mouvement notable des marchés actions (rally, chute, forte volatilité) sans être un krach
-- Tensions sur les chaînes d'approvisionnement, pénurie (semi-conducteurs...), choc énergétique
-- Shutdown gouvernemental, plafond de la dette, plan de relance budgétaire
-- Données de confiance des consommateurs ou de l'immobilier US quand elles surprennent
-
-Ignore : sport, people, faits divers purement locaux, analyses techniques, opinions, articles
-qui mentionnent juste un mot-clé en passant sans lien réel avec ces sujets.{exclusion_block}
+Ignore : l'économie "ordinaire" non planifiée (licenciements, commentaires hawkish/dovish isolés,
+mouvements de bourse sans être un krach, craintes de récession générales, tensions commerciales
+mineures...) — seuls les VRAIS chocs listés ci-dessus comptent maintenant. Ignore aussi : sport,
+people, faits divers purement locaux, analyses techniques, opinions, articles qui mentionnent
+juste un mot-clé en passant sans lien réel avec ces sujets.{exclusion_block}
 
 Articles :
 {articles_block}
@@ -489,8 +481,8 @@ Renvoie un tableau "items" (vide si rien de pertinent). Pour chaque article rete
   dans les prochaines heures à cause de cette news (pas juste "pourquoi", mais "et donc quoi
   ensuite" — ex : "Le dollar devrait s'affaiblir à court terme, les indices US pourraient
   monter sur fond d'anticipation de baisse des taux.")
-- "danger" : "ok"|"prudence"|"danger" — "ok" est normal pour une news "économie ordinaire"
-  sans urgence, ne force pas "prudence" par défaut."""
+- "danger" : "ok"|"prudence"|"danger" — "ok" si le choc est confirmé mais sans urgence de trading
+  immédiate, ne force pas "prudence" par défaut."""
 
     result = call_gemini(prompt, _BREAKING_NEWS_SCHEMA, max_tokens=1500)
     items = (result or {}).get("items", [])
