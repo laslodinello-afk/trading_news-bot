@@ -184,7 +184,11 @@ def format_before_alert(event: dict, concerned_pairs: list[str], ai: dict | None
     forecast = event.get("forecast") or "N/A"
     previous = event.get("previous") or "N/A"
     data_line = f"📊 Prévision : {forecast} | Précédent : {previous}"
-    risk_line = "⚠️ Pas de nouvelle position | Ferme les positions en cours | Attention au spread"
+    # Formulation volontairement neutre (pas d'action imposée type "ferme tes
+    # positions") : le canal touche aussi bien des intraday que des swing
+    # traders, et "ferme les positions en cours" n'a pas de sens pour ces
+    # derniers — on signale le risque, chacun adapte selon son propre style.
+    risk_line = "⚠️ Publication à risque imminente — vigilance sur tes positions ouvertes et le spread"
     pairs_line = f"📌 Paires concernées : {', '.join(concerned_pairs)}" if concerned_pairs else ""
 
     parts = [header, meta, data_line, risk_line]
@@ -202,7 +206,10 @@ def format_after_alert(event: dict, actual: str | None, concerned_pairs: list[st
     previous = event.get("previous") or "N/A"
     actual_str = actual if actual else "indisponible pour l'instant"
     data_line = f"📊 Réel : {actual_str} | Prévision : {forecast} | Précédent : {previous}"
-    risk_line = f"⚠️ Attends {config.NO_TRADE_WINDOW_MINUTES} min avant de retrader (volatilité/spread)"
+    # Même logique que format_before_alert : on décrit le risque (volatilité,
+    # spread élargi) sans dicter une action ("attends X min avant de retrader"
+    # ne concerne que l'intraday) — utile aussi bien en intraday qu'en swing.
+    risk_line = f"⚠️ Volatilité et spread élargi possibles dans les {config.NO_TRADE_WINDOW_MINUTES} min qui suivent"
 
     if not actual and ai:
         # Sans résultat réel, un biais "➖ Neutre" ressemblerait à un vrai jugement
