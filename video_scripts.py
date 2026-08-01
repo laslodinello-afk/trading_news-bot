@@ -49,6 +49,10 @@ _SCRIPT_SCHEMA = {
                     "ecran": {"type": "STRING"},
                     "visuel": {"type": "STRING"},
                     "visual_keyword": {"type": "STRING"},
+                    # Seulement significatif pour DEBRIEF ("EVENEMENT"/"BREAKING",
+                    # voir video_templates/debrief.txt) — chaîne vide pour les autres
+                    # formats, jamais requis pour ne pas forcer une valeur absurde.
+                    "section": {"type": "STRING"},
                 },
             },
         },
@@ -262,9 +266,9 @@ def _build_prompt(fmt: str, data: dict, target_date: date, extra_notes: str | No
 
 def _assemble_script(fmt: str, target_date: date, llm_result: dict) -> dict:
     default_keyword = config.STOCK_FOOTAGE_THEME_BY_FORMAT.get(fmt, "finance")
+    raw_corps = llm_result.get("corps", [])
     corps = [
         {
-            "bloc": i + 1,
             "oral": bloc.get("oral", ""),
             "ecran": bloc.get("ecran", ""),
             "visuel": bloc.get("visuel", ""),
@@ -273,8 +277,22 @@ def _assemble_script(fmt: str, target_date: date, llm_result: dict) -> dict:
             # repli sur le thème générique du format si le LLM ne l'a pas fourni.
             "visual_keyword": (bloc.get("visual_keyword") or "").strip() or default_keyword,
         }
-        for i, bloc in enumerate(llm_result.get("corps", []))
+        for bloc in raw_corps
     ]
+
+    if fmt == "DEBRIEF":
+        # Garde-fou structurel (voir video_templates/debrief.txt, règle 4) : impose
+        # tous les blocs "EVENEMENT" avant tous les blocs "BREAKING" même si le LLM
+        # n'a pas respecté l'ordre demandé — tri stable, donc la hiérarchisation du
+        # LLM à l'intérieur de chaque section est préservée. Une section absente ou
+        # invalide retombe sur "EVENEMENT" (jamais un bloc affiché "BREAKING" à tort).
+        for c, bloc in zip(corps, raw_corps):
+            section = (bloc.get("section") or "").strip().upper()
+            c["section"] = section if section in ("EVENEMENT", "BREAKING") else "EVENEMENT"
+        corps.sort(key=lambda c: c["section"] != "EVENEMENT")
+
+    corps = [{"bloc": i + 1, **c} for i, c in enumerate(corps)]
+
     hook = llm_result.get("hook", "")
     chute = llm_result.get("chute", "")
     cta = config.VIDEO_CTA_TEXT  # jamais généré par le LLM, toujours la même formulation
@@ -306,6 +324,12 @@ def _assemble_script(fmt: str, target_date: date, llm_result: dict) -> dict:
     }
 
 
+_SECTION_MD_LABELS = {
+    "EVENEMENT": f"📅 {config.VIDEO_SECTION_LABEL_EVENEMENT}",
+    "BREAKING": f"🔴 {config.VIDEO_SECTION_LABEL_BREAKING}",
+}
+
+
 def _render_markdown(script: dict) -> str:
     date_label = datetime.fromisoformat(script["date"]).strftime("%d/%m/%Y")
     lines = [
@@ -316,7 +340,15 @@ def _render_markdown(script: dict) -> str:
         "",
         "## 📋 CORPS",
     ]
+    # Sous-titres de section pour DEBRIEF uniquement (seul format dont les blocs
+    # portent un "section" — voir _assemble_script) : rend visible à la relecture
+    # la même séparation événements/breaking news que la vidéo rendue.
+    current_section = None
     for bloc in script["corps"]:
+        section = bloc.get("section")
+        if section and section != current_section:
+            lines += ["", f"### {_SECTION_MD_LABELS.get(section, section)}"]
+            current_section = section
         lines += [
             "",
             f"**Bloc {bloc['bloc']}**",

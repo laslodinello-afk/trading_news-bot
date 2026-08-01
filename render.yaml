@@ -22,6 +22,8 @@ services:
         sync: false
       - key: TELEGRAM_CHANNEL_ID
         sync: false
+      - key: SYNC_API_KEY
+        sync: false
       - key: GITHUB_CALENDAR_CACHE_URL
         value: https://raw.githubusercontent.com/laslodinello-afk/trading_news-bot/cache-data/calendar_cache.json
       - key: FXSTREET_CACHE_URL

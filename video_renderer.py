@@ -14,6 +14,13 @@ graphique réel (matplotlib) quand de vraies données numériques existent — j
 de donnée ni de fond inventé. Le CTA final est une carte de fin dédiée, stable,
 sans fond vidéo ni sous-titres découpés — même habillage (dégradé + liseré) que
 la carte d'intro pour encadrer la vidéo de façon cohérente.
+
+Structure (DEBRIEF uniquement) : les blocs corps sont déjà triés événements-
+publiés-puis-breaking-news par video_scripts._assemble_script — ce module rend
+cet ordre visible à l'écran avec une étiquette de section en haut de chaque bloc
+(voir _build_section_tag_clip) et une courte carte de transition silencieuse au
+point de bascule (voir _build_section_transition_clip), plutôt qu'un simple cut
+entre deux sujets sans rapport apparent.
 """
 from __future__ import annotations
 
@@ -382,6 +389,8 @@ def _build_segment_clip(
     background_keyword: str,
     chart_path=None,
     content_specific_keyword: bool = False,
+    section_label: str | None = None,
+    section_accent: str | None = None,
 ):
     mp3_path = os.path.join(tmp_dir, f"segment_{index}.mp3")
     word_boundaries, sentence_boundaries = _synthesize_with_retry(spoken_text, voice, mp3_path)
@@ -396,6 +405,12 @@ def _build_segment_clip(
     else:
         background = _background_clip(background_keyword, duration, fetch_count=config.STOCK_FOOTAGE_FALLBACK_CLIP_COUNT)
     layers = [background]
+
+    if section_label:
+        # Repère structurel pour un bloc corps de DEBRIEF (voir _build_section_tag_clip)
+        # — ne coexiste jamais avec le graphique (chart_path n'est passé que pour le
+        # hook, jamais pour un bloc corps), donc pas de collision d'espace à l'écran.
+        layers += _build_section_tag_clip(section_label, section_accent, font_path, width, duration)
 
     if chart_path:
         layers.append(
@@ -461,12 +476,52 @@ def _card_background(width: int, height: int, duration: float, theme_keyword: st
     return ImageClip(array).with_duration(duration)
 
 
-def _accent_rule(width: int, y: float, duration: float, rule_width: int = 220):
+def _accent_rule(width: int, y: float, duration: float, rule_width: int = 220, color_hex: str | None = None):
     return (
-        ColorClip(size=(rule_width, 5), color=_hex_to_rgb(config.VIDEO_CARD_ACCENT_COLOR))
+        ColorClip(size=(rule_width, 5), color=_hex_to_rgb(color_hex or config.VIDEO_CARD_ACCENT_COLOR))
         .with_duration(duration)
         .with_position(("center", int(y)))
     )
+
+
+def _build_section_tag_clip(label: str, accent_hex: str, font_path: str, width: int, duration: float):
+    """Étiquette de section en haut de l'écran pour un bloc corps de DEBRIEF (ex.
+    "ÉVÉNEMENTS DU JOUR" / "BREAKING NEWS") — seul repère structurel visible tout
+    au long d'un bloc, pour que le spectateur sache en permanence dans quelle
+    partie du débrief il se trouve, sans dépendre uniquement du sous-titre du
+    moment. Même contour noir que les sous-titres (voir _build_caption_text_clip)
+    pour rester lisible sur n'importe quel fond vidéo."""
+    tag_clip = _make_text_clip(label.upper(), font_path, 38, "white", width - 200, stroke_color="black", stroke_width=2)
+    tag_y = 100
+    rule_y = tag_y + tag_clip.h + 16
+    return [
+        tag_clip.with_position(("center", tag_y)).with_duration(duration).with_effects([vfx.CrossFadeIn(0.25)]),
+        _accent_rule(width, rule_y, duration, rule_width=90, color_hex=accent_hex),
+    ]
+
+
+def _build_section_transition_clip(label: str, accent_hex: str, font_path: str, theme_keyword: str | None = None):
+    """Courte carte silencieuse (voir VIDEO_SECTION_TRANSITION_SECONDS) insérée
+    entre la section "événements du jour" et la section "breaking news" d'un
+    DEBRIEF (voir render()), pour annoncer visuellement le changement plutôt
+    qu'un simple cut — même habillage (fond de carte assombri + liseré accent)
+    que les cartes d'intro/fin pour rester cohérent avec le reste de la vidéo.
+    Pas de voix ni d'AudioClip factice à fabriquer : concatenate_videoclips(
+    method="compose") traite nativement un clip sans piste audio comme un
+    silence de sa durée dans la piste finale (vérifié dans le code source de
+    moviepy, CompositeVideoClip.py — les clips à `audio=None` sont simplement
+    exclus du CompositeAudioClip final)."""
+    duration = config.VIDEO_SECTION_TRANSITION_SECONDS
+    width, height = config.VIDEO_RENDER_RESOLUTION
+    background = _card_background(width, height, duration, theme_keyword)
+    title_clip = _make_text_clip(label.upper(), font_path, 60, "white", width - 160)
+    rule_y = height / 2 + title_clip.h / 2 + 28
+    layers = [
+        background,
+        title_clip.with_position("center").with_duration(duration),
+        _accent_rule(width, rule_y, duration, color_hex=accent_hex),
+    ]
+    return CompositeVideoClip(layers, size=(width, height)).with_duration(duration)
 
 
 def _stacked_card_layers(title_text, title_size, subtitle_text, subtitle_size, font_path, width, height, duration):
@@ -538,6 +593,12 @@ def _build_end_card_clip(cta_text: str, voice: str, tmp_dir: str, font_path: str
 
 # --- orchestration ---------------------------------------------------------------
 
+def _section_label_and_accent(section: str) -> tuple[str, str]:
+    if section == "BREAKING":
+        return config.VIDEO_SECTION_LABEL_BREAKING, config.VIDEO_SECTION_BREAKING_ACCENT_COLOR
+    return config.VIDEO_SECTION_LABEL_EVENEMENT, config.VIDEO_CARD_ACCENT_COLOR
+
+
 def render(script: dict, out_path: str, voice: str | None = None) -> str | None:
     """script vient de video_scripts.generate(). Dérive le format/la date du script
     lui-même et va chercher l'événement source (pour le graphique) via
@@ -564,22 +625,41 @@ def render(script: dict, out_path: str, voice: str | None = None) -> str | None:
             # visual_keyword (généré par l'IA pour ce bloc précis, voir
             # video_scripts._assemble_script) pour que le fond corresponde vraiment
             # au sujet dont il est question à ce moment de la vidéo.
-            segments_plan = [("hook", script["hook"], default_keyword, False)]
+            segments_plan = [("hook", script["hook"], default_keyword, False, None)]
             for bloc in script["corps"]:
                 keyword = bloc.get("visual_keyword") or default_keyword
-                segments_plan.append(("corps", bloc["oral"], keyword, keyword != default_keyword))
-            segments_plan.append(("chute", script["chute"], default_keyword, False))
+                segments_plan.append(("corps", bloc["oral"], keyword, keyword != default_keyword, bloc.get("section")))
+            segments_plan.append(("chute", script["chute"], default_keyword, False, None))
 
+            # DEBRIEF uniquement (seul format dont les blocs corps portent un
+            # "section", déjà triés EVENEMENT avant BREAKING par
+            # video_scripts._assemble_script) : une étiquette de section sur chaque
+            # bloc corps, plus une courte carte de transition silencieuse au point
+            # de bascule EVENEMENT -> BREAKING, si les deux sections coexistent ce
+            # soir-là. Structure purement visuelle : aucune influence sur les
+            # formats à sujet unique (section reste None pour eux).
             clips = [_build_intro_card_clip(target_date, voice, tmp_dir, font_path, theme_keyword=default_keyword)]
-            clips += [
-                _build_segment_clip(
-                    spoken, voice, tmp_dir, font_path, i,
-                    background_keyword=keyword,
-                    chart_path=chart_path if kind == "hook" else None,
-                    content_specific_keyword=is_content_specific,
+            prev_section = None
+            for i, (kind, spoken, keyword, is_content_specific, section) in enumerate(segments_plan):
+                if section == "BREAKING" and prev_section == "EVENEMENT":
+                    label, accent = _section_label_and_accent("BREAKING")
+                    clips.append(_build_section_transition_clip(label, accent, font_path, theme_keyword=default_keyword))
+
+                section_label = section_accent = None
+                if section:
+                    section_label, section_accent = _section_label_and_accent(section)
+
+                clips.append(
+                    _build_segment_clip(
+                        spoken, voice, tmp_dir, font_path, i,
+                        background_keyword=keyword,
+                        chart_path=chart_path if kind == "hook" else None,
+                        content_specific_keyword=is_content_specific,
+                        section_label=section_label,
+                        section_accent=section_accent,
+                    )
                 )
-                for i, (kind, spoken, keyword, is_content_specific) in enumerate(segments_plan)
-            ]
+                prev_section = section
             clips.append(
                 _build_end_card_clip(script["cta"], voice, tmp_dir, font_path, len(segments_plan), theme_keyword=default_keyword)
             )

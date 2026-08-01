@@ -53,6 +53,21 @@ GITHUB_CACHE_MAX_AGE_HOURS = 12  # au-delà, le cache est jugé trop vieux (Acti
 FXSTREET_CACHE_URL = os.getenv("FXSTREET_CACHE_URL", "")
 FXSTREET_CACHE_MAX_AGE_MINUTES = 15  # au-delà, le cache est jugé trop vieux (Action en panne ?) — l'Action tourne toutes les 5 min, donc 15 min = 2-3 passages ratés d'affilée
 
+# URL de base du service Render déployé (ex: https://trading-news-agent-xxxx.onrender.com),
+# utilisée UNIQUEMENT en local par render_sync.py pour aller chercher les vraies
+# données du jour (events + breaking news réellement captés/envoyés par le bot
+# qui tourne 24/7) avant une génération DEBRIEF locale — voir generate_debrief.sh.
+# Vide par défaut (la synchro est simplement sautée, repli sur le rafraîchissement
+# calendrier local habituel).
+RENDER_SYNC_URL = os.getenv("RENDER_SYNC_URL", "")
+
+# Clé partagée pour authentifier l'appel à /sync (voir main.py) : sans elle (ou
+# si elle ne correspond pas), le endpoint répond systématiquement 401 — jamais
+# d'accès à alerts.db sans cette clé. Doit être définie À L'IDENTIQUE ici (.env
+# local) ET dans les variables d'environnement du service Render (dashboard,
+# pas render.yaml qui a sync:false pour les secrets — voir README).
+SYNC_API_KEY = os.getenv("SYNC_API_KEY", "")
+
 # --- Modèle IA ---------------------------------------------------------------
 # Gemini Flash a un palier gratuit permanent (pas un essai limité dans le temps),
 # largement suffisant pour cet agent. gemini-3.1-flash-lite est choisi précisément

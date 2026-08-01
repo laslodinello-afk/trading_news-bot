@@ -282,6 +282,8 @@ L'agent peut transformer les données qu'il collecte déjà (calendrier économi
 
 **`DEBRIEF` est LE format généré automatiquement chaque soir** — le récapitulatif complet de la journée (événements macro publiés + breaking news), 75 à 90 secondes. 5 autres formats existent pour un usage ponctuel, à la demande uniquement :
 
+Structure imposée du DEBRIEF (texte ET vidéo) : un sujet par bloc (jamais deux événements mélangés dans le même bloc), tous les blocs "événements du jour" d'abord, puis tous les blocs "breaking news" ensuite — jamais entremêlés — avec une phrase de transition parlée qui annonce le changement, et une chute qui se termine toujours en donnant un cap (quoi surveiller dans les prochains jours). Ce classement est vérifié et réordonné par le code après coup (pas seulement demandé à l'IA) : impossible d'obtenir un ordre mélangé même si le modèle se trompe.
+
 | Format | Durée | Contenu | Génération |
 |---|---|---|---|
 | `DEBRIEF` | 75-90s | Le débrief complet de la journée (événements + breaking news) | **Automatique, chaque soir** |
@@ -337,6 +339,11 @@ Le flag `--render` transforme le script en vraie vidéo verticale (1080×1920, m
   la vidéo. Fond uni sombre par défaut sans clé Pexels.
 - **Graphique réel** (prévision/précédent vs réel) pour DEBRIEF/REACTION/POURQUOI
   quand l'événement du jour a de vraies données numériques — jamais inventé.
+- **Repères de structure** (DEBRIEF uniquement) : une étiquette en haut de
+  chaque bloc ("ÉVÉNEMENTS DU JOUR" en bleu / "BREAKING NEWS" en rouge) plus une
+  courte carte de transition silencieuse au moment où la vidéo bascule d'une
+  section à l'autre — pour que le découpage s'entende et se voie, pas juste un
+  enchaînement de sujets sans rapport apparent.
 - **Carte de fin dédiée** pour le CTA : contrairement au reste, un écran stable
   (pas de fond vidéo, pas de sous-titres qui défilent) — un appel à l'action doit
   rester lisible, pas clignoter.
@@ -407,17 +414,43 @@ produire la vidéo DEBRIEF d'un jour donné, sans ouvrir de Terminal :
      le détail technique en dessous si besoin.
 
 À savoir :
-- L'app appelle `generate_debrief.sh`, qui rafraîchit **la base locale**
-  uniquement — elle n'a aucun lien avec ce qui tourne sur Render (voir
-  "Limites honnêtes à connaître"). Si tu veux le débrief d'un jour où le bot
-  déployé a capté des données que tu n'as pas en local, il faudra les
-  récupérer autrement.
+- L'app appelle `generate_debrief.sh`, qui synchronise d'abord avec Render
+  (voir "Synchroniser avec Render" ci-dessous, si configuré) puis rafraîchit
+  le calendrier en local — la vidéo reflète alors ce que le bot déployé a
+  réellement capté et envoyé sur Telegram, pas une reconstruction partielle.
 - Aucune donnée sensible n'est demandée par l'app — elle réutilise simplement
   ton `.env` et ta base SQLite locale existants.
 - Pour changer la date ou les remarques par défaut, ou modifier le comportement,
   le script source est `GenerateDebrief.applescript` (à ouvrir avec
   l'app **Éditeur de scripts** sur macOS, puis "Exporter..." en type
   "Application" pour recompiler après modification).
+
+### Synchroniser avec Render (recommandé)
+
+Par défaut, générer la vidéo en local ne connaît que ce qu'un simple
+rafraîchissement du calendrier peut trouver — pas les résultats confirmés ni
+les breaking news que le bot **déployé sur Render** a réellement captés et
+envoyés sur Telegram au fil de la journée (ces deux bases ne se parlent pas
+nativement, voir "Limites honnêtes à connaître"). La synchro comble cet écart :
+`generate_debrief.sh` va chercher les vraies données du jour directement sur
+ton service Render avant de générer, via un petit point d'accès protégé par
+une clé secrète (jamais tes données exposées publiquement).
+
+**Mise en place (une fois) :**
+1. Une clé `SYNC_API_KEY` a déjà été générée et ajoutée à ton `.env` local.
+2. Va sur [dashboard.render.com](https://dashboard.render.com), ouvre ton
+   service, onglet **Environment**, et ajoute une variable `SYNC_API_KEY` avec
+   **exactement la même valeur** que celle dans ton `.env` local. Sauvegarde
+   (Render redéploie automatiquement).
+3. Dans ton `.env` local, renseigne `RENDER_SYNC_URL` avec l'URL publique de
+   ton service (visible en haut de la page du service sur le dashboard, du
+   type `https://trading-news-agent-xxxx.onrender.com`).
+
+Une fois ces trois valeurs en place, `generate_debrief.sh` s'en sert
+automatiquement — rien d'autre à faire. Si `RENDER_SYNC_URL` ou
+`SYNC_API_KEY` est vide, ou si le service est injoignable (endormi, clé qui ne
+correspond pas...), la synchro est simplement sautée et le script continue
+avec le rafraîchissement local habituel — jamais bloquant.
 
 ---
 
@@ -450,6 +483,7 @@ Pour que tu saches exactement ce que fait (et ne fait pas) l'agent :
 - **Crypto (BTC/ETH), indices (US30/SP500/NASDAQ/DAX/CAC40) et pétrole (BRENT) n'ont PAS de calendrier économique dédié.** Il n'existe pas de source gratuite équivalente à ForexFactory pour ces instruments (ex : pas d'heure précise pour "prochaine décision SEC sur un ETF"). Ils reçoivent : (1) le biais IA généré automatiquement à chaque news USD ou EUR existante (le crypto et les indices US sont très corrélés au dollar), et (2) une couverture best-effort via la veille breaking news (mots-clés SEC/CFTC/OPEP/exchange hack...). En clair : pas d'alerte "30 min avant" programmée pour ces instruments, seulement des alertes réactives.
 - **L'IA peut se tromper.** Le biais directionnel et le niveau de danger sont des indications générées automatiquement, pas des conseils financiers personnalisés — la décision de trader reste la tienne.
 - **Les scripts vidéo générés sur Render peuvent disparaître avant que tu les récupères.** Le disque gratuit de Render est éphémère (voir Étape 9.4) : si le job `video_scripts` tourne sur le service déployé plutôt qu'en local, un redéploiement ou redémarrage peut effacer `video_output/` avant consultation. Le module écrit volontairement des fichiers et ne publie nulle part (voir section "Scripts vidéo courts") — pense à les récupérer rapidement, ou lance la génération en local si tu préfères des fichiers durables.
+- **La base locale et celle de Render ne se parlent pas nativement.** Le rendu vidéo se fait toujours en local (dépendances trop lourdes pour le plan gratuit Render), mais c'est le service déployé qui capte les vraies breaking news et confirme les résultats publiés en continu — deux bases SQLite séparées, par défaut. Voir "Synchroniser avec Render" (section "Scripts vidéo courts") pour combler cet écart.
 
 ---
 
@@ -474,6 +508,7 @@ Pour que tu saches exactement ce que fait (et ne fait pas) l'agent :
 | L'agent tourne mais rien ne se passe après plusieurs heures | Regarde le fichier `agent.log` (ou l'onglet Logs sur Render) pour voir les erreurs |
 | Alertes en double après un redéploiement Render | Comportement normal du plan gratuit (voir "Limite importante" à l'Étape 9.4) |
 | Le service Render semble "endormi" / lent à réagir | Vérifie que le cronjob cron-job.org (Étape 9.4) est bien actif |
+| "Synchro Render sautée ou indisponible" dans `generate_debrief.sh` | Vérifie que `RENDER_SYNC_URL` et `SYNC_API_KEY` sont bien renseignées dans `.env`, que `SYNC_API_KEY` est **identique** côté dashboard Render (onglet Environment), et que le service n'est pas endormi (voir ligne au-dessus) |
 
 ---
 
@@ -488,6 +523,7 @@ trading-news-agent/
 ├── news_watcher.py        # Veille breaking news (GDELT + NewsAPI)
 ├── ai_analyzer.py         # Analyse IA (Google Gemini) : résumé, biais, danger
 ├── telegram_bot.py        # Envoi + mise en forme des messages Telegram
+├── render_sync.py         # Synchro locale <- Render (voir "Synchroniser avec Render")
 ├── video_scripts.py       # Génération de scripts vidéo courts (TikTok/Reels/Shorts)
 ├── video_renderer.py      # Rendu voix + visuel (--render), local uniquement
 ├── stock_footage.py       # Fond vidéo Pexels (optionnel) : recherche + cache local

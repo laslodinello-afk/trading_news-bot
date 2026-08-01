@@ -151,6 +151,98 @@ def test_assemble_script_falls_back_to_format_theme_without_llm_keyword():
     assert script["corps"][0]["visual_keyword"] == config.STOCK_FOOTAGE_THEME_BY_FORMAT["PEDAGO"]
 
 
+# --- DEBRIEF : structure en 2 sections (événements publiés puis breaking news) -----
+# Garde-fou côté code (voir _assemble_script) : même si le LLM n'a pas respecté
+# l'ordre demandé par video_templates/debrief.txt, tous les blocs "EVENEMENT" se
+# retrouvent avant tous les blocs "BREAKING" une fois le script assemblé.
+
+def _corps_block(section=None, oral="texte du bloc"):
+    block = {"oral": oral, "ecran": "texte court", "visuel": "visuel"}
+    if section is not None:
+        block["section"] = section
+    return block
+
+
+def test_assemble_script_debrief_sorts_evenement_before_breaking():
+    llm_result = {
+        "hook": _words(5),
+        "corps": [
+            _corps_block("BREAKING"),
+            _corps_block("EVENEMENT"),
+            _corps_block("BREAKING"),
+            _corps_block("EVENEMENT"),
+        ],
+        "chute": _words(6),
+        "legende": "Légende de test.",
+        "hashtags": ["eco"],
+    }
+    script = video_scripts._assemble_script("DEBRIEF", date(2026, 7, 26), llm_result)
+    assert [b["section"] for b in script["corps"]] == ["EVENEMENT", "EVENEMENT", "BREAKING", "BREAKING"]
+    assert [b["bloc"] for b in script["corps"]] == [1, 2, 3, 4]
+
+
+def test_assemble_script_debrief_preserves_relative_order_within_each_section():
+    """Tri stable : la hiérarchisation du LLM à l'intérieur d'une section (censée
+    aller du plus important au moins important) n'est pas perturbée par le tri."""
+    llm_result = {
+        "hook": _words(5),
+        "corps": [
+            _corps_block("EVENEMENT", oral="premier evenement"),
+            _corps_block("EVENEMENT", oral="second evenement"),
+            _corps_block("BREAKING", oral="premier breaking"),
+        ],
+        "chute": _words(6),
+        "legende": "Légende de test.",
+        "hashtags": ["eco"],
+    }
+    script = video_scripts._assemble_script("DEBRIEF", date(2026, 7, 26), llm_result)
+    assert [b["oral"] for b in script["corps"]] == ["premier evenement", "second evenement", "premier breaking"]
+
+
+def test_assemble_script_debrief_defaults_missing_or_invalid_section_to_evenement():
+    llm_result = {
+        "hook": _words(5),
+        "corps": [_corps_block(None), _corps_block(""), _corps_block("AUTRE_CHOSE")],
+        "chute": _words(6),
+        "legende": "Légende de test.",
+        "hashtags": ["eco"],
+    }
+    script = video_scripts._assemble_script("DEBRIEF", date(2026, 7, 26), llm_result)
+    assert all(b["section"] == "EVENEMENT" for b in script["corps"])
+
+
+def test_assemble_script_non_debrief_never_carries_section_key():
+    llm_result = _fake_llm_result(n_corps=2)
+    llm_result["corps"][0]["section"] = "BREAKING"  # même si le LLM en glisse un par erreur
+    script = video_scripts._assemble_script("REACTION", date(2026, 7, 26), llm_result)
+    assert all("section" not in bloc for bloc in script["corps"])
+
+
+def test_render_markdown_debrief_groups_corps_under_section_headings():
+    llm_result = {
+        "hook": _words(5),
+        "corps": [_corps_block("EVENEMENT", oral="evenement un"), _corps_block("BREAKING", oral="breaking un")],
+        "chute": _words(6),
+        "legende": "Légende de test.",
+        "hashtags": ["eco"],
+    }
+    script = video_scripts._assemble_script("DEBRIEF", date(2026, 7, 26), llm_result)
+    md = video_scripts._render_markdown(script)
+
+    evenement_idx = md.index(config.VIDEO_SECTION_LABEL_EVENEMENT)
+    breaking_idx = md.index(config.VIDEO_SECTION_LABEL_BREAKING)
+    bloc1_idx = md.index("**Bloc 1**")
+    bloc2_idx = md.index("**Bloc 2**")
+    assert evenement_idx < bloc1_idx < breaking_idx < bloc2_idx
+
+
+def test_render_markdown_non_debrief_has_no_section_headings():
+    script = video_scripts._assemble_script("REACTION", date(2026, 7, 26), _fake_llm_result(n_corps=3))
+    md = video_scripts._render_markdown(script)
+    assert config.VIDEO_SECTION_LABEL_EVENEMENT not in md
+    assert config.VIDEO_SECTION_LABEL_BREAKING not in md
+
+
 # --- CTA et disclaimer toujours présents -------------------------------------------
 
 def test_assemble_script_injects_cta_and_disclaimer_regardless_of_llm_output():
@@ -166,7 +258,10 @@ def test_assemble_script_injects_cta_and_disclaimer_regardless_of_llm_output():
 # --- DEBRIEF : combine événements du jour + breaking news --------------------------
 
 def test_gather_data_debrief_combines_events_and_news(temp_db):
-    target_date = date(2026, 7, 26)
+    # date.today() et non une date fixe : db.mark_sent_news() horodate toujours
+    # sent_at avec l'heure réelle (voir db.py), donc la fenêtre interrogée doit
+    # couvrir "maintenant", pas un jour arbitraire figé dans le passé.
+    target_date = date.today()
     _insert_reaction_event(target_date)
     db.mark_sent_news("news_1", title="Déclaration surprise de la Fed", resume="Résumé test.")
 
@@ -186,7 +281,7 @@ def test_gather_data_debrief_works_with_only_events(temp_db):
 
 
 def test_gather_data_debrief_works_with_only_news(temp_db):
-    target_date = date(2026, 7, 26)
+    target_date = date.today()  # voir commentaire dans le test précédent
     db.mark_sent_news("news_1", title="Déclaration surprise de la Fed", resume="Résumé test.")
     data = video_scripts._gather_data("DEBRIEF", target_date)
     assert data is not None

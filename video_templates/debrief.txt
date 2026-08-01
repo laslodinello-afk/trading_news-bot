@@ -14,18 +14,41 @@ Paires/actifs suivis par l'audience : {pairs}.
 
 {extra_notes_block}
 
-Angle : un vrai débrief de fin de journée, pas une liste énumérée — relie les
-événements entre eux quand c'est pertinent (ex. "cette donnée explique en
-partie cette actualité"), hiérarchise (ce qui compte vraiment vs le détail
-secondaire), et referme sur ce qu'il faut surveiller dans les prochains jours
-si c'est pertinent.
+Angle : un vrai débrief de fin de journée, pas une liste énumérée — hiérarchise
+(ce qui compte vraiment vs le détail secondaire) à l'intérieur de chaque
+section (voir Structure ci-dessous).
 
-Structure : découpe le corps en 4 à 7 blocs (plus que les autres formats — ce
-DEBRIEF couvre plus de terrain, un bloc par sujet distinct plutôt que de tout
-mélanger). Pour CHAQUE bloc, le "visual_keyword" doit correspondre précisément
-au sujet de CE bloc, pas un mot-clé générique répété partout : un bloc sur une
-décision de banque centrale appelle un mot-clé différent d'un bloc sur une
-donnée de l'emploi ou sur une actualité géopolitique.
+Structure (IMPORTANT, à respecter strictement — c'est ce qui rend le débrief
+lisible plutôt qu'un vrac de sujets) :
+1. Un bloc = un seul sujet. N'écris JAMAIS un bloc qui mélange deux événements
+   ou deux actualités différentes (ex. la décision de la BCE et les ventes au
+   détail britanniques sont deux sujets distincts : deux blocs séparés, même si
+   ça donne plus de blocs). Si tu as plus de sujets exploitables que la
+   fourchette de blocs ne le permet, garde les plus importants et laisse tomber
+   le reste plutôt que d'en fusionner deux dans un seul bloc.
+2. Découpe le corps en 4 à 7 blocs (plus que les autres formats — ce DEBRIEF
+   couvre plus de terrain).
+3. Étiquette CHAQUE bloc via le champ "section" : "EVENEMENT" pour un bloc qui
+   parle d'une donnée macro publiée aujourd'hui, "BREAKING" pour un bloc qui
+   parle d'une actualité de dernière minute. N'invente rien : si le jour n'a
+   que des événements (ou que des breaking news), tous les blocs ont la même
+   section.
+4. Ordre des blocs dans le tableau "corps" : D'ABORD tous les blocs
+   "EVENEMENT" (du plus important au plus secondaire), ENSUITE tous les blocs
+   "BREAKING" — jamais mélangés dans l'ordre. Si les deux sections sont
+   présentes, le premier bloc "BREAKING" doit ouvrir par une courte phrase de
+   transition explicite qui signale le changement (ex. "Côté actus de
+   dernière minute, maintenant :", dans tes propres mots) — le passage d'une
+   section à l'autre doit s'entendre, pas juste s'enchaîner.
+5. Pour CHAQUE bloc, le "visual_keyword" doit correspondre précisément au
+   sujet de CE bloc, pas un mot-clé générique répété partout : un bloc sur une
+   décision de banque centrale appelle un mot-clé différent d'un bloc sur une
+   donnée de l'emploi ou sur une actualité géopolitique.
+
+La chute doit TOUJOURS se terminer en donnant un cap : ce qu'il faut
+surveiller dans les prochains jours (le prochain événement qui compte pour
+l'audience, ou la suite logique d'une actualité du jour) — jamais une simple
+formule qui referme l'idée sans ouvrir sur la suite.
 
 Le texte oral total (hook + corps + chute) doit faire {word_min} à {word_max}
 mots, calibré pour {duration_label} à l'oral — sensiblement plus long que les

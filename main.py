@@ -16,10 +16,13 @@ from __future__ import annotations
 
 import argparse
 import difflib
+import hmac
+import json
 import logging
 import sys
 import threading
-from datetime import datetime, timedelta, timezone
+import urllib.parse
+from datetime import date, datetime, timedelta, timezone
 from http.server import BaseHTTPRequestHandler, HTTPServer
 
 from apscheduler.schedulers.blocking import BlockingScheduler
@@ -49,9 +52,45 @@ def setup_logging() -> None:
 
 
 # --- serveur keep-alive (Render a besoin d'un port ouvert qui répond) -----------
+# + endpoint /sync (voir render_sync.py) : donne accès en lecture aux vraies
+# données du jour (events + breaking news réellement captés/envoyés par CE
+# service) à un script local, pour que la génération DEBRIEF locale reflète ce
+# qui a vraiment été publié sur Telegram plutôt qu'une reconstruction partielle
+# à partir des sources brutes. Protégé par SYNC_API_KEY (comparaison à temps
+# constant) : sans clé configurée ou avec la mauvaise clé, toujours 401.
+
+def build_sync_response(query_string: str, auth_header: str | None) -> tuple[int, str, bytes]:
+    """Logique pure (aucun I/O réseau/socket) derrière /sync, isolée pour être
+    testable sans ouvrir de vrai serveur HTTP. Renvoie (status_code,
+    content_type, body_bytes)."""
+    if not config.SYNC_API_KEY or not auth_header or not hmac.compare_digest(auth_header, config.SYNC_API_KEY):
+        return 401, "text/plain", b"unauthorized"
+
+    params = urllib.parse.parse_qs(query_string)
+    date_str = (params.get("date") or [None])[0]
+    try:
+        target_date = date.fromisoformat(date_str) if date_str else datetime.now(config.TIMEZONE).date()
+    except ValueError:
+        return 400, "text/plain", b"invalid date (attendu YYYY-MM-DD)"
+
+    day_start_utc, day_end_utc = db.local_day_bounds_utc(target_date)
+    events = [dict(row) for row in db.get_events_for_day(day_start_utc, day_end_utc)]
+    news = [dict(row) for row in db.get_news_for_day(day_start_utc, day_end_utc)]
+    payload = {"date": target_date.isoformat(), "events": events, "news": news}
+    return 200, "application/json", json.dumps(payload).encode("utf-8")
+
 
 class _HealthHandler(BaseHTTPRequestHandler):
     def do_GET(self):
+        parsed = urllib.parse.urlparse(self.path)
+        if parsed.path == "/sync":
+            status, content_type, body = build_sync_response(parsed.query, self.headers.get("X-Sync-Key"))
+            self.send_response(status)
+            self.send_header("Content-Type", content_type)
+            self.end_headers()
+            self.wfile.write(body)
+            return
+
         self.send_response(200)
         self.send_header("Content-Type", "text/plain")
         self.end_headers()
@@ -64,7 +103,7 @@ class _HealthHandler(BaseHTTPRequestHandler):
 def start_keepalive_server() -> None:
     server = HTTPServer(("0.0.0.0", config.PORT), _HealthHandler)
     threading.Thread(target=server.serve_forever, daemon=True).start()
-    logger.info("Serveur keep-alive démarré sur le port %d (endpoint /)", config.PORT)
+    logger.info("Serveur keep-alive démarré sur le port %d (endpoints / et /sync)", config.PORT)
 
 
 # --- gestion d'erreurs centralisée ----------------------------------------------

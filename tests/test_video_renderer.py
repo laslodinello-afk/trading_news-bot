@@ -405,3 +405,64 @@ def test_build_caption_text_clip_has_black_stroke():
     font_path = video_renderer._resolve_font_path()
     clip = video_renderer._build_caption_text_clip("Bonjour toi", font_path, max_width=940)
     assert clip.stroke_color == "black"
+
+
+# --- structure DEBRIEF : étiquette de section + carte de transition ----------------
+# Le texte est déjà trié EVENEMENT-puis-BREAKING par video_scripts._assemble_script ;
+# ce module rend cet ordre visible (étiquette en haut de chaque bloc corps, carte de
+# transition silencieuse au point de bascule) plutôt qu'un simple cut.
+
+def test_accent_rule_uses_default_color_when_not_specified():
+    clip = video_renderer._accent_rule(1080, 100, duration=1.0)
+    pixel = tuple(int(v) for v in clip.get_frame(0)[0, 0])
+    assert pixel == video_renderer._hex_to_rgb(config.VIDEO_CARD_ACCENT_COLOR)
+
+
+def test_accent_rule_uses_custom_color_when_specified():
+    clip = video_renderer._accent_rule(1080, 100, duration=1.0, color_hex="#ef4444")
+    pixel = tuple(int(v) for v in clip.get_frame(0)[0, 0])
+    assert pixel == video_renderer._hex_to_rgb("#ef4444")
+
+
+def test_section_label_and_accent_evenement():
+    label, accent = video_renderer._section_label_and_accent("EVENEMENT")
+    assert label == config.VIDEO_SECTION_LABEL_EVENEMENT
+    assert accent == config.VIDEO_CARD_ACCENT_COLOR
+
+
+def test_section_label_and_accent_breaking():
+    label, accent = video_renderer._section_label_and_accent("BREAKING")
+    assert label == config.VIDEO_SECTION_LABEL_BREAKING
+    assert accent == config.VIDEO_SECTION_BREAKING_ACCENT_COLOR
+
+
+def test_build_section_tag_clip_returns_two_layers_with_duration():
+    font_path = video_renderer._resolve_font_path()
+    layers = video_renderer._build_section_tag_clip("ÉVÉNEMENTS DU JOUR", "#3b82f6", font_path, 1080, duration=4.0)
+    assert len(layers) == 2
+    for layer in layers:
+        assert layer.duration == pytest.approx(4.0)
+
+
+def test_build_section_tag_clip_text_has_black_stroke():
+    font_path = video_renderer._resolve_font_path()
+    text_layer, _rule_layer = video_renderer._build_section_tag_clip("BREAKING NEWS", "#ef4444", font_path, 1080, duration=2.0)
+    assert text_layer.stroke_color == "black"
+
+
+def test_build_section_transition_clip_has_configured_duration_and_size(monkeypatch):
+    monkeypatch.setattr(config, "PEXELS_API_KEY", "")  # repli sur dégradé, pas de réseau
+    font_path = video_renderer._resolve_font_path()
+    clip = video_renderer._build_section_transition_clip("BREAKING NEWS", "#ef4444", font_path)
+    assert clip.duration == pytest.approx(config.VIDEO_SECTION_TRANSITION_SECONDS)
+    assert tuple(clip.size) == tuple(config.VIDEO_RENDER_RESOLUTION)
+
+
+def test_build_section_transition_clip_has_no_audio(monkeypatch):
+    """Pas de voix pour cette carte : concatenate_videoclips(method="compose")
+    traite un clip sans piste audio comme un silence de sa durée (voir la
+    docstring de _build_section_transition_clip) — pas d'AudioClip factice requis."""
+    monkeypatch.setattr(config, "PEXELS_API_KEY", "")
+    font_path = video_renderer._resolve_font_path()
+    clip = video_renderer._build_section_transition_clip("ÉVÉNEMENTS DU JOUR", "#3b82f6", font_path)
+    assert clip.audio is None
