@@ -68,6 +68,19 @@ RENDER_SYNC_URL = os.getenv("RENDER_SYNC_URL", "")
 # pas render.yaml qui a sync:false pour les secrets — voir README).
 SYNC_API_KEY = os.getenv("SYNC_API_KEY", "")
 
+# Journal durable des messages Telegram (voir message_log.py) : contrairement à
+# alerts.db (remis à zéro à chaque redéploiement Render, voir "Limites honnêtes"),
+# une base Turso (SQLite hébergé, gratuit) qui ne s'efface jamais — chaque
+# message réellement envoyé sur Telegram (voir telegram_bot.broadcast) y est
+# aussi copié. Vides par défaut : le journal est simplement désactivé (aucun
+# appel réseau), le reste de l'agent fonctionne à l'identique sans lui.
+TURSO_DATABASE_URL = os.getenv("TURSO_DATABASE_URL", "")
+TURSO_AUTH_TOKEN = os.getenv("TURSO_AUTH_TOKEN", "")
+# Copie locale (réplique) synchronisée avec Turso Cloud — pas la donnée durable
+# elle-même (qui vit sur Turso), juste un cache local ; peut disparaître sans
+# perte réelle (voir message_log.py).
+MESSAGE_LOG_REPLICA_PATH = os.getenv("MESSAGE_LOG_REPLICA_PATH", os.path.join(os.path.dirname(__file__), "message_log.db"))
+
 # --- Modèle IA ---------------------------------------------------------------
 # Gemini Flash a un palier gratuit permanent (pas un essai limité dans le temps),
 # largement suffisant pour cet agent. gemini-3.1-flash-lite est choisi précisément

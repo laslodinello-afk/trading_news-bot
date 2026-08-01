@@ -11,6 +11,7 @@ from datetime import datetime, timezone
 import requests
 
 import config
+import message_log
 
 logger = logging.getLogger("telegram_bot")
 
@@ -83,11 +84,17 @@ def broadcast(text: str) -> bool:
     directement pour rester perso uniquement.
     Renvoie True si l'envoi perso a réussi (le canal est secondaire : son échec
     est loggé mais ne doit pas faire perdre l'alerte perso).
+
+    Archive aussi le message dans le journal durable (voir message_log.py) si
+    l'envoi perso a réussi — une fois ici, pas à chaque appel de send(), pour
+    ne pas dupliquer l'entrée quand le canal payant reçoit le même texte.
     """
     ok = send(text)
     if config.TELEGRAM_CHANNEL_ID:
         if not send(text, chat_id=config.TELEGRAM_CHANNEL_ID):
             logger.warning("Échec de la diffusion vers le canal payant (l'envoi perso a été tenté séparément).")
+    if ok:
+        message_log.log_message("perso", text)
     return ok
 
 

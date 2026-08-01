@@ -240,7 +240,7 @@ Le plan gratuit Render met un service en veille après 15 minutes sans requête 
 
 ### ⚠️ Limite importante à connaître (plan gratuit)
 
-Sur le plan gratuit, le disque de Render est **temporaire** : si Render redémarre ou redéploie ton service (mise à jour du code, maintenance Render...), le fichier `alerts.db` repart de zéro. Concrètement : ça ne casse rien, mais juste après un redémarrage, l'agent pourrait renvoyer une alerte pour une news déjà annoncée juste avant le redémarrage. C'est rare (les redémarrages ne sont pas fréquents) et sans danger, juste bon à savoir.
+Sur le plan gratuit, le disque de Render est **temporaire** : si Render redémarre ou redéploie ton service (mise à jour du code, maintenance Render...), le fichier `alerts.db` repart de zéro. Concrètement : ça ne casse rien, mais juste après un redémarrage, l'agent pourrait renvoyer une alerte pour une news déjà annoncée juste avant le redémarrage. C'est rare (les redémarrages ne sont pas fréquents) et sans danger, juste bon à savoir. Le contenu réellement envoyé sur Telegram, lui, peut être préservé malgré ces redémarrages via le journal durable (voir section "Journal durable des messages Telegram").
 
 ---
 
@@ -452,6 +452,37 @@ automatiquement — rien d'autre à faire. Si `RENDER_SYNC_URL` ou
 correspond pas...), la synchro est simplement sautée et le script continue
 avec le rafraîchissement local habituel — jamais bloquant.
 
+### Journal durable des messages Telegram
+
+Problème réglé par cette section : sur le plan gratuit Render, `alerts.db`
+repart de zéro à chaque redémarrage (voir "Limites honnêtes" plus bas) — tout
+ce que le bot avait capté dans la journée peut disparaître avant que tu aies
+pu en faire une vidéo. Le journal durable règle ça en copiant chaque message
+réellement envoyé sur Telegram dans une base à part qui, elle, ne s'efface
+jamais.
+
+**Mise en place (une fois, gratuit, ~2 minutes) :**
+1. Va sur [app.turso.tech/signup](https://app.turso.tech/signup) et crée un
+   compte (possible avec ton compte GitHub). Aucune carte bancaire requise.
+2. Clique **Create Database**, donne-lui un nom, choisis une région proche de
+   toi, laisse le reste par défaut.
+3. Une fois créée, ouvre la base et récupère deux valeurs : l'**URL** (commence
+   par `libsql://...`, bouton "Connect") et un **token** (bouton "Create
+   Token"/"Generate Token").
+4. Ajoute-les dans ton `.env` local (`TURSO_DATABASE_URL`, `TURSO_AUTH_TOKEN`)
+   **et** dans les variables d'environnement de ton service Render (dashboard
+   → Environment, mêmes noms, mêmes valeurs — jamais dans `render.yaml`).
+
+Une fois ces deux valeurs en place des deux côtés, chaque message envoyé par
+`telegram_bot.broadcast()` (résumés, alertes, breaking news) est
+automatiquement archivé, en plus d'être envoyé — l'envoi Telegram lui-même
+n'est jamais affecté même si le journal est indisponible. Vide des deux
+côtés = journal simplement désactivé, aucun changement de comportement.
+
+À savoir : la génération vidéo n'exploite pas encore ce journal directement
+(il vient d'être mis en place, le temps qu'il accumule du contenu réel) — pour
+l'instant c'est une sauvegarde qui tourne en parallèle des autres sources.
+
 ---
 
 ## Personnaliser l'agent
@@ -491,7 +522,7 @@ Pour que tu saches exactement ce que fait (et ne fait pas) l'agent :
 
 **0 € — tout est sur un palier gratuit permanent, aucune carte bancaire nulle part.**
 
-- **Render + cron-job.org + ForexFactory + GDELT** : 0 €, sans limite de temps.
+- **Render + cron-job.org + ForexFactory + GDELT + Turso** : 0 €, sans limite de temps.
 - **FMP + NewsAPI** : 0 € (plans gratuits). Pour FMP, le plan gratuit ne couvre plus le calendrier économique (voir "Limites honnêtes" plus haut) — la clé reste gratuite à créer, elle est juste actuellement sans effet pour cette fonctionnalité précise.
 - **Google Gemini** : 0 € (1500 requêtes/jour offertes en continu ; cet agent en utilise typiquement quelques dizaines par jour avec les réglages par défaut — résumé quotidien + débrief du soir (2 appels/jour), alertes calendrier ~5-15/semaine, veille breaking news toutes les 15 min mais IA appelée seulement si un nouvel article correspond aux mots-clés).
 
@@ -509,6 +540,7 @@ Pour que tu saches exactement ce que fait (et ne fait pas) l'agent :
 | Alertes en double après un redéploiement Render | Comportement normal du plan gratuit (voir "Limite importante" à l'Étape 9.4) |
 | Le service Render semble "endormi" / lent à réagir | Vérifie que le cronjob cron-job.org (Étape 9.4) est bien actif |
 | "Synchro Render sautée ou indisponible" dans `generate_debrief.sh` | Vérifie que `RENDER_SYNC_URL` et `SYNC_API_KEY` sont bien renseignées dans `.env`, que `SYNC_API_KEY` est **identique** côté dashboard Render (onglet Environment), et que le service n'est pas endormi (voir ligne au-dessus) |
+| "Journal Turso indisponible" dans les logs | Vérifie que `TURSO_DATABASE_URL` et `TURSO_AUTH_TOKEN` sont bien renseignées **des deux côtés** (`.env` local ET variables d'environnement Render) — sans danger si oublié, le journal est juste désactivé |
 
 ---
 
@@ -523,6 +555,7 @@ trading-news-agent/
 ├── news_watcher.py        # Veille breaking news (GDELT + NewsAPI)
 ├── ai_analyzer.py         # Analyse IA (Google Gemini) : résumé, biais, danger
 ├── telegram_bot.py        # Envoi + mise en forme des messages Telegram
+├── message_log.py         # Journal durable des messages envoyés (Turso, voir README)
 ├── render_sync.py         # Synchro locale <- Render (voir "Synchroniser avec Render")
 ├── video_scripts.py       # Génération de scripts vidéo courts (TikTok/Reels/Shorts)
 ├── video_renderer.py      # Rendu voix + visuel (--render), local uniquement

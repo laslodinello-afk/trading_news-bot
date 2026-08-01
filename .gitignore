@@ -1,5 +1,7 @@
 .env
 alerts.db
+message_log.db
+message_log.db-*
 agent.log
 .DS_Store
 video_output/
