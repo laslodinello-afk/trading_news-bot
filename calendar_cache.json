@@ -1,6 +1,14 @@
 {
-  "fetched_at": "2026-08-02T07:54:22.262911+00:00",
+  "fetched_at": "2026-08-02T15:46:53.816404+00:00",
   "events": [
+    {
+      "title": "OPEC-JMMC Meetings",
+      "country": "All",
+      "date": "2026-08-02T05:15:00-04:00",
+      "impact": "Medium",
+      "forecast": "",
+      "previous": ""
+    },
     {
       "title": "Bank Holiday",
       "country": "AUD",
