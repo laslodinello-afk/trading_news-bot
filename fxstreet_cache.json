@@ -1,4 +1,17 @@
 {
-  "fetched_at": "2026-08-02T20:02:04.639917+00:00",
-  "articles": []
+  "fetched_at": "2026-08-02T23:40:40.884625+00:00",
+  "articles": [
+    {
+      "title": "Australian Dollar gathers strength to near 0.7050 as Trump cancels Iran strikes",
+      "url": "https://www.fxstreet.com/news/australian-dollar-gathers-strength-to-near-07050-as-trump-cancels-iran-strikes-202608022332",
+      "source": "FXStreet",
+      "published_at": "2026-08-02T23:32:20+00:00"
+    },
+    {
+      "title": "Middle East War updates: Trump holds off Iran strikes on pledge Hormuz deal is close",
+      "url": "https://www.fxstreet.com/news/middle-east-war-updates-trump-holds-off-iran-strikes-on-pledge-hormuz-deal-is-close-202608022237",
+      "source": "FXStreet",
+      "published_at": "2026-08-02T22:37:57+00:00"
+    }
+  ]
 }
