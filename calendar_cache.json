@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-02T20:38:46.373959+00:00",
+  "fetched_at": "2026-08-03T12:39:18.591684+00:00",
   "events": [
     {
       "title": "OPEC-JMMC Meetings",
@@ -466,6 +466,14 @@
       "previous": ""
     },
     {
+      "title": "FOMC Member Daly Speaks",
+      "country": "USD",
+      "date": "2026-08-05T20:35:00-04:00",
+      "impact": "Low",
+      "forecast": "",
+      "previous": ""
+    },
+    {
       "title": "Goods Trade Balance",
       "country": "AUD",
       "date": "2026-08-05T21:30:00-04:00",
@@ -744,6 +752,14 @@
       "impact": "Low",
       "forecast": "12.1B",
       "previous": "-0.2B"
+    },
+    {
+      "title": "FOMC Member Bowman Speaks",
+      "country": "USD",
+      "date": "2026-08-08T12:45:00-04:00",
+      "impact": "Low",
+      "forecast": "",
+      "previous": ""
     },
     {
       "title": "CPI y/y",
