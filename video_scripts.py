@@ -34,6 +34,11 @@ _TEMPLATES_DIR = os.path.join(os.path.dirname(__file__), "video_templates")
 _MAX_LLM_TOKENS = 1500  # DEBRIEF va jusqu'à ~240 mots + un visual_keyword par bloc
 _MAX_EVENTS_IN_PROMPT = 15  # évite un prompt géant un jour très chargé en news
 
+# Ordre imposé des sections d'un DEBRIEF (voir video_templates/debrief.txt,
+# règles 4 et 6) : événements confirmés, puis breaking news, puis le rappel des
+# événements en attente de résultat toujours en tout dernier.
+_DEBRIEF_SECTION_ORDER = {"EVENEMENT": 0, "BREAKING": 1, "RECAP": 2}
+
 _SCRIPT_SCHEMA = {
     "type": "OBJECT",
     "required": ["hook", "corps", "chute", "legende", "hashtags"],
@@ -125,12 +130,17 @@ def _gather_data(fmt: str, target_date: date, concept_override: str | None = Non
 
     if fmt == "DEBRIEF":
         rows = db.get_events_for_day(day_start_utc, day_end_utc)
-        events = [_row_to_event(r) for r in rows if r["actual"]]
+        confirmed = [_row_to_event(r) for r in rows if r["actual"]]
+        # Prévus aujourd'hui mais sans résultat confirmé pour l'instant (voir
+        # debrief.txt, règle 6) : jamais passés sous silence, jamais un chiffre
+        # inventé — juste mentionnés comme "en attente" en toute fin de vidéo.
+        pending = [_row_to_event(r) for r in rows if not r["actual"]]
         news_rows = db.get_news_for_day(day_start_utc, day_end_utc)
-        if not events and not news_rows:
+        if not confirmed and not pending and not news_rows:
             return None
         return {
-            "events_block": _format_events_block(events) if events else "Aucun événement macro publié aujourd'hui.",
+            "events_block": _format_events_block(confirmed) if confirmed else "Aucun événement macro confirmé aujourd'hui.",
+            "pending_events_block": _format_events_block(pending) if pending else "Aucun événement en attente de résultat.",
             "headlines_block": _format_headlines_block(news_rows) if news_rows else "Aucune breaking news aujourd'hui.",
         }
 
@@ -281,15 +291,16 @@ def _assemble_script(fmt: str, target_date: date, llm_result: dict) -> dict:
     ]
 
     if fmt == "DEBRIEF":
-        # Garde-fou structurel (voir video_templates/debrief.txt, règle 4) : impose
-        # tous les blocs "EVENEMENT" avant tous les blocs "BREAKING" même si le LLM
-        # n'a pas respecté l'ordre demandé — tri stable, donc la hiérarchisation du
-        # LLM à l'intérieur de chaque section est préservée. Une section absente ou
-        # invalide retombe sur "EVENEMENT" (jamais un bloc affiché "BREAKING" à tort).
+        # Garde-fou structurel (voir video_templates/debrief.txt, règles 4 et 6) :
+        # impose l'ordre EVENEMENT -> BREAKING -> RECAP même si le LLM n'a pas
+        # respecté l'ordre demandé — tri stable, donc la hiérarchisation du LLM à
+        # l'intérieur de chaque section est préservée. Une section absente ou
+        # invalide retombe sur "EVENEMENT" (jamais un bloc affiché à tort dans
+        # une autre section).
         for c, bloc in zip(corps, raw_corps):
             section = (bloc.get("section") or "").strip().upper()
-            c["section"] = section if section in ("EVENEMENT", "BREAKING") else "EVENEMENT"
-        corps.sort(key=lambda c: c["section"] != "EVENEMENT")
+            c["section"] = section if section in _DEBRIEF_SECTION_ORDER else "EVENEMENT"
+        corps.sort(key=lambda c: _DEBRIEF_SECTION_ORDER[c["section"]])
 
     corps = [{"bloc": i + 1, **c} for i, c in enumerate(corps)]
 
@@ -298,7 +309,9 @@ def _assemble_script(fmt: str, target_date: date, llm_result: dict) -> dict:
     cta = config.VIDEO_CTA_TEXT  # jamais généré par le LLM, toujours la même formulation
 
     word_count, estimated_seconds, warnings = _compute_duration(fmt, hook, corps, chute, cta)
-    min_corps, max_corps = (4, 7) if fmt == "DEBRIEF" else (3, 5)
+    # DEBRIEF : max un peu plus haut que les 4-7 blocs "de fond" pour laisser de
+    # la place à l'éventuel bloc "RECAP" (règle 6) sans forcer à en sacrifier un autre.
+    min_corps, max_corps = (4, 8) if fmt == "DEBRIEF" else (3, 5)
     if not min_corps <= len(corps) <= max_corps:
         warnings.append(f"Corps hors gabarit : {len(corps)} bloc(s) (attendu {min_corps} à {max_corps}).")
 
@@ -327,6 +340,7 @@ def _assemble_script(fmt: str, target_date: date, llm_result: dict) -> dict:
 _SECTION_MD_LABELS = {
     "EVENEMENT": f"📅 {config.VIDEO_SECTION_LABEL_EVENEMENT}",
     "BREAKING": f"🔴 {config.VIDEO_SECTION_LABEL_BREAKING}",
+    "RECAP": f"🟡 {config.VIDEO_SECTION_LABEL_RECAP}",
 }
 
 

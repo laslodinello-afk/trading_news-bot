@@ -17,6 +17,12 @@ import db
 
 @pytest.fixture
 def temp_db(tmp_path, monkeypatch):
+    # db.get_conn() bascule sur Turso (réseau réel, données de prod) dès que ces
+    # deux variables sont renseignées — un test ne doit JAMAIS toucher au Turso
+    # réel, donc on les vide ici pour forcer le repli SQLite local, quel que soit
+    # le contenu du vrai .env de la machine qui lance les tests.
+    monkeypatch.setattr(config, "TURSO_DATABASE_URL", "")
+    monkeypatch.setattr(config, "TURSO_AUTH_TOKEN", "")
     monkeypatch.setattr(config, "DB_PATH", str(tmp_path / "test_alerts.db"))
     db.init_db()
     return config.DB_PATH

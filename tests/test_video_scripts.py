@@ -151,10 +151,11 @@ def test_assemble_script_falls_back_to_format_theme_without_llm_keyword():
     assert script["corps"][0]["visual_keyword"] == config.STOCK_FOOTAGE_THEME_BY_FORMAT["PEDAGO"]
 
 
-# --- DEBRIEF : structure en 2 sections (événements publiés puis breaking news) -----
+# --- DEBRIEF : structure en 3 sections (événements confirmés, breaking news,
+# rappel des événements en attente) -------------------------------------------------
 # Garde-fou côté code (voir _assemble_script) : même si le LLM n'a pas respecté
 # l'ordre demandé par video_templates/debrief.txt, tous les blocs "EVENEMENT" se
-# retrouvent avant tous les blocs "BREAKING" une fois le script assemblé.
+# retrouvent avant "BREAKING", lui-même avant "RECAP", une fois le script assemblé.
 
 def _corps_block(section=None, oral="texte du bloc"):
     block = {"oral": oral, "ecran": "texte court", "visuel": "visuel"}
@@ -179,6 +180,37 @@ def test_assemble_script_debrief_sorts_evenement_before_breaking():
     script = video_scripts._assemble_script("DEBRIEF", date(2026, 7, 26), llm_result)
     assert [b["section"] for b in script["corps"]] == ["EVENEMENT", "EVENEMENT", "BREAKING", "BREAKING"]
     assert [b["bloc"] for b in script["corps"]] == [1, 2, 3, 4]
+
+
+def test_assemble_script_debrief_sorts_recap_after_evenement_and_breaking():
+    llm_result = {
+        "hook": _words(5),
+        "corps": [
+            _corps_block("RECAP"),
+            _corps_block("BREAKING"),
+            _corps_block("EVENEMENT"),
+        ],
+        "chute": _words(6),
+        "legende": "Légende de test.",
+        "hashtags": ["eco"],
+    }
+    script = video_scripts._assemble_script("DEBRIEF", date(2026, 7, 26), llm_result)
+    assert [b["section"] for b in script["corps"]] == ["EVENEMENT", "BREAKING", "RECAP"]
+
+
+def test_assemble_script_debrief_recap_alone_is_valid():
+    """RECAP est une section légitime en elle-même (jour sans EVENEMENT/BREAKING
+    confirmé, juste un rappel des événements en attente) — ne doit pas retomber
+    sur EVENEMENT par défaut."""
+    llm_result = {
+        "hook": _words(5),
+        "corps": [_corps_block("RECAP", oral="seul bloc")],
+        "chute": _words(6),
+        "legende": "Légende de test.",
+        "hashtags": ["eco"],
+    }
+    script = video_scripts._assemble_script("DEBRIEF", date(2026, 7, 26), llm_result)
+    assert script["corps"][0]["section"] == "RECAP"
 
 
 def test_assemble_script_debrief_preserves_relative_order_within_each_section():
@@ -236,6 +268,27 @@ def test_render_markdown_debrief_groups_corps_under_section_headings():
     assert evenement_idx < bloc1_idx < breaking_idx < bloc2_idx
 
 
+def test_render_markdown_debrief_includes_recap_heading_last():
+    llm_result = {
+        "hook": _words(5),
+        "corps": [
+            _corps_block("EVENEMENT", oral="evenement un"),
+            _corps_block("BREAKING", oral="breaking un"),
+            _corps_block("RECAP", oral="rappel un"),
+        ],
+        "chute": _words(6),
+        "legende": "Légende de test.",
+        "hashtags": ["eco"],
+    }
+    script = video_scripts._assemble_script("DEBRIEF", date(2026, 7, 26), llm_result)
+    md = video_scripts._render_markdown(script)
+
+    breaking_idx = md.index(config.VIDEO_SECTION_LABEL_BREAKING)
+    recap_idx = md.index(config.VIDEO_SECTION_LABEL_RECAP)
+    bloc3_idx = md.index("**Bloc 3**")
+    assert breaking_idx < recap_idx < bloc3_idx
+
+
 def test_render_markdown_non_debrief_has_no_section_headings():
     script = video_scripts._assemble_script("REACTION", date(2026, 7, 26), _fake_llm_result(n_corps=3))
     md = video_scripts._render_markdown(script)
@@ -288,18 +341,61 @@ def test_gather_data_debrief_works_with_only_news(temp_db):
     assert "Aucun événement macro" in data["events_block"]
 
 
+def _insert_pending_event(target_date: date, event_key: str = "test_pending_1") -> None:
+    """Événement prévu mais sans résultat confirmé (actual=None) — voir
+    _gather_data DEBRIEF, bloc "RECAP"."""
+    event_dt = datetime.combine(target_date, time(12, 30), tzinfo=config.TIMEZONE).astimezone(timezone.utc)
+    db.upsert_event(
+        {
+            "event_key": event_key,
+            "title": "Trade Balance",
+            "currency": "USD",
+            "impact": "Medium",
+            "event_dt_utc": event_dt.isoformat(),
+            "forecast": "-73.0B",
+            "previous": "-77.6B",
+            "actual": None,
+        }
+    )
+
+
+def test_gather_data_debrief_separates_confirmed_from_pending_events(temp_db):
+    target_date = date(2026, 7, 26)
+    _insert_reaction_event(target_date)  # a un "actual"
+    _insert_pending_event(target_date)  # n'en a pas
+
+    data = video_scripts._gather_data("DEBRIEF", target_date)
+
+    assert data is not None
+    assert "Non-Farm Payrolls" in data["events_block"]
+    assert "Trade Balance" not in data["events_block"]
+    assert "Trade Balance" in data["pending_events_block"]
+    assert "Non-Farm Payrolls" not in data["pending_events_block"]
+
+
+def test_gather_data_debrief_exploitable_with_only_pending_events(temp_db):
+    """Même sans aucun résultat confirmé ni breaking news, des événements en
+    attente suffisent à rendre la journée exploitable (bloc RECAP seul)."""
+    target_date = date(2026, 7, 26)
+    _insert_pending_event(target_date)
+    data = video_scripts._gather_data("DEBRIEF", target_date)
+    assert data is not None
+    assert "Aucun événement macro confirmé" in data["events_block"]
+    assert "Trade Balance" in data["pending_events_block"]
+
+
 # --- extra_notes (remarque libre, ex. via le raccourci bureau) ---------------------
 
 def test_build_prompt_includes_extra_notes_when_provided():
     prompt = video_scripts._build_prompt(
-        "DEBRIEF", {"events_block": "x", "headlines_block": "y"}, date(2026, 7, 26),
+        "DEBRIEF", {"events_block": "x", "pending_events_block": "z", "headlines_block": "y"}, date(2026, 7, 26),
         extra_notes="Insiste sur le pétrole",
     )
     assert "Insiste sur le pétrole" in prompt
 
 
 def test_build_prompt_no_extra_notes_mention_when_none_or_blank():
-    data = {"events_block": "x", "headlines_block": "y"}
+    data = {"events_block": "x", "pending_events_block": "z", "headlines_block": "y"}
     prompt_none = video_scripts._build_prompt("DEBRIEF", data, date(2026, 7, 26), extra_notes=None)
     prompt_blank = video_scripts._build_prompt("DEBRIEF", data, date(2026, 7, 26), extra_notes="   ")
     assert "Remarque de l'utilisateur" not in prompt_none

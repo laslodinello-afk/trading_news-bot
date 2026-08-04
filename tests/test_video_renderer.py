@@ -522,6 +522,12 @@ def test_section_label_and_accent_breaking():
     assert accent == config.VIDEO_SECTION_BREAKING_ACCENT_COLOR
 
 
+def test_section_label_and_accent_recap():
+    label, accent = video_renderer._section_label_and_accent("RECAP")
+    assert label == config.VIDEO_SECTION_LABEL_RECAP
+    assert accent == config.VIDEO_SECTION_RECAP_ACCENT_COLOR
+
+
 def test_build_section_tag_clip_returns_two_layers_with_duration():
     font_path = video_renderer._resolve_font_path()
     layers = video_renderer._build_section_tag_clip("ÉVÉNEMENTS DU JOUR", "#3b82f6", font_path, 1080, duration=4.0)

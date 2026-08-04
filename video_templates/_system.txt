@@ -49,8 +49,10 @@ FORMAT DE SORTIE (JSON strict, un seul objet) :
   - "section" : uniquement pour le format DEBRIEF (voir ses consignes propres) —
     laisse une chaîne vide "" pour tous les autres formats. Pour DEBRIEF :
     "EVENEMENT" si ce bloc parle d'une donnée macro publiée aujourd'hui
-    (prévision/précédent vs réel), "BREAKING" si ce bloc parle d'une actualité
-    de dernière minute captée aujourd'hui.
+    (résultat confirmé), "BREAKING" si ce bloc parle d'une actualité de
+    dernière minute captée aujourd'hui, "RECAP" pour l'unique bloc de rappel
+    des événements prévus aujourd'hui mais sans résultat confirmé (voir
+    debrief.txt, règle 6 — n'existe que si cette liste n'est pas vide).
 - "chute" : une phrase qui referme l'idée (pas un résumé, une conclusion qui a
   du poids).
 - "legende" : la légende de publication pour le réseau social, 2-3 phrases qui
