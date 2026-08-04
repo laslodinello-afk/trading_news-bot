@@ -5,7 +5,7 @@ Lance :
 - un petit serveur HTTP "keep-alive" (nécessaire pour tourner gratuitement 24/7
   sur Render sans que le service ne se mette en veille, voir README.md)
 - un scheduler APScheduler avec 6 jobs : rafraîchissement du calendrier,
-  résumé quotidien 8h, débrief du soir 23h, alertes avant/après publication,
+  résumé quotidien 7h, débrief du soir 23h, alertes avant/après publication,
   veille breaking news.
 
 Usage :
@@ -347,7 +347,7 @@ def run_test_mode() -> None:
 
     print("2/7 — Résumé quotidien (exemple)...")
     results["resume"] = telegram_bot.broadcast(
-        telegram_bot.format_daily_summary([sample_event], "Exemple d'aperçu généré par l'IA chaque matin à 8h.")
+        telegram_bot.format_daily_summary([sample_event], "Exemple d'aperçu généré par l'IA chaque matin à 7h.")
     )
     print("   ✅ OK" if results["resume"] else "   ❌ Échec")
 

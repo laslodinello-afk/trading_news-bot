@@ -142,7 +142,7 @@ WATCHED_CURRENCIES = {"USD", "EUR", "GBP"}
 WATCHED_IMPACTS = {"High", "Medium"}  # rouge + orange uniquement
 
 # --- Alertes -------------------------------------------------------------
-DAILY_SUMMARY_HOUR = 8
+DAILY_SUMMARY_HOUR = 7
 DAILY_SUMMARY_MINUTE = 0
 
 # Débrief du soir : récap de la journée (news publiées + breaking news), calé
