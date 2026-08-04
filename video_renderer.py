@@ -9,11 +9,14 @@ Voix : edge-tts (gratuit, aucune clé API), avec sous-titres dynamiques qui
 défilent au rythme de la voix (timing réel via Communicate.stream()). Visuel :
 carte d'intro (titre + date) puis fond vidéo en boucle par bloc (Pexels,
 optionnel — repli sur fond uni sans clé), chaque bloc du corps cherchant SON
-PROPRE mot-clé de fond pour rester pertinent au contenu du moment, plus un
-graphique réel (matplotlib) quand de vraies données numériques existent — jamais
-de donnée ni de fond inventé. Le CTA final est une carte de fin dédiée, stable,
-sans fond vidéo ni sous-titres découpés — même habillage (dégradé + liseré) que
-la carte d'intro pour encadrer la vidéo de façon cohérente.
+PROPRE mot-clé de fond pour rester pertinent au contenu du moment. Le CTA final
+est une carte de fin dédiée, stable, sans fond vidéo ni sous-titres découpés —
+même habillage (dégradé + liseré) que la carte d'intro pour encadrer la vidéo
+de façon cohérente.
+
+Pas de graphique prévision/réel affiché dans la vidéo (désactivé sur demande) :
+build_chart_image()/_chart_bounds() restent dans ce module, juste plus appelés
+par render() — faciles à rebrancher si besoin plus tard.
 
 Structure (DEBRIEF uniquement) : les blocs corps sont déjà triés événements-
 publiés-puis-breaking-news par video_scripts._assemble_script — ce module rend
@@ -55,7 +58,6 @@ from PIL import ImageFont
 
 import config
 import stock_footage
-import video_scripts
 
 logger = logging.getLogger("video_renderer")
 
@@ -629,9 +631,10 @@ def _section_label_and_accent(section: str) -> tuple[str, str]:
 
 def render(script: dict, out_path: str, voice: str | None = None) -> str | None:
     """script vient de video_scripts.generate(). Dérive le format/la date du script
-    lui-même et va chercher l'événement source (pour le graphique) via
-    video_scripts.get_source_event() — l'appelant CLI n'a donc rien à brancher.
-    Ne lève jamais : renvoie out_path en cas de succès, None sinon (loggué)."""
+    lui-même. Ne lève jamais : renvoie out_path en cas de succès, None sinon
+    (loggué). Pas de graphique prévision/réel affiché (désactivé sur demande —
+    build_chart_image reste disponible dans ce module si besoin de le
+    réactiver plus tard, juste plus appelé ici)."""
     voice = voice or config.VIDEO_TTS_VOICE
     fmt = script["format"]
     target_date = date.fromisoformat(script["date"])
@@ -644,8 +647,6 @@ def render(script: dict, out_path: str, voice: str | None = None) -> str | None:
 
     with tempfile.TemporaryDirectory(prefix="video_render_") as tmp_dir:
         try:
-            source_event = video_scripts.get_source_event(fmt, target_date)
-            chart_path = build_chart_image(source_event, os.path.join(tmp_dir, "chart.png")) if source_event else None
             default_keyword = config.STOCK_FOOTAGE_THEME_BY_FORMAT.get(fmt, "finance")
 
             # Le hook/la chute (pas de sujet précis à eux seuls) utilisent le thème
@@ -681,7 +682,6 @@ def render(script: dict, out_path: str, voice: str | None = None) -> str | None:
                     _build_segment_clip(
                         spoken, voice, tmp_dir, font_path, i,
                         background_keyword=keyword,
-                        chart_path=chart_path if kind == "hook" else None,
                         content_specific_keyword=is_content_specific,
                         section_label=section_label,
                         section_accent=section_accent,

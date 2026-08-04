@@ -337,8 +337,6 @@ Le flag `--render` transforme le script en vraie vidéo verticale (1080×1920, m
   de CE dont il parle à ce moment précis (ex. un bloc sur la BCE cherche une
   vidéo différente d'un bloc sur le pétrole) — pas un seul fond fixe pour toute
   la vidéo. Fond uni sombre par défaut sans clé Pexels.
-- **Graphique réel** (prévision/précédent vs réel) pour DEBRIEF/REACTION/POURQUOI
-  quand l'événement du jour a de vraies données numériques — jamais inventé.
 - **Repères de structure** (DEBRIEF uniquement) : une étiquette en haut de
   chaque bloc ("ÉVÉNEMENTS DU JOUR" en bleu / "BREAKING NEWS" en rouge) plus une
   courte carte de transition silencieuse au moment où la vidéo bascule d'une
@@ -381,11 +379,6 @@ attribution requise.
   `requirements-video.txt`) fournit un binaire ffmpeg autonome automatiquement.
 - **Changer de voix** : `edge-tts --list-voices | grep fr-FR` liste les voix
   françaises disponibles, puis modifie `VIDEO_TTS_VOICE` dans `config.py`.
-- **Le graphique n'apparaît que pour DEBRIEF/REACTION/POURQUOI**, et seulement
-  s'il existe un événement du jour avec au moins 2 valeurs numériques
-  exploitables (prévision/précédent + réel) — sinon, texte seul. Vu la limite
-  déjà mentionnée sur le "résultat réel" (souvent indisponible), ça peut rester
-  texte seul un moment.
 - Un `DEBRIEF` (4 à 7 blocs, jusqu'à 90s) prend plus longtemps à rendre qu'un
   format court : plus de segments à synthétiser et potentiellement plus de
   mots-clés de fond différents à chercher sur Pexels la première fois. Compte
