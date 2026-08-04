@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-04T10:14:18.002661+00:00",
+  "fetched_at": "2026-08-04T18:13:08.530248+00:00",
   "events": [
     {
       "title": "OPEC-JMMC Meetings",
@@ -284,7 +284,7 @@
     {
       "title": "RCM/TIPP Economic Optimism",
       "country": "USD",
-      "date": "2026-08-04T10:10:00-04:00",
+      "date": "2026-08-04T10:13:00-04:00",
       "impact": "Low",
       "forecast": "47.5",
       "previous": "45.5"
@@ -292,7 +292,7 @@
     {
       "title": "GDT Price Index",
       "country": "NZD",
-      "date": "2026-08-04T10:50:00-04:00",
+      "date": "2026-08-04T11:14:00-04:00",
       "impact": "Low",
       "forecast": "",
       "previous": "1.5%"
@@ -462,7 +462,7 @@
       "country": "USD",
       "date": "2026-08-05T10:30:00-04:00",
       "impact": "Low",
-      "forecast": "",
+      "forecast": "-0.9M",
       "previous": "-7.2M"
     },
     {
