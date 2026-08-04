@@ -115,6 +115,7 @@ def call_gemini(
     response_schema: dict,
     max_tokens: int = 500,
     system_prompt: str | None = None,
+    use_search_grounding: bool = False,
 ) -> dict | None:
     """
     Point d'entrée public partagé pour tout appel structuré à Gemini. system_prompt
@@ -122,21 +123,32 @@ def call_gemini(
     éditoriales sans toucher à _SYSTEM_PROMPT (réservé aux analyses de marché
     ci-dessous). Ne réessaie jamais : voir le principe de robustesse en tête de
     fichier — c'est à l'appelant de décider s'il retente.
+
+    use_search_grounding=True active la recherche web réelle de Gemini (Gemini 3.x
+    supporte la combinaison recherche + sortie JSON structurée dans le même appel,
+    vérifié empiriquement) — jamais activé par défaut : uniquement pour les cas où
+    une réponse tirée de la seule mémoire du modèle risquerait d'être inventée (voir
+    calendar_fetcher.fetch_actual_from_search). Palier gratuit Gemini 3.x : 5000
+    recherches groundées offertes par mois, très largement suffisant vu le volume
+    de cet agent (voir README, section "Combien ça coûte").
     """
     if _client is None:
         logger.warning("GEMINI_API_KEY absente, analyse IA ignorée.")
         return None
     try:
+        gen_config = types.GenerateContentConfig(
+            system_instruction=system_prompt or _SYSTEM_PROMPT,
+            temperature=0.3,
+            max_output_tokens=max_tokens,
+            response_mime_type="application/json",
+            response_json_schema=response_schema,
+        )
+        if use_search_grounding:
+            gen_config.tools = [types.Tool(google_search=types.GoogleSearch())]
         response = _client.models.generate_content(
             model=config.GEMINI_MODEL,
             contents=user_prompt,
-            config=types.GenerateContentConfig(
-                system_instruction=system_prompt or _SYSTEM_PROMPT,
-                temperature=0.3,
-                max_output_tokens=max_tokens,
-                response_mime_type="application/json",
-                response_json_schema=response_schema,
-            ),
+            config=gen_config,
         )
         text = response.text
         if not text:
@@ -473,6 +485,43 @@ renvoie "actual" = "{_ACTUAL_NOT_FOUND}" — ne devine jamais et ne confonds pas
 un autre indicateur, même du même pays."""
 
     result = call_gemini(prompt, _ACTUAL_FROM_NEWS_SCHEMA, max_tokens=200)
+    if not result:
+        return None
+    actual = (result.get("actual") or "").strip()
+    if not actual or actual.upper() == _ACTUAL_NOT_FOUND:
+        return None
+    return actual
+
+
+def search_actual_result(currency: str, title: str, event_dt_utc, forecast: str | None = None, previous: str | None = None) -> str | None:
+    """
+    TOUT dernier recours pour le "résultat réel" (voir calendar_fetcher.
+    fetch_actual_result) : recherche web réelle via Gemini (use_search_grounding),
+    pas une réponse tirée de sa mémoire — un simple appel texte sans recherche
+    inventerait un chiffre plausible mais faux pour un événement publié après
+    l'entraînement du modèle. Même sentinel _ACTUAL_NOT_FOUND que la fonction
+    ci-dessus : force l'IA à expliciter l'absence de source fiable plutôt que
+    de deviner, même avec une recherche à disposition.
+    """
+    date_str = event_dt_utc.strftime("%d/%m/%Y")
+    prompt = f"""Recherche sur le web le résultat réel (chiffre officiellement publié) de
+cet indicateur économique :
+- Titre : {title}
+- Devise/pays concerné : {currency}
+- Date de publication : {date_str}
+- Prévision : {forecast or 'N/A'}
+- Précédent : {previous or 'N/A'}
+
+Cherche une source fiable et datée (site financier, agence de presse, communiqué
+officiel) qui confirme EXPLICITEMENT ce chiffre pour CETTE publication précise,
+à cette date précise. Si tu trouves une source fiable qui confirme le chiffre,
+renvoie "actual" = ce chiffre exact (avec son unité/signe, ex. "3.2%", "+180K").
+Si tu ne trouves aucune source fiable et datée qui confirme ce chiffre précis —
+même après recherche —, renvoie "actual" = "{_ACTUAL_NOT_FOUND}". Ne devine
+JAMAIS, ne calcule jamais un chiffre à partir de ta seule mémoire, et ne
+confonds pas avec un autre indicateur ou une autre date."""
+
+    result = call_gemini(prompt, _ACTUAL_FROM_NEWS_SCHEMA, max_tokens=300, use_search_grounding=True)
     if not result:
         return None
     actual = (result.get("actual") or "").strip()

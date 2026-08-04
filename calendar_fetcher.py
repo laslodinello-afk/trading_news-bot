@@ -606,9 +606,12 @@ def fetch_actual_result(
     Cherche le résultat réel ("actual") d'une news déjà publiée. Essaie dans
     l'ordre : Alpha Vantage (USD, titres headline reconnus — voir plus haut),
     EIA (stocks pétroliers hebdo), FMP (secours, généralement indisponible en
-    pratique), puis les titres RSS ForexLive/FXStreet (couvre aussi EUR/GBP et
-    les indicateurs hors Alpha Vantage/EIA). Retourne None si aucune source ne
-    peut répondre (l'appelant doit gérer ce cas proprement plutôt que d'échouer).
+    pratique), les titres RSS ForexLive/FXStreet (couvre aussi EUR/GBP et les
+    indicateurs hors Alpha Vantage/EIA), et en tout dernier recours une vraie
+    recherche web via Gemini (voir ai_analyzer.search_actual_result — jamais
+    une réponse tirée de sa seule mémoire, qui inventerait un chiffre plausible
+    mais faux). Retourne None si aucune source ne peut répondre (l'appelant
+    doit gérer ce cas proprement plutôt que d'échouer).
     """
     actual = fetch_actual_from_alphavantage(currency, title, event_dt_utc)
     if actual:
@@ -622,4 +625,8 @@ def fetch_actual_result(
     if actual:
         return actual
 
-    return fetch_actual_from_news(currency, title, event_dt_utc, forecast, previous)
+    actual = fetch_actual_from_news(currency, title, event_dt_utc, forecast, previous)
+    if actual:
+        return actual
+
+    return ai_analyzer.search_actual_result(currency, title, event_dt_utc, forecast, previous)
