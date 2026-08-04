@@ -31,6 +31,7 @@ import asyncio
 import logging
 import os
 import random
+import re
 import tempfile
 from datetime import date
 
@@ -410,6 +411,21 @@ def _build_caption_text_clip(text: str, font_path: str, max_width: int):
     return _make_text_clip(text, font_path, 76, "white", max_width, stroke_color="black", stroke_width=3)
 
 
+_STANDALONE_DASH_RE = re.compile(r"(?<!\S)[-–—](?!\S)")  # tiret, en-dash, em-dash
+
+
+def _strip_standalone_dashes(text: str) -> str:
+    """Retire un tiret utilisé comme ponctuation autonome (ex. "Le pétrole — qui
+    avait chuté — remonte." ou "L'inflation - déjà élevée - grimpe."), jamais un
+    tiret à l'intérieur d'un mot composé (ex. "peut-être", "week-end") : le
+    lookaround exige un espace/début-fin de chaîne des deux côtés du tiret pour
+    matcher, pas un tiret collé à des lettres. Corrige un défaut constaté à
+    l'oral/sous-titres : un tiret isolé peut se retrouver seul dans un groupe de
+    mots (voir _group_words_into_chunks), affiché sans aucun contenu à côté."""
+    cleaned = _STANDALONE_DASH_RE.sub(" ", text)
+    return re.sub(r"\s{2,}", " ", cleaned).strip()
+
+
 def _build_segment_clip(
     spoken_text,
     voice,
@@ -422,6 +438,7 @@ def _build_segment_clip(
     section_label: str | None = None,
     section_accent: str | None = None,
 ):
+    spoken_text = _strip_standalone_dashes(spoken_text)
     mp3_path = os.path.join(tmp_dir, f"segment_{index}.mp3")
     word_boundaries, sentence_boundaries = _synthesize_with_retry(spoken_text, voice, mp3_path)
     audio_clip = AudioFileClip(mp3_path)

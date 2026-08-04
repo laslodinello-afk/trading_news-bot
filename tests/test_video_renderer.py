@@ -226,6 +226,48 @@ def test_wrap_text_single_short_word_fits_on_one_line():
     assert video_renderer._wrap_text("Bonjour", font_path, 76, 920) == "Bonjour"
 
 
+# --- _strip_standalone_dashes (jamais de tiret isolé à l'oral/en sous-titre) -------
+# Un tiret utilisé comme ponctuation (parenthèse à l'oral) peut se retrouver seul
+# dans un groupe de 3 mots (voir _group_words_into_chunks) : un sous-titre affiché
+# sans aucun contenu. Ne doit jamais toucher un tiret à l'intérieur d'un mot
+# composé (ex. "peut-être"), qui reste correct tel quel.
+
+def test_strip_standalone_dashes_removes_em_dash_pair():
+    text = "Le pétrole — qui avait chuté hier — remonte fortement."
+    result = video_renderer._strip_standalone_dashes(text)
+    assert "—" not in result
+    assert "pétrole" in result and "remonte fortement" in result
+
+
+def test_strip_standalone_dashes_removes_plain_hyphen_used_as_punctuation():
+    text = "L'inflation - déjà élevée - continue de grimper."
+    result = video_renderer._strip_standalone_dashes(text)
+    assert " - " not in result
+
+
+def test_strip_standalone_dashes_preserves_hyphenated_words():
+    text = "Ce sera peut-être un week-end difficile pour le marché."
+    result = video_renderer._strip_standalone_dashes(text)
+    assert "peut-être" in result
+    assert "week-end" in result
+
+
+def test_strip_standalone_dashes_handles_dash_at_start_and_end():
+    assert "Bonjour" in video_renderer._strip_standalone_dashes("— Bonjour")
+    assert "monde" in video_renderer._strip_standalone_dashes("Bonjour monde —")
+
+
+def test_strip_standalone_dashes_collapses_resulting_double_spaces():
+    text = "Le marché — en forte hausse — a surpris tout le monde."
+    result = video_renderer._strip_standalone_dashes(text)
+    assert "  " not in result
+
+
+def test_strip_standalone_dashes_noop_when_no_dash():
+    text = "Un texte tout à fait normal, sans aucune ponctuation particulière."
+    assert video_renderer._strip_standalone_dashes(text) == text
+
+
 # --- _group_words_into_chunks (pure, aucune dépendance) -----------------------------
 
 def test_group_words_into_chunks_groups_by_max_words():
