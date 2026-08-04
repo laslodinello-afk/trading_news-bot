@@ -278,6 +278,78 @@ la plupart des events Low doivent rester "faible"."""
     return upgraded
 
 
+# --- Traduction des titres d'events (calendrier) ----------------------------------
+
+MAX_TRANSLATE_TITLES_BATCH = 60
+
+_TRANSLATE_TITLES_SCHEMA = {
+    "type": "OBJECT",
+    "required": ["traductions"],
+    "properties": {
+        "traductions": {
+            "type": "ARRAY",
+            "items": {
+                "type": "OBJECT",
+                "required": ["index", "titre_fr"],
+                "properties": {
+                    "index": {"type": "INTEGER"},
+                    "titre_fr": {"type": "STRING"},
+                },
+            },
+        }
+    },
+}
+
+
+def translate_event_titles(titles: list[str]) -> dict[str, str]:
+    """
+    Traduit des titres d'événements du calendrier économique (ex: "Non-Farm
+    Payrolls (NFP)", "Crude Oil Inventories") pour l'affichage dans les
+    messages. Appelée uniquement pour des titres pas encore en cache (voir
+    db.get_title_translations) — un même titre revient identique chaque
+    semaine/mois, jamais retraduit deux fois. Renvoie {} en cas d'échec IA :
+    l'appelant garde alors le titre anglais original plutôt que rien afficher.
+    """
+    if not titles:
+        return {}
+    batch = titles[:MAX_TRANSLATE_TITLES_BATCH]
+    liste = "\n".join(f"{i+1}. {t}" for i, t in enumerate(batch))
+    prompt = f"""Voici des titres d'événements du calendrier économique (forex/trading), à
+traduire en français pour affichage dans des alertes Telegram destinées à des traders.
+
+Règles impératives :
+- Les acronymes standards reconnus internationalement par les traders (NFP, CPI, PMI, GDP,
+  PPI, ISM, FOMC, ECB, BoE, PCE, ADP...) doivent RESTER tels quels — ne les traduis jamais
+  littéralement mot à mot (ex: ne traduis pas "Non-Farm Payrolls" en "Salaires non agricoles"
+  seul : garde "NFP" visible, entouré d'une traduction claire si utile).
+- Le reste du titre doit être une vraie traduction française naturelle et fidèle, pas du mot
+  à mot maladroit ni une paraphrase approximative.
+- Garde les indications de fréquence (m/m, y/y, q/q, w/w) telles quelles, elles sont
+  universelles.
+- Si un titre est déjà clair/compréhensible tel quel pour un francophone (ex: contient déjà
+  un nom propre, une devise, un sigle universel), tu peux le laisser très proche de l'original.
+
+Titres :
+{liste}
+
+Renvoie un tableau "traductions" avec, pour CHAQUE titre (même index que ci-dessus) :
+- "index" : son numéro dans la liste
+- "titre_fr" : la traduction française"""
+
+    result = call_gemini(prompt, _TRANSLATE_TITLES_SCHEMA, max_tokens=2000)
+    if not result:
+        return {}
+
+    translations = {}
+    for item in result.get("traductions", []):
+        idx = item.get("index")
+        titre_fr = item.get("titre_fr")
+        if not idx or not (1 <= idx <= len(batch)) or not titre_fr:
+            continue
+        translations[batch[idx - 1]] = titre_fr
+    return translations
+
+
 # --- Débrief du soir (23h, clôture NY) -------------------------------------------
 
 def evening_debrief(events: list[dict], news_items: list[dict]) -> str | None:

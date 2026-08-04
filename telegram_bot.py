@@ -116,6 +116,14 @@ def _reclassified_marker(event: dict) -> str:
     return " 🤖" if event.get("ai_reclassified") else ""
 
 
+def _display_title(event: dict) -> str:
+    """Titre affiché : traduction française si disponible (voir
+    ai_analyzer.translate_event_titles), sinon repli sur le titre anglais
+    original (ex: tout juste après un refresh calendrier, avant que la
+    traduction n'ait eu le temps d'être calculée et mise en cache)."""
+    return event.get("title_fr") or event["title"]
+
+
 def _ai_block(ai: dict | None) -> str:
     if not ai:
         return "💡 _Analyse IA indisponible pour cette news._"
@@ -144,7 +152,7 @@ def format_daily_summary(events: list[dict], overview: str | None) -> str:
         for e in events:
             emoji = IMPACT_EMOJI.get(e["impact"], "⚪")
             lines.append(
-                f"{emoji} {_time_local(e['event_dt_utc'])} — {escape_md(e['title'])} ({e['currency']}){_reclassified_marker(e)}"
+                f"{emoji} {_time_local(e['event_dt_utc'])} — {escape_md(_display_title(e))} ({e['currency']}){_reclassified_marker(e)}"
             )
         body = f"{len(events)} news à surveiller aujourd'hui (heure Bruxelles) :\n\n" + "\n".join(lines)
 
@@ -166,7 +174,7 @@ def format_evening_debrief(events: list[dict], news_items: list[dict], recap: st
             forecast = e.get("forecast") or "N/A"
             previous = e.get("previous") or "N/A"
             parts.append(
-                f"{emoji} {_time_local(e['event_dt_utc'])} — {escape_md(e['title'])} ({e['currency']}){_reclassified_marker(e)} : "
+                f"{emoji} {_time_local(e['event_dt_utc'])} — {escape_md(_display_title(e))} ({e['currency']}){_reclassified_marker(e)} : "
                 f"réel {actual} | prévision {forecast} | précédent {previous}"
             )
     else:
@@ -186,7 +194,7 @@ def format_evening_debrief(events: list[dict], news_items: list[dict], recap: st
 def format_before_alert(event: dict, concerned_pairs: list[str], ai: dict | None) -> str:
     emoji = IMPACT_EMOJI.get(event["impact"], "🔴")
     minutes = _minutes_until(event["event_dt_utc"])
-    header = f"{emoji} *{escape_md(event['title'])} — {event['currency']}*{_reclassified_marker(event)}"
+    header = f"{emoji} *{escape_md(_display_title(event))} — {event['currency']}*{_reclassified_marker(event)}"
     meta = f"🕒 {_time_local(event['event_dt_utc'])} (Bruxelles) — dans {minutes} min"
     forecast = event.get("forecast") or "N/A"
     previous = event.get("previous") or "N/A"
@@ -207,7 +215,7 @@ def format_before_alert(event: dict, concerned_pairs: list[str], ai: dict | None
 
 def format_after_alert(event: dict, actual: str | None, concerned_pairs: list[str], ai: dict | None) -> str:
     emoji = IMPACT_EMOJI.get(event["impact"], "🔴")
-    header = f"{emoji} *{escape_md(event['title'])} — {event['currency']}*{_reclassified_marker(event)} (résultat)"
+    header = f"{emoji} *{escape_md(_display_title(event))} — {event['currency']}*{_reclassified_marker(event)} (résultat)"
     meta = f"🕒 {_time_local(event['event_dt_utc'])} (Bruxelles)"
     forecast = event.get("forecast") or "N/A"
     previous = event.get("previous") or "N/A"

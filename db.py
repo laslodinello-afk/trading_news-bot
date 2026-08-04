@@ -15,6 +15,7 @@ SCHEMA = """
 CREATE TABLE IF NOT EXISTS events (
     event_key TEXT PRIMARY KEY,
     title TEXT NOT NULL,
+    title_fr TEXT,
     currency TEXT NOT NULL,
     impact TEXT NOT NULL,
     event_dt_utc TEXT NOT NULL,
@@ -81,6 +82,8 @@ def _migrate(conn: sqlite3.Connection) -> None:
     existing_events = {row["name"] for row in conn.execute("PRAGMA table_info(events)")}
     if "ai_reclassified" not in existing_events:
         conn.execute("ALTER TABLE events ADD COLUMN ai_reclassified INTEGER NOT NULL DEFAULT 0")
+    if "title_fr" not in existing_events:
+        conn.execute("ALTER TABLE events ADD COLUMN title_fr TEXT")
 
 
 def _now_iso() -> str:
@@ -104,16 +107,23 @@ def upsert_event(event: dict) -> None:
     par l'IA ce cycle-ci) — un event Low non retenu n'est simplement jamais
     upserté, donc un event déjà upgradé ne peut pas être "redescendu" par un
     refresh ultérieur qui le reverrait Low sans le ré-upgrader.
+
+    "title_fr" (optionnel) : traduction affichée dans les messages, résolue
+    par main.py (via get_title_translation/ai_analyzer.translate_event_titles)
+    avant l'appel — jamais None sur un titre déjà traduit une fois, COALESCE
+    ci-dessous pour ne jamais écraser une traduction existante par NULL si un
+    refresh ultérieur omet le champ.
     """
     with get_conn() as conn:
         conn.execute(
             """
-            INSERT INTO events (event_key, title, currency, impact, event_dt_utc,
+            INSERT INTO events (event_key, title, title_fr, currency, impact, event_dt_utc,
                                  forecast, previous, actual, ai_reclassified, updated_at)
-            VALUES (:event_key, :title, :currency, :impact, :event_dt_utc,
+            VALUES (:event_key, :title, :title_fr, :currency, :impact, :event_dt_utc,
                     :forecast, :previous, :actual, :ai_reclassified, :updated_at)
             ON CONFLICT(event_key) DO UPDATE SET
                 title=excluded.title,
+                title_fr=COALESCE(excluded.title_fr, events.title_fr),
                 currency=excluded.currency,
                 impact=excluded.impact,
                 event_dt_utc=excluded.event_dt_utc,
@@ -123,7 +133,12 @@ def upsert_event(event: dict) -> None:
                 ai_reclassified=excluded.ai_reclassified,
                 updated_at=excluded.updated_at
             """,
-            {**event, "ai_reclassified": int(bool(event.get("ai_reclassified", False))), "updated_at": _now_iso()},
+            {
+                **event,
+                "title_fr": event.get("title_fr"),
+                "ai_reclassified": int(bool(event.get("ai_reclassified", False))),
+                "updated_at": _now_iso(),
+            },
         )
 
 
@@ -133,6 +148,24 @@ def set_event_actual(event_key: str, actual: str) -> None:
             "UPDATE events SET actual=?, updated_at=? WHERE event_key=?",
             (actual, _now_iso(), event_key),
         )
+
+
+def get_title_translations(titles_en: list[str]) -> dict[str, str]:
+    """
+    Traductions déjà connues pour ces titres (n'importe quel event passé,
+    peu importe la semaine — un titre comme "Non-Farm Payrolls (NFP)" revient
+    identique chaque mois, pas la peine de le retraduire par l'IA à chaque
+    fois). Ne renvoie que les titres effectivement trouvés.
+    """
+    if not titles_en:
+        return {}
+    with get_conn() as conn:
+        placeholders = ",".join("?" for _ in titles_en)
+        rows = conn.execute(
+            f"SELECT DISTINCT title, title_fr FROM events WHERE title IN ({placeholders}) AND title_fr IS NOT NULL",
+            titles_en,
+        )
+        return {row["title"]: row["title_fr"] for row in rows}
 
 
 def get_events_for_day(day_start_utc: datetime, day_end_utc: datetime) -> list[sqlite3.Row]:

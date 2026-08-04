@@ -121,6 +121,7 @@ def _event_row_to_dict(row) -> dict:
     return {
         "event_key": row["event_key"],
         "title": row["title"],
+        "title_fr": row["title_fr"],
         "currency": row["currency"],
         "impact": row["impact"],
         "event_dt_utc": row["event_dt_utc"],
@@ -140,13 +141,27 @@ def job_refresh_calendar() -> None:
         low = [e for e in events if e["impact"] == "Low"]
 
         upgraded = ai_analyzer.reclassify_low_impact(low) if low else []
+        to_upsert = high_medium + upgraded
 
-        for event in high_medium + upgraded:
+        # Traduction des titres affichés : un même titre (ex: "Non-Farm Payrolls
+        # (NFP)") revient identique semaine après semaine — on ne retraduit que
+        # ceux pas encore vus (voir db.get_title_translations), jamais deux fois
+        # le même appel IA pour le même titre.
+        unique_titles = list({e["title"] for e in to_upsert})
+        cached_translations = db.get_title_translations(unique_titles)
+        missing_titles = [t for t in unique_titles if t not in cached_translations]
+        new_translations = ai_analyzer.translate_event_titles(missing_titles) if missing_titles else {}
+        all_translations = {**cached_translations, **new_translations}
+        for event in to_upsert:
+            event["title_fr"] = all_translations.get(event["title"])
+
+        for event in to_upsert:
             db.upsert_event(event)
 
         logger.info(
-            "Calendrier rafraîchi (%d High/Medium + %d Low upgradés par l'IA sur %d Low soumis, source=%s)",
-            len(high_medium), len(upgraded), len(low), source,
+            "Calendrier rafraîchi (%d High/Medium + %d Low upgradés par l'IA sur %d Low soumis, "
+            "%d titres traduits dont %d nouveaux, source=%s)",
+            len(high_medium), len(upgraded), len(low), len(all_translations), len(new_translations), source,
         )
     except Exception as exc:
         notify_error("calendrier économique", exc)
