@@ -319,11 +319,14 @@ traduire en français pour affichage dans des alertes Telegram destinées à des
 
 Règles impératives :
 - Les acronymes standards reconnus internationalement par les traders (NFP, CPI, PMI, GDP,
-  PPI, ISM, FOMC, ECB, BoE, PCE, ADP...) doivent RESTER tels quels — ne les traduis jamais
-  littéralement mot à mot (ex: ne traduis pas "Non-Farm Payrolls" en "Salaires non agricoles"
-  seul : garde "NFP" visible, entouré d'une traduction claire si utile).
+  PPI, ISM, FOMC, ECB, BoE, PCE, ADP...) doivent RESTER visibles tels quels dans la traduction,
+  mais TOUJOURS accompagnés d'une clarification en FRANÇAIS entre parenthèses — jamais seuls,
+  et jamais avec l'expansion anglaise du sigle répétée entre parenthèses (ex: "NFP (Non-Farm
+  Payrolls)" est INTERDIT, ça ne traduit rien). Bon exemple : "Non-Farm Payrolls (NFP)" ->
+  "NFP (Créations d'emplois non agricoles)".
 - Le reste du titre doit être une vraie traduction française naturelle et fidèle, pas du mot
-  à mot maladroit ni une paraphrase approximative.
+  à mot maladroit ni une paraphrase approximative, et jamais un simple copier-coller de
+  l'anglais entre parenthèses.
 - Garde les indications de fréquence (m/m, y/y, q/q, w/w) telles quelles, elles sont
   universelles.
 - Si un titre est déjà clair/compréhensible tel quel pour un francophone (ex: contient déjà
