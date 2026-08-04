@@ -148,7 +148,7 @@ DAILY_SUMMARY_MINUTE = 0
 # Débrief du soir : récap de la journée (news publiées + breaking news), calé
 # sur la clôture de la session de New York.
 EVENING_DEBRIEF_HOUR = 23
-EVENING_DEBRIEF_MINUTE = 0
+EVENING_DEBRIEF_MINUTE = 30
 
 ALERT_BEFORE_MINUTES = 30  # rappel avant news (impact High + Medium)
 NO_TRADE_WINDOW_MINUTES = 15  # conseil "éviter le spread / ne pas trader X min après"
@@ -209,12 +209,12 @@ BREAKING_NEWS_KEYWORDS = [
 
 # --- Scripts vidéo courts (TikTok/Reels/Shorts) -------------------------------
 # Génération quotidienne automatique de DEBRIEF (le débrief vidéo du soir),
-# calée après le débrief texte (23h00). Les autres formats (REACTION/POURQUOI/
+# calée après le débrief texte (23h30). Les autres formats (REACTION/POURQUOI/
 # PEDAGO/FACTCHECK/SEMAINE) restent disponibles à la demande via
 # `python video_scripts.py --format ...` (voir README) mais ne sont plus générés
 # automatiquement.
-VIDEO_SCRIPTS_HOUR = 23
-VIDEO_SCRIPTS_MINUTE = 30
+VIDEO_SCRIPTS_HOUR = 0
+VIDEO_SCRIPTS_MINUTE = 0
 
 VIDEO_OUTPUT_DIR = os.path.join(os.path.dirname(__file__), "video_output")
 

@@ -484,7 +484,7 @@ Tout se règle dans `.env` (valeurs) ou `config.py` (réglages avancés) :
 
 - **Paires suivies** : variable `TRADING_PAIRS` dans `.env` (par défaut : `XAUUSD,EURUSD,GBPUSD,US30,BTCUSD,ETHUSD,DAX,SP500,NASDAQ,BRENT,CAC40`). Si tu ajoutes une paire (ex : `SOLUSD`, `USDJPY`), ajoute aussi son mapping de devises dans `PAIR_CURRENCIES` en haut de `config.py` — sinon elle apparaîtra dans les résumés mais ne recevra jamais de biais IA.
 - **Horaire du résumé quotidien** : `DAILY_SUMMARY_HOUR` / `DAILY_SUMMARY_MINUTE` dans `config.py` (7h00 par défaut).
-- **Horaire du débrief du soir** : `EVENING_DEBRIEF_HOUR` / `EVENING_DEBRIEF_MINUTE` dans `config.py` (23h00 par défaut, calé sur la clôture de la session de New York) — récapitule les news publiées et les breaking news de la journée avec une analyse IA rétrospective.
+- **Horaire du débrief du soir** : `EVENING_DEBRIEF_HOUR` / `EVENING_DEBRIEF_MINUTE` dans `config.py` (23h30 par défaut, calé sur la clôture de la session de New York) — récapitule les news publiées et les breaking news de la journée avec une analyse IA rétrospective.
 - **Horaire de génération des scripts vidéo** : `VIDEO_SCRIPTS_HOUR` / `VIDEO_SCRIPTS_MINUTE` dans `config.py` (23h30 par défaut, après le débrief) — voir section "Scripts vidéo courts" plus haut pour le CTA/disclaimer à personnaliser avant la première utilisation.
 - **Délai de l'alerte "avant news"** : `ALERT_BEFORE_MINUTES` (30 min par défaut).
 - **Taille max du lot soumis à la reclassification IA** : `MAX_RECLASSIFY_BATCH` dans `ai_analyzer.py` (60 par défaut, une semaine chargée peut approcher les 40-45 events "Low" — augmente si le log affiche un avertissement de troncature).
