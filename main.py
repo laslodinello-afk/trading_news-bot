@@ -345,6 +345,10 @@ def run_test_mode() -> None:
         "forecast": "180K",
         "previous": "227K",
     }
+    # Vraie traduction (pas un texte codé en dur) : le --test doit démontrer
+    # ce qui se passe réellement en production, pas un raccourci qui masquerait
+    # un souci de traduction.
+    sample_event["title_fr"] = ai_analyzer.translate_event_titles([sample_event["title"]]).get(sample_event["title"])
     sample_event["time_local"] = (
         datetime.fromisoformat(sample_event["event_dt_utc"]).astimezone(config.TIMEZONE).strftime("%Hh%M")
     )
