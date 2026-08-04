@@ -227,31 +227,59 @@ def _parse_numeric(raw: str | None) -> float | None:
         return None
 
 
+def _chart_bounds(values: list[float]) -> tuple[float, float]:
+    """Bornes de l'axe Y pour build_chart_image, zoomées sur la vraie fourchette
+    des valeurs plutôt que de toujours partir de 0. Bug réel constaté sur un
+    vrai rendu (ISM Manufacturing PMI, prévision 54.0 vs réel 55.6) : un axe
+    parti de 0 rend les deux barres quasi identiques à l'œil sur un petit écran
+    de téléphone, alors que l'écart est bien réel. Repli sur une marge fixe
+    (proportionnelle à la valeur) si les valeurs sont identiques, pour ne
+    jamais renvoyer une plage nulle."""
+    value_range = max(values) - min(values)
+    padding = value_range * 0.6 if value_range else max(abs(max(values)) * 0.1, 0.5)
+    return min(values) - padding, max(values) + padding
+
+
 def build_chart_image(event: dict, out_path: str) -> str | None:
     """Graphique réel (prévision/précédent vs réel) pour un event ayant au moins 2
     valeurs numériques exploitables. None sinon — jamais de barre à 0 pour une
-    valeur manquante, jamais de graphique à partir d'un seul chiffre."""
-    actual = _parse_numeric(event.get("actual"))
+    valeur manquante, jamais de graphique à partir d'un seul chiffre. Affiche le
+    texte original de chaque valeur (pas le chiffre reformaté après parsing) :
+    garde l'unité/le signe tels que fournis par la source, jamais reconstruits."""
+    actual_raw = event.get("actual")
+    actual = _parse_numeric(actual_raw)
     if actual is None:
         return None
 
-    bars: list[tuple[str, float]] = []
-    forecast = _parse_numeric(event.get("forecast"))
-    previous = _parse_numeric(event.get("previous"))
+    bars: list[tuple[str, float, str]] = []
+    forecast_raw, previous_raw = event.get("forecast"), event.get("previous")
+    forecast, previous = _parse_numeric(forecast_raw), _parse_numeric(previous_raw)
     if forecast is not None:
-        bars.append(("Prévision", forecast))
+        bars.append(("Prévision", forecast, forecast_raw))
     elif previous is not None:
-        bars.append(("Précédent", previous))
+        bars.append(("Précédent", previous, previous_raw))
     if not bars:
         return None
-    bars.append(("Réel", actual))
+    bars.append(("Réel", actual, actual_raw))
+
+    labels = [b[0] for b in bars]
+    values = [b[1] for b in bars]
+    zoom_min, zoom_max = _chart_bounds(values)
 
     fig = Figure(figsize=(8, 5), dpi=150)
     FigureCanvasAgg(fig)
     ax = fig.add_subplot(111)
-    labels = [b[0] for b in bars]
-    values = [b[1] for b in bars]
-    ax.bar(labels, values, color=["#8a8f98", "#3b82f6"][: len(bars)])
+    colors = ["#8a8f98", "#3b82f6"][: len(bars)]
+    # bottom=zoom_min : la barre "flotte" depuis le bas de la fenêtre zoomée
+    # plutôt que depuis 0, pour occuper visuellement tout l'espace disponible.
+    containers = ax.bar(labels, [v - zoom_min for v in values], bottom=zoom_min, color=colors)
+    for rect, (_, value, raw) in zip(containers, bars):
+        ax.text(
+            rect.get_x() + rect.get_width() / 2, value + (zoom_max - zoom_min) * 0.03,
+            raw, ha="center", va="bottom", color="white", fontsize=20, fontweight="bold",
+        )
+    ax.set_ylim(zoom_min, zoom_max)
+    ax.set_yticks([])  # les valeurs sont déjà affichées sur chaque barre
     ax.set_title(event.get("title", ""), color="white", fontsize=14)
     ax.tick_params(colors="white", labelsize=12)
     for spine in ax.spines.values():

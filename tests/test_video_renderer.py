@@ -71,6 +71,50 @@ def test_build_chart_image_falls_back_to_previous_when_no_forecast(tmp_path):
     assert Path(out_path).stat().st_size > 0
 
 
+# --- _chart_bounds (correctif : écart réel mais invisible sur un axe parti de 0) ---
+# Bug constaté sur un vrai rendu (ISM Manufacturing PMI, 54.0 vs 55.6) : les deux
+# barres étaient quasi identiques à l'œil. L'axe doit être zoomé sur la vraie
+# fourchette des valeurs, jamais partir de 0 par défaut.
+
+def test_chart_bounds_zooms_in_on_close_values_far_from_zero():
+    zoom_min, zoom_max = video_renderer._chart_bounds([54.0, 55.6])
+    assert zoom_min > 0  # ne repart pas de 0 comme un axe "classique"
+    assert (zoom_max - zoom_min) < 54.0  # bien plus zoomé qu'un axe 0-55.6
+
+
+def test_chart_bounds_never_returns_empty_range_for_identical_values():
+    zoom_min, zoom_max = video_renderer._chart_bounds([2.4, 2.4])
+    assert zoom_min < zoom_max
+
+
+def test_chart_bounds_handles_negative_values():
+    zoom_min, zoom_max = video_renderer._chart_bounds([-4.8, -1.2])
+    assert zoom_min < -4.8
+    assert zoom_max > -1.2
+
+
+def test_build_chart_image_uses_original_raw_text_not_reformatted_number(tmp_path):
+    """La barre doit afficher "180K" tel quel, pas le nombre reformaté après
+    parsing (180000.0) qui perdrait l'unité d'origine (jamais reconstruire une
+    donnée déjà fournie par la source)."""
+    from matplotlib.axes import Axes
+
+    captured_texts = []
+    original_text = Axes.text
+
+    def spy_text(self, x, y, s, *args, **kwargs):
+        captured_texts.append(s)
+        return original_text(self, x, y, s, *args, **kwargs)
+
+    with patch.object(Axes, "text", spy_text):
+        out_path = str(tmp_path / "chart.png")
+        event = {"title": "NFP", "forecast": "180K", "previous": "227K", "actual": "142K"}
+        result = video_renderer.build_chart_image(event, out_path)
+
+    assert result == out_path
+    assert captured_texts == ["180K", "142K"]
+
+
 # --- _resolve_font_path --------------------------------------------------------------
 
 def test_resolve_font_path_uses_configured_path_when_it_exists(tmp_path, monkeypatch):
