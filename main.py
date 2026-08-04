@@ -323,7 +323,10 @@ def job_check_breaking_news() -> None:
             if article is None:
                 db.mark_sent_news(c["news_key"])
             elif c["news_key"] in sent_keys or article["importance"].count("⭐") < config.BREAKING_NEWS_MIN_STARS_FOR_ALERT:
-                db.mark_sent_news(c["news_key"], title=article["title"], resume=article.get("resume"))
+                # titre_fr (pas title) : c'est ce titre qui ressort dans le débrief
+                # du soir (voir db.get_news_for_day) — sinon il redevenait anglais
+                # là-bas alors que l'alerte individuelle, elle, était bien traduite.
+                db.mark_sent_news(c["news_key"], title=article.get("titre_fr") or article["title"], resume=article.get("resume"))
     except Exception as exc:
         notify_error("veille breaking news", exc)
 
