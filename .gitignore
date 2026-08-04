@@ -1,5 +1,6 @@
 .env
 alerts.db
+alerts.db-*
 message_log.db
 message_log.db-*
 agent.log

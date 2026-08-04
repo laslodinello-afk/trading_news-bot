@@ -1,15 +1,29 @@
 """
 Couche SQLite : cache du calendrier économique + déduplication des alertes déjà
 envoyées (sinon un redémarrage ou un tick de scheduler renverrait tout en double).
+
+Persistance : Turso (SQLite hébergé, gratuit, ne s'efface jamais) si
+TURSO_DATABASE_URL/TURSO_AUTH_TOKEN sont configurés — sinon repli sur SQLite
+purement local. Sans Turso, alerts.db repart de zéro à chaque redéploiement
+Render (disque éphémère) : la mémoire anti-doublons est perdue, une alerte
+déjà envoyée peut être renvoyée si un redéploiement survient peu après
+(constaté en conditions réelles). Avec Turso, get_conn() tire l'état le plus
+récent avant chaque connexion (pull) et publie ses écritures immédiatement
+(push) — la mémoire anti-doublons survit à n'importe quel redémarrage. Voir
+message_log.py pour le même principe appliqué au journal des messages
+Telegram (table séparée, même base Turso).
 """
 from __future__ import annotations
 
 import json
+import logging
 import sqlite3
 from contextlib import contextmanager
 from datetime import date, datetime, time, timedelta, timezone
 
 import config
+
+logger = logging.getLogger("db")
 
 SCHEMA = """
 CREATE TABLE IF NOT EXISTS events (
@@ -55,11 +69,40 @@ CREATE TABLE IF NOT EXISTS alphavantage_cache (
 
 @contextmanager
 def get_conn():
-    conn = sqlite3.connect(config.DB_PATH)
-    conn.row_factory = sqlite3.Row
+    """
+    Turso si configuré et joignable, sinon SQLite purement local — jamais
+    d'exception qui remonterait à l'appelant si Turso est indisponible (même
+    philosophie que le reste de l'agent : une source externe qui tombe ne
+    doit jamais bloquer le fonctionnement de base, voir message_log.py).
+    """
+    conn = None
+    use_turso = False
+    if config.TURSO_DATABASE_URL and config.TURSO_AUTH_TOKEN:
+        try:
+            from turso.lib import Row
+            from turso.lib_sync import connect_sync
+
+            conn = connect_sync(
+                config.DB_PATH,
+                remote_url=config.TURSO_DATABASE_URL,
+                auth_token=config.TURSO_AUTH_TOKEN,
+            )
+            conn.row_factory = Row
+            conn.pull()
+            use_turso = True
+        except Exception as exc:  # noqa: BLE001 - repli local, jamais bloquant
+            logger.warning("Turso indisponible (%s), repli sur SQLite local pour cette connexion.", exc)
+            conn = None
+
+    if conn is None:
+        conn = sqlite3.connect(config.DB_PATH)
+        conn.row_factory = sqlite3.Row
+
     try:
         yield conn
         conn.commit()
+        if use_turso:
+            conn.push()
     finally:
         conn.close()
 
@@ -115,12 +158,15 @@ def upsert_event(event: dict) -> None:
     refresh ultérieur omet le champ.
     """
     with get_conn() as conn:
+        # Paramètres positionnels (?), pas nommés (:xxx) : le client Turso ne
+        # supporte pas les paramètres nommés (constaté, ProgrammingError) —
+        # contrairement à sqlite3 qui accepte les deux, donc jamais remarqué
+        # avant de tester pour de vrai contre Turso.
         conn.execute(
             """
             INSERT INTO events (event_key, title, title_fr, currency, impact, event_dt_utc,
                                  forecast, previous, actual, ai_reclassified, updated_at)
-            VALUES (:event_key, :title, :title_fr, :currency, :impact, :event_dt_utc,
-                    :forecast, :previous, :actual, :ai_reclassified, :updated_at)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             ON CONFLICT(event_key) DO UPDATE SET
                 title=excluded.title,
                 title_fr=COALESCE(excluded.title_fr, events.title_fr),
@@ -133,12 +179,19 @@ def upsert_event(event: dict) -> None:
                 ai_reclassified=excluded.ai_reclassified,
                 updated_at=excluded.updated_at
             """,
-            {
-                **event,
-                "title_fr": event.get("title_fr"),
-                "ai_reclassified": int(bool(event.get("ai_reclassified", False))),
-                "updated_at": _now_iso(),
-            },
+            (
+                event["event_key"],
+                event["title"],
+                event.get("title_fr"),
+                event["currency"],
+                event["impact"],
+                event["event_dt_utc"],
+                event.get("forecast"),
+                event.get("previous"),
+                event.get("actual"),
+                int(bool(event.get("ai_reclassified", False))),
+                _now_iso(),
+            ),
         )
 
 
