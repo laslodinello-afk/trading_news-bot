@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-05T11:54:22.351543+00:00",
+  "fetched_at": "2026-08-05T11:55:24.902286+00:00",
   "articles": [
+    {
+      "title": "US Dollar: Consolidation view into ISM and payrolls – BBH",
+      "url": "https://www.fxstreet.com/news/us-dollar-consolidation-view-into-ism-and-payrolls-bbh-202608051154",
+      "source": "FXStreet",
+      "published_at": "2026-08-05T11:54:53+00:00"
+    },
     {
       "title": "Brent: Price slips on Hormuz deal hopes – Rabobank",
       "url": "https://www.fxstreet.com/news/brent-price-slips-on-hormuz-deal-hopes-rabobank-202608051143",
@@ -114,12 +120,6 @@
       "url": "https://www.fxstreet.com/news/ism-services-pmi-preview-us-services-sector-expected-to-accelerate-in-july-202608050900",
       "source": "FXStreet",
       "published_at": "2026-08-05T09:00:00+00:00"
-    },
-    {
-      "title": "US Dollar Index: Negative bias builds with policy headwinds – DBS",
-      "url": "https://www.fxstreet.com/news/us-dollar-index-negative-bias-builds-with-policy-headwinds-dbs-202608050854",
-      "source": "FXStreet",
-      "published_at": "2026-08-05T08:54:55+00:00"
     }
   ]
 }
