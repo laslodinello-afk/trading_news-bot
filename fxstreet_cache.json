@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-05T12:29:16.796192+00:00",
+  "fetched_at": "2026-08-05T12:30:49.022926+00:00",
   "articles": [
+    {
+      "title": "New Zealand Dollar: RBNZ seen hiking again – TD Securities",
+      "url": "https://www.fxstreet.com/news/new-zealand-dollar-rbnz-seen-hiking-again-td-securities-202608051230",
+      "source": "FXStreet",
+      "published_at": "2026-08-05T12:30:41+00:00"
+    },
     {
       "title": "Fed's Kashkari: Not calling for dramatic increase in rates",
       "url": "https://www.fxstreet.com/news/feds-kashkari-not-calling-for-dramatic-increase-in-rates-202608051226",
@@ -96,18 +102,6 @@
       "url": "https://www.fxstreet.com/news/gold-price-forecast-xau-usd-hits-fresh-weekly-highs-beyond-the-top-of-a-triangle-pattern-202608050940",
       "source": "FXStreet",
       "published_at": "2026-08-05T09:40:22+00:00"
-    },
-    {
-      "title": "Hungarian Forint: MPC minutes key for support against  Euro – Commerzbank",
-      "url": "https://www.fxstreet.com/news/hungarian-forint-mpc-minutes-key-for-support-against-euro-commerzbank-202608050930",
-      "source": "FXStreet",
-      "published_at": "2026-08-05T09:30:38+00:00"
-    },
-    {
-      "title": "Silver price today: Silver rises, according to FXStreet data",
-      "url": "https://www.fxstreet.com/news/silver-price-today-silver-rises-according-to-fxstreet-data-202608050930",
-      "source": "FXStreet",
-      "published_at": "2026-08-05T09:30:12+00:00"
     }
   ]
 }
