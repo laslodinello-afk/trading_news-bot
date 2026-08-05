@@ -175,8 +175,18 @@ def upsert_event(event: dict) -> None:
     event peut inclure "ai_reclassified" (bool) : main.py n'appelle cette
     fonction que pour les events retenus (High/Medium natifs, ou Low upgradés
     par l'IA ce cycle-ci) — un event Low non retenu n'est simplement jamais
-    upserté, donc un event déjà upgradé ne peut pas être "redescendu" par un
-    refresh ultérieur qui le reverrait Low sans le ré-upgrader.
+    upserté par main.py. Mais un appelant qui ne suit pas cette discipline
+    (ex. generate_debrief.sh, qui upserte tout ce que renvoie
+    calendar_fetcher.refresh_calendar() sans repasser par l'IA) peut très bien
+    rappeler upsert_event() avec l'impact natif "Low" pour un event déjà
+    upgradé — constaté en conditions réelles : un event alerté sur Telegram en
+    "Medium" (ai_reclassified=1) s'est fait redescendre en "Low" par un simple
+    rafraîchissement local du calendrier, le faisant disparaître de
+    get_events_for_day() (filtrée sur High/Medium) alors qu'il avait bien été
+    communiqué. D'où la protection ci-dessous, dans le SQL lui-même plutôt que
+    dans la discipline de l'appelant : un event déjà ai_reclassified=1 en base
+    ne peut jamais être redescendu en impact ni "dé-reclassifié" par un upsert
+    qui n'apporte pas lui-même une reclassification (ai_reclassified=1).
 
     "title_fr" (optionnel) : traduction affichée dans les messages, résolue
     par main.py (via get_title_translation/ai_analyzer.translate_event_titles)
@@ -198,12 +208,15 @@ def upsert_event(event: dict) -> None:
                 title=excluded.title,
                 title_fr=COALESCE(excluded.title_fr, events.title_fr),
                 currency=excluded.currency,
-                impact=excluded.impact,
+                impact=CASE
+                    WHEN events.ai_reclassified = 1 AND excluded.ai_reclassified = 0 THEN events.impact
+                    ELSE excluded.impact
+                END,
                 event_dt_utc=excluded.event_dt_utc,
                 forecast=excluded.forecast,
                 previous=excluded.previous,
                 actual=COALESCE(excluded.actual, events.actual),
-                ai_reclassified=excluded.ai_reclassified,
+                ai_reclassified=MAX(events.ai_reclassified, excluded.ai_reclassified),
                 updated_at=excluded.updated_at
             """,
             (

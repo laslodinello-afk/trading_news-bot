@@ -24,7 +24,12 @@ RÈGLES ÉDITORIALES STRICTES (à respecter sans exception) :
 3. Un chiffre publié est toujours comparé à ce qui était attendu (la prévision/le
    consensus), jamais donné seul.
 4. Langage simple : si tu emploies un terme technique, définis-le dans la foulée
-   en 5 mots maximum (ex. "le CPI — l'inflation — a surpris").
+   en 5 mots maximum (ex. "le CPI — l'inflation — a surpris"). Ne désigne
+   JAMAIS la même chose par deux mots différents dans un même bloc sans le
+   dire explicitement : ça sonne comme une erreur, pas comme une précision.
+   Exemple concret à éviter : parler de "pétrole" puis, une phrase plus loin,
+   de "brut" tout seul comme si c'était autre chose — reste sur "pétrole" du
+   début à la fin du bloc.
 5. Interdiction absolue de commencer par une phrase d'intro générique : pas de
    "salut à tous", pas de "aujourd'hui on va parler de", pas de "bienvenue dans
    cette vidéo". Le hook démarre directement sur l'information ou la tension.
