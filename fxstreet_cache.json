@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-05T15:13:19.760444+00:00",
+  "fetched_at": "2026-08-05T15:14:22.136147+00:00",
   "articles": [
+    {
+      "title": "Silver Price Forecast: Daily momentum improves, but weekly outlook stays bearish",
+      "url": "https://www.fxstreet.com/news/silver-price-forecast-daily-momentum-improves-but-weekly-outlook-stays-bearish-202608051513",
+      "source": "FXStreet",
+      "published_at": "2026-08-05T15:13:54+00:00"
+    },
     {
       "title": "Euro steadies as Eurozone PMIs beat forecasts",
       "url": "https://www.fxstreet.com/news/euro-steadies-as-eurozone-pmis-beat-forecasts-202608051508",
@@ -120,12 +126,6 @@
       "url": "https://www.fxstreet.com/news/japanese-yen-us-trade-focus-shapes-intervention-societe-generale-202608051222",
       "source": "FXStreet",
       "published_at": "2026-08-05T12:22:20+00:00"
-    },
-    {
-      "title": "Copper: Tight supply supports breakout above $14,000 – ING",
-      "url": "https://www.fxstreet.com/news/copper-tight-supply-supports-breakout-above-14-000-ing-202608051213",
-      "source": "FXStreet",
-      "published_at": "2026-08-05T12:13:33+00:00"
     }
   ]
 }
