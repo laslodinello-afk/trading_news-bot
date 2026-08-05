@@ -1,6 +1,24 @@
 {
-  "fetched_at": "2026-08-05T11:37:12.348213+00:00",
+  "fetched_at": "2026-08-05T11:47:39.493553+00:00",
   "articles": [
+    {
+      "title": "Brent: Price slips on Hormuz deal hopes – Rabobank",
+      "url": "https://www.fxstreet.com/news/brent-price-slips-on-hormuz-deal-hopes-rabobank-202608051143",
+      "source": "FXStreet",
+      "published_at": "2026-08-05T11:43:39+00:00"
+    },
+    {
+      "title": "EUR/USD Price Forecast: Trades near crucial level of 1.1550",
+      "url": "https://www.fxstreet.com/news/eur-usd-price-forecast-trades-near-crucial-level-of-11550-202608051143",
+      "source": "FXStreet",
+      "published_at": "2026-08-05T11:43:12+00:00"
+    },
+    {
+      "title": "Silver Price Forecasts: XAG/USD, capped below $62.00 but steady near one-month highs",
+      "url": "https://www.fxstreet.com/news/silver-price-forecasts-xag-usd-capped-below-6200-but-steady-near-one-month-highs-202608051141",
+      "source": "FXStreet",
+      "published_at": "2026-08-05T11:41:44+00:00"
+    },
     {
       "title": "Euro: PMI resilience tempers stagflation fears – BNY",
       "url": "https://www.fxstreet.com/news/euro-pmi-resilience-tempers-stagflation-fears-bny-202608051134",
@@ -108,12 +126,6 @@
       "url": "https://www.fxstreet.com/news/japans-katayama-sees-inflation-easing-with-tax-reduction-202608050849",
       "source": "FXStreet",
       "published_at": "2026-08-05T08:49:08+00:00"
-    },
-    {
-      "title": "Australian Dollar flattens against USD in countdown to US ADP labor data",
-      "url": "https://www.fxstreet.com/news/australian-dollar-flattens-against-usd-in-countdown-to-us-adp-labor-data-202608050844",
-      "source": "FXStreet",
-      "published_at": "2026-08-05T08:44:18+00:00"
     }
   ]
 }
