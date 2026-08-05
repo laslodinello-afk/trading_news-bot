@@ -494,7 +494,7 @@ def test_build_caption_text_clip_has_black_stroke():
 
 
 # --- structure DEBRIEF : étiquette de section + carte de transition ----------------
-# Le texte est déjà trié EVENEMENT-puis-BREAKING par video_scripts._assemble_script ;
+# Le texte est déjà trié BREAKING-puis-RECAP par video_scripts._assemble_script ;
 # ce module rend cet ordre visible (étiquette en haut de chaque bloc corps, carte de
 # transition silencieuse au point de bascule) plutôt qu'un simple cut.
 
@@ -508,12 +508,6 @@ def test_accent_rule_uses_custom_color_when_specified():
     clip = video_renderer._accent_rule(1080, 100, duration=1.0, color_hex="#ef4444")
     pixel = tuple(int(v) for v in clip.get_frame(0)[0, 0])
     assert pixel == video_renderer._hex_to_rgb("#ef4444")
-
-
-def test_section_label_and_accent_evenement():
-    label, accent = video_renderer._section_label_and_accent("EVENEMENT")
-    assert label == config.VIDEO_SECTION_LABEL_EVENEMENT
-    assert accent == config.VIDEO_CARD_ACCENT_COLOR
 
 
 def test_section_label_and_accent_breaking():

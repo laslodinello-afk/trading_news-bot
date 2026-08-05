@@ -289,15 +289,16 @@ VIDEO_CARD_ACCENT_COLOR = "#3b82f6"
 # avec la voix (timing réel via edge-tts, pas une approximation).
 VIDEO_CAPTION_MAX_WORDS_PER_CHUNK = 3
 
-# Structure du DEBRIEF : jusqu'à trois sections distinctes (événements macro
-# confirmés, breaking news, rappel des événements en attente de résultat), voir
-# video_templates/debrief.txt et video_scripts._assemble_script (qui regroupe et
-# trie les blocs par section — jamais mélangés). Utilisé pour la légende affichée
-# en haut de chaque bloc corps (--render) et pour la petite carte de transition
-# entre deux sections consécutives différentes.
-VIDEO_SECTION_LABEL_EVENEMENT = "ÉVÉNEMENTS DU JOUR"
+# Structure du DEBRIEF : deux sections distinctes — les breaking news
+# développées en détail, puis TOUJOURS en dernier un récap compact de
+# l'ensemble des news économiques du calendrier de la journée (confirmées ET
+# en attente, voir video_templates/debrief.txt) — voir aussi
+# video_scripts._assemble_script (qui regroupe et trie les blocs par section —
+# jamais mélangés). Utilisé pour la légende affichée en haut de chaque bloc
+# corps (--render) et pour la petite carte de transition entre les deux
+# sections.
 VIDEO_SECTION_LABEL_BREAKING = "BREAKING NEWS"
-VIDEO_SECTION_LABEL_RECAP = "À CONFIRMER"
+VIDEO_SECTION_LABEL_RECAP = "RÉCAP ÉCO DU JOUR"
 VIDEO_SECTION_BREAKING_ACCENT_COLOR = "#ef4444"  # rouge, distinct du bleu VIDEO_CARD_ACCENT_COLOR
 VIDEO_SECTION_RECAP_ACCENT_COLOR = "#f59e0b"  # ambre, distinct du bleu et du rouge
 VIDEO_SECTION_TRANSITION_SECONDS = 1.3  # durée de la carte de transition (silencieuse)

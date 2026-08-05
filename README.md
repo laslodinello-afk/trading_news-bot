@@ -338,10 +338,11 @@ Le flag `--render` transforme le script en vraie vidéo verticale (1080×1920, m
   vidéo différente d'un bloc sur le pétrole) — pas un seul fond fixe pour toute
   la vidéo. Fond uni sombre par défaut sans clé Pexels.
 - **Repères de structure** (DEBRIEF uniquement) : une étiquette en haut de
-  chaque bloc ("ÉVÉNEMENTS DU JOUR" en bleu / "BREAKING NEWS" en rouge) plus une
-  courte carte de transition silencieuse au moment où la vidéo bascule d'une
-  section à l'autre — pour que le découpage s'entende et se voie, pas juste un
-  enchaînement de sujets sans rapport apparent.
+  chaque bloc ("BREAKING NEWS" en rouge sur les blocs développés, "RÉCAP ÉCO DU
+  JOUR" en ambre sur le bloc final qui récapitule tout le calendrier économique
+  du jour) plus une courte carte de transition silencieuse au moment où la
+  vidéo bascule vers le récap — pour que le découpage s'entende et se voie, pas
+  juste un enchaînement de sujets sans rapport apparent.
 - **Carte de fin dédiée** pour le CTA : contrairement au reste, un écran stable
   (pas de fond vidéo, pas de sous-titres qui défilent) — un appel à l'action doit
   rester lisible, pas clignoter.

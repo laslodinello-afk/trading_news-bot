@@ -30,44 +30,63 @@ section (voir Structure ci-dessous).
 
 Structure (IMPORTANT, à respecter strictement — c'est ce qui rend le débrief
 lisible plutôt qu'un vrac de sujets) :
-1. Un bloc = un seul sujet. N'écris JAMAIS un bloc qui mélange deux événements
-   ou deux actualités différentes (ex. la décision de la BCE et les ventes au
-   détail britanniques sont deux sujets distincts : deux blocs séparés, même si
-   ça donne plus de blocs). Si tu as plus de sujets exploitables que la
-   fourchette de blocs ne le permet, garde les plus importants et laisse tomber
-   le reste plutôt que d'en fusionner deux dans un seul bloc.
-2. Découpe le corps en 4 à 7 blocs (plus que les autres formats — ce DEBRIEF
-   couvre plus de terrain).
-3. Étiquette CHAQUE bloc via le champ "section" : "EVENEMENT" pour un bloc qui
-   parle d'une donnée macro publiée aujourd'hui (résultat confirmé),
-   "BREAKING" pour un bloc qui parle d'une actualité de dernière minute,
-   "RECAP" pour le bloc de rappel décrit à la règle 6 ci-dessous. N'invente
-   rien : si le jour n'a que des événements (ou que des breaking news), tous
-   les blocs "de fond" ont la même section.
+
+Il y a deux natures de contenu très différentes dans ce DEBRIEF, ne les
+traite JAMAIS de la même façon :
+- Les BREAKING NEWS (actualités de dernière minute) sont le cœur de la vidéo :
+  chacune a droit à un vrai bloc développé, avec du contexte et une
+  explication de l'impact.
+- Les événements économiques du calendrier (macro publiée OU encore attendue)
+  ne sont PAS développés un par un en début de vidéo — ils sont TOUS
+  rassemblés dans un récap compact, à la toute fin (voir règle 6). Un
+  événement macro, même important, n'a jamais son propre bloc détaillé en
+  tête de vidéo : ce n'est pas le rôle de ce format.
+
+1. Un bloc BREAKING = une seule actualité. N'écris JAMAIS un bloc BREAKING qui
+   mélange deux actualités différentes (ex. la décision de la BCE et les
+   ventes au détail britanniques sont deux sujets distincts : deux blocs
+   séparés, même si ça donne plus de blocs). Si tu as plus de breaking news
+   exploitables que la fourchette de blocs ne le permet, garde les plus
+   importantes et laisse tomber le reste plutôt que d'en fusionner deux dans
+   un seul bloc. Cette règle "un sujet par bloc" ne s'applique PAS au bloc
+   RECAP (règle 6), qui rassemble volontairement plusieurs événements.
+2. Découpe le corps en blocs BREAKING (un par actualité retenue, voir règle
+   1) puis ajoute le bloc RECAP final (règle 6) s'il y a lieu. Le nombre total
+   dépend donc entièrement de ce qu'il y a à couvrir ce jour-là — un jour
+   calme avec une seule breaking news et un récap éco donne 2 blocs, un jour
+   chargé peut en donner beaucoup plus.
+3. Étiquette CHAQUE bloc via le champ "section" : "BREAKING" pour un bloc qui
+   parle d'une actualité de dernière minute, "RECAP" pour le bloc décrit à la
+   règle 6.
 4. Ordre des blocs dans le tableau "corps" : D'ABORD tous les blocs
-   "EVENEMENT" (du plus important au plus secondaire), ENSUITE tous les blocs
-   "BREAKING", et le bloc "RECAP" (s'il existe, voir règle 6) toujours en
-   TOUTE DERNIÈRE position — jamais mélangés. Si les deux sections
-   "EVENEMENT"/"BREAKING" sont présentes, le premier bloc "BREAKING" doit
-   ouvrir par une courte phrase de transition explicite qui signale le
-   changement (ex. "Côté actus de dernière minute, maintenant :", dans tes
-   propres mots) — le passage d'une section à l'autre doit s'entendre, pas
-   juste s'enchaîner. Même principe pour le bloc "RECAP" : une courte phrase
-   de transition qui l'annonce (ex. "Pour finir, un point sur ce qui est
-   encore attendu aujourd'hui :").
+   "BREAKING" (du plus important au plus secondaire), ENSUITE le bloc "RECAP"
+   (s'il existe, voir règle 6) toujours en TOUTE DERNIÈRE position. Le bloc
+   "RECAP" doit ouvrir par une courte phrase de transition qui l'annonce
+   clairement (ex. "Pour finir, un point sur les news économiques de la
+   journée :", dans tes propres mots) — le passage vers le récap doit
+   s'entendre, pas juste s'enchaîner.
 5. Pour CHAQUE bloc, le "visual_keyword" doit correspondre précisément au
    sujet de CE bloc, pas un mot-clé générique répété partout : un bloc sur une
    décision de banque centrale appelle un mot-clé différent d'un bloc sur une
    donnée de l'emploi ou sur une actualité géopolitique.
-6. Si la liste des "événements prévus aujourd'hui mais SANS résultat
-   confirmé" n'est pas vide, ajoute UN bloc supplémentaire, section "RECAP",
-   toujours en toute dernière position (après tout le reste, y compris les
-   blocs "BREAKING" s'il y en a) : un rappel BREF de ces événements-là — pas
-   un développement comme les autres blocs, juste les citer avec leur heure et
-   ce qui était attendu (la prévision), en étant honnête sur le fait qu'aucun
-   résultat n'est encore disponible à l'heure de cette vidéo. Ne jamais
-   inventer un résultat pour combler ce manque. Si cette liste est vide,
-   n'ajoute AUCUN bloc "RECAP".
+6. Si "Événements économiques publiés aujourd'hui, avec résultat confirmé" OU
+   "Événements économiques prévus aujourd'hui mais SANS résultat confirmé"
+   contient au moins un élément, ajoute UN bloc supplémentaire (deux si
+   vraiment beaucoup d'événements ce jour-là), section "RECAP", toujours en
+   toute dernière position : un récap RAPIDE de CHACUN de ces événements,
+   traité bien plus brièvement qu'un bloc BREAKING — pas de grand
+   développement, juste, pour chaque événement : dire qu'il a eu lieu ou était
+   prévu aujourd'hui, rappeler en quelques mots ce que c'est. ET, selon le cas :
+   - S'il a un résultat confirmé (liste "avec résultat confirmé") : explique
+     en une phrase courte l'impact concret de ce résultat (toujours en
+     transformant le chiffre en quelque chose de concret, voir règle 2 des
+     consignes générales — juste en une phrase, pas un paragraphe).
+   - S'il n'a PAS de résultat confirmé (liste "SANS résultat confirmé") :
+     dis-le honnêtement, en citant l'heure et ce qui était attendu (la
+     prévision) — ne JAMAIS inventer un résultat pour combler ce manque.
+   Si les deux listes sont vides, n'ajoute AUCUN bloc "RECAP" (peut arriver
+   un jour où le calendrier économique était vide et que la vidéo ne repose
+   que sur des breaking news).
 
 La chute doit TOUJOURS se terminer en donnant un cap : ce qu'il faut
 surveiller dans les prochains jours (le prochain événement qui compte pour

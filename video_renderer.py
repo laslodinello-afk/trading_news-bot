@@ -643,11 +643,9 @@ def _build_end_card_clip(cta_text: str, voice: str, tmp_dir: str, font_path: str
 # --- orchestration ---------------------------------------------------------------
 
 def _section_label_and_accent(section: str) -> tuple[str, str]:
-    if section == "BREAKING":
-        return config.VIDEO_SECTION_LABEL_BREAKING, config.VIDEO_SECTION_BREAKING_ACCENT_COLOR
     if section == "RECAP":
         return config.VIDEO_SECTION_LABEL_RECAP, config.VIDEO_SECTION_RECAP_ACCENT_COLOR
-    return config.VIDEO_SECTION_LABEL_EVENEMENT, config.VIDEO_CARD_ACCENT_COLOR
+    return config.VIDEO_SECTION_LABEL_BREAKING, config.VIDEO_SECTION_BREAKING_ACCENT_COLOR
 
 
 def render(script: dict, out_path: str, voice: str | None = None) -> str | None:
@@ -682,13 +680,11 @@ def render(script: dict, out_path: str, voice: str | None = None) -> str | None:
             segments_plan.append(("chute", script["chute"], default_keyword, False, None))
 
             # DEBRIEF uniquement (seul format dont les blocs corps portent un
-            # "section", déjà triés EVENEMENT -> BREAKING -> RECAP par
-            # video_scripts._assemble_script) : une étiquette de section sur chaque
-            # bloc corps, plus une courte carte de transition silencieuse à chaque
-            # bascule vers une section différente de la précédente (EVENEMENT ->
-            # BREAKING, BREAKING -> RECAP, ou EVENEMENT -> RECAP directement s'il
-            # n'y a pas de breaking news ce soir-là). Structure purement visuelle :
-            # aucune influence sur les formats à sujet unique (section reste None).
+            # "section", déjà triés BREAKING -> RECAP par video_scripts._assemble_script) :
+            # une étiquette de section sur chaque bloc corps, plus une courte carte de
+            # transition silencieuse au passage de BREAKING à RECAP. Structure
+            # purement visuelle : aucune influence sur les formats à sujet unique
+            # (section reste None).
             clips = [_build_intro_card_clip(target_date, voice, tmp_dir, font_path, theme_keyword=default_keyword)]
             prev_section = None
             for i, (kind, spoken, keyword, is_content_specific, section) in enumerate(segments_plan):

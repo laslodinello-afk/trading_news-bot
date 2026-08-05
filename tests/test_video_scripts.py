@@ -126,11 +126,12 @@ def test_assemble_script_corps_count_warning():
 
 
 def test_assemble_script_debrief_allows_more_corps_blocks():
-    """DEBRIEF couvre plus de terrain (événements + breaking news) : 3 blocs est
-    hors gabarit pour DEBRIEF (4 à 7) alors que ça passerait pour les autres formats."""
-    script = video_scripts._assemble_script("DEBRIEF", date(2026, 7, 26), _fake_llm_result(n_corps=3))
+    """DEBRIEF couvre plus de terrain (breaking news + récap éco) : 1 bloc est
+    hors gabarit pour DEBRIEF (2 à 8) alors que 3 est un total tout à fait
+    normal (le récap éco tient dans 1-2 blocs compacts, voir debrief.txt)."""
+    script = video_scripts._assemble_script("DEBRIEF", date(2026, 7, 26), _fake_llm_result(n_corps=1))
     assert any("hors gabarit" in w for w in script["warnings"])
-    script_ok = video_scripts._assemble_script("DEBRIEF", date(2026, 7, 26), _fake_llm_result(n_corps=5))
+    script_ok = video_scripts._assemble_script("DEBRIEF", date(2026, 7, 26), _fake_llm_result(n_corps=3))
     assert not any("hors gabarit" in w for w in script_ok["warnings"])
 
 
@@ -151,11 +152,12 @@ def test_assemble_script_falls_back_to_format_theme_without_llm_keyword():
     assert script["corps"][0]["visual_keyword"] == config.STOCK_FOOTAGE_THEME_BY_FORMAT["PEDAGO"]
 
 
-# --- DEBRIEF : structure en 3 sections (événements confirmés, breaking news,
-# rappel des événements en attente) -------------------------------------------------
+# --- DEBRIEF : structure en 2 sections (breaking news développées, puis un
+# récap compact final de TOUS les événements économiques du calendrier,
+# confirmés ET en attente) ---------------------------------------------------------
 # Garde-fou côté code (voir _assemble_script) : même si le LLM n'a pas respecté
-# l'ordre demandé par video_templates/debrief.txt, tous les blocs "EVENEMENT" se
-# retrouvent avant "BREAKING", lui-même avant "RECAP", une fois le script assemblé.
+# l'ordre demandé par video_templates/debrief.txt, tous les blocs "BREAKING" se
+# retrouvent avant "RECAP" une fois le script assemblé.
 
 def _corps_block(section=None, oral="texte du bloc"):
     block = {"oral": oral, "ecran": "texte court", "visuel": "visuel"}
@@ -164,44 +166,27 @@ def _corps_block(section=None, oral="texte du bloc"):
     return block
 
 
-def test_assemble_script_debrief_sorts_evenement_before_breaking():
-    llm_result = {
-        "hook": _words(5),
-        "corps": [
-            _corps_block("BREAKING"),
-            _corps_block("EVENEMENT"),
-            _corps_block("BREAKING"),
-            _corps_block("EVENEMENT"),
-        ],
-        "chute": _words(6),
-        "legende": "Légende de test.",
-        "hashtags": ["eco"],
-    }
-    script = video_scripts._assemble_script("DEBRIEF", date(2026, 7, 26), llm_result)
-    assert [b["section"] for b in script["corps"]] == ["EVENEMENT", "EVENEMENT", "BREAKING", "BREAKING"]
-    assert [b["bloc"] for b in script["corps"]] == [1, 2, 3, 4]
-
-
-def test_assemble_script_debrief_sorts_recap_after_evenement_and_breaking():
+def test_assemble_script_debrief_sorts_recap_after_breaking():
     llm_result = {
         "hook": _words(5),
         "corps": [
             _corps_block("RECAP"),
             _corps_block("BREAKING"),
-            _corps_block("EVENEMENT"),
+            _corps_block("BREAKING"),
         ],
         "chute": _words(6),
         "legende": "Légende de test.",
         "hashtags": ["eco"],
     }
     script = video_scripts._assemble_script("DEBRIEF", date(2026, 7, 26), llm_result)
-    assert [b["section"] for b in script["corps"]] == ["EVENEMENT", "BREAKING", "RECAP"]
+    assert [b["section"] for b in script["corps"]] == ["BREAKING", "BREAKING", "RECAP"]
+    assert [b["bloc"] for b in script["corps"]] == [1, 2, 3]
 
 
 def test_assemble_script_debrief_recap_alone_is_valid():
-    """RECAP est une section légitime en elle-même (jour sans EVENEMENT/BREAKING
-    confirmé, juste un rappel des événements en attente) — ne doit pas retomber
-    sur EVENEMENT par défaut."""
+    """RECAP est une section légitime en elle-même (jour sans breaking news,
+    juste un récap du calendrier économique) — ne doit pas retomber sur
+    BREAKING par défaut."""
     llm_result = {
         "hook": _words(5),
         "corps": [_corps_block("RECAP", oral="seul bloc")],
@@ -219,19 +204,19 @@ def test_assemble_script_debrief_preserves_relative_order_within_each_section():
     llm_result = {
         "hook": _words(5),
         "corps": [
-            _corps_block("EVENEMENT", oral="premier evenement"),
-            _corps_block("EVENEMENT", oral="second evenement"),
             _corps_block("BREAKING", oral="premier breaking"),
+            _corps_block("BREAKING", oral="second breaking"),
+            _corps_block("RECAP", oral="recap"),
         ],
         "chute": _words(6),
         "legende": "Légende de test.",
         "hashtags": ["eco"],
     }
     script = video_scripts._assemble_script("DEBRIEF", date(2026, 7, 26), llm_result)
-    assert [b["oral"] for b in script["corps"]] == ["premier evenement", "second evenement", "premier breaking"]
+    assert [b["oral"] for b in script["corps"]] == ["premier breaking", "second breaking", "recap"]
 
 
-def test_assemble_script_debrief_defaults_missing_or_invalid_section_to_evenement():
+def test_assemble_script_debrief_defaults_missing_or_invalid_section_to_breaking():
     llm_result = {
         "hook": _words(5),
         "corps": [_corps_block(None), _corps_block(""), _corps_block("AUTRE_CHOSE")],
@@ -240,7 +225,7 @@ def test_assemble_script_debrief_defaults_missing_or_invalid_section_to_evenemen
         "hashtags": ["eco"],
     }
     script = video_scripts._assemble_script("DEBRIEF", date(2026, 7, 26), llm_result)
-    assert all(b["section"] == "EVENEMENT" for b in script["corps"])
+    assert all(b["section"] == "BREAKING" for b in script["corps"])
 
 
 def test_assemble_script_non_debrief_never_carries_section_key():
@@ -250,29 +235,10 @@ def test_assemble_script_non_debrief_never_carries_section_key():
     assert all("section" not in bloc for bloc in script["corps"])
 
 
-def test_render_markdown_debrief_groups_corps_under_section_headings():
-    llm_result = {
-        "hook": _words(5),
-        "corps": [_corps_block("EVENEMENT", oral="evenement un"), _corps_block("BREAKING", oral="breaking un")],
-        "chute": _words(6),
-        "legende": "Légende de test.",
-        "hashtags": ["eco"],
-    }
-    script = video_scripts._assemble_script("DEBRIEF", date(2026, 7, 26), llm_result)
-    md = video_scripts._render_markdown(script)
-
-    evenement_idx = md.index(config.VIDEO_SECTION_LABEL_EVENEMENT)
-    breaking_idx = md.index(config.VIDEO_SECTION_LABEL_BREAKING)
-    bloc1_idx = md.index("**Bloc 1**")
-    bloc2_idx = md.index("**Bloc 2**")
-    assert evenement_idx < bloc1_idx < breaking_idx < bloc2_idx
-
-
 def test_render_markdown_debrief_includes_recap_heading_last():
     llm_result = {
         "hook": _words(5),
         "corps": [
-            _corps_block("EVENEMENT", oral="evenement un"),
             _corps_block("BREAKING", oral="breaking un"),
             _corps_block("RECAP", oral="rappel un"),
         ],
@@ -285,15 +251,16 @@ def test_render_markdown_debrief_includes_recap_heading_last():
 
     breaking_idx = md.index(config.VIDEO_SECTION_LABEL_BREAKING)
     recap_idx = md.index(config.VIDEO_SECTION_LABEL_RECAP)
-    bloc3_idx = md.index("**Bloc 3**")
-    assert breaking_idx < recap_idx < bloc3_idx
+    bloc1_idx = md.index("**Bloc 1**")
+    bloc2_idx = md.index("**Bloc 2**")
+    assert breaking_idx < bloc1_idx < recap_idx < bloc2_idx
 
 
 def test_render_markdown_non_debrief_has_no_section_headings():
     script = video_scripts._assemble_script("REACTION", date(2026, 7, 26), _fake_llm_result(n_corps=3))
     md = video_scripts._render_markdown(script)
-    assert config.VIDEO_SECTION_LABEL_EVENEMENT not in md
     assert config.VIDEO_SECTION_LABEL_BREAKING not in md
+    assert config.VIDEO_SECTION_LABEL_RECAP not in md
 
 
 # --- CTA et disclaimer toujours présents -------------------------------------------
