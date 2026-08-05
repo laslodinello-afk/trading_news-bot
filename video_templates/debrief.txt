@@ -13,6 +13,13 @@ complète de la journée, pas un focus sur un seul événement.
 Actualités de dernière minute captées aujourd'hui :
 {headlines_block}
 
+Texte exact déjà envoyé aujourd'hui sur le canal Telegram (alertes avant/après
+publication avec l'analyse déjà faite à l'époque, breaking news, résumés) —
+sers-t'en pour ancrer tes explications dans ce qui a VRAIMENT été dit à
+l'audience ce jour-là (le raisonnement, les biais déjà évoqués), jamais pour
+ajouter une info qui n'y figure pas :
+{telegram_context_block}
+
 Paires/actifs suivis par l'audience : {pairs}.
 
 {extra_notes_block}

@@ -25,6 +25,7 @@ from datetime import date, datetime, timedelta
 import ai_analyzer
 import config
 import db
+import message_log
 
 logger = logging.getLogger("video_scripts")
 
@@ -117,6 +118,18 @@ def _format_headlines_block(rows) -> str:
     return "\n".join(lines)
 
 
+def _format_telegram_messages_block(messages: list[dict]) -> str:
+    """Texte brut déjà envoyé sur Telegram (alertes avant/après, breaking news,
+    résumés — voir telegram_bot.broadcast/message_log.py), pour que le DEBRIEF
+    puise ses explications (raisonnement, biais déjà publiés) dans ce qui a
+    vraiment été communiqué plutôt que de les réinventer de zéro."""
+    lines = []
+    for m in messages[:_MAX_EVENTS_IN_PROMPT]:
+        local_dt = datetime.fromisoformat(m["sent_at"]).astimezone(config.TIMEZONE)
+        lines.append(f"--- Message envoyé à {local_dt.strftime('%Hh%M')} ---\n{m['raw_text']}")
+    return "\n\n".join(lines)
+
+
 def _pick_top_event_title(events: list[dict]) -> str:
     """High avant Medium, puis le plus tôt dans la journée."""
     return sorted(events, key=lambda e: (e["impact"] != "High", e["event_dt_utc"]))[0]["title"]
@@ -138,10 +151,16 @@ def _gather_data(fmt: str, target_date: date, concept_override: str | None = Non
         news_rows = db.get_news_for_day(day_start_utc, day_end_utc)
         if not confirmed and not pending and not news_rows:
             return None
+        telegram_messages = message_log.get_messages_for_day(target_date)
         return {
             "events_block": _format_events_block(confirmed) if confirmed else "Aucun événement macro confirmé aujourd'hui.",
             "pending_events_block": _format_events_block(pending) if pending else "Aucun événement en attente de résultat.",
             "headlines_block": _format_headlines_block(news_rows) if news_rows else "Aucune breaking news aujourd'hui.",
+            "telegram_context_block": (
+                _format_telegram_messages_block(telegram_messages)
+                if telegram_messages
+                else "Journal Telegram indisponible pour cette date — base-toi uniquement sur les données ci-dessus."
+            ),
         }
 
     if fmt == "REACTION":

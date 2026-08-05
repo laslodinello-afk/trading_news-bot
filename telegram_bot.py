@@ -76,7 +76,7 @@ def send(text: str, chat_id: str | None = None) -> bool:
     return False
 
 
-def broadcast(text: str) -> bool:
+def broadcast(text: str, log: bool = True) -> bool:
     """
     Envoie une alerte "contenu" (résumé, avant/après news, breaking news) au
     chat perso ET au canal payant si TELEGRAM_CHANNEL_ID est configuré. Les
@@ -88,12 +88,16 @@ def broadcast(text: str) -> bool:
     Archive aussi le message dans le journal durable (voir message_log.py) si
     l'envoi perso a réussi — une fois ici, pas à chaque appel de send(), pour
     ne pas dupliquer l'entrée quand le canal payant reçoit le même texte.
+    `log=False` : réservé aux messages de démo (voir main.py run_test_mode) —
+    ils sont bien envoyés sur Telegram pour vérifier la config, mais ne
+    doivent jamais polluer le journal qui sert de source aux vidéos DEBRIEF
+    (video_scripts._gather_data) avec du contenu fictif.
     """
     ok = send(text)
     if config.TELEGRAM_CHANNEL_ID:
         if not send(text, chat_id=config.TELEGRAM_CHANNEL_ID):
             logger.warning("Échec de la diffusion vers le canal payant (l'envoi perso a été tenté séparément).")
-    if ok:
+    if ok and log:
         message_log.log_message("perso", text)
     return ok
 

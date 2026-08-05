@@ -384,18 +384,72 @@ def test_gather_data_debrief_exploitable_with_only_pending_events(temp_db):
     assert "Trade Balance" in data["pending_events_block"]
 
 
+# --- ancrage sur le texte déjà envoyé sur Telegram (voir message_log.py) -----------
+
+def test_format_telegram_messages_block_includes_time_and_raw_text():
+    messages = [
+        {"sent_at": "2026-07-26T13:30:00+00:00", "chat_target": "perso", "raw_text": "🔴 *NFP* réel 206K"},
+    ]
+    block = video_scripts._format_telegram_messages_block(messages)
+    assert "réel 206K" in block
+    assert "15h30" in block  # UTC+2 l'été, voir config.TIMEZONE
+
+
+def test_format_telegram_messages_block_keeps_chronological_order():
+    messages = [
+        {"sent_at": "2026-07-26T08:00:00+00:00", "chat_target": "perso", "raw_text": "premier message"},
+        {"sent_at": "2026-07-26T09:00:00+00:00", "chat_target": "perso", "raw_text": "second message"},
+    ]
+    block = video_scripts._format_telegram_messages_block(messages)
+    assert block.index("premier message") < block.index("second message")
+
+
+def test_format_telegram_messages_block_caps_at_max_events_in_prompt():
+    messages = [
+        {"sent_at": f"2026-07-26T08:{i:02d}:00+00:00", "chat_target": "perso", "raw_text": f"message {i}"}
+        for i in range(video_scripts._MAX_EVENTS_IN_PROMPT + 5)
+    ]
+    block = video_scripts._format_telegram_messages_block(messages)
+    assert block.count("--- Message envoyé") == video_scripts._MAX_EVENTS_IN_PROMPT
+
+
+def test_gather_data_debrief_includes_real_telegram_messages(temp_db):
+    target_date = date(2026, 7, 26)
+    _insert_reaction_event(target_date)
+    fake_messages = [
+        {"sent_at": "2026-07-26T14:35:00+00:00", "chat_target": "perso", "raw_text": "🔴 NFP publié, réel 206K, biais haussier sur le dollar"},
+    ]
+    with patch("video_scripts.message_log.get_messages_for_day", return_value=fake_messages):
+        data = video_scripts._gather_data("DEBRIEF", target_date)
+    assert data is not None
+    assert "biais haussier sur le dollar" in data["telegram_context_block"]
+
+
+def test_gather_data_debrief_telegram_context_fallback_when_log_empty(temp_db):
+    """Le journal Turso peut être vide/indisponible (voir message_log.py, best-effort) :
+    le DEBRIEF doit rester exploitable, juste sans ce contexte supplémentaire."""
+    target_date = date(2026, 7, 26)
+    _insert_reaction_event(target_date)
+    with patch("video_scripts.message_log.get_messages_for_day", return_value=[]):
+        data = video_scripts._gather_data("DEBRIEF", target_date)
+    assert data is not None
+    assert "indisponible" in data["telegram_context_block"]
+
+
 # --- extra_notes (remarque libre, ex. via le raccourci bureau) ---------------------
 
 def test_build_prompt_includes_extra_notes_when_provided():
     prompt = video_scripts._build_prompt(
-        "DEBRIEF", {"events_block": "x", "pending_events_block": "z", "headlines_block": "y"}, date(2026, 7, 26),
+        "DEBRIEF",
+        {"events_block": "x", "pending_events_block": "z", "headlines_block": "y", "telegram_context_block": "w"},
+        date(2026, 7, 26),
         extra_notes="Insiste sur le pétrole",
     )
     assert "Insiste sur le pétrole" in prompt
 
 
 def test_build_prompt_no_extra_notes_mention_when_none_or_blank():
-    data = {"events_block": "x", "pending_events_block": "z", "headlines_block": "y"}
+    data = {"events_block": "x", "pending_events_block": "z", "headlines_block": "y", "telegram_context_block": "w"}
     prompt_none = video_scripts._build_prompt("DEBRIEF", data, date(2026, 7, 26), extra_notes=None)
     prompt_blank = video_scripts._build_prompt("DEBRIEF", data, date(2026, 7, 26), extra_notes="   ")
     assert "Remarque de l'utilisateur" not in prompt_none

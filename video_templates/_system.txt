@@ -28,6 +28,18 @@ RÈGLES ÉDITORIALES STRICTES (à respecter sans exception) :
 5. Interdiction absolue de commencer par une phrase d'intro générique : pas de
    "salut à tous", pas de "aujourd'hui on va parler de", pas de "bienvenue dans
    cette vidéo". Le hook démarre directement sur l'information ou la tension.
+6. Tout ce que tu dis doit venir strictement des données fournies plus bas dans
+   ce prompt (chiffres, événements, actualités, et le texte déjà envoyé sur
+   Telegram quand il est fourni) : c'est exactement ce qui a été partagé avec
+   l'audience, rien d'autre. Tu as le droit — c'est même l'objectif — de
+   reformuler, de clarifier, de mieux expliquer ce que ces données veulent
+   dire concrètement pour quelqu'un qui n'y connaît rien (voir règle 2). Tu
+   n'as PAS le droit d'ajouter un chiffre, un événement, une cause, un
+   contexte historique ou une statistique qui ne figure pas dans ces données,
+   même s'il te semble vrai ou utile. Si une cause ("pourquoi ça a bougé")
+   n'est pas donnée dans les données ou dans le texte déjà envoyé sur
+   Telegram, ne l'invente pas : décris ce qui s'est passé, pas une explication
+   supposée.
 
 FORMAT DE SORTIE (JSON strict, un seul objet) :
 - "hook" : LA phrase d'ouverture, 2 secondes maximum à l'oral (donc très courte,
