@@ -18,12 +18,23 @@ from __future__ import annotations
 import json
 import logging
 import sqlite3
+import threading
 from contextlib import contextmanager
 from datetime import date, datetime, time, timedelta, timezone
 
 import config
 
 logger = logging.getLogger("db")
+
+# APScheduler exécute les jobs sur des threads séparés (avant/après/breaking
+# news peuvent tourner en même temps, constaté dans les logs). Le moteur de
+# synchronisation Turso n'est pas conçu pour que plusieurs connexions
+# accèdent à la MÊME réplique locale en parallèle : ça corrompt le suivi de
+# génération ("protocol error: target_pull_gen > source_pull_gen"), et fait
+# planter TOUS les jobs qui touchent la base — constaté en production. Ce
+# verrou sérialise tout accès à get_conn() ; le coût est négligeable vu le
+# faible volume de cet agent (quelques requêtes toutes les 5 min).
+_conn_lock = threading.Lock()
 
 SCHEMA = """
 CREATE TABLE IF NOT EXISTS events (
@@ -74,37 +85,41 @@ def get_conn():
     d'exception qui remonterait à l'appelant si Turso est indisponible (même
     philosophie que le reste de l'agent : une source externe qui tombe ne
     doit jamais bloquer le fonctionnement de base, voir message_log.py).
+
+    Tout le corps tourne sous _conn_lock (voir plus haut) : un seul accès à
+    la fois, même entre threads différents.
     """
-    conn = None
-    use_turso = False
-    if config.TURSO_DATABASE_URL and config.TURSO_AUTH_TOKEN:
+    with _conn_lock:
+        conn = None
+        use_turso = False
+        if config.TURSO_DATABASE_URL and config.TURSO_AUTH_TOKEN:
+            try:
+                from turso.lib import Row
+                from turso.lib_sync import connect_sync
+
+                conn = connect_sync(
+                    config.DB_PATH,
+                    remote_url=config.TURSO_DATABASE_URL,
+                    auth_token=config.TURSO_AUTH_TOKEN,
+                )
+                conn.row_factory = Row
+                conn.pull()
+                use_turso = True
+            except Exception as exc:  # noqa: BLE001 - repli local, jamais bloquant
+                logger.warning("Turso indisponible (%s), repli sur SQLite local pour cette connexion.", exc)
+                conn = None
+
+        if conn is None:
+            conn = sqlite3.connect(config.DB_PATH)
+            conn.row_factory = sqlite3.Row
+
         try:
-            from turso.lib import Row
-            from turso.lib_sync import connect_sync
-
-            conn = connect_sync(
-                config.DB_PATH,
-                remote_url=config.TURSO_DATABASE_URL,
-                auth_token=config.TURSO_AUTH_TOKEN,
-            )
-            conn.row_factory = Row
-            conn.pull()
-            use_turso = True
-        except Exception as exc:  # noqa: BLE001 - repli local, jamais bloquant
-            logger.warning("Turso indisponible (%s), repli sur SQLite local pour cette connexion.", exc)
-            conn = None
-
-    if conn is None:
-        conn = sqlite3.connect(config.DB_PATH)
-        conn.row_factory = sqlite3.Row
-
-    try:
-        yield conn
-        conn.commit()
-        if use_turso:
-            conn.push()
-    finally:
-        conn.close()
+            yield conn
+            conn.commit()
+            if use_turso:
+                conn.push()
+        finally:
+            conn.close()
 
 
 def init_db() -> None:
