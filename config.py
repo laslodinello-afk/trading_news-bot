@@ -219,7 +219,7 @@ VIDEO_SCRIPTS_MINUTE = 0
 VIDEO_OUTPUT_DIR = os.path.join(os.path.dirname(__file__), "video_output")
 
 # Formulation fixe, redite à l'identique sur chaque script.
-VIDEO_CTA_TEXT = "Retrouve toutes les news de trading en direct, le calendrier économique et les breaking news : le lien est en bio."
+VIDEO_CTA_TEXT = "Retrouve toutes les breaking news et le calendrier économique en direct sur mon canal : le lien est en bio."
 
 # Accroche courte affichée en grand sur la carte de fin (--render), au-dessus de
 # VIDEO_CTA_TEXT affiché plus petit en dessous — jamais parlée séparément (le
