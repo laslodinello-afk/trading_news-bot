@@ -185,19 +185,31 @@ def job_daily_summary() -> None:
 
 def job_evening_debrief() -> None:
     try:
-        day_start_utc, day_end_utc = db.local_day_bounds_utc(datetime.now(config.TIMEZONE).date())
+        # Fenêtre "depuis le dernier débrief envoyé", pas un jour calendaire
+        # fixe (minuit à maintenant) : sinon le créneau entre l'heure du
+        # débrief et minuit ne serait jamais couvert par aucun débrief. Repli
+        # sur le début de journée locale au tout premier lancement (aucun
+        # débrief précédent enregistré).
+        window_start_utc = db.get_last_debrief_sent_at()
+        if window_start_utc is None:
+            window_start_utc, _ = db.local_day_bounds_utc(datetime.now(config.TIMEZONE).date())
+        window_end_utc = datetime.now(timezone.utc)
 
-        event_rows = db.get_events_for_day(day_start_utc, day_end_utc)
+        event_rows = db.get_events_for_day(window_start_utc, window_end_utc)
         events = [_event_row_to_dict(r) for r in event_rows]
         for e in events:
             e["time_local"] = datetime.fromisoformat(e["event_dt_utc"]).astimezone(config.TIMEZONE).strftime("%Hh%M")
 
-        news_rows = db.get_news_for_day(day_start_utc, day_end_utc)
+        news_rows = db.get_news_for_day(window_start_utc, window_end_utc)
         news_items = [{"title": r["title"], "resume": r["resume"]} for r in news_rows]
 
         recap = ai_analyzer.evening_debrief(events, news_items) if (events or news_items) else None
         telegram_bot.broadcast(telegram_bot.format_evening_debrief(events, news_items, recap))
-        logger.info("Débrief du soir envoyé (%d events, %d breaking news)", len(events), len(news_items))
+        db.set_last_debrief_sent_at()
+        logger.info(
+            "Débrief du soir envoyé (%d events, %d breaking news, depuis %s)",
+            len(events), len(news_items), window_start_utc.isoformat(),
+        )
     except Exception as exc:
         notify_error("débrief du soir", exc)
 
@@ -369,7 +381,8 @@ def run_test_mode() -> None:
 
     print("2/7 — Résumé quotidien (exemple)...")
     results["resume"] = telegram_bot.broadcast(
-        telegram_bot.format_daily_summary([sample_event], "Exemple d'aperçu généré par l'IA chaque matin à 7h.")
+        telegram_bot.format_daily_summary([sample_event], "Exemple d'aperçu généré par l'IA chaque matin à 7h."),
+        log=False,
     )
     print("   ✅ OK" if results["resume"] else "   ❌ Échec")
 
@@ -378,12 +391,14 @@ def run_test_mode() -> None:
     print("   ✅ Gemini a répondu correctement" if ai_result else "   ❌ Pas de réponse IA — vérifie GEMINI_API_KEY")
 
     print("4/7 — Alerte 'avant news' (exemple)...")
-    results["avant"] = telegram_bot.broadcast(telegram_bot.format_before_alert(sample_event, concerned_pairs, ai_result))
+    results["avant"] = telegram_bot.broadcast(
+        telegram_bot.format_before_alert(sample_event, concerned_pairs, ai_result), log=False
+    )
     print("   ✅ OK" if results["avant"] else "   ❌ Échec")
 
     print("5/7 — Alerte 'après publication' (exemple)...")
     results["apres"] = telegram_bot.broadcast(
-        telegram_bot.format_after_alert(sample_event, "206K", concerned_pairs, ai_result)
+        telegram_bot.format_after_alert(sample_event, "206K", concerned_pairs, ai_result), log=False
     )
     print("   ✅ OK" if results["apres"] else "   ❌ Échec")
 
@@ -396,7 +411,7 @@ def run_test_mode() -> None:
     }
     if ai_result:
         sample_article.update(ai_result)
-    results["breaking"] = telegram_bot.broadcast(telegram_bot.format_breaking_news_alert(sample_article))
+    results["breaking"] = telegram_bot.broadcast(telegram_bot.format_breaking_news_alert(sample_article), log=False)
     print("   ✅ OK" if results["breaking"] else "   ❌ Échec")
 
     print("7/7 — Débrief du soir (exemple, 23h30)...")
@@ -404,7 +419,7 @@ def run_test_mode() -> None:
     sample_news_items = [{"title": sample_article["title"], "resume": sample_article.get("resume", "")}]
     debrief_recap = ai_analyzer.evening_debrief([sample_debrief_event], sample_news_items)
     results["debrief"] = telegram_bot.broadcast(
-        telegram_bot.format_evening_debrief([sample_debrief_event], sample_news_items, debrief_recap)
+        telegram_bot.format_evening_debrief([sample_debrief_event], sample_news_items, debrief_recap), log=False
     )
     print("   ✅ OK" if results["debrief"] else "   ❌ Échec")
 

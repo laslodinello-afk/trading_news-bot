@@ -75,6 +75,18 @@ CREATE TABLE IF NOT EXISTS alphavantage_cache (
     data_json TEXT NOT NULL,
     fetched_at TEXT NOT NULL
 );
+
+-- Une seule ligne (id=1) : horodatage du dernier debrief du soir envoye, pour
+-- que le suivant couvre uniquement la periode ecoulee depuis le dernier
+-- debrief, pas une journee calendaire fixe (voir main.py job_evening_debrief).
+-- NB: pas de caracteres accentues ni d apostrophes dans ce commentaire. Le
+-- tokenizer Turso plante quand un commentaire SQL situe apres une autre
+-- instruction du script contient un caractere UTF-8 multi-octets ou une
+-- apostrophe.
+CREATE TABLE IF NOT EXISTS debrief_state (
+    id INTEGER PRIMARY KEY CHECK (id = 1),
+    last_sent_at TEXT NOT NULL
+);
 """
 
 
@@ -357,6 +369,31 @@ def get_news_for_day(day_start_utc: datetime, day_end_utc: datetime) -> list[sql
             (day_start_utc.isoformat(), day_end_utc.isoformat()),
         )
         return cur.fetchall()
+
+
+# --- débrief du soir : couverture "depuis le dernier envoi" --------------------
+
+def get_last_debrief_sent_at() -> datetime | None:
+    """Horodatage d'envoi du tout dernier débrief du soir, ou None si jamais
+    envoyé (premier lancement). Sert de borne de départ pour le débrief
+    suivant plutôt qu'un jour calendaire fixe (minuit) : sinon, le créneau
+    entre l'heure du débrief et minuit ne serait jamais couvert par aucun
+    débrief (ni celui du soir même, déjà envoyé avant minuit, ni celui du
+    lendemain, dont la fenêtre commence à minuit)."""
+    with get_conn() as conn:
+        row = conn.execute("SELECT last_sent_at FROM debrief_state WHERE id=1").fetchone()
+    return datetime.fromisoformat(row["last_sent_at"]) if row else None
+
+
+def set_last_debrief_sent_at() -> None:
+    with get_conn() as conn:
+        conn.execute(
+            """
+            INSERT INTO debrief_state (id, last_sent_at) VALUES (1, ?)
+            ON CONFLICT(id) DO UPDATE SET last_sent_at=excluded.last_sent_at
+            """,
+            (_now_iso(),),
+        )
 
 
 # --- throttle des alertes d'erreur ---------------------------------------------
