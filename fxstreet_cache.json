@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-06T12:24:20.349439+00:00",
+  "fetched_at": "2026-08-06T12:25:27.108783+00:00",
   "articles": [
+    {
+      "title": "Japanese Yen: Retail flows reshape post-intervention dynamics – MUFG",
+      "url": "https://www.fxstreet.com/news/japanese-yen-retail-flows-reshape-post-intervention-dynamics-mufg-202608061224",
+      "source": "FXStreet",
+      "published_at": "2026-08-06T12:24:27+00:00"
+    },
     {
       "title": "GBP/JPY Price Forecast: 200-day SMA holds as downside risks linger",
       "url": "https://www.fxstreet.com/news/gbp-jpy-price-forecast-200-day-sma-holds-as-downside-risks-linger-202608061215",
@@ -102,12 +108,6 @@
       "url": "https://www.fxstreet.com/news/silver-price-today-silver-broadly-unchanged-according-to-fxstreet-data-202608060933",
       "source": "FXStreet",
       "published_at": "2026-08-06T09:33:00+00:00"
-    },
-    {
-      "title": "Brazilian Real: Cautious BCB easing offers limited support – Societe Generale",
-      "url": "https://www.fxstreet.com/news/brazilian-real-cautious-bcb-easing-offers-limited-support-societe-generale-202608060924",
-      "source": "FXStreet",
-      "published_at": "2026-08-06T09:24:50+00:00"
     }
   ]
 }
