@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-06T09:16:24.768141+00:00",
+  "fetched_at": "2026-08-06T09:17:25.164674+00:00",
   "articles": [
+    {
+      "title": "Swedish Krona: Riksbank set to hold despite core pressure – Nomura",
+      "url": "https://www.fxstreet.com/news/swedish-krona-riksbank-set-to-hold-despite-core-pressure-nomura-202608060916",
+      "source": "FXStreet",
+      "published_at": "2026-08-06T09:16:28+00:00"
+    },
     {
       "title": "Japanese Yen: Upside risk while stuck in range against US Dollar – UOB",
       "url": "https://www.fxstreet.com/news/japanese-yen-upside-risk-while-stuck-in-range-against-us-dollar-uob-202608060904",
@@ -162,12 +168,6 @@
       "url": "https://www.fxstreet.com/news/canadian-dollar-flatlines-as-traders-watch-possible-us-iran-deal-202608060622",
       "source": "FXStreet",
       "published_at": "2026-08-06T06:22:41+00:00"
-    },
-    {
-      "title": "Euro steadies at three-week highs amid positive data and lower Oil prices",
-      "url": "https://www.fxstreet.com/news/euro-steadies-at-three-week-highs-amid-positive-data-and-lower-oil-prices-202608060621",
-      "source": "FXStreet",
-      "published_at": "2026-08-06T06:21:04+00:00"
     }
   ]
 }
