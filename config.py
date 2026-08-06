@@ -287,7 +287,7 @@ VIDEO_RECOMMENDED_POST_TIME = {
 # --- Rendu vidéo (local uniquement, à la demande via --render) ---------------
 # Jamais utilisé par le job automatique du soir (Render) : dépendances lourdes,
 # voir requirements-video.txt. `edge-tts --list-voices` liste les voix dispo.
-VIDEO_TTS_VOICE = "fr-FR-HenriNeural"
+VIDEO_TTS_VOICE = "fr-FR-VivienneMultilingualNeural"  # choisie par l'utilisateur, sonne plus naturelle que HenriNeural
 # Vitesse de la voix, format edge-tts ("+0%" = normale, "+10%" = 10% plus vite).
 VIDEO_TTS_RATE = "+8%"
 VIDEO_RENDER_RESOLUTION = (1080, 1920)  # 9:16, TikTok/Reels/Shorts
