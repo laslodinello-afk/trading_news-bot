@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-06T09:01:22.324344+00:00",
+  "fetched_at": "2026-08-06T09:02:23.213173+00:00",
   "articles": [
+    {
+      "title": "Eurozone Retail Sales declines unexpectedly by 0.3% MoM in June",
+      "url": "https://www.fxstreet.com/news/eurozone-retail-sales-declines-unexpectedly-by-03-mom-in-june-202608060902",
+      "source": "FXStreet",
+      "published_at": "2026-08-06T09:02:16+00:00"
+    },
     {
       "title": "United States Dollar Index rebounds following Israeli airstrikes, Jobless Claims eyed",
       "url": "https://www.fxstreet.com/news/united-states-dollar-index-rebounds-following-israeli-airstrike-in-southern-lebanon-202608060855",
@@ -156,12 +162,6 @@
       "url": "https://www.fxstreet.com/news/euro-steadies-at-three-week-highs-amid-positive-data-and-lower-oil-prices-202608060621",
       "source": "FXStreet",
       "published_at": "2026-08-06T06:21:04+00:00"
-    },
-    {
-      "title": "3.1%: Germany Factory Orders climb in June, beating estimates",
-      "url": "https://www.fxstreet.com/news/31-germany-factory-orders-climb-in-june-beating-estimates-202608060602",
-      "source": "FXStreet",
-      "published_at": "2026-08-06T06:02:21+00:00"
     }
   ]
 }
