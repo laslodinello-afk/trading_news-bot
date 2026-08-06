@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-06T11:42:20.166424+00:00",
+  "fetched_at": "2026-08-06T11:43:25.901224+00:00",
   "articles": [
+    {
+      "title": "British Pound treads water above 1.3450 with markets awaiting US employment figures",
+      "url": "https://www.fxstreet.com/news/british-pound-treads-water-above-13450-with-markets-awaiting-us-employment-figures-202608061142",
+      "source": "FXStreet",
+      "published_at": "2026-08-06T11:42:45+00:00"
+    },
     {
       "title": "Gold: Hormuz optimism supports rally – ING",
       "url": "https://www.fxstreet.com/news/gold-hormuz-optimism-supports-rally-ing-202608061135",
@@ -102,12 +108,6 @@
       "url": "https://www.fxstreet.com/news/australian-dollar-remains-depressed-downside-seems-limited-as-fiscal-concerns-weigh-on-yen-202608060847",
       "source": "FXStreet",
       "published_at": "2026-08-06T08:47:06+00:00"
-    },
-    {
-      "title": "Equities: Nvidia stands out as broader tech mood cools – Deutsche Bank",
-      "url": "https://www.fxstreet.com/news/equities-nvidia-stands-out-as-broader-tech-mood-cools-deutsche-bank-202608060843",
-      "source": "FXStreet",
-      "published_at": "2026-08-06T08:43:07+00:00"
     }
   ]
 }
