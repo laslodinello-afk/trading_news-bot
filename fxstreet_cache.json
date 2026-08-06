@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-06T08:36:24.733328+00:00",
+  "fetched_at": "2026-08-06T08:37:31.386228+00:00",
   "articles": [
+    {
+      "title": "Euro holds two-day gains against Yen, investors seek clarity on US-Japan future intervention plans",
+      "url": "https://www.fxstreet.com/news/euro-holds-two-day-gains-against-yen-investors-seek-clarity-on-us-japan-future-intervention-plans-202608060837",
+      "source": "FXStreet",
+      "published_at": "2026-08-06T08:37:23+00:00"
+    },
     {
       "title": "Australian Dollar: RBA uneasy pause – Standard Chartered",
       "url": "https://www.fxstreet.com/news/australian-dollar-rba-uneasy-pause-standard-chartered-202608060835",
@@ -144,12 +150,6 @@
       "url": "https://www.fxstreet.com/news/wti-price-forecast-downside-likely-towards-67-on-hormuz-reopening-hopes-202608060545",
       "source": "FXStreet",
       "published_at": "2026-08-06T05:45:19+00:00"
-    },
-    {
-      "title": "AUD/USD Price Forecast: Eyes upside despite pullback from June high, around 0.7065",
-      "url": "https://www.fxstreet.com/news/aud-usd-price-forecast-eyes-upside-despite-pullback-from-june-high-around-07065-202608060537",
-      "source": "FXStreet",
-      "published_at": "2026-08-06T05:37:20+00:00"
     }
   ]
 }
