@@ -1,8 +1,7 @@
-Écris le script d'une vidéo de type DEBRIEF : le récapitulatif complet de la
-journée économique et financière d'aujourd'hui ({date_str}, de minuit à 23h59)
-— à la fois les chiffres macro publiés et les actualités de dernière minute.
-C'est LA vidéo du soir, celle qui remplace toutes les autres : elle doit
-donner une vision complète de la journée, pas un focus sur un seul événement.
+Écris le script d'une vidéo de type DEBRIEF : le récapitulatif des actualités
+de dernière minute (breaking news) captées aujourd'hui ({date_str}, de minuit
+à 23h59) sur les marchés. C'est LA vidéo du soir, celle qui remplace toutes
+les autres.
 
 Cette vidéo n'est pas une fin en soi : elle est postée sur TikTok pour donner
 envie de rejoindre le canal Telegram (voir le CTA, ajouté automatiquement),
@@ -10,97 +9,59 @@ en montrant concrètement le niveau d'info qu'on y trouve. Quelqu'un qui la
 regarde doit comprendre en un coup d'œil ce qui s'est passé aujourd'hui sur
 les marchés — c'est un aperçu fidèle et dense du canal, pas un résumé vague.
 
-Événements économiques publiés aujourd'hui, avec résultat confirmé (prévision/précédent vs réel) :
-{events_block}
-
-Événements économiques prévus aujourd'hui mais SANS résultat confirmé pour l'instant :
-{pending_events_block}
-
 Actualités de dernière minute captées aujourd'hui :
 {headlines_block}
 
-Texte exact déjà envoyé aujourd'hui sur le canal Telegram (alertes avant/après
-publication avec l'analyse déjà faite à l'époque, breaking news, résumés) —
-sers-t'en pour ancrer tes explications dans ce qui a VRAIMENT été dit à
-l'audience ce jour-là (le raisonnement, les biais déjà évoqués), jamais pour
-ajouter une info qui n'y figure pas :
+Texte exact déjà envoyé aujourd'hui sur le canal Telegram pour ces
+actualités (analyse déjà faite à l'époque : raisonnement, biais) — sers-t'en
+pour ancrer tes explications dans ce qui a VRAIMENT été dit à l'audience ce
+jour-là, jamais pour ajouter une info qui n'y figure pas :
 {telegram_context_block}
 
 Paires/actifs suivis par l'audience : {pairs}.
 
 {extra_notes_block}
 
-Angle : un vrai débrief de fin de journée, pas une liste énumérée — hiérarchise
-(ce qui compte vraiment vs le détail secondaire) à l'intérieur de chaque
-section (voir Structure ci-dessous).
+Angle : un vrai débrief de fin de journée, pas une liste énumérée —
+hiérarchise (ce qui compte vraiment vs le détail secondaire).
 
-Structure (IMPORTANT, à respecter strictement — c'est ce qui rend le débrief
-lisible plutôt qu'un vrac de sujets) :
-
-Il y a deux natures de contenu très différentes dans ce DEBRIEF, ne les
-traite JAMAIS de la même façon :
-- Les BREAKING NEWS (actualités de dernière minute) sont le cœur de la vidéo :
-  chacune a droit à un vrai bloc développé, avec du contexte et une
-  explication de l'impact.
-- Les événements économiques du calendrier (macro publiée OU encore attendue)
-  ne sont PAS développés un par un en début de vidéo — ils sont TOUS
-  rassemblés dans un récap compact, à la toute fin (voir règle 6). Un
-  événement macro, même important, n'a jamais son propre bloc détaillé en
-  tête de vidéo : ce n'est pas le rôle de ce format.
-
-1. Un bloc BREAKING = une seule actualité. Développe-la vraiment (contexte,
+Structure (IMPORTANT, à respecter strictement) :
+1. Regroupe les actualités qui racontent la MÊME histoire en un seul bloc
+   bien structuré, même si plusieurs entrées ci-dessus en parlent
+   séparément (ex. 4 headlines différentes sur le MÊME accord diplomatique
+   précis — l'annonce initiale, la réaction du prix du pétrole qui en
+   découle directement, une déclaration officielle sur CE dossier, l'analyse
+   d'un cabinet sur CE même dossier — ça fait UN SEUL bloc qui raconte toute
+   l'histoire du début à la fin, pas 4 blocs qui se répètent).
+   Attention à ne PAS sur-regrouper : deux actualités ne sont "la même
+   histoire" que si l'une découle factuellement de l'autre (même dossier,
+   même décision, même annonce précise) — un simple point commun superficiel
+   (même thème général "géopolitique", même personne mentionnée, même zone
+   géographique) ne suffit PAS. Ex. un incident de sécurité aérienne isolé
+   touchant un responsable politique et une négociation diplomatique sur un
+   détroit maritime sont deux sujets séparés même s'ils impliquent la même
+   personne et sont tous les deux "de la géopolitique" — ils n'ont aucun
+   lien factuel direct, donc deux blocs. Le but : que quelqu'un qui regarde
+   comprenne clairement combien de sujets VRAIMENT DISTINCTS ont marqué la
+   journée — ni une liste redondante qui redit la même chose sous des angles
+   légèrement différents, ni un fourre-tout qui mélange des sujets sans
+   rapport réel.
+2. Un bloc = un sujet (au sens de la règle 1 : un sujet peut regrouper
+   plusieurs actualités liées). Développe-le vraiment (contexte, évolution,
    impact concret) mais sans remplissage : chaque phrase doit apporter une
    info ou une explication, jamais une reformulation qui n'ajoute rien (voir
-   _system.txt, règle 7). N'écris JAMAIS un bloc BREAKING qui mélange deux
-   actualités différentes (ex. la décision de la BCE et les ventes au détail
-   britanniques sont deux sujets distincts : deux blocs séparés, même si ça
-   donne plus de blocs). Si tu as plus de breaking news exploitables que la
-   fourchette de blocs ne le permet, garde les plus importantes et laisse
-   tomber le reste plutôt que d'en fusionner deux dans un seul bloc. Cette
-   règle "un sujet par bloc" ne s'applique PAS au bloc RECAP (règle 6), qui
-   rassemble volontairement plusieurs événements.
-2. Découpe le corps en blocs BREAKING (un par actualité retenue, voir règle
-   1) puis ajoute le bloc RECAP final (règle 6) s'il y a lieu. Le nombre total
-   dépend donc entièrement de ce qu'il y a à couvrir ce jour-là — un jour
-   calme avec une seule breaking news et un récap éco donne 2 blocs, un jour
-   chargé peut en donner beaucoup plus.
-3. Étiquette CHAQUE bloc via le champ "section" : "BREAKING" pour un bloc qui
-   parle d'une actualité de dernière minute, "RECAP" pour le bloc décrit à la
-   règle 6.
-4. Ordre des blocs dans le tableau "corps" : D'ABORD tous les blocs
-   "BREAKING" (du plus important au plus secondaire), ENSUITE le bloc "RECAP"
-   (s'il existe, voir règle 6) toujours en TOUTE DERNIÈRE position. Le bloc
-   "RECAP" doit ouvrir par une courte phrase de transition qui l'annonce
-   clairement (ex. "Pour finir, un point sur les news économiques de la
-   journée :", dans tes propres mots) — le passage vers le récap doit
-   s'entendre, pas juste s'enchaîner.
-5. Pour CHAQUE bloc, le "visual_keyword" doit correspondre précisément au
-   sujet de CE bloc, pas un mot-clé générique répété partout : un bloc sur une
-   décision de banque centrale appelle un mot-clé différent d'un bloc sur une
-   donnée de l'emploi ou sur une actualité géopolitique.
-6. Si "Événements économiques publiés aujourd'hui, avec résultat confirmé" OU
-   "Événements économiques prévus aujourd'hui mais SANS résultat confirmé"
-   contient au moins un élément, ajoute UN bloc supplémentaire (deux si
-   vraiment beaucoup d'événements ce jour-là), section "RECAP", toujours en
-   toute dernière position : un récap RAPIDE de CHACUN de ces événements,
-   traité bien plus brièvement qu'un bloc BREAKING — pas de grand
-   développement, juste, pour chaque événement : dire qu'il a eu lieu ou était
-   prévu aujourd'hui, rappeler en quelques mots ce que c'est. ET, selon le cas :
-   - S'il a un résultat confirmé (liste "avec résultat confirmé") : explique
-     en une phrase courte l'impact concret de ce résultat (toujours en
-     transformant le chiffre en quelque chose de concret, voir règle 2 des
-     consignes générales — juste en une phrase, pas un paragraphe).
-   - S'il n'a PAS de résultat confirmé (liste "SANS résultat confirmé") :
-     dis-le honnêtement, en citant l'heure et ce qui était attendu (la
-     prévision) — ne JAMAIS inventer un résultat pour combler ce manque.
-   Si les deux listes sont vides, n'ajoute AUCUN bloc "RECAP" (peut arriver
-   un jour où le calendrier économique était vide et que la vidéo ne repose
-   que sur des breaking news).
+   _system.txt, règle 7).
+3. Le nombre de blocs dépend entièrement de ce qu'il y a à couvrir ce
+   jour-là : un jour calme avec un seul vrai sujet donne un seul bloc long
+   et bien développé, un jour avec plusieurs sujets distincts en donne
+   plusieurs. Ordre : du sujet le plus important au plus secondaire.
+4. Pour CHAQUE bloc, le "visual_keyword" doit correspondre précisément au
+   sujet de CE bloc, pas un mot-clé générique répété partout.
 
 La chute doit TOUJOURS se terminer en donnant un cap : ce qu'il faut
-surveiller dans les prochains jours (le prochain événement qui compte pour
-l'audience, ou la suite logique d'une actualité du jour) — jamais une simple
-formule qui referme l'idée sans ouvrir sur la suite.
+surveiller dans les prochains jours (la suite logique d'une actualité du
+jour) — jamais une simple formule qui referme l'idée sans ouvrir sur la
+suite.
 
 Le texte oral total (hook + corps + chute) fait environ {word_min} à
 {word_max} mots ({duration_label} à l'oral) à titre indicatif — ce n'est PAS

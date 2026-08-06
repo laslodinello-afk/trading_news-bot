@@ -125,14 +125,12 @@ def test_assemble_script_corps_count_warning():
     assert any("hors gabarit" in w for w in script["warnings"])
 
 
-def test_assemble_script_debrief_allows_more_corps_blocks():
-    """DEBRIEF couvre plus de terrain (breaking news + récap éco) : 1 bloc est
-    hors gabarit pour DEBRIEF (2 à 8) alors que 3 est un total tout à fait
-    normal (le récap éco tient dans 1-2 blocs compacts, voir debrief.txt)."""
+def test_assemble_script_debrief_allows_single_corps_block():
+    """DEBRIEF ne couvre plus que les breaking news, regroupées par sujet (voir
+    debrief.txt) : un jour calme avec un seul vrai sujet donne légitimement un
+    seul bloc — pas de "hors gabarit" pour ça."""
     script = video_scripts._assemble_script("DEBRIEF", date(2026, 7, 26), _fake_llm_result(n_corps=1))
-    assert any("hors gabarit" in w for w in script["warnings"])
-    script_ok = video_scripts._assemble_script("DEBRIEF", date(2026, 7, 26), _fake_llm_result(n_corps=3))
-    assert not any("hors gabarit" in w for w in script_ok["warnings"])
+    assert not any("hors gabarit" in w for w in script["warnings"])
 
 
 # --- visual_keyword (fond vidéo pertinent au contenu de chaque bloc) ----------------
@@ -152,117 +150,6 @@ def test_assemble_script_falls_back_to_format_theme_without_llm_keyword():
     assert script["corps"][0]["visual_keyword"] == config.STOCK_FOOTAGE_THEME_BY_FORMAT["PEDAGO"]
 
 
-# --- DEBRIEF : structure en 2 sections (breaking news développées, puis un
-# récap compact final de TOUS les événements économiques du calendrier,
-# confirmés ET en attente) ---------------------------------------------------------
-# Garde-fou côté code (voir _assemble_script) : même si le LLM n'a pas respecté
-# l'ordre demandé par video_templates/debrief.txt, tous les blocs "BREAKING" se
-# retrouvent avant "RECAP" une fois le script assemblé.
-
-def _corps_block(section=None, oral="texte du bloc"):
-    block = {"oral": oral, "ecran": "texte court", "visuel": "visuel"}
-    if section is not None:
-        block["section"] = section
-    return block
-
-
-def test_assemble_script_debrief_sorts_recap_after_breaking():
-    llm_result = {
-        "hook": _words(5),
-        "corps": [
-            _corps_block("RECAP"),
-            _corps_block("BREAKING"),
-            _corps_block("BREAKING"),
-        ],
-        "chute": _words(6),
-        "legende": "Légende de test.",
-        "hashtags": ["eco"],
-    }
-    script = video_scripts._assemble_script("DEBRIEF", date(2026, 7, 26), llm_result)
-    assert [b["section"] for b in script["corps"]] == ["BREAKING", "BREAKING", "RECAP"]
-    assert [b["bloc"] for b in script["corps"]] == [1, 2, 3]
-
-
-def test_assemble_script_debrief_recap_alone_is_valid():
-    """RECAP est une section légitime en elle-même (jour sans breaking news,
-    juste un récap du calendrier économique) — ne doit pas retomber sur
-    BREAKING par défaut."""
-    llm_result = {
-        "hook": _words(5),
-        "corps": [_corps_block("RECAP", oral="seul bloc")],
-        "chute": _words(6),
-        "legende": "Légende de test.",
-        "hashtags": ["eco"],
-    }
-    script = video_scripts._assemble_script("DEBRIEF", date(2026, 7, 26), llm_result)
-    assert script["corps"][0]["section"] == "RECAP"
-
-
-def test_assemble_script_debrief_preserves_relative_order_within_each_section():
-    """Tri stable : la hiérarchisation du LLM à l'intérieur d'une section (censée
-    aller du plus important au moins important) n'est pas perturbée par le tri."""
-    llm_result = {
-        "hook": _words(5),
-        "corps": [
-            _corps_block("BREAKING", oral="premier breaking"),
-            _corps_block("BREAKING", oral="second breaking"),
-            _corps_block("RECAP", oral="recap"),
-        ],
-        "chute": _words(6),
-        "legende": "Légende de test.",
-        "hashtags": ["eco"],
-    }
-    script = video_scripts._assemble_script("DEBRIEF", date(2026, 7, 26), llm_result)
-    assert [b["oral"] for b in script["corps"]] == ["premier breaking", "second breaking", "recap"]
-
-
-def test_assemble_script_debrief_defaults_missing_or_invalid_section_to_breaking():
-    llm_result = {
-        "hook": _words(5),
-        "corps": [_corps_block(None), _corps_block(""), _corps_block("AUTRE_CHOSE")],
-        "chute": _words(6),
-        "legende": "Légende de test.",
-        "hashtags": ["eco"],
-    }
-    script = video_scripts._assemble_script("DEBRIEF", date(2026, 7, 26), llm_result)
-    assert all(b["section"] == "BREAKING" for b in script["corps"])
-
-
-def test_assemble_script_non_debrief_never_carries_section_key():
-    llm_result = _fake_llm_result(n_corps=2)
-    llm_result["corps"][0]["section"] = "BREAKING"  # même si le LLM en glisse un par erreur
-    script = video_scripts._assemble_script("REACTION", date(2026, 7, 26), llm_result)
-    assert all("section" not in bloc for bloc in script["corps"])
-
-
-def test_render_markdown_debrief_includes_recap_heading_last():
-    llm_result = {
-        "hook": _words(5),
-        "corps": [
-            _corps_block("BREAKING", oral="breaking un"),
-            _corps_block("RECAP", oral="rappel un"),
-        ],
-        "chute": _words(6),
-        "legende": "Légende de test.",
-        "hashtags": ["eco"],
-    }
-    script = video_scripts._assemble_script("DEBRIEF", date(2026, 7, 26), llm_result)
-    md = video_scripts._render_markdown(script)
-
-    breaking_idx = md.index(config.VIDEO_SECTION_LABEL_BREAKING)
-    recap_idx = md.index(config.VIDEO_SECTION_LABEL_RECAP)
-    bloc1_idx = md.index("**Bloc 1**")
-    bloc2_idx = md.index("**Bloc 2**")
-    assert breaking_idx < bloc1_idx < recap_idx < bloc2_idx
-
-
-def test_render_markdown_non_debrief_has_no_section_headings():
-    script = video_scripts._assemble_script("REACTION", date(2026, 7, 26), _fake_llm_result(n_corps=3))
-    md = video_scripts._render_markdown(script)
-    assert config.VIDEO_SECTION_LABEL_BREAKING not in md
-    assert config.VIDEO_SECTION_LABEL_RECAP not in md
-
-
 # --- CTA et disclaimer toujours présents -------------------------------------------
 
 def test_assemble_script_injects_cta_and_disclaimer_regardless_of_llm_output():
@@ -275,80 +162,31 @@ def test_assemble_script_injects_cta_and_disclaimer_regardless_of_llm_output():
     assert config.VIDEO_DISCLAIMER in script["legende_complete"]
 
 
-# --- DEBRIEF : combine événements du jour + breaking news --------------------------
+# --- DEBRIEF : breaking news uniquement (le calendrier économique n'y figure
+# plus du tout, voir video_templates/debrief.txt) -----------------------------------
 
-def test_gather_data_debrief_combines_events_and_news(temp_db):
+def test_gather_data_debrief_works_with_news(temp_db):
     # date.today() et non une date fixe : db.mark_sent_news() horodate toujours
     # sent_at avec l'heure réelle (voir db.py), donc la fenêtre interrogée doit
     # couvrir "maintenant", pas un jour arbitraire figé dans le passé.
     target_date = date.today()
-    _insert_reaction_event(target_date)
     db.mark_sent_news("news_1", title="Déclaration surprise de la Fed", resume="Résumé test.")
 
     data = video_scripts._gather_data("DEBRIEF", target_date)
 
     assert data is not None
-    assert "Non-Farm Payrolls" in data["events_block"]
     assert "Déclaration surprise de la Fed" in data["headlines_block"]
+    assert "events_block" not in data
+    assert "pending_events_block" not in data
 
 
-def test_gather_data_debrief_works_with_only_events(temp_db):
+def test_gather_data_debrief_returns_none_without_any_news(temp_db):
+    """Un calendrier économique chargé mais aucune breaking news : plus rien à
+    couvrir pour ce format (voir debrief.txt — le calendrier n'y figure plus)."""
     target_date = date(2026, 7, 26)
     _insert_reaction_event(target_date)
     data = video_scripts._gather_data("DEBRIEF", target_date)
-    assert data is not None
-    assert "Aucune breaking news" in data["headlines_block"]
-
-
-def test_gather_data_debrief_works_with_only_news(temp_db):
-    target_date = date.today()  # voir commentaire dans le test précédent
-    db.mark_sent_news("news_1", title="Déclaration surprise de la Fed", resume="Résumé test.")
-    data = video_scripts._gather_data("DEBRIEF", target_date)
-    assert data is not None
-    assert "Aucun événement macro" in data["events_block"]
-
-
-def _insert_pending_event(target_date: date, event_key: str = "test_pending_1") -> None:
-    """Événement prévu mais sans résultat confirmé (actual=None) — voir
-    _gather_data DEBRIEF, bloc "RECAP"."""
-    event_dt = datetime.combine(target_date, time(12, 30), tzinfo=config.TIMEZONE).astimezone(timezone.utc)
-    db.upsert_event(
-        {
-            "event_key": event_key,
-            "title": "Trade Balance",
-            "currency": "USD",
-            "impact": "Medium",
-            "event_dt_utc": event_dt.isoformat(),
-            "forecast": "-73.0B",
-            "previous": "-77.6B",
-            "actual": None,
-        }
-    )
-
-
-def test_gather_data_debrief_separates_confirmed_from_pending_events(temp_db):
-    target_date = date(2026, 7, 26)
-    _insert_reaction_event(target_date)  # a un "actual"
-    _insert_pending_event(target_date)  # n'en a pas
-
-    data = video_scripts._gather_data("DEBRIEF", target_date)
-
-    assert data is not None
-    assert "Non-Farm Payrolls" in data["events_block"]
-    assert "Trade Balance" not in data["events_block"]
-    assert "Trade Balance" in data["pending_events_block"]
-    assert "Non-Farm Payrolls" not in data["pending_events_block"]
-
-
-def test_gather_data_debrief_exploitable_with_only_pending_events(temp_db):
-    """Même sans aucun résultat confirmé ni breaking news, des événements en
-    attente suffisent à rendre la journée exploitable (bloc RECAP seul)."""
-    target_date = date(2026, 7, 26)
-    _insert_pending_event(target_date)
-    data = video_scripts._gather_data("DEBRIEF", target_date)
-    assert data is not None
-    assert "Aucun événement macro confirmé" in data["events_block"]
-    assert "Trade Balance" in data["pending_events_block"]
+    assert data is None
 
 
 # --- ancrage sur le texte déjà envoyé sur Telegram (voir message_log.py) -----------
@@ -381,10 +219,12 @@ def test_format_telegram_messages_block_caps_at_max_events_in_prompt():
 
 
 def test_gather_data_debrief_includes_real_telegram_messages(temp_db):
-    target_date = date(2026, 7, 26)
-    _insert_reaction_event(target_date)
+    # date.today() et non une date fixe : voir commentaire de
+    # test_gather_data_debrief_works_with_news sur db.mark_sent_news().
+    target_date = date.today()
+    db.mark_sent_news("news_1", title="Déclaration surprise de la Fed", resume="Résumé test.")
     fake_messages = [
-        {"sent_at": "2026-07-26T14:35:00+00:00", "chat_target": "perso", "raw_text": "🔴 NFP publié, réel 206K, biais haussier sur le dollar"},
+        {"sent_at": target_date.isoformat() + "T14:35:00+00:00", "chat_target": "perso", "raw_text": "🚨 *Breaking News*\nDéclaration surprise de la Fed, biais haussier sur le dollar"},
     ]
     with patch("video_scripts.message_log.get_messages_for_day", return_value=fake_messages):
         data = video_scripts._gather_data("DEBRIEF", target_date)
@@ -392,11 +232,32 @@ def test_gather_data_debrief_includes_real_telegram_messages(temp_db):
     assert "biais haussier sur le dollar" in data["telegram_context_block"]
 
 
+def test_gather_data_debrief_filters_out_non_breaking_telegram_messages(temp_db):
+    """Le journal contient aussi les résumés/débriefs (calendrier économique) :
+    seuls les messages "🚨 Breaking News" doivent atterrir dans le prompt
+    DEBRIEF, sinon le calendrier reviendrait malgré son retrait de headlines_block."""
+    target_date = date.today()
+    db.mark_sent_news("news_1", title="Déclaration surprise de la Fed", resume="Résumé test.")
+    fake_messages = [
+        {"sent_at": target_date.isoformat() + "T08:00:00+00:00", "chat_target": "perso", "raw_text": "☀️ *Résumé du jour*\nADP 44K vs 68K attendus"},
+        # Constaté en conditions réelles : le débrief du soir mentionne lui-même
+        # "🚨 X breaking news" dans son propre corps de texte — un simple "🚨 in
+        # raw_text" laisserait donc passer tout le calendrier qu'il liste aussi.
+        {"sent_at": target_date.isoformat() + "T23:30:00+00:00", "chat_target": "perso", "raw_text": "🌙 *Débrief du soir*\n📊 ADP 44K vs 68K attendus\n🚨 3 breaking news aujourd'hui"},
+        {"sent_at": target_date.isoformat() + "T14:35:00+00:00", "chat_target": "perso", "raw_text": "🚨 *Breaking News*\nDéclaration surprise de la Fed"},
+    ]
+    with patch("video_scripts.message_log.get_messages_for_day", return_value=fake_messages):
+        data = video_scripts._gather_data("DEBRIEF", target_date)
+    assert data is not None
+    assert "ADP 44K" not in data["telegram_context_block"]
+    assert "Déclaration surprise de la Fed" in data["telegram_context_block"]
+
+
 def test_gather_data_debrief_telegram_context_fallback_when_log_empty(temp_db):
     """Le journal Turso peut être vide/indisponible (voir message_log.py, best-effort) :
     le DEBRIEF doit rester exploitable, juste sans ce contexte supplémentaire."""
-    target_date = date(2026, 7, 26)
-    _insert_reaction_event(target_date)
+    target_date = date.today()
+    db.mark_sent_news("news_1", title="Déclaration surprise de la Fed", resume="Résumé test.")
     with patch("video_scripts.message_log.get_messages_for_day", return_value=[]):
         data = video_scripts._gather_data("DEBRIEF", target_date)
     assert data is not None
@@ -408,7 +269,7 @@ def test_gather_data_debrief_telegram_context_fallback_when_log_empty(temp_db):
 def test_build_prompt_includes_extra_notes_when_provided():
     prompt = video_scripts._build_prompt(
         "DEBRIEF",
-        {"events_block": "x", "pending_events_block": "z", "headlines_block": "y", "telegram_context_block": "w"},
+        {"headlines_block": "y", "telegram_context_block": "w"},
         date(2026, 7, 26),
         extra_notes="Insiste sur le pétrole",
     )
@@ -416,7 +277,7 @@ def test_build_prompt_includes_extra_notes_when_provided():
 
 
 def test_build_prompt_no_extra_notes_mention_when_none_or_blank():
-    data = {"events_block": "x", "pending_events_block": "z", "headlines_block": "y", "telegram_context_block": "w"}
+    data = {"headlines_block": "y", "telegram_context_block": "w"}
     prompt_none = video_scripts._build_prompt("DEBRIEF", data, date(2026, 7, 26), extra_notes=None)
     prompt_blank = video_scripts._build_prompt("DEBRIEF", data, date(2026, 7, 26), extra_notes="   ")
     assert "Remarque de l'utilisateur" not in prompt_none

@@ -35,13 +35,6 @@ _TEMPLATES_DIR = os.path.join(os.path.dirname(__file__), "video_templates")
 _MAX_LLM_TOKENS = 1500  # DEBRIEF va jusqu'à ~240 mots + un visual_keyword par bloc
 _MAX_EVENTS_IN_PROMPT = 15  # évite un prompt géant un jour très chargé en news
 
-# Ordre imposé des sections d'un DEBRIEF (voir video_templates/debrief.txt) :
-# les breaking news développées en détail d'abord, puis TOUJOURS en tout
-# dernier le récap compact de l'ensemble des news économiques du calendrier
-# (confirmées ET en attente) — jamais un événement macro développé comme un
-# bloc à part en tête de vidéo, voir debrief.txt pour le raisonnement complet.
-_DEBRIEF_SECTION_ORDER = {"BREAKING": 0, "RECAP": 1}
-
 _SCRIPT_SCHEMA = {
     "type": "OBJECT",
     "required": ["hook", "corps", "chute", "legende", "hashtags"],
@@ -57,10 +50,6 @@ _SCRIPT_SCHEMA = {
                     "ecran": {"type": "STRING"},
                     "visuel": {"type": "STRING"},
                     "visual_keyword": {"type": "STRING"},
-                    # Seulement significatif pour DEBRIEF ("EVENEMENT"/"BREAKING",
-                    # voir video_templates/debrief.txt) — chaîne vide pour les autres
-                    # formats, jamais requis pour ne pas forcer une valeur absurde.
-                    "section": {"type": "STRING"},
                 },
             },
         },
@@ -144,20 +133,26 @@ def _gather_data(fmt: str, target_date: date, concept_override: str | None = Non
     day_start_utc, day_end_utc = db.local_day_bounds_utc(target_date)
 
     if fmt == "DEBRIEF":
-        rows = db.get_events_for_day(day_start_utc, day_end_utc)
-        confirmed = [_row_to_event(r) for r in rows if r["actual"]]
-        # Prévus aujourd'hui mais sans résultat confirmé pour l'instant (voir
-        # debrief.txt, règle 6) : jamais passés sous silence, jamais un chiffre
-        # inventé — juste mentionnés comme "en attente" en toute fin de vidéo.
-        pending = [_row_to_event(r) for r in rows if not r["actual"]]
+        # DEBRIEF ne couvre plus que les breaking news (voir video_templates/
+        # debrief.txt) — le calendrier économique n'y figure plus du tout, à la
+        # demande explicite de l'utilisateur.
         news_rows = db.get_news_for_day(day_start_utc, day_end_utc)
-        if not confirmed and not pending and not news_rows:
+        if not news_rows:
             return None
-        telegram_messages = message_log.get_messages_for_day(target_date)
+        # Filtre sur le message qui COMMENCE par "🚨 *Breaking News*" (voir
+        # telegram_bot.format_breaking_news_alert) : le journal contient AUSSI les
+        # résumés quotidiens et débriefs du soir, qui listent le calendrier
+        # économique ET mentionnent eux-mêmes "🚨 X breaking news" dans leur propre
+        # texte (un simple "🚨 in raw_text" les laisserait donc passer à tort) —
+        # sans ce filtre plus précis, le calendrier reviendrait dans le prompt
+        # malgré son retrait de headlines_block, à la demande explicite de
+        # l'utilisateur (DEBRIEF = breaking news uniquement).
+        telegram_messages = [
+            m for m in message_log.get_messages_for_day(target_date)
+            if m["raw_text"].startswith("🚨")
+        ]
         return {
-            "events_block": _format_events_block(confirmed) if confirmed else "Aucun événement macro confirmé aujourd'hui.",
-            "pending_events_block": _format_events_block(pending) if pending else "Aucun événement en attente de résultat.",
-            "headlines_block": _format_headlines_block(news_rows) if news_rows else "Aucune breaking news aujourd'hui.",
+            "headlines_block": _format_headlines_block(news_rows),
             "telegram_context_block": (
                 _format_telegram_messages_block(telegram_messages)
                 if telegram_messages
@@ -315,24 +310,13 @@ def _assemble_script(fmt: str, target_date: date, llm_result: dict) -> dict:
     chute = llm_result.get("chute", "")
     cta = config.VIDEO_CTA_TEXT  # jamais généré par le LLM, toujours la même formulation
 
-    if fmt == "DEBRIEF":
-        # Garde-fou structurel (voir video_templates/debrief.txt) : impose
-        # l'ordre BREAKING -> RECAP même si le LLM n'a pas respecté l'ordre
-        # demandé — tri stable, donc la hiérarchisation du LLM à l'intérieur de
-        # chaque section est préservée. Une section absente ou invalide retombe
-        # sur "BREAKING" (jamais un bloc affiché à tort dans le récap final).
-        for c, bloc in zip(corps, raw_corps):
-            section = (bloc.get("section") or "").strip().upper()
-            c["section"] = section if section in _DEBRIEF_SECTION_ORDER else "BREAKING"
-        corps.sort(key=lambda c: _DEBRIEF_SECTION_ORDER[c["section"]])
-
     corps = [{"bloc": i + 1, **c} for i, c in enumerate(corps)]
 
     word_count, estimated_seconds, warnings = _compute_duration(fmt, hook, corps, chute, cta)
-    # DEBRIEF : le récap éco tient maintenant dans 1-2 blocs compacts en fin de
-    # vidéo au lieu d'un bloc développé par événement — le total de blocs est
-    # donc naturellement plus bas qu'avant (voir video_templates/debrief.txt).
-    min_corps, max_corps = (2, 8) if fmt == "DEBRIEF" else (3, 5)
+    # DEBRIEF ne couvre plus que les breaking news, regroupées par sujet (voir
+    # video_templates/debrief.txt) : un jour calme avec un seul vrai sujet
+    # donne légitimement un seul bloc.
+    min_corps, max_corps = (1, 6) if fmt == "DEBRIEF" else (3, 5)
     if not min_corps <= len(corps) <= max_corps:
         warnings.append(f"Corps hors gabarit : {len(corps)} bloc(s) (attendu {min_corps} à {max_corps}).")
 
@@ -358,12 +342,6 @@ def _assemble_script(fmt: str, target_date: date, llm_result: dict) -> dict:
     }
 
 
-_SECTION_MD_LABELS = {
-    "BREAKING": f"🔴 {config.VIDEO_SECTION_LABEL_BREAKING}",
-    "RECAP": f"🟡 {config.VIDEO_SECTION_LABEL_RECAP}",
-}
-
-
 def _render_markdown(script: dict) -> str:
     date_label = datetime.fromisoformat(script["date"]).strftime("%d/%m/%Y")
     lines = [
@@ -374,15 +352,7 @@ def _render_markdown(script: dict) -> str:
         "",
         "## 📋 CORPS",
     ]
-    # Sous-titres de section pour DEBRIEF uniquement (seul format dont les blocs
-    # portent un "section" — voir _assemble_script) : rend visible à la relecture
-    # la même séparation événements/breaking news que la vidéo rendue.
-    current_section = None
     for bloc in script["corps"]:
-        section = bloc.get("section")
-        if section and section != current_section:
-            lines += ["", f"### {_SECTION_MD_LABELS.get(section, section)}"]
-            current_section = section
         lines += [
             "",
             f"**Bloc {bloc['bloc']}**",
