@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-06T09:41:17.914690+00:00",
+  "fetched_at": "2026-08-06T09:42:24.551523+00:00",
   "articles": [
+    {
+      "title": "Indian Rupee: Policy pause offers limited support – Commerzbank",
+      "url": "https://www.fxstreet.com/news/indian-rupee-policy-pause-offers-limited-support-commerzbank-202608060941",
+      "source": "FXStreet",
+      "published_at": "2026-08-06T09:41:46+00:00"
+    },
     {
       "title": "Czech Koruna: Softer CNB guidance may weigh against euro – ING",
       "url": "https://www.fxstreet.com/news/czech-koruna-softer-cnb-guidance-may-weigh-against-euro-ing-202608060933",
@@ -162,12 +168,6 @@
       "url": "https://www.fxstreet.com/news/us-dollar-index-price-forecast-holds-gains-above-9950-while-bearish-bias-persists-202608060700",
       "source": "FXStreet",
       "published_at": "2026-08-06T07:00:57+00:00"
-    },
-    {
-      "title": "Oil: Distillate exports tighten market – ING",
-      "url": "https://www.fxstreet.com/news/oil-distillate-exports-tighten-market-ing-202608060648",
-      "source": "FXStreet",
-      "published_at": "2026-08-06T06:48:40+00:00"
     }
   ]
 }
