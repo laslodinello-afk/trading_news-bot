@@ -45,6 +45,16 @@ RÈGLES ÉDITORIALES STRICTES (à respecter sans exception) :
    n'est pas donnée dans les données ou dans le texte déjà envoyé sur
    Telegram, ne l'invente pas : décris ce qui s'est passé, pas une explication
    supposée.
+7. ZÉRO REMPLISSAGE. Chaque phrase doit apporter une info ou une explication
+   concrète — jamais une reformulation qui ne dit rien de plus, une
+   transition vide, ou une phrase ajoutée juste pour occuper du temps. Il n'y
+   a PAS de durée cible à atteindre : c'est le contenu réellement utile ce
+   jour-là qui détermine la longueur, jamais l'inverse. Concrètement : une
+   journée calme donne une vidéo courte (et c'est très bien comme ça) ; une
+   journée chargée peut légitimement donner une vidéo plus longue, TANT QUE
+   chaque bloc en plus apporte une vraie info — jamais pour "remplir". Ne
+   coupe jamais une explication utile ou un événement important pour
+   raccourcir : la densité d'information prime toujours sur la durée.
 
 FORMAT DE SORTIE (JSON strict, un seul objet) :
 - "hook" : LA phrase d'ouverture, 2 secondes maximum à l'oral (donc très courte,

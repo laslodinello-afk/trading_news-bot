@@ -59,7 +59,7 @@ def test_word_range_for_format_single_tier():
 
 def test_word_range_for_format_union_for_two_tiers():
     assert video_scripts._word_range_for_format("POURQUOI") == (105, 160)
-    assert video_scripts._word_range_for_format("DEBRIEF") == (105, 155)
+    assert video_scripts._word_range_for_format("DEBRIEF") == (172, 243)
 
 
 def test_compute_duration_within_range_no_warning():
@@ -164,69 +164,6 @@ def _corps_block(section=None, oral="texte du bloc"):
     if section is not None:
         block["section"] = section
     return block
-
-
-# --- plafond dur de durée (voir _trim_debrief_to_duration_cap) --------------------
-# Le LLM ne respecte pas toujours son budget de mots (constaté : +58 mots sur une
-# fourchette à 155) — ces tests vérifient l'application après coup, indépendante
-# du prompt.
-
-def test_trim_debrief_removes_least_important_breaking_blocks_until_under_cap():
-    corps = [
-        {"section": "BREAKING", "oral": _words(50)},
-        {"section": "BREAKING", "oral": _words(50)},
-        {"section": "BREAKING", "oral": _words(50)},
-        {"section": "BREAKING", "oral": _words(50)},
-        {"section": "RECAP", "oral": _words(20)},
-    ]
-    trimmed = video_scripts._trim_debrief_to_duration_cap(corps, hook=_words(5), chute=_words(6), cta=config.VIDEO_CTA_TEXT)
-    assert [c["section"] for c in trimmed] == ["BREAKING", "BREAKING", "RECAP"]
-    # Les 2 premiers (les plus importants, voir debrief.txt règle 1) sont gardés.
-    assert trimmed[0] is corps[0]
-    assert trimmed[1] is corps[1]
-    assert trimmed[2] is corps[4]  # le bloc RECAP original, jamais touché
-
-
-def test_trim_debrief_can_remove_all_breaking_blocks_but_never_recap():
-    """Le plafond dur prime sur la présence de breaking news : si même 1 seul
-    bloc BREAKING suffit à dépasser le plafond, il est supprimé lui aussi —
-    seul le bloc RECAP (les news économiques du jour) est protégé, jamais
-    supprimé même si le total reste au-dessus du plafond une fois seul."""
-    corps = [
-        {"section": "BREAKING", "oral": _words(50)},
-        {"section": "RECAP", "oral": _words(200)},
-    ]
-    trimmed = video_scripts._trim_debrief_to_duration_cap(corps, hook=_words(5), chute=_words(6), cta=config.VIDEO_CTA_TEXT)
-    assert trimmed == [corps[1]]
-
-
-def test_trim_debrief_leaves_recap_only_untouched():
-    corps = [{"section": "RECAP", "oral": _words(200)}]
-    trimmed = video_scripts._trim_debrief_to_duration_cap(corps, hook=_words(5), chute=_words(6), cta=config.VIDEO_CTA_TEXT)
-    assert trimmed == corps
-
-
-def test_trim_debrief_no_op_when_already_under_cap():
-    corps = [
-        {"section": "BREAKING", "oral": _words(20)},
-        {"section": "RECAP", "oral": _words(20)},
-    ]
-    trimmed = video_scripts._trim_debrief_to_duration_cap(corps, hook=_words(5), chute=_words(6), cta=config.VIDEO_CTA_TEXT)
-    assert trimmed == corps
-
-
-def test_assemble_script_debrief_applies_duration_cap_end_to_end():
-    llm_result = {
-        "hook": _words(5),
-        "corps": [_corps_block("BREAKING", oral=_words(50)) for _ in range(4)] + [_corps_block("RECAP", oral=_words(20))],
-        "chute": _words(6),
-        "legende": "Légende de test.",
-        "hashtags": ["eco"],
-    }
-    script = video_scripts._assemble_script("DEBRIEF", date(2026, 7, 26), llm_result)
-    assert [c["section"] for c in script["corps"]] == ["BREAKING", "BREAKING", "RECAP"]
-    assert [c["bloc"] for c in script["corps"]] == [1, 2, 3]
-    assert script["estimated_duration_seconds"] <= config.VIDEO_FORMAT_DURATIONS["DEBRIEF"][1]
 
 
 def test_assemble_script_debrief_sorts_recap_after_breaking():
