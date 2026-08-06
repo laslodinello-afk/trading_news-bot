@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-06T06:57:22.927577+00:00",
+  "fetched_at": "2026-08-06T06:58:20.640505+00:00",
   "articles": [
+    {
+      "title": "Indian Rupee edges lower as oil prices rebound",
+      "url": "https://www.fxstreet.com/news/indian-rupee-trades-flat-lower-oil-prices-back-upside-202608060532",
+      "source": "FXStreet",
+      "published_at": "2026-08-06T05:32:32+00:00"
+    },
     {
       "title": "Oil: Distillate exports tighten market – ING",
       "url": "https://www.fxstreet.com/news/oil-distillate-exports-tighten-market-ing-202608060648",
@@ -60,12 +66,6 @@
       "url": "https://www.fxstreet.com/news/british-pound-loses-ground-to-near-13450-as-traders-await-possible-us-iran-deal-202608060533",
       "source": "FXStreet",
       "published_at": "2026-08-06T05:33:58+00:00"
-    },
-    {
-      "title": "Indian Rupee trades flat, lower oil prices back upside",
-      "url": "https://www.fxstreet.com/news/indian-rupee-trades-flat-lower-oil-prices-back-upside-202608060532",
-      "source": "FXStreet",
-      "published_at": "2026-08-06T05:32:32+00:00"
     },
     {
       "title": "Indonesian Rupiah in focus as BI leadership race begins",
