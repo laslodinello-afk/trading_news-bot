@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-06T04:49:17.227564+00:00",
+  "fetched_at": "2026-08-06T04:50:32.282218+00:00",
   "articles": [
+    {
+      "title": "British Pound consolidates vs Yen; bullish bias remains amid Japan's fiscal concerns",
+      "url": "https://www.fxstreet.com/news/british-pound-consolidates-vs-yen-bullish-bias-remains-amid-japans-fiscal-concerns-202608060450",
+      "source": "FXStreet",
+      "published_at": "2026-08-06T04:50:23+00:00"
+    },
     {
       "title": "India Gold price today: Gold rises, according to FXStreet data",
       "url": "https://www.fxstreet.com/news/india-gold-price-today-gold-rises-according-to-fxstreet-data-202608060435",
@@ -60,12 +66,6 @@
       "url": "https://www.fxstreet.com/news/us-president-donald-trumps-administration-refunds-100bn-of-liberation-day-tariffs-202608060151",
       "source": "FXStreet",
       "published_at": "2026-08-06T01:51:07+00:00"
-    },
-    {
-      "title": "Australian Dollar remains calm following Trade Balance data",
-      "url": "https://www.fxstreet.com/news/australian-dollar-remains-calm-following-trade-balance-data-202608060150",
-      "source": "FXStreet",
-      "published_at": "2026-08-06T01:50:02+00:00"
     }
   ]
 }
