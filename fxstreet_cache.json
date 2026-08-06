@@ -1,6 +1,18 @@
 {
-  "fetched_at": "2026-08-06T09:32:29.983986+00:00",
+  "fetched_at": "2026-08-06T09:33:18.240949+00:00",
   "articles": [
+    {
+      "title": "Czech Koruna: Softer CNB guidance may weigh against euro – ING",
+      "url": "https://www.fxstreet.com/news/czech-koruna-softer-cnb-guidance-may-weigh-against-euro-ing-202608060933",
+      "source": "FXStreet",
+      "published_at": "2026-08-06T09:33:00+00:00"
+    },
+    {
+      "title": "Silver price today: Silver broadly unchanged, according to FXStreet data",
+      "url": "https://www.fxstreet.com/news/silver-price-today-silver-broadly-unchanged-according-to-fxstreet-data-202608060933",
+      "source": "FXStreet",
+      "published_at": "2026-08-06T09:33:00+00:00"
+    },
     {
       "title": "Brazilian Real: Cautious BCB easing offers limited support – Societe Generale",
       "url": "https://www.fxstreet.com/news/brazilian-real-cautious-bcb-easing-offers-limited-support-societe-generale-202608060924",
@@ -156,12 +168,6 @@
       "url": "https://www.fxstreet.com/news/oil-distillate-exports-tighten-market-ing-202608060648",
       "source": "FXStreet",
       "published_at": "2026-08-06T06:48:40+00:00"
-    },
-    {
-      "title": "USD/JPY Price Forecast: Likely return to two-month low near 155.00",
-      "url": "https://www.fxstreet.com/news/usd-jpy-price-forecast-likely-return-to-two-month-low-near-15500-202608060638",
-      "source": "FXStreet",
-      "published_at": "2026-08-06T06:38:36+00:00"
     }
   ]
 }
