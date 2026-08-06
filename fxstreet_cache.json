@@ -1,4 +1,83 @@
 {
-  "fetched_at": "2026-08-06T02:51:37.203612+00:00",
-  "articles": []
+  "fetched_at": "2026-08-06T02:52:26.644752+00:00",
+  "articles": [
+    {
+      "title": "Silver Price Forecast: XAG/USD rises above $62.00 on easing inflation concerns",
+      "url": "https://www.fxstreet.com/news/silver-price-forecast-xag-usd-rises-above-6200-on-easing-inflation-concerns-202608060252",
+      "source": "FXStreet",
+      "published_at": "2026-08-06T02:52:05+00:00"
+    },
+    {
+      "title": "United States Dollar Index (DXY) struggles near 99.65 and remains close to multi-week low",
+      "url": "https://www.fxstreet.com/news/united-states-dollar-index-dxy-struggles-near-9965-and-remains-close-to-multi-week-low-202608060239",
+      "source": "FXStreet",
+      "published_at": "2026-08-06T02:39:51+00:00"
+    },
+    {
+      "title": "Japanese Yen gathers strength to near 157.50 on US-backed intervention",
+      "url": "https://www.fxstreet.com/news/japanese-yen-gathers-strength-to-near-15750-on-us-backed-intervention-202608060237",
+      "source": "FXStreet",
+      "published_at": "2026-08-06T02:37:47+00:00"
+    },
+    {
+      "title": "Canadian Dollar remains on the front foot vs USD as oil rebounds and Fed hike bets fade",
+      "url": "https://www.fxstreet.com/news/canadian-dollar-remains-on-the-front-foot-vs-usd-as-oil-rebounds-and-fed-hike-bets-fade-202608060153",
+      "source": "FXStreet",
+      "published_at": "2026-08-06T01:53:59+00:00"
+    },
+    {
+      "title": "US President Donald Trump's administration refunds $100bn of ‘liberation day’ tariffs",
+      "url": "https://www.fxstreet.com/news/us-president-donald-trumps-administration-refunds-100bn-of-liberation-day-tariffs-202608060151",
+      "source": "FXStreet",
+      "published_at": "2026-08-06T01:51:07+00:00"
+    },
+    {
+      "title": "Australian Dollar remains calm following Trade Balance data",
+      "url": "https://www.fxstreet.com/news/australian-dollar-remains-calm-following-trade-balance-data-202608060150",
+      "source": "FXStreet",
+      "published_at": "2026-08-06T01:50:02+00:00"
+    },
+    {
+      "title": "Australia’s Trade Balance shows a surprise surplus of 1,929M MoM in June, vs. -1,100 expected",
+      "url": "https://www.fxstreet.com/news/australias-trade-balance-shows-a-surprise-surplus-of-1-929m-mom-in-june-vs-1-100-expected-202608060132",
+      "source": "FXStreet",
+      "published_at": "2026-08-06T01:32:57+00:00"
+    },
+    {
+      "title": "British Pound holds steady above 1.3450 as Iran hopes and Fed repricing weigh on USD",
+      "url": "https://www.fxstreet.com/news/british-pound-holds-steady-above-13450-as-iran-hopes-and-fed-repricing-weigh-on-usd-202608060117",
+      "source": "FXStreet",
+      "published_at": "2026-08-06T01:17:06+00:00"
+    },
+    {
+      "title": "Euro strengthens above 1.1550 as softer US data",
+      "url": "https://www.fxstreet.com/news/euro-strengthens-above-11550-as-softer-us-data-202608060116",
+      "source": "FXStreet",
+      "published_at": "2026-08-06T01:16:32+00:00"
+    },
+    {
+      "title": "PBOC sets USD/CNY reference rate at 6.7895 vs. 6.7889 previous",
+      "url": "https://www.fxstreet.com/news/pboc-sets-usd-cny-reference-rate-at-67895-vs-67889-previous-202608060115",
+      "source": "FXStreet",
+      "published_at": "2026-08-06T01:15:34+00:00"
+    },
+    {
+      "title": "Fed's Daly: Some signs tariff impact on inflation starting to fade",
+      "url": "https://www.fxstreet.com/news/feds-daly-some-signs-tariff-impact-on-inflation-starting-to-fade-202608060110",
+      "source": "FXStreet",
+      "published_at": "2026-08-06T01:10:33+00:00"
+    },
+    {
+      "title": "WTI remains subdued near $74.00 due to Iran-Oman agreement on Hormuz",
+      "url": "https://www.fxstreet.com/news/wti-remains-subdued-near-7400-due-to-iran-oman-agreement-on-hormuz-202608060050",
+      "source": "FXStreet",
+      "published_at": "2026-08-06T00:50:13+00:00"
+    },
+    {
+      "title": "Yemen's Houthis say they attacked a Saudi oil tanker in the Red Sea, Gulf of Aden",
+      "url": "https://www.fxstreet.com/news/yemens-houthis-say-they-attacked-a-saudi-oil-tanker-in-the-red-sea-gulf-of-aden-202608060001",
+      "source": "FXStreet",
+      "published_at": "2026-08-06T00:01:40+00:00"
+    }
+  ]
 }
