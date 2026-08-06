@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-06T12:32:24.073493+00:00",
+  "fetched_at": "2026-08-06T12:33:22.335071+00:00",
   "articles": [
+    {
+      "title": "Swedish Krona: Hotter core supports SEK against Euro – ING",
+      "url": "https://www.fxstreet.com/news/swedish-krona-hotter-core-supports-sek-against-euro-ing-202608061232",
+      "source": "FXStreet",
+      "published_at": "2026-08-06T12:32:40+00:00"
+    },
     {
       "title": "Japanese Yen: Retail flows reshape post-intervention dynamics – MUFG",
       "url": "https://www.fxstreet.com/news/japanese-yen-retail-flows-reshape-post-intervention-dynamics-mufg-202608061224",
@@ -96,18 +102,6 @@
       "url": "https://www.fxstreet.com/news/indian-rupee-policy-pause-offers-limited-support-commerzbank-202608060941",
       "source": "FXStreet",
       "published_at": "2026-08-06T09:41:46+00:00"
-    },
-    {
-      "title": "Czech Koruna: Softer CNB guidance may weigh against euro – ING",
-      "url": "https://www.fxstreet.com/news/czech-koruna-softer-cnb-guidance-may-weigh-against-euro-ing-202608060933",
-      "source": "FXStreet",
-      "published_at": "2026-08-06T09:33:00+00:00"
-    },
-    {
-      "title": "Silver price today: Silver broadly unchanged, according to FXStreet data",
-      "url": "https://www.fxstreet.com/news/silver-price-today-silver-broadly-unchanged-according-to-fxstreet-data-202608060933",
-      "source": "FXStreet",
-      "published_at": "2026-08-06T09:33:00+00:00"
     }
   ]
 }
