@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-06T10:04:24.842898+00:00",
+  "fetched_at": "2026-08-06T10:05:31.729277+00:00",
   "articles": [
+    {
+      "title": "Japanese Yen: Policy shifts weigh on JPY against US Dollar – Rabobank",
+      "url": "https://www.fxstreet.com/news/japanese-yen-policy-shifts-weigh-on-jpy-against-us-dollar-rabobank-202608061004",
+      "source": "FXStreet",
+      "published_at": "2026-08-06T10:04:55+00:00"
+    },
     {
       "title": "US Dollar: Data-dependent Fed keeps upside in check – OCBC",
       "url": "https://www.fxstreet.com/news/us-dollar-data-dependent-fed-keeps-upside-in-check-ocbc-202608060957",
@@ -162,12 +168,6 @@
       "url": "https://www.fxstreet.com/news/indian-rupee-gradual-strengthening-path-outlined-mufg-202608060718",
       "source": "FXStreet",
       "published_at": "2026-08-06T07:18:30+00:00"
-    },
-    {
-      "title": "Silver Price Forecasts: XAG/USD hesitates at $62.00 after a two-day rally",
-      "url": "https://www.fxstreet.com/news/silver-price-forecasts-xag-usd-hesitates-at-6200-after-a-two-day-rally-202608060709",
-      "source": "FXStreet",
-      "published_at": "2026-08-06T07:09:44+00:00"
     }
   ]
 }
