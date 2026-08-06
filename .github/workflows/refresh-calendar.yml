@@ -15,6 +15,15 @@ on:
     - cron: "0 */6 * * *"
   workflow_dispatch: {}
 
+# Si des runs s'empilent en file d'attente (ex: panne GitHub Actions, voir
+# refresh-fxstreet.yml) plutôt que d'attendre des heures puis d'être annulé en
+# masse, un nouveau déclenchement annule directement le run encore en attente
+# — un seul run utile à la fois suffit de toute façon (le calendrier de la
+# semaine change rarement d'une exécution à l'autre).
+concurrency:
+  group: refresh-calendar
+  cancel-in-progress: true
+
 permissions:
   contents: write
 

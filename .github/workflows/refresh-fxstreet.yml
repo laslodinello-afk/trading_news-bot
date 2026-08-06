@@ -16,6 +16,15 @@ on:
     - cron: "*/5 * * * *"
   workflow_dispatch: {}
 
+# Déclenché toutes les ~1-5 min par cron-job.org (voir README) : si des runs
+# s'empilent en file d'attente (constaté lors d'une panne GitHub Actions —
+# des dizaines de runs restés "queued" des heures avant d'être annulés en
+# masse), un nouveau déclenchement annule directement le run encore en
+# attente plutôt que de laisser la file grossir indéfiniment.
+concurrency:
+  group: refresh-fxstreet
+  cancel-in-progress: true
+
 permissions:
   contents: write
 
