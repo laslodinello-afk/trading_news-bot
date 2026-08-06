@@ -128,6 +128,7 @@ def _event_row_to_dict(row) -> dict:
         "forecast": row["forecast"],
         "previous": row["previous"],
         "actual": row["actual"],
+        "speech_summary": row["speech_summary"],
         "ai_reclassified": bool(row["ai_reclassified"]),
     }
 
@@ -250,6 +251,28 @@ def job_check_after_alerts() -> None:
             event = _event_row_to_dict(row)
             event_dt = datetime.fromisoformat(event["event_dt_utc"])
             age_minutes = (now - event_dt).total_seconds() / 60
+            concerned_pairs = config.pairs_for_currency(event["currency"])
+
+            if config.is_speech_event(event["title"]):
+                # Pas de prévision/résultat chiffré pour une intervention : on
+                # cherche à la place un résumé IA (recherche web) de ce qui a
+                # été dit, voir ai_analyzer.search_speech_summary/analyze_speech.
+                summary = event["speech_summary"]
+                if not summary:
+                    summary = ai_analyzer.search_speech_summary(event["title"], event["currency"], event_dt)
+                    if summary:
+                        db.set_event_speech_summary(event["event_key"], summary)
+
+                if not summary and age_minutes < config.ACTUAL_RESULT_GRACE_MINUTES:
+                    continue  # laisse une chance au(x) prochain(s) tick(s) de trouver une couverture
+
+                ai = ai_analyzer.analyze_speech(event, concerned_pairs, summary) if summary else None
+                if telegram_bot.broadcast(telegram_bot.format_speech_after_alert(event, concerned_pairs, ai)):
+                    db.mark_sent(event["event_key"], "after")
+                    logger.info("Alerte 'après' (discours) envoyée: %s", event["title"])
+                else:
+                    logger.warning("Échec d'envoi de l'alerte 'après' (discours) pour %s, nouvel essai au prochain tick.", event["title"])
+                continue
 
             actual = event["actual"]
             if not actual:
@@ -263,7 +286,6 @@ def job_check_after_alerts() -> None:
             if not actual and age_minutes < config.ACTUAL_RESULT_GRACE_MINUTES:
                 continue  # laisse une chance au(x) prochain(s) tick(s) de trouver le résultat réel
 
-            concerned_pairs = config.pairs_for_currency(event["currency"])
             ai = ai_analyzer.analyze_after(event, concerned_pairs, actual)
             if telegram_bot.broadcast(telegram_bot.format_after_alert(event, actual, concerned_pairs, ai)):
                 db.mark_sent(event["event_key"], "after")

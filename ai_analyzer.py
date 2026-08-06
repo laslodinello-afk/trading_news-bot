@@ -530,6 +530,63 @@ confonds pas avec un autre indicateur ou une autre date."""
     return actual
 
 
+# --- Résumé des interventions/discours (events "X Speaks") -----------------------
+
+def search_speech_summary(title: str, currency: str, event_dt_utc) -> str | None:
+    """
+    Résumé factuel (recherche web réelle via Gemini, use_search_grounding) de ce
+    qui a été dit lors d'une intervention/discours (event calendrier détecté par
+    config.is_speech_event) — ces events n'ont ni prévision ni résultat chiffré
+    à comparer, le signal vient du contenu. Même discipline que
+    search_actual_result : jamais une réponse tirée de la seule mémoire du
+    modèle, renvoie None si aucune source fiable et datée n'est trouvée.
+    """
+    date_str = event_dt_utc.strftime("%d/%m/%Y à %Hh%M UTC")
+    prompt = f"""Recherche sur le web ce qui a été dit lors de cette intervention :
+- Intitulé : {title}
+- Devise/banque centrale concernée : {currency}
+- Date et heure : {date_str}
+
+Cherche des articles ou dépêches financières récentes et datées (Reuters, Bloomberg,
+ForexLive, FXStreet, MarketWatch...) qui rapportent le CONTENU de cette intervention
+précise (messages clés sur la politique monétaire, les taux d'intérêt, l'inflation,
+l'emploi, ou tout autre sujet abordé). Si tu trouves une source fiable et datée qui
+rapporte ce qui a été dit, renvoie "actual" = un résumé factuel en français, maximum
+4 lignes courtes, de ce qui a été dit. Si tu ne trouves AUCUNE source fiable et datée
+qui rapporte le contenu de CETTE intervention précise, renvoie "actual" =
+"{_ACTUAL_NOT_FOUND}". Ne devine jamais le contenu à partir de ta seule mémoire."""
+
+    result = call_gemini(prompt, _ACTUAL_FROM_NEWS_SCHEMA, max_tokens=400, use_search_grounding=True)
+    if not result:
+        return None
+    summary = (result.get("actual") or "").strip()
+    if not summary or summary.upper() == _ACTUAL_NOT_FOUND:
+        return None
+    return summary
+
+
+def analyze_speech(event: dict, concerned_pairs: list[str], summary: str) -> dict | None:
+    """
+    Biais de trading déduit du CONTENU d'une intervention (résumé trouvé par
+    search_speech_summary) plutôt que d'une surprise chiffrée (voir
+    analyze_after) : le ton (accommodant/restrictif) détermine le biais.
+    """
+    prompt = f"""Intervention/discours qui vient d'avoir lieu :
+- Titre : {event['title']}
+- Devise/banque centrale concernée : {event['currency']}
+- Impact : {event['impact']}
+- Résumé de ce qui a été dit : {summary}
+- Paires concernées : {", ".join(concerned_pairs)}
+
+Analyse le ton (accommodant/restrictif) et le sens probable pour le marché. Réponds avec :
+- "resume" : reformulation courte (maximum 4 lignes) de ce qui a été dit et de son sens pour le marché
+- "biais" : pour CHAQUE paire concernée, un objet {{"paire": "...", "direction": "haussier" | "baissier" | "neutre"}}
+- "raisonnement" : 1 phrase expliquant le biais
+- "danger" : "ok" | "prudence" | "danger" """
+    result = call_gemini(prompt, _ANALYSIS_SCHEMA, max_tokens=400)
+    return _format_analysis(result)
+
+
 # --- Filtrage des breaking news --------------------------------------------------
 
 MAX_CANDIDATES_PER_BATCH = 25

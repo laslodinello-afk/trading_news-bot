@@ -174,13 +174,18 @@ def format_evening_debrief(events: list[dict], news_items: list[dict], recap: st
         parts.append(f"\n📊 {len(events)} news publiées aujourd'hui :")
         for e in events:
             emoji = IMPACT_EMOJI.get(e["impact"], "⚪")
-            actual = e.get("actual") or "indisponible"
-            forecast = e.get("forecast") or "N/A"
-            previous = e.get("previous") or "N/A"
-            parts.append(
-                f"{emoji} {_time_local(e['event_dt_utc'])} — {escape_md(_display_title(e))} ({e['currency']}){_reclassified_marker(e)} : "
-                f"réel {actual} | prévision {forecast} | précédent {previous}"
-            )
+            label = f"{emoji} {_time_local(e['event_dt_utc'])} — {escape_md(_display_title(e))} ({e['currency']}){_reclassified_marker(e)}"
+            if config.is_speech_event(e["title"]):
+                # Pas de prévision/résultat chiffré pour un discours (voir
+                # format_speech_after_alert) : on reprend le résumé IA du
+                # contenu plutôt qu'un "réel indisponible" trompeur.
+                summary = e.get("speech_summary") or "résumé indisponible"
+                parts.append(f"{label} : {summary}")
+            else:
+                actual = e.get("actual") or "indisponible"
+                forecast = e.get("forecast") or "N/A"
+                previous = e.get("previous") or "N/A"
+                parts.append(f"{label} : réel {actual} | prévision {forecast} | précédent {previous}")
     else:
         parts.append("\n📊 Aucune news à impact fort/moyen publiée aujourd'hui.")
 
@@ -240,6 +245,20 @@ def format_after_alert(event: dict, actual: str | None, concerned_pairs: list[st
         ai["biais"] = {pair: "❔ Indisponible" for pair in concerned_pairs}
 
     parts = [header, meta, data_line, risk_line, _ai_block(ai)]
+    return "\n".join(p for p in parts if p)
+
+
+def format_speech_after_alert(event: dict, concerned_pairs: list[str], ai: dict | None) -> str:
+    """
+    Variante de format_after_alert pour les events "discours" (voir
+    config.is_speech_event) : pas de prévision/résultat chiffré à afficher, le
+    résumé IA (voir ai_analyzer.analyze_speech) tient lieu de contenu principal.
+    """
+    emoji = IMPACT_EMOJI.get(event["impact"], "🔴")
+    header = f"{emoji} *{escape_md(_display_title(event))} — {event['currency']}*{_reclassified_marker(event)} (résumé)"
+    meta = f"🕒 {_time_local(event['event_dt_utc'])} (Bruxelles)"
+    risk_line = f"⚠️ Volatilité et spread élargi possibles dans les {config.NO_TRADE_WINDOW_MINUTES} min qui suivent"
+    parts = [header, meta, risk_line, _ai_block(ai)]
     return "\n".join(p for p in parts if p)
 
 

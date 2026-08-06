@@ -137,6 +137,17 @@ def pairs_for_currency(currency: str) -> list[str]:
     ]
 
 
+def is_speech_event(title: str) -> bool:
+    """
+    Détecte les events calendrier de type intervention/discours (convention
+    ForexFactory constatée en prod : "FOMC Member Daly Speaks", "President
+    Trump Speaks"...). Ces events n'ont ni prévision ni résultat chiffré à
+    comparer — voir main.py job_check_after_alerts et ai_analyzer.
+    search_speech_summary/analyze_speech.
+    """
+    return title.strip().endswith("Speaks")
+
+
 # --- Filtre calendrier économique --------------------------------------------
 WATCHED_CURRENCIES = {"USD", "EUR", "GBP"}
 WATCHED_IMPACTS = {"High", "Medium"}  # rouge + orange uniquement
@@ -242,18 +253,27 @@ VIDEO_FORMAT_DURATIONS = {
     "PEDAGO": (30, 30),
     "FACTCHECK": (45, 45),
     "SEMAINE": (60, 60),
-    "DEBRIEF": (75, 90),  # débrief vidéo du soir : événements du jour + breaking news
+    # Plafond dur demandé par l'utilisateur : 1min05 (65s) MAXIMUM. Calibré sur
+    # 2 rendus réels (mesurés ffprobe, pas juste l'estimation mots/seconde) :
+    # ~0,37-0,38 seconde réelle par mot (carte d'intro + transition + carte de
+    # fin comprises) — le rythme réel de la voix (edge-tts avec le "rate"
+    # accéléré, voir video_renderer.VIDEO_TTS_VOICE) est plus rapide que les
+    # 2,5 mots/s nominaux. Le LLM dépasse aussi parfois son budget de quelques
+    # mots (constaté : +7 sur une fourchette à 172) — marge prise en
+    # conséquence pour rester sous 65s réels même dans ce cas.
+    "DEBRIEF": (45, 65),  # débrief vidéo du soir : breaking news + récap éco
 }
 
 VIDEO_WORDS_PER_SECOND_FR = 2.5
 
 # Fourchette de mots "texte oral" attendue par palier de durée. Un format à cheval
-# sur 2 paliers (POURQUOI 45-60s, DEBRIEF 75-90s) prend l'union : (min du palier
+# sur 2 paliers (POURQUOI 45-60s, DEBRIEF 45-65s) prend l'union : (min du palier
 # bas, max du palier haut).
 VIDEO_DURATION_WORD_RANGES = {
     30: (70, 85),
     45: (105, 125),
     60: (140, 160),
+    65: (135, 155),
     75: (172, 203),
     90: (207, 243),
 }

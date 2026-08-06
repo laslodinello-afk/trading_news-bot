@@ -47,6 +47,7 @@ CREATE TABLE IF NOT EXISTS events (
     forecast TEXT,
     previous TEXT,
     actual TEXT,
+    speech_summary TEXT,
     ai_reclassified INTEGER NOT NULL DEFAULT 0,
     updated_at TEXT NOT NULL
 );
@@ -154,6 +155,8 @@ def _migrate(conn: sqlite3.Connection) -> None:
         conn.execute("ALTER TABLE events ADD COLUMN ai_reclassified INTEGER NOT NULL DEFAULT 0")
     if "title_fr" not in existing_events:
         conn.execute("ALTER TABLE events ADD COLUMN title_fr TEXT")
+    if "speech_summary" not in existing_events:
+        conn.execute("ALTER TABLE events ADD COLUMN speech_summary TEXT")
 
 
 def _now_iso() -> str:
@@ -240,6 +243,17 @@ def set_event_actual(event_key: str, actual: str) -> None:
         conn.execute(
             "UPDATE events SET actual=?, updated_at=? WHERE event_key=?",
             (actual, _now_iso(), event_key),
+        )
+
+
+def set_event_speech_summary(event_key: str, summary: str) -> None:
+    """Jamais écrit par upsert_event (le calendrier source ne fournit pas ce
+    champ) : uniquement rempli ici par job_check_after_alerts une fois le
+    résumé du discours trouvé (voir ai_analyzer.search_speech_summary)."""
+    with get_conn() as conn:
+        conn.execute(
+            "UPDATE events SET speech_summary=?, updated_at=? WHERE event_key=?",
+            (summary, _now_iso(), event_key),
         )
 
 
