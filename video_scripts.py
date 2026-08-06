@@ -295,6 +295,35 @@ def _build_prompt(fmt: str, data: dict, target_date: date, extra_notes: str | No
     return template.format(**context)
 
 
+def _trim_debrief_to_duration_cap(corps: list[dict], hook: str, chute: str, cta: str) -> list[dict]:
+    """Le LLM dépasse parfois largement son budget de mots malgré la consigne
+    (constaté en conditions réelles : jusqu'à +58 mots sur une fourchette à
+    155) — un simple mot dans le prompt ne suffit pas à garantir le plafond
+    dur de 65s (1min05) demandé par l'utilisateur. Coupe donc, après coup, les
+    blocs "BREAKING" les moins prioritaires (les derniers de la section — voir
+    debrief.txt règle 1 : "du plus important au plus secondaire") un par un
+    jusqu'à repasser sous le plafond, sans jamais toucher au bloc "RECAP"
+    (toujours le dernier bloc) : les news économiques du jour ne doivent
+    jamais disparaître, contrairement aux breaking news secondaires.
+
+    Va jusqu'à supprimer TOUS les blocs "BREAKING" si nécessaire (constaté :
+    un unique bloc BREAKING trop long peut à lui seul dépasser le plafond —
+    le garder coûte que coûte a déjà produit une vidéo à 65,46s, 0,46s
+    au-dessus du plafond demandé) : le plafond dur prime sur la présence de
+    breaking news, jamais sur la présence du récap éco."""
+    max_seconds = config.VIDEO_FORMAT_DURATIONS["DEBRIEF"][1]
+    trimmed = list(corps)
+    while True:
+        _, estimated_seconds, _ = _compute_duration("DEBRIEF", hook, trimmed, chute, cta)
+        if estimated_seconds <= max_seconds:
+            break
+        breaking_indices = [i for i, c in enumerate(trimmed) if c["section"] == "BREAKING"]
+        if not breaking_indices:
+            break  # plus rien à couper sans toucher au RECAP
+        del trimmed[breaking_indices[-1]]
+    return trimmed
+
+
 def _assemble_script(fmt: str, target_date: date, llm_result: dict) -> dict:
     default_keyword = config.STOCK_FOOTAGE_THEME_BY_FORMAT.get(fmt, "finance")
     raw_corps = llm_result.get("corps", [])
@@ -311,6 +340,10 @@ def _assemble_script(fmt: str, target_date: date, llm_result: dict) -> dict:
         for bloc in raw_corps
     ]
 
+    hook = llm_result.get("hook", "")
+    chute = llm_result.get("chute", "")
+    cta = config.VIDEO_CTA_TEXT  # jamais généré par le LLM, toujours la même formulation
+
     if fmt == "DEBRIEF":
         # Garde-fou structurel (voir video_templates/debrief.txt) : impose
         # l'ordre BREAKING -> RECAP même si le LLM n'a pas respecté l'ordre
@@ -321,12 +354,9 @@ def _assemble_script(fmt: str, target_date: date, llm_result: dict) -> dict:
             section = (bloc.get("section") or "").strip().upper()
             c["section"] = section if section in _DEBRIEF_SECTION_ORDER else "BREAKING"
         corps.sort(key=lambda c: _DEBRIEF_SECTION_ORDER[c["section"]])
+        corps = _trim_debrief_to_duration_cap(corps, hook, chute, cta)
 
     corps = [{"bloc": i + 1, **c} for i, c in enumerate(corps)]
-
-    hook = llm_result.get("hook", "")
-    chute = llm_result.get("chute", "")
-    cta = config.VIDEO_CTA_TEXT  # jamais généré par le LLM, toujours la même formulation
 
     word_count, estimated_seconds, warnings = _compute_duration(fmt, hook, corps, chute, cta)
     # DEBRIEF : le récap éco tient maintenant dans 1-2 blocs compacts en fin de

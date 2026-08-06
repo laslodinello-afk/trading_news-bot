@@ -42,14 +42,18 @@ traite JAMAIS de la même façon :
   événement macro, même important, n'a jamais son propre bloc détaillé en
   tête de vidéo : ce n'est pas le rôle de ce format.
 
-1. Un bloc BREAKING = une seule actualité. N'écris JAMAIS un bloc BREAKING qui
-   mélange deux actualités différentes (ex. la décision de la BCE et les
-   ventes au détail britanniques sont deux sujets distincts : deux blocs
-   séparés, même si ça donne plus de blocs). Si tu as plus de breaking news
-   exploitables que la fourchette de blocs ne le permet, garde les plus
-   importantes et laisse tomber le reste plutôt que d'en fusionner deux dans
-   un seul bloc. Cette règle "un sujet par bloc" ne s'applique PAS au bloc
-   RECAP (règle 6), qui rassemble volontairement plusieurs événements.
+1. Un bloc BREAKING = une seule actualité, et reste COURT : ~35-45 mots
+   maximum à l'oral (le format DEBRIEF est désormais court, 1min05 maximum —
+   voir plus bas — un seul bloc trop long peut à lui seul faire dépasser ce
+   plafond). Va à l'essentiel : le fait, une explication concrète, jamais un
+   développement à rallonge. N'écris JAMAIS un bloc BREAKING qui mélange deux
+   actualités différentes (ex. la décision de la BCE et les ventes au détail
+   britanniques sont deux sujets distincts : deux blocs séparés, même si ça
+   donne plus de blocs). Si tu as plus de breaking news exploitables que la
+   fourchette de blocs ne le permet, garde les plus importantes et laisse
+   tomber le reste plutôt que d'en fusionner deux dans un seul bloc. Cette
+   règle "un sujet par bloc" ne s'applique PAS au bloc RECAP (règle 6), qui
+   rassemble volontairement plusieurs événements.
 2. Découpe le corps en blocs BREAKING (un par actualité retenue, voir règle
    1) puis ajoute le bloc RECAP final (règle 6) s'il y a lieu. Le nombre total
    dépend donc entièrement de ce qu'il y a à couvrir ce jour-là — un jour
@@ -94,6 +98,8 @@ l'audience, ou la suite logique d'une actualité du jour) — jamais une simple
 formule qui referme l'idée sans ouvrir sur la suite.
 
 Le texte oral total (hook + corps + chute) doit faire {word_min} à {word_max}
-mots, calibré pour {duration_label} à l'oral — sensiblement plus long que les
-autres formats : prends le temps de développer chaque point plutôt que de
-rester superficiel.
+mots MAXIMUM, calibré pour {duration_label} à l'oral — c'est un plafond DUR
+demandé explicitement par l'utilisateur (vidéo courte, jamais plus de 1min05),
+pas une simple indication. Si tu as beaucoup à couvrir, resserre chaque phrase
+plutôt que de dépasser ce total — mieux vaut un bloc de moins que de dépasser
+le plafond.
