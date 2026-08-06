@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-05T22:18:07.104977+00:00",
+  "fetched_at": "2026-08-06T10:13:28.998148+00:00",
   "events": [
     {
       "title": "OPEC-JMMC Meetings",
@@ -546,17 +546,9 @@
       "previous": "38.4"
     },
     {
-      "title": "Retail Sales m/m",
-      "country": "EUR",
-      "date": "2026-08-06T05:00:00-04:00",
-      "impact": "Low",
-      "forecast": "0.1%",
-      "previous": "0.2%"
-    },
-    {
       "title": "Spanish 10-y Bond Auction",
       "country": "EUR",
-      "date": "2026-08-06T05:03:00-04:00",
+      "date": "2026-08-06T04:41:00-04:00",
       "impact": "Low",
       "forecast": "",
       "previous": "3.40|1.8"
@@ -564,10 +556,18 @@
     {
       "title": "French 10-y Bond Auction",
       "country": "EUR",
-      "date": "2026-08-06T05:18:00-04:00",
+      "date": "2026-08-06T04:57:00-04:00",
       "impact": "Low",
       "forecast": "",
       "previous": "3.68|3.3"
+    },
+    {
+      "title": "Retail Sales m/m",
+      "country": "EUR",
+      "date": "2026-08-06T05:00:00-04:00",
+      "impact": "Low",
+      "forecast": "0.1%",
+      "previous": "0.2%"
     },
     {
       "title": "Challenger Job Cuts y/y",
