@@ -1,4 +1,71 @@
 {
-  "fetched_at": "2026-08-06T01:32:40.159077+00:00",
-  "articles": []
+  "fetched_at": "2026-08-06T01:33:25.033681+00:00",
+  "articles": [
+    {
+      "title": "Australia’s Trade Balance shows a surprise surplus of 1,929M MoM in June, vs. -1,100 expected",
+      "url": "https://www.fxstreet.com/news/australias-trade-balance-shows-a-surprise-surplus-of-1-929m-mom-in-june-vs-1-100-expected-202608060132",
+      "source": "FXStreet",
+      "published_at": "2026-08-06T01:32:57+00:00"
+    },
+    {
+      "title": "British Pound holds steady above 1.3450 as Iran hopes and Fed repricing weigh on USD",
+      "url": "https://www.fxstreet.com/news/british-pound-holds-steady-above-13450-as-iran-hopes-and-fed-repricing-weigh-on-usd-202608060117",
+      "source": "FXStreet",
+      "published_at": "2026-08-06T01:17:06+00:00"
+    },
+    {
+      "title": "Euro strengthens above 1.1550 as softer US data",
+      "url": "https://www.fxstreet.com/news/euro-strengthens-above-11550-as-softer-us-data-202608060116",
+      "source": "FXStreet",
+      "published_at": "2026-08-06T01:16:32+00:00"
+    },
+    {
+      "title": "PBOC sets USD/CNY reference rate at 6.7895 vs. 6.7889 previous",
+      "url": "https://www.fxstreet.com/news/pboc-sets-usd-cny-reference-rate-at-67895-vs-67889-previous-202608060115",
+      "source": "FXStreet",
+      "published_at": "2026-08-06T01:15:34+00:00"
+    },
+    {
+      "title": "Fed's Daly: Some signs tariff impact on inflation starting to fade",
+      "url": "https://www.fxstreet.com/news/feds-daly-some-signs-tariff-impact-on-inflation-starting-to-fade-202608060110",
+      "source": "FXStreet",
+      "published_at": "2026-08-06T01:10:33+00:00"
+    },
+    {
+      "title": "WTI remains subdued near $74.00 due to Iran-Oman agreement on Hormuz",
+      "url": "https://www.fxstreet.com/news/wti-remains-subdued-near-7400-due-to-iran-oman-agreement-on-hormuz-202608060050",
+      "source": "FXStreet",
+      "published_at": "2026-08-06T00:50:13+00:00"
+    },
+    {
+      "title": "Yemen's Houthis say they attacked a Saudi oil tanker in the Red Sea, Gulf of Aden",
+      "url": "https://www.fxstreet.com/news/yemens-houthis-say-they-attacked-a-saudi-oil-tanker-in-the-red-sea-gulf-of-aden-202608060001",
+      "source": "FXStreet",
+      "published_at": "2026-08-06T00:01:40+00:00"
+    },
+    {
+      "title": "Iran says it has agreed on coordinates of route through Strait of Hormuz with Oman",
+      "url": "https://www.fxstreet.com/news/iran-says-it-has-agreed-on-coordinates-of-route-through-strait-of-hormuz-with-oman-202608052351",
+      "source": "FXStreet",
+      "published_at": "2026-08-05T23:51:42+00:00"
+    },
+    {
+      "title": "Gold rises above $4,250 on US–Iran deal hopes",
+      "url": "https://www.fxstreet.com/news/gold-rises-above-4-250-on-us-iran-deal-hopes-202608052332",
+      "source": "FXStreet",
+      "published_at": "2026-08-05T23:32:27+00:00"
+    },
+    {
+      "title": "Record intervention bought the Japanese Yen a return to mid-May",
+      "url": "https://www.fxstreet.com/news/record-intervention-bought-the-japanese-yen-a-return-to-mid-may-202608052301",
+      "source": "FXStreet",
+      "published_at": "2026-08-05T23:01:01+00:00"
+    },
+    {
+      "title": "Chinese Yuan: Gradual strengthening against US Dollar toward 6.7300 – UOB",
+      "url": "https://www.fxstreet.com/news/chinese-yuan-gradual-strengthening-against-us-dollar-toward-67300-uob-202608052249",
+      "source": "FXStreet",
+      "published_at": "2026-08-05T22:49:00+00:00"
+    }
+  ]
 }
