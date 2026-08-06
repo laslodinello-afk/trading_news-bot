@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-06T11:34:21.421417+00:00",
+  "fetched_at": "2026-08-06T11:35:24.424653+00:00",
   "articles": [
+    {
+      "title": "Gold: Hormuz optimism supports rally – ING",
+      "url": "https://www.fxstreet.com/news/gold-hormuz-optimism-supports-rally-ing-202608061135",
+      "source": "FXStreet",
+      "published_at": "2026-08-06T11:35:17+00:00"
+    },
     {
       "title": "US Dollar: Relief rallies seen shallow – BBH",
       "url": "https://www.fxstreet.com/news/us-dollar-relief-rallies-seen-shallow-bbh-202608061121",
@@ -108,12 +114,6 @@
       "url": "https://www.fxstreet.com/news/euro-holds-two-day-gains-against-yen-investors-seek-clarity-on-us-japan-future-intervention-plans-202608060837",
       "source": "FXStreet",
       "published_at": "2026-08-06T08:37:23+00:00"
-    },
-    {
-      "title": "Australian Dollar: RBA uneasy pause – Standard Chartered",
-      "url": "https://www.fxstreet.com/news/australian-dollar-rba-uneasy-pause-standard-chartered-202608060835",
-      "source": "FXStreet",
-      "published_at": "2026-08-06T08:35:12+00:00"
     }
   ]
 }
