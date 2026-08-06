@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-06T05:37:17.318870+00:00",
+  "fetched_at": "2026-08-06T05:38:23.508813+00:00",
   "articles": [
+    {
+      "title": "AUD/USD Price Forecast: Eyes upside despite pullback from June high, around 0.7065",
+      "url": "https://www.fxstreet.com/news/aud-usd-price-forecast-eyes-upside-despite-pullback-from-june-high-around-07065-202608060537",
+      "source": "FXStreet",
+      "published_at": "2026-08-06T05:37:20+00:00"
+    },
     {
       "title": "British Pound loses ground to near 1.3450 as traders await possible US-Iran deal",
       "url": "https://www.fxstreet.com/news/british-pound-loses-ground-to-near-13450-as-traders-await-possible-us-iran-deal-202608060533",
@@ -72,12 +78,6 @@
       "url": "https://www.fxstreet.com/news/united-states-dollar-index-dxy-struggles-near-9965-and-remains-close-to-multi-week-low-202608060239",
       "source": "FXStreet",
       "published_at": "2026-08-06T02:39:51+00:00"
-    },
-    {
-      "title": "Japanese Yen gathers strength to near 157.50 on US-backed intervention",
-      "url": "https://www.fxstreet.com/news/japanese-yen-gathers-strength-to-near-15750-on-us-backed-intervention-202608060237",
-      "source": "FXStreet",
-      "published_at": "2026-08-06T02:37:47+00:00"
     }
   ]
 }
