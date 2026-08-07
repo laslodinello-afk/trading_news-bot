@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-07T12:59:23.397042+00:00",
+  "fetched_at": "2026-08-07T13:00:54.948330+00:00",
   "articles": [
+    {
+      "title": "Euro surges as shocking US NFP reverses Fed September hike expectations",
+      "url": "https://www.fxstreet.com/news/euro-surges-as-shocking-us-nfp-reverses-fed-september-hike-expectations-202608071300",
+      "source": "FXStreet",
+      "published_at": "2026-08-07T13:00:06+00:00"
+    },
     {
       "title": "Equities: AI profitability doubts grow – Nordea",
       "url": "https://www.fxstreet.com/news/equities-ai-profitability-doubts-grow-nordea-202608071254",
@@ -120,12 +126,6 @@
       "url": "https://www.fxstreet.com/news/us-president-trump-warsh-is-great-and-i-wont-criticize-him-202608071020",
       "source": "FXStreet",
       "published_at": "2026-08-07T10:20:33+00:00"
-    },
-    {
-      "title": "Canadian Dollar: Labour resilience favours CAD against US Dollar – TD Securities",
-      "url": "https://www.fxstreet.com/news/canadian-dollar-labour-resilience-favours-cad-against-us-dollar-td-securities-202608070959",
-      "source": "FXStreet",
-      "published_at": "2026-08-07T09:59:24+00:00"
     }
   ]
 }
