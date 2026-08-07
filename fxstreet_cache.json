@@ -1,6 +1,18 @@
 {
-  "fetched_at": "2026-08-07T06:29:18.728835+00:00",
+  "fetched_at": "2026-08-07T06:30:48.231601+00:00",
   "articles": [
+    {
+      "title": "Euro flatlines amid mixed German data with all eyes on US Nonfarm Payrolls data",
+      "url": "https://www.fxstreet.com/news/euro-flatlines-amid-mixed-german-data-with-all-eyes-on-us-nonfarm-payrolls-data-202608070630",
+      "source": "FXStreet",
+      "published_at": "2026-08-07T06:30:37+00:00"
+    },
+    {
+      "title": "WTI Price Forecast: Growing internal war risks in Middle East support recovery to near $78",
+      "url": "https://www.fxstreet.com/news/wti-price-forecast-growing-internal-war-risks-in-middle-east-support-recovery-to-near-78-202608070630",
+      "source": "FXStreet",
+      "published_at": "2026-08-07T06:30:07+00:00"
+    },
     {
       "title": "Euro: Rebound against US Dollar faces key cloud barrier – UOB",
       "url": "https://www.fxstreet.com/news/euro-rebound-against-us-dollar-faces-key-cloud-barrier-uob-202608070619",
@@ -54,12 +66,6 @@
       "url": "https://www.fxstreet.com/news/australian-dollar-holds-losses-against-japanese-yen-following-chinas-trade-balance-data-202608070340",
       "source": "FXStreet",
       "published_at": "2026-08-07T03:40:40+00:00"
-    },
-    {
-      "title": "British Pound remains weaker as UK-US yields narrow, US Dollar strengthens",
-      "url": "https://www.fxstreet.com/news/british-pound-remains-weaker-as-uk-us-yields-narrow-us-dollar-strengthens-202608070329",
-      "source": "FXStreet",
-      "published_at": "2026-08-07T03:29:57+00:00"
     }
   ]
 }
