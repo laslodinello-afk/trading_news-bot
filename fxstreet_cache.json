@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-07T18:33:19.527212+00:00",
+  "fetched_at": "2026-08-07T18:34:24.980883+00:00",
   "articles": [
+    {
+      "title": "GBP/USD Price Forecast: Bulls need 1.3560 to unlock 1.3600",
+      "url": "https://www.fxstreet.com/news/gbp-usd-price-forecast-bulls-need-13560-to-unlock-13600-202608071833",
+      "source": "FXStreet",
+      "published_at": "2026-08-07T18:33:19+00:00"
+    },
     {
       "title": "Singapore Dollar: Upside risk capped by 1.2790 against US Dollar – UOB",
       "url": "https://www.fxstreet.com/news/singapore-dollar-upside-risk-capped-by-12790-against-us-dollar-uob-202608071832",
@@ -60,18 +66,6 @@
       "url": "https://www.fxstreet.com/news/australian-dollar-climbs-near-two-month-highs-as-nfp-turns-negative-202608071538",
       "source": "FXStreet",
       "published_at": "2026-08-07T15:38:31+00:00"
-    },
-    {
-      "title": "NY Fed inflation expectations ease modestly in the short term",
-      "url": "https://www.fxstreet.com/news/ny-fed-inflation-expectations-ease-modestly-in-the-short-term-202608071534",
-      "source": "FXStreet",
-      "published_at": "2026-08-07T15:34:16+00:00"
-    },
-    {
-      "title": "Natural Gas: Higher price forecasts on LNG squeeze – Commerzbank",
-      "url": "https://www.fxstreet.com/news/natural-gas-higher-price-forecasts-on-lng-squeeze-commerzbank-202608071534",
-      "source": "FXStreet",
-      "published_at": "2026-08-07T15:34:14+00:00"
     }
   ]
 }
