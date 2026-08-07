@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-07T09:01:18.355246+00:00",
+  "fetched_at": "2026-08-07T09:02:28.974049+00:00",
   "articles": [
+    {
+      "title": "Japanese Yen holds onto weekly losses amid absence of US-Japan intervention follow-up",
+      "url": "https://www.fxstreet.com/news/japanese-yen-holds-onto-weekly-losses-amid-absence-of-us-japan-intervention-follow-up-202608070900",
+      "source": "FXStreet",
+      "published_at": "2026-08-07T09:00:34+00:00"
+    },
     {
       "title": "NZD/USD Price Forecast: Consolidates above 0.5860/weekly low as bulls look to US NFP",
       "url": "https://www.fxstreet.com/news/nzd-usd-price-forecast-consolidates-above-05860-weekly-low-as-bulls-look-to-us-nfp-202608070859",
@@ -162,12 +168,6 @@
       "url": "https://www.fxstreet.com/news/indonesian-rupiah-strengthens-as-foreign-inflows-surge-into-indonesian-assets-202608070607",
       "source": "FXStreet",
       "published_at": "2026-08-07T06:07:23+00:00"
-    },
-    {
-      "title": "German Industrial Production rises 0.2% MoM in June, beats 0.1% estimates",
-      "url": "https://www.fxstreet.com/news/german-industrial-production-rises-02-mom-in-june-beats-01-estimates-202608070602",
-      "source": "FXStreet",
-      "published_at": "2026-08-07T06:02:08+00:00"
     }
   ]
 }
