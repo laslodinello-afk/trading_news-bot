@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-07T17:58:19.506356+00:00",
+  "fetched_at": "2026-08-07T17:59:25.500346+00:00",
   "articles": [
+    {
+      "title": "South Korean Won: Intervention risks support KRW against US Dollar – DBS",
+      "url": "https://www.fxstreet.com/news/south-korean-won-intervention-risks-support-krw-against-us-dollar-dbs-202608071758",
+      "source": "FXStreet",
+      "published_at": "2026-08-07T17:58:00+00:00"
+    },
     {
       "title": "EUR/USD Price Forecast: Buyers eye a break above the 100-day SMA",
       "url": "https://www.fxstreet.com/news/eur-usd-price-forecast-buyers-eye-a-break-above-the-100-day-sma-202608071738",
@@ -78,12 +84,6 @@
       "url": "https://www.fxstreet.com/news/canada-labour-market-resilience-supports-cautious-bank-of-canada-nbc-202608071507",
       "source": "FXStreet",
       "published_at": "2026-08-07T15:07:07+00:00"
-    },
-    {
-      "title": "Gold: Discretionary demand keeps bulls in control - TD Securities",
-      "url": "https://www.fxstreet.com/news/gold-discretionary-demand-keeps-bulls-in-control-td-securities-202608071458",
-      "source": "FXStreet",
-      "published_at": "2026-08-07T14:58:39+00:00"
     }
   ]
 }
