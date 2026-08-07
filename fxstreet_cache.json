@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-07T15:15:36.233251+00:00",
+  "fetched_at": "2026-08-07T15:16:25.723172+00:00",
   "articles": [
+    {
+      "title": "Federal Reserve: Fed focus shifts to jobs – ABN AMRO",
+      "url": "https://www.fxstreet.com/news/federal-reserve-fed-focus-shifts-to-jobs-abn-amro-202608071515",
+      "source": "FXStreet",
+      "published_at": "2026-08-07T15:15:41+00:00"
+    },
     {
       "title": "Swiss Franc gains against US Dollar after surprise decline in US payrolls",
       "url": "https://www.fxstreet.com/news/swiss-franc-gains-against-us-dollar-after-surprise-decline-in-us-payrolls-202608071513",
@@ -114,12 +120,6 @@
       "url": "https://www.fxstreet.com/news/india-inflation-steady-trade-deficit-persists-dbs-202608071226",
       "source": "FXStreet",
       "published_at": "2026-08-07T12:26:24+00:00"
-    },
-    {
-      "title": "Japanese Yen: Intervention skepticism meets BoJ repricing – BBH",
-      "url": "https://www.fxstreet.com/news/japanese-yen-intervention-skepticism-meets-boj-repricing-bbh-202608071215",
-      "source": "FXStreet",
-      "published_at": "2026-08-07T12:15:38+00:00"
     }
   ]
 }
