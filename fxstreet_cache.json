@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-07T11:11:19.924825+00:00",
+  "fetched_at": "2026-08-07T11:12:19.094280+00:00",
   "articles": [
+    {
+      "title": "Oil: Prices jump on Hormuz tensions – MUFG",
+      "url": "https://www.fxstreet.com/news/oil-prices-jump-on-hormuz-tensions-mufg-202608071112",
+      "source": "FXStreet",
+      "published_at": "2026-08-07T11:12:11+00:00"
+    },
     {
       "title": "Canadian Dollar lacks direction ahead of twin US, Canadian employment releases",
       "url": "https://www.fxstreet.com/news/canadian-dollar-lacks-direction-ahead-of-twin-us-canadian-employment-releases-202608071106",
@@ -114,12 +120,6 @@
       "url": "https://www.fxstreet.com/news/czech-koruna-czk-softens-against-euro-as-cnb-waits-commerzbank-202608070823",
       "source": "FXStreet",
       "published_at": "2026-08-07T08:23:41+00:00"
-    },
-    {
-      "title": "Japanese Yen: Higher US rate volatility favors safe havens – BNY",
-      "url": "https://www.fxstreet.com/news/japanese-yen-higher-us-rate-volatility-favors-safe-havens-bny-202608070811",
-      "source": "FXStreet",
-      "published_at": "2026-08-07T08:11:37+00:00"
     }
   ]
 }
