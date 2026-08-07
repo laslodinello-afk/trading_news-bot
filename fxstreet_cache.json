@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-07T09:31:19.846622+00:00",
+  "fetched_at": "2026-08-07T09:32:29.775561+00:00",
   "articles": [
+    {
+      "title": "NFP or Iran: Which factor will break the US Dollar Index out of its consolidation?",
+      "url": "https://www.fxstreet.com/news/nfp-or-iran-which-factor-will-break-the-us-dollar-index-out-of-its-consolidation-202608070932",
+      "source": "FXStreet",
+      "published_at": "2026-08-07T09:32:26+00:00"
+    },
     {
       "title": "Silver price today: Silver rises, according to FXStreet data",
       "url": "https://www.fxstreet.com/news/silver-price-today-silver-rises-according-to-fxstreet-data-202608070930",
@@ -162,12 +168,6 @@
       "url": "https://www.fxstreet.com/news/equities-sector-rotation-dominates-risk-off-danske-bank-202608070646",
       "source": "FXStreet",
       "published_at": "2026-08-07T06:46:13+00:00"
-    },
-    {
-      "title": "Brent: US-Iran tensions support prices – ING",
-      "url": "https://www.fxstreet.com/news/brent-us-iran-tensions-support-prices-ing-202608070634",
-      "source": "FXStreet",
-      "published_at": "2026-08-07T06:34:30+00:00"
     }
   ]
 }
