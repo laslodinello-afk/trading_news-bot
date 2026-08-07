@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-07T07:36:19.692759+00:00",
+  "fetched_at": "2026-08-07T07:37:20.083702+00:00",
   "articles": [
+    {
+      "title": "Dow Jones futures move little ahead of US Nonfarm Payrolls",
+      "url": "https://www.fxstreet.com/news/dow-jones-futures-move-little-ahead-of-us-nonfarm-payrolls-202608070736",
+      "source": "FXStreet",
+      "published_at": "2026-08-07T07:36:35+00:00"
+    },
     {
       "title": "British Pound: Upside fades below 1.3410 against US Dollar - UOB",
       "url": "https://www.fxstreet.com/news/british-pound-upside-fades-below-13410-against-us-dollar-uob-202608070724",
@@ -102,12 +108,6 @@
       "url": "https://www.fxstreet.com/news/swiss-franc-weakens-as-increased-risk-aversion-boosts-safe-haven-us-dollar-202608070443",
       "source": "FXStreet",
       "published_at": "2026-08-07T04:43:55+00:00"
-    },
-    {
-      "title": "India Gold price today: Gold rises, according to FXStreet data",
-      "url": "https://www.fxstreet.com/news/india-gold-price-today-gold-rises-according-to-fxstreet-data-202608070436",
-      "source": "FXStreet",
-      "published_at": "2026-08-07T04:36:25+00:00"
     }
   ]
 }
