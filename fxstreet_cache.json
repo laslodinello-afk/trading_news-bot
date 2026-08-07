@@ -1,6 +1,18 @@
 {
-  "fetched_at": "2026-08-07T09:29:18.880966+00:00",
+  "fetched_at": "2026-08-07T09:30:50.534109+00:00",
   "articles": [
+    {
+      "title": "Silver price today: Silver rises, according to FXStreet data",
+      "url": "https://www.fxstreet.com/news/silver-price-today-silver-rises-according-to-fxstreet-data-202608070930",
+      "source": "FXStreet",
+      "published_at": "2026-08-07T09:30:16+00:00"
+    },
+    {
+      "title": "US Dollar: Labour market still solid – Danske Bank",
+      "url": "https://www.fxstreet.com/news/us-dollar-labour-market-still-solid-danske-bank-202608070929",
+      "source": "FXStreet",
+      "published_at": "2026-08-07T09:29:29+00:00"
+    },
     {
       "title": "Swiss Franc: Funding currency weakness extends – OCBC",
       "url": "https://www.fxstreet.com/news/swiss-franc-funding-currency-weakness-extends-ocbc-202608070921",
@@ -156,18 +168,6 @@
       "url": "https://www.fxstreet.com/news/brent-us-iran-tensions-support-prices-ing-202608070634",
       "source": "FXStreet",
       "published_at": "2026-08-07T06:34:30+00:00"
-    },
-    {
-      "title": "Euro flatlines amid mixed German data with all eyes on US Nonfarm Payrolls",
-      "url": "https://www.fxstreet.com/news/euro-flatlines-amid-mixed-german-data-with-all-eyes-on-us-nonfarm-payrolls-data-202608070630",
-      "source": "FXStreet",
-      "published_at": "2026-08-07T06:30:37+00:00"
-    },
-    {
-      "title": "WTI Price Forecast: Growing internal war risks in Middle East support recovery to near $78",
-      "url": "https://www.fxstreet.com/news/wti-price-forecast-growing-internal-war-risks-in-middle-east-support-recovery-to-near-78-202608070630",
-      "source": "FXStreet",
-      "published_at": "2026-08-07T06:30:07+00:00"
     }
   ]
 }
