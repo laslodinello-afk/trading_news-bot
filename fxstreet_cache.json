@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-07T10:47:16.323742+00:00",
+  "fetched_at": "2026-08-07T10:48:20.372117+00:00",
   "articles": [
+    {
+      "title": "1.1560: Why the Euro's recovery is facing its biggest technical hurdle",
+      "url": "https://www.fxstreet.com/news/11560-why-the-euros-recovery-is-facing-its-biggest-technical-hurdle-202608071047",
+      "source": "FXStreet",
+      "published_at": "2026-08-07T10:47:29+00:00"
+    },
     {
       "title": "Gold Price Forecast: XAU/USD rallies further with bulls eyeing $4,380 area",
       "url": "https://www.fxstreet.com/news/gold-price-forecast-xau-usd-rallies-further-with-bulls-eyeing-4-380-area-202608071023",
@@ -138,12 +144,6 @@
       "url": "https://www.fxstreet.com/news/copper-near-record-highs-on-tight-supply-ing-202608070748",
       "source": "FXStreet",
       "published_at": "2026-08-07T07:48:42+00:00"
-    },
-    {
-      "title": "Forex Today: Markets turn attention from Middle East to Nonfarm Payrolls",
-      "url": "https://www.fxstreet.com/news/forex-today-markets-turn-attention-from-middle-east-to-nonfarm-payrolls-202608070747",
-      "source": "FXStreet",
-      "published_at": "2026-08-07T07:47:41+00:00"
     }
   ]
 }
