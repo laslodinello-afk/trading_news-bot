@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-07T14:49:29.435607+00:00",
+  "fetched_at": "2026-08-07T14:50:34.456349+00:00",
   "articles": [
+    {
+      "title": "Brent: Volatile path as Hormuz risk lingers – Commerzbank",
+      "url": "https://www.fxstreet.com/news/brent-volatile-path-as-hormuz-risk-lingers-commerzbank-202608071450",
+      "source": "FXStreet",
+      "published_at": "2026-08-07T14:50:11+00:00"
+    },
     {
       "title": "US Dollar: Weak payrolls cloud Fed path – ING",
       "url": "https://www.fxstreet.com/news/us-dollar-weak-payrolls-cloud-fed-path-ing-202608071439",
@@ -102,18 +108,6 @@
       "url": "https://www.fxstreet.com/news/euro-fed-repricing-supports-moderate-gains-against-us-dollar-commerzbank-202608071205",
       "source": "FXStreet",
       "published_at": "2026-08-07T12:05:25+00:00"
-    },
-    {
-      "title": "US Dollar: Fed tightening risks keep outlook bullish – OCBC",
-      "url": "https://www.fxstreet.com/news/us-dollar-fed-tightening-risks-keep-outlook-bullish-ocbc-202608071150",
-      "source": "FXStreet",
-      "published_at": "2026-08-07T11:50:23+00:00"
-    },
-    {
-      "title": "WTI Oil pulls back below $76.00 amid ongoing talks to reopen Hormuz",
-      "url": "https://www.fxstreet.com/news/wti-oil-pulls-back-below-7600-with-markets-pondering-talks-to-reopen-hormuz-202608071150",
-      "source": "FXStreet",
-      "published_at": "2026-08-07T11:50:22+00:00"
     }
   ]
 }
