@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-06T23:21:09.685811+00:00",
+  "fetched_at": "2026-08-07T05:52:50.087977+00:00",
   "events": [
     {
       "title": "OPEC-JMMC Meetings",
@@ -636,7 +636,7 @@
     {
       "title": "Trade Balance",
       "country": "CNY",
-      "date": "2026-08-06T22:03:00-04:00",
+      "date": "2026-08-06T22:38:00-04:00",
       "impact": "Low",
       "forecast": "735B",
       "previous": "859B"
@@ -644,7 +644,7 @@
     {
       "title": "USD-Denominated Trade Balance",
       "country": "CNY",
-      "date": "2026-08-06T22:04:00-04:00",
+      "date": "2026-08-06T22:38:00-04:00",
       "impact": "Low",
       "forecast": "108.6B",
       "previous": "125.6B"
