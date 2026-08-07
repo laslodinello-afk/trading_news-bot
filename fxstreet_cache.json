@@ -1,6 +1,18 @@
 {
-  "fetched_at": "2026-08-07T09:59:18.739800+00:00",
+  "fetched_at": "2026-08-07T10:01:01.711133+00:00",
   "articles": [
+    {
+      "title": "US Nonfarm Payrolls set to rebound in July as markets reassess Fed rate path",
+      "url": "https://www.fxstreet.com/news/us-nonfarm-payrolls-expected-to-rise-by-80k-in-july-202608070830",
+      "source": "FXStreet",
+      "published_at": "2026-08-07T08:30:00+00:00"
+    },
+    {
+      "title": "Canadian Dollar: Labour resilience favours CAD against US Dollar – TD Securities",
+      "url": "https://www.fxstreet.com/news/canadian-dollar-labour-resilience-favours-cad-against-us-dollar-td-securities-202608070959",
+      "source": "FXStreet",
+      "published_at": "2026-08-07T09:59:24+00:00"
+    },
     {
       "title": "Polish Zloty: Near-term EUR/PLN forecast raised to 4.30 – Commerzbank",
       "url": "https://www.fxstreet.com/news/polish-zloty-near-term-eur-pln-forecast-raised-to-430-commerzbank-202608070950",
@@ -60,12 +72,6 @@
       "url": "https://www.fxstreet.com/news/oil-volatile-range-trading-outlook-rabobank-202608070837",
       "source": "FXStreet",
       "published_at": "2026-08-07T08:37:01+00:00"
-    },
-    {
-      "title": "US Nonfarm Payrolls expected to rise by 80K in July",
-      "url": "https://www.fxstreet.com/news/us-nonfarm-payrolls-expected-to-rise-by-80k-in-july-202608070830",
-      "source": "FXStreet",
-      "published_at": "2026-08-07T08:30:00+00:00"
     },
     {
       "title": "British Pound eases below 1.3450 as markets brace for the US Nonfarm Payrolls report",
@@ -162,12 +168,6 @@
       "url": "https://www.fxstreet.com/news/aud-usd-price-forecast-flat-lines-below-mid-07000s-100-sma-as-bulls-await-us-nfp-202608070706",
       "source": "FXStreet",
       "published_at": "2026-08-07T07:06:34+00:00"
-    },
-    {
-      "title": "EUR/JPY Price Forecast: Holds losses near 182.50 as bearish bias prevails",
-      "url": "https://www.fxstreet.com/news/eur-jpy-price-forecast-holds-losses-near-18250-as-bearish-bias-prevails-202608070705",
-      "source": "FXStreet",
-      "published_at": "2026-08-07T07:05:25+00:00"
     }
   ]
 }
