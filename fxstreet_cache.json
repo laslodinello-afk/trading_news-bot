@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-07T09:45:36.538284+00:00",
+  "fetched_at": "2026-08-07T09:46:24.881150+00:00",
   "articles": [
+    {
+      "title": "USD/CHF Price Forecast: Dollar eases towards 0.8100 ahead of the NFP release",
+      "url": "https://www.fxstreet.com/news/usd-chf-price-forecast-dollar-eases-towards-08100-ahead-of-the-nfp-release-202608070946",
+      "source": "FXStreet",
+      "published_at": "2026-08-07T09:46:10+00:00"
+    },
     {
       "title": "NFP or Iran: Which factor will break the US Dollar Index out of its consolidation?",
       "url": "https://www.fxstreet.com/news/nfp-or-iran-which-factor-will-break-the-us-dollar-index-out-of-its-consolidation-202608070932",
@@ -162,12 +168,6 @@
       "url": "https://www.fxstreet.com/news/gold-breakout-holds-as-us-payrolls-loom-ocbc-202608070655",
       "source": "FXStreet",
       "published_at": "2026-08-07T06:55:26+00:00"
-    },
-    {
-      "title": "Equities: Sector rotation dominates risk-off – Danske Bank",
-      "url": "https://www.fxstreet.com/news/equities-sector-rotation-dominates-risk-off-danske-bank-202608070646",
-      "source": "FXStreet",
-      "published_at": "2026-08-07T06:46:13+00:00"
     }
   ]
 }
