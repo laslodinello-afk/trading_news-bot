@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-07T15:38:22.703571+00:00",
+  "fetched_at": "2026-08-07T15:39:26.299980+00:00",
   "articles": [
+    {
+      "title": "Australian Dollar climbs near two-month highs as NFP turns negative",
+      "url": "https://www.fxstreet.com/news/australian-dollar-climbs-near-two-month-highs-as-nfp-turns-negative-202608071538",
+      "source": "FXStreet",
+      "published_at": "2026-08-07T15:38:31+00:00"
+    },
     {
       "title": "NY Fed inflation expectations ease modestly in the short term",
       "url": "https://www.fxstreet.com/news/ny-fed-inflation-expectations-ease-modestly-in-the-short-term-202608071534",
@@ -126,12 +132,6 @@
       "url": "https://www.fxstreet.com/news/equities-ai-profitability-doubts-grow-nordea-202608071254",
       "source": "FXStreet",
       "published_at": "2026-08-07T12:54:46+00:00"
-    },
-    {
-      "title": "Canada's Unemployment Rate drops to 6.4% in July",
-      "url": "https://www.fxstreet.com/news/canadas-unemployment-rate-drops-to-64-in-july-202608071238",
-      "source": "FXStreet",
-      "published_at": "2026-08-07T12:38:48+00:00"
     }
   ]
 }
