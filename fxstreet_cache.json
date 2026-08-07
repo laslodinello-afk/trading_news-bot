@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-07T20:32:32.868181+00:00",
+  "fetched_at": "2026-08-07T20:33:20.125767+00:00",
   "articles": [
     {
       "title": "Singapore: GDP revision and forecast upgrade – DBS",
@@ -8,7 +8,7 @@
       "published_at": "2026-08-07T20:27:00+00:00"
     },
     {
-      "title": "Hormuz deal hopes rise, as talks progress  – RTRS, ABC News",
+      "title": "Hormuz deal hopes rise as talks progress  – Reuters",
       "url": "https://www.fxstreet.com/news/hormuz-deal-hopes-rise-as-talks-progress-rtrs-abc-news-202608072019",
       "source": "FXStreet",
       "published_at": "2026-08-07T20:19:13+00:00"
@@ -90,12 +90,6 @@
       "url": "https://www.fxstreet.com/news/gold-rallies-as-mediocre-us-nfp-crushes-fed-rate-hike-bets-202608071737",
       "source": "FXStreet",
       "published_at": "2026-08-07T17:37:26+00:00"
-    },
-    {
-      "title": "Indonesia: Modest growth outlook – Standard Chartered",
-      "url": "https://www.fxstreet.com/news/indonesia-modest-growth-outlook-standard-chartered-202608071733",
-      "source": "FXStreet",
-      "published_at": "2026-08-07T17:33:09+00:00"
     }
   ]
 }
