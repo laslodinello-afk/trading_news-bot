@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-07T09:49:28.854031+00:00",
+  "fetched_at": "2026-08-07T09:50:34.645295+00:00",
   "articles": [
+    {
+      "title": "Polish Zloty: Near-term EUR/PLN forecast raised to 4.30 – Commerzbank",
+      "url": "https://www.fxstreet.com/news/polish-zloty-near-term-eur-pln-forecast-raised-to-430-commerzbank-202608070950",
+      "source": "FXStreet",
+      "published_at": "2026-08-07T09:50:31+00:00"
+    },
     {
       "title": "USD/CHF Price Forecast: Dollar eases towards 0.8100 ahead of the NFP release",
       "url": "https://www.fxstreet.com/news/usd-chf-price-forecast-dollar-eases-towards-08100-ahead-of-the-nfp-release-202608070946",
@@ -162,12 +168,6 @@
       "url": "https://www.fxstreet.com/news/eur-jpy-price-forecast-holds-losses-near-18250-as-bearish-bias-prevails-202608070705",
       "source": "FXStreet",
       "published_at": "2026-08-07T07:05:25+00:00"
-    },
-    {
-      "title": "Gold: Breakout holds as US payrolls loom – OCBC",
-      "url": "https://www.fxstreet.com/news/gold-breakout-holds-as-us-payrolls-loom-ocbc-202608070655",
-      "source": "FXStreet",
-      "published_at": "2026-08-07T06:55:26+00:00"
     }
   ]
 }
