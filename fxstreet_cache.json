@@ -1,4 +1,131 @@
 {
-  "fetched_at": "2026-08-10T12:51:33.350815+00:00",
-  "articles": []
+  "fetched_at": "2026-08-10T12:52:28.816003+00:00",
+  "articles": [
+    {
+      "title": "Euro: Modest upside bias against US Dollar as Fed repricing – Rabobank",
+      "url": "https://www.fxstreet.com/news/euro-modest-upside-bias-against-us-dollar-as-fed-repricing-rabobank-202608101249",
+      "source": "FXStreet",
+      "published_at": "2026-08-10T12:49:43+00:00"
+    },
+    {
+      "title": "Australian Dollar: RBA policy pause maintained – TD Securities",
+      "url": "https://www.fxstreet.com/news/australian-dollar-rba-policy-pause-maintained-td-securities-202608101238",
+      "source": "FXStreet",
+      "published_at": "2026-08-10T12:38:54+00:00"
+    },
+    {
+      "title": "Japanese Yen: BoJ tightening risks support JPY – BNY",
+      "url": "https://www.fxstreet.com/news/japanese-yen-boj-tightening-risks-support-jpy-bny-202608101230",
+      "source": "FXStreet",
+      "published_at": "2026-08-10T12:30:34+00:00"
+    },
+    {
+      "title": "Oil: Strait risk and cautious positioning – ING",
+      "url": "https://www.fxstreet.com/news/oil-strait-risk-and-cautious-positioning-ing-202608101220",
+      "source": "FXStreet",
+      "published_at": "2026-08-10T12:20:19+00:00"
+    },
+    {
+      "title": "Silver tests $65: Why are buyers struggling to extend the rally?",
+      "url": "https://www.fxstreet.com/news/silver-tests-65-why-are-buyers-struggling-to-extend-the-rally-202608101217",
+      "source": "FXStreet",
+      "published_at": "2026-08-10T12:17:09+00:00"
+    },
+    {
+      "title": "Norwegian Krone: Rate hike odds slashed after soft inflation – BBH",
+      "url": "https://www.fxstreet.com/news/norwegian-krone-rate-hike-odds-slashed-after-soft-inflation-bbh-202608101208",
+      "source": "FXStreet",
+      "published_at": "2026-08-10T12:08:01+00:00"
+    },
+    {
+      "title": "Canadian Dollar steadies, caught between risk aversion, rebounding Oil prices",
+      "url": "https://www.fxstreet.com/news/canadian-dollar-steadies-caught-between-risk-aversion-rebounding-oil-prices-202608101203",
+      "source": "FXStreet",
+      "published_at": "2026-08-10T12:03:23+00:00"
+    },
+    {
+      "title": "US Dollar: Fed pricing shifts with softer data – Deutsche Bank",
+      "url": "https://www.fxstreet.com/news/us-dollar-fed-pricing-shifts-with-softer-data-deutsche-bank-202608101158",
+      "source": "FXStreet",
+      "published_at": "2026-08-10T11:58:26+00:00"
+    },
+    {
+      "title": "Australian Dollar approaches two-month highs at 0.7088 with RBA decision on tap",
+      "url": "https://www.fxstreet.com/news/australian-dollar-approaches-two-month-highs-at-07088-with-rba-decision-on-tap-202608101155",
+      "source": "FXStreet",
+      "published_at": "2026-08-10T11:55:00+00:00"
+    },
+    {
+      "title": "EUR/USD Price Forecast: On verge of downward-trendline breakout",
+      "url": "https://www.fxstreet.com/news/eur-usd-price-forecast-on-verge-of-downward-trendline-breakout-202608101146",
+      "source": "FXStreet",
+      "published_at": "2026-08-10T11:46:33+00:00"
+    },
+    {
+      "title": "Federal Reserve: September hike odds reassessed – Rabobank",
+      "url": "https://www.fxstreet.com/news/federal-reserve-september-hike-odds-reassessed-rabobank-202608101145",
+      "source": "FXStreet",
+      "published_at": "2026-08-10T11:45:51+00:00"
+    },
+    {
+      "title": "Copper: Tariff-driven arbitrage reshapes COMEX-LME spread – Societe Generale",
+      "url": "https://www.fxstreet.com/news/copper-tariff-driven-arbitrage-reshapes-comex-lme-spread-societe-generale-202608101137",
+      "source": "FXStreet",
+      "published_at": "2026-08-10T11:37:23+00:00"
+    },
+    {
+      "title": "Gold holds firm as Fed rate outlook, Middle East developments remain in focus",
+      "url": "https://www.fxstreet.com/news/gold-holds-firm-as-fed-rate-outlook-middle-east-developments-remain-in-focus-202608101127",
+      "source": "FXStreet",
+      "published_at": "2026-08-10T11:27:31+00:00"
+    },
+    {
+      "title": "Japanese Yen underperforms on surprising current account deficit",
+      "url": "https://www.fxstreet.com/news/japanese-yen-underperforms-on-surprising-current-account-deficit-202608101125",
+      "source": "FXStreet",
+      "published_at": "2026-08-10T11:25:55+00:00"
+    },
+    {
+      "title": "Gold: Central bank demand underpins rally – ING",
+      "url": "https://www.fxstreet.com/news/gold-central-bank-demand-underpins-rally-ing-202608101123",
+      "source": "FXStreet",
+      "published_at": "2026-08-10T11:23:15+00:00"
+    },
+    {
+      "title": "Gold Price Forecast: XAU/USD remains bullish, pushing against $4,380 resistance",
+      "url": "https://www.fxstreet.com/news/gold-price-forecast-xau-usd-remains-bullish-pushing-against-4-380-resistance-202608101112",
+      "source": "FXStreet",
+      "published_at": "2026-08-10T11:12:20+00:00"
+    },
+    {
+      "title": "US Dollar: Softer labor data supports downside – BNY",
+      "url": "https://www.fxstreet.com/news/us-dollar-softer-labor-data-supports-downside-bny-202608101107",
+      "source": "FXStreet",
+      "published_at": "2026-08-10T11:07:40+00:00"
+    },
+    {
+      "title": "Experts agree: The US Dollar rally migh have come to an end",
+      "url": "https://www.fxstreet.com/news/experts-agree-the-us-dollar-rally-migh-have-come-to-an-end-202608101102",
+      "source": "FXStreet",
+      "published_at": "2026-08-10T11:02:43+00:00"
+    },
+    {
+      "title": "British Pound tests 1.3500 as US Dollar struggles to shake off NFP shock",
+      "url": "https://www.fxstreet.com/news/british-pound-tests-13500-as-us-dollar-struggles-to-shake-off-nfp-shock-202608101027",
+      "source": "FXStreet",
+      "published_at": "2026-08-10T10:27:18+00:00"
+    },
+    {
+      "title": "Norwegian Krone: Policy hold guidance in focus – Nomura",
+      "url": "https://www.fxstreet.com/news/norwegian-krone-policy-hold-guidance-in-focus-nomura-202608101006",
+      "source": "FXStreet",
+      "published_at": "2026-08-10T10:06:57+00:00"
+    },
+    {
+      "title": "CEE FX: Data-heavy week under global pressure – ING",
+      "url": "https://www.fxstreet.com/news/cee-fx-data-heavy-week-under-global-pressure-ing-202608100954",
+      "source": "FXStreet",
+      "published_at": "2026-08-10T09:54:06+00:00"
+    }
+  ]
 }
