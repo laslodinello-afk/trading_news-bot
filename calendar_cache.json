@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-10T10:40:02.330771+00:00",
+  "fetched_at": "2026-08-10T15:31:46.247890+00:00",
   "events": [
     {
       "title": "Bank Lending y/y",
@@ -44,7 +44,7 @@
     {
       "title": "Cleveland Fed Inflation Expectations",
       "country": "USD",
-      "date": "2026-08-10T09:48:00-04:00",
+      "date": "2026-08-10T09:45:00-04:00",
       "impact": "Low",
       "forecast": "",
       "previous": "3.7%"
