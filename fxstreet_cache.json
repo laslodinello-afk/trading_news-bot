@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-10T16:47:22.909789+00:00",
+  "fetched_at": "2026-08-10T16:48:24.411108+00:00",
   "articles": [
+    {
+      "title": "Japanese Yen weakens as surprise current account deficit weighs",
+      "url": "https://www.fxstreet.com/news/japanese-yen-weakens-as-surprise-current-account-deficit-weighs-202608101647",
+      "source": "FXStreet",
+      "published_at": "2026-08-10T16:47:33+00:00"
+    },
     {
       "title": "The Canadian Dollar takes back two months in ten sessions",
       "url": "https://www.fxstreet.com/news/the-canadian-dollar-takes-back-two-months-in-ten-sessions-202608101644",
@@ -90,12 +96,6 @@
       "url": "https://www.fxstreet.com/news/british-pound-rises-against-japanese-yen-as-intervention-impact-fades-202608101349",
       "source": "FXStreet",
       "published_at": "2026-08-10T13:49:54+00:00"
-    },
-    {
-      "title": "Hungarian Forint: Recovery against Euro may resume – Commerzbank",
-      "url": "https://www.fxstreet.com/news/hungarian-forint-recovery-against-euro-may-resume-commerzbank-202608101347",
-      "source": "FXStreet",
-      "published_at": "2026-08-10T13:47:34+00:00"
     }
   ]
 }
