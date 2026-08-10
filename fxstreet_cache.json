@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-10T04:35:27.934449+00:00",
+  "fetched_at": "2026-08-10T04:36:21.981088+00:00",
   "articles": [
+    {
+      "title": "Gold remains on the back foot below June 17 high amid USD uptick; downside seems cushioned",
+      "url": "https://www.fxstreet.com/news/gold-retreats-from-june-17-highest-amid-usd-uptick-holds-above-4-300-pivotal-support-202608100229",
+      "source": "FXStreet",
+      "published_at": "2026-08-10T02:29:47+00:00"
+    },
     {
       "title": "Swiss Franc declines as safe-haven demand supports US Dollar",
       "url": "https://www.fxstreet.com/news/swiss-franc-declines-as-safe-haven-demand-supports-us-dollar-202608100424",
@@ -38,12 +44,6 @@
       "published_at": "2026-08-10T03:14:31+00:00"
     },
     {
-      "title": "Gold retreats from June 17 highest amid USD uptick; holds above $4,300 pivotal support",
-      "url": "https://www.fxstreet.com/news/gold-retreats-from-june-17-highest-amid-usd-uptick-holds-above-4-300-pivotal-support-202608100229",
-      "source": "FXStreet",
-      "published_at": "2026-08-10T02:29:47+00:00"
-    },
-    {
       "title": "Japanese Yen comes under pressure as BoJ division, unexpected current account deficit",
       "url": "https://www.fxstreet.com/news/japanese-yen-comes-under-pressure-as-boj-division-narrowing-surplus-202608100202",
       "source": "FXStreet",
@@ -54,12 +54,6 @@
       "url": "https://www.fxstreet.com/news/british-pound-moves-away-from-multi-week-top-as-hormuz-risks-support-usd-202608100159",
       "source": "FXStreet",
       "published_at": "2026-08-10T01:59:27+00:00"
-    },
-    {
-      "title": "Euro consolidates below its highest level since June 17 as Mideast tensions support USD",
-      "url": "https://www.fxstreet.com/news/euro-consolidates-below-its-highest-level-since-june-17-as-mideast-tensions-support-usd-202608100135",
-      "source": "FXStreet",
-      "published_at": "2026-08-10T01:35:29+00:00"
     }
   ]
 }
