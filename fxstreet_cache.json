@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-10T09:35:27.007269+00:00",
+  "fetched_at": "2026-08-10T09:36:26.919485+00:00",
   "articles": [
+    {
+      "title": "Australian Dollar: Hawkish RBA hold supports carry – BBH",
+      "url": "https://www.fxstreet.com/news/australian-dollar-hawkish-rba-hold-supports-carry-bbh-202608100935",
+      "source": "FXStreet",
+      "published_at": "2026-08-10T09:35:51+00:00"
+    },
     {
       "title": "Silver price today: Silver rises, according to FXStreet data",
       "url": "https://www.fxstreet.com/news/silver-price-today-silver-rises-according-to-fxstreet-data-202608100931",
@@ -162,12 +168,6 @@
       "url": "https://www.fxstreet.com/news/forex-today-post-nfp-us-dollar-selloff-pauses-202608100651",
       "source": "FXStreet",
       "published_at": "2026-08-10T06:51:15+00:00"
-    },
-    {
-      "title": "Australian Dollar: Hawkish risk before RBA – Commerzbank",
-      "url": "https://www.fxstreet.com/news/australian-dollar-hawkish-risk-before-rba-commerzbank-202608100640",
-      "source": "FXStreet",
-      "published_at": "2026-08-10T06:40:32+00:00"
     }
   ]
 }
