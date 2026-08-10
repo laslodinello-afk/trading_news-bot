@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-10T09:22:24.819608+00:00",
+  "fetched_at": "2026-08-10T09:23:18.550247+00:00",
   "articles": [
+    {
+      "title": "Canadian Dollar: Recovery against US Dollar faces tariff risks – Commerzbank",
+      "url": "https://www.fxstreet.com/news/canadian-dollar-recovery-against-us-dollar-faces-tariff-risks-commerzbank-202608100922",
+      "source": "FXStreet",
+      "published_at": "2026-08-10T09:22:37+00:00"
+    },
     {
       "title": "Brent: Iran talks keep risk premium in focus – Deutsche Bank",
       "url": "https://www.fxstreet.com/news/brent-iran-talks-keep-risk-premium-in-focus-deutsche-bank-202608100913",
@@ -162,12 +168,6 @@
       "url": "https://www.fxstreet.com/news/british-pound-outperforms-at-the-start-of-the-uk-q2-gdp-data-week-202608100633",
       "source": "FXStreet",
       "published_at": "2026-08-10T06:33:13+00:00"
-    },
-    {
-      "title": "USD/JPY Price Forecast: Bounces up from lows with bulls aiming for 158.65",
-      "url": "https://www.fxstreet.com/news/usd-jpy-price-forecast-bounces-up-from-lows-with-bulls-aiming-for-15865-202608100630",
-      "source": "FXStreet",
-      "published_at": "2026-08-10T06:30:02+00:00"
     }
   ]
 }
