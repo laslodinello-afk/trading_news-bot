@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-10T09:44:20.282521+00:00",
+  "fetched_at": "2026-08-10T09:45:36.277975+00:00",
   "articles": [
+    {
+      "title": "Euro: Fed repricing supports gains against US Dollar – Societe Generale",
+      "url": "https://www.fxstreet.com/news/euro-fed-repricing-supports-gains-against-us-dollar-societe-generale-202608100944",
+      "source": "FXStreet",
+      "published_at": "2026-08-10T09:44:23+00:00"
+    },
     {
       "title": "Australian Dollar: Hawkish RBA hold supports carry – BBH",
       "url": "https://www.fxstreet.com/news/australian-dollar-hawkish-rba-hold-supports-carry-bbh-202608100935",
@@ -162,12 +168,6 @@
       "url": "https://www.fxstreet.com/news/japanese-yen-intervention-credibility-questioned-bny-202608100703",
       "source": "FXStreet",
       "published_at": "2026-08-10T07:03:00+00:00"
-    },
-    {
-      "title": "Forex Today: Post-NFP US Dollar selloff pauses",
-      "url": "https://www.fxstreet.com/news/forex-today-post-nfp-us-dollar-selloff-pauses-202608100651",
-      "source": "FXStreet",
-      "published_at": "2026-08-10T06:51:15+00:00"
     }
   ]
 }
