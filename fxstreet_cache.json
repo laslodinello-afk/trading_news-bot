@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-10T11:07:20.296889+00:00",
+  "fetched_at": "2026-08-10T11:08:28.178146+00:00",
   "articles": [
+    {
+      "title": "US Dollar: Softer labor data supports downside – BNY",
+      "url": "https://www.fxstreet.com/news/us-dollar-softer-labor-data-supports-downside-bny-202608101107",
+      "source": "FXStreet",
+      "published_at": "2026-08-10T11:07:40+00:00"
+    },
     {
       "title": "Experts agree: The US Dollar rally migh have come to an end",
       "url": "https://www.fxstreet.com/news/experts-agree-the-us-dollar-rally-migh-have-come-to-an-end-202608101102",
@@ -126,12 +132,6 @@
       "url": "https://www.fxstreet.com/news/silver-price-forecasts-xag-usd-confirms-a-bullish-hs-targeting-6717-202608100811",
       "source": "FXStreet",
       "published_at": "2026-08-10T08:11:13+00:00"
-    },
-    {
-      "title": "British Pound rallies to over one-week high as fiscal woes and rate gap hammer Yen",
-      "url": "https://www.fxstreet.com/news/british-pound-rallies-to-over-one-week-high-as-fiscal-woes-and-rate-gap-hammer-yen-202608100808",
-      "source": "FXStreet",
-      "published_at": "2026-08-10T08:08:27+00:00"
     }
   ]
 }
