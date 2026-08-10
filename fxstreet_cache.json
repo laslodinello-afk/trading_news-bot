@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-10T22:24:21.309159+00:00",
+  "fetched_at": "2026-08-10T22:25:31.047619+00:00",
   "articles": [
+    {
+      "title": "Fed Hammack calls for rate hikes, says policy not restrictive enough",
+      "url": "https://www.fxstreet.com/news/fed-hammack-calls-for-rate-hikes-says-policy-not-restrictive-enough-202608102225",
+      "source": "FXStreet",
+      "published_at": "2026-08-10T22:25:14+00:00"
+    },
     {
       "title": "US Treasury yields climb as Oil spike revives CPI jitters",
       "url": "https://www.fxstreet.com/news/us-treasury-yields-climb-as-oil-spike-revives-cpi-jitters-202608102215",
@@ -30,12 +36,6 @@
       "url": "https://www.fxstreet.com/news/forex-today-us-dollar-firms-as-oil-surges-on-hormuz-202608101955",
       "source": "FXStreet",
       "published_at": "2026-08-10T19:55:33+00:00"
-    },
-    {
-      "title": "China: Cost-driven reflation and narrow profit gains – Standard Chartered",
-      "url": "https://www.fxstreet.com/news/china-cost-driven-reflation-and-narrow-profit-gains-standard-chartered-202608101924",
-      "source": "FXStreet",
-      "published_at": "2026-08-10T19:24:46+00:00"
     }
   ]
 }
