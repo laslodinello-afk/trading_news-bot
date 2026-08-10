@@ -1,6 +1,18 @@
 {
-  "fetched_at": "2026-08-10T06:51:20.571043+00:00",
+  "fetched_at": "2026-08-10T06:52:21.878329+00:00",
   "articles": [
+    {
+      "title": "Indian Rupee drops tracking higher oil prices, downside seems limited",
+      "url": "https://www.fxstreet.com/news/indian-rupee-drops-as-oil-prices-extend-recovery-downside-seems-limited-202608100524",
+      "source": "FXStreet",
+      "published_at": "2026-08-10T05:24:33+00:00"
+    },
+    {
+      "title": "Forex Today: Post-NFP US Dollar selloff pauses",
+      "url": "https://www.fxstreet.com/news/forex-today-post-nfp-us-dollar-selloff-pauses-202608100651",
+      "source": "FXStreet",
+      "published_at": "2026-08-10T06:51:15+00:00"
+    },
     {
       "title": "Australian Dollar: Hawkish risk before RBA – Commerzbank",
       "url": "https://www.fxstreet.com/news/australian-dollar-hawkish-risk-before-rba-commerzbank-202608100640",
@@ -30,12 +42,6 @@
       "url": "https://www.fxstreet.com/news/eur-usd-price-forecast-eyes-further-upside-towards-11620-202608100543",
       "source": "FXStreet",
       "published_at": "2026-08-10T05:43:24+00:00"
-    },
-    {
-      "title": "Indian Rupee drops as oil prices extend recovery, downside seems limited",
-      "url": "https://www.fxstreet.com/news/indian-rupee-drops-as-oil-prices-extend-recovery-downside-seems-limited-202608100524",
-      "source": "FXStreet",
-      "published_at": "2026-08-10T05:24:33+00:00"
     },
     {
       "title": "WTI Price Forecast: Bulls await sustained move above $78.00 amid supply concerns",
