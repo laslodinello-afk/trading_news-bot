@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-10T11:37:20.441030+00:00",
+  "fetched_at": "2026-08-10T11:38:20.098315+00:00",
   "articles": [
+    {
+      "title": "Copper: Tariff-driven arbitrage reshapes COMEX-LME spread – Societe Generale",
+      "url": "https://www.fxstreet.com/news/copper-tariff-driven-arbitrage-reshapes-comex-lme-spread-societe-generale-202608101137",
+      "source": "FXStreet",
+      "published_at": "2026-08-10T11:37:23+00:00"
+    },
     {
       "title": "Gold holds firm as Fed rate outlook, Middle East developments remain in focus",
       "url": "https://www.fxstreet.com/news/gold-holds-firm-as-fed-rate-outlook-middle-east-developments-remain-in-focus-202608101127",
@@ -126,12 +132,6 @@
       "url": "https://www.fxstreet.com/news/wti-comes-off-from-days-high-as-investors-seeks-clarity-on-hormuz-reopening-202608100849",
       "source": "FXStreet",
       "published_at": "2026-08-10T08:49:22+00:00"
-    },
-    {
-      "title": "US Dollar: Softer labour data shifts Fed outlook – Societe Generale",
-      "url": "https://www.fxstreet.com/news/us-dollar-softer-labour-data-shifts-fed-outlook-societe-generale-202608100837",
-      "source": "FXStreet",
-      "published_at": "2026-08-10T08:37:32+00:00"
     }
   ]
 }
