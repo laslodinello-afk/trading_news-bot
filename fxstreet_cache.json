@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-10T07:36:24.738218+00:00",
+  "fetched_at": "2026-08-10T07:37:27.115006+00:00",
   "articles": [
+    {
+      "title": "Brent: Cautious trade with geopolitical risks – Rabobank",
+      "url": "https://www.fxstreet.com/news/brent-cautious-trade-with-geopolitical-risks-rabobank-202608100736",
+      "source": "FXStreet",
+      "published_at": "2026-08-10T07:36:26+00:00"
+    },
     {
       "title": "EUR/JPY Price Forecast: Positions above nine-day EMA near 183.00",
       "url": "https://www.fxstreet.com/news/eur-jpy-price-forecast-positions-above-nine-day-ema-near-18300-202608100732",
@@ -96,12 +102,6 @@
       "url": "https://www.fxstreet.com/news/indonesian-rupiah-struggles-as-consumer-confidence-drops-to-weakest-level-since-september-2025-202608100503",
       "source": "FXStreet",
       "published_at": "2026-08-10T05:03:04+00:00"
-    },
-    {
-      "title": "India Gold price today: Gold falls, according to FXStreet data",
-      "url": "https://www.fxstreet.com/news/india-gold-price-today-gold-falls-according-to-fxstreet-data-202608100436",
-      "source": "FXStreet",
-      "published_at": "2026-08-10T04:36:49+00:00"
     }
   ]
 }
