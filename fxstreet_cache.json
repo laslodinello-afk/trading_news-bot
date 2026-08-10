@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-10T10:06:31.046112+00:00",
+  "fetched_at": "2026-08-10T10:07:21.728496+00:00",
   "articles": [
+    {
+      "title": "Norwegian Krone: Policy hold guidance in focus – Nomura",
+      "url": "https://www.fxstreet.com/news/norwegian-krone-policy-hold-guidance-in-focus-nomura-202608101006",
+      "source": "FXStreet",
+      "published_at": "2026-08-10T10:06:57+00:00"
+    },
     {
       "title": "CEE FX: Data-heavy week under global pressure – ING",
       "url": "https://www.fxstreet.com/news/cee-fx-data-heavy-week-under-global-pressure-ing-202608100954",
@@ -162,12 +168,6 @@
       "url": "https://www.fxstreet.com/news/euro-dips-further-against-the-british-pound-hit-by-higher-oil-prices-202608100712",
       "source": "FXStreet",
       "published_at": "2026-08-10T07:12:11+00:00"
-    },
-    {
-      "title": "Canadian Dollar weakens as US Dollar strengthens on rising risk aversion",
-      "url": "https://www.fxstreet.com/news/canadian-dollar-weakens-as-us-dollar-strengthens-on-rising-risk-aversion-202608100709",
-      "source": "FXStreet",
-      "published_at": "2026-08-10T07:09:26+00:00"
     }
   ]
 }
