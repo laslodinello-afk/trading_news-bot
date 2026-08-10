@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-10T09:13:18.160281+00:00",
+  "fetched_at": "2026-08-10T09:14:34.287594+00:00",
   "articles": [
+    {
+      "title": "Brent: Iran talks keep risk premium in focus – Deutsche Bank",
+      "url": "https://www.fxstreet.com/news/brent-iran-talks-keep-risk-premium-in-focus-deutsche-bank-202608100913",
+      "source": "FXStreet",
+      "published_at": "2026-08-10T09:13:36+00:00"
+    },
     {
       "title": "New Zealand Dollar stalls below 0.5900 as US Dollar regains safe-haven appeal",
       "url": "https://www.fxstreet.com/news/new-zealand-dollar-stalls-below-05900-as-us-dollar-regains-safe-haven-appeal-202608100906",
@@ -162,12 +168,6 @@
       "url": "https://www.fxstreet.com/news/usd-jpy-price-forecast-bounces-up-from-lows-with-bulls-aiming-for-15865-202608100630",
       "source": "FXStreet",
       "published_at": "2026-08-10T06:30:02+00:00"
-    },
-    {
-      "title": "Euro: Weak US jobs lift EUR against US Dollar on Fed repricing – Danske Bank",
-      "url": "https://www.fxstreet.com/news/euro-weak-us-jobs-lift-eur-against-us-dollar-on-fed-repricing-danske-bank-202608100626",
-      "source": "FXStreet",
-      "published_at": "2026-08-10T06:26:44+00:00"
     }
   ]
 }
