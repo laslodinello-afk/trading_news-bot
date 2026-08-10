@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-10T09:53:24.268667+00:00",
+  "fetched_at": "2026-08-10T09:54:28.525340+00:00",
   "articles": [
+    {
+      "title": "CEE FX: Data-heavy week under global pressure – ING",
+      "url": "https://www.fxstreet.com/news/cee-fx-data-heavy-week-under-global-pressure-ing-202608100954",
+      "source": "FXStreet",
+      "published_at": "2026-08-10T09:54:06+00:00"
+    },
     {
       "title": "Euro: Fed repricing supports gains against US Dollar – Societe Generale",
       "url": "https://www.fxstreet.com/news/euro-fed-repricing-supports-gains-against-us-dollar-societe-generale-202608100944",
@@ -162,12 +168,6 @@
       "url": "https://www.fxstreet.com/news/canadian-dollar-weakens-as-us-dollar-strengthens-on-rising-risk-aversion-202608100709",
       "source": "FXStreet",
       "published_at": "2026-08-10T07:09:26+00:00"
-    },
-    {
-      "title": "Japanese Yen: Intervention credibility questioned – BNY",
-      "url": "https://www.fxstreet.com/news/japanese-yen-intervention-credibility-questioned-bny-202608100703",
-      "source": "FXStreet",
-      "published_at": "2026-08-10T07:03:00+00:00"
     }
   ]
 }
