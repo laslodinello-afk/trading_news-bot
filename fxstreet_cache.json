@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-10T19:25:28.912879+00:00",
+  "fetched_at": "2026-08-10T19:26:23.015785+00:00",
   "articles": [
+    {
+      "title": "China: Cost-driven reflation and narrow profit gains – Standard Chartered",
+      "url": "https://www.fxstreet.com/news/china-cost-driven-reflation-and-narrow-profit-gains-standard-chartered-202608101924",
+      "source": "FXStreet",
+      "published_at": "2026-08-10T19:24:46+00:00"
+    },
     {
       "title": "United States: Weak payrolls and softer retail sales – TD Securities",
       "url": "https://www.fxstreet.com/news/united-states-weak-payrolls-and-softer-retail-sales-td-securities-202608101847",
@@ -54,12 +60,6 @@
       "url": "https://www.fxstreet.com/news/the-canadian-dollar-takes-back-two-months-in-ten-sessions-202608101644",
       "source": "FXStreet",
       "published_at": "2026-08-10T16:44:45+00:00"
-    },
-    {
-      "title": "The Dow Jones Industrial Average kept what payrolls lost",
-      "url": "https://www.fxstreet.com/news/the-dow-jones-industrial-average-kept-what-payrolls-lost-202608101625",
-      "source": "FXStreet",
-      "published_at": "2026-08-10T16:25:51+00:00"
     }
   ]
 }
