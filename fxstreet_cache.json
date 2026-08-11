@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-11T09:37:22.308888+00:00",
+  "fetched_at": "2026-08-11T09:38:23.648907+00:00",
   "articles": [
+    {
+      "title": "Federal Reserve: Dovish repricing on data and inflation focus – BNY",
+      "url": "https://www.fxstreet.com/news/federal-reserve-dovish-repricing-on-data-and-inflation-focus-bny-202608110936",
+      "source": "FXStreet",
+      "published_at": "2026-08-11T09:36:54+00:00"
+    },
     {
       "title": "Silver price today: Silver falls, according to FXStreet data",
       "url": "https://www.fxstreet.com/news/silver-price-today-silver-falls-according-to-fxstreet-data-202608110931",
@@ -144,12 +150,6 @@
       "url": "https://www.fxstreet.com/news/australian-dollar-rba-holds-rates-but-downside-bias-persists-commerzbank-202608110656",
       "source": "FXStreet",
       "published_at": "2026-08-11T06:56:18+00:00"
-    },
-    {
-      "title": "Euro: Gains capped below key resistance against US Dollar – UOB",
-      "url": "https://www.fxstreet.com/news/euro-gains-capped-below-key-resistance-against-us-dollar-uob-202608110638",
-      "source": "FXStreet",
-      "published_at": "2026-08-11T06:38:10+00:00"
     }
   ]
 }
