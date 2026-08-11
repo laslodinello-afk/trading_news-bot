@@ -1,4 +1,125 @@
 {
-  "fetched_at": "2026-08-11T10:46:48.685400+00:00",
-  "articles": []
+  "fetched_at": "2026-08-11T10:47:24.027183+00:00",
+  "articles": [
+    {
+      "title": "NZD/USD Price Forecast: Focus shifts to 0.5850 support area as risk appetite fades",
+      "url": "https://www.fxstreet.com/news/nzd-usd-price-forecast-focus-shifts-to-05850-support-area-as-risk-appetite-fades-202608111022",
+      "source": "FXStreet",
+      "published_at": "2026-08-11T10:22:54+00:00"
+    },
+    {
+      "title": "Australian Dollar: RBA keeps door open – Rabobank",
+      "url": "https://www.fxstreet.com/news/australian-dollar-rba-keeps-door-open-rabobank-202608110957",
+      "source": "FXStreet",
+      "published_at": "2026-08-11T09:57:39+00:00"
+    },
+    {
+      "title": "Australian Dollar edges up, RBA hawkish hold does little to revive rate hike expectations",
+      "url": "https://www.fxstreet.com/news/australian-dollar-edges-up-rba-hawkish-hold-does-little-to-revive-rate-hike-expectations-202608110951",
+      "source": "FXStreet",
+      "published_at": "2026-08-11T09:51:13+00:00"
+    },
+    {
+      "title": "Canadian Dollar remains near two-month highs against US Dollar as Oil prices rise",
+      "url": "https://www.fxstreet.com/news/canadian-dollar-remains-near-two-month-highs-against-us-dollar-as-oil-prices-rise-202608110947",
+      "source": "FXStreet",
+      "published_at": "2026-08-11T09:47:21+00:00"
+    },
+    {
+      "title": "WTI Oil hits fresh highs at $83.50 as Hormuz reopening hopes vanish",
+      "url": "https://www.fxstreet.com/news/wti-oil-hits-fresh-highs-at-8350-as-hormuz-reopening-hopes-vanish-202608110944",
+      "source": "FXStreet",
+      "published_at": "2026-08-11T09:44:55+00:00"
+    },
+    {
+      "title": "Federal Reserve: Dovish repricing on data and inflation focus – BNY",
+      "url": "https://www.fxstreet.com/news/federal-reserve-dovish-repricing-on-data-and-inflation-focus-bny-202608110936",
+      "source": "FXStreet",
+      "published_at": "2026-08-11T09:36:54+00:00"
+    },
+    {
+      "title": "Silver price today: Silver falls, according to FXStreet data",
+      "url": "https://www.fxstreet.com/news/silver-price-today-silver-falls-according-to-fxstreet-data-202608110931",
+      "source": "FXStreet",
+      "published_at": "2026-08-11T09:31:05+00:00"
+    },
+    {
+      "title": "Brent: Inflation risks rise with Hormuz standoff – Deutsche Bank",
+      "url": "https://www.fxstreet.com/news/brent-inflation-risks-rise-with-hormuz-standoff-deutsche-bank-202608110923",
+      "source": "FXStreet",
+      "published_at": "2026-08-11T09:23:21+00:00"
+    },
+    {
+      "title": "US Dollar: Volatility sinks as carry trades hold – ING",
+      "url": "https://www.fxstreet.com/news/us-dollar-volatility-sinks-as-carry-trades-hold-ing-202608110905",
+      "source": "FXStreet",
+      "published_at": "2026-08-11T09:05:42+00:00"
+    },
+    {
+      "title": "British Pound sits near one-week top, above 215.00 vs weak Yen ahead of UK GDP",
+      "url": "https://www.fxstreet.com/news/british-pound-sits-near-one-week-top-above-21500-vs-weak-yen-ahead-of-uk-gdp-202608110857",
+      "source": "FXStreet",
+      "published_at": "2026-08-11T08:57:45+00:00"
+    },
+    {
+      "title": "Euro falls against Canadian Dollar as US-Iran tensions heighten oil supply concerns",
+      "url": "https://www.fxstreet.com/news/euro-falls-against-canadian-dollar-as-us-iran-tensions-heighten-oil-supply-concerns-202608110854",
+      "source": "FXStreet",
+      "published_at": "2026-08-11T08:54:18+00:00"
+    },
+    {
+      "title": "Japanese Yen: Yield outlook fails to lift Yen – Societe Generale",
+      "url": "https://www.fxstreet.com/news/japanese-yen-yield-outlook-fails-to-lift-yen-societe-generale-202608110844",
+      "source": "FXStreet",
+      "published_at": "2026-08-11T08:44:19+00:00"
+    },
+    {
+      "title": "EUR/GBP Price Forecast: Under growing bearish pressure below 0.8550",
+      "url": "https://www.fxstreet.com/news/eur-gbp-price-forecast-under-growing-bearish-pressure-below-08550-202608110835",
+      "source": "FXStreet",
+      "published_at": "2026-08-11T08:35:35+00:00"
+    },
+    {
+      "title": "Australian Dollar : Hawkish hold keeps risks alive – TD Securities",
+      "url": "https://www.fxstreet.com/news/australian-dollar-hawkish-hold-keeps-risks-alive-td-securities-202608110829",
+      "source": "FXStreet",
+      "published_at": "2026-08-11T08:29:57+00:00"
+    },
+    {
+      "title": "Dow Jones futures slip as US-Iran tensions, rate hike fears weigh on sentiment",
+      "url": "https://www.fxstreet.com/news/dow-jones-futures-slip-as-us-iran-tensions-rate-hike-fears-weigh-on-sentiment-202608110819",
+      "source": "FXStreet",
+      "published_at": "2026-08-11T08:19:15+00:00"
+    },
+    {
+      "title": "US Dollar Index Price Forecast: Supported by rising Oil prices",
+      "url": "https://www.fxstreet.com/news/us-dollar-index-price-forecast-supported-by-rising-oil-prices-202608110814",
+      "source": "FXStreet",
+      "published_at": "2026-08-11T08:14:47+00:00"
+    },
+    {
+      "title": "Hungarian Forint: Near-term gains against Euro before renewed pressure - Commerzbank",
+      "url": "https://www.fxstreet.com/news/hungarian-forint-near-term-gains-against-euro-before-renewed-pressure-commerzbank-202608110804",
+      "source": "FXStreet",
+      "published_at": "2026-08-11T08:04:11+00:00"
+    },
+    {
+      "title": "New Zealand Dollar declines as US Dollar rebounds on safe-haven demand",
+      "url": "https://www.fxstreet.com/news/new-zealand-dollar-declines-as-us-dollar-rebounds-on-safe-haven-demand-202608110802",
+      "source": "FXStreet",
+      "published_at": "2026-08-11T08:02:13+00:00"
+    },
+    {
+      "title": "Japanese Yen struggles below 159.00 vs USD amid fiscal woes, US-Japan rate gap",
+      "url": "https://www.fxstreet.com/news/japanese-yen-struggles-below-15900-vs-usd-amid-fiscal-woes-us-japan-rate-gap-202608110754",
+      "source": "FXStreet",
+      "published_at": "2026-08-11T07:54:32+00:00"
+    },
+    {
+      "title": "Equities: Risk sentiment holds despite oil and rates – Deutsche Bank",
+      "url": "https://www.fxstreet.com/news/equities-risk-sentiment-holds-despite-oil-and-rates-deutsche-bank-202608110752",
+      "source": "FXStreet",
+      "published_at": "2026-08-11T07:52:37+00:00"
+    }
+  ]
 }
