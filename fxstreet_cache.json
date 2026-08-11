@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-11T12:30:50.513072+00:00",
+  "fetched_at": "2026-08-11T12:31:21.340067+00:00",
   "articles": [
+    {
+      "title": "Japanese Yen struggles as impact of joint intervention fades",
+      "url": "https://www.fxstreet.com/news/japanese-yen-struggles-as-impact-of-joint-intervention-fades-202608111230",
+      "source": "FXStreet",
+      "published_at": "2026-08-11T12:30:56+00:00"
+    },
     {
       "title": "US ADP Employment Change 4-week average drops to 8.25K",
       "url": "https://www.fxstreet.com/news/us-adp-employment-change-4-week-average-drops-to-825k-202608111223",
@@ -114,12 +120,6 @@
       "url": "https://www.fxstreet.com/news/federal-reserve-dovish-repricing-on-data-and-inflation-focus-bny-202608110936",
       "source": "FXStreet",
       "published_at": "2026-08-11T09:36:54+00:00"
-    },
-    {
-      "title": "Silver price today: Silver falls, according to FXStreet data",
-      "url": "https://www.fxstreet.com/news/silver-price-today-silver-falls-according-to-fxstreet-data-202608110931",
-      "source": "FXStreet",
-      "published_at": "2026-08-11T09:31:05+00:00"
     }
   ]
 }
