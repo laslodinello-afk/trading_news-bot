@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-11T11:18:23.172179+00:00",
+  "fetched_at": "2026-08-11T11:19:20.438724+00:00",
   "articles": [
+    {
+      "title": "Japanese Yen: Wider range with intervention support against US Dollar – HSBC",
+      "url": "https://www.fxstreet.com/news/japanese-yen-wider-range-with-intervention-support-against-us-dollar-hsbc-202608111118",
+      "source": "FXStreet",
+      "published_at": "2026-08-11T11:18:42+00:00"
+    },
     {
       "title": "US Dollar Index Price Forecast: A break above 100.00 would confirm a double bottom",
       "url": "https://www.fxstreet.com/news/us-dollar-index-price-forecast-a-break-above-10000-would-confirm-a-double-bottom-202608111106",
@@ -102,12 +108,6 @@
       "url": "https://www.fxstreet.com/news/australian-dollar-hawkish-hold-keeps-risks-alive-td-securities-202608110829",
       "source": "FXStreet",
       "published_at": "2026-08-11T08:29:57+00:00"
-    },
-    {
-      "title": "Dow Jones futures slip as US-Iran tensions, rate hike fears weigh on sentiment",
-      "url": "https://www.fxstreet.com/news/dow-jones-futures-slip-as-us-iran-tensions-rate-hike-fears-weigh-on-sentiment-202608110819",
-      "source": "FXStreet",
-      "published_at": "2026-08-11T08:19:15+00:00"
     }
   ]
 }
