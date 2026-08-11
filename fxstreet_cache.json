@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-11T01:37:16.264990+00:00",
+  "fetched_at": "2026-08-11T01:38:27.758053+00:00",
   "articles": [
+    {
+      "title": "Silver Price Forecast: XAG/USD slips to near $66.00 on Fed hike fears, oil surge",
+      "url": "https://www.fxstreet.com/news/silver-price-forecast-xag-usd-slips-to-near-6600-on-fed-hike-fears-oil-surge-202608110137",
+      "source": "FXStreet",
+      "published_at": "2026-08-11T01:37:48+00:00"
+    },
     {
       "title": "United States Dollar Index consolidates below 100.00 as bulls await US CPI amid Iran risks",
       "url": "https://www.fxstreet.com/news/united-states-dollar-index-consolidates-below-10000-as-bulls-await-us-cpi-amid-iran-risks-202608110118",
@@ -42,12 +48,6 @@
       "url": "https://www.fxstreet.com/news/british-pound-sterling-borrows-its-rally-from-american-payrolls-202608102330",
       "source": "FXStreet",
       "published_at": "2026-08-10T23:30:33+00:00"
-    },
-    {
-      "title": "EUR/USD Price Forecast: 100-day SMA caps Euro recovery",
-      "url": "https://www.fxstreet.com/news/eur-usd-price-forecast-100-day-sma-caps-euro-recovery-202608102238",
-      "source": "FXStreet",
-      "published_at": "2026-08-10T22:38:05+00:00"
     }
   ]
 }
