@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-12T08:44:26.840191+00:00",
+  "fetched_at": "2026-08-12T08:45:37.124694+00:00",
   "articles": [
+    {
+      "title": "Swiss Franc weakens against US Dollar with US Inflation in focus",
+      "url": "https://www.fxstreet.com/news/swiss-franc-weakens-against-us-dollar-with-us-inflation-in-focus-202608120845",
+      "source": "FXStreet",
+      "published_at": "2026-08-12T08:45:34+00:00"
+    },
     {
       "title": "Silver Price Forecasts: XAG/USD resumes its uptrend, with bulls aiming for $67.17",
       "url": "https://www.fxstreet.com/news/silver-price-forecasts-xag-usd-resumes-its-uptrend-with-bulls-aiming-for-6717-202608120839",
@@ -162,12 +168,6 @@
       "url": "https://www.fxstreet.com/news/euro-upside-capped-by-key-resistance-against-us-dollar-uob-202608120622",
       "source": "FXStreet",
       "published_at": "2026-08-12T06:22:44+00:00"
-    },
-    {
-      "title": "Euro trades with caution against US Dollar in countdown to US CPI data",
-      "url": "https://www.fxstreet.com/news/euro-trades-with-caution-against-us-dollar-in-countdown-to-us-cpi-data-202608120551",
-      "source": "FXStreet",
-      "published_at": "2026-08-12T05:51:44+00:00"
     }
   ]
 }
