@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-12T10:02:24.416869+00:00",
+  "fetched_at": "2026-08-12T10:03:25.573418+00:00",
   "articles": [
+    {
+      "title": "Euro: Soft US CPI could support gains against US Dollar – ING",
+      "url": "https://www.fxstreet.com/news/euro-soft-us-cpi-could-support-gains-against-us-dollar-ing-202608121002",
+      "source": "FXStreet",
+      "published_at": "2026-08-12T10:02:46+00:00"
+    },
     {
       "title": "WTI reverses lower as huge US inventory build clashes with Hormuz supply fears",
       "url": "https://www.fxstreet.com/news/wti-reverses-lower-as-huge-us-inventory-build-clashes-with-hormuz-supply-fears-202608121000",
@@ -162,12 +168,6 @@
       "url": "https://www.fxstreet.com/news/cee-fx-geopolitics-drives-rates-and-currencies-ing-202608120739",
       "source": "FXStreet",
       "published_at": "2026-08-12T07:39:36+00:00"
-    },
-    {
-      "title": "Euro remains subdued following German inflation data",
-      "url": "https://www.fxstreet.com/news/euro-remains-subdued-following-german-inflation-data-202608120737",
-      "source": "FXStreet",
-      "published_at": "2026-08-12T07:37:22+00:00"
     }
   ]
 }
