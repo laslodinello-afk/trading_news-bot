@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-12T08:14:21.711787+00:00",
+  "fetched_at": "2026-08-12T08:15:34.475337+00:00",
   "articles": [
+    {
+      "title": "Indonesian Rupiah struggles due to weak fundamentals, increased risk aversion",
+      "url": "https://www.fxstreet.com/news/indonesian-rupiah-struggles-due-to-weak-fundamentals-increased-risk-aversion-202608120815",
+      "source": "FXStreet",
+      "published_at": "2026-08-12T08:15:17+00:00"
+    },
     {
       "title": "Japanese Yen: Interventions signal valuation shift – DBS",
       "url": "https://www.fxstreet.com/news/japanese-yen-interventions-signal-valuation-shift-dbs-202608120813",
@@ -126,12 +132,6 @@
       "url": "https://www.fxstreet.com/news/euro-trades-with-caution-against-us-dollar-in-countdown-to-us-cpi-data-202608120551",
       "source": "FXStreet",
       "published_at": "2026-08-12T05:51:44+00:00"
-    },
-    {
-      "title": "EUR/JPY Price Forecast: Steadies near 184.00 amid neutral bias",
-      "url": "https://www.fxstreet.com/news/eur-jpy-price-forecast-steadies-near-18400-amid-neutral-bias-202608120515",
-      "source": "FXStreet",
-      "published_at": "2026-08-12T05:15:10+00:00"
     }
   ]
 }
