@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-12T19:41:18.771310+00:00",
+  "fetched_at": "2026-08-12T19:42:30.346237+00:00",
   "articles": [
+    {
+      "title": "USD/CHF Price Forecast: Bearish flag forms as bulls eye 0.8200",
+      "url": "https://www.fxstreet.com/news/usd-chf-price-forecast-bearish-flag-forms-as-bulls-eye-08200-202608121941",
+      "source": "FXStreet",
+      "published_at": "2026-08-12T19:41:40+00:00"
+    },
     {
       "title": "Chinese Yuan: Range trade and upside risk against US Dollar – UOB",
       "url": "https://www.fxstreet.com/news/chinese-yuan-range-trade-and-upside-risk-against-us-dollar-uob-202608121937",
@@ -48,12 +54,6 @@
       "url": "https://www.fxstreet.com/news/british-pound-holds-near-13500-as-cpi-relief-meets-hormuz-risk-202608121657",
       "source": "FXStreet",
       "published_at": "2026-08-12T16:57:31+00:00"
-    },
-    {
-      "title": "Australian Dollar slips as US Dollar steadies post CPI",
-      "url": "https://www.fxstreet.com/news/australian-dollar-slips-as-us-dollar-steadies-post-cpi-202608121641",
-      "source": "FXStreet",
-      "published_at": "2026-08-12T16:41:21+00:00"
     }
   ]
 }
