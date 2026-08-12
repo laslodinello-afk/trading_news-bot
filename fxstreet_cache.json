@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-12T12:13:18.472054+00:00",
+  "fetched_at": "2026-08-12T12:14:38.236648+00:00",
   "articles": [
+    {
+      "title": "US Dollar: Soft CPI risks weigh on outlook – ING",
+      "url": "https://www.fxstreet.com/news/us-dollar-soft-cpi-risks-weigh-on-outlook-ing-202608121214",
+      "source": "FXStreet",
+      "published_at": "2026-08-12T12:14:24+00:00"
+    },
     {
       "title": "Japanese Yen: Intervention doubts as flows favor US Dollar – BNY",
       "url": "https://www.fxstreet.com/news/japanese-yen-intervention-doubts-as-flows-favor-us-dollar-bny-202608121204",
@@ -126,12 +132,6 @@
       "url": "https://www.fxstreet.com/news/us-dollar-cpi-driven-range-signals-carry-focus-ocbc-202608120922",
       "source": "FXStreet",
       "published_at": "2026-08-12T09:22:00+00:00"
-    },
-    {
-      "title": "Oil: Hormuz risk supports prices – Commerzbank",
-      "url": "https://www.fxstreet.com/news/oil-hormuz-risk-supports-prices-commerzbank-202608120913",
-      "source": "FXStreet",
-      "published_at": "2026-08-12T09:13:32+00:00"
     }
   ]
 }
