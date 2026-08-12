@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-12T06:22:23.306836+00:00",
+  "fetched_at": "2026-08-12T06:23:20.242207+00:00",
   "articles": [
+    {
+      "title": "Euro: Upside capped by key resistance against US Dollar – UOB",
+      "url": "https://www.fxstreet.com/news/euro-upside-capped-by-key-resistance-against-us-dollar-uob-202608120622",
+      "source": "FXStreet",
+      "published_at": "2026-08-12T06:22:44+00:00"
+    },
     {
       "title": "Euro trades with caution against US Dollar in countdown to US CPI data",
       "url": "https://www.fxstreet.com/news/euro-trades-with-caution-against-us-dollar-in-countdown-to-us-cpi-data-202608120551",
@@ -36,12 +42,6 @@
       "url": "https://www.fxstreet.com/news/united-states-dollar-index-rises-to-near-10000-ahead-of-us-inflation-data-202608120403",
       "source": "FXStreet",
       "published_at": "2026-08-12T04:03:32+00:00"
-    },
-    {
-      "title": "Silver Price Forecast: XAG/USD rises to near $65.40 with US inflation in focus",
-      "url": "https://www.fxstreet.com/news/silver-price-forecast-xag-usd-rises-to-near-6540-with-us-inflation-in-focus-202608120322",
-      "source": "FXStreet",
-      "published_at": "2026-08-12T03:22:54+00:00"
     }
   ]
 }
