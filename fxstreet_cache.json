@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-12T13:14:26.762441+00:00",
+  "fetched_at": "2026-08-12T13:15:34.433770+00:00",
   "articles": [
+    {
+      "title": "Gold extends gains above $4,400 after US CPI meets expectations",
+      "url": "https://www.fxstreet.com/news/gold-rises-above-4-400-as-us-inflation-data-takes-centre-stage-202608121051",
+      "source": "FXStreet",
+      "published_at": "2026-08-12T10:51:12+00:00"
+    },
     {
       "title": "United Kingdom: Resilience tested as data mixed – Rabobank",
       "url": "https://www.fxstreet.com/news/united-kingdom-resilience-tested-as-data-mixed-rabobank-202608121312",
@@ -90,12 +96,6 @@
       "url": "https://www.fxstreet.com/news/iran-confirms-no-discussions-over-us-iran-ceasefire-extension-for-now-reuters-202608121102",
       "source": "FXStreet",
       "published_at": "2026-08-12T11:02:08+00:00"
-    },
-    {
-      "title": "Gold rises above $4,400 as US inflation data takes centre stage",
-      "url": "https://www.fxstreet.com/news/gold-rises-above-4-400-as-us-inflation-data-takes-centre-stage-202608121051",
-      "source": "FXStreet",
-      "published_at": "2026-08-12T10:51:12+00:00"
     },
     {
       "title": "Yen attempts to bounce up from 159.45 lows ahead of the US inflation release",
