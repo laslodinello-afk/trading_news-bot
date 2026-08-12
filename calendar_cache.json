@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-12T09:46:24.451452+00:00",
+  "fetched_at": "2026-08-12T15:29:57.078478+00:00",
   "events": [
     {
       "title": "Bank Lending y/y",
@@ -188,7 +188,7 @@
     {
       "title": "German 30-y Bond Auction",
       "country": "EUR",
-      "date": "2026-08-12T05:34:00-04:00",
+      "date": "2026-08-12T05:33:00-04:00",
       "impact": "Low",
       "forecast": "",
       "previous": "3.64|2.9"
