@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-12T11:47:18.135364+00:00",
+  "fetched_at": "2026-08-12T11:48:27.053970+00:00",
   "articles": [
+    {
+      "title": "EUR/USD Price Forecast: Biding its time near 1.1550, awaiting US CPI numbers",
+      "url": "https://www.fxstreet.com/news/eur-usd-price-forecast-biding-its-time-near-11550-awaiting-us-cpi-numbers-202608121147",
+      "source": "FXStreet",
+      "published_at": "2026-08-12T11:47:57+00:00"
+    },
     {
       "title": "GBP/JPY Price Forecast: Recovery stalls below the 50-day SMA",
       "url": "https://www.fxstreet.com/news/gbp-jpy-price-forecast-recovery-stalls-below-the-50-day-sma-202608121146",
@@ -120,12 +126,6 @@
       "url": "https://www.fxstreet.com/news/british-pound-budget-uncertainty-leaves-sterling-vulnerable-against-euro-rabobank-202608120856",
       "source": "FXStreet",
       "published_at": "2026-08-12T08:56:57+00:00"
-    },
-    {
-      "title": "Japanese Yen: Remains vulnerable against US Dollar - UOB",
-      "url": "https://www.fxstreet.com/news/japanese-yen-remains-vulnerable-against-us-dollar-uob-202608120848",
-      "source": "FXStreet",
-      "published_at": "2026-08-12T08:48:24+00:00"
     }
   ]
 }
