@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-12T22:36:33.302884+00:00",
+  "fetched_at": "2026-08-12T22:37:17.838303+00:00",
   "articles": [
+    {
+      "title": "Indonesia: BI succession supports Rupiah stability – DBS",
+      "url": "https://www.fxstreet.com/news/indonesia-bi-succession-supports-rupiah-stability-dbs-202608122237",
+      "source": "FXStreet",
+      "published_at": "2026-08-12T22:37:00+00:00"
+    },
     {
       "title": "Australian Dollar pulls back as inflation expectations loom",
       "url": "https://www.fxstreet.com/news/australian-dollar-pulls-back-as-inflation-expectations-loom-202608122231",
@@ -48,12 +54,6 @@
       "url": "https://www.fxstreet.com/news/usd-chf-price-forecast-bearish-flag-forms-as-bulls-eye-08200-202608121941",
       "source": "FXStreet",
       "published_at": "2026-08-12T19:41:40+00:00"
-    },
-    {
-      "title": "Chinese Yuan: Range trade and upside risk against US Dollar – UOB",
-      "url": "https://www.fxstreet.com/news/chinese-yuan-range-trade-and-upside-risk-against-us-dollar-uob-202608121937",
-      "source": "FXStreet",
-      "published_at": "2026-08-12T19:37:08+00:00"
     }
   ]
 }
