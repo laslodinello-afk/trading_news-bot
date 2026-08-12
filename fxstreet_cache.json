@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-12T10:59:29.956580+00:00",
+  "fetched_at": "2026-08-12T11:01:00.975801+00:00",
   "articles": [
+    {
+      "title": "US July CPI data set to show easing inflation as markets gauge Fed rate hike expectations",
+      "url": "https://www.fxstreet.com/news/us-cpi-data-set-to-show-softer-inflation-in-july-as-markets-reassess-fed-rate-hike-bets-202608120830",
+      "source": "FXStreet",
+      "published_at": "2026-08-12T08:30:00+00:00"
+    },
     {
       "title": "Gold rises above $4,400 as US inflation data takes centre stage",
       "url": "https://www.fxstreet.com/news/gold-rises-above-4-400-as-us-inflation-data-takes-centre-stage-202608121051",
@@ -36,12 +42,6 @@
       "url": "https://www.fxstreet.com/news/wti-reverses-lower-as-huge-us-inventory-build-clashes-with-hormuz-supply-fears-202608121000",
       "source": "FXStreet",
       "published_at": "2026-08-12T10:00:23+00:00"
-    },
-    {
-      "title": "US CPI data expected to cool in July as markets weigh Fed rate hike bets",
-      "url": "https://www.fxstreet.com/news/us-cpi-data-set-to-show-softer-inflation-in-july-as-markets-reassess-fed-rate-hike-bets-202608120830",
-      "source": "FXStreet",
-      "published_at": "2026-08-12T08:30:00+00:00"
     },
     {
       "title": "US Dollar: Fed pricing and CPI risks – BBH",
