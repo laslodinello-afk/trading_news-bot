@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-12T11:56:22.525684+00:00",
+  "fetched_at": "2026-08-12T11:57:26.168540+00:00",
   "articles": [
+    {
+      "title": "New Zealand Dollar slides as Middle East tensions give US Dollar the upper hand",
+      "url": "https://www.fxstreet.com/news/new-zealand-dollar-slides-as-middle-east-tensions-give-us-dollar-the-upper-hand-202608121156",
+      "source": "FXStreet",
+      "published_at": "2026-08-12T11:56:44+00:00"
+    },
     {
       "title": "United States Dollar Index trades calmly ahead of US Inflation data",
       "url": "https://www.fxstreet.com/news/united-states-dollar-index-trades-calmly-ahead-of-us-inflation-data-202608121149",
@@ -132,12 +138,6 @@
       "url": "https://www.fxstreet.com/news/british-pound-holds-steady-above-13500-vs-usd-as-traders-eye-us-cpi-ahead-of-uk-gdp-202608120903",
       "source": "FXStreet",
       "published_at": "2026-08-12T09:03:24+00:00"
-    },
-    {
-      "title": "British Pound: Budget uncertainty leaves Sterling vulnerable against Euro - Rabobank",
-      "url": "https://www.fxstreet.com/news/british-pound-budget-uncertainty-leaves-sterling-vulnerable-against-euro-rabobank-202608120856",
-      "source": "FXStreet",
-      "published_at": "2026-08-12T08:56:57+00:00"
     }
   ]
 }
