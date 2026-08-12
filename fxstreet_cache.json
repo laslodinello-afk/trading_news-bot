@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-12T09:35:29.760766+00:00",
+  "fetched_at": "2026-08-12T09:36:30.532674+00:00",
   "articles": [
+    {
+      "title": "Canadian Dollar: Looks to extend recovery against US Dollar – Societe Generale",
+      "url": "https://www.fxstreet.com/news/canadian-dollar-looks-to-extend-recovery-against-us-dollar-societe-generale-202608120935",
+      "source": "FXStreet",
+      "published_at": "2026-08-12T09:35:28+00:00"
+    },
     {
       "title": "Silver price today: Silver rises, according to FXStreet data",
       "url": "https://www.fxstreet.com/news/silver-price-today-silver-rises-according-to-fxstreet-data-202608120930",
@@ -162,12 +168,6 @@
       "url": "https://www.fxstreet.com/news/nzd-usd-price-forecast-nearing-05860-support-area-amid-by-risk-off-markets-domestic-politics-202608120716",
       "source": "FXStreet",
       "published_at": "2026-08-12T07:16:06+00:00"
-    },
-    {
-      "title": "Australian Dollar: Constructive carry outlook with RBA on hold – OCBC",
-      "url": "https://www.fxstreet.com/news/australian-dollar-constructive-carry-outlook-with-rba-on-hold-ocbc-202608120707",
-      "source": "FXStreet",
-      "published_at": "2026-08-12T07:07:16+00:00"
     }
   ]
 }
