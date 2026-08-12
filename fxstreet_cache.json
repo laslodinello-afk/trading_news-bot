@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-12T10:34:29.407430+00:00",
+  "fetched_at": "2026-08-12T10:35:27.871218+00:00",
   "articles": [
+    {
+      "title": "Australian Dollar outperforms despite RBA’s hawkish tone fails to sway markets",
+      "url": "https://www.fxstreet.com/news/australian-dollar-outperforms-despite-rbas-hawkish-tone-fails-to-sway-markets-202608121035",
+      "source": "FXStreet",
+      "published_at": "2026-08-12T10:35:21+00:00"
+    },
     {
       "title": "Euro: Soft US CPI could support gains against US Dollar – ING",
       "url": "https://www.fxstreet.com/news/euro-soft-us-cpi-could-support-gains-against-us-dollar-ing-202608121002",
@@ -162,12 +168,6 @@
       "url": "https://www.fxstreet.com/news/norwegian-krone-norges-bank-cautious-on-hikes-commerzbank-202608120753",
       "source": "FXStreet",
       "published_at": "2026-08-12T07:53:39+00:00"
-    },
-    {
-      "title": "CEE FX: Geopolitics drives rates and currencies – ING",
-      "url": "https://www.fxstreet.com/news/cee-fx-geopolitics-drives-rates-and-currencies-ing-202608120739",
-      "source": "FXStreet",
-      "published_at": "2026-08-12T07:39:36+00:00"
     }
   ]
 }
