@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-12T10:50:38.420792+00:00",
+  "fetched_at": "2026-08-12T10:51:23.919859+00:00",
   "articles": [
+    {
+      "title": "Gold rises above $4,400 as US inflation data takes centre stage",
+      "url": "https://www.fxstreet.com/news/gold-rises-above-4-400-as-us-inflation-data-takes-centre-stage-202608121051",
+      "source": "FXStreet",
+      "published_at": "2026-08-12T10:51:12+00:00"
+    },
     {
       "title": "Yen attempts to bounce up from 159.45 lows ahead of the US inflation release",
       "url": "https://www.fxstreet.com/news/yen-attempts-to-bounce-up-from-15945-lows-ahead-of-the-us-inflation-release-202608121047",
@@ -168,12 +174,6 @@
       "url": "https://www.fxstreet.com/news/canadian-dollar-trims-gains-us-dollar-firms-up-ahead-of-us-cpi-numbers-202608120757",
       "source": "FXStreet",
       "published_at": "2026-08-12T07:57:25+00:00"
-    },
-    {
-      "title": "Japanese Yen remains under pressure against US Dollar, US CPI data eyed",
-      "url": "https://www.fxstreet.com/news/japanese-yen-remains-under-pressure-against-us-dollar-us-cpi-data-eyed-202608120756",
-      "source": "FXStreet",
-      "published_at": "2026-08-12T07:56:32+00:00"
     }
   ]
 }
