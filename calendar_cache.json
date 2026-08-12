@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-12T15:29:57.078478+00:00",
+  "fetched_at": "2026-08-12T20:09:40.623258+00:00",
   "events": [
     {
       "title": "Bank Lending y/y",
@@ -252,7 +252,7 @@
     {
       "title": "Federal Budget Balance",
       "country": "USD",
-      "date": "2026-08-12T14:00:00-04:00",
+      "date": "2026-08-12T13:58:00-04:00",
       "impact": "Low",
       "forecast": "-348.3B",
       "previous": "-120.3B"
