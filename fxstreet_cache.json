@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-12T21:11:20.543252+00:00",
+  "fetched_at": "2026-08-12T21:12:22.323171+00:00",
   "articles": [
+    {
+      "title": "Singapore Dollar: Upside risk builds against US Dollar – UOB",
+      "url": "https://www.fxstreet.com/news/singapore-dollar-upside-risk-builds-against-us-dollar-uob-202608122112",
+      "source": "FXStreet",
+      "published_at": "2026-08-12T21:12:00+00:00"
+    },
     {
       "title": "Commodity FX: Growth constraints cap carry – BNY",
       "url": "https://www.fxstreet.com/news/commodity-fx-growth-constraints-cap-carry-bny-202608122006",
@@ -42,12 +48,6 @@
       "url": "https://www.fxstreet.com/news/japanese-yen-stumbles-as-us-dollar-strengthens-202608121858",
       "source": "FXStreet",
       "published_at": "2026-08-12T18:58:32+00:00"
-    },
-    {
-      "title": "EUR/USD Price Forecast: Fading bullish momentum puts focus on 1.1500 support",
-      "url": "https://www.fxstreet.com/news/eur-usd-price-forecast-fading-bullish-momentum-puts-focus-on-11500-support-202608121811",
-      "source": "FXStreet",
-      "published_at": "2026-08-12T18:11:23+00:00"
     }
   ]
 }
