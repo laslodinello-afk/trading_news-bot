@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-12T08:48:23.756884+00:00",
+  "fetched_at": "2026-08-12T08:49:21.483530+00:00",
   "articles": [
+    {
+      "title": "Japanese Yen: Remains vulnerable against US Dollar - UOB",
+      "url": "https://www.fxstreet.com/news/japanese-yen-remains-vulnerable-against-us-dollar-uob-202608120848",
+      "source": "FXStreet",
+      "published_at": "2026-08-12T08:48:24+00:00"
+    },
     {
       "title": "Swiss Franc weakens against US Dollar with US Inflation in focus",
       "url": "https://www.fxstreet.com/news/swiss-franc-weakens-against-us-dollar-with-us-inflation-in-focus-202608120845",
@@ -162,12 +168,6 @@
       "url": "https://www.fxstreet.com/news/euro-trims-losses-against-the-british-pound-following-hot-german-inflation-data-202608120629",
       "source": "FXStreet",
       "published_at": "2026-08-12T06:29:12+00:00"
-    },
-    {
-      "title": "Euro: Upside capped by key resistance against US Dollar – UOB",
-      "url": "https://www.fxstreet.com/news/euro-upside-capped-by-key-resistance-against-us-dollar-uob-202608120622",
-      "source": "FXStreet",
-      "published_at": "2026-08-12T06:22:44+00:00"
     }
   ]
 }
