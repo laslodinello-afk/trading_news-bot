@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-12T09:14:21.855962+00:00",
+  "fetched_at": "2026-08-12T09:15:37.982081+00:00",
   "articles": [
+    {
+      "title": "Oil: Hormuz risk supports prices – Commerzbank",
+      "url": "https://www.fxstreet.com/news/oil-hormuz-risk-supports-prices-commerzbank-202608120913",
+      "source": "FXStreet",
+      "published_at": "2026-08-12T09:13:32+00:00"
+    },
     {
       "title": "Euro moves little against Canadian Dollar following German HICP data",
       "url": "https://www.fxstreet.com/news/euro-moves-little-against-canadian-dollar-following-german-hicp-data-202608120905",
@@ -162,12 +168,6 @@
       "url": "https://www.fxstreet.com/news/japanese-yen-policy-focus-after-intervention-mufg-202608120649",
       "source": "FXStreet",
       "published_at": "2026-08-12T06:49:19+00:00"
-    },
-    {
-      "title": "GBP/USD Price Forecast: Continues to remain flat ahead of US CPI data",
-      "url": "https://www.fxstreet.com/news/gbp-usd-price-forecast-continues-to-remain-flat-ahead-of-us-cpi-data-202608120647",
-      "source": "FXStreet",
-      "published_at": "2026-08-12T06:47:27+00:00"
     }
   ]
 }
