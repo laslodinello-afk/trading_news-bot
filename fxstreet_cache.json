@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-12T09:21:21.164882+00:00",
+  "fetched_at": "2026-08-12T09:22:26.923173+00:00",
   "articles": [
+    {
+      "title": "US Dollar: CPI-driven range signals carry focus – OCBC",
+      "url": "https://www.fxstreet.com/news/us-dollar-cpi-driven-range-signals-carry-focus-ocbc-202608120922",
+      "source": "FXStreet",
+      "published_at": "2026-08-12T09:22:00+00:00"
+    },
     {
       "title": "Oil: Hormuz risk supports prices – Commerzbank",
       "url": "https://www.fxstreet.com/news/oil-hormuz-risk-supports-prices-commerzbank-202608120913",
@@ -162,12 +168,6 @@
       "url": "https://www.fxstreet.com/news/aud-usd-price-forecast-extends-the-range-play-near-07050-bulls-await-50-fibo-breakout-202608120650",
       "source": "FXStreet",
       "published_at": "2026-08-12T06:50:57+00:00"
-    },
-    {
-      "title": "Japanese Yen: Policy focus after intervention - MUFG",
-      "url": "https://www.fxstreet.com/news/japanese-yen-policy-focus-after-intervention-mufg-202608120649",
-      "source": "FXStreet",
-      "published_at": "2026-08-12T06:49:19+00:00"
     }
   ]
 }
