@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-12T07:56:22.064935+00:00",
+  "fetched_at": "2026-08-12T07:57:20.699729+00:00",
   "articles": [
+    {
+      "title": "Japanese Yen remains under pressure against US Dollar, US CPI data eyed",
+      "url": "https://www.fxstreet.com/news/japanese-yen-remains-under-pressure-against-us-dollar-us-cpi-data-eyed-202608120756",
+      "source": "FXStreet",
+      "published_at": "2026-08-12T07:56:32+00:00"
+    },
     {
       "title": "Norwegian Krone: Norges Bank cautious on hikes – Commerzbank",
       "url": "https://www.fxstreet.com/news/norwegian-krone-norges-bank-cautious-on-hikes-commerzbank-202608120753",
@@ -108,12 +114,6 @@
       "url": "https://www.fxstreet.com/news/eur-jpy-price-forecast-steadies-near-18400-amid-neutral-bias-202608120515",
       "source": "FXStreet",
       "published_at": "2026-08-12T05:15:10+00:00"
-    },
-    {
-      "title": "WTI Price Forecast: Bulls retain control near 38.2% Fibo.; move beyond $83.00 awaited",
-      "url": "https://www.fxstreet.com/news/wti-price-forecast-bulls-retain-control-near-382-fibo-move-beyond-8300-awaited-202608120456",
-      "source": "FXStreet",
-      "published_at": "2026-08-12T04:56:54+00:00"
     }
   ]
 }
