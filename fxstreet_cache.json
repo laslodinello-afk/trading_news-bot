@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-12T09:53:24.587295+00:00",
+  "fetched_at": "2026-08-12T09:54:29.589229+00:00",
   "articles": [
+    {
+      "title": "Euro drifts away from 184.00 Yen despite hot German inflation figures",
+      "url": "https://www.fxstreet.com/news/euro-drifts-away-from-18400-yen-despite-hot-german-inflation-figures-202608120952",
+      "source": "FXStreet",
+      "published_at": "2026-08-12T09:52:52+00:00"
+    },
     {
       "title": "Australian Dollar: Upside risk intact above support against US Dollar – UOB",
       "url": "https://www.fxstreet.com/news/australian-dollar-upside-risk-intact-above-support-against-us-dollar-uob-202608120943",
@@ -162,12 +168,6 @@
       "url": "https://www.fxstreet.com/news/british-pound-limited-upside-within-defined-band-against-us-dollar-uob-202608120731",
       "source": "FXStreet",
       "published_at": "2026-08-12T07:31:17+00:00"
-    },
-    {
-      "title": "Equities: AI earnings revive risk appetite after tech weakness - Deutsche Bank",
-      "url": "https://www.fxstreet.com/news/equities-ai-earnings-revive-risk-appetite-after-tech-weakness-deutsche-bank-202608120719",
-      "source": "FXStreet",
-      "published_at": "2026-08-12T07:19:39+00:00"
     }
   ]
 }
