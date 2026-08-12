@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-12T21:58:22.817501+00:00",
+  "fetched_at": "2026-08-12T21:59:19.133056+00:00",
   "articles": [
+    {
+      "title": "Euro reverses from two-day high, fade US soft CPI move",
+      "url": "https://www.fxstreet.com/news/euro-reverses-from-two-day-high-fade-us-soft-cpi-move-202608122158",
+      "source": "FXStreet",
+      "published_at": "2026-08-12T21:58:54+00:00"
+    },
     {
       "title": "Chinese Yuan: Credit softness may spur PBoC easing – Commerzbank",
       "url": "https://www.fxstreet.com/news/chinese-yuan-credit-softness-may-spur-pboc-easing-commerzbank-202608122154",
@@ -60,12 +66,6 @@
       "url": "https://www.fxstreet.com/news/gold-price-shines-above-4-400-as-inflation-dip-fuels-fed-relief-202608121905",
       "source": "FXStreet",
       "published_at": "2026-08-12T19:05:32+00:00"
-    },
-    {
-      "title": "Japanese Yen stumbles as US Dollar strengthens",
-      "url": "https://www.fxstreet.com/news/japanese-yen-stumbles-as-us-dollar-strengthens-202608121858",
-      "source": "FXStreet",
-      "published_at": "2026-08-12T18:58:32+00:00"
     }
   ]
 }
