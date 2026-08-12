@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-12T09:29:17.058123+00:00",
+  "fetched_at": "2026-08-12T09:30:56.491061+00:00",
   "articles": [
+    {
+      "title": "Silver price today: Silver rises, according to FXStreet data",
+      "url": "https://www.fxstreet.com/news/silver-price-today-silver-rises-according-to-fxstreet-data-202608120930",
+      "source": "FXStreet",
+      "published_at": "2026-08-12T09:30:06+00:00"
+    },
     {
       "title": "US Dollar: CPI-driven range signals carry focus – OCBC",
       "url": "https://www.fxstreet.com/news/us-dollar-cpi-driven-range-signals-carry-focus-ocbc-202608120922",
@@ -162,12 +168,6 @@
       "url": "https://www.fxstreet.com/news/australian-dollar-constructive-carry-outlook-with-rba-on-hold-ocbc-202608120707",
       "source": "FXStreet",
       "published_at": "2026-08-12T07:07:16+00:00"
-    },
-    {
-      "title": "AUD/USD Price Forecast: Extends the range play near 0.7050; bulls await 50% Fibo. breakout",
-      "url": "https://www.fxstreet.com/news/aud-usd-price-forecast-extends-the-range-play-near-07050-bulls-await-50-fibo-breakout-202608120650",
-      "source": "FXStreet",
-      "published_at": "2026-08-12T06:50:57+00:00"
     }
   ]
 }
