@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-12T09:05:31.520802+00:00",
+  "fetched_at": "2026-08-12T09:06:32.611786+00:00",
   "articles": [
+    {
+      "title": "Euro moves little against Canadian Dollar following German HICP data",
+      "url": "https://www.fxstreet.com/news/euro-moves-little-against-canadian-dollar-following-german-hicp-data-202608120905",
+      "source": "FXStreet",
+      "published_at": "2026-08-12T09:05:42+00:00"
+    },
     {
       "title": "British Pound holds steady above 1.3500 vs USD as traders eye US CPI ahead of UK GDP",
       "url": "https://www.fxstreet.com/news/british-pound-holds-steady-above-13500-vs-usd-as-traders-eye-us-cpi-ahead-of-uk-gdp-202608120903",
@@ -162,12 +168,6 @@
       "url": "https://www.fxstreet.com/news/gbp-usd-price-forecast-continues-to-remain-flat-ahead-of-us-cpi-data-202608120647",
       "source": "FXStreet",
       "published_at": "2026-08-12T06:47:27+00:00"
-    },
-    {
-      "title": "Forex Today: Crucial US inflation data to lift market volatility",
-      "url": "https://www.fxstreet.com/news/forex-today-crucial-us-inflation-data-to-lift-market-volatility-202608120645",
-      "source": "FXStreet",
-      "published_at": "2026-08-12T06:45:26+00:00"
     }
   ]
 }
