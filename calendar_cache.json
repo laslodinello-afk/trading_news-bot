@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-13T05:49:23.626457+00:00",
+  "fetched_at": "2026-08-13T09:46:13.498926+00:00",
   "events": [
     {
       "title": "Bank Lending y/y",
@@ -354,36 +354,12 @@
       "previous": "0.7%"
     },
     {
-      "title": "Foreign Direct Investment ytd/y",
-      "country": "CNY",
-      "date": "2026-08-13T02:02:00-04:00",
-      "impact": "Low",
-      "forecast": "",
-      "previous": "-5.0%"
-    },
-    {
       "title": "PPI m/m",
       "country": "CHF",
       "date": "2026-08-13T02:30:00-04:00",
       "impact": "Low",
       "forecast": "-0.2%",
       "previous": "-0.3%"
-    },
-    {
-      "title": "M2 Money Supply y/y",
-      "country": "CNY",
-      "date": "2026-08-13T04:03:00-04:00",
-      "impact": "Low",
-      "forecast": "7.9%",
-      "previous": "8.0%"
-    },
-    {
-      "title": "New Loans",
-      "country": "CNY",
-      "date": "2026-08-13T04:03:00-04:00",
-      "impact": "Low",
-      "forecast": "-50B",
-      "previous": "1610B"
     },
     {
       "title": "Industrial Production m/m",
@@ -506,6 +482,14 @@
       "previous": "-0.7%"
     },
     {
+      "title": "Foreign Direct Investment ytd/y",
+      "country": "CNY",
+      "date": "2026-08-14T02:02:00-04:00",
+      "impact": "Low",
+      "forecast": "",
+      "previous": "-5.0%"
+    },
+    {
       "title": "French Final CPI m/m",
       "country": "EUR",
       "date": "2026-08-14T02:45:00-04:00",
@@ -536,6 +520,22 @@
       "impact": "Low",
       "forecast": "-2.2B",
       "previous": "-5.0B"
+    },
+    {
+      "title": "M2 Money Supply y/y",
+      "country": "CNY",
+      "date": "2026-08-14T05:03:00-04:00",
+      "impact": "Low",
+      "forecast": "7.9%",
+      "previous": "8.0%"
+    },
+    {
+      "title": "New Loans",
+      "country": "CNY",
+      "date": "2026-08-14T05:03:00-04:00",
+      "impact": "Low",
+      "forecast": "-50B",
+      "previous": "1610B"
     },
     {
       "title": "Manufacturing Sales m/m",
