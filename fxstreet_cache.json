@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-13T00:53:15.600331+00:00",
+  "fetched_at": "2026-08-13T00:54:22.182729+00:00",
   "articles": [
+    {
+      "title": "WTI declines below $82.50 as oil inventories rise far more than expected",
+      "url": "https://www.fxstreet.com/news/wti-declines-below-8250-as-oil-inventories-rise-far-more-than-expected-202608130053",
+      "source": "FXStreet",
+      "published_at": "2026-08-13T00:53:57+00:00"
+    },
     {
       "title": "RBA's Kent: Cash rate hikes are achieving their intended impact",
       "url": "https://www.fxstreet.com/news/rbas-kent-cash-rate-hikes-are-achieving-their-intended-impact-202608130041",
@@ -60,12 +66,6 @@
       "url": "https://www.fxstreet.com/news/euro-reverses-from-two-day-high-fade-us-soft-cpi-move-202608122158",
       "source": "FXStreet",
       "published_at": "2026-08-12T21:58:54+00:00"
-    },
-    {
-      "title": "Chinese Yuan: Credit softness may spur PBoC easing – Commerzbank",
-      "url": "https://www.fxstreet.com/news/chinese-yuan-credit-softness-may-spur-pboc-easing-commerzbank-202608122154",
-      "source": "FXStreet",
-      "published_at": "2026-08-12T21:54:00+00:00"
     }
   ]
 }
