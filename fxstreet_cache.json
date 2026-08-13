@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-13T09:01:20.841942+00:00",
+  "fetched_at": "2026-08-13T09:02:22.706554+00:00",
   "articles": [
+    {
+      "title": "Eurozone Industrial Production remains flat in June vs. -0.1% estimates",
+      "url": "https://www.fxstreet.com/news/eurozone-industrial-production-remains-flat-in-june-vs-01-estimates-202608130902",
+      "source": "FXStreet",
+      "published_at": "2026-08-13T09:02:21+00:00"
+    },
     {
       "title": "Euro bounces off one-week low, holds above 1.1500 vs USD as traders look to US PPI",
       "url": "https://www.fxstreet.com/news/euro-bounces-off-one-week-low-holds-above-11500-vs-usd-as-traders-look-to-us-ppi-202608130854",
@@ -156,12 +162,6 @@
       "url": "https://www.fxstreet.com/news/euro-range-phase-after-failed-upside-break-against-us-dollar-uob-202608130624",
       "source": "FXStreet",
       "published_at": "2026-08-13T06:24:41+00:00"
-    },
-    {
-      "title": "British Pound attracts bids against Japanese Yen after UK Q2 GDP data",
-      "url": "https://www.fxstreet.com/news/british-pound-attracts-bids-against-japanese-yen-after-strong-uk-q2-gdp-data-202608130620",
-      "source": "FXStreet",
-      "published_at": "2026-08-13T06:20:00+00:00"
     }
   ]
 }
