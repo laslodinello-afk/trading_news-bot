@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-13T07:01:21.338680+00:00",
+  "fetched_at": "2026-08-13T07:02:27.018634+00:00",
   "articles": [
+    {
+      "title": "Canadian Dollar extends pullback from two-month high as oil-driven Fed hike bets lift USD",
+      "url": "https://www.fxstreet.com/news/canadian-dollar-extends-pullback-from-two-month-high-as-oil-driven-fed-hike-bets-lift-usd-202608130701",
+      "source": "FXStreet",
+      "published_at": "2026-08-13T07:01:26+00:00"
+    },
     {
       "title": "Equities: AI rally and CPI relief lift US stocks – Deutsche Bank",
       "url": "https://www.fxstreet.com/news/equities-ai-rally-and-cpi-relief-lift-us-stocks-deutsche-bank-202608130657",
@@ -84,12 +90,6 @@
       "url": "https://www.fxstreet.com/news/aud-jpy-price-forecast-softens-below-11250-as-near-term-bearish-bias-persists-below-100-day-sma-202608130427",
       "source": "FXStreet",
       "published_at": "2026-08-13T04:27:59+00:00"
-    },
-    {
-      "title": "GBP/USD Price Forecast: Trades below 1.3500 on firmer USD, ahead of UK GDP",
-      "url": "https://www.fxstreet.com/news/gbp-usd-price-forecast-trades-below-13500-on-firmer-usd-ahead-of-uk-gdp-202608130402",
-      "source": "FXStreet",
-      "published_at": "2026-08-13T04:02:17+00:00"
     }
   ]
 }
