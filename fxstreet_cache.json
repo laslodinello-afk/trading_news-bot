@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-13T09:42:31.570037+00:00",
+  "fetched_at": "2026-08-13T09:43:23.043656+00:00",
   "articles": [
+    {
+      "title": "Brazilian Real: Election risks threaten carry story – Societe Generale",
+      "url": "https://www.fxstreet.com/news/brazilian-real-election-risks-threaten-carry-story-societe-generale-202608130943",
+      "source": "FXStreet",
+      "published_at": "2026-08-13T09:43:06+00:00"
+    },
     {
       "title": "Silver price today: Silver falls, according to FXStreet data",
       "url": "https://www.fxstreet.com/news/silver-price-today-silver-falls-according-to-fxstreet-data-202608130932",
@@ -162,12 +168,6 @@
       "url": "https://www.fxstreet.com/news/equities-ai-rally-and-cpi-relief-lift-us-stocks-deutsche-bank-202608130657",
       "source": "FXStreet",
       "published_at": "2026-08-13T06:57:58+00:00"
-    },
-    {
-      "title": "Euro holds gains against British Pound as UK GDP slows in Q2",
-      "url": "https://www.fxstreet.com/news/euro-holds-gains-against-british-pound-as-uk-gdp-slows-in-q2-202608130657",
-      "source": "FXStreet",
-      "published_at": "2026-08-13T06:57:17+00:00"
     }
   ]
 }
