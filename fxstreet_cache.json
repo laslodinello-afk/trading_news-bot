@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-13T17:56:20.901709+00:00",
+  "fetched_at": "2026-08-13T17:57:17.634638+00:00",
   "articles": [
+    {
+      "title": "United Kingdom: Growth resilient as BoE stays on hold – Standard Chartered",
+      "url": "https://www.fxstreet.com/news/united-kingdom-growth-resilient-as-boe-stays-on-hold-standard-chartered-202608131756",
+      "source": "FXStreet",
+      "published_at": "2026-08-13T17:56:19+00:00"
+    },
     {
       "title": "Australian Dollar stumbles near recent highs",
       "url": "https://www.fxstreet.com/news/australian-dollar-stumbles-near-recent-highs-202608131644",
@@ -54,12 +60,6 @@
       "url": "https://www.fxstreet.com/news/poland-fuel-driven-inflation-rise-contained-ing-202608131503",
       "source": "FXStreet",
       "published_at": "2026-08-13T15:03:19+00:00"
-    },
-    {
-      "title": "India: Inflation path higher into FY27 – Standard Chartered",
-      "url": "https://www.fxstreet.com/news/india-inflation-path-higher-into-fy27-standard-chartered-202608131456",
-      "source": "FXStreet",
-      "published_at": "2026-08-13T14:56:22+00:00"
     }
   ]
 }
