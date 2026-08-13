@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-13T04:01:20.919476+00:00",
+  "fetched_at": "2026-08-13T04:02:27.125766+00:00",
   "articles": [
+    {
+      "title": "GBP/USD Price Forecast: Trades below 1.3500 on firmer USD, ahead of UK GDP",
+      "url": "https://www.fxstreet.com/news/gbp-usd-price-forecast-trades-below-13500-on-firmer-usd-ahead-of-uk-gdp-202608130402",
+      "source": "FXStreet",
+      "published_at": "2026-08-13T04:02:17+00:00"
+    },
     {
       "title": "Asian stocks rise on soft US CPI, AI earnings rally",
       "url": "https://www.fxstreet.com/news/asian-stocks-rise-on-soft-us-cpi-ai-earnings-rally-202608130351",
@@ -72,12 +78,6 @@
       "url": "https://www.fxstreet.com/news/pboc-sets-usd-cny-reference-rate-at-67888-vs-67882-previous-202608130115",
       "source": "FXStreet",
       "published_at": "2026-08-13T01:15:36+00:00"
-    },
-    {
-      "title": "Euro advances as US Dollar weakens amid cooling Inflation",
-      "url": "https://www.fxstreet.com/news/euro-advances-as-us-dollar-weakens-amid-cooling-us-inflation-202608130101",
-      "source": "FXStreet",
-      "published_at": "2026-08-13T01:01:37+00:00"
     }
   ]
 }
