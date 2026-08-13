@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-13T12:42:23.275969+00:00",
+  "fetched_at": "2026-08-13T12:43:18.114279+00:00",
   "articles": [
+    {
+      "title": "US PPI comes in softer than expected, confirms easing inflation pressures",
+      "url": "https://www.fxstreet.com/news/us-ppi-comes-in-softer-than-expected-confirms-easing-inflation-pressures-202608131243",
+      "source": "FXStreet",
+      "published_at": "2026-08-13T12:43:15+00:00"
+    },
     {
       "title": "Bank of Canada: Gradual tightening path into 2027 – NBC",
       "url": "https://www.fxstreet.com/news/bank-of-canada-gradual-tightening-path-into-2027-nbc-202608131239",
@@ -126,12 +132,6 @@
       "url": "https://www.fxstreet.com/news/us-dollar-cpi-driven-moves-point-to-near-term-stability-mufg-202608130952",
       "source": "FXStreet",
       "published_at": "2026-08-13T09:52:12+00:00"
-    },
-    {
-      "title": "Brazilian Real: Election risks threaten carry story – Societe Generale",
-      "url": "https://www.fxstreet.com/news/brazilian-real-election-risks-threaten-carry-story-societe-generale-202608130943",
-      "source": "FXStreet",
-      "published_at": "2026-08-13T09:43:06+00:00"
     }
   ]
 }
