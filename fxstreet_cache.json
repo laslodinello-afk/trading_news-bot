@@ -1,6 +1,18 @@
 {
-  "fetched_at": "2026-08-13T14:42:21.058118+00:00",
+  "fetched_at": "2026-08-13T14:44:24.657370+00:00",
   "articles": [
+    {
+      "title": "United Kingdom: Softer second-half growth expected – Societe Generale",
+      "url": "https://www.fxstreet.com/news/united-kingdom-softer-second-half-growth-expected-societe-generale-202608131443",
+      "source": "FXStreet",
+      "published_at": "2026-08-13T14:43:28+00:00"
+    },
+    {
+      "title": "Euro holds steady against Pound Sterling despite steady UK growth",
+      "url": "https://www.fxstreet.com/news/euro-holds-steady-against-pound-sterling-despite-steady-uk-growth-202608131442",
+      "source": "FXStreet",
+      "published_at": "2026-08-13T14:42:51+00:00"
+    },
     {
       "title": "Canada: Spending resilience with energy pressures – RBC",
       "url": "https://www.fxstreet.com/news/canada-spending-resilience-with-energy-pressures-rbc-202608131435",
@@ -144,12 +156,6 @@
       "url": "https://www.fxstreet.com/news/federal-reserve-gradual-easing-path-uob-202608131152",
       "source": "FXStreet",
       "published_at": "2026-08-13T11:52:02+00:00"
-    },
-    {
-      "title": "European Central Bank: Independence risks rise with debt – Commerzbank",
-      "url": "https://www.fxstreet.com/news/european-central-bank-independence-risks-rise-with-debt-commerzbank-202608131142",
-      "source": "FXStreet",
-      "published_at": "2026-08-13T11:42:28+00:00"
     }
   ]
 }
