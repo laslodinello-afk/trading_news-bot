@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-13T13:44:21.164367+00:00",
+  "fetched_at": "2026-08-13T13:45:36.424095+00:00",
   "articles": [
+    {
+      "title": "Gold struggles below two-month high despite softer US PPI",
+      "url": "https://www.fxstreet.com/news/gold-retreats-from-two-month-high-as-traders-await-us-ppi-202608131057",
+      "source": "FXStreet",
+      "published_at": "2026-08-13T10:57:10+00:00"
+    },
     {
       "title": "Norges Bank: Disinflation slows rate path – Nomura",
       "url": "https://www.fxstreet.com/news/norges-bank-disinflation-slows-rate-path-nomura-202608131343",
@@ -144,12 +150,6 @@
       "url": "https://www.fxstreet.com/news/usd-jpy-price-forecast-capped-below-the-50-retracement-of-julys-plunge-at-15950-202608131057",
       "source": "FXStreet",
       "published_at": "2026-08-13T10:57:30+00:00"
-    },
-    {
-      "title": "Gold retreats from two-month high as traders await US PPI",
-      "url": "https://www.fxstreet.com/news/gold-retreats-from-two-month-high-as-traders-await-us-ppi-202608131057",
-      "source": "FXStreet",
-      "published_at": "2026-08-13T10:57:10+00:00"
     }
   ]
 }
