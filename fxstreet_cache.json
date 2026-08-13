@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-13T12:29:20.786809+00:00",
+  "fetched_at": "2026-08-13T12:30:49.505314+00:00",
   "articles": [
+    {
+      "title": "Euro steadies against Japanese Yen as ECB rate hike expectations strengthen",
+      "url": "https://www.fxstreet.com/news/euro-steadies-against-japanese-yen-as-ecb-rate-hike-expectations-strengthen-202608131229",
+      "source": "FXStreet",
+      "published_at": "2026-08-13T12:29:29+00:00"
+    },
     {
       "title": "Indian Rupee: Benign inflation reinforces RBI pause – DBS",
       "url": "https://www.fxstreet.com/news/indian-rupee-benign-inflation-reinforces-rbi-pause-dbs-202608131229",
@@ -114,12 +120,6 @@
       "url": "https://www.fxstreet.com/news/silver-price-today-silver-falls-according-to-fxstreet-data-202608130932",
       "source": "FXStreet",
       "published_at": "2026-08-13T09:32:36+00:00"
-    },
-    {
-      "title": "Euro: Range tests with upside bias against US Dollar – ING",
-      "url": "https://www.fxstreet.com/news/euro-range-tests-with-upside-bias-against-us-dollar-ing-202608130929",
-      "source": "FXStreet",
-      "published_at": "2026-08-13T09:29:35+00:00"
     }
   ]
 }
