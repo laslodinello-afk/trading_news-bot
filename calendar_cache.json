@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-13T09:46:13.498926+00:00",
+  "fetched_at": "2026-08-13T15:31:21.913899+00:00",
   "events": [
     {
       "title": "Bank Lending y/y",
@@ -420,7 +420,7 @@
     {
       "title": "Mortgage Delinquencies",
       "country": "USD",
-      "date": "2026-08-13T10:00:00-04:00",
+      "date": "2026-08-13T10:29:00-04:00",
       "impact": "Low",
       "forecast": "",
       "previous": "4.44%"
