@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-13T06:36:21.515265+00:00",
+  "fetched_at": "2026-08-13T06:37:18.305126+00:00",
   "articles": [
+    {
+      "title": "Indian Rupee ticks lower as US Dollar trades firmly",
+      "url": "https://www.fxstreet.com/news/indian-rupee-opens-marginally-lower-as-us-dollar-trades-firmly-202608130521",
+      "source": "FXStreet",
+      "published_at": "2026-08-13T05:21:00+00:00"
+    },
     {
       "title": "British Pound drifts away from 1.3500 as weak UK Industrial Production  offsets bright GDP data",
       "url": "https://www.fxstreet.com/news/british-pound-drifts-away-from-13500-as-weak-uk-industrial-production-offsets-bright-gdp-data-202608130635",
@@ -42,12 +48,6 @@
       "url": "https://www.fxstreet.com/news/eur-usd-price-forecast-flatlines-below-11550-while-staying-bearish-under-100-day-sma-202608130522",
       "source": "FXStreet",
       "published_at": "2026-08-13T05:22:50+00:00"
-    },
-    {
-      "title": "Indian Rupee opens marginally lower as US Dollar trades firmly",
-      "url": "https://www.fxstreet.com/news/indian-rupee-opens-marginally-lower-as-us-dollar-trades-firmly-202608130521",
-      "source": "FXStreet",
-      "published_at": "2026-08-13T05:21:00+00:00"
     },
     {
       "title": "EUR/JPY Price Forecast: Falls to near 183.50 near nine-day EMA",
