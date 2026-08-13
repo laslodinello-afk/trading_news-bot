@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-13T01:59:24.435952+00:00",
+  "fetched_at": "2026-08-13T02:01:02.647059+00:00",
   "articles": [
+    {
+      "title": "UK GDP expected to show moderate Q2 growth",
+      "url": "https://www.fxstreet.com/news/uk-gdp-expected-to-show-moderate-q2-growth-202608130200",
+      "source": "FXStreet",
+      "published_at": "2026-08-13T02:00:00+00:00"
+    },
     {
       "title": "Canadian Dollar steadies as weak US Dollar offsets lower oil prices",
       "url": "https://www.fxstreet.com/news/canadian-dollar-steadies-as-weak-us-dollar-offsets-lower-oil-prices-202608130146",
@@ -60,18 +66,6 @@
       "url": "https://www.fxstreet.com/news/commodities-weaker-dollar-lacks-growth-catalyst-bny-202608122318",
       "source": "FXStreet",
       "published_at": "2026-08-12T23:18:00+00:00"
-    },
-    {
-      "title": "The Japanese Yen gives back half of what Tokyo bought",
-      "url": "https://www.fxstreet.com/news/the-japanese-yen-gives-back-half-of-what-tokyo-bought-202608122300",
-      "source": "FXStreet",
-      "published_at": "2026-08-12T23:00:51+00:00"
-    },
-    {
-      "title": "Pound Sterling runs out of room at the July high",
-      "url": "https://www.fxstreet.com/news/pound-sterling-runs-out-of-room-at-the-july-high-202608122300",
-      "source": "FXStreet",
-      "published_at": "2026-08-12T23:00:28+00:00"
     }
   ]
 }
