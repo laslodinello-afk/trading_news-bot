@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-13T09:19:21.285652+00:00",
+  "fetched_at": "2026-08-13T09:20:43.501298+00:00",
   "articles": [
+    {
+      "title": "US Dollar: Inflation outlook and Fed path – UOB",
+      "url": "https://www.fxstreet.com/news/us-dollar-inflation-outlook-and-fed-path-uob-202608130919",
+      "source": "FXStreet",
+      "published_at": "2026-08-13T09:19:40+00:00"
+    },
     {
       "title": "Swiss Franc holds ground following domestic Producer and Import Prices data",
       "url": "https://www.fxstreet.com/news/swiss-franc-holds-ground-following-domestic-producer-and-import-prices-data-202608130911",
@@ -162,12 +168,6 @@
       "url": "https://www.fxstreet.com/news/british-pound-drifts-away-from-13500-as-weak-uk-industrial-production-offsets-bright-gdp-data-202608130635",
       "source": "FXStreet",
       "published_at": "2026-08-13T06:35:59+00:00"
-    },
-    {
-      "title": "Oil: Supply disruptions raise deficit risks – ING",
-      "url": "https://www.fxstreet.com/news/oil-supply-disruptions-raise-deficit-risks-ing-202608130633",
-      "source": "FXStreet",
-      "published_at": "2026-08-13T06:33:01+00:00"
     }
   ]
 }
