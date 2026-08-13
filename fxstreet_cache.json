@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-13T11:40:34.686089+00:00",
+  "fetched_at": "2026-08-13T11:41:24.974579+00:00",
   "articles": [
+    {
+      "title": "Silver slips below $65, but cooling US inflation keeps downside in check",
+      "url": "https://www.fxstreet.com/news/silver-slips-below-65-but-cooling-us-inflation-keeps-downside-in-check-202608131141",
+      "source": "FXStreet",
+      "published_at": "2026-08-13T11:41:20+00:00"
+    },
     {
       "title": "Riksbank: Rate hike risks rise – Nomura",
       "url": "https://www.fxstreet.com/news/riksbank-rate-hike-risks-rise-nomura-202608131132",
@@ -120,12 +126,6 @@
       "url": "https://www.fxstreet.com/news/euro-advances-against-canadian-dollar-amid-ecb-hawkish-stance-lower-oil-prices-202608130843",
       "source": "FXStreet",
       "published_at": "2026-08-13T08:43:13+00:00"
-    },
-    {
-      "title": "NZD/USD Price Forecast: Cooling NZ inflation expectations push Kiwi under pressure",
-      "url": "https://www.fxstreet.com/news/nzd-usd-price-forecast-cooling-nz-inflation-expectations-push-kiwi-under-pressure-202608130841",
-      "source": "FXStreet",
-      "published_at": "2026-08-13T08:41:03+00:00"
     }
   ]
 }
