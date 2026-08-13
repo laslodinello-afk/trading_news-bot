@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-13T08:42:25.150087+00:00",
+  "fetched_at": "2026-08-13T08:43:20.613152+00:00",
   "articles": [
+    {
+      "title": "Euro advances against Canadian Dollar amid ECB hawkish stance, lower oil prices",
+      "url": "https://www.fxstreet.com/news/euro-advances-against-canadian-dollar-amid-ecb-hawkish-stance-lower-oil-prices-202608130843",
+      "source": "FXStreet",
+      "published_at": "2026-08-13T08:43:13+00:00"
+    },
     {
       "title": "NZD/USD Price Forecast: Cooling NZ inflation expectations push Kiwi under pressure",
       "url": "https://www.fxstreet.com/news/nzd-usd-price-forecast-cooling-nz-inflation-expectations-push-kiwi-under-pressure-202608130841",
@@ -144,12 +150,6 @@
       "url": "https://www.fxstreet.com/news/british-pound-attracts-bids-against-japanese-yen-after-strong-uk-q2-gdp-data-202608130620",
       "source": "FXStreet",
       "published_at": "2026-08-13T06:20:00+00:00"
-    },
-    {
-      "title": "AUD/USD Price Forecast: Struggles to extend rally above 0.7100",
-      "url": "https://www.fxstreet.com/news/aud-usd-price-forecast-struggles-to-extend-rally-above-07100-202608130542",
-      "source": "FXStreet",
-      "published_at": "2026-08-13T05:42:47+00:00"
     }
   ]
 }
