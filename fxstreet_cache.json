@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-13T09:10:36.304114+00:00",
+  "fetched_at": "2026-08-13T09:11:18.632657+00:00",
   "articles": [
+    {
+      "title": "Japanese Yen: BoJ hike expectations support JPY against US Dollar - MUFG",
+      "url": "https://www.fxstreet.com/news/japanese-yen-boj-hike-expectations-support-jpy-against-us-dollar-mufg-202608130910",
+      "source": "FXStreet",
+      "published_at": "2026-08-13T09:10:23+00:00"
+    },
     {
       "title": "Eurozone Industrial Production remains flat in June vs. -0.1% estimates",
       "url": "https://www.fxstreet.com/news/eurozone-industrial-production-remains-flat-in-june-vs-01-estimates-202608130902",
@@ -156,12 +162,6 @@
       "url": "https://www.fxstreet.com/news/oil-supply-disruptions-raise-deficit-risks-ing-202608130633",
       "source": "FXStreet",
       "published_at": "2026-08-13T06:33:01+00:00"
-    },
-    {
-      "title": "Euro: Range phase after failed upside break against US Dollar – UOB",
-      "url": "https://www.fxstreet.com/news/euro-range-phase-after-failed-upside-break-against-us-dollar-uob-202608130624",
-      "source": "FXStreet",
-      "published_at": "2026-08-13T06:24:41+00:00"
     }
   ]
 }
