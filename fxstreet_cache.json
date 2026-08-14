@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-14T11:38:19.739488+00:00",
+  "fetched_at": "2026-08-14T11:39:18.468822+00:00",
   "articles": [
+    {
+      "title": "British Pound strengthens against US Dollar as traders price out hawkish Fed bets",
+      "url": "https://www.fxstreet.com/news/british-pound-strengthens-against-us-dollar-as-traders-price-out-hawkish-fed-bets-202608141138",
+      "source": "FXStreet",
+      "published_at": "2026-08-14T11:38:16+00:00"
+    },
     {
       "title": "South African Rand: ZAR outperforms on carry and Gold – Societe Generale",
       "url": "https://www.fxstreet.com/news/south-african-rand-zar-outperforms-on-carry-and-gold-societe-generale-202608141136",
@@ -132,12 +138,6 @@
       "url": "https://www.fxstreet.com/news/euro-flattens-against-japanese-yen-ecb-boj-to-raise-rates-in-september-202608140841",
       "source": "FXStreet",
       "published_at": "2026-08-14T08:41:27+00:00"
-    },
-    {
-      "title": "Japanese Yen: Shifting rate expectations and currency support – Commerzbank",
-      "url": "https://www.fxstreet.com/news/japanese-yen-shifting-rate-expectations-and-currency-support-commerzbank-202608140838",
-      "source": "FXStreet",
-      "published_at": "2026-08-14T08:38:34+00:00"
     }
   ]
 }
