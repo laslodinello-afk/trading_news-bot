@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-14T08:58:24.602844+00:00",
+  "fetched_at": "2026-08-14T08:59:17.701363+00:00",
   "articles": [
+    {
+      "title": "US Dollar Index Price Forecast: DXY declines to 99.75-99.70 amid receding Fed hike bets",
+      "url": "https://www.fxstreet.com/news/us-dollar-index-price-forecast-dxy-declines-to-9975-9970-amid-receding-fed-hike-bets-202608140858",
+      "source": "FXStreet",
+      "published_at": "2026-08-14T08:58:29+00:00"
+    },
     {
       "title": "GBP/USD Price Forecast: Picks up above 1.3500 amid generalised US Dollar weakness",
       "url": "https://www.fxstreet.com/news/gbp-usd-price-forecast-picks-up-above-13500-amid-generalised-us-dollar-weakness-202608140855",
@@ -162,12 +168,6 @@
       "url": "https://www.fxstreet.com/news/euro-higher-intraday-band-within-broader-range-against-us-dollar-uob-202608140610",
       "source": "FXStreet",
       "published_at": "2026-08-14T06:10:32+00:00"
-    },
-    {
-      "title": "BoJ set to hike rates as soon as September— Reuters",
-      "url": "https://www.fxstreet.com/news/boj-set-to-hike-rates-as-soon-as-september-202608140605",
-      "source": "FXStreet",
-      "published_at": "2026-08-14T06:05:27+00:00"
     }
   ]
 }
