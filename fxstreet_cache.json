@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-14T09:18:22.047569+00:00",
+  "fetched_at": "2026-08-14T09:19:19.397004+00:00",
   "articles": [
+    {
+      "title": "Australian Dollar: RBA keeps hike option open – Rabobank",
+      "url": "https://www.fxstreet.com/news/australian-dollar-rba-keeps-hike-option-open-rabobank-202608140918",
+      "source": "FXStreet",
+      "published_at": "2026-08-14T09:18:26+00:00"
+    },
     {
       "title": "Federal Reserve: RMP pause and QT timing – TD Securities",
       "url": "https://www.fxstreet.com/news/federal-reserve-rmp-pause-and-qt-timing-td-securities-202608140908",
@@ -162,12 +168,6 @@
       "url": "https://www.fxstreet.com/news/forex-today-easing-fed-rate-hike-bets-weigh-on-usd-amid-mideast-stalemate-202608140633",
       "source": "FXStreet",
       "published_at": "2026-08-14T06:33:29+00:00"
-    },
-    {
-      "title": "US Dollar: Labor slowdown gives mixed signals for Dollar - Commerzbank",
-      "url": "https://www.fxstreet.com/news/us-dollar-labor-slowdown-gives-mixed-signals-for-dollar-commerzbank-202608140629",
-      "source": "FXStreet",
-      "published_at": "2026-08-14T06:29:11+00:00"
     }
   ]
 }
