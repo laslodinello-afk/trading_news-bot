@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-14T14:37:18.259641+00:00",
+  "fetched_at": "2026-08-14T14:38:19.282074+00:00",
   "articles": [
+    {
+      "title": "Federal Reserve: Labour strength supports further hikes – Nordea",
+      "url": "https://www.fxstreet.com/news/federal-reserve-labour-strength-supports-further-hikes-nordea-202608141437",
+      "source": "FXStreet",
+      "published_at": "2026-08-14T14:37:19+00:00"
+    },
     {
       "title": "United Kingdom: Inflation risks tilt higher – TD Securities",
       "url": "https://www.fxstreet.com/news/united-kingdom-inflation-risks-tilt-higher-td-securities-202608141428",
@@ -138,12 +144,6 @@
       "url": "https://www.fxstreet.com/news/swiss-franc-edges-up-from-lows-against-the-us-dollar-with-us-retail-sales-on-tap-202608141148",
       "source": "FXStreet",
       "published_at": "2026-08-14T11:48:47+00:00"
-    },
-    {
-      "title": "British Pound strengthens against US Dollar as traders price out hawkish Fed bets",
-      "url": "https://www.fxstreet.com/news/british-pound-strengthens-against-us-dollar-as-traders-price-out-hawkish-fed-bets-202608141138",
-      "source": "FXStreet",
-      "published_at": "2026-08-14T11:38:16+00:00"
     }
   ]
 }
