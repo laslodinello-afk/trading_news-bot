@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-14T12:29:16.370587+00:00",
+  "fetched_at": "2026-08-14T12:30:51.427061+00:00",
   "articles": [
+    {
+      "title": "UoM Consumer Sentiment Index set to ease but remain resilient in August",
+      "url": "https://www.fxstreet.com/news/uom-consumer-sentiment-index-set-to-ease-as-inflation-labour-market-worries-loom-202608141000",
+      "source": "FXStreet",
+      "published_at": "2026-08-14T10:00:00+00:00"
+    },
     {
       "title": "Federal Reserve: Communication reset at Jackson Hole – TD Securities",
       "url": "https://www.fxstreet.com/news/federal-reserve-communication-reset-at-jackson-hole-td-securities-202608141225",
@@ -96,12 +102,6 @@
       "url": "https://www.fxstreet.com/news/nzd-usd-price-forecast-approaches-05900-resistance-area-as-us-dollar-weakens-202608141037",
       "source": "FXStreet",
       "published_at": "2026-08-14T10:37:53+00:00"
-    },
-    {
-      "title": "UoM Consumer Sentiment Index set to  ease as inflation, labour market worries loom",
-      "url": "https://www.fxstreet.com/news/uom-consumer-sentiment-index-set-to-ease-as-inflation-labour-market-worries-loom-202608141000",
-      "source": "FXStreet",
-      "published_at": "2026-08-14T10:00:00+00:00"
     },
     {
       "title": "Euro holds gains above 1.1550 following Eurozone GDP and bright Trade Balance data",
