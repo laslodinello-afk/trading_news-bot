@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-14T08:47:18.163305+00:00",
+  "fetched_at": "2026-08-14T08:48:24.619510+00:00",
   "articles": [
+    {
+      "title": "US Dollar: Carry trades supported as Fed seen on hold – OCBC",
+      "url": "https://www.fxstreet.com/news/us-dollar-carry-trades-supported-as-fed-seen-on-hold-ocbc-202608140846",
+      "source": "FXStreet",
+      "published_at": "2026-08-14T08:46:40+00:00"
+    },
     {
       "title": "Euro flattens against Japanese Yen, ECB-BoJ to raise rates in September",
       "url": "https://www.fxstreet.com/news/euro-flattens-against-japanese-yen-ecb-boj-to-raise-rates-in-september-202608140841",
@@ -156,12 +162,6 @@
       "url": "https://www.fxstreet.com/news/silver-price-forecast-xag-usd-slips-below-6400-on-profit-taking-202608140553",
       "source": "FXStreet",
       "published_at": "2026-08-14T05:53:51+00:00"
-    },
-    {
-      "title": "WTI regains ground near $80 amid continued energy supply risks",
-      "url": "https://www.fxstreet.com/news/wti-regains-ground-near-80-amid-continued-energy-supply-risks-202608140548",
-      "source": "FXStreet",
-      "published_at": "2026-08-14T05:48:23+00:00"
     }
   ]
 }
