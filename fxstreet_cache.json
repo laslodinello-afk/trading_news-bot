@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-14T17:24:28.563577+00:00",
+  "fetched_at": "2026-08-14T17:25:25.231689+00:00",
   "articles": [
+    {
+      "title": "British Pound hits three-month high as weak US sales deepen USD slide",
+      "url": "https://www.fxstreet.com/news/british-pound-advances-as-weak-us-sales-deepen-usd-slide-202608141543",
+      "source": "FXStreet",
+      "published_at": "2026-08-14T15:43:58+00:00"
+    },
     {
       "title": "Chinese Yuan: Range trade persists near 6.7450 against US Dollar – UOB",
       "url": "https://www.fxstreet.com/news/chinese-yuan-range-trade-persists-near-67450-against-us-dollar-uob-202608141700",
@@ -60,12 +66,6 @@
       "url": "https://www.fxstreet.com/news/indonesia-policy-continuity-supports-rupiah-ing-202608141545",
       "source": "FXStreet",
       "published_at": "2026-08-14T15:45:00+00:00"
-    },
-    {
-      "title": "British Pound hits three-month high as weak US sales deepen USD slide",
-      "url": "https://www.fxstreet.com/news/british-pound-advances-as-weak-us-sales-deepen-usd-slide-202608141543",
-      "source": "FXStreet",
-      "published_at": "2026-08-14T15:43:58+00:00"
     },
     {
       "title": "Japanese Yen: Policy risks support gains against US Dollar – Scotiabank",
