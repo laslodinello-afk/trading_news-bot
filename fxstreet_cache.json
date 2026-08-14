@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-14T09:37:17.182574+00:00",
+  "fetched_at": "2026-08-14T09:38:24.656064+00:00",
   "articles": [
+    {
+      "title": "Japanese Yen: Bearish bias within 158.00–160.20 band against US Dollar – UOB",
+      "url": "https://www.fxstreet.com/news/japanese-yen-bearish-bias-within-15800-16020-band-against-us-dollar-uob-202608140937",
+      "source": "FXStreet",
+      "published_at": "2026-08-14T09:37:28+00:00"
+    },
     {
       "title": "Silver price today: Silver rises, according to FXStreet data",
       "url": "https://www.fxstreet.com/news/silver-price-today-silver-rises-according-to-fxstreet-data-202608140931",
@@ -162,12 +168,6 @@
       "url": "https://www.fxstreet.com/news/canadian-dollar-gathers-strength-on-easing-fed-rate-hike-bets-202608140650",
       "source": "FXStreet",
       "published_at": "2026-08-14T06:50:31+00:00"
-    },
-    {
-      "title": "New Zealand Dollar gains on hawkish RBNZ policy outlook",
-      "url": "https://www.fxstreet.com/news/new-zealand-dollar-gains-on-hawkish-rbnz-policy-outlook-202608140643",
-      "source": "FXStreet",
-      "published_at": "2026-08-14T06:43:24+00:00"
     }
   ]
 }
