@@ -1,6 +1,18 @@
 {
-  "fetched_at": "2026-08-14T09:59:17.235737+00:00",
+  "fetched_at": "2026-08-14T10:00:52.595352+00:00",
   "articles": [
+    {
+      "title": "UoM Consumer Sentiment Index set to  ease as inflation, labour market worries loom",
+      "url": "https://www.fxstreet.com/news/uom-consumer-sentiment-index-set-to-ease-as-inflation-labour-market-worries-loom-202608141000",
+      "source": "FXStreet",
+      "published_at": "2026-08-14T10:00:00+00:00"
+    },
+    {
+      "title": "Euro holds gains above 1.1550 following Eurozone GDP and bright Trade Balance data",
+      "url": "https://www.fxstreet.com/news/euro-holds-gains-above-11550-following-eurozone-gdp-and-bright-trade-balance-data-202608140959",
+      "source": "FXStreet",
+      "published_at": "2026-08-14T09:59:22+00:00"
+    },
     {
       "title": "US Dollar: Looking for a shift in Fedspeak – ING",
       "url": "https://www.fxstreet.com/news/us-dollar-looking-for-a-shift-in-fedspeak-ing-202608140945",
@@ -156,12 +168,6 @@
       "url": "https://www.fxstreet.com/news/british-pound-locked-in-tight-ranges-against-us-dollar-uob-202608140713",
       "source": "FXStreet",
       "published_at": "2026-08-14T07:13:13+00:00"
-    },
-    {
-      "title": "Euro: Showing some undervaluation against US Dollar – ING",
-      "url": "https://www.fxstreet.com/news/euro-showing-some-undervaluation-against-us-dollar-ing-202608140702",
-      "source": "FXStreet",
-      "published_at": "2026-08-14T07:02:51+00:00"
     }
   ]
 }
