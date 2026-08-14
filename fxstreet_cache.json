@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-14T06:59:18.736700+00:00",
+  "fetched_at": "2026-08-14T07:00:53.981306+00:00",
   "articles": [
+    {
+      "title": "Indian Rupee trades calm while approaching the weekend",
+      "url": "https://www.fxstreet.com/news/indian-rupee-trades-calm-while-oil-prices-correct-202608140525",
+      "source": "FXStreet",
+      "published_at": "2026-08-14T05:25:33+00:00"
+    },
     {
       "title": "Equities: US stock rally broadens as S&P 500 hits new high – Deutsche Bank",
       "url": "https://www.fxstreet.com/news/equities-us-stock-rally-broadens-as-sp-500-hits-new-high-deutsche-bank-202608140652",
@@ -78,12 +84,6 @@
       "url": "https://www.fxstreet.com/news/aud-jpy-price-forecast-weakens-to-near-11250-near-term-outlook-remains-bearish-202608140529",
       "source": "FXStreet",
       "published_at": "2026-08-14T05:29:56+00:00"
-    },
-    {
-      "title": "Indian Rupee trades calm while oil prices correct",
-      "url": "https://www.fxstreet.com/news/indian-rupee-trades-calm-while-oil-prices-correct-202608140525",
-      "source": "FXStreet",
-      "published_at": "2026-08-14T05:25:33+00:00"
     },
     {
       "title": "United States Dollar Index weakens as cooling US inflation eases Fed rate hike odds",
