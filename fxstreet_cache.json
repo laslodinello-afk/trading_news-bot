@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-14T09:44:22.156351+00:00",
+  "fetched_at": "2026-08-14T09:45:36.547978+00:00",
   "articles": [
+    {
+      "title": "US Dollar: Looking for a shift in Fedspeak – ING",
+      "url": "https://www.fxstreet.com/news/us-dollar-looking-for-a-shift-in-fedspeak-ing-202608140945",
+      "source": "FXStreet",
+      "published_at": "2026-08-14T09:45:11+00:00"
+    },
     {
       "title": "Japanese Yen: Bearish bias within 158.00–160.20 band against US Dollar – UOB",
       "url": "https://www.fxstreet.com/news/japanese-yen-bearish-bias-within-15800-16020-band-against-us-dollar-uob-202608140937",
@@ -162,12 +168,6 @@
       "url": "https://www.fxstreet.com/news/equities-us-stock-rally-broadens-as-sp-500-hits-new-high-deutsche-bank-202608140652",
       "source": "FXStreet",
       "published_at": "2026-08-14T06:52:17+00:00"
-    },
-    {
-      "title": "Canadian Dollar gathers strength on easing Fed rate hike bets",
-      "url": "https://www.fxstreet.com/news/canadian-dollar-gathers-strength-on-easing-fed-rate-hike-bets-202608140650",
-      "source": "FXStreet",
-      "published_at": "2026-08-14T06:50:31+00:00"
     }
   ]
 }
