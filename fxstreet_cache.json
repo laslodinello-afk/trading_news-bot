@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-14T22:29:17.289904+00:00",
+  "fetched_at": "2026-08-14T22:30:46.873252+00:00",
   "articles": [
+    {
+      "title": "AUD/USD Price Forecast: Bulls eye 0.7100 after US Retail Sales miss",
+      "url": "https://www.fxstreet.com/news/aud-usd-price-forecast-bulls-eye-07100-after-us-retail-sales-miss-202608142230",
+      "source": "FXStreet",
+      "published_at": "2026-08-14T22:30:19+00:00"
+    },
     {
       "title": "US Treasury yields rise as Oil strength offsets weak Retail Sales",
       "url": "https://www.fxstreet.com/news/us-treasury-yields-rise-as-oil-strength-offsets-weak-retail-sales-202608142201",
@@ -30,12 +36,6 @@
       "url": "https://www.fxstreet.com/news/south-korean-won-foreign-inflows-and-exporters-support-krw-commerzbank-202608141939",
       "source": "FXStreet",
       "published_at": "2026-08-14T19:39:00+00:00"
-    },
-    {
-      "title": "EUR/USD Price Forecast: 100-Day SMA blocks bullish reversal",
-      "url": "https://www.fxstreet.com/news/eur-usd-price-forecast-100-day-sma-blocks-bullish-reversal-202608141929",
-      "source": "FXStreet",
-      "published_at": "2026-08-14T19:29:39+00:00"
     }
   ]
 }
