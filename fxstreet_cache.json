@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-14T08:19:19.075567+00:00",
+  "fetched_at": "2026-08-14T08:20:35.211870+00:00",
   "articles": [
+    {
+      "title": "Indian Rupee: RBI support offsets wider trade gap – Societe Generale",
+      "url": "https://www.fxstreet.com/news/indian-rupee-rbi-support-offsets-wider-trade-gap-societe-generale-202608140819",
+      "source": "FXStreet",
+      "published_at": "2026-08-14T08:19:47+00:00"
+    },
     {
       "title": "Australian Dollar: Upside risk intact above support against US Dollar – UOB",
       "url": "https://www.fxstreet.com/news/australian-dollar-upside-risk-intact-above-support-against-us-dollar-uob-202608140810",
@@ -156,12 +162,6 @@
       "url": "https://www.fxstreet.com/news/aud-jpy-price-forecast-weakens-to-near-11250-near-term-outlook-remains-bearish-202608140529",
       "source": "FXStreet",
       "published_at": "2026-08-14T05:29:56+00:00"
-    },
-    {
-      "title": "United States Dollar Index weakens as cooling US inflation eases Fed rate hike odds",
-      "url": "https://www.fxstreet.com/news/united-states-dollar-index-weakens-as-cooling-us-inflation-eases-fed-rate-hike-odds-202608140520",
-      "source": "FXStreet",
-      "published_at": "2026-08-14T05:20:13+00:00"
     }
   ]
 }
