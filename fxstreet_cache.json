@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-14T18:52:24.934282+00:00",
+  "fetched_at": "2026-08-14T18:53:20.964879+00:00",
   "articles": [
+    {
+      "title": "Japanese Yen holds as soft US data meets a weak Yen",
+      "url": "https://www.fxstreet.com/news/japanese-yen-holds-as-soft-us-data-meets-a-weak-yen-202608141853",
+      "source": "FXStreet",
+      "published_at": "2026-08-14T18:53:04+00:00"
+    },
     {
       "title": "USD/CAD Price Forecast: Bears target the 200-day SMA",
       "url": "https://www.fxstreet.com/news/usd-cad-price-forecast-bears-target-the-200-day-sma-202608141824",
@@ -84,12 +90,6 @@
       "url": "https://www.fxstreet.com/news/asean-fx-regional-data-and-growth-concerns-mufg-202608141601",
       "source": "FXStreet",
       "published_at": "2026-08-14T16:01:00+00:00"
-    },
-    {
-      "title": "Canada: Core softness guides BoC path – TD Securities",
-      "url": "https://www.fxstreet.com/news/canada-core-softness-guides-boc-path-td-securities-202608141553",
-      "source": "FXStreet",
-      "published_at": "2026-08-14T15:53:00+00:00"
     }
   ]
 }
