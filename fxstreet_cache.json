@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-14T09:08:22.682455+00:00",
+  "fetched_at": "2026-08-14T09:09:22.789511+00:00",
   "articles": [
+    {
+      "title": "Federal Reserve: RMP pause and QT timing – TD Securities",
+      "url": "https://www.fxstreet.com/news/federal-reserve-rmp-pause-and-qt-timing-td-securities-202608140908",
+      "source": "FXStreet",
+      "published_at": "2026-08-14T09:08:36+00:00"
+    },
     {
       "title": "Eurozone Q2 GDP growth remains at 0.4%, as flash data showed",
       "url": "https://www.fxstreet.com/news/eurozone-q2-gdp-growth-remains-at-04-as-flash-data-showed-202608140902",
@@ -162,12 +168,6 @@
       "url": "https://www.fxstreet.com/news/us-dollar-labor-slowdown-gives-mixed-signals-for-dollar-commerzbank-202608140629",
       "source": "FXStreet",
       "published_at": "2026-08-14T06:29:11+00:00"
-    },
-    {
-      "title": "Euro edges up against British Pound but remains within recent ranges",
-      "url": "https://www.fxstreet.com/news/euro-edges-up-against-british-pound-but-remains-within-recent-ranges-202608140623",
-      "source": "FXStreet",
-      "published_at": "2026-08-14T06:23:24+00:00"
     }
   ]
 }
