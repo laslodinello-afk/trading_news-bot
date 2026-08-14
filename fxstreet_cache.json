@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-14T09:02:27.905167+00:00",
+  "fetched_at": "2026-08-14T09:03:27.634974+00:00",
   "articles": [
+    {
+      "title": "Eurozone Q2 GDP growth remains at 0.4%, as flash data showed",
+      "url": "https://www.fxstreet.com/news/eurozone-q2-gdp-growth-remains-at-04-as-flash-data-showed-202608140902",
+      "source": "FXStreet",
+      "published_at": "2026-08-14T09:02:31+00:00"
+    },
     {
       "title": "US Dollar Index Price Forecast: DXY declines to 99.75-99.70 amid receding Fed hike bets",
       "url": "https://www.fxstreet.com/news/us-dollar-index-price-forecast-dxy-declines-to-9975-9970-amid-receding-fed-hike-bets-202608140858",
@@ -162,12 +168,6 @@
       "url": "https://www.fxstreet.com/news/euro-edges-up-against-british-pound-but-remains-within-recent-ranges-202608140623",
       "source": "FXStreet",
       "published_at": "2026-08-14T06:23:24+00:00"
-    },
-    {
-      "title": "Euro: Higher intraday band within broader range against US Dollar – UOB",
-      "url": "https://www.fxstreet.com/news/euro-higher-intraday-band-within-broader-range-against-us-dollar-uob-202608140610",
-      "source": "FXStreet",
-      "published_at": "2026-08-14T06:10:32+00:00"
     }
   ]
 }
