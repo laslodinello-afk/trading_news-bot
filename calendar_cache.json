@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-17T13:55:35.773662+00:00",
+  "fetched_at": "2026-08-17T19:17:10.818529+00:00",
   "events": [
     {
       "title": "BusinessNZ Services Index",
@@ -230,7 +230,7 @@
       "country": "EUR",
       "date": "2026-08-18T05:00:00-04:00",
       "impact": "Low",
-      "forecast": "30.0",
+      "forecast": "30.1",
       "previous": "26.3"
     },
     {
