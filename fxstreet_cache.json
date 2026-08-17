@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-17T09:51:18.054636+00:00",
+  "fetched_at": "2026-08-17T09:52:28.241624+00:00",
   "articles": [
+    {
+      "title": "WTI advances above $82.00 as US-Iran deadlock supports prices",
+      "url": "https://www.fxstreet.com/news/wti-advances-above-8200-as-us-iran-deadlock-supports-prices-202608170952",
+      "source": "FXStreet",
+      "published_at": "2026-08-17T09:52:23+00:00"
+    },
     {
       "title": "Swedish Krona: Riksbank seen on cautious hawkish hold – BBH",
       "url": "https://www.fxstreet.com/news/swedish-krona-riksbank-seen-on-cautious-hawkish-hold-bbh-202608170950",
@@ -162,12 +168,6 @@
       "url": "https://www.fxstreet.com/news/06-chinas-retail-sales-miss-expectations-in-july-202608170701",
       "source": "FXStreet",
       "published_at": "2026-08-17T07:01:15+00:00"
-    },
-    {
-      "title": "Swedish Krona: Riksbank steady as currency lags – BNY",
-      "url": "https://www.fxstreet.com/news/swedish-krona-riksbank-steady-as-currency-lags-bny-202608170700",
-      "source": "FXStreet",
-      "published_at": "2026-08-17T07:00:08+00:00"
     }
   ]
 }
