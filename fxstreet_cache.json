@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-17T18:19:18.298396+00:00",
+  "fetched_at": "2026-08-17T18:20:40.459438+00:00",
   "articles": [
+    {
+      "title": "Silver Price Forecast: XAG consolidates as haven demand returns",
+      "url": "https://www.fxstreet.com/news/silver-price-forecast-xag-consolidates-as-haven-demand-returns-202608171820",
+      "source": "FXStreet",
+      "published_at": "2026-08-17T18:20:08+00:00"
+    },
     {
       "title": "Euro returns below 1.1600 as US Dollar selling pressure eases",
       "url": "https://www.fxstreet.com/news/euro-returns-below-11600-as-us-dollar-selling-pressure-eases-202608171755",
@@ -48,12 +54,6 @@
       "url": "https://www.fxstreet.com/news/silver-accelerates-above-66-as-fed-expectations-shift-202608171521",
       "source": "FXStreet",
       "published_at": "2026-08-17T15:21:51+00:00"
-    },
-    {
-      "title": "Australian Dollar climbs to two-month highs amid a soft US Dollar",
-      "url": "https://www.fxstreet.com/news/australian-dollar-climbs-to-two-month-highs-amid-a-soft-us-dollar-202608171520",
-      "source": "FXStreet",
-      "published_at": "2026-08-17T15:20:35+00:00"
     }
   ]
 }
