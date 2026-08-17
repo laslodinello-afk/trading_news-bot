@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-17T09:50:34.917522+00:00",
+  "fetched_at": "2026-08-17T09:51:18.054636+00:00",
   "articles": [
+    {
+      "title": "Swedish Krona: Riksbank seen on cautious hawkish hold – BBH",
+      "url": "https://www.fxstreet.com/news/swedish-krona-riksbank-seen-on-cautious-hawkish-hold-bbh-202608170950",
+      "source": "FXStreet",
+      "published_at": "2026-08-17T09:50:59+00:00"
+    },
     {
       "title": "Dow Jones futures decline despite softening Fed rate hike expectations",
       "url": "https://www.fxstreet.com/news/dow-jones-futures-decline-despite-softening-fed-rate-hike-expectations-202608170948",
@@ -162,12 +168,6 @@
       "url": "https://www.fxstreet.com/news/swedish-krona-riksbank-steady-as-currency-lags-bny-202608170700",
       "source": "FXStreet",
       "published_at": "2026-08-17T07:00:08+00:00"
-    },
-    {
-      "title": "Canadian Dollar edges higher as Fed rate hike bets recede, CPI data looms",
-      "url": "https://www.fxstreet.com/news/canadian-dollar-edges-higher-as-fed-rate-hike-bets-recede-cpi-data-looms-202608170657",
-      "source": "FXStreet",
-      "published_at": "2026-08-17T06:57:55+00:00"
     }
   ]
 }
