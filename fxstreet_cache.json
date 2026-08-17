@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-17T10:07:17.446709+00:00",
+  "fetched_at": "2026-08-17T10:08:25.040838+00:00",
   "articles": [
+    {
+      "title": "Gold Price Forecast: XAU/USD holds bullish bias near $4,400",
+      "url": "https://www.fxstreet.com/news/gold-price-forecast-xau-usd-holds-bullish-bias-near-4-400-202608171008",
+      "source": "FXStreet",
+      "published_at": "2026-08-17T10:08:05+00:00"
+    },
     {
       "title": "British Pound: Labour data seen backing BoE hold – TD Securities",
       "url": "https://www.fxstreet.com/news/british-pound-labour-data-seen-backing-boe-hold-td-securities-202608171001",
@@ -162,12 +168,6 @@
       "url": "https://www.fxstreet.com/news/08550-euro-tests-one-week-highs-against-british-pound-amid-ecb-hawkish-bets-202608170720",
       "source": "FXStreet",
       "published_at": "2026-08-17T07:20:37+00:00"
-    },
-    {
-      "title": "Forex Today: US Dollar extends pullback to start new week",
-      "url": "https://www.fxstreet.com/news/forex-today-us-dollar-extends-pullback-to-start-new-week-202608170716",
-      "source": "FXStreet",
-      "published_at": "2026-08-17T07:16:31+00:00"
     }
   ]
 }
