@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-17T18:21:20.175169+00:00",
+  "fetched_at": "2026-08-17T18:22:25.777661+00:00",
   "articles": [
+    {
+      "title": "USD/CHF Price Forecast: Bulls need a break above 0.8200 to regain momentum",
+      "url": "https://www.fxstreet.com/news/usd-chf-price-forecast-bulls-need-a-break-above-08200-to-regain-momentum-202608171822",
+      "source": "FXStreet",
+      "published_at": "2026-08-17T18:22:03+00:00"
+    },
     {
       "title": "Silver Price Forecast: XAG consolidates as haven demand returns",
       "url": "https://www.fxstreet.com/news/silver-price-forecast-xag-consolidates-as-haven-demand-returns-202608171820",
@@ -48,12 +54,6 @@
       "url": "https://www.fxstreet.com/news/japanese-yen-struggles-despite-rising-bond-yields-and-boj-hike-bets-202608171526",
       "source": "FXStreet",
       "published_at": "2026-08-17T15:26:25+00:00"
-    },
-    {
-      "title": "Silver accelerates above $66 as Fed expectations shift",
-      "url": "https://www.fxstreet.com/news/silver-accelerates-above-66-as-fed-expectations-shift-202608171521",
-      "source": "FXStreet",
-      "published_at": "2026-08-17T15:21:51+00:00"
     }
   ]
 }
