@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-17T22:03:19.980316+00:00",
+  "fetched_at": "2026-08-17T22:04:21.888712+00:00",
   "articles": [
+    {
+      "title": "US Treasury yields surge as 30-year hits 2007 high",
+      "url": "https://www.fxstreet.com/news/us-treasury-yields-surge-as-30-year-hits-2007-high-202608172045",
+      "source": "FXStreet",
+      "published_at": "2026-08-17T20:45:51+00:00"
+    },
     {
       "title": "The Dow Jones Industrial Average prices the war last",
       "url": "https://www.fxstreet.com/news/the-dow-jones-industrial-average-prices-the-war-last-202608172156",
@@ -18,12 +24,6 @@
       "url": "https://www.fxstreet.com/news/china-growth-risks-and-stimulus-watch-td-securities-202608172058",
       "source": "FXStreet",
       "published_at": "2026-08-17T20:58:00+00:00"
-    },
-    {
-      "title": "US Treasury yields surge as 30-year hits 2007 high",
-      "url": "https://www.fxstreet.com/news/us-treasury-yields-surge-as-30-year-hits-2007-high-202608172045",
-      "source": "FXStreet",
-      "published_at": "2026-08-17T20:45:51+00:00"
     },
     {
       "title": "Forex Today: US Dollar sags to two-month lows as Middle East risk lifts Oil and Gold",
