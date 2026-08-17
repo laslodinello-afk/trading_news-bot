@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-17T16:17:19.661530+00:00",
+  "fetched_at": "2026-08-17T16:18:22.891175+00:00",
   "articles": [
+    {
+      "title": "The Dow Jones Industrial Average lets refiners price the war",
+      "url": "https://www.fxstreet.com/news/the-dow-jones-industrial-average-lets-refiners-price-the-war-202608171616",
+      "source": "FXStreet",
+      "published_at": "2026-08-17T16:16:57+00:00"
+    },
     {
       "title": "WTI Oil climbs above $82 as Washington-Tehran standoff reignites supply concerns",
       "url": "https://www.fxstreet.com/news/wti-oil-climbs-above-82-as-washington-tehran-standoff-reignites-supply-concerns-202608171604",
@@ -84,12 +90,6 @@
       "url": "https://www.fxstreet.com/news/canadian-dollar-struggles-against-euro-as-inflation-accelerates-to-3-202608171331",
       "source": "FXStreet",
       "published_at": "2026-08-17T13:31:57+00:00"
-    },
-    {
-      "title": "China: Fiscal support to offset weak demand – Standard Chartered",
-      "url": "https://www.fxstreet.com/news/china-fiscal-support-to-offset-weak-demand-standard-chartered-202608171317",
-      "source": "FXStreet",
-      "published_at": "2026-08-17T13:17:31+00:00"
     }
   ]
 }
