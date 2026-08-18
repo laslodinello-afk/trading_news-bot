@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-18T09:47:18.863923+00:00",
+  "fetched_at": "2026-08-18T09:48:20.040064+00:00",
   "articles": [
+    {
+      "title": "Japanese Yen: Bearish bias within tight range against US Dollar – UOB",
+      "url": "https://www.fxstreet.com/news/japanese-yen-bearish-bias-within-tight-range-against-us-dollar-uob-202608180947",
+      "source": "FXStreet",
+      "published_at": "2026-08-18T09:47:49+00:00"
+    },
     {
       "title": "Thailand: Middle East shock tests growth – DBS",
       "url": "https://www.fxstreet.com/news/thailand-middle-east-shock-tests-growth-dbs-202608180931",
@@ -162,12 +168,6 @@
       "url": "https://www.fxstreet.com/news/forex-today-mood-sours-as-middle-east-tensions-come-back-under-spotlight-202608180700",
       "source": "FXStreet",
       "published_at": "2026-08-18T07:00:14+00:00"
-    },
-    {
-      "title": "Equities: Stagflation fears weigh on US stocks – Deutsche Bank",
-      "url": "https://www.fxstreet.com/news/equities-stagflation-fears-weigh-on-us-stocks-deutsche-bank-202608180649",
-      "source": "FXStreet",
-      "published_at": "2026-08-18T06:49:32+00:00"
     }
   ]
 }
