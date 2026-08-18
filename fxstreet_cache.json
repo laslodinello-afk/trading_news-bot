@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-18T12:30:47.359782+00:00",
+  "fetched_at": "2026-08-18T12:31:21.477734+00:00",
   "articles": [
+    {
+      "title": "Euro: Range-bound before FOMC against US Dollar – ING",
+      "url": "https://www.fxstreet.com/news/euro-range-bound-before-fomc-against-us-dollar-ing-202608181230",
+      "source": "FXStreet",
+      "published_at": "2026-08-18T12:30:23+00:00"
+    },
     {
       "title": "US ADP Employment Change 4-week average rises to 9.5K as hiring rebounds",
       "url": "https://www.fxstreet.com/news/us-adp-employment-change-4-week-average-rises-to-95k-as-hiring-rebounds-202608181224",
@@ -108,12 +114,6 @@
       "url": "https://www.fxstreet.com/news/thailand-middle-east-shock-tests-growth-dbs-202608180931",
       "source": "FXStreet",
       "published_at": "2026-08-18T09:31:28+00:00"
-    },
-    {
-      "title": "Silver price today: Silver falls, according to FXStreet data",
-      "url": "https://www.fxstreet.com/news/silver-price-today-silver-falls-according-to-fxstreet-data-202608180931",
-      "source": "FXStreet",
-      "published_at": "2026-08-18T09:31:09+00:00"
     }
   ]
 }
