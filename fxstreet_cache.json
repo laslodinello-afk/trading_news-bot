@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-18T12:39:19.429991+00:00",
+  "fetched_at": "2026-08-18T12:40:34.164487+00:00",
   "articles": [
+    {
+      "title": "Gold falls as rising US Treasury yields strengthen the US Dollar",
+      "url": "https://www.fxstreet.com/news/gold-falls-as-rising-us-treasury-yields-strengthen-the-us-dollar-202608181051",
+      "source": "FXStreet",
+      "published_at": "2026-08-18T10:51:51+00:00"
+    },
     {
       "title": "Euro: Range-bound before FOMC against US Dollar – ING",
       "url": "https://www.fxstreet.com/news/euro-range-bound-before-fomc-against-us-dollar-ing-202608181230",
@@ -78,12 +84,6 @@
       "url": "https://www.fxstreet.com/news/copper-squeeze-deepens-on-tight-supply-ing-202608181113",
       "source": "FXStreet",
       "published_at": "2026-08-18T11:13:45+00:00"
-    },
-    {
-      "title": "Gold falls as rising US Treasury yields strengthen the US Dollar",
-      "url": "https://www.fxstreet.com/news/gold-falls-as-rising-us-treasury-yields-strengthen-the-us-dollar-202608181051",
-      "source": "FXStreet",
-      "published_at": "2026-08-18T10:51:51+00:00"
     },
     {
       "title": "Gold Price Forecast: XAU/USD eases below $4,400 as US yields rally",
