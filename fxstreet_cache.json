@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-18T11:57:19.048202+00:00",
+  "fetched_at": "2026-08-18T11:58:23.006974+00:00",
   "articles": [
+    {
+      "title": "European gas: LNG inflows key for prices – Commerzbank",
+      "url": "https://www.fxstreet.com/news/european-gas-lng-inflows-key-for-prices-commerzbank-202608181157",
+      "source": "FXStreet",
+      "published_at": "2026-08-18T11:57:58+00:00"
+    },
     {
       "title": "Gold: Higher-rate risk to keep prices range-bound – TD Securities",
       "url": "https://www.fxstreet.com/news/gold-higher-rate-risk-to-keep-prices-range-bound-td-securities-202608181146",
@@ -132,12 +138,6 @@
       "url": "https://www.fxstreet.com/news/germany-zew-survey-economic-sentiment-improves-more-than-expected-to-342-in-august-202608180902",
       "source": "FXStreet",
       "published_at": "2026-08-18T09:02:34+00:00"
-    },
-    {
-      "title": "US Dollar: Dovish Fed repricing versus strong flows – BBH",
-      "url": "https://www.fxstreet.com/news/us-dollar-dovish-fed-repricing-versus-strong-flows-bbh-202608180858",
-      "source": "FXStreet",
-      "published_at": "2026-08-18T08:58:04+00:00"
     }
   ]
 }
