@@ -419,6 +419,44 @@ produire la vidéo DEBRIEF d'un jour donné, sans ouvrir de Terminal :
   l'app **Éditeur de scripts** sur macOS, puis "Exporter..." en type
   "Application" pour recompiler après modification).
 
+### Génération automatique chaque soir (macOS)
+
+Pour ne plus jamais avoir à lancer la génération toi-même : un LaunchAgent
+macOS (`~/Library/LaunchAgents/com.laslodinello.debrief-daily.plist`) déclenche
+`daily_debrief_to_icloud.sh` chaque soir à **23h59** — le script génère + rend
+la vidéo DEBRIEF du jour, puis copie la vidéo (`debrief_<date>.mp4`) ET la
+légende/hashtags prêts à coller (`debrief_<date>.txt`) dans un dossier
+**iCloud Drive** (`DEBRIEF Videos`), accessible depuis n'importe quel appareil
+connecté à ton compte iCloud, sans avoir besoin de rouvrir un Terminal.
+
+⚠️ **À savoir avant de compter dessus :**
+- **Le Mac doit être allumé et éveillé à 23h59** — `launchd` ne réveille pas la
+  machine, si elle est en veille (couvercle fermé) la tâche ne se déclenche
+  simplement pas ce soir-là. Fonctionne de façon fiable sur un Mac qui reste
+  allumé/branché, ou en réglant `pmset` pour réveiller la machine juste avant
+  (non fait ici, à ajouter si besoin).
+- Tout est loggé dans `daily_debrief.log` à la racine du projet — c'est la
+  seule trace disponible en cas d'échec pendant la nuit (ex. pas de breaking
+  news ce jour-là, panne réseau, quota Gemini).
+- Mêmes limites que `generate_debrief.sh` (voir juste ci-dessous et "Limites
+  honnêtes à connaître") : synchronise avec Render si configuré, sinon
+  rafraîchissement local.
+
+**Commandes utiles :**
+```bash
+# Lancer manuellement (pour tester sans attendre 23h59)
+./daily_debrief_to_icloud.sh
+
+# Voir si la tâche est bien enregistrée
+launchctl print gui/$(id -u)/com.laslodinello.debrief-daily
+
+# Désactiver temporairement
+launchctl bootout gui/$(id -u)/com.laslodinello.debrief-daily
+
+# Réactiver
+launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.laslodinello.debrief-daily.plist
+```
+
 ### Synchroniser avec Render (recommandé)
 
 Par défaut, générer la vidéo en local ne connaît que ce qu'un simple
