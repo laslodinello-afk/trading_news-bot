@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-18T11:47:16.807350+00:00",
+  "fetched_at": "2026-08-18T11:48:20.706320+00:00",
   "articles": [
+    {
+      "title": "Gold: Higher-rate risk to keep prices range-bound – TD Securities",
+      "url": "https://www.fxstreet.com/news/gold-higher-rate-risk-to-keep-prices-range-bound-td-securities-202608181146",
+      "source": "FXStreet",
+      "published_at": "2026-08-18T11:46:28+00:00"
+    },
     {
       "title": "NZD/USD Price Forecast: Kiwi fails to find follow-through above 0.5900",
       "url": "https://www.fxstreet.com/news/nzd-usd-price-forecast-kiwi-fails-to-find-follow-through-above-05900-202608181146",
@@ -138,12 +144,6 @@
       "url": "https://www.fxstreet.com/news/fiscal-concerns-and-doubts-on-fed-independence-send-us-yields-to-long-term-highs-202608180853",
       "source": "FXStreet",
       "published_at": "2026-08-18T08:53:14+00:00"
-    },
-    {
-      "title": "Brent: Rally extends above $91/bbl – ING",
-      "url": "https://www.fxstreet.com/news/brent-rally-extends-above-91-bbl-ing-202608180847",
-      "source": "FXStreet",
-      "published_at": "2026-08-18T08:47:26+00:00"
     }
   ]
 }
