@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-18T09:52:21.110109+00:00",
+  "fetched_at": "2026-08-18T09:53:19.832771+00:00",
   "articles": [
+    {
+      "title": "Euro ticks higher against the British Pound after upbeat German economic sentiment",
+      "url": "https://www.fxstreet.com/news/euro-ticks-higher-against-the-british-pound-after-upbeat-german-economic-sentiment-202608180952",
+      "source": "FXStreet",
+      "published_at": "2026-08-18T09:52:15+00:00"
+    },
     {
       "title": "Japanese Yen: Bearish bias within tight range against US Dollar – UOB",
       "url": "https://www.fxstreet.com/news/japanese-yen-bearish-bias-within-tight-range-against-us-dollar-uob-202608180947",
@@ -162,12 +168,6 @@
       "url": "https://www.fxstreet.com/news/usd-cad-price-forecast-consolidates-below-13900-as-bears-await-200-sma-breakdown-202608180703",
       "source": "FXStreet",
       "published_at": "2026-08-18T07:03:28+00:00"
-    },
-    {
-      "title": "Forex Today: Mood sours as Middle East tensions come back under spotlight",
-      "url": "https://www.fxstreet.com/news/forex-today-mood-sours-as-middle-east-tensions-come-back-under-spotlight-202608180700",
-      "source": "FXStreet",
-      "published_at": "2026-08-18T07:00:14+00:00"
     }
   ]
 }
