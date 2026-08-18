@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-18T09:23:19.601819+00:00",
+  "fetched_at": "2026-08-18T09:24:21.036511+00:00",
   "articles": [
+    {
+      "title": "Euro remains subdued following German ZEW Survey data",
+      "url": "https://www.fxstreet.com/news/euro-remains-subdued-following-german-zew-survey-data-202608180923",
+      "source": "FXStreet",
+      "published_at": "2026-08-18T09:23:43+00:00"
+    },
     {
       "title": "China: Credit-light growth reshapes loan demand – Standard Chartered",
       "url": "https://www.fxstreet.com/news/china-credit-light-growth-reshapes-loan-demand-standard-chartered-202608180919",
@@ -162,12 +168,6 @@
       "url": "https://www.fxstreet.com/news/british-pound-dips-to-fresh-lows-near-13520-after-mixed-uk-employment-data-202608180629",
       "source": "FXStreet",
       "published_at": "2026-08-18T06:29:35+00:00"
-    },
-    {
-      "title": "Indian Rupee: RBI inflow strategy recalibrated – Commerzbank",
-      "url": "https://www.fxstreet.com/news/indian-rupee-rbi-inflow-strategy-recalibrated-commerzbank-202608180627",
-      "source": "FXStreet",
-      "published_at": "2026-08-18T06:27:50+00:00"
     }
   ]
 }
