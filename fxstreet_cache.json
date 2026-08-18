@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-18T23:24:23.775059+00:00",
+  "fetched_at": "2026-08-18T23:25:24.726884+00:00",
   "articles": [
+    {
+      "title": "Gold steadies below $4,350 as surging yields offset support from Fed rate-hold bets",
+      "url": "https://www.fxstreet.com/news/gold-steadies-below-4-350-as-surging-yields-offset-support-from-fed-rate-hold-bets-202608182325",
+      "source": "FXStreet",
+      "published_at": "2026-08-18T23:25:00+00:00"
+    },
     {
       "title": "EUR/JPY Price Forecast: SMAs confluence blocks bulls near 185.00",
       "url": "https://www.fxstreet.com/news/eur-jpy-price-forecast-smas-confluence-blocks-bulls-near-18500-202608182310",
@@ -48,12 +54,6 @@
       "url": "https://www.fxstreet.com/news/chinese-yuan-sideways-range-holds-against-us-dollar-uob-202608182102",
       "source": "FXStreet",
       "published_at": "2026-08-18T21:02:00+00:00"
-    },
-    {
-      "title": "South Korean Won: Bearish Won view with 1,400 support – TD Securities",
-      "url": "https://www.fxstreet.com/news/south-korean-won-bearish-won-view-with-1-400-support-td-securities-202608182024",
-      "source": "FXStreet",
-      "published_at": "2026-08-18T20:24:48+00:00"
     }
   ]
 }
