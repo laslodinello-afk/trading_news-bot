@@ -429,12 +429,24 @@ légende/hashtags prêts à coller (`debrief_<date>.txt`) dans un dossier
 **iCloud Drive** (`DEBRIEF Videos`), accessible depuis n'importe quel appareil
 connecté à ton compte iCloud, sans avoir besoin de rouvrir un Terminal.
 
+**Réveil + remise en veille automatiques :** `launchd` ne réveille pas un Mac
+en veille tout seul, donc un réveil programmé macOS est configuré en
+complément :
+```bash
+sudo pmset repeat wake MTWRFSU 23:57:00   # réveille le Mac tous les jours à 23h57
+```
+(demande le mot de passe admin — à lancer une seule fois). Le script remet
+ensuite le Mac en veille tout seul une fois la vidéo copiée sur iCloud, mais
+**seulement s'il détecte au moins 5 minutes d'inactivité clavier/souris**
+(via `ioreg`/`HIDIdleTime`) — s'il y a une activité récente, la remise en
+veille est sautée pour ne jamais interrompre une session en cours.
+
 ⚠️ **À savoir avant de compter dessus :**
-- **Le Mac doit être allumé et éveillé à 23h59** — `launchd` ne réveille pas la
-  machine, si elle est en veille (couvercle fermé) la tâche ne se déclenche
-  simplement pas ce soir-là. Fonctionne de façon fiable sur un Mac qui reste
-  allumé/branché, ou en réglant `pmset` pour réveiller la machine juste avant
-  (non fait ici, à ajouter si besoin).
+- Fonctionne uniquement si le Mac est en **veille** (couvercle fermé, machine
+  sous tension) à 23h57 — pas s'il est **complètement éteint** : `pmset` ne
+  peut pas allumer un Mac éteint, seulement en réveiller un endormi.
+- Le réveil programmé est nettement plus fiable **branché sur secteur** que
+  sur batterie seule.
 - Tout est loggé dans `daily_debrief.log` à la racine du projet — c'est la
   seule trace disponible en cas d'échec pendant la nuit (ex. pas de breaking
   news ce jour-là, panne réseau, quota Gemini).

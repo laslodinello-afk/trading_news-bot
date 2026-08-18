@@ -41,4 +41,18 @@ else
     echo "⚠️  Pas de vidéo générée pour $TODAY (pas de breaking news ce jour-là, ou échec — voir ci-dessus)." >> "$LOG_FILE"
 fi
 
+# Remet le Mac en veille une fois terminé (pmset repeat wake l'a réveillé pour
+# cette tâche, voir README) — mais SEULEMENT si personne ne l'utilise
+# activement à ce moment précis, pour ne jamais couper une session en cours.
+# HIDIdleTime (ioreg) donne le temps écoulé depuis la dernière action
+# clavier/souris, en nanosecondes ; > 5 min sans activité = personne devant
+# la machine, sans risque de la rendormir.
+IDLE_SECONDS=$(ioreg -c IOHIDSystem | awk '/HIDIdleTime/ {print int($NF/1000000000); exit}')
+if [ "${IDLE_SECONDS:-0}" -gt 300 ]; then
+    echo "Inactif depuis ${IDLE_SECONDS}s — remise en veille automatique." >> "$LOG_FILE"
+    pmset sleepnow
+else
+    echo "Activité récente détectée (${IDLE_SECONDS}s d'inactivité) — pas de remise en veille, le Mac est probablement en cours d'utilisation." >> "$LOG_FILE"
+fi
+
 echo "=== Terminé ===" >> "$LOG_FILE"
