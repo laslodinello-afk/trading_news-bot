@@ -1,6 +1,18 @@
 {
-  "fetched_at": "2026-08-18T09:31:16.817786+00:00",
+  "fetched_at": "2026-08-18T09:32:24.045214+00:00",
   "articles": [
+    {
+      "title": "Thailand: Middle East shock tests growth – DBS",
+      "url": "https://www.fxstreet.com/news/thailand-middle-east-shock-tests-growth-dbs-202608180931",
+      "source": "FXStreet",
+      "published_at": "2026-08-18T09:31:28+00:00"
+    },
+    {
+      "title": "Silver price today: Silver falls, according to FXStreet data",
+      "url": "https://www.fxstreet.com/news/silver-price-today-silver-falls-according-to-fxstreet-data-202608180931",
+      "source": "FXStreet",
+      "published_at": "2026-08-18T09:31:09+00:00"
+    },
     {
       "title": "Euro remains subdued following German ZEW Survey data",
       "url": "https://www.fxstreet.com/news/euro-remains-subdued-following-german-zew-survey-data-202608180923",
@@ -156,12 +168,6 @@
       "url": "https://www.fxstreet.com/news/equities-stagflation-fears-weigh-on-us-stocks-deutsche-bank-202608180649",
       "source": "FXStreet",
       "published_at": "2026-08-18T06:49:32+00:00"
-    },
-    {
-      "title": "Euro holds gains against British Pound as UK unemployment disappoints",
-      "url": "https://www.fxstreet.com/news/euro-holds-gains-against-british-pound-as-uk-unemployment-disappoints-202608180644",
-      "source": "FXStreet",
-      "published_at": "2026-08-18T06:44:05+00:00"
     }
   ]
 }
