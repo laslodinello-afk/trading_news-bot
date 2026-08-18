@@ -54,11 +54,35 @@ jobs:
           json.dump(cache, open('calendar_cache.json', 'w'), ensure_ascii=False, indent=2)
           "
           rm ff_raw.json
+          cp calendar_cache.json ../calendar_cache_built.json
 
-      - name: Commit si changement
+      - name: Commit si changement (avec réessai en cas de conflit)
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add calendar_cache.json
-          git diff --staged --quiet && echo "Rien de nouveau à commiter." || git commit -m "Rafraîchissement automatique du cache calendrier"
-          git push origin HEAD:cache-data
+
+          # Même garde-fou que refresh-fxstreet.yml : si un autre run pousse
+          # sur cache-data entre notre checkout et notre push, on resynchronise
+          # et on réessaie plutôt que d'échouer (rare avec un cadencement de
+          # 6h, mais même coût à blinder que l'autre workflow).
+          for attempt in 1 2 3 4 5; do
+            cp ../calendar_cache_built.json calendar_cache.json
+            git add calendar_cache.json
+            if git diff --staged --quiet; then
+              echo "Rien de nouveau à commiter."
+              break
+            fi
+            git commit -m "Rafraîchissement automatique du cache calendrier"
+            if git push origin HEAD:cache-data; then
+              echo "Push réussi (tentative $attempt)."
+              break
+            fi
+            if [ "$attempt" = 5 ]; then
+              echo "Échec après 5 tentatives, abandon."
+              exit 1
+            fi
+            echo "Push rejeté (tentative $attempt) — resynchronisation avant de réessayer."
+            sleep $((attempt * 3))
+            git fetch origin cache-data
+            git reset --hard origin/cache-data
+          done

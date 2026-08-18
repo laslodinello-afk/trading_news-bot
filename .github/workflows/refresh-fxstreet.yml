@@ -64,12 +64,36 @@ jobs:
           ref: cache-data
           path: cache
 
-      - name: Commit si changement
+      - name: Commit si changement (avec réessai en cas de conflit)
         run: |
-          cp fxstreet_cache.json cache/fxstreet_cache.json
           cd cache
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add fxstreet_cache.json
-          git diff --staged --quiet && echo "Rien de nouveau à commiter." || git commit -m "Rafraîchissement automatique du cache FXStreet"
-          git push origin HEAD:cache-data
+
+          # Deux runs se suivent à ~1 min d'intervalle : rarement (constaté
+          # 3 fois sur ~6000 runs), l'un pousse sur cache-data entre le
+          # checkout et le push d'un autre, qui se fait rejeter (non-fast-
+          # forward). On resynchronise et on réessaie plutôt que d'échouer —
+          # le contenu à pousser est toujours le même fichier régénéré,
+          # jamais de vrai conflit de contenu à résoudre.
+          for attempt in 1 2 3 4 5; do
+            cp ../fxstreet_cache.json fxstreet_cache.json
+            git add fxstreet_cache.json
+            if git diff --staged --quiet; then
+              echo "Rien de nouveau à commiter."
+              break
+            fi
+            git commit -m "Rafraîchissement automatique du cache FXStreet"
+            if git push origin HEAD:cache-data; then
+              echo "Push réussi (tentative $attempt)."
+              break
+            fi
+            if [ "$attempt" = 5 ]; then
+              echo "Échec après 5 tentatives, abandon."
+              exit 1
+            fi
+            echo "Push rejeté (tentative $attempt, probablement une exécution concurrente) — resynchronisation avant de réessayer."
+            sleep $((attempt * 3))
+            git fetch origin cache-data
+            git reset --hard origin/cache-data
+          done
