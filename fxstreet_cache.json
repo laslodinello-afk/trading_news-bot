@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-18T15:40:31.798653+00:00",
+  "fetched_at": "2026-08-18T15:41:26.112056+00:00",
   "articles": [
+    {
+      "title": "Japanese Yen stays on the back foot despite hawkish BoJ expectations",
+      "url": "https://www.fxstreet.com/news/japanese-yen-stays-on-the-back-foot-despite-hawkish-boj-expectations-202608181540",
+      "source": "FXStreet",
+      "published_at": "2026-08-18T15:40:50+00:00"
+    },
     {
       "title": "Copper: Booming prices face supply risks – Commerzbank",
       "url": "https://www.fxstreet.com/news/copper-booming-prices-face-supply-risks-commerzbank-202608181509",
@@ -78,12 +84,6 @@
       "url": "https://www.fxstreet.com/news/new-zealand-dollar-market-overpricing-rbnz-hikes-bny-202608181256",
       "source": "FXStreet",
       "published_at": "2026-08-18T12:56:44+00:00"
-    },
-    {
-      "title": "Brazilian Real: Fiscal risks point to weakness against US Dollar - Rabobank",
-      "url": "https://www.fxstreet.com/news/brazilian-real-fiscal-risks-point-to-weakness-against-us-dollar-rabobank-202608181240",
-      "source": "FXStreet",
-      "published_at": "2026-08-18T12:40:49+00:00"
     }
   ]
 }
