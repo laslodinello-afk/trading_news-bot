@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-18T07:28:24.870971+00:00",
+  "fetched_at": "2026-08-18T07:29:18.553680+00:00",
   "articles": [
+    {
+      "title": "Indian Rupee edges up, higher oil prices to remain key drag",
+      "url": "https://www.fxstreet.com/news/indian-rupee-ticks-up-on-possible-rbis-intervention-202608180534",
+      "source": "FXStreet",
+      "published_at": "2026-08-18T05:34:57+00:00"
+    },
     {
       "title": "British Pound: Softer as jobs data cools hikes – ING",
       "url": "https://www.fxstreet.com/news/british-pound-softer-as-jobs-data-cools-hikes-ing-202608180721",
@@ -90,12 +96,6 @@
       "url": "https://www.fxstreet.com/news/swiss-franc-edges-lower-as-us-dollar-rebounds-fomc-minutes-in-focus-202608180554",
       "source": "FXStreet",
       "published_at": "2026-08-18T05:54:32+00:00"
-    },
-    {
-      "title": "Indian Rupee ticks up on possible RBI’s intervention",
-      "url": "https://www.fxstreet.com/news/indian-rupee-ticks-up-on-possible-rbis-intervention-202608180534",
-      "source": "FXStreet",
-      "published_at": "2026-08-18T05:34:57+00:00"
     },
     {
       "title": "Euro declines below 1.1600 on US-Iran war worries",
