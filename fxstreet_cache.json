@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-18T12:19:24.415308+00:00",
+  "fetched_at": "2026-08-18T12:20:33.701346+00:00",
   "articles": [
+    {
+      "title": "Brent: War-linked range trading outlook – BBH",
+      "url": "https://www.fxstreet.com/news/brent-war-linked-range-trading-outlook-bbh-202608181219",
+      "source": "FXStreet",
+      "published_at": "2026-08-18T12:19:47+00:00"
+    },
     {
       "title": "Canadian Dollar remains resilient as Oil strength counters firmer US Dollar",
       "url": "https://www.fxstreet.com/news/canadian-dollar-remains-resilient-as-oil-strength-counters-firmer-us-dollar-202608181216",
@@ -108,12 +114,6 @@
       "url": "https://www.fxstreet.com/news/euro-remains-subdued-following-german-zew-survey-data-202608180923",
       "source": "FXStreet",
       "published_at": "2026-08-18T09:23:43+00:00"
-    },
-    {
-      "title": "China: Credit-light growth reshapes loan demand – Standard Chartered",
-      "url": "https://www.fxstreet.com/news/china-credit-light-growth-reshapes-loan-demand-standard-chartered-202608180919",
-      "source": "FXStreet",
-      "published_at": "2026-08-18T09:19:47+00:00"
     }
   ]
 }
