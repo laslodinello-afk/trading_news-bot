@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-18T11:24:21.209318+00:00",
+  "fetched_at": "2026-08-18T11:25:26.033014+00:00",
   "articles": [
+    {
+      "title": "US Dollar: Safe haven status faces debt-market strains – Rabobank",
+      "url": "https://www.fxstreet.com/news/us-dollar-safe-haven-status-faces-debt-market-strains-rabobank-202608181124",
+      "source": "FXStreet",
+      "published_at": "2026-08-18T11:24:10+00:00"
+    },
     {
       "title": "USD/JPY Price Forecast: Aims to extend rally above 160.00",
       "url": "https://www.fxstreet.com/news/usd-jpy-price-forecast-aims-to-extend-rally-above-16000-202608181115",
@@ -120,12 +126,6 @@
       "url": "https://www.fxstreet.com/news/euro-overvaluation-and-energy-risks-weigh-against-us-dollar-mufg-202608180836",
       "source": "FXStreet",
       "published_at": "2026-08-18T08:36:52+00:00"
-    },
-    {
-      "title": "AUD/USD Price Forecast: Holds breakout near 0.7100",
-      "url": "https://www.fxstreet.com/news/aud-usd-price-forecast-holds-breakout-near-07100-202608180825",
-      "source": "FXStreet",
-      "published_at": "2026-08-18T08:25:15+00:00"
     }
   ]
 }
