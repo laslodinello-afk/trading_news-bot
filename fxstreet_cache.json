@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-18T18:40:43.296192+00:00",
+  "fetched_at": "2026-08-18T18:41:28.034608+00:00",
   "articles": [
+    {
+      "title": "Singapore Dollar: Strong exports underpin SGD – Commerzbank",
+      "url": "https://www.fxstreet.com/news/singapore-dollar-strong-exports-underpin-sgd-commerzbank-202608181841",
+      "source": "FXStreet",
+      "published_at": "2026-08-18T18:41:00+00:00"
+    },
     {
       "title": "Economists agree: BoE will hold rates through year-end – Reuters poll",
       "url": "https://www.fxstreet.com/news/economists-agree-boe-will-hold-rates-through-year-end-reuters-poll-202608181809",
@@ -60,12 +66,6 @@
       "url": "https://www.fxstreet.com/news/new-zealand-dollar-edges-lower-on-us-iran-tensions-as-rbnz-hike-expectations-curb-losses-202608181605",
       "source": "FXStreet",
       "published_at": "2026-08-18T16:05:40+00:00"
-    },
-    {
-      "title": "Japanese Yen stays on the back foot despite hawkish BoJ expectations",
-      "url": "https://www.fxstreet.com/news/japanese-yen-stays-on-the-back-foot-despite-hawkish-boj-expectations-202608181540",
-      "source": "FXStreet",
-      "published_at": "2026-08-18T15:40:50+00:00"
     }
   ]
 }
