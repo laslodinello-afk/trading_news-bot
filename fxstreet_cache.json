@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-19T12:37:18.502158+00:00",
+  "fetched_at": "2026-08-19T12:38:19.288541+00:00",
   "articles": [
+    {
+      "title": "Gold finds support as US Dollar retreats ahead of Fed Minutes",
+      "url": "https://www.fxstreet.com/news/gold-finds-support-as-us-dollar-retreats-ahead-of-fed-minutes-202608191109",
+      "source": "FXStreet",
+      "published_at": "2026-08-19T11:09:12+00:00"
+    },
     {
       "title": "Euro: Domestic demand resilience supports EUR – BNY",
       "url": "https://www.fxstreet.com/news/euro-domestic-demand-resilience-supports-eur-bny-202608191233",
@@ -54,12 +60,6 @@
       "url": "https://www.fxstreet.com/news/british-pound-carry-appeal-keeps-sterling-resilient-as-boe-stays-on-hold-ing-202608191126",
       "source": "FXStreet",
       "published_at": "2026-08-19T11:26:14+00:00"
-    },
-    {
-      "title": "Gold finds support as US Dollar retreats ahead of Fed Minutes",
-      "url": "https://www.fxstreet.com/news/gold-finds-support-as-us-dollar-retreats-ahead-of-fed-minutes-202608191109",
-      "source": "FXStreet",
-      "published_at": "2026-08-19T11:09:12+00:00"
     },
     {
       "title": "US Dollar: Exposure normalizes as real rates fall – BNY",
