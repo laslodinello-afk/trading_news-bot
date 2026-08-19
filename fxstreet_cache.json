@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-19T13:14:25.519219+00:00",
+  "fetched_at": "2026-08-19T13:15:34.662192+00:00",
   "articles": [
+    {
+      "title": "Gold climbs 2% as US Treasury buyback plan pressures long-term yields",
+      "url": "https://www.fxstreet.com/news/gold-finds-support-as-us-dollar-retreats-ahead-of-fed-minutes-202608191109",
+      "source": "FXStreet",
+      "published_at": "2026-08-19T11:09:12+00:00"
+    },
     {
       "title": "US Treasury doubles some long-dated debt buybacks to support liquidity",
       "url": "https://www.fxstreet.com/news/us-treasury-doubles-some-long-dated-debt-buybacks-to-support-liquidity-202608191309",
@@ -18,12 +24,6 @@
       "url": "https://www.fxstreet.com/news/china-policy-support-and-structural-shifts-hsbc-202608191246",
       "source": "FXStreet",
       "published_at": "2026-08-19T12:46:31+00:00"
-    },
-    {
-      "title": "Gold finds support as US Dollar retreats ahead of Fed Minutes",
-      "url": "https://www.fxstreet.com/news/gold-finds-support-as-us-dollar-retreats-ahead-of-fed-minutes-202608191109",
-      "source": "FXStreet",
-      "published_at": "2026-08-19T11:09:12+00:00"
     },
     {
       "title": "Euro: Domestic demand resilience supports EUR – BNY",
