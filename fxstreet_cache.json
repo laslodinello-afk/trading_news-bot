@@ -1,6 +1,18 @@
 {
-  "fetched_at": "2026-08-19T09:29:37.884344+00:00",
+  "fetched_at": "2026-08-19T09:32:09.840332+00:00",
   "articles": [
+    {
+      "title": "Silver price today: Silver falls, according to FXStreet data",
+      "url": "https://www.fxstreet.com/news/silver-price-today-silver-falls-according-to-fxstreet-data-202608190930",
+      "source": "FXStreet",
+      "published_at": "2026-08-19T09:30:50+00:00"
+    },
+    {
+      "title": "United Kingdom: Upside risks building for inflation – Deutsche Bank",
+      "url": "https://www.fxstreet.com/news/united-kingdom-upside-risks-building-for-inflation-deutsche-bank-202608190929",
+      "source": "FXStreet",
+      "published_at": "2026-08-19T09:29:24+00:00"
+    },
     {
       "title": "Euro remains stronger following July’s Eurozone HICP data",
       "url": "https://www.fxstreet.com/news/euro-remains-stronger-following-julys-eurozone-hicp-data-202608190915",
@@ -156,18 +168,6 @@
       "url": "https://www.fxstreet.com/news/asia-fx-lower-us-yields-offset-oil-risk-mufg-202608190637",
       "source": "FXStreet",
       "published_at": "2026-08-19T06:37:36+00:00"
-    },
-    {
-      "title": "Euro trims gains against British Pound after UK CPI inflation rises to 2.9%",
-      "url": "https://www.fxstreet.com/news/euro-trims-gains-against-british-pound-after-uk-cpi-inflation-rises-to-29-202608190635",
-      "source": "FXStreet",
-      "published_at": "2026-08-19T06:35:19+00:00"
-    },
-    {
-      "title": "British Pound edges up within range following hotter UK inflation data",
-      "url": "https://www.fxstreet.com/news/british-pound-edges-up-within-range-following-hotter-uk-inflation-data-202608190631",
-      "source": "FXStreet",
-      "published_at": "2026-08-19T06:31:44+00:00"
     }
   ]
 }
