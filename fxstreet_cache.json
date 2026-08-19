@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-19T08:19:18.888967+00:00",
+  "fetched_at": "2026-08-19T08:20:50.634018+00:00",
   "articles": [
+    {
+      "title": "Gold: Pullback risk with higher yields and Oil – OCBC",
+      "url": "https://www.fxstreet.com/news/gold-pullback-risk-with-higher-yields-and-oil-ocbc-202608190820",
+      "source": "FXStreet",
+      "published_at": "2026-08-19T08:20:11+00:00"
+    },
     {
       "title": "Dow Jones futures pause as tech sell-off, oil pressures weigh on sentiment",
       "url": "https://www.fxstreet.com/news/dow-jones-futures-pause-as-tech-sell-off-oil-pressures-weigh-on-sentiment-202608190818",
@@ -162,12 +168,6 @@
       "url": "https://www.fxstreet.com/news/usd-idr-price-forecast-trades-near-17-850-after-pulling-back-from-moving-averages-202608190600",
       "source": "FXStreet",
       "published_at": "2026-08-19T06:00:00+00:00"
-    },
-    {
-      "title": "EUR/USD Price Forecast: Gathers strength above 1.1550, bullish outlook remains intact",
-      "url": "https://www.fxstreet.com/news/eur-usd-price-forecast-gathers-strength-above-11550-bullish-outlook-remains-intact-202608190520",
-      "source": "FXStreet",
-      "published_at": "2026-08-19T05:20:08+00:00"
     }
   ]
 }
