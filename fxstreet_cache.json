@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-19T09:48:29.314137+00:00",
+  "fetched_at": "2026-08-19T09:49:29.710334+00:00",
   "articles": [
+    {
+      "title": "Euro steadies against Japanese Yen as ECB, BoJ rate-hike bets collide",
+      "url": "https://www.fxstreet.com/news/euro-steadies-against-japanese-yen-as-ecb-boj-rate-hike-bets-collide-202608190948",
+      "source": "FXStreet",
+      "published_at": "2026-08-19T09:48:58+00:00"
+    },
     {
       "title": "Brazilian Real: Election risks then renewed gains – Commerzbank",
       "url": "https://www.fxstreet.com/news/brazilian-real-election-risks-then-renewed-gains-commerzbank-202608190939",
@@ -162,12 +168,6 @@
       "url": "https://www.fxstreet.com/news/indonesian-rupiah-oil-gains-and-bi-decision-shape-idr-ocbc-202608190704",
       "source": "FXStreet",
       "published_at": "2026-08-19T07:04:31+00:00"
-    },
-    {
-      "title": "AUD/USD Price Forecast: Rising 20-day EMA supports near-term bullish bias",
-      "url": "https://www.fxstreet.com/news/aud-usd-price-forecast-rising-20-day-ema-supports-near-term-bullish-bias-202608190653",
-      "source": "FXStreet",
-      "published_at": "2026-08-19T06:53:41+00:00"
     }
   ]
 }
