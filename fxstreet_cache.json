@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-19T21:19:18.053866+00:00",
+  "fetched_at": "2026-08-19T21:20:43.414651+00:00",
   "articles": [
+    {
+      "title": "The Dollar Index answers to the Treasury, not the Fed",
+      "url": "https://www.fxstreet.com/news/the-dollar-index-answers-to-the-treasury-not-the-fed-202608192119",
+      "source": "FXStreet",
+      "published_at": "2026-08-19T21:19:31+00:00"
+    },
     {
       "title": "Silver Price Forecast: XAG/USD eyes $67 as US yields slide",
       "url": "https://www.fxstreet.com/news/silver-price-forecast-xag-usd-eyes-67-as-us-yields-slide-202608192054",
@@ -30,12 +36,6 @@
       "url": "https://www.fxstreet.com/news/usd-chf-price-forecast-100-day-sma-tested-as-us-dollar-tanks-202608191854",
       "source": "FXStreet",
       "published_at": "2026-08-19T18:54:29+00:00"
-    },
-    {
-      "title": "AUD/USD Price Forecast: Positive momentum points to further upside",
-      "url": "https://www.fxstreet.com/news/aud-usd-price-forecast-positive-momentum-points-to-further-upside-202608191819",
-      "source": "FXStreet",
-      "published_at": "2026-08-19T18:19:27+00:00"
     }
   ]
 }
