@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-19T04:29:19.938124+00:00",
+  "fetched_at": "2026-08-19T04:30:45.313582+00:00",
   "articles": [
+    {
+      "title": "UK CPI set to show inflation accelerated in July, bolstering case for BoE rate hike",
+      "url": "https://www.fxstreet.com/news/uk-cpi-set-to-show-inflation-rebounding-to-four-month-high-due-to-higher-energy-bill-202608190200",
+      "source": "FXStreet",
+      "published_at": "2026-08-19T02:00:00+00:00"
+    },
     {
       "title": "EUR/JPY Price Forecast: Softens to near 184.50, mildly bearish bias persists under 100-day SMA",
       "url": "https://www.fxstreet.com/news/eur-jpy-price-forecast-softens-to-near-18450-mildly-bearish-bias-persists-under-100-day-sma-202608190425",
@@ -54,12 +60,6 @@
       "url": "https://www.fxstreet.com/news/united-states-dollar-index-hovers-above-9950-due-to-safe-haven-support-202608190207",
       "source": "FXStreet",
       "published_at": "2026-08-19T02:07:51+00:00"
-    },
-    {
-      "title": "UK CPI set to show inflation rebounding to four-month high due to higher energy bill",
-      "url": "https://www.fxstreet.com/news/uk-cpi-set-to-show-inflation-rebounding-to-four-month-high-due-to-higher-energy-bill-202608190200",
-      "source": "FXStreet",
-      "published_at": "2026-08-19T02:00:00+00:00"
     },
     {
       "title": "New Zealand Dollar declines to weekly low as USD holds firm ahead of FOMC Minutes",
