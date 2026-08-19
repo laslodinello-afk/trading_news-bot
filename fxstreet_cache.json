@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-19T13:24:24.363360+00:00",
+  "fetched_at": "2026-08-19T13:25:28.475097+00:00",
   "articles": [
+    {
+      "title": "Indonesian Rupiah: Stability-focused BI stance – UOB",
+      "url": "https://www.fxstreet.com/news/indonesian-rupiah-stability-focused-bi-stance-uob-202608191325",
+      "source": "FXStreet",
+      "published_at": "2026-08-19T13:25:06+00:00"
+    },
     {
       "title": "Gold climbs over 2% as US Treasury buyback plan pressures long-term yields",
       "url": "https://www.fxstreet.com/news/gold-finds-support-as-us-dollar-retreats-ahead-of-fed-minutes-202608191109",
@@ -90,12 +96,6 @@
       "url": "https://www.fxstreet.com/news/australian-dollar-ticks-up-from-intra-week-lows-with-all-eyes-on-fed-minutes-202608191032",
       "source": "FXStreet",
       "published_at": "2026-08-19T10:32:03+00:00"
-    },
-    {
-      "title": "GBP/USD Price Forecast: More upside expected above 1.3570",
-      "url": "https://www.fxstreet.com/news/gbp-usd-price-forecast-more-upside-expected-above-13570-202608191025",
-      "source": "FXStreet",
-      "published_at": "2026-08-19T10:25:13+00:00"
     }
   ]
 }
