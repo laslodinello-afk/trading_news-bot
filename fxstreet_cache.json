@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-19T09:39:19.348620+00:00",
+  "fetched_at": "2026-08-19T09:40:35.573972+00:00",
   "articles": [
+    {
+      "title": "Brazilian Real: Election risks then renewed gains – Commerzbank",
+      "url": "https://www.fxstreet.com/news/brazilian-real-election-risks-then-renewed-gains-commerzbank-202608190939",
+      "source": "FXStreet",
+      "published_at": "2026-08-19T09:39:25+00:00"
+    },
     {
       "title": "Euro extends gains against British Pound as Eurozone inflation accelerates",
       "url": "https://www.fxstreet.com/news/euro-extends-gains-against-british-pound-as-eurozone-inflation-accelerates-202608190936",
@@ -162,12 +168,6 @@
       "url": "https://www.fxstreet.com/news/aud-usd-price-forecast-rising-20-day-ema-supports-near-term-bullish-bias-202608190653",
       "source": "FXStreet",
       "published_at": "2026-08-19T06:53:41+00:00"
-    },
-    {
-      "title": "Equities: Defensive rotation with higher yields – Danske Bank",
-      "url": "https://www.fxstreet.com/news/equities-defensive-rotation-with-higher-yields-danske-bank-202608190646",
-      "source": "FXStreet",
-      "published_at": "2026-08-19T06:46:01+00:00"
     }
   ]
 }
