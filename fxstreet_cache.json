@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-19T04:35:27.774325+00:00",
+  "fetched_at": "2026-08-19T04:36:21.446937+00:00",
   "articles": [
+    {
+      "title": "India Gold price today: Gold rises, according to FXStreet data",
+      "url": "https://www.fxstreet.com/news/india-gold-price-today-gold-rises-according-to-fxstreet-data-202608190435",
+      "source": "FXStreet",
+      "published_at": "2026-08-19T04:35:45+00:00"
+    },
     {
       "title": "UK CPI set to show inflation accelerated in July, bolstering case for BoE rate hike",
       "url": "https://www.fxstreet.com/news/uk-cpi-set-to-show-inflation-rebounding-to-four-month-high-due-to-higher-energy-bill-202608190200",
@@ -66,12 +72,6 @@
       "url": "https://www.fxstreet.com/news/new-zealand-dollar-declines-to-weekly-low-as-usd-holds-firm-ahead-of-fomc-minutes-202608190145",
       "source": "FXStreet",
       "published_at": "2026-08-19T01:45:51+00:00"
-    },
-    {
-      "title": "British Pound declines below 1.3550 on soft UK labour figures, traders brace for CPI data",
-      "url": "https://www.fxstreet.com/news/british-pound-declines-below-13550-on-soft-uk-labour-figures-traders-brace-for-cpi-data-202608190135",
-      "source": "FXStreet",
-      "published_at": "2026-08-19T01:35:54+00:00"
     }
   ]
 }
