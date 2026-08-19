@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-19T04:56:19.388156+00:00",
+  "fetched_at": "2026-08-19T04:57:24.745749+00:00",
   "articles": [
+    {
+      "title": "Gold struggles to capitalize on recovery from weekly low as traders await FOMC Minutes",
+      "url": "https://www.fxstreet.com/news/gold-recovers-from-weekly-low-as-usd-softens-ahead-of-fomc-minutes-202608190336",
+      "source": "FXStreet",
+      "published_at": "2026-08-19T03:36:33+00:00"
+    },
     {
       "title": "Swiss Franc strengthens as US Dollar falls on fading Fed rate hike expectations",
       "url": "https://www.fxstreet.com/news/swiss-franc-strengthens-as-us-dollar-falls-on-fading-fed-rate-hike-expectations-202608190451",
@@ -36,12 +42,6 @@
       "url": "https://www.fxstreet.com/news/canadian-dollar-strengthens-as-trump-pauses-50-tariffs-and-usd-slides-before-fomc-minutes-202608190403",
       "source": "FXStreet",
       "published_at": "2026-08-19T04:03:56+00:00"
-    },
-    {
-      "title": "Gold recovers from weekly low as USD softens ahead of FOMC Minutes",
-      "url": "https://www.fxstreet.com/news/gold-recovers-from-weekly-low-as-usd-softens-ahead-of-fomc-minutes-202608190336",
-      "source": "FXStreet",
-      "published_at": "2026-08-19T03:36:33+00:00"
     },
     {
       "title": "Australian Dollar weakens despite RBA’s Hauser hawkish remarks",
