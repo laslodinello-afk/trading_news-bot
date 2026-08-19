@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-19T16:41:21.113670+00:00",
+  "fetched_at": "2026-08-19T16:42:23.190746+00:00",
   "articles": [
+    {
+      "title": "Dow Jones Industrial Average rallies on a bid nobody made",
+      "url": "https://www.fxstreet.com/news/dow-jones-industrial-average-rallies-on-a-bid-nobody-made-202608191641",
+      "source": "FXStreet",
+      "published_at": "2026-08-19T16:41:48+00:00"
+    },
     {
       "title": "EUR/GBP pushes toward two-week high amid cooling UK services inflation",
       "url": "https://www.fxstreet.com/news/eur-gbp-pushes-toward-two-week-high-amid-cooling-uk-services-inflation-202608191619",
@@ -84,12 +90,6 @@
       "url": "https://www.fxstreet.com/news/chinese-yuan-policy-support-eyed-as-growth-slows-commerzbank-202608191353",
       "source": "FXStreet",
       "published_at": "2026-08-19T13:53:41+00:00"
-    },
-    {
-      "title": "Euro rises to June highs as falling US Treasury yields weigh on US Dollar",
-      "url": "https://www.fxstreet.com/news/euro-rises-to-june-highs-as-falling-us-treasury-yields-weigh-on-us-dollar-202608191341",
-      "source": "FXStreet",
-      "published_at": "2026-08-19T13:41:48+00:00"
     }
   ]
 }
