@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-19T04:45:39.155064+00:00",
+  "fetched_at": "2026-08-19T04:46:20.545353+00:00",
   "articles": [
+    {
+      "title": "WTI Price Forecast: Sits near three-week high, below $85.00 as bulls eye 100-SMA breakout",
+      "url": "https://www.fxstreet.com/news/wti-price-forecast-sits-near-three-week-high-below-8500-as-bulls-eye-100-sma-breakout-202608190445",
+      "source": "FXStreet",
+      "published_at": "2026-08-19T04:45:53+00:00"
+    },
     {
       "title": "India Gold price today: Gold rises, according to FXStreet data",
       "url": "https://www.fxstreet.com/news/india-gold-price-today-gold-rises-according-to-fxstreet-data-202608190435",
@@ -66,12 +72,6 @@
       "url": "https://www.fxstreet.com/news/united-states-dollar-index-hovers-above-9950-due-to-safe-haven-support-202608190207",
       "source": "FXStreet",
       "published_at": "2026-08-19T02:07:51+00:00"
-    },
-    {
-      "title": "New Zealand Dollar declines to weekly low as USD holds firm ahead of FOMC Minutes",
-      "url": "https://www.fxstreet.com/news/new-zealand-dollar-declines-to-weekly-low-as-usd-holds-firm-ahead-of-fomc-minutes-202608190145",
-      "source": "FXStreet",
-      "published_at": "2026-08-19T01:45:51+00:00"
     }
   ]
 }
