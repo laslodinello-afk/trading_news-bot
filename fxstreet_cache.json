@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-19T06:34:21.618410+00:00",
+  "fetched_at": "2026-08-19T06:35:26.907629+00:00",
   "articles": [
+    {
+      "title": "Euro trims gains against British Pound after UK CPI inflation rises to 2.9%",
+      "url": "https://www.fxstreet.com/news/euro-trims-gains-against-british-pound-after-uk-cpi-inflation-rises-to-29-202608190635",
+      "source": "FXStreet",
+      "published_at": "2026-08-19T06:35:19+00:00"
+    },
     {
       "title": "British Pound edges up within range following hotter UK inflation data",
       "url": "https://www.fxstreet.com/news/british-pound-edges-up-within-range-following-hotter-uk-inflation-data-202608190631",
@@ -84,12 +90,6 @@
       "url": "https://www.fxstreet.com/news/canadian-dollar-strengthens-as-trump-pauses-50-tariffs-and-usd-slides-before-fomc-minutes-202608190403",
       "source": "FXStreet",
       "published_at": "2026-08-19T04:03:56+00:00"
-    },
-    {
-      "title": "Australian Dollar weakens despite RBA’s Hauser hawkish remarks",
-      "url": "https://www.fxstreet.com/news/australian-dollar-weakens-despite-rbas-hauser-hawkish-remarks-202608190335",
-      "source": "FXStreet",
-      "published_at": "2026-08-19T03:35:10+00:00"
     }
   ]
 }
