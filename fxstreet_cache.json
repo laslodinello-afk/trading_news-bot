@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-19T08:29:18.130123+00:00",
+  "fetched_at": "2026-08-19T08:33:01.633775+00:00",
   "articles": [
+    {
+      "title": "Swiss Franc picks up within range, USDollar softens awaiting Fed minutes",
+      "url": "https://www.fxstreet.com/news/swiss-franc-picks-up-within-range-usdollar-softens-awaiting-fed-minutes-202608190831",
+      "source": "FXStreet",
+      "published_at": "2026-08-19T08:31:13+00:00"
+    },
     {
       "title": "Indian Rupee: Range-bound with RBI support against US Dollar – Commerzbank",
       "url": "https://www.fxstreet.com/news/indian-rupee-range-bound-with-rbi-support-against-us-dollar-commerzbank-202608190828",
@@ -98,12 +104,6 @@
       "published_at": "2026-08-19T07:14:05+00:00"
     },
     {
-      "title": "Indian Rupee stays under pressure amid higher oil prices",
-      "url": "https://www.fxstreet.com/news/indian-rupee-holds-onto-two-week-losses-against-us-dollar-202608190531",
-      "source": "FXStreet",
-      "published_at": "2026-08-19T05:31:26+00:00"
-    },
-    {
       "title": "NZD/USD Price Forecast: Weakens below 0.5900, but staying supported above 100-day SMA",
       "url": "https://www.fxstreet.com/news/nzd-usd-price-forecast-weakens-below-05900-but-staying-supported-above-100-day-sma-202608190711",
       "source": "FXStreet",
@@ -162,12 +162,6 @@
       "url": "https://www.fxstreet.com/news/indonesian-rupiah-bi-seen-hiking-to-anchor-rupiah-uob-202608190610",
       "source": "FXStreet",
       "published_at": "2026-08-19T06:10:29+00:00"
-    },
-    {
-      "title": "Experts agree: Hawkish BoJ bets support Japanese Yen against US Dollar",
-      "url": "https://www.fxstreet.com/news/experts-agree-hawkish-boj-bets-support-japanese-yen-against-us-dollar-202608190609",
-      "source": "FXStreet",
-      "published_at": "2026-08-19T06:09:52+00:00"
     }
   ]
 }
