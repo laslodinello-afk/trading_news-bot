@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-19T07:12:22.793493+00:00",
+  "fetched_at": "2026-08-19T07:13:19.573804+00:00",
   "articles": [
+    {
+      "title": "Indian Rupee stays under pressure amid higher oil prices",
+      "url": "https://www.fxstreet.com/news/indian-rupee-holds-onto-two-week-losses-against-us-dollar-202608190531",
+      "source": "FXStreet",
+      "published_at": "2026-08-19T05:31:26+00:00"
+    },
     {
       "title": "NZD/USD Price Forecast: Weakens below 0.5900, but staying supported above 100-day SMA",
       "url": "https://www.fxstreet.com/news/nzd-usd-price-forecast-weakens-below-05900-but-staying-supported-above-100-day-sma-202608190711",
@@ -72,12 +78,6 @@
       "url": "https://www.fxstreet.com/news/usd-idr-price-forecast-trades-near-17-850-after-pulling-back-from-moving-averages-202608190600",
       "source": "FXStreet",
       "published_at": "2026-08-19T06:00:00+00:00"
-    },
-    {
-      "title": "Indian Rupee holds onto two-week losses against US Dollar",
-      "url": "https://www.fxstreet.com/news/indian-rupee-holds-onto-two-week-losses-against-us-dollar-202608190531",
-      "source": "FXStreet",
-      "published_at": "2026-08-19T05:31:26+00:00"
     },
     {
       "title": "EUR/USD Price Forecast: Gathers strength above 1.1550, bullish outlook remains intact",
