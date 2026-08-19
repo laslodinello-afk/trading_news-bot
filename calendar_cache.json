@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-18T19:17:34.839827+00:00",
+  "fetched_at": "2026-08-19T03:13:14.717675+00:00",
   "events": [
     {
       "title": "BusinessNZ Services Index",
@@ -454,7 +454,7 @@
       "country": "USD",
       "date": "2026-08-19T10:30:00-04:00",
       "impact": "Low",
-      "forecast": "",
+      "forecast": "0.2M",
       "previous": "17.4M"
     },
     {
@@ -462,6 +462,14 @@
       "country": "USD",
       "date": "2026-08-19T14:00:00-04:00",
       "impact": "High",
+      "forecast": "",
+      "previous": ""
+    },
+    {
+      "title": "President Trump Speaks",
+      "country": "USD",
+      "date": "2026-08-19T14:30:00-04:00",
+      "impact": "Medium",
       "forecast": "",
       "previous": ""
     },
@@ -590,7 +598,7 @@
       "country": "USD",
       "date": "2026-08-20T10:30:00-04:00",
       "impact": "Low",
-      "forecast": "",
+      "forecast": "15B",
       "previous": "36B"
     },
     {
