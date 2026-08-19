@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-19T09:49:29.710334+00:00",
+  "fetched_at": "2026-08-19T09:50:33.133472+00:00",
   "articles": [
+    {
+      "title": "Australian Dollar: RBA seen sidelined on softer wages – BBH",
+      "url": "https://www.fxstreet.com/news/australian-dollar-rba-seen-sidelined-on-softer-wages-bbh-202608190949",
+      "source": "FXStreet",
+      "published_at": "2026-08-19T09:49:41+00:00"
+    },
     {
       "title": "Euro steadies against Japanese Yen as ECB, BoJ rate-hike bets collide",
       "url": "https://www.fxstreet.com/news/euro-steadies-against-japanese-yen-as-ecb-boj-rate-hike-bets-collide-202608190948",
@@ -162,12 +168,6 @@
       "url": "https://www.fxstreet.com/news/nzd-usd-price-forecast-weakens-below-05900-but-staying-supported-above-100-day-sma-202608190711",
       "source": "FXStreet",
       "published_at": "2026-08-19T07:11:41+00:00"
-    },
-    {
-      "title": "Indonesian Rupiah: Oil gains and BI decision shape IDR – OCBC",
-      "url": "https://www.fxstreet.com/news/indonesian-rupiah-oil-gains-and-bi-decision-shape-idr-ocbc-202608190704",
-      "source": "FXStreet",
-      "published_at": "2026-08-19T07:04:31+00:00"
     }
   ]
 }
