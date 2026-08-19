@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-19T09:36:22.772410+00:00",
+  "fetched_at": "2026-08-19T09:37:18.149092+00:00",
   "articles": [
+    {
+      "title": "Euro extends gains against British Pound as Eurozone inflation accelerates",
+      "url": "https://www.fxstreet.com/news/euro-extends-gains-against-british-pound-as-eurozone-inflation-accelerates-202608190936",
+      "source": "FXStreet",
+      "published_at": "2026-08-19T09:36:53+00:00"
+    },
     {
       "title": "Silver price today: Silver falls, according to FXStreet data",
       "url": "https://www.fxstreet.com/news/silver-price-today-silver-falls-according-to-fxstreet-data-202608190930",
@@ -162,12 +168,6 @@
       "url": "https://www.fxstreet.com/news/equities-defensive-rotation-with-higher-yields-danske-bank-202608190646",
       "source": "FXStreet",
       "published_at": "2026-08-19T06:46:01+00:00"
-    },
-    {
-      "title": "Asia FX: Lower US yields offset Oil risk – MUFG",
-      "url": "https://www.fxstreet.com/news/asia-fx-lower-us-yields-offset-oil-risk-mufg-202608190637",
-      "source": "FXStreet",
-      "published_at": "2026-08-19T06:37:36+00:00"
     }
   ]
 }
