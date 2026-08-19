@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-19T08:28:25.570700+00:00",
+  "fetched_at": "2026-08-19T08:29:18.130123+00:00",
   "articles": [
+    {
+      "title": "Indian Rupee: Range-bound with RBI support against US Dollar – Commerzbank",
+      "url": "https://www.fxstreet.com/news/indian-rupee-range-bound-with-rbi-support-against-us-dollar-commerzbank-202608190828",
+      "source": "FXStreet",
+      "published_at": "2026-08-19T08:28:48+00:00"
+    },
     {
       "title": "Gold: Pullback risk with higher yields and Oil – OCBC",
       "url": "https://www.fxstreet.com/news/gold-pullback-risk-with-higher-yields-and-oil-ocbc-202608190820",
@@ -162,12 +168,6 @@
       "url": "https://www.fxstreet.com/news/experts-agree-hawkish-boj-bets-support-japanese-yen-against-us-dollar-202608190609",
       "source": "FXStreet",
       "published_at": "2026-08-19T06:09:52+00:00"
-    },
-    {
-      "title": "USD/IDR Price Forecast: Trades near 17,850 after pulling back from moving averages",
-      "url": "https://www.fxstreet.com/news/usd-idr-price-forecast-trades-near-17-850-after-pulling-back-from-moving-averages-202608190600",
-      "source": "FXStreet",
-      "published_at": "2026-08-19T06:00:00+00:00"
     }
   ]
 }
