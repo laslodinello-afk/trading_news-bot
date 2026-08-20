@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-20T10:03:20.567527+00:00",
+  "fetched_at": "2026-08-20T10:04:23.074916+00:00",
   "articles": [
+    {
+      "title": "United States: Slow growth but data understate jobs – Commerzbank",
+      "url": "https://www.fxstreet.com/news/united-states-slow-growth-but-data-understate-jobs-commerzbank-202608201003",
+      "source": "FXStreet",
+      "published_at": "2026-08-20T10:03:31+00:00"
+    },
     {
       "title": "Indian Rupee: RBI minutes temper rate-cut hopes – DBS",
       "url": "https://www.fxstreet.com/news/indian-rupee-rbi-minutes-temper-rate-cut-hopes-dbs-202608200938",
@@ -156,18 +162,6 @@
       "url": "https://www.fxstreet.com/news/us-dollar-risk-on-pattern-with-softer-dxy-ing-202608200710",
       "source": "FXStreet",
       "published_at": "2026-08-20T07:10:42+00:00"
-    },
-    {
-      "title": "Australian Dollar holds early losses driven by weak job data",
-      "url": "https://www.fxstreet.com/news/australian-dollar-holds-early-losses-driven-by-weak-job-data-202608200704",
-      "source": "FXStreet",
-      "published_at": "2026-08-20T07:04:15+00:00"
-    },
-    {
-      "title": "Canadian Dollar gains traction on fading Fed rate hike bets, US-Canada tariff pause",
-      "url": "https://www.fxstreet.com/news/canadian-dollar-gains-traction-on-fading-fed-rate-hike-bets-us-canada-tariff-pause-202608200704",
-      "source": "FXStreet",
-      "published_at": "2026-08-20T07:04:03+00:00"
     }
   ]
 }
