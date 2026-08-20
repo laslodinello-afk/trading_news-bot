@@ -1,12 +1,6 @@
 {
-  "fetched_at": "2026-08-20T09:33:16.997751+00:00",
+  "fetched_at": "2026-08-20T09:34:24.324651+00:00",
   "articles": [
-    {
-      "title": "Silver price today: Silver falls, according to FXStreet data",
-      "url": "https://www.fxstreet.com/news/silver-price-today-silver-falls-according-to-fxstreet-data-202608200932",
-      "source": "FXStreet",
-      "published_at": "2026-08-20T09:32:47+00:00"
-    },
     {
       "title": "Federal Reserve: AI, inflation risks and limited FX impact – MUFG",
       "url": "https://www.fxstreet.com/news/federal-reserve-ai-inflation-risks-and-limited-fx-impact-mufg-202608200925",
@@ -168,6 +162,12 @@
       "url": "https://www.fxstreet.com/news/swedish-krona-hawkish-riksbank-stance-holds-commerzbank-202608200652",
       "source": "FXStreet",
       "published_at": "2026-08-20T06:52:45+00:00"
+    },
+    {
+      "title": "Silver Price Forecasts: XAG/USD stands tall near $67 supported by US Treasury’s buybacks",
+      "url": "https://www.fxstreet.com/news/silver-price-forecasts-xag-usd-stands-tall-near-67-supported-by-us-treasurys-buybacks-202608200644",
+      "source": "FXStreet",
+      "published_at": "2026-08-20T06:44:32+00:00"
     }
   ]
 }
