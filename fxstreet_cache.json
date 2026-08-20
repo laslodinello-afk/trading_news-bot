@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-20T11:54:21.630357+00:00",
+  "fetched_at": "2026-08-20T11:55:26.913110+00:00",
   "articles": [
+    {
+      "title": "Japanese Yen trims gains as downbeat foreign trade data offsets US Dollar’s weakness",
+      "url": "https://www.fxstreet.com/news/japanese-yen-trims-gains-as-downbeat-foreign-trade-data-offsets-us-dollars-weakness-202608201154",
+      "source": "FXStreet",
+      "published_at": "2026-08-20T11:54:53+00:00"
+    },
     {
       "title": "Japanese Yen: Flows and trade leave Japanese Yen exposed – BNY",
       "url": "https://www.fxstreet.com/news/japanese-yen-flows-and-trade-leave-japanese-yen-exposed-bny-202608201149",
@@ -102,12 +108,6 @@
       "url": "https://www.fxstreet.com/news/wti-refreshes-three-week-high-near-86-amid-us-iran-deadlock-202608200855",
       "source": "FXStreet",
       "published_at": "2026-08-20T08:55:27+00:00"
-    },
-    {
-      "title": "Copper: Tight physical market supports prices – ING",
-      "url": "https://www.fxstreet.com/news/copper-tight-physical-market-supports-prices-ing-202608200855",
-      "source": "FXStreet",
-      "published_at": "2026-08-20T08:55:05+00:00"
     }
   ]
 }
