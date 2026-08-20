@@ -1,4 +1,125 @@
 {
-  "fetched_at": "2026-08-20T13:14:40.085672+00:00",
-  "articles": []
+  "fetched_at": "2026-08-20T13:15:38.208657+00:00",
+  "articles": [
+    {
+      "title": "Analysts agree: Indian Rupee should draw support from hawkish RBI, strong reserves",
+      "url": "https://www.fxstreet.com/news/analysts-agree-indian-rupee-should-draw-support-from-hawkish-rbi-strong-reserves-202608201308",
+      "source": "FXStreet",
+      "published_at": "2026-08-20T13:08:56+00:00"
+    },
+    {
+      "title": "US Dollar: Consolidation after treasury buybacks – DBS",
+      "url": "https://www.fxstreet.com/news/us-dollar-consolidation-after-treasury-buybacks-dbs-202608201305",
+      "source": "FXStreet",
+      "published_at": "2026-08-20T13:05:24+00:00"
+    },
+    {
+      "title": "Fed's Daly: Rise in long term yields is a global issue",
+      "url": "https://www.fxstreet.com/news/feds-daly-rise-in-long-term-yields-is-a-global-issue-202608201300",
+      "source": "FXStreet",
+      "published_at": "2026-08-20T13:00:51+00:00"
+    },
+    {
+      "title": "Australian Dollar retreats as weak jobs data weighs on RBA rate outlook",
+      "url": "https://www.fxstreet.com/news/australian-dollar-retreats-as-weak-jobs-data-weighs-on-rba-rate-outlook-202608201254",
+      "source": "FXStreet",
+      "published_at": "2026-08-20T12:54:02+00:00"
+    },
+    {
+      "title": "Japanese Yen: Debt concerns shape FX outlook – Rabobank",
+      "url": "https://www.fxstreet.com/news/japanese-yen-debt-concerns-shape-fx-outlook-rabobank-202608201253",
+      "source": "FXStreet",
+      "published_at": "2026-08-20T12:53:11+00:00"
+    },
+    {
+      "title": "Gold pares gains as US Treasury yields, Dollar recover",
+      "url": "https://www.fxstreet.com/news/gold-pares-gains-remaining-close-to-recent-highs-as-treasury-buybacks-weigh-on-us-dollar-202608201116",
+      "source": "FXStreet",
+      "published_at": "2026-08-20T11:16:10+00:00"
+    },
+    {
+      "title": "Gold: Rally faces questions as buybacks reshape yields – BNY",
+      "url": "https://www.fxstreet.com/news/gold-rally-faces-questions-as-buybacks-reshape-yields-bny-202608201240",
+      "source": "FXStreet",
+      "published_at": "2026-08-20T12:40:12+00:00"
+    },
+    {
+      "title": "US Initial Jobless Claims dropped to 206K last week",
+      "url": "https://www.fxstreet.com/news/us-initial-jobless-claims-dropped-to-206k-last-week-202608201238",
+      "source": "FXStreet",
+      "published_at": "2026-08-20T12:38:19+00:00"
+    },
+    {
+      "title": "United States: Long-end yield risks contained – ING",
+      "url": "https://www.fxstreet.com/news/united-states-long-end-yield-risks-contained-ing-202608201225",
+      "source": "FXStreet",
+      "published_at": "2026-08-20T12:25:08+00:00"
+    },
+    {
+      "title": "British Pound gains as Japanese Yen struggles despite hawkish BoJ outlook",
+      "url": "https://www.fxstreet.com/news/british-pound-gains-as-japanese-yen-struggles-despite-hawkish-boj-outlook-202608201213",
+      "source": "FXStreet",
+      "published_at": "2026-08-20T12:13:57+00:00"
+    },
+    {
+      "title": "US Dollar: Treasury buybacks raise fiscal questions – BBH",
+      "url": "https://www.fxstreet.com/news/us-dollar-treasury-buybacks-raise-fiscal-questions-bbh-202608201211",
+      "source": "FXStreet",
+      "published_at": "2026-08-20T12:11:55+00:00"
+    },
+    {
+      "title": "Riksbank: Early-2027 hike view – Nomura",
+      "url": "https://www.fxstreet.com/news/riksbank-early-2027-hike-view-nomura-202608201201",
+      "source": "FXStreet",
+      "published_at": "2026-08-20T12:01:43+00:00"
+    },
+    {
+      "title": "Japanese Yen trims gains as downbeat foreign trade data offsets US Dollar’s weakness",
+      "url": "https://www.fxstreet.com/news/japanese-yen-trims-gains-as-downbeat-foreign-trade-data-offsets-us-dollars-weakness-202608201154",
+      "source": "FXStreet",
+      "published_at": "2026-08-20T11:54:53+00:00"
+    },
+    {
+      "title": "Japanese Yen: Flows and trade leave Japanese Yen exposed – BNY",
+      "url": "https://www.fxstreet.com/news/japanese-yen-flows-and-trade-leave-japanese-yen-exposed-bny-202608201149",
+      "source": "FXStreet",
+      "published_at": "2026-08-20T11:49:25+00:00"
+    },
+    {
+      "title": "Silver gives back some gains as US yields rebound",
+      "url": "https://www.fxstreet.com/news/silver-gives-back-some-gains-as-us-yields-rebound-202608201144",
+      "source": "FXStreet",
+      "published_at": "2026-08-20T11:44:25+00:00"
+    },
+    {
+      "title": "Euro: Benefits from US Dollar weakness – DBS",
+      "url": "https://www.fxstreet.com/news/euro-benefits-from-us-dollar-weakness-dbs-202608201140",
+      "source": "FXStreet",
+      "published_at": "2026-08-20T11:40:35+00:00"
+    },
+    {
+      "title": "US Dollar: Downside risks grow as yields contained – MUFG",
+      "url": "https://www.fxstreet.com/news/us-dollar-downside-risks-grow-as-yields-contained-mufg-202608201128",
+      "source": "FXStreet",
+      "published_at": "2026-08-20T11:28:56+00:00"
+    },
+    {
+      "title": "Australian Dollar: Softer jobs data keeps RBA sidelined – BBH",
+      "url": "https://www.fxstreet.com/news/australian-dollar-softer-jobs-data-keeps-rba-sidelined-bbh-202608201112",
+      "source": "FXStreet",
+      "published_at": "2026-08-20T11:12:49+00:00"
+    },
+    {
+      "title": "Gold Price Forecast: XAU/USD corrects below $4,500 as Yields recover some losses",
+      "url": "https://www.fxstreet.com/news/gold-price-forecast-xau-usd-corrects-below-4-500-as-yields-recover-some-losses-202608201056",
+      "source": "FXStreet",
+      "published_at": "2026-08-20T10:56:15+00:00"
+    },
+    {
+      "title": "1.1700: Euro hits three-month highs as US Bond buyback plan crushes the US Dollar",
+      "url": "https://www.fxstreet.com/news/11700-euro-hits-three-month-highs-as-us-bond-buyback-plan-crushes-the-us-dollar-202608201051",
+      "source": "FXStreet",
+      "published_at": "2026-08-20T10:51:20+00:00"
+    }
+  ]
 }
