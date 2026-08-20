@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-20T09:38:21.738973+00:00",
+  "fetched_at": "2026-08-20T09:39:19.948118+00:00",
   "articles": [
+    {
+      "title": "Indian Rupee: RBI minutes temper rate-cut hopes – DBS",
+      "url": "https://www.fxstreet.com/news/indian-rupee-rbi-minutes-temper-rate-cut-hopes-dbs-202608200938",
+      "source": "FXStreet",
+      "published_at": "2026-08-20T09:38:34+00:00"
+    },
     {
       "title": "Silver price today: Silver falls, according to FXStreet data",
       "url": "https://www.fxstreet.com/news/silver-price-today-silver-falls-according-to-fxstreet-data-202608200932",
@@ -162,12 +168,6 @@
       "url": "https://www.fxstreet.com/news/canadian-dollar-gains-traction-on-fading-fed-rate-hike-bets-us-canada-tariff-pause-202608200704",
       "source": "FXStreet",
       "published_at": "2026-08-20T07:04:03+00:00"
-    },
-    {
-      "title": "Swedish Krona: Hawkish Riksbank stance holds – Commerzbank",
-      "url": "https://www.fxstreet.com/news/swedish-krona-hawkish-riksbank-stance-holds-commerzbank-202608200652",
-      "source": "FXStreet",
-      "published_at": "2026-08-20T06:52:45+00:00"
     }
   ]
 }
