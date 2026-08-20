@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-20T11:15:32.344723+00:00",
+  "fetched_at": "2026-08-20T11:16:21.176184+00:00",
   "articles": [
+    {
+      "title": "Gold pares gains, remaining close to recent highs, as Treasury buybacks weigh on US Dollar",
+      "url": "https://www.fxstreet.com/news/gold-pares-gains-remaining-close-to-recent-highs-as-treasury-buybacks-weigh-on-us-dollar-202608201116",
+      "source": "FXStreet",
+      "published_at": "2026-08-20T11:16:10+00:00"
+    },
     {
       "title": "Australian Dollar: Softer jobs data keeps RBA sidelined – BBH",
       "url": "https://www.fxstreet.com/news/australian-dollar-softer-jobs-data-keeps-rba-sidelined-bbh-202608201112",
@@ -114,12 +120,6 @@
       "url": "https://www.fxstreet.com/news/british-pound-gains-as-us-dollar-softens-on-treasury-bond-buybacks-202608200818",
       "source": "FXStreet",
       "published_at": "2026-08-20T08:18:30+00:00"
-    },
-    {
-      "title": "EUR/USD Price Forecast: Doubling US bond-buying plan opens way for 1.1800",
-      "url": "https://www.fxstreet.com/news/eur-usd-price-forecast-doubling-us-bond-buying-plan-opens-way-for-11800-202608200815",
-      "source": "FXStreet",
-      "published_at": "2026-08-20T08:15:37+00:00"
     }
   ]
 }
