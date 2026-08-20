@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-20T11:49:17.642414+00:00",
+  "fetched_at": "2026-08-20T11:50:38.390360+00:00",
   "articles": [
+    {
+      "title": "Japanese Yen: Flows and trade leave Japanese Yen exposed – BNY",
+      "url": "https://www.fxstreet.com/news/japanese-yen-flows-and-trade-leave-japanese-yen-exposed-bny-202608201149",
+      "source": "FXStreet",
+      "published_at": "2026-08-20T11:49:25+00:00"
+    },
     {
       "title": "Silver gives back some gains as US yields rebound",
       "url": "https://www.fxstreet.com/news/silver-gives-back-some-gains-as-us-yields-rebound-202608201144",
@@ -102,12 +108,6 @@
       "url": "https://www.fxstreet.com/news/copper-tight-physical-market-supports-prices-ing-202608200855",
       "source": "FXStreet",
       "published_at": "2026-08-20T08:55:05+00:00"
-    },
-    {
-      "title": "Dow Jones futures gain on Treasury bond buyback relief",
-      "url": "https://www.fxstreet.com/news/dow-jones-futures-gain-on-treasury-bond-buyback-relief-202608200850",
-      "source": "FXStreet",
-      "published_at": "2026-08-20T08:50:36+00:00"
     }
   ]
 }
