@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-20T09:16:22.280193+00:00",
+  "fetched_at": "2026-08-20T09:17:19.740886+00:00",
   "articles": [
+    {
+      "title": "US Dollar: Policy-driven yield retreat – UBS",
+      "url": "https://www.fxstreet.com/news/us-dollar-policy-driven-yield-retreat-ubs-202608200916",
+      "source": "FXStreet",
+      "published_at": "2026-08-20T09:16:24+00:00"
+    },
     {
       "title": "Euro weakens against Canadian Dollar amid higher oil prices",
       "url": "https://www.fxstreet.com/news/euro-weakens-against-canadian-dollar-amid-higher-oil-prices-202608200910",
@@ -162,12 +168,6 @@
       "url": "https://www.fxstreet.com/news/indian-rupee-elevated-oil-keeps-inr-lagging-against-us-dollar-ocbc-202608200636",
       "source": "FXStreet",
       "published_at": "2026-08-20T06:36:09+00:00"
-    },
-    {
-      "title": "Equities: Yield relief and healthcare gains lift markets – Deutsche Bank",
-      "url": "https://www.fxstreet.com/news/equities-yield-relief-and-healthcare-gains-lift-markets-deutsche-bank-202608200625",
-      "source": "FXStreet",
-      "published_at": "2026-08-20T06:25:52+00:00"
     }
   ]
 }
