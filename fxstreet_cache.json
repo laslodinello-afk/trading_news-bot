@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-20T15:39:20.388449+00:00",
+  "fetched_at": "2026-08-20T15:40:35.506438+00:00",
   "articles": [
+    {
+      "title": "USD/CHF Price Forecast: Attempts to reclaim 0.8000 after defending the 100-day SMA",
+      "url": "https://www.fxstreet.com/news/usd-chf-price-forecast-attempts-to-reclaim-08000-after-defending-the-100-day-sma-202608201540",
+      "source": "FXStreet",
+      "published_at": "2026-08-20T15:40:03+00:00"
+    },
     {
       "title": "Bessent wants bigger bond buybacks, but markets barely blink",
       "url": "https://www.fxstreet.com/news/bessent-wants-bigger-bond-buybacks-but-markets-barely-blink-202608201527",
@@ -120,12 +126,6 @@
       "url": "https://www.fxstreet.com/news/japanese-yen-debt-concerns-shape-fx-outlook-rabobank-202608201253",
       "source": "FXStreet",
       "published_at": "2026-08-20T12:53:11+00:00"
-    },
-    {
-      "title": "Gold: Rally faces questions as buybacks reshape yields – BNY",
-      "url": "https://www.fxstreet.com/news/gold-rally-faces-questions-as-buybacks-reshape-yields-bny-202608201240",
-      "source": "FXStreet",
-      "published_at": "2026-08-20T12:40:12+00:00"
     }
   ]
 }
