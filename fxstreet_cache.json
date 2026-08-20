@@ -1,6 +1,18 @@
 {
-  "fetched_at": "2026-08-20T08:54:29.206837+00:00",
+  "fetched_at": "2026-08-20T08:55:29.836497+00:00",
   "articles": [
+    {
+      "title": "WTI refreshes three-week high near $86 amid US-Iran deadlock",
+      "url": "https://www.fxstreet.com/news/wti-refreshes-three-week-high-near-86-amid-us-iran-deadlock-202608200855",
+      "source": "FXStreet",
+      "published_at": "2026-08-20T08:55:27+00:00"
+    },
+    {
+      "title": "Copper: Tight physical market supports prices – ING",
+      "url": "https://www.fxstreet.com/news/copper-tight-physical-market-supports-prices-ing-202608200855",
+      "source": "FXStreet",
+      "published_at": "2026-08-20T08:55:05+00:00"
+    },
     {
       "title": "Dow Jones futures gain on Treasury bond buyback relief",
       "url": "https://www.fxstreet.com/news/dow-jones-futures-gain-on-treasury-bond-buyback-relief-202608200850",
@@ -156,18 +168,6 @@
       "url": "https://www.fxstreet.com/news/british-pound-further-gains-face-13655-cap-against-us-dollar-uob-202608200615",
       "source": "FXStreet",
       "published_at": "2026-08-20T06:15:33+00:00"
-    },
-    {
-      "title": "EUR/JPY Price Forecast: Gains traction above 185.00, bullish signals keep uptrend intact",
-      "url": "https://www.fxstreet.com/news/eur-jpy-price-forecast-gains-traction-above-18500-bullish-signals-keep-uptrend-intact-202608200607",
-      "source": "FXStreet",
-      "published_at": "2026-08-20T06:07:22+00:00"
-    },
-    {
-      "title": "Euro: Spikes higher against US Dollar on Treasury buybacks – Danske Bank",
-      "url": "https://www.fxstreet.com/news/euro-spikes-higher-against-us-dollar-on-treasury-buybacks-danske-bank-202608200607",
-      "source": "FXStreet",
-      "published_at": "2026-08-20T06:07:02+00:00"
     }
   ]
 }
