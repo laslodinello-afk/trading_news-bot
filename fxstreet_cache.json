@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-20T12:38:22.335267+00:00",
+  "fetched_at": "2026-08-20T12:39:24.547767+00:00",
   "articles": [
+    {
+      "title": "US Initial Jobless Claims dropped to 206K last week",
+      "url": "https://www.fxstreet.com/news/us-initial-jobless-claims-dropped-to-206k-last-week-202608201238",
+      "source": "FXStreet",
+      "published_at": "2026-08-20T12:38:19+00:00"
+    },
     {
       "title": "United States: Long-end yield risks contained – ING",
       "url": "https://www.fxstreet.com/news/united-states-long-end-yield-risks-contained-ing-202608201225",
@@ -90,12 +96,6 @@
       "url": "https://www.fxstreet.com/news/united-states-slow-growth-but-data-understate-jobs-commerzbank-202608201003",
       "source": "FXStreet",
       "published_at": "2026-08-20T10:03:31+00:00"
-    },
-    {
-      "title": "Indian Rupee: RBI minutes temper rate-cut hopes – DBS",
-      "url": "https://www.fxstreet.com/news/indian-rupee-rbi-minutes-temper-rate-cut-hopes-dbs-202608200938",
-      "source": "FXStreet",
-      "published_at": "2026-08-20T09:38:34+00:00"
     }
   ]
 }
