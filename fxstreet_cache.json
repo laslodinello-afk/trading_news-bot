@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-20T08:02:23.952311+00:00",
+  "fetched_at": "2026-08-20T08:03:17.544562+00:00",
   "articles": [
+    {
+      "title": "Oil: Rally extends on sanctions risk – ING",
+      "url": "https://www.fxstreet.com/news/oil-rally-extends-on-sanctions-risk-ing-202608200802",
+      "source": "FXStreet",
+      "published_at": "2026-08-20T08:02:57+00:00"
+    },
     {
       "title": "South African Rand: inflation risks from El Niño – Commerzbank",
       "url": "https://www.fxstreet.com/news/south-african-rand-inflation-risks-from-el-nino-commerzbank-202608200753",
@@ -48,12 +54,6 @@
       "url": "https://www.fxstreet.com/news/japanese-yen-underperforms-amid-rising-trade-concerns-202608200714",
       "source": "FXStreet",
       "published_at": "2026-08-20T07:14:00+00:00"
-    },
-    {
-      "title": "Indian Rupee snaps three-day losing streak as US yields plummet",
-      "url": "https://www.fxstreet.com/news/indian-rupee-rebounds-after-three-day-losing-streak-against-us-dollar-202608200502",
-      "source": "FXStreet",
-      "published_at": "2026-08-20T05:02:58+00:00"
     },
     {
       "title": "US Dollar: Risk-on pattern with softer DXY – ING",
