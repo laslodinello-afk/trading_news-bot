@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-20T18:12:24.367020+00:00",
+  "fetched_at": "2026-08-20T18:13:17.510281+00:00",
   "articles": [
+    {
+      "title": "Silver Price Forecast: XAG/USD tests 100-day SMA as rally extends",
+      "url": "https://www.fxstreet.com/news/silver-price-forecast-xag-usd-tests-100-day-sma-as-rally-extends-202608201812",
+      "source": "FXStreet",
+      "published_at": "2026-08-20T18:12:21+00:00"
+    },
     {
       "title": "Japanese Yen underperforms as elevated Oil prices weigh, US Dollar recovers",
       "url": "https://www.fxstreet.com/news/japanese-yen-underperforms-as-elevated-oil-prices-weigh-us-dollar-recovers-202608201756",
@@ -66,12 +72,6 @@
       "url": "https://www.fxstreet.com/news/bessent-wants-bigger-bond-buybacks-but-markets-barely-blink-202608201527",
       "source": "FXStreet",
       "published_at": "2026-08-20T15:27:44+00:00"
-    },
-    {
-      "title": "WTI hits three-week high as Iran deadlock supports Oil",
-      "url": "https://www.fxstreet.com/news/wti-hits-three-week-high-as-iran-deadlock-supports-oil-202608201512",
-      "source": "FXStreet",
-      "published_at": "2026-08-20T15:12:46+00:00"
     }
   ]
 }
