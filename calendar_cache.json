@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-20T14:08:35.812871+00:00",
+  "fetched_at": "2026-08-20T19:43:29.525212+00:00",
   "events": [
     {
       "title": "BusinessNZ Services Index",
@@ -600,6 +600,14 @@
       "impact": "Low",
       "forecast": "15B",
       "previous": "36B"
+    },
+    {
+      "title": "FOMC Member Musalem Speaks",
+      "country": "USD",
+      "date": "2026-08-20T11:10:00-04:00",
+      "impact": "Low",
+      "forecast": "",
+      "previous": ""
     },
     {
       "title": "Trade Balance",
