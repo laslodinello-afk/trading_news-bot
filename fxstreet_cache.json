@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-21T10:03:18.496061+00:00",
+  "fetched_at": "2026-08-21T10:04:22.146468+00:00",
   "articles": [
+    {
+      "title": "US Dollar: Limited upside as fiscal plans questioned – MUFG",
+      "url": "https://www.fxstreet.com/news/us-dollar-limited-upside-as-fiscal-plans-questioned-mufg-202608211004",
+      "source": "FXStreet",
+      "published_at": "2026-08-21T10:04:15+00:00"
+    },
     {
       "title": "United Kingdom: Burnham sentiment bounce – Deutsche Bank",
       "url": "https://www.fxstreet.com/news/united-kingdom-burnham-sentiment-bounce-deutsche-bank-202608210945",
@@ -162,12 +168,6 @@
       "url": "https://www.fxstreet.com/news/british-pound-upward-momentum-targets-13700-against-us-dollar-uob-202608210731",
       "source": "FXStreet",
       "published_at": "2026-08-21T07:31:40+00:00"
-    },
-    {
-      "title": "Euro: Gentle upside against US Dollar as greenback softens - ING",
-      "url": "https://www.fxstreet.com/news/euro-gentle-upside-against-us-dollar-as-greenback-softens-ing-202608210723",
-      "source": "FXStreet",
-      "published_at": "2026-08-21T07:23:04+00:00"
     }
   ]
 }
