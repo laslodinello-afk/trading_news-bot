@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-21T11:23:17.405964+00:00",
+  "fetched_at": "2026-08-21T11:24:23.939535+00:00",
   "articles": [
+    {
+      "title": "Australian Dollar rallies above 0.7150 as the US Dollar bleeds amid bond buybacks",
+      "url": "https://www.fxstreet.com/news/australian-dollar-rallies-above-07150-as-the-us-dollar-bleeds-amid-bond-buybacks-202608211124",
+      "source": "FXStreet",
+      "published_at": "2026-08-21T11:24:05+00:00"
+    },
     {
       "title": "Experts agree: Weak Dollar backs near-term upside in EUR/USD",
       "url": "https://www.fxstreet.com/news/experts-agree-weak-dollar-backs-near-term-upside-in-eur-usd-202608211118",
@@ -138,12 +144,6 @@
       "url": "https://www.fxstreet.com/news/japanese-yen-range-bound-with-mild-upside-against-us-dollar-uob-202608210828",
       "source": "FXStreet",
       "published_at": "2026-08-21T08:28:05+00:00"
-    },
-    {
-      "title": "Euro holds near three-month highs as Eurozone Flash PMIs beat expectations",
-      "url": "https://www.fxstreet.com/news/euro-holds-near-three-month-highs-as-eurozone-flash-pmis-beat-expectations-202608210823",
-      "source": "FXStreet",
-      "published_at": "2026-08-21T08:23:27+00:00"
     }
   ]
 }
