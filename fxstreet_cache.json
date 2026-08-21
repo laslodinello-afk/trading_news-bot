@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-21T09:13:17.796614+00:00",
+  "fetched_at": "2026-08-21T09:14:22.238273+00:00",
   "articles": [
+    {
+      "title": "Japanese Yen: Weakness offsets intervention impact – MUFG",
+      "url": "https://www.fxstreet.com/news/japanese-yen-weakness-offsets-intervention-impact-mufg-202608210912",
+      "source": "FXStreet",
+      "published_at": "2026-08-21T09:12:54+00:00"
+    },
     {
       "title": "WTI Price Forecast: Oil supply tightness supports further upside above $90",
       "url": "https://www.fxstreet.com/news/wti-price-forecast-oil-supply-tightness-supports-further-upside-above-90-202608210904",
@@ -162,12 +168,6 @@
       "url": "https://www.fxstreet.com/news/equities-mixed-recovery-after-us-selloff-deutsche-bank-202608210644",
       "source": "FXStreet",
       "published_at": "2026-08-21T06:44:27+00:00"
-    },
-    {
-      "title": "Forex Today: US Dollar stays near multi-month lows ahead of key PMI data",
-      "url": "https://www.fxstreet.com/news/forex-today-us-dollar-stays-near-multi-month-lows-ahead-of-key-pmi-data-202608210644",
-      "source": "FXStreet",
-      "published_at": "2026-08-21T06:44:11+00:00"
     }
   ]
 }
