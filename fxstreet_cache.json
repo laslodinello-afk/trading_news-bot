@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-21T14:23:18.139646+00:00",
+  "fetched_at": "2026-08-21T14:24:24.471242+00:00",
   "articles": [
+    {
+      "title": "Japanese Yen strengthens against US Dollar as inflation backs BoJ rate hike bets",
+      "url": "https://www.fxstreet.com/news/japanese-yen-strengthens-against-us-dollar-as-inflation-backs-boj-rate-hike-bets-202608211423",
+      "source": "FXStreet",
+      "published_at": "2026-08-21T14:23:31+00:00"
+    },
     {
       "title": "European gas: Storage gap supports high prices – Commerzbank",
       "url": "https://www.fxstreet.com/news/european-gas-storage-gap-supports-high-prices-commerzbank-202608211419",
@@ -120,12 +126,6 @@
       "url": "https://www.fxstreet.com/news/euro-set-to-outperform-pound-us-dollar-and-yen-nomura-202608211136",
       "source": "FXStreet",
       "published_at": "2026-08-21T11:36:11+00:00"
-    },
-    {
-      "title": "Australian Dollar rallies above 0.7150 as the US Dollar bleeds amid bond buybacks",
-      "url": "https://www.fxstreet.com/news/australian-dollar-rallies-above-07150-as-the-us-dollar-bleeds-amid-bond-buybacks-202608211124",
-      "source": "FXStreet",
-      "published_at": "2026-08-21T11:24:05+00:00"
     }
   ]
 }
