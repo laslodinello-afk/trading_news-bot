@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-21T09:31:18.727662+00:00",
+  "fetched_at": "2026-08-21T09:32:29.338556+00:00",
   "articles": [
+    {
+      "title": "1.3670: British Pound hits six-month highs as UK PMI beats expectations",
+      "url": "https://www.fxstreet.com/news/13670-british-pound-hits-six-month-highs-as-uk-pmi-beats-expectations-202608210932",
+      "source": "FXStreet",
+      "published_at": "2026-08-21T09:32:16+00:00"
+    },
     {
       "title": "Silver price today: Silver rises, according to FXStreet data",
       "url": "https://www.fxstreet.com/news/silver-price-today-silver-rises-according-to-fxstreet-data-202608210930",
@@ -162,12 +168,6 @@
       "url": "https://www.fxstreet.com/news/silver-price-forecasts-xag-usd-hits-highs-past-6900-amid-us-dollar-weakness-202608210713",
       "source": "FXStreet",
       "published_at": "2026-08-21T07:13:58+00:00"
-    },
-    {
-      "title": "Indian Rupee: Higher profile after hawkish RBI – MUFG",
-      "url": "https://www.fxstreet.com/news/indian-rupee-higher-profile-after-hawkish-rbi-mufg-202608210700",
-      "source": "FXStreet",
-      "published_at": "2026-08-21T07:00:08+00:00"
     }
   ]
 }
