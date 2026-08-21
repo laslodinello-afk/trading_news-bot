@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-21T08:03:48.223957+00:00",
+  "fetched_at": "2026-08-21T14:05:33.356578+00:00",
   "events": [
     {
       "title": "BusinessNZ Services Index",
@@ -744,6 +744,14 @@
       "impact": "Medium",
       "forecast": "51.8",
       "previous": "51.8"
+    },
+    {
+      "title": "Foreign Direct Investment ytd/y",
+      "country": "CNY",
+      "date": "2026-08-21T05:03:00-04:00",
+      "impact": "Low",
+      "forecast": "",
+      "previous": "-5.0%"
     },
     {
       "title": "Core Retail Sales m/m",
