@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-21T09:33:18.758354+00:00",
+  "fetched_at": "2026-08-21T09:34:24.261263+00:00",
   "articles": [
+    {
+      "title": "United States: Yields risk renewed surge – Rabobank",
+      "url": "https://www.fxstreet.com/news/united-states-yields-risk-renewed-surge-rabobank-202608210933",
+      "source": "FXStreet",
+      "published_at": "2026-08-21T09:33:19+00:00"
+    },
     {
       "title": "1.3670: British Pound hits six-month highs as UK PMI beats expectations",
       "url": "https://www.fxstreet.com/news/13670-british-pound-hits-six-month-highs-as-uk-pmi-beats-expectations-202608210932",
@@ -162,12 +168,6 @@
       "url": "https://www.fxstreet.com/news/aud-usd-price-forecast-hits-fresh-high-since-june-as-bulls-eye-gains-beyond-07150-202608210717",
       "source": "FXStreet",
       "published_at": "2026-08-21T07:17:13+00:00"
-    },
-    {
-      "title": "Silver Price Forecasts: XAG/USD hits highs past $69.00 amid US Dollar weakness",
-      "url": "https://www.fxstreet.com/news/silver-price-forecasts-xag-usd-hits-highs-past-6900-amid-us-dollar-weakness-202608210713",
-      "source": "FXStreet",
-      "published_at": "2026-08-21T07:13:58+00:00"
     }
   ]
 }
