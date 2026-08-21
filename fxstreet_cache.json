@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-21T09:29:19.314764+00:00",
+  "fetched_at": "2026-08-21T09:30:46.447314+00:00",
   "articles": [
+    {
+      "title": "Silver price today: Silver rises, according to FXStreet data",
+      "url": "https://www.fxstreet.com/news/silver-price-today-silver-rises-according-to-fxstreet-data-202608210930",
+      "source": "FXStreet",
+      "published_at": "2026-08-21T09:30:09+00:00"
+    },
     {
       "title": "Swedish Krona: Riksbank keeps tightening option open – Commerzbank",
       "url": "https://www.fxstreet.com/news/swedish-krona-riksbank-keeps-tightening-option-open-commerzbank-202608210923",
@@ -162,12 +168,6 @@
       "url": "https://www.fxstreet.com/news/indian-rupee-higher-profile-after-hawkish-rbi-mufg-202608210700",
       "source": "FXStreet",
       "published_at": "2026-08-21T07:00:08+00:00"
-    },
-    {
-      "title": "Euro holds gains against British Pound after weaker UK Retail Sales data",
-      "url": "https://www.fxstreet.com/news/euro-holds-gains-against-british-pound-after-weaker-uk-retail-sales-data-202608210655",
-      "source": "FXStreet",
-      "published_at": "2026-08-21T06:55:14+00:00"
     }
   ]
 }
