@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-21T01:22:21.003628+00:00",
+  "fetched_at": "2026-08-21T01:23:18.364851+00:00",
   "articles": [
+    {
+      "title": "Euro gains on hawkish ECB outlook despite firm US Dollar",
+      "url": "https://www.fxstreet.com/news/euro-gains-on-hawkish-ecb-outlook-despite-firm-us-dollar-202608210122",
+      "source": "FXStreet",
+      "published_at": "2026-08-21T01:22:50+00:00"
+    },
     {
       "title": "PBOC sets USD/CNY reference rate at 6.7817 vs. 6.7808 previous",
       "url": "https://www.fxstreet.com/news/pboc-sets-usd-cny-reference-rate-at-67817-vs-67808-previous-202608210115",
@@ -72,12 +78,6 @@
       "url": "https://www.fxstreet.com/news/euro-fades-below-11700-as-us-dollar-rebounds-on-yields-202608202230",
       "source": "FXStreet",
       "published_at": "2026-08-20T22:30:09+00:00"
-    },
-    {
-      "title": "Dow Jones Industrial Average repays the Treasury's rally with interest",
-      "url": "https://www.fxstreet.com/news/dow-jones-industrial-average-repays-the-treasurys-rally-with-interest-202608202222",
-      "source": "FXStreet",
-      "published_at": "2026-08-20T22:22:54+00:00"
     }
   ]
 }
