@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-21T14:51:16.861468+00:00",
+  "fetched_at": "2026-08-21T14:52:23.814111+00:00",
   "articles": [
+    {
+      "title": "United Kingdom: Services-led growth and price risks – Nomura",
+      "url": "https://www.fxstreet.com/news/united-kingdom-services-led-growth-and-price-risks-nomura-202608211451",
+      "source": "FXStreet",
+      "published_at": "2026-08-21T14:51:34+00:00"
+    },
     {
       "title": "EUR/GBP slips as strong PMIs cancel out and Iran signals de-escalation",
       "url": "https://www.fxstreet.com/news/eur-gbp-slips-as-strong-pmis-cancel-out-and-iran-signals-de-escalation-202608211449",
@@ -126,12 +132,6 @@
       "url": "https://www.fxstreet.com/news/british-pound-dips-hold-above-21650-japanese-yen-following-mixed-uk-data-202608211157",
       "source": "FXStreet",
       "published_at": "2026-08-21T11:57:56+00:00"
-    },
-    {
-      "title": "Canadian Dollar: Binary tariff risks shape near-term path – TD Securities",
-      "url": "https://www.fxstreet.com/news/canadian-dollar-binary-tariff-risks-shape-near-term-path-td-securities-202608211151",
-      "source": "FXStreet",
-      "published_at": "2026-08-21T11:51:54+00:00"
     }
   ]
 }
