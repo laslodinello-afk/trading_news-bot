@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-21T09:46:21.904045+00:00",
+  "fetched_at": "2026-08-21T09:47:18.183011+00:00",
   "articles": [
+    {
+      "title": "United Kingdom: Burnham sentiment bounce – Deutsche Bank",
+      "url": "https://www.fxstreet.com/news/united-kingdom-burnham-sentiment-bounce-deutsche-bank-202608210945",
+      "source": "FXStreet",
+      "published_at": "2026-08-21T09:45:59+00:00"
+    },
     {
       "title": "S&P Global US PMIs expected to ease slightly in August, still showing solid growth",
       "url": "https://www.fxstreet.com/news/sp-global-us-pmis-expected-to-ease-slightly-in-august-still-showing-solid-growth-202608210945",
@@ -162,12 +168,6 @@
       "url": "https://www.fxstreet.com/news/euro-gentle-upside-against-us-dollar-as-greenback-softens-ing-202608210723",
       "source": "FXStreet",
       "published_at": "2026-08-21T07:23:04+00:00"
-    },
-    {
-      "title": "British Pound trades firmly against Japanese Yen ahead of UK flash PMI data",
-      "url": "https://www.fxstreet.com/news/british-pound-trades-firmly-against-japanese-yen-ahead-of-uk-flash-pmi-data-202608210721",
-      "source": "FXStreet",
-      "published_at": "2026-08-21T07:21:11+00:00"
     }
   ]
 }
