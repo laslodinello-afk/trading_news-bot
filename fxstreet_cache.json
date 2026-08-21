@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-21T09:15:35.447649+00:00",
+  "fetched_at": "2026-08-21T09:16:21.930696+00:00",
   "articles": [
+    {
+      "title": "ECB’s Kazāks: Central bank is well placed to act if needed to get inflation to 2%",
+      "url": "https://www.fxstreet.com/news/ecbs-kazaks-central-bank-is-well-placed-to-act-if-needed-to-get-inflation-to-2-202608210916",
+      "source": "FXStreet",
+      "published_at": "2026-08-21T09:16:08+00:00"
+    },
     {
       "title": "Japanese Yen: Weakness offsets intervention impact – MUFG",
       "url": "https://www.fxstreet.com/news/japanese-yen-weakness-offsets-intervention-impact-mufg-202608210912",
@@ -162,12 +168,6 @@
       "url": "https://www.fxstreet.com/news/united-states-dollar-index-remains-below-9900-as-10-year-us-yield-steadies-202608210652",
       "source": "FXStreet",
       "published_at": "2026-08-21T06:52:06+00:00"
-    },
-    {
-      "title": "Equities: Mixed recovery after US selloff – Deutsche Bank",
-      "url": "https://www.fxstreet.com/news/equities-mixed-recovery-after-us-selloff-deutsche-bank-202608210644",
-      "source": "FXStreet",
-      "published_at": "2026-08-21T06:44:27+00:00"
     }
   ]
 }
