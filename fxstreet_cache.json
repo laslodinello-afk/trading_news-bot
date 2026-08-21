@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-21T08:02:27.242930+00:00",
+  "fetched_at": "2026-08-21T08:03:23.565536+00:00",
   "articles": [
+    {
+      "title": "Canadian Dollar stands firm near three-month high vs weak USD ahead of data",
+      "url": "https://www.fxstreet.com/news/canadian-dollar-stands-firm-near-three-month-high-vs-weak-usd-ahead-of-data-202608210802",
+      "source": "FXStreet",
+      "published_at": "2026-08-21T08:02:48+00:00"
+    },
     {
       "title": "Eurozone flash Manufacturing PMI rises unexpectedly faster-than-estimates to 52.8 in August",
       "url": "https://www.fxstreet.com/news/eurozone-flash-manufacturing-pmi-rises-unexpectedly-faster-than-estimates-to-528-in-august-202608210802",
@@ -144,12 +150,6 @@
       "url": "https://www.fxstreet.com/news/wti-steadies-near-8600-as-iran-sanctions-threat-offsets-us-inventory-build-202608210556",
       "source": "FXStreet",
       "published_at": "2026-08-21T05:56:28+00:00"
-    },
-    {
-      "title": "52.9: India's HSBC Manufacturing PMI falls in August",
-      "url": "https://www.fxstreet.com/news/529-indias-hsbc-manufacturing-pmi-falls-in-august-202608210503",
-      "source": "FXStreet",
-      "published_at": "2026-08-21T05:03:15+00:00"
     }
   ]
 }
