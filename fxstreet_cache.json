@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-21T12:32:21.685169+00:00",
+  "fetched_at": "2026-08-21T12:33:20.089526+00:00",
   "articles": [
+    {
+      "title": "Japanese Yen: Support test as Japan data firm – BBH",
+      "url": "https://www.fxstreet.com/news/japanese-yen-support-test-as-japan-data-firm-bbh-202608211232",
+      "source": "FXStreet",
+      "published_at": "2026-08-21T12:32:06+00:00"
+    },
     {
       "title": "Indonesia: Expansionary stance with narrowing buffer – Standard Chartered",
       "url": "https://www.fxstreet.com/news/indonesia-expansionary-stance-with-narrowing-buffer-standard-chartered-202608211223",
@@ -102,12 +108,6 @@
       "url": "https://www.fxstreet.com/news/sp-global-us-pmis-expected-to-ease-slightly-in-august-still-showing-solid-growth-202608210945",
       "source": "FXStreet",
       "published_at": "2026-08-21T09:45:00+00:00"
-    },
-    {
-      "title": "United States: Yields risk renewed surge – Rabobank",
-      "url": "https://www.fxstreet.com/news/united-states-yields-risk-renewed-surge-rabobank-202608210933",
-      "source": "FXStreet",
-      "published_at": "2026-08-21T09:33:19+00:00"
     }
   ]
 }
