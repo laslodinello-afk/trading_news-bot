@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-21T12:03:17.141679+00:00",
+  "fetched_at": "2026-08-21T12:04:23.726881+00:00",
   "articles": [
+    {
+      "title": "EUR/GBP Price Forecast: Neutral RSI signals further consolidation",
+      "url": "https://www.fxstreet.com/news/eur-gbp-price-forecast-neutral-rsi-signals-further-consolidation-202608211203",
+      "source": "FXStreet",
+      "published_at": "2026-08-21T12:03:38+00:00"
+    },
     {
       "title": "British Pound dips hold above 216.50 Japanese Yen following mixed UK data",
       "url": "https://www.fxstreet.com/news/british-pound-dips-hold-above-21650-japanese-yen-following-mixed-uk-data-202608211157",
@@ -120,12 +126,6 @@
       "url": "https://www.fxstreet.com/news/japanese-yen-weakness-offsets-intervention-impact-mufg-202608210912",
       "source": "FXStreet",
       "published_at": "2026-08-21T09:12:54+00:00"
-    },
-    {
-      "title": "WTI Price Forecast: Oil supply tightness supports further upside above $90",
-      "url": "https://www.fxstreet.com/news/wti-price-forecast-oil-supply-tightness-supports-further-upside-above-90-202608210904",
-      "source": "FXStreet",
-      "published_at": "2026-08-21T09:04:06+00:00"
     }
   ]
 }
