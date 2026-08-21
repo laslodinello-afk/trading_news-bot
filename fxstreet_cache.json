@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-21T09:44:24.840894+00:00",
+  "fetched_at": "2026-08-21T09:45:32.992796+00:00",
   "articles": [
+    {
+      "title": "S&P Global US PMIs expected to ease slightly in August, still showing solid growth",
+      "url": "https://www.fxstreet.com/news/sp-global-us-pmis-expected-to-ease-slightly-in-august-still-showing-solid-growth-202608210945",
+      "source": "FXStreet",
+      "published_at": "2026-08-21T09:45:00+00:00"
+    },
     {
       "title": "United States: Yields risk renewed surge – Rabobank",
       "url": "https://www.fxstreet.com/news/united-states-yields-risk-renewed-surge-rabobank-202608210933",
@@ -162,12 +168,6 @@
       "url": "https://www.fxstreet.com/news/british-pound-trades-firmly-against-japanese-yen-ahead-of-uk-flash-pmi-data-202608210721",
       "source": "FXStreet",
       "published_at": "2026-08-21T07:21:11+00:00"
-    },
-    {
-      "title": "AUD/USD Price Forecast: Hits fresh high since June as bulls eye gains beyond 0.7150",
-      "url": "https://www.fxstreet.com/news/aud-usd-price-forecast-hits-fresh-high-since-june-as-bulls-eye-gains-beyond-07150-202608210717",
-      "source": "FXStreet",
-      "published_at": "2026-08-21T07:17:13+00:00"
     }
   ]
 }
