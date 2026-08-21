@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-21T11:51:16.658916+00:00",
+  "fetched_at": "2026-08-21T11:52:21.621184+00:00",
   "articles": [
+    {
+      "title": "Canadian Dollar: Binary tariff risks shape near-term path – TD Securities",
+      "url": "https://www.fxstreet.com/news/canadian-dollar-binary-tariff-risks-shape-near-term-path-td-securities-202608211151",
+      "source": "FXStreet",
+      "published_at": "2026-08-21T11:51:54+00:00"
+    },
     {
       "title": "Silver climbs toward $70 as US Dollar remains under pressure",
       "url": "https://www.fxstreet.com/news/silver-climbs-toward-70-as-us-dollar-remains-under-pressure-202608211141",
@@ -126,18 +132,6 @@
       "url": "https://www.fxstreet.com/news/euro-steadies-against-british-pound-as-strong-pmis-offer-support-on-both-sides-202608210857",
       "source": "FXStreet",
       "published_at": "2026-08-21T08:57:11+00:00"
-    },
-    {
-      "title": "Japanese Yen sticks to gains amid hawkish BoJ bets as USD stays weak on Fed expectations",
-      "url": "https://www.fxstreet.com/news/japanese-yen-sticks-to-gains-amid-hawkish-boj-bets-as-usd-stays-weak-on-fed-expectations-202608210851",
-      "source": "FXStreet",
-      "published_at": "2026-08-21T08:51:32+00:00"
-    },
-    {
-      "title": "Federal Reserve: Backstop doubts and high intervention bar – BNY",
-      "url": "https://www.fxstreet.com/news/federal-reserve-backstop-doubts-and-high-intervention-bar-bny-202608210851",
-      "source": "FXStreet",
-      "published_at": "2026-08-21T08:51:21+00:00"
     }
   ]
 }
