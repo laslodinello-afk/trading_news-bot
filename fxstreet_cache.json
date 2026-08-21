@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-21T09:03:20.653858+00:00",
+  "fetched_at": "2026-08-21T09:04:20.617656+00:00",
   "articles": [
+    {
+      "title": "WTI Price Forecast: Oil supply tightness supports further upside above $90",
+      "url": "https://www.fxstreet.com/news/wti-price-forecast-oil-supply-tightness-supports-further-upside-above-90-202608210904",
+      "source": "FXStreet",
+      "published_at": "2026-08-21T09:04:06+00:00"
+    },
     {
       "title": "US Dollar: Softer bias with pro-risk flows – ING",
       "url": "https://www.fxstreet.com/news/us-dollar-softer-bias-with-pro-risk-flows-ing-202608210901",
@@ -162,12 +168,6 @@
       "url": "https://www.fxstreet.com/news/forex-today-us-dollar-stays-near-multi-month-lows-ahead-of-key-pmi-data-202608210644",
       "source": "FXStreet",
       "published_at": "2026-08-21T06:44:11+00:00"
-    },
-    {
-      "title": "British Pound holds gains against a weak US Dollar despite downbeat UK Retail Sales",
-      "url": "https://www.fxstreet.com/news/british-pound-holds-gains-against-a-weak-us-dollar-despite-downbeat-uk-retail-sales-202608210636",
-      "source": "FXStreet",
-      "published_at": "2026-08-21T06:36:26+00:00"
     }
   ]
 }
