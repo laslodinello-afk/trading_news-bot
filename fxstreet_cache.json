@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-21T08:39:18.046728+00:00",
+  "fetched_at": "2026-08-21T08:40:33.611152+00:00",
   "articles": [
+    {
+      "title": "Polish Zloty: Inflation re-acceleration weighs on PLN – Commerzbank",
+      "url": "https://www.fxstreet.com/news/polish-zloty-inflation-re-acceleration-weighs-on-pln-commerzbank-202608210840",
+      "source": "FXStreet",
+      "published_at": "2026-08-21T08:40:12+00:00"
+    },
     {
       "title": "United Kingdom flash Services PMI expands faster to 52.8 in August, beats 51.8 estimates",
       "url": "https://www.fxstreet.com/news/united-kingdom-flash-services-pmi-expands-faster-to-528-in-august-beats-518-estimates-202608210833",
@@ -168,12 +174,6 @@
       "url": "https://www.fxstreet.com/news/united-kingdom-retail-sales-decline-05-mom-in-july-as-expected-202608210601",
       "source": "FXStreet",
       "published_at": "2026-08-21T06:01:56+00:00"
-    },
-    {
-      "title": "WTI steadies near $86.00 as Iran sanctions threat offsets US inventory build",
-      "url": "https://www.fxstreet.com/news/wti-steadies-near-8600-as-iran-sanctions-threat-offsets-us-inventory-build-202608210556",
-      "source": "FXStreet",
-      "published_at": "2026-08-21T05:56:28+00:00"
     }
   ]
 }
