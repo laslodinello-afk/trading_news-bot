@@ -1,6 +1,18 @@
 {
-  "fetched_at": "2026-08-21T08:51:20.413519+00:00",
+  "fetched_at": "2026-08-21T08:52:23.542814+00:00",
   "articles": [
+    {
+      "title": "Japanese Yen sticks to gains amid hawkish BoJ bets as USD stays weak on Fed expectations",
+      "url": "https://www.fxstreet.com/news/japanese-yen-sticks-to-gains-amid-hawkish-boj-bets-as-usd-stays-weak-on-fed-expectations-202608210851",
+      "source": "FXStreet",
+      "published_at": "2026-08-21T08:51:32+00:00"
+    },
+    {
+      "title": "Federal Reserve: Backstop doubts and high intervention bar – BNY",
+      "url": "https://www.fxstreet.com/news/federal-reserve-backstop-doubts-and-high-intervention-bar-bny-202608210851",
+      "source": "FXStreet",
+      "published_at": "2026-08-21T08:51:21+00:00"
+    },
     {
       "title": "Polish Zloty: Inflation re-acceleration weighs on PLN – Commerzbank",
       "url": "https://www.fxstreet.com/news/polish-zloty-inflation-re-acceleration-weighs-on-pln-commerzbank-202608210840",
@@ -86,12 +98,6 @@
       "published_at": "2026-08-21T07:31:40+00:00"
     },
     {
-      "title": "Indian Rupee edges down amid elevated oil prices, recovery in US yields",
-      "url": "https://www.fxstreet.com/news/indian-rupee-ticks-lower-due-to-elevated-oil-prices-recovery-in-us-bond-yields-202608210551",
-      "source": "FXStreet",
-      "published_at": "2026-08-21T05:51:50+00:00"
-    },
-    {
       "title": "Euro: Gentle upside against US Dollar as greenback softens - ING",
       "url": "https://www.fxstreet.com/news/euro-gentle-upside-against-us-dollar-as-greenback-softens-ing-202608210723",
       "source": "FXStreet",
@@ -162,18 +168,6 @@
       "url": "https://www.fxstreet.com/news/asian-stocks-gain-despite-easing-pressure-on-global-bond-yields-202608210614",
       "source": "FXStreet",
       "published_at": "2026-08-21T06:14:35+00:00"
-    },
-    {
-      "title": "Euro: Further upside toward 1.1725 against US Dollar – UOB",
-      "url": "https://www.fxstreet.com/news/euro-further-upside-toward-11725-against-us-dollar-uob-202608210610",
-      "source": "FXStreet",
-      "published_at": "2026-08-21T06:10:57+00:00"
-    },
-    {
-      "title": "United Kingdom Retail Sales decline 0.5% MoM in July, as expected",
-      "url": "https://www.fxstreet.com/news/united-kingdom-retail-sales-decline-05-mom-in-july-as-expected-202608210601",
-      "source": "FXStreet",
-      "published_at": "2026-08-21T06:01:56+00:00"
     }
   ]
 }
