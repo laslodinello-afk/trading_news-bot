@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-24T18:52:32.628026+00:00",
+  "fetched_at": "2026-08-24T18:53:25.065692+00:00",
   "articles": [
+    {
+      "title": "Silver Price Forecast: XAG pullback tests 100-day SMA",
+      "url": "https://www.fxstreet.com/news/silver-price-forecast-xag-pullback-tests-100-day-sma-202608241852",
+      "source": "FXStreet",
+      "published_at": "2026-08-24T18:52:11+00:00"
+    },
     {
       "title": "Singapore Dollar: Upside risk stays intact against US Dollar – UOB",
       "url": "https://www.fxstreet.com/news/singapore-dollar-upside-risk-stays-intact-against-us-dollar-uob-202608241841",
@@ -60,12 +66,6 @@
       "url": "https://www.fxstreet.com/news/canada-growth-rebound-overshadowed-by-trade-war-bbh-202608241611",
       "source": "FXStreet",
       "published_at": "2026-08-24T16:11:00+00:00"
-    },
-    {
-      "title": "New Zealand Dollar retreats from recent highs on weak Retail Sales",
-      "url": "https://www.fxstreet.com/news/new-zealand-dollar-retreats-from-recent-highs-on-weak-retail-sales-202608241552",
-      "source": "FXStreet",
-      "published_at": "2026-08-24T15:52:49+00:00"
     }
   ]
 }
