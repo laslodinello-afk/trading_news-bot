@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-24T10:01:21.890403+00:00",
+  "fetched_at": "2026-08-24T10:02:24.631578+00:00",
   "articles": [
+    {
+      "title": "New Zealand Dollar edges down from highs amid soft retail consumption data",
+      "url": "https://www.fxstreet.com/news/new-zealand-dollar-edges-down-from-highs-amid-soft-retail-consumption-data-202608241002",
+      "source": "FXStreet",
+      "published_at": "2026-08-24T10:02:18+00:00"
+    },
     {
       "title": "Euro steadies against Japanese Yen as markets weigh ECB, BoJ rate hikes",
       "url": "https://www.fxstreet.com/news/euro-steadies-against-japanese-yen-as-markets-weigh-ecb-boj-rate-hikes-202608240958",
@@ -156,12 +162,6 @@
       "url": "https://www.fxstreet.com/news/ecbs-cipollone-risk-of-economic-stagnation-and-sharp-inflation-rise-is-rather-remote-202608240709",
       "source": "FXStreet",
       "published_at": "2026-08-24T07:09:21+00:00"
-    },
-    {
-      "title": "Canadian Dollar declines as US-Canada trade talks collapse",
-      "url": "https://www.fxstreet.com/news/canadian-dollar-declines-as-us-canada-trade-talks-collapse-202608240702",
-      "source": "FXStreet",
-      "published_at": "2026-08-24T07:02:21+00:00"
     }
   ]
 }
