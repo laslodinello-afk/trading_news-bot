@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-24T08:59:21.156647+00:00",
+  "fetched_at": "2026-08-24T09:01:01.615638+00:00",
   "articles": [
+    {
+      "title": "Dow Jones futures slip as US Treasury pledges buybacks, Middle East tensions persist",
+      "url": "https://www.fxstreet.com/news/dow-jones-futures-slip-as-us-treasury-pledges-buybacks-middle-east-tensions-persist-202608240859",
+      "source": "FXStreet",
+      "published_at": "2026-08-24T08:59:45+00:00"
+    },
     {
       "title": "Japanese Yen: Slightly bullish within broad range against US Dollar – UOB",
       "url": "https://www.fxstreet.com/news/japanese-yen-slightly-bullish-within-broad-range-against-us-dollar-uob-202608240856",
@@ -126,12 +132,6 @@
       "url": "https://www.fxstreet.com/news/euro-upside-room-toward-11800-against-us-dollar-uob-202608240605",
       "source": "FXStreet",
       "published_at": "2026-08-24T06:05:42+00:00"
-    },
-    {
-      "title": "EUR/USD Price Forecast: Holds steady below 1.1700 as overbought momentum tempers further gains",
-      "url": "https://www.fxstreet.com/news/eur-usd-price-forecast-holds-steady-below-11700-as-overbought-momentum-tempers-further-gains-202608240559",
-      "source": "FXStreet",
-      "published_at": "2026-08-24T05:59:52+00:00"
     }
   ]
 }
