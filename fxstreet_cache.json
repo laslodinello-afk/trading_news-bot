@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-24T12:31:20.101635+00:00",
+  "fetched_at": "2026-08-24T12:32:24.020019+00:00",
   "articles": [
+    {
+      "title": "Gold extends rally as markets await US PCE and Warsh’s Jackson Hole speech",
+      "url": "https://www.fxstreet.com/news/gold-extends-rally-as-markets-await-us-pce-and-warshs-jackson-hole-speech-202608241107",
+      "source": "FXStreet",
+      "published_at": "2026-08-24T11:07:10+00:00"
+    },
     {
       "title": "Australian Dollar: Cooling inflation but carry remains supportive – BBH",
       "url": "https://www.fxstreet.com/news/australian-dollar-cooling-inflation-but-carry-remains-supportive-bbh-202608241223",
@@ -62,12 +68,6 @@
       "published_at": "2026-08-24T11:17:14+00:00"
     },
     {
-      "title": "Gold extends rally as markets await US PCE and Warsh’s Jackson Hole speech",
-      "url": "https://www.fxstreet.com/news/gold-extends-rally-as-markets-await-us-pce-and-warshs-jackson-hole-speech-202608241107",
-      "source": "FXStreet",
-      "published_at": "2026-08-24T11:07:10+00:00"
-    },
-    {
       "title": "New Zealand Dollar: Retail slump yet hikes priced – BBH",
       "url": "https://www.fxstreet.com/news/new-zealand-dollar-retail-slump-yet-hikes-priced-bbh-202608241106",
       "source": "FXStreet",
@@ -114,12 +114,6 @@
       "url": "https://www.fxstreet.com/news/canadian-dollar-trade-tensions-threaten-recovery-against-us-dollar-ocbc-202608240939",
       "source": "FXStreet",
       "published_at": "2026-08-24T09:39:01+00:00"
-    },
-    {
-      "title": "Silver price today: Silver falls, according to FXStreet data",
-      "url": "https://www.fxstreet.com/news/silver-price-today-silver-falls-according-to-fxstreet-data-202608240931",
-      "source": "FXStreet",
-      "published_at": "2026-08-24T09:31:38+00:00"
     }
   ]
 }
