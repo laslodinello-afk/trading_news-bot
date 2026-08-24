@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-24T16:14:21.162010+00:00",
+  "fetched_at": "2026-08-24T16:15:36.255996+00:00",
   "articles": [
+    {
+      "title": "The Treasury bids and offers the Dow Jones Industrial Average",
+      "url": "https://www.fxstreet.com/news/the-treasury-bids-and-offers-the-dow-jones-industrial-average-202608241614",
+      "source": "FXStreet",
+      "published_at": "2026-08-24T16:14:16+00:00"
+    },
     {
       "title": "British Pound holds firm as the US sanctions on Iran loom",
       "url": "https://www.fxstreet.com/news/british-pound-holds-firm-as-the-us-sanctions-on-iran-loom-202608241613",
@@ -114,12 +120,6 @@
       "url": "https://www.fxstreet.com/news/federal-reserve-warsh-faces-a-communication-test-dbs-202608241319",
       "source": "FXStreet",
       "published_at": "2026-08-24T13:19:36+00:00"
-    },
-    {
-      "title": "Reuters: US Treasury's Scott Bessent to announce more sanctions on Iran",
-      "url": "https://www.fxstreet.com/news/reuters-us-treasurys-scott-bessent-to-announce-more-sanctions-on-iran-202608241314",
-      "source": "FXStreet",
-      "published_at": "2026-08-24T13:14:58+00:00"
     }
   ]
 }
