@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-24T05:35:29.687546+00:00",
+  "fetched_at": "2026-08-24T05:36:24.508660+00:00",
   "articles": [
+    {
+      "title": "Indian Rupee remains steady amid strong capital inflows",
+      "url": "https://www.fxstreet.com/news/indian-rupee-strengthens-due-to-strong-capital-inflows-rbi-support-202608240412",
+      "source": "FXStreet",
+      "published_at": "2026-08-24T04:12:40+00:00"
+    },
     {
       "title": "Indonesian Rupiah declines despite prevailing high interest rates, weaker US Dollar",
       "url": "https://www.fxstreet.com/news/indonesian-rupiah-declines-despite-prevailing-high-interest-rates-weaker-us-dollar-202608240532",
@@ -36,12 +42,6 @@
       "url": "https://www.fxstreet.com/news/india-gold-price-today-gold-rises-according-to-fxstreet-data-202608240436",
       "source": "FXStreet",
       "published_at": "2026-08-24T04:36:17+00:00"
-    },
-    {
-      "title": "Indian Rupee strengthens due to strong capital inflows, RBI support",
-      "url": "https://www.fxstreet.com/news/indian-rupee-strengthens-due-to-strong-capital-inflows-rbi-support-202608240412",
-      "source": "FXStreet",
-      "published_at": "2026-08-24T04:12:40+00:00"
     },
     {
       "title": "Silver Price Forecast: XAG/USD holds bullish below $70.00/two-month high set on Friday",
