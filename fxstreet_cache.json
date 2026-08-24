@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-24T21:51:18.913231+00:00",
+  "fetched_at": "2026-08-24T21:52:24.577249+00:00",
   "articles": [
+    {
+      "title": "South Korean Won: Rally faces consolidation risk on policy week – OCBC",
+      "url": "https://www.fxstreet.com/news/south-korean-won-rally-faces-consolidation-risk-on-policy-week-ocbc-202608242151",
+      "source": "FXStreet",
+      "published_at": "2026-08-24T21:51:00+00:00"
+    },
     {
       "title": "Record intervention bought the Japanese Yen three weeks",
       "url": "https://www.fxstreet.com/news/record-intervention-bought-the-japanese-yen-three-weeks-202608242148",
@@ -72,12 +78,6 @@
       "url": "https://www.fxstreet.com/news/chinese-yuan-gradual-appreciation-bias-with-key-levels-against-us-dollar-ocbc-202608241917",
       "source": "FXStreet",
       "published_at": "2026-08-24T19:17:00+00:00"
-    },
-    {
-      "title": "Silver Price Forecast: XAG pullback tests 100-day SMA",
-      "url": "https://www.fxstreet.com/news/silver-price-forecast-xag-pullback-tests-100-day-sma-202608241852",
-      "source": "FXStreet",
-      "published_at": "2026-08-24T18:52:11+00:00"
     }
   ]
 }
