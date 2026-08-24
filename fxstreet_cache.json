@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-24T21:40:33.115205+00:00",
+  "fetched_at": "2026-08-24T21:41:17.208748+00:00",
   "articles": [
+    {
+      "title": "New Zealand Dollar muted near multi-month highs as it outweighs soft retail sales",
+      "url": "https://www.fxstreet.com/news/new-zealand-dollar-muted-near-multi-month-highs-as-it-outweighs-soft-retail-sales-202608242141",
+      "source": "FXStreet",
+      "published_at": "2026-08-24T21:41:04+00:00"
+    },
     {
       "title": "British Pound Sterling climbs on a problem it has worse",
       "url": "https://www.fxstreet.com/news/british-pound-sterling-climbs-on-a-problem-it-has-worse-202608242124",
@@ -60,12 +66,6 @@
       "url": "https://www.fxstreet.com/news/silver-price-forecast-xag-pullback-tests-100-day-sma-202608241852",
       "source": "FXStreet",
       "published_at": "2026-08-24T18:52:11+00:00"
-    },
-    {
-      "title": "Singapore Dollar: Upside risk stays intact against US Dollar – UOB",
-      "url": "https://www.fxstreet.com/news/singapore-dollar-upside-risk-stays-intact-against-us-dollar-uob-202608241841",
-      "source": "FXStreet",
-      "published_at": "2026-08-24T18:41:00+00:00"
     }
   ]
 }
