@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-25T04:34:25.046358+00:00",
+  "fetched_at": "2026-08-25T04:35:29.180368+00:00",
   "articles": [
+    {
+      "title": "India Gold price today: Gold falls, according to FXStreet data",
+      "url": "https://www.fxstreet.com/news/india-gold-price-today-gold-falls-according-to-fxstreet-data-202608250435",
+      "source": "FXStreet",
+      "published_at": "2026-08-25T04:35:04+00:00"
+    },
     {
       "title": "EUR/JPY Price Forecast: Rises toward 186.00 after rebounding from ascending channel bottom",
       "url": "https://www.fxstreet.com/news/eur-jpy-price-forecast-rises-toward-18600-after-rebounding-from-ascending-channel-bottom-202608250418",
@@ -60,12 +66,6 @@
       "url": "https://www.fxstreet.com/news/australian-dollar-remains-steady-following-rba-meeting-minutes-202608250205",
       "source": "FXStreet",
       "published_at": "2026-08-25T02:05:19+00:00"
-    },
-    {
-      "title": "WTI holds ground above $84.50 as escalating concerns over US sanctions on Iran",
-      "url": "https://www.fxstreet.com/news/wti-holds-ground-above-8450-as-escalating-concerns-over-us-sanctions-on-iran-202608250135",
-      "source": "FXStreet",
-      "published_at": "2026-08-25T01:35:23+00:00"
     }
   ]
 }
