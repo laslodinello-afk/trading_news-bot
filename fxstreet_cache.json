@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-25T01:32:25.476302+00:00",
+  "fetched_at": "2026-08-25T01:33:21.400897+00:00",
   "articles": [
+    {
+      "title": "RBA Minutes: Board ready to raise rates if upside risks materialise",
+      "url": "https://www.fxstreet.com/news/rba-minutes-board-ready-to-raise-rates-if-upside-risks-materialise-202608250132",
+      "source": "FXStreet",
+      "published_at": "2026-08-25T01:32:40+00:00"
+    },
     {
       "title": "Iran’s Economy Minister Madanizadeh: Enemies should wait for an attack",
       "url": "https://www.fxstreet.com/news/irans-economy-minister-madanizadeh-enemies-should-wait-for-an-attack-202608250128",
@@ -30,12 +36,6 @@
       "url": "https://www.fxstreet.com/news/australian-dollar-falls-as-iran-sanctions-sour-risk-appetite-rba-minutes-eyed-202608242258",
       "source": "FXStreet",
       "published_at": "2026-08-24T22:58:23+00:00"
-    },
-    {
-      "title": "Chinese Yuan: Targeting 6.7200 against US Dollar – UOB",
-      "url": "https://www.fxstreet.com/news/chinese-yuan-targeting-67200-against-us-dollar-uob-202608242233",
-      "source": "FXStreet",
-      "published_at": "2026-08-24T22:33:00+00:00"
     }
   ]
 }
