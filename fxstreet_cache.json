@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-25T06:59:20.468485+00:00",
+  "fetched_at": "2026-08-25T07:01:07.568304+00:00",
   "articles": [
+    {
+      "title": "Indian Rupee edges up against US Dollar on possible RBI’s intervention",
+      "url": "https://www.fxstreet.com/news/indian-rupee-ticks-up-against-us-dollar-on-rbis-likely-intervention-202608250537",
+      "source": "FXStreet",
+      "published_at": "2026-08-25T05:37:39+00:00"
+    },
     {
       "title": "WTI slides below $84.00 on firmer USD but US-Iran tensions limit deeper losses",
       "url": "https://www.fxstreet.com/news/wti-slides-below-8400-on-firmer-usd-but-us-iran-tensions-limit-deeper-losses-202608250647",
@@ -42,12 +48,6 @@
       "url": "https://www.fxstreet.com/news/eur-usd-price-forecast-corrects-further-as-us-dollar-extends-recovery-202608250558",
       "source": "FXStreet",
       "published_at": "2026-08-25T05:58:30+00:00"
-    },
-    {
-      "title": "Indian Rupee ticks up against US Dollar on RBI’s likely intervention",
-      "url": "https://www.fxstreet.com/news/indian-rupee-ticks-up-against-us-dollar-on-rbis-likely-intervention-202608250537",
-      "source": "FXStreet",
-      "published_at": "2026-08-25T05:37:39+00:00"
     },
     {
       "title": "Indonesian Rupiah struggles amid record deficit, external pressures",
