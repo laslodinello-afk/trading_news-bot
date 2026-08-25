@@ -1,6 +1,18 @@
 {
-  "fetched_at": "2026-08-25T14:17:23.085841+00:00",
+  "fetched_at": "2026-08-25T14:18:22.740037+00:00",
   "articles": [
+    {
+      "title": "US Dollar: Credibility risks for USD – TD Securities",
+      "url": "https://www.fxstreet.com/news/us-dollar-credibility-risks-for-usd-td-securities-202608251418",
+      "source": "FXStreet",
+      "published_at": "2026-08-25T14:18:13+00:00"
+    },
+    {
+      "title": "Silver retreats ahead of US PCE data, but underlying support persists",
+      "url": "https://www.fxstreet.com/news/silver-retreats-ahead-of-us-pce-data-but-underlying-support-persists-202608251418",
+      "source": "FXStreet",
+      "published_at": "2026-08-25T14:18:01+00:00"
+    },
     {
       "title": "Euro: Upside limited above fair value against US Dollar – Scotiabank",
       "url": "https://www.fxstreet.com/news/euro-upside-limited-above-fair-value-against-us-dollar-scotiabank-202608251408",
@@ -120,12 +132,6 @@
       "url": "https://www.fxstreet.com/news/australian-dollar-strength-intact-with-07200-in-focus-against-us-dollar-uob-202608251127",
       "source": "FXStreet",
       "published_at": "2026-08-25T11:27:21+00:00"
-    },
-    {
-      "title": "Euro: Recovery against US Dollar supported by data – BBH",
-      "url": "https://www.fxstreet.com/news/euro-recovery-against-us-dollar-supported-by-data-bbh-202608251117",
-      "source": "FXStreet",
-      "published_at": "2026-08-25T11:17:52+00:00"
     }
   ]
 }
