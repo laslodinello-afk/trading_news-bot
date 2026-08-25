@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-25T21:53:18.760147+00:00",
+  "fetched_at": "2026-08-25T21:54:27.240641+00:00",
   "articles": [
+    {
+      "title": "Thai Baht: Bullish bias against US Dollar faces BoT sensitivity – OCBC",
+      "url": "https://www.fxstreet.com/news/thai-baht-bullish-bias-against-us-dollar-faces-bot-sensitivity-ocbc-202608252154",
+      "source": "FXStreet",
+      "published_at": "2026-08-25T21:54:00+00:00"
+    },
     {
       "title": "Chinese Yuan: Bullish bias with focus on 6.7000 against US Dollar – UOB",
       "url": "https://www.fxstreet.com/news/chinese-yuan-bullish-bias-with-focus-on-67000-against-us-dollar-uob-202608252121",
@@ -42,12 +48,6 @@
       "url": "https://www.fxstreet.com/news/chinese-yuan-trade-risks-limit-gains-against-us-dollar-ocbc-202608251923",
       "source": "FXStreet",
       "published_at": "2026-08-25T19:23:00+00:00"
-    },
-    {
-      "title": "The US Dollar Index stops paying for hawks who cannot vote",
-      "url": "https://www.fxstreet.com/news/the-us-dollar-index-stops-paying-for-hawks-who-cannot-vote-202608251853",
-      "source": "FXStreet",
-      "published_at": "2026-08-25T18:53:53+00:00"
     }
   ]
 }
