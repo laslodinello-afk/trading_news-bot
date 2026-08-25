@@ -1,17 +1,17 @@
 {
-  "fetched_at": "2026-08-25T14:08:25.710887+00:00",
+  "fetched_at": "2026-08-25T14:09:19.665097+00:00",
   "articles": [
+    {
+      "title": "Euro: Upside limited above fair value against US Dollar – Scotiabank",
+      "url": "https://www.fxstreet.com/news/euro-upside-limited-above-fair-value-against-us-dollar-scotiabank-202608251408",
+      "source": "FXStreet",
+      "published_at": "2026-08-25T14:08:30+00:00"
+    },
     {
       "title": "US CB Consumer Confidence Index eases to 89.4 in August",
       "url": "https://www.fxstreet.com/news/us-cb-consumer-confidence-index-eases-to-894-in-august-202608251406",
       "source": "FXStreet",
       "published_at": "2026-08-25T14:06:46+00:00"
-    },
-    {
-      "title": "Gold takes a breather after climbing to a fresh three-month high, US PCE in focus",
-      "url": "https://www.fxstreet.com/news/gold-pauses-near-three-month-high-after-sharp-rally-202608251109",
-      "source": "FXStreet",
-      "published_at": "2026-08-25T11:09:01+00:00"
     },
     {
       "title": "Gold: Overbought rally eyes key resistance – UOB",
@@ -126,12 +126,6 @@
       "url": "https://www.fxstreet.com/news/euro-recovery-against-us-dollar-supported-by-data-bbh-202608251117",
       "source": "FXStreet",
       "published_at": "2026-08-25T11:17:52+00:00"
-    },
-    {
-      "title": "US Dollar: Debasement fears meet historical skepticism – MUFG",
-      "url": "https://www.fxstreet.com/news/us-dollar-debasement-fears-meet-historical-skepticism-mufg-202608251108",
-      "source": "FXStreet",
-      "published_at": "2026-08-25T11:08:27+00:00"
     }
   ]
 }
