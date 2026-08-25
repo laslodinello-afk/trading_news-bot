@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-25T12:33:20.223830+00:00",
+  "fetched_at": "2026-08-25T12:34:22.776922+00:00",
   "articles": [
+    {
+      "title": "Gold takes a breather after climbing to a three-month high",
+      "url": "https://www.fxstreet.com/news/gold-pauses-near-three-month-high-after-sharp-rally-202608251109",
+      "source": "FXStreet",
+      "published_at": "2026-08-25T11:09:01+00:00"
+    },
     {
       "title": "British Pound: Range trading outlook against Euro – Rabobank",
       "url": "https://www.fxstreet.com/news/british-pound-range-trading-outlook-against-euro-rabobank-202608251221",
@@ -66,12 +72,6 @@
       "url": "https://www.fxstreet.com/news/euro-recovery-against-us-dollar-supported-by-data-bbh-202608251117",
       "source": "FXStreet",
       "published_at": "2026-08-25T11:17:52+00:00"
-    },
-    {
-      "title": "Gold pauses near three-month high after sharp rally",
-      "url": "https://www.fxstreet.com/news/gold-pauses-near-three-month-high-after-sharp-rally-202608251109",
-      "source": "FXStreet",
-      "published_at": "2026-08-25T11:09:01+00:00"
     },
     {
       "title": "US Dollar: Debasement fears meet historical skepticism – MUFG",
