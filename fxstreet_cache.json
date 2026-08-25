@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-25T16:33:21.168851+00:00",
+  "fetched_at": "2026-08-25T16:34:24.090351+00:00",
   "articles": [
+    {
+      "title": "United Kingdom: Resilient growth versus fiscal strain – Rabobank",
+      "url": "https://www.fxstreet.com/news/united-kingdom-resilient-growth-versus-fiscal-strain-rabobank-202608251634",
+      "source": "FXStreet",
+      "published_at": "2026-08-25T16:34:00+00:00"
+    },
     {
       "title": "Canadian Dollar faces double trouble from Oil slump, US tariffs",
       "url": "https://www.fxstreet.com/news/canadian-dollar-faces-double-trouble-from-oil-slump-us-tariffs-202608251622",
@@ -108,12 +114,6 @@
       "url": "https://www.fxstreet.com/news/euro-stays-near-three-month-high-as-us-dollar-remains-subdued-202608251335",
       "source": "FXStreet",
       "published_at": "2026-08-25T13:35:23+00:00"
-    },
-    {
-      "title": "Canadian Dollar: Trading near fair value against US Dollar - Scotiabank",
-      "url": "https://www.fxstreet.com/news/canadian-dollar-trading-near-fair-value-against-us-dollar-scotiabank-202608251334",
-      "source": "FXStreet",
-      "published_at": "2026-08-25T13:34:15+00:00"
     }
   ]
 }
