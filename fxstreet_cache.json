@@ -1,6 +1,18 @@
 {
-  "fetched_at": "2026-08-25T09:30:51.192701+00:00",
+  "fetched_at": "2026-08-25T09:31:23.859705+00:00",
   "articles": [
+    {
+      "title": "Silver price today: Silver falls, according to FXStreet data",
+      "url": "https://www.fxstreet.com/news/silver-price-today-silver-falls-according-to-fxstreet-data-202608250931",
+      "source": "FXStreet",
+      "published_at": "2026-08-25T09:31:18+00:00"
+    },
+    {
+      "title": "Canadian Dollar: Tariff risks cloud outlook – Commerzbank",
+      "url": "https://www.fxstreet.com/news/canadian-dollar-tariff-risks-cloud-outlook-commerzbank-202608250931",
+      "source": "FXStreet",
+      "published_at": "2026-08-25T09:31:05+00:00"
+    },
     {
       "title": "Japanese Yen: Range trade within 157.90 and 159.80 against US Dollar – UOB",
       "url": "https://www.fxstreet.com/news/japanese-yen-range-trade-within-15790-and-15980-against-us-dollar-uob-202608250917",
@@ -144,12 +156,6 @@
       "url": "https://www.fxstreet.com/news/equities-semiconductor-selloff-pressures-wall-street-deutsche-bank-202608250638",
       "source": "FXStreet",
       "published_at": "2026-08-25T06:38:56+00:00"
-    },
-    {
-      "title": "USD/JPY Price Forecast: US Dollar keeps crawling towards the key 160.00 area",
-      "url": "https://www.fxstreet.com/news/usd-jpy-price-forecast-us-dollar-keeps-crawling-towards-the-key-16000-area-202608250631",
-      "source": "FXStreet",
-      "published_at": "2026-08-25T06:31:14+00:00"
     }
   ]
 }
