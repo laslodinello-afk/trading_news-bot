@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-25T13:34:25.912625+00:00",
+  "fetched_at": "2026-08-25T13:35:33.250581+00:00",
   "articles": [
+    {
+      "title": "Euro stays near three-month high as US Dollar remains subdued",
+      "url": "https://www.fxstreet.com/news/euro-stays-near-three-month-high-as-us-dollar-remains-subdued-202608251335",
+      "source": "FXStreet",
+      "published_at": "2026-08-25T13:35:23+00:00"
+    },
     {
       "title": "Canadian Dollar: Trading near fair value against US Dollar - Scotiabank",
       "url": "https://www.fxstreet.com/news/canadian-dollar-trading-near-fair-value-against-us-dollar-scotiabank-202608251334",
@@ -108,12 +114,6 @@
       "url": "https://www.fxstreet.com/news/us-dollar-debasement-fears-meet-historical-skepticism-mufg-202608251108",
       "source": "FXStreet",
       "published_at": "2026-08-25T11:08:27+00:00"
-    },
-    {
-      "title": "Euro stands above 1.1650, supported by upbeat German macroeconomic data",
-      "url": "https://www.fxstreet.com/news/euro-stands-above-11650-supported-by-upbeat-german-macroeconomic-data-202608251035",
-      "source": "FXStreet",
-      "published_at": "2026-08-25T10:35:00+00:00"
     }
   ]
 }
