@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-25T12:26:32.941742+00:00",
+  "fetched_at": "2026-08-25T18:23:22.418197+00:00",
   "events": [
     {
       "title": "Core Retail Sales q/q",
@@ -270,7 +270,7 @@
       "country": "USD",
       "date": "2026-08-26T10:30:00-04:00",
       "impact": "Low",
-      "forecast": "1.9M",
+      "forecast": "1.6M",
       "previous": "4.4M"
     },
     {
@@ -390,7 +390,7 @@
       "country": "USD",
       "date": "2026-08-27T10:30:00-04:00",
       "impact": "Low",
-      "forecast": "",
+      "forecast": "19B",
       "previous": "16B"
     },
     {
@@ -487,7 +487,7 @@
       "date": "2026-08-28T05:33:00-04:00",
       "impact": "Low",
       "forecast": "",
-      "previous": ""
+      "previous": "4.00|1.7"
     },
     {
       "title": "GDP m/m",
