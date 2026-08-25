@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-25T09:47:24.121555+00:00",
+  "fetched_at": "2026-08-25T09:48:23.173997+00:00",
   "articles": [
+    {
+      "title": "Hungarian Forint: Holding firm against Euro below key resistance - Societe Generale",
+      "url": "https://www.fxstreet.com/news/hungarian-forint-holding-firm-against-euro-below-key-resistance-societe-generale-202608250948",
+      "source": "FXStreet",
+      "published_at": "2026-08-25T09:48:07+00:00"
+    },
     {
       "title": "Silver price today: Silver falls, according to FXStreet data",
       "url": "https://www.fxstreet.com/news/silver-price-today-silver-falls-according-to-fxstreet-data-202608250931",
@@ -138,12 +144,6 @@
       "url": "https://www.fxstreet.com/news/swiss-franc-export-strains-with-strong-chf-commerzbank-202608250710",
       "source": "FXStreet",
       "published_at": "2026-08-25T07:10:07+00:00"
-    },
-    {
-      "title": "WTI slides below $84.00 on firmer USD but US-Iran tensions limit deeper losses",
-      "url": "https://www.fxstreet.com/news/wti-slides-below-8400-on-firmer-usd-but-us-iran-tensions-limit-deeper-losses-202608250647",
-      "source": "FXStreet",
-      "published_at": "2026-08-25T06:47:29+00:00"
     }
   ]
 }
