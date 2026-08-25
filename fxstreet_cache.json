@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-25T06:44:21.308799+00:00",
+  "fetched_at": "2026-08-25T06:45:41.026318+00:00",
   "articles": [
+    {
+      "title": "Australian Dollar edges up as RBA keeps rate hike option quite possible",
+      "url": "https://www.fxstreet.com/news/australian-dollar-edges-up-as-rba-keeps-rate-hike-option-quite-possible-202608250644",
+      "source": "FXStreet",
+      "published_at": "2026-08-25T06:44:36+00:00"
+    },
     {
       "title": "Equities: Semiconductor selloff pressures Wall Street - Deutsche Bank",
       "url": "https://www.fxstreet.com/news/equities-semiconductor-selloff-pressures-wall-street-deutsche-bank-202608250638",
@@ -66,12 +72,6 @@
       "url": "https://www.fxstreet.com/news/rbas-jacobs-transition-from-rba-controlling-reserves-quantity-to-banking-system-managing-it-202608250411",
       "source": "FXStreet",
       "published_at": "2026-08-25T04:11:36+00:00"
-    },
-    {
-      "title": "United States Dollar Index holds gains near 99.00 amid escalating geopolitical risks",
-      "url": "https://www.fxstreet.com/news/united-states-dollar-index-holds-gains-near-9900-amid-escalating-geopolitical-risks-202608250345",
-      "source": "FXStreet",
-      "published_at": "2026-08-25T03:45:37+00:00"
     }
   ]
 }
