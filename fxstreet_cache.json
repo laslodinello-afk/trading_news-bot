@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-25T17:06:32.630894+00:00",
+  "fetched_at": "2026-08-25T17:07:19.110356+00:00",
   "articles": [
+    {
+      "title": "Germany: Political risks cloud reform outlook – ING",
+      "url": "https://www.fxstreet.com/news/germany-political-risks-cloud-reform-outlook-ing-202608251707",
+      "source": "FXStreet",
+      "published_at": "2026-08-25T17:07:00+00:00"
+    },
     {
       "title": "Mexico: Alignment for certainty in USMCA – Societe Generale",
       "url": "https://www.fxstreet.com/news/mexico-alignment-for-certainty-in-usmca-societe-generale-202608251648",
@@ -102,12 +108,6 @@
       "url": "https://www.fxstreet.com/news/euro-upside-limited-above-fair-value-against-us-dollar-scotiabank-202608251408",
       "source": "FXStreet",
       "published_at": "2026-08-25T14:08:30+00:00"
-    },
-    {
-      "title": "US CB Consumer Confidence Index eases to 89.4 in August",
-      "url": "https://www.fxstreet.com/news/us-cb-consumer-confidence-index-eases-to-894-in-august-202608251406",
-      "source": "FXStreet",
-      "published_at": "2026-08-25T14:06:46+00:00"
     }
   ]
 }
