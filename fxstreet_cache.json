@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-25T11:56:26.042043+00:00",
+  "fetched_at": "2026-08-25T11:57:20.409496+00:00",
   "articles": [
+    {
+      "title": "GBP/JPY Price Forecast: Bulls recover lost ground as intervention effect wears off",
+      "url": "https://www.fxstreet.com/news/gbp-jpy-price-forecast-bulls-recover-lost-ground-as-intervention-effect-wears-off-202608251157",
+      "source": "FXStreet",
+      "published_at": "2026-08-25T11:57:00+00:00"
+    },
     {
       "title": "Canadian Dollar: Trade conflict keeps downside risks alive against US Dollar - ING",
       "url": "https://www.fxstreet.com/news/canadian-dollar-trade-conflict-keeps-downside-risks-alive-against-us-dollar-ing-202608251154",
@@ -114,12 +120,6 @@
       "url": "https://www.fxstreet.com/news/indian-rupee-range-holds-against-us-dollar-as-inflows-offset-trade-drag-dbs-202608250902",
       "source": "FXStreet",
       "published_at": "2026-08-25T09:02:47+00:00"
-    },
-    {
-      "title": "Dow Jones futures advance as tech stocks rebound ahead of looming Nvidia earnings",
-      "url": "https://www.fxstreet.com/news/dow-jones-futures-advance-as-tech-stocks-rebound-ahead-of-looming-nvidia-earnings-202608250856",
-      "source": "FXStreet",
-      "published_at": "2026-08-25T08:56:46+00:00"
     }
   ]
 }
