@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-26T07:42:26.316989+00:00",
+  "fetched_at": "2026-08-26T07:43:21.139725+00:00",
   "articles": [
+    {
+      "title": "Silver Price Forecast: XAG/USD rises to near $69.00 ahead of US PCE inflation data",
+      "url": "https://www.fxstreet.com/news/silver-price-forecast-xag-usd-rises-to-near-6900-ahead-of-us-pce-inflation-data-202608260742",
+      "source": "FXStreet",
+      "published_at": "2026-08-26T07:42:22+00:00"
+    },
     {
       "title": "US Dollar: Buyback impact stays marginal – BNY",
       "url": "https://www.fxstreet.com/news/us-dollar-buyback-impact-stays-marginal-bny-202608260729",
@@ -138,12 +144,6 @@
       "url": "https://www.fxstreet.com/news/indonesian-rupiah-remains-subdued-amid-market-caution-external-headwinds-202608260447",
       "source": "FXStreet",
       "published_at": "2026-08-26T04:47:09+00:00"
-    },
-    {
-      "title": "United States Dollar Index recovers to near 99.00 ahead of US PCE inflation data",
-      "url": "https://www.fxstreet.com/news/united-states-dollar-index-recovers-to-near-9900-ahead-of-us-pce-inflation-data-202608260442",
-      "source": "FXStreet",
-      "published_at": "2026-08-26T04:42:51+00:00"
     }
   ]
 }
