@@ -1,6 +1,18 @@
 {
-  "fetched_at": "2026-08-26T08:47:23.498723+00:00",
+  "fetched_at": "2026-08-26T08:48:22.234617+00:00",
   "articles": [
+    {
+      "title": "Swiss Franc ticks up against US Dollar despite bright Swiss ZEW economic expectations",
+      "url": "https://www.fxstreet.com/news/swiss-franc-ticks-up-against-us-dollar-despite-bright-swiss-zew-economic-expectations-202608260848",
+      "source": "FXStreet",
+      "published_at": "2026-08-26T08:48:00+00:00"
+    },
+    {
+      "title": "Australian Dollar remains stronger as CPI YoY climbs in July",
+      "url": "https://www.fxstreet.com/news/australian-dollar-remains-stronger-as-cpi-yoy-climbs-in-july-202608260847",
+      "source": "FXStreet",
+      "published_at": "2026-08-26T08:47:39+00:00"
+    },
     {
       "title": "AUD/JPY Price Forecast: Rally extends further to near 114.30 as hawkish RBA bets accelerate",
       "url": "https://www.fxstreet.com/news/aud-jpy-price-forecast-rally-extends-further-to-near-11430-as-hawkish-rba-bets-accelerate-202608260840",
@@ -162,18 +174,6 @@
       "url": "https://www.fxstreet.com/news/oil-prices-retreat-on-gulf-diplomacy-ing-202608260620",
       "source": "FXStreet",
       "published_at": "2026-08-26T06:20:48+00:00"
-    },
-    {
-      "title": "Euro weakens against Japanese Yen amid firm BoJ interest rate hike prospects",
-      "url": "https://www.fxstreet.com/news/euro-weakens-against-japanese-yen-amid-firm-boj-interest-rate-hike-prospects-202608260613",
-      "source": "FXStreet",
-      "published_at": "2026-08-26T06:13:24+00:00"
-    },
-    {
-      "title": "Euro: Upside bias toward 1.1725 against US Dollar – UOB",
-      "url": "https://www.fxstreet.com/news/euro-upside-bias-toward-11725-against-us-dollar-uob-202608260612",
-      "source": "FXStreet",
-      "published_at": "2026-08-26T06:12:29+00:00"
     }
   ]
 }
