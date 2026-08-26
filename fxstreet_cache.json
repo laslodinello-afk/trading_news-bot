@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-26T08:36:26.438400+00:00",
+  "fetched_at": "2026-08-26T08:37:20.488646+00:00",
   "articles": [
+    {
+      "title": "Australian Dollar: RBA risks seen underpriced – MUFG",
+      "url": "https://www.fxstreet.com/news/australian-dollar-rba-risks-seen-underpriced-mufg-202608260836",
+      "source": "FXStreet",
+      "published_at": "2026-08-26T08:36:49+00:00"
+    },
     {
       "title": "Euro advances against Canadian Dollar amid falling oil prices",
       "url": "https://www.fxstreet.com/news/euro-advances-against-canadian-dollar-amid-falling-oil-prices-202608260828",
@@ -168,12 +174,6 @@
       "url": "https://www.fxstreet.com/news/aud-usd-price-forecast-hot-australian-cpi-data-boosts-hawkish-rba-bets-202608260548",
       "source": "FXStreet",
       "published_at": "2026-08-26T05:48:37+00:00"
-    },
-    {
-      "title": "ECB's Schnabel: Inflation likely to top 2% for extended period",
-      "url": "https://www.fxstreet.com/news/ecbs-schnabel-inflation-likely-to-top-2-for-extended-period-202608260541",
-      "source": "FXStreet",
-      "published_at": "2026-08-26T05:41:17+00:00"
     }
   ]
 }
