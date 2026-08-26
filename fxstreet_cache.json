@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-26T10:59:17.165808+00:00",
+  "fetched_at": "2026-08-26T11:01:00.940389+00:00",
   "articles": [
+    {
+      "title": "GBP/USD Price Forecast: Hits fresh intra-week lows after failure at 1.3660 resistance",
+      "url": "https://www.fxstreet.com/news/gbp-usd-price-forecast-hits-fresh-intra-week-lows-after-failure-at-13660-resistance-202608261059",
+      "source": "FXStreet",
+      "published_at": "2026-08-26T10:59:22+00:00"
+    },
     {
       "title": "USD/CAD Price Forecast: Approaches 20-day EMA on the back of US-Canada trade dispute",
       "url": "https://www.fxstreet.com/news/usd-cad-price-forecast-approaches-20-day-ema-on-the-back-of-us-canada-trade-dispute-202608261053",
@@ -126,12 +132,6 @@
       "url": "https://www.fxstreet.com/news/japanese-yen-range-bound-trading-outlook-against-us-dollar-uob-202608260804",
       "source": "FXStreet",
       "published_at": "2026-08-26T08:04:35+00:00"
-    },
-    {
-      "title": "US core PCE inflation set to keep pressure on the Federal Reserve to hike interest rates",
-      "url": "https://www.fxstreet.com/news/us-core-pce-inflation-set-to-keep-pressure-on-the-federal-reserve-to-hike-interest-rates-202608260800",
-      "source": "FXStreet",
-      "published_at": "2026-08-26T08:00:00+00:00"
     }
   ]
 }
