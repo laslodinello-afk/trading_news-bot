@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-26T09:56:35.033025+00:00",
+  "fetched_at": "2026-08-26T09:57:22.248615+00:00",
   "articles": [
+    {
+      "title": "WTI Oil drops below $80 amid hopes of Hormuz reopening, US-Iran de-escalation",
+      "url": "https://www.fxstreet.com/news/wti-oil-drops-below-80-amid-hopes-of-hormuz-reopening-us-iran-de-escalation-202608260957",
+      "source": "FXStreet",
+      "published_at": "2026-08-26T09:57:06+00:00"
+    },
     {
       "title": "Australian Dollar: Watching 0.7200 resistance against US Dollar – UOB",
       "url": "https://www.fxstreet.com/news/australian-dollar-watching-07200-resistance-against-us-dollar-uob-202608260955",
@@ -168,12 +174,6 @@
       "url": "https://www.fxstreet.com/news/euro-holds-near-11670-against-us-dollar-as-rate-moves-offset-danske-bank-202608260709",
       "source": "FXStreet",
       "published_at": "2026-08-26T07:09:18+00:00"
-    },
-    {
-      "title": "ECB sets for September rate hike with no appetite to signal more – RTE",
-      "url": "https://www.fxstreet.com/news/ecb-sets-for-september-rate-hike-with-no-appetite-to-signal-more-rte-202608260701",
-      "source": "FXStreet",
-      "published_at": "2026-08-26T07:01:51+00:00"
     }
   ]
 }
