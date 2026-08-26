@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-26T15:01:49.455665+00:00",
+  "fetched_at": "2026-08-26T15:23:20.791557+00:00",
   "articles": [
+    {
+      "title": "Polish Zloty: Policy divergence weighs on PLN against Euro – ABN AMRO",
+      "url": "https://www.fxstreet.com/news/polish-zloty-policy-divergence-weighs-on-pln-against-euro-abn-amro-202608261515",
+      "source": "FXStreet",
+      "published_at": "2026-08-26T15:15:32+00:00"
+    },
     {
       "title": "Australian Dollar stumbles as hot Australian CPI runs into a firmer US Dollar",
       "url": "https://www.fxstreet.com/news/australian-dollar-stumbles-as-hot-australian-cpi-runs-into-a-firmer-us-dollar-202608261456",
@@ -96,18 +102,6 @@
       "url": "https://www.fxstreet.com/news/australian-dollar-hot-cpi-supports-carry-and-rba-risk-bbh-202608261227",
       "source": "FXStreet",
       "published_at": "2026-08-26T12:27:16+00:00"
-    },
-    {
-      "title": "Swiss Franc: Weakness before renewed strength – Commerzbank",
-      "url": "https://www.fxstreet.com/news/swiss-franc-weakness-before-renewed-strength-commerzbank-202608261213",
-      "source": "FXStreet",
-      "published_at": "2026-08-26T12:13:17+00:00"
-    },
-    {
-      "title": "Euro holds upper hand against British Pound on diverging ECB-BoE expectations",
-      "url": "https://www.fxstreet.com/news/euro-holds-upper-hand-against-british-pound-on-diverging-ecb-boe-expectations-202608261205",
-      "source": "FXStreet",
-      "published_at": "2026-08-26T12:05:58+00:00"
     }
   ]
 }
