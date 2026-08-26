@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-26T15:24:37.020518+00:00",
+  "fetched_at": "2026-08-26T15:36:31.215242+00:00",
   "articles": [
+    {
+      "title": "Silver Price Forecast: Buyers struggle below the 100-day SMA",
+      "url": "https://www.fxstreet.com/news/silver-price-forecast-buyers-struggle-below-the-100-day-sma-202608261528",
+      "source": "FXStreet",
+      "published_at": "2026-08-26T15:28:43+00:00"
+    },
     {
       "title": "Polish Zloty: Policy divergence weighs on PLN against Euro – ABN AMRO",
       "url": "https://www.fxstreet.com/news/polish-zloty-policy-divergence-weighs-on-pln-against-euro-abn-amro-202608261515",
@@ -96,12 +102,6 @@
       "url": "https://www.fxstreet.com/news/canadian-dollar-trade-dispute-risks-weigh-on-canada-bny-202608261247",
       "source": "FXStreet",
       "published_at": "2026-08-26T12:47:42+00:00"
-    },
-    {
-      "title": "Australian Dollar: Hot CPI supports carry and RBA risk – BBH",
-      "url": "https://www.fxstreet.com/news/australian-dollar-hot-cpi-supports-carry-and-rba-risk-bbh-202608261227",
-      "source": "FXStreet",
-      "published_at": "2026-08-26T12:27:16+00:00"
     }
   ]
 }
