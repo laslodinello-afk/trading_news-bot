@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-26T11:06:25.945872+00:00",
+  "fetched_at": "2026-08-26T11:07:22.193213+00:00",
   "articles": [
+    {
+      "title": "Gold slips ahead of US PCE as US Dollar firms modestly",
+      "url": "https://www.fxstreet.com/news/gold-slips-ahead-of-us-pce-as-us-dollar-firms-modestly-202608261107",
+      "source": "FXStreet",
+      "published_at": "2026-08-26T11:07:10+00:00"
+    },
     {
       "title": "GBP/USD Price Forecast: Hits fresh intra-week lows after failure at 1.3660 resistance",
       "url": "https://www.fxstreet.com/news/gbp-usd-price-forecast-hits-fresh-intra-week-lows-after-failure-at-13660-resistance-202608261059",
@@ -120,12 +126,6 @@
       "url": "https://www.fxstreet.com/news/euro-schnabels-upbeat-tone-supports-against-us-dollar-ing-202608260812",
       "source": "FXStreet",
       "published_at": "2026-08-26T08:12:59+00:00"
-    },
-    {
-      "title": "Dow Jones futures hold flat as traders await US PCE inflation data, Nvidia earnings",
-      "url": "https://www.fxstreet.com/news/dow-jones-futures-hold-flat-as-traders-await-us-pce-inflation-data-nvidia-earnings-202608260806",
-      "source": "FXStreet",
-      "published_at": "2026-08-26T08:06:27+00:00"
     }
   ]
 }
