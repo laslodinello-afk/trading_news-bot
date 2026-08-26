@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-26T21:50:39.854972+00:00",
+  "fetched_at": "2026-08-26T21:51:22.867458+00:00",
   "articles": [
+    {
+      "title": "New Zealand Dollar steadies as firm US Dollar caps gains",
+      "url": "https://www.fxstreet.com/news/new-zealand-dollar-steadies-as-firm-us-dollar-caps-gains-202608262150",
+      "source": "FXStreet",
+      "published_at": "2026-08-26T21:50:55+00:00"
+    },
     {
       "title": "Mexican Peso dips as US Core PCE renew Fed hawkish bets",
       "url": "https://www.fxstreet.com/news/mexican-peso-dips-as-us-core-pce-renew-fed-hawkish-bets-202608262136",
@@ -42,12 +48,6 @@
       "url": "https://www.fxstreet.com/news/emerging-markets-idiosyncratic-bid-persists-in-equities-bny-202608261907",
       "source": "FXStreet",
       "published_at": "2026-08-26T19:07:00+00:00"
-    },
-    {
-      "title": "USD/JPY Price Forecast: 160.00 caps bulls as intervention risk lingers",
-      "url": "https://www.fxstreet.com/news/usd-jpy-price-forecast-16000-caps-bulls-as-intervention-risk-lingers-202608261850",
-      "source": "FXStreet",
-      "published_at": "2026-08-26T18:50:40+00:00"
     }
   ]
 }
