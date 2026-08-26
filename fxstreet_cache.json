@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-26T10:04:33.327001+00:00",
+  "fetched_at": "2026-08-26T10:05:38.956706+00:00",
   "articles": [
+    {
+      "title": "Japanese Yen: BoJ hike expectations support JPY against US Dollar – MUFG",
+      "url": "https://www.fxstreet.com/news/japanese-yen-boj-hike-expectations-support-jpy-against-us-dollar-mufg-202608261004",
+      "source": "FXStreet",
+      "published_at": "2026-08-26T10:04:56+00:00"
+    },
     {
       "title": "WTI Oil drops below $80 amid hopes of Hormuz reopening, US-Iran de-escalation",
       "url": "https://www.fxstreet.com/news/wti-oil-drops-below-80-amid-hopes-of-hormuz-reopening-us-iran-de-escalation-202608260957",
@@ -168,12 +174,6 @@
       "url": "https://www.fxstreet.com/news/nzd-usd-price-forecast-dips-below-05950-fresh-weekly-low-as-usd-firms-ahead-of-us-pce-202608260709",
       "source": "FXStreet",
       "published_at": "2026-08-26T07:09:31+00:00"
-    },
-    {
-      "title": "Euro: Holds near 1.1670 against US Dollar as rate moves offset - Danske Bank",
-      "url": "https://www.fxstreet.com/news/euro-holds-near-11670-against-us-dollar-as-rate-moves-offset-danske-bank-202608260709",
-      "source": "FXStreet",
-      "published_at": "2026-08-26T07:09:18+00:00"
     }
   ]
 }
