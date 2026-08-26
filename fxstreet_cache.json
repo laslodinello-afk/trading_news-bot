@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-26T05:41:17.481152+00:00",
+  "fetched_at": "2026-08-26T05:42:22.599492+00:00",
   "articles": [
+    {
+      "title": "ECB's Schnabel: Inflation likely to top 2% for extended period",
+      "url": "https://www.fxstreet.com/news/ecbs-schnabel-inflation-likely-to-top-2-for-extended-period-202608260541",
+      "source": "FXStreet",
+      "published_at": "2026-08-26T05:41:17+00:00"
+    },
     {
       "title": "EUR/USD Price Forecast: Declines to near 1.1650, overbought signals curb upside bias",
       "url": "https://www.fxstreet.com/news/eur-usd-price-forecast-declines-to-near-11650-overbought-signals-curb-upside-bias-202608260536",
@@ -78,12 +84,6 @@
       "url": "https://www.fxstreet.com/news/new-zealand-dollar-declines-as-us-dollar-advances-ahead-of-pce-index-data-202608260313",
       "source": "FXStreet",
       "published_at": "2026-08-26T03:13:03+00:00"
-    },
-    {
-      "title": "Japanese Yen strengthens on US bond buyback, traders brace for US PCE inflation report",
-      "url": "https://www.fxstreet.com/news/japanese-yen-strengthens-on-us-bond-buyback-traders-brace-for-us-pce-inflation-report-202608260241",
-      "source": "FXStreet",
-      "published_at": "2026-08-26T02:41:32+00:00"
     }
   ]
 }
