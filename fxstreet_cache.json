@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-26T11:28:20.355361+00:00",
+  "fetched_at": "2026-08-26T11:29:20.817729+00:00",
   "articles": [
+    {
+      "title": "Australian Dollar: RBA tightening risks rise – TD Securities",
+      "url": "https://www.fxstreet.com/news/australian-dollar-rba-tightening-risks-rise-td-securities-202608261128",
+      "source": "FXStreet",
+      "published_at": "2026-08-26T11:28:22+00:00"
+    },
     {
       "title": "US Dollar Index: Range-bound consolidation as PCE looms – BBH",
       "url": "https://www.fxstreet.com/news/us-dollar-index-range-bound-consolidation-as-pce-looms-bbh-202608261117",
@@ -114,12 +120,6 @@
       "url": "https://www.fxstreet.com/news/australian-dollar-rba-risks-seen-underpriced-mufg-202608260836",
       "source": "FXStreet",
       "published_at": "2026-08-26T08:36:49+00:00"
-    },
-    {
-      "title": "Euro advances against Canadian Dollar amid falling oil prices",
-      "url": "https://www.fxstreet.com/news/euro-advances-against-canadian-dollar-amid-falling-oil-prices-202608260828",
-      "source": "FXStreet",
-      "published_at": "2026-08-26T08:28:46+00:00"
     }
   ]
 }
