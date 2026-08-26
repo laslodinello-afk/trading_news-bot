@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-26T08:28:24.893725+00:00",
+  "fetched_at": "2026-08-26T08:29:28.095588+00:00",
   "articles": [
+    {
+      "title": "Euro advances against Canadian Dollar amid falling oil prices",
+      "url": "https://www.fxstreet.com/news/euro-advances-against-canadian-dollar-amid-falling-oil-prices-202608260828",
+      "source": "FXStreet",
+      "published_at": "2026-08-26T08:28:46+00:00"
+    },
     {
       "title": "Forex Today: US Dollar extends consolidation ahead of key inflation data, Nvidia earnings",
       "url": "https://www.fxstreet.com/news/forex-today-us-dollar-extends-consolidation-ahead-of-key-inflation-data-nvidia-earnings-202608260815",
@@ -168,12 +174,6 @@
       "url": "https://www.fxstreet.com/news/ecbs-schnabel-inflation-likely-to-top-2-for-extended-period-202608260541",
       "source": "FXStreet",
       "published_at": "2026-08-26T05:41:17+00:00"
-    },
-    {
-      "title": "EUR/USD Price Forecast: Declines to near 1.1650, overbought signals curb upside bias",
-      "url": "https://www.fxstreet.com/news/eur-usd-price-forecast-declines-to-near-11650-overbought-signals-curb-upside-bias-202608260536",
-      "source": "FXStreet",
-      "published_at": "2026-08-26T05:36:51+00:00"
     }
   ]
 }
