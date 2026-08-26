@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-26T08:56:27.127073+00:00",
+  "fetched_at": "2026-08-26T08:57:22.232485+00:00",
   "articles": [
+    {
+      "title": "Silver Price Forecast: XAG/USD bulls await break above $70.00 amid mixed setup",
+      "url": "https://www.fxstreet.com/news/silver-price-forecast-xag-usd-bulls-await-break-above-7000-amid-mixed-setup-202608260857",
+      "source": "FXStreet",
+      "published_at": "2026-08-26T08:57:03+00:00"
+    },
     {
       "title": "Swiss Franc ticks up against US Dollar despite bright Swiss ZEW economic expectations",
       "url": "https://www.fxstreet.com/news/swiss-franc-ticks-up-against-us-dollar-despite-bright-swiss-zew-economic-expectations-202608260848",
@@ -168,12 +174,6 @@
       "url": "https://www.fxstreet.com/news/canadian-dollar-gives-away-gains-amid-lower-oil-prices-fresh-trade-tensions-202608260624",
       "source": "FXStreet",
       "published_at": "2026-08-26T06:24:57+00:00"
-    },
-    {
-      "title": "Oil: Prices retreat on Gulf diplomacy – ING",
-      "url": "https://www.fxstreet.com/news/oil-prices-retreat-on-gulf-diplomacy-ing-202608260620",
-      "source": "FXStreet",
-      "published_at": "2026-08-26T06:20:48+00:00"
     }
   ]
 }
