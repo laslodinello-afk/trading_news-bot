@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-26T08:39:18.585668+00:00",
+  "fetched_at": "2026-08-26T08:40:41.928282+00:00",
   "articles": [
+    {
+      "title": "AUD/JPY Price Forecast: Rally extends further to near 114.30 as hawkish RBA bets accelerate",
+      "url": "https://www.fxstreet.com/news/aud-jpy-price-forecast-rally-extends-further-to-near-11430-as-hawkish-rba-bets-accelerate-202608260840",
+      "source": "FXStreet",
+      "published_at": "2026-08-26T08:40:19+00:00"
+    },
     {
       "title": "Australian Dollar: RBA risks seen underpriced – MUFG",
       "url": "https://www.fxstreet.com/news/australian-dollar-rba-risks-seen-underpriced-mufg-202608260836",
@@ -168,12 +174,6 @@
       "url": "https://www.fxstreet.com/news/euro-upside-bias-toward-11725-against-us-dollar-uob-202608260612",
       "source": "FXStreet",
       "published_at": "2026-08-26T06:12:29+00:00"
-    },
-    {
-      "title": "AUD/USD Price Forecast: Hot Australian CPI data boosts hawkish RBA bets",
-      "url": "https://www.fxstreet.com/news/aud-usd-price-forecast-hot-australian-cpi-data-boosts-hawkish-rba-bets-202608260548",
-      "source": "FXStreet",
-      "published_at": "2026-08-26T05:48:37+00:00"
     }
   ]
 }
