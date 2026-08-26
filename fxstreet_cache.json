@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-26T11:58:22.103991+00:00",
+  "fetched_at": "2026-08-26T11:59:19.495638+00:00",
   "articles": [
+    {
+      "title": "Japanese Yen: Intervention impact assessed – Rabobank",
+      "url": "https://www.fxstreet.com/news/japanese-yen-intervention-impact-assessed-rabobank-202608261158",
+      "source": "FXStreet",
+      "published_at": "2026-08-26T11:58:59+00:00"
+    },
     {
       "title": "US Dollar: Softer energy supports carry trades – ING",
       "url": "https://www.fxstreet.com/news/us-dollar-softer-energy-supports-carry-trades-ing-202608261148",
@@ -108,12 +114,6 @@
       "url": "https://www.fxstreet.com/news/brent-diplomatic-progress-weighs-on-prices-ocbc-202608260907",
       "source": "FXStreet",
       "published_at": "2026-08-26T09:07:10+00:00"
-    },
-    {
-      "title": "US Dollar: Shaky basis trade risks weigh – Commerzbank",
-      "url": "https://www.fxstreet.com/news/us-dollar-shaky-basis-trade-risks-weigh-commerzbank-202608260859",
-      "source": "FXStreet",
-      "published_at": "2026-08-26T08:59:01+00:00"
     }
   ]
 }
