@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-26T08:59:21.638037+00:00",
+  "fetched_at": "2026-08-26T09:01:00.321964+00:00",
   "articles": [
+    {
+      "title": "US Dollar: Shaky basis trade risks weigh – Commerzbank",
+      "url": "https://www.fxstreet.com/news/us-dollar-shaky-basis-trade-risks-weigh-commerzbank-202608260859",
+      "source": "FXStreet",
+      "published_at": "2026-08-26T08:59:01+00:00"
+    },
     {
       "title": "Silver Price Forecast: XAG/USD bulls await break above $70.00 amid mixed setup",
       "url": "https://www.fxstreet.com/news/silver-price-forecast-xag-usd-bulls-await-break-above-7000-amid-mixed-setup-202608260857",
@@ -168,12 +174,6 @@
       "url": "https://www.fxstreet.com/news/australian-dollar-rba-waits-as-inflation-sticks-commerzbank-202608260630",
       "source": "FXStreet",
       "published_at": "2026-08-26T06:30:46+00:00"
-    },
-    {
-      "title": "Canadian Dollar gives away gains amid lower oil prices, fresh trade tensions",
-      "url": "https://www.fxstreet.com/news/canadian-dollar-gives-away-gains-amid-lower-oil-prices-fresh-trade-tensions-202608260624",
-      "source": "FXStreet",
-      "published_at": "2026-08-26T06:24:57+00:00"
     }
   ]
 }
