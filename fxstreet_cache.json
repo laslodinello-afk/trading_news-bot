@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-26T09:54:25.952093+00:00",
+  "fetched_at": "2026-08-26T09:55:28.537281+00:00",
   "articles": [
+    {
+      "title": "Australian Dollar: Watching 0.7200 resistance against US Dollar – UOB",
+      "url": "https://www.fxstreet.com/news/australian-dollar-watching-07200-resistance-against-us-dollar-uob-202608260955",
+      "source": "FXStreet",
+      "published_at": "2026-08-26T09:55:04+00:00"
+    },
     {
       "title": "Hungarian Forint: Recovery tied to euro entry story – ING",
       "url": "https://www.fxstreet.com/news/hungarian-forint-recovery-tied-to-euro-entry-story-ing-202608260940",
@@ -168,12 +174,6 @@
       "url": "https://www.fxstreet.com/news/ecb-sets-for-september-rate-hike-with-no-appetite-to-signal-more-rte-202608260701",
       "source": "FXStreet",
       "published_at": "2026-08-26T07:01:51+00:00"
-    },
-    {
-      "title": "British Pound edges lower below 1.3650 as traders await US PCE release",
-      "url": "https://www.fxstreet.com/news/british-pound-edges-lower-below-13650-as-traders-await-us-pce-release-202608260656",
-      "source": "FXStreet",
-      "published_at": "2026-08-26T06:56:39+00:00"
     }
   ]
 }
