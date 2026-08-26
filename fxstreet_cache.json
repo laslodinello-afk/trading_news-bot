@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-26T06:12:25.193469+00:00",
+  "fetched_at": "2026-08-26T06:13:20.007030+00:00",
   "articles": [
+    {
+      "title": "Euro: Upside bias toward 1.1725 against US Dollar – UOB",
+      "url": "https://www.fxstreet.com/news/euro-upside-bias-toward-11725-against-us-dollar-uob-202608260612",
+      "source": "FXStreet",
+      "published_at": "2026-08-26T06:12:29+00:00"
+    },
     {
       "title": "AUD/USD Price Forecast: Hot Australian CPI data boosts hawkish RBA bets",
       "url": "https://www.fxstreet.com/news/aud-usd-price-forecast-hot-australian-cpi-data-boosts-hawkish-rba-bets-202608260548",
@@ -84,12 +90,6 @@
       "url": "https://www.fxstreet.com/news/silver-price-forecast-xag-usd-holds-firmly-above-69-ahead-of-us-pce-inflation-data-202608260319",
       "source": "FXStreet",
       "published_at": "2026-08-26T03:19:54+00:00"
-    },
-    {
-      "title": "New Zealand Dollar declines as US Dollar advances ahead of PCE index data",
-      "url": "https://www.fxstreet.com/news/new-zealand-dollar-declines-as-us-dollar-advances-ahead-of-pce-index-data-202608260313",
-      "source": "FXStreet",
-      "published_at": "2026-08-26T03:13:03+00:00"
     }
   ]
 }
