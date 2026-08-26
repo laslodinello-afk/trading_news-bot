@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-26T04:47:21.002366+00:00",
+  "fetched_at": "2026-08-26T04:48:24.088620+00:00",
   "articles": [
+    {
+      "title": "Indonesian Rupiah remains subdued amid market caution, external headwinds",
+      "url": "https://www.fxstreet.com/news/indonesian-rupiah-remains-subdued-amid-market-caution-external-headwinds-202608260447",
+      "source": "FXStreet",
+      "published_at": "2026-08-26T04:47:09+00:00"
+    },
     {
       "title": "United States Dollar Index recovers to near 99.00 ahead of US PCE inflation data",
       "url": "https://www.fxstreet.com/news/united-states-dollar-index-recovers-to-near-9900-ahead-of-us-pce-inflation-data-202608260442",
@@ -66,12 +72,6 @@
       "url": "https://www.fxstreet.com/news/boj-to-raise-rate-to-125-in-september-reuters-poll-202608260213",
       "source": "FXStreet",
       "published_at": "2026-08-26T02:13:02+00:00"
-    },
-    {
-      "title": "Australian Dollar strengthens after hot CPI report; eyes multi-month high ahead of US PCE",
-      "url": "https://www.fxstreet.com/news/australian-dollar-strengthens-after-hot-cpi-report-eyes-multi-month-high-ahead-of-us-pce-202608260147",
-      "source": "FXStreet",
-      "published_at": "2026-08-26T01:47:29+00:00"
     }
   ]
 }
