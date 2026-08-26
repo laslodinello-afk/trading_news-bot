@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-26T13:12:25.726140+00:00",
+  "fetched_at": "2026-08-26T13:13:21.005877+00:00",
   "articles": [
+    {
+      "title": "Oil: Tight balance persists as Iran deal talk grows – TD Securities",
+      "url": "https://www.fxstreet.com/news/oil-tight-balance-persists-as-iran-deal-talk-grows-td-securities-202608261312",
+      "source": "FXStreet",
+      "published_at": "2026-08-26T13:12:20+00:00"
+    },
     {
       "title": "Gold slips as sticky US PCE inflation fails to boost Fed rate-hike expectations",
       "url": "https://www.fxstreet.com/news/gold-slips-as-sticky-us-pce-inflation-fails-to-boost-fed-rate-hike-expectations-202608261259",
@@ -96,12 +102,6 @@
       "url": "https://www.fxstreet.com/news/usd-cad-price-forecast-approaches-20-day-ema-on-the-back-of-us-canada-trade-dispute-202608261053",
       "source": "FXStreet",
       "published_at": "2026-08-26T10:53:59+00:00"
-    },
-    {
-      "title": "Gold Price Forecast: XAU/USD corrects to near $4,620 in countdown to US PCE Inflation data",
-      "url": "https://www.fxstreet.com/news/gold-price-forecast-xau-usd-corrects-to-near-4-620-in-countdown-to-us-pce-inflation-data-202608261012",
-      "source": "FXStreet",
-      "published_at": "2026-08-26T10:12:36+00:00"
     }
   ]
 }
