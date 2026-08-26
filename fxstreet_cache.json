@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-26T09:33:19.688889+00:00",
+  "fetched_at": "2026-08-26T09:34:22.878410+00:00",
   "articles": [
+    {
+      "title": "Silver price today: Silver falls, according to FXStreet data",
+      "url": "https://www.fxstreet.com/news/silver-price-today-silver-falls-according-to-fxstreet-data-202608260933",
+      "source": "FXStreet",
+      "published_at": "2026-08-26T09:33:36+00:00"
+    },
     {
       "title": "US Dollar Index: Range trade persists as data soft – DBS",
       "url": "https://www.fxstreet.com/news/us-dollar-index-range-trade-persists-as-data-soft-dbs-202608260925",
@@ -168,12 +174,6 @@
       "url": "https://www.fxstreet.com/news/british-pound-upside-remains-intact-above-13605-against-us-dollar-uob-202608260656",
       "source": "FXStreet",
       "published_at": "2026-08-26T06:56:00+00:00"
-    },
-    {
-      "title": "USD/JPY Price Forecast: 20-day EMA continues to act as key barrier",
-      "url": "https://www.fxstreet.com/news/usd-jpy-price-forecast-20-day-ema-continues-to-act-as-key-barrier-202608260649",
-      "source": "FXStreet",
-      "published_at": "2026-08-26T06:49:37+00:00"
     }
   ]
 }
