@@ -447,6 +447,30 @@ veille est sautée pour ne jamais interrompre une session en cours.
   peut pas allumer un Mac éteint, seulement en réveiller un endormi.
 - Le réveil programmé est nettement plus fiable **branché sur secteur** que
   sur batterie seule.
+- **Le projet ne doit PAS vivre sous `~/Desktop`, `~/Documents` ou
+  `~/Downloads`** (bug réel rencontré et corrigé le 2026-08-26) : macOS
+  protège ces trois dossiers via son sandbox (TCC) — un processus lancé par
+  `launchd` (sans fenêtre, sans contexte utilisateur) s'y voit refuser
+  l'accès en silence, contrairement à un lancement manuel depuis Terminal
+  (qui, lui, a déjà cette permission). Résultat concret observé : la tâche
+  se déclenchait bien chaque soir (`runs` augmentait dans `launchctl print`)
+  mais échouait instantanément avec `EX_CONFIG` (78), sans même écrire une
+  ligne dans `daily_debrief.log` — confirmé dans les logs système
+  (`log show`) par `kernel: (Sandbox) System Policy: xpcproxy deny(1)
+  file-read-data .../daily_debrief.log`. La seule vraie solution sans action
+  manuelle de l'utilisateur (l'alternative, donner "Accès complet au disque"
+  à `/bin/bash` dans Réglages Système, est un geste GUI qu'on ne peut pas
+  scripter) : déplacer tout le projet un cran plus haut, ex. `~/agent
+  Newstrading` au lieu de `~/Desktop/agent Newstrading` — toujours sous
+  `$HOME`, juste pas dans un sous-dossier protégé. Si tu déplaces le
+  projet, pense à mettre à jour les 3 chemins absolus dans
+  `com.laslodinello.debrief-daily.plist` (`ProgramArguments`,
+  `StandardOutPath`, `StandardErrorPath`) puis recharger avec
+  `launchctl bootout` + `launchctl bootstrap` (voir "Commandes utiles"
+  ci-dessous). Vérifie avec `launchctl kickstart -p
+  gui/$(id -u)/com.laslodinello.debrief-daily` (déclenche immédiatement,
+  exactement comme le ferait `launchd` à 23h59) plutôt que d'attendre la
+  nuit suivante pour savoir si ça marche.
 - Tout est loggé dans `daily_debrief.log` à la racine du projet — c'est la
   seule trace disponible en cas d'échec pendant la nuit (ex. pas de breaking
   news ce jour-là, panne réseau, quota Gemini).
