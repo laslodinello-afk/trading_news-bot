@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-27T10:48:24.061752+00:00",
+  "fetched_at": "2026-08-27T10:49:23.197361+00:00",
   "articles": [
+    {
+      "title": "Euro struggles for direction against British Pound despite upbeat German data",
+      "url": "https://www.fxstreet.com/news/euro-struggles-for-direction-against-british-pound-despite-upbeat-german-data-202608271048",
+      "source": "FXStreet",
+      "published_at": "2026-08-27T10:48:29+00:00"
+    },
     {
       "title": "Euro retreats below 1.1650 as inflation data buoys US Dollar ahead of Jackson Hole",
       "url": "https://www.fxstreet.com/news/euro-retreats-below-11650-as-inflation-data-buoys-us-dollar-ahead-of-jackson-hole-202608271016",
@@ -132,12 +138,6 @@
       "url": "https://www.fxstreet.com/news/swiss-franc-remains-on-the-defensive-despite-stronger-swiss-employment-figures-202608270759",
       "source": "FXStreet",
       "published_at": "2026-08-27T07:59:44+00:00"
-    },
-    {
-      "title": "Turkish Lira: Inflation expectations outpace CBRT forecasts – Commerzbank",
-      "url": "https://www.fxstreet.com/news/turkish-lira-inflation-expectations-outpace-cbrt-forecasts-commerzbank-202608270749",
-      "source": "FXStreet",
-      "published_at": "2026-08-27T07:49:20+00:00"
     }
   ]
 }
