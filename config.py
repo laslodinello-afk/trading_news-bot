@@ -240,7 +240,7 @@ VIDEO_CTA_HEADLINE = "Le lien est en bio"
 
 # Titre affiché ET dit en ouverture de chaque vidéo (--render), suivi de la date
 # du jour ("{VIDEO_INTRO_TITLE}, du 26 juillet 2026.").
-VIDEO_INTRO_TITLE = "Récap news éco & trading"
+VIDEO_INTRO_TITLE = "Actu du jour news éco & trading"
 
 # Ajouté en fin de légende de chaque script (voir README, section "Monétiser",
 # pour le contexte réglementaire derrière cette formulation).

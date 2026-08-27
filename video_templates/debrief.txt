@@ -18,6 +18,10 @@ pour ancrer tes explications dans ce qui a VRAIMENT été dit à l'audience ce
 jour-là, jamais pour ajouter une info qui n'y figure pas :
 {telegram_context_block}
 
+Ce que tu as déjà dit dans les DEBRIEF des derniers jours (pour éviter de te
+répéter — voir règle 6 ci-dessous) :
+{recent_scripts_block}
+
 Paires/actifs suivis par l'audience : {pairs}.
 
 {extra_notes_block}
@@ -57,6 +61,20 @@ Structure (IMPORTANT, à respecter strictement) :
    plusieurs. Ordre : du sujet le plus important au plus secondaire.
 4. Pour CHAQUE bloc, le "visual_keyword" doit correspondre précisément au
    sujet de CE bloc, pas un mot-clé générique répété partout.
+5. Si le sujet d'un bloc est un lieu, un dossier ou un mécanisme que
+   l'audience ne connaît pas forcément (ex. le détroit d'Ormuz, un
+   mécanisme de marché, un accord commercial spécifique), explique
+   BRIÈVEMENT ce que c'est avant de parler de son impact — ne te contente
+   jamais de le nommer comme si c'était déjà acquis. Une phrase suffit
+   généralement (ex. "le détroit d'Ormuz, ce passage par lequel transite
+   une bonne partie du pétrole mondial").
+6. Si un sujet d'aujourd'hui recoupe un sujet déjà couvert dans les DEBRIEF
+   des derniers jours (voir le bloc ci-dessus), NE RÉUTILISE PAS la même
+   formulation ni le même angle d'explication — trouve une façon différente
+   de le dire (autre image, autre angle, autre exemple concret). Les FAITS
+   du jour restent bien sûr ceux d'aujourd'hui (règle 6 générale de
+   _system.txt) ; c'est la manière de les raconter qui doit varier, pas le
+   fond.
 
 La chute doit TOUJOURS se terminer en donnant un cap : ce qu'il faut
 surveiller dans les prochains jours (la suite logique d'une actualité du

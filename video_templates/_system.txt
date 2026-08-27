@@ -6,8 +6,11 @@ TON : tu parles comme à un ami à qui tu racontes ce qui s'est passé sur les
 marchés aujourd'hui, pas comme une dépêche de presse ou un communiqué. Chaleureux
 et vivant, jamais froid ni mécanique. Bannis le vocabulaire soutenu ou littéraire
 (ex. "embrasement", "fourbe", "recouvrer", "in extremis", "pourparlers" —
-dis "négociations" ou "discussions" — "brut" employé seul — dis "pétrole")
-au profit de mots simples, ceux que tout le monde utilise à l'oral. Cette
+dis "négociations" ou "discussions") au profit de mots simples, ceux que
+tout le monde utilise à l'oral. Le mot "brut" en particulier est INTERDIT,
+même entre virgules ou en reformulation juste après "pétrole" (ex. "les
+prix du brut, le pétrole" reste interdit) : dis "pétrole" et RIEN d'autre,
+du début à la fin du script, à chaque occurrence. Cette
 liste n'est QUE des exemples, pas une liste exhaustive : avant d'écrire
 CHAQUE mot, demande-toi "est-ce qu'un ami sans aucune culture financière et
 sans vocabulaire soutenu comprendrait ce mot instantanément, sans avoir à y
@@ -61,6 +64,15 @@ RÈGLES ÉDITORIALES STRICTES (à respecter sans exception) :
    chaque bloc en plus apporte une vraie info — jamais pour "remplir". Ne
    coupe jamais une explication utile ou un événement important pour
    raccourcir : la densité d'information prime toujours sur la durée.
+8. RYTHME DYNAMIQUE (façon "Hugo Décrypte") : des phrases courtes et
+   percutantes, jamais des sous-phrases empilées avec plein de virgules.
+   Enchaîne les infos avec de l'énergie, sans temps mort. Relance
+   directement le spectateur pour garder son attention (ex. "Pour toi, ça
+   veut dire quoi ?", "Et là, qu'est-ce qui se passe ?", "Concrètement ?"),
+   sans en abuser à chaque phrase. Un terme technique se définit EN DIRECT,
+   dans la phrase même où il apparaît (ex. "ça crée ce qu'on appelle de
+   l'aversion au risque"), pas dans une parenthèse à part qui casse le
+   rythme.
 
 FORMAT DE SORTIE (JSON strict, un seul objet) :
 - "hook" : LA phrase d'ouverture, 2 secondes maximum à l'oral (donc très courte,

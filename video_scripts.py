@@ -121,6 +121,34 @@ def _format_telegram_messages_block(messages: list[dict]) -> str:
     return "\n\n".join(lines)
 
 
+_RECENT_SCRIPTS_LOOKBACK_DAYS = 5  # au-delà, la probabilité qu'un sujet revienne texto est faible
+
+
+def _format_recent_scripts_block(target_date: date) -> str:
+    """Texte déjà dit dans les DEBRIEF des derniers jours (voir video_output/<date>/
+    debrief.json — écrits par _write_files) : sert à repérer un sujet récurrent
+    (ex. le même dossier géopolitique plusieurs jours de suite) pour que le LLM
+    varie sa formulation au lieu de répéter le même angle/la même phrase — voir
+    debrief.txt. Jamais bloquant : un jour sans script précédent (premier lancement,
+    fichier manquant/corrompu) est simplement ignoré."""
+    lines = []
+    for days_back in range(1, _RECENT_SCRIPTS_LOOKBACK_DAYS + 1):
+        day = target_date - timedelta(days=days_back)
+        json_path = os.path.join(config.VIDEO_OUTPUT_DIR, day.isoformat(), "debrief.json")
+        if not os.path.isfile(json_path):
+            continue
+        try:
+            with open(json_path, "r", encoding="utf-8") as f:
+                script = json.load(f)
+        except (json.JSONDecodeError, OSError) as exc:
+            logger.warning("Script précédent illisible (%s), ignoré pour l'anti-répétition: %s", json_path, exc)
+            continue
+        oral_texts = [bloc.get("oral", "") for bloc in script.get("corps", []) if bloc.get("oral")]
+        if oral_texts:
+            lines.append(f"--- {day.strftime('%d/%m/%Y')} ---\n" + "\n".join(oral_texts))
+    return "\n\n".join(lines)
+
+
 def _pick_top_event_title(events: list[dict]) -> str:
     """High avant Medium, puis le plus tôt dans la journée."""
     return sorted(events, key=lambda e: (e["impact"] != "High", e["event_dt_utc"]))[0]["title"]
@@ -151,12 +179,16 @@ def _gather_data(fmt: str, target_date: date, concept_override: str | None = Non
             m for m in message_log.get_messages_for_day(target_date)
             if m["raw_text"].startswith("🚨")
         ]
+        recent_scripts = _format_recent_scripts_block(target_date)
         return {
             "headlines_block": _format_headlines_block(news_rows),
             "telegram_context_block": (
                 _format_telegram_messages_block(telegram_messages)
                 if telegram_messages
                 else "Journal Telegram indisponible pour cette date — base-toi uniquement sur les données ci-dessus."
+            ),
+            "recent_scripts_block": (
+                recent_scripts if recent_scripts else "Aucun DEBRIEF des derniers jours disponible."
             ),
         }
 

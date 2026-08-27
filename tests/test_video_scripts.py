@@ -4,7 +4,7 @@ présence du CTA/disclaimer, comportement sur données manquantes — plus le re
 LLM et --dry-run. Aucun appel réseau réel : ai_analyzer.call_gemini est mocké.
 """
 import json
-from datetime import date, datetime, time, timezone
+from datetime import date, datetime, time, timedelta, timezone
 from pathlib import Path
 from unittest.mock import patch
 
@@ -165,7 +165,7 @@ def test_assemble_script_injects_cta_and_disclaimer_regardless_of_llm_output():
 # --- DEBRIEF : breaking news uniquement (le calendrier économique n'y figure
 # plus du tout, voir video_templates/debrief.txt) -----------------------------------
 
-def test_gather_data_debrief_works_with_news(temp_db):
+def test_gather_data_debrief_works_with_news(temp_db, temp_video_output):
     # date.today() et non une date fixe : db.mark_sent_news() horodate toujours
     # sent_at avec l'heure réelle (voir db.py), donc la fenêtre interrogée doit
     # couvrir "maintenant", pas un jour arbitraire figé dans le passé.
@@ -180,13 +180,78 @@ def test_gather_data_debrief_works_with_news(temp_db):
     assert "pending_events_block" not in data
 
 
-def test_gather_data_debrief_returns_none_without_any_news(temp_db):
+def test_gather_data_debrief_returns_none_without_any_news(temp_db, temp_video_output):
     """Un calendrier économique chargé mais aucune breaking news : plus rien à
     couvrir pour ce format (voir debrief.txt — le calendrier n'y figure plus)."""
     target_date = date(2026, 7, 26)
     _insert_reaction_event(target_date)
     data = video_scripts._gather_data("DEBRIEF", target_date)
     assert data is None
+
+
+# --- anti-répétition : relit les DEBRIEF des derniers jours ------------------------
+
+def _write_fake_debrief_json(video_output_dir, day: date, oral_texts: list[str]) -> None:
+    day_dir = video_output_dir / day.isoformat()
+    day_dir.mkdir(parents=True, exist_ok=True)
+    script = {"corps": [{"oral": t, "ecran": "x", "visuel": "y", "visual_keyword": "z"} for t in oral_texts]}
+    with open(day_dir / "debrief.json", "w", encoding="utf-8") as f:
+        json.dump(script, f)
+
+
+def test_format_recent_scripts_block_reads_past_days(temp_video_output):
+    target_date = date(2026, 8, 27)
+    _write_fake_debrief_json(temp_video_output, date(2026, 8, 26), ["Le détroit d'Ormuz est sous tension."])
+    _write_fake_debrief_json(temp_video_output, date(2026, 8, 25), ["Le yen se renforce nettement."])
+
+    block = video_scripts._format_recent_scripts_block(target_date)
+
+    assert "Le détroit d'Ormuz est sous tension." in block
+    assert "Le yen se renforce nettement." in block
+    assert "26/08/2026" in block
+    assert "25/08/2026" in block
+
+
+def test_format_recent_scripts_block_empty_when_no_previous_files(temp_video_output):
+    assert video_scripts._format_recent_scripts_block(date(2026, 8, 27)) == ""
+
+
+def test_format_recent_scripts_block_ignores_days_beyond_lookback(temp_video_output):
+    target_date = date(2026, 8, 27)
+    too_old = target_date - timedelta(days=video_scripts._RECENT_SCRIPTS_LOOKBACK_DAYS + 1)
+    _write_fake_debrief_json(temp_video_output, too_old, ["Ne devrait pas apparaître."])
+    block = video_scripts._format_recent_scripts_block(target_date)
+    assert "Ne devrait pas apparaître." not in block
+
+
+def test_format_recent_scripts_block_skips_corrupted_json(temp_video_output):
+    target_date = date(2026, 8, 27)
+    day_dir = temp_video_output / "2026-08-26"
+    day_dir.mkdir(parents=True, exist_ok=True)
+    with open(day_dir / "debrief.json", "w", encoding="utf-8") as f:
+        f.write("{ceci n'est pas du json valide")
+    # Ne doit jamais lever, juste ignorer ce jour-là.
+    assert video_scripts._format_recent_scripts_block(target_date) == ""
+
+
+def test_gather_data_debrief_includes_recent_scripts_block(temp_db, temp_video_output):
+    target_date = date.today()
+    db.mark_sent_news("news_1", title="Déclaration surprise de la Fed", resume="Résumé test.")
+    yesterday = target_date - timedelta(days=1)
+    _write_fake_debrief_json(temp_video_output, yesterday, ["Le détroit d'Ormuz est sous tension."])
+
+    data = video_scripts._gather_data("DEBRIEF", target_date)
+
+    assert data is not None
+    assert "Le détroit d'Ormuz est sous tension." in data["recent_scripts_block"]
+
+
+def test_gather_data_debrief_recent_scripts_fallback_when_none(temp_db, temp_video_output):
+    target_date = date.today()
+    db.mark_sent_news("news_1", title="Déclaration surprise de la Fed", resume="Résumé test.")
+    data = video_scripts._gather_data("DEBRIEF", target_date)
+    assert data is not None
+    assert "Aucun DEBRIEF des derniers jours" in data["recent_scripts_block"]
 
 
 # --- ancrage sur le texte déjà envoyé sur Telegram (voir message_log.py) -----------
@@ -269,7 +334,7 @@ def test_gather_data_debrief_telegram_context_fallback_when_log_empty(temp_db):
 def test_build_prompt_includes_extra_notes_when_provided():
     prompt = video_scripts._build_prompt(
         "DEBRIEF",
-        {"headlines_block": "y", "telegram_context_block": "w"},
+        {"headlines_block": "y", "telegram_context_block": "w", "recent_scripts_block": "v"},
         date(2026, 7, 26),
         extra_notes="Insiste sur le pétrole",
     )
@@ -277,7 +342,7 @@ def test_build_prompt_includes_extra_notes_when_provided():
 
 
 def test_build_prompt_no_extra_notes_mention_when_none_or_blank():
-    data = {"headlines_block": "y", "telegram_context_block": "w"}
+    data = {"headlines_block": "y", "telegram_context_block": "w", "recent_scripts_block": "v"}
     prompt_none = video_scripts._build_prompt("DEBRIEF", data, date(2026, 7, 26), extra_notes=None)
     prompt_blank = video_scripts._build_prompt("DEBRIEF", data, date(2026, 7, 26), extra_notes="   ")
     assert "Remarque de l'utilisateur" not in prompt_none
