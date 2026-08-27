@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-27T09:16:29.504440+00:00",
+  "fetched_at": "2026-08-27T09:17:20.103121+00:00",
   "articles": [
+    {
+      "title": "United States Dollar Index gains support as strong US data sparks rate hike expectations",
+      "url": "https://www.fxstreet.com/news/united-states-dollar-index-gains-support-as-strong-us-data-sparks-rate-hike-expectations-202608270916",
+      "source": "FXStreet",
+      "published_at": "2026-08-27T09:16:31+00:00"
+    },
     {
       "title": "Indian Rupee: Yields looking attractive after sell-off – DBS",
       "url": "https://www.fxstreet.com/news/indian-rupee-yields-looking-attractive-after-sell-off-dbs-202608270914",
@@ -162,12 +168,6 @@
       "url": "https://www.fxstreet.com/news/wti-falls-below-8100-as-iran-oman-talks-fuel-hopes-of-hormuz-reopening-202608270629",
       "source": "FXStreet",
       "published_at": "2026-08-27T06:29:05+00:00"
-    },
-    {
-      "title": "AUD/USD Price Forecast: Hawkish RBA bets support rally towards 0.7275",
-      "url": "https://www.fxstreet.com/news/aud-usd-price-forecast-hawkish-rba-bets-support-rally-towards-07275-202608270626",
-      "source": "FXStreet",
-      "published_at": "2026-08-27T06:26:48+00:00"
     }
   ]
 }
