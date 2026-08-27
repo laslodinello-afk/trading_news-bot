@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-27T05:43:24.260435+00:00",
+  "fetched_at": "2026-08-27T17:04:11.500999+00:00",
   "events": [
     {
       "title": "Core Retail Sales q/q",
@@ -498,6 +498,14 @@
       "previous": "0.3%"
     },
     {
+      "title": "FOMC Member Hammack Speaks",
+      "country": "USD",
+      "date": "2026-08-28T09:00:00-04:00",
+      "impact": "Low",
+      "forecast": "",
+      "previous": ""
+    },
+    {
       "title": "Chicago PMI",
       "country": "USD",
       "date": "2026-08-28T09:45:00-04:00",
@@ -542,6 +550,14 @@
       "country": "All",
       "date": "2026-08-28T12:15:00-04:00",
       "impact": "High",
+      "forecast": "",
+      "previous": ""
+    },
+    {
+      "title": "G20 Meetings",
+      "country": "All",
+      "date": "2026-08-29T11:15:00-04:00",
+      "impact": "Low",
       "forecast": "",
       "previous": ""
     },
