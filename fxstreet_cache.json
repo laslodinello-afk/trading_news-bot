@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-27T09:29:18.713440+00:00",
+  "fetched_at": "2026-08-27T09:30:55.159353+00:00",
   "articles": [
+    {
+      "title": "British Pound: Remains under pressure below resistance against Euro – Societe Generale",
+      "url": "https://www.fxstreet.com/news/british-pound-remains-under-pressure-below-resistance-against-euro-societe-generale-202608270929",
+      "source": "FXStreet",
+      "published_at": "2026-08-27T09:29:33+00:00"
+    },
     {
       "title": "United States Dollar Index gains support as strong US data sparks rate hike expectations",
       "url": "https://www.fxstreet.com/news/united-states-dollar-index-gains-support-as-strong-us-data-sparks-rate-hike-expectations-202608270916",
@@ -150,18 +156,6 @@
       "url": "https://www.fxstreet.com/news/euro-lower-against-us-dollar-after-pce-surprise-danske-bank-202608270648",
       "source": "FXStreet",
       "published_at": "2026-08-27T06:48:45+00:00"
-    },
-    {
-      "title": "US Dollar: Inflation data supports gains – UOB",
-      "url": "https://www.fxstreet.com/news/us-dollar-inflation-data-supports-gains-uob-202608270630",
-      "source": "FXStreet",
-      "published_at": "2026-08-27T06:30:42+00:00"
-    },
-    {
-      "title": "Euro trims gains against British Pound despite upbeat German Consumer Confidence data",
-      "url": "https://www.fxstreet.com/news/euro-edges-down-against-british-pound-despite-upbeat-german-consumer-confidence-data-202608270630",
-      "source": "FXStreet",
-      "published_at": "2026-08-27T06:30:16+00:00"
     }
   ]
 }
