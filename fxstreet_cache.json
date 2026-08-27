@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-27T17:41:22.387400+00:00",
+  "fetched_at": "2026-08-27T17:42:27.365930+00:00",
   "articles": [
+    {
+      "title": "US Treasury Secretary Bessent to press G20 ministers on Iran funding",
+      "url": "https://www.fxstreet.com/news/us-treasury-secretary-bessent-to-press-g20-ministers-on-iran-funding-202608271741",
+      "source": "FXStreet",
+      "published_at": "2026-08-27T17:41:34+00:00"
+    },
     {
       "title": "Silver charges toward $70, but Warsh could cool rally",
       "url": "https://www.fxstreet.com/news/silver-charges-toward-70-but-warsh-could-cool-rally-202608271707",
@@ -42,12 +48,6 @@
       "url": "https://www.fxstreet.com/news/thailand-stable-policy-anchors-short-end-yields-dbs-202608271503",
       "source": "FXStreet",
       "published_at": "2026-08-27T15:03:50+00:00"
-    },
-    {
-      "title": "Chinese Yuan: Structural export drivers outweigh CNY – Commerzbank",
-      "url": "https://www.fxstreet.com/news/chinese-yuan-structural-export-drivers-outweigh-cny-commerzbank-202608271441",
-      "source": "FXStreet",
-      "published_at": "2026-08-27T14:41:52+00:00"
     }
   ]
 }
