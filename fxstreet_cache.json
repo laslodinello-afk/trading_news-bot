@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-27T10:15:39.922845+00:00",
+  "fetched_at": "2026-08-27T10:16:28.548673+00:00",
   "articles": [
+    {
+      "title": "Euro retreats below 1.1650 as inflation data buoys US Dollar ahead of Jackson Hole",
+      "url": "https://www.fxstreet.com/news/euro-retreats-below-11650-as-inflation-data-buoys-us-dollar-ahead-of-jackson-hole-202608271016",
+      "source": "FXStreet",
+      "published_at": "2026-08-27T10:16:09+00:00"
+    },
     {
       "title": "Canadian Dollar: Trade war complicates BoC path – Standard Chartered",
       "url": "https://www.fxstreet.com/news/canadian-dollar-trade-war-complicates-boc-path-standard-chartered-202608271005",
@@ -162,12 +168,6 @@
       "url": "https://www.fxstreet.com/news/new-zealand-dollar-hangs-near-weekly-low-below-05950-as-fed-hike-bets-lift-usd-202608270730",
       "source": "FXStreet",
       "published_at": "2026-08-27T07:30:32+00:00"
-    },
-    {
-      "title": "Australian Dollar: RBA hike repricing supports gains – DBS",
-      "url": "https://www.fxstreet.com/news/australian-dollar-rba-hike-repricing-supports-gains-dbs-202608270717",
-      "source": "FXStreet",
-      "published_at": "2026-08-27T07:17:49+00:00"
     }
   ]
 }
