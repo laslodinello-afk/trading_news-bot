@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-27T09:51:20.410484+00:00",
+  "fetched_at": "2026-08-27T09:52:23.304137+00:00",
   "articles": [
+    {
+      "title": "Euro steadies against Japanese Yen as German sentiment beats expectations",
+      "url": "https://www.fxstreet.com/news/euro-steadies-against-japanese-yen-as-german-sentiment-beats-expectations-202608270951",
+      "source": "FXStreet",
+      "published_at": "2026-08-27T09:51:41+00:00"
+    },
     {
       "title": "US Dollar: Policy reality supports resilience – OCBC",
       "url": "https://www.fxstreet.com/news/us-dollar-policy-reality-supports-resilience-ocbc-202608270949",
@@ -162,12 +168,6 @@
       "url": "https://www.fxstreet.com/news/eur-usd-price-forecast-corrects-lower-with-the-near-term-bullish-trend-intact-202608270717",
       "source": "FXStreet",
       "published_at": "2026-08-27T07:17:47+00:00"
-    },
-    {
-      "title": "Equities: Tech earnings lift futures after quiet session – Deutsche Bank",
-      "url": "https://www.fxstreet.com/news/equities-tech-earnings-lift-futures-after-quiet-session-deutsche-bank-202608270706",
-      "source": "FXStreet",
-      "published_at": "2026-08-27T07:06:48+00:00"
     }
   ]
 }
