@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-27T08:09:21.333985+00:00",
+  "fetched_at": "2026-08-27T08:10:44.407254+00:00",
   "articles": [
+    {
+      "title": "British Pound extends losses as US Dollar holds ground on Fed rate hike bets",
+      "url": "https://www.fxstreet.com/news/british-pound-extends-losses-as-us-dollar-holds-ground-on-fed-rate-hike-bets-202608270809",
+      "source": "FXStreet",
+      "published_at": "2026-08-27T08:09:39+00:00"
+    },
     {
       "title": "British Pound finds support near weekly low as fiscal woes and rate gap weigh on Yen",
       "url": "https://www.fxstreet.com/news/british-pound-finds-support-near-weekly-low-as-fiscal-woes-and-rate-gap-weigh-on-yen-202608270808",
@@ -132,12 +138,6 @@
       "url": "https://www.fxstreet.com/news/euro-drifts-higher-above-11650-on-hawkish-ecb-stance-202608270520",
       "source": "FXStreet",
       "published_at": "2026-08-27T05:20:49+00:00"
-    },
-    {
-      "title": "USD/JPY Price Forecast: Bulls await breakout above 50% Fibo. hurdle near 159.65",
-      "url": "https://www.fxstreet.com/news/usd-jpy-price-forecast-bulls-await-breakout-above-50-fibo-hurdle-near-15965-202608270509",
-      "source": "FXStreet",
-      "published_at": "2026-08-27T05:09:53+00:00"
     }
   ]
 }
