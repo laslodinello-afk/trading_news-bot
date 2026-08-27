@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-27T03:56:24.002008+00:00",
+  "fetched_at": "2026-08-27T03:57:20.031605+00:00",
   "articles": [
+    {
+      "title": "Gold scales higher on softer US yields as traders await Fed Chair Warsh's speech",
+      "url": "https://www.fxstreet.com/news/gold-scales-higher-on-softer-us-yields-as-traders-await-fed-chair-warshs-speech-202608270356",
+      "source": "FXStreet",
+      "published_at": "2026-08-27T03:56:28+00:00"
+    },
     {
       "title": "South Korean Won gains on back-to-back BoK interest rate hikes",
       "url": "https://www.fxstreet.com/news/south-korean-won-gains-on-back-to-back-bok-interest-rate-hikes-202608270312",
@@ -60,12 +66,6 @@
       "url": "https://www.fxstreet.com/news/wti-slips-below-8150-amid-middle-east-diplomacy-202608270108",
       "source": "FXStreet",
       "published_at": "2026-08-27T01:08:22+00:00"
-    },
-    {
-      "title": "Euro holds gains above 1.1650 on hawkish ECB bias",
-      "url": "https://www.fxstreet.com/news/euro-holds-gains-above-11650-on-hawkish-ecb-bias-202608270057",
-      "source": "FXStreet",
-      "published_at": "2026-08-27T00:57:08+00:00"
     }
   ]
 }
