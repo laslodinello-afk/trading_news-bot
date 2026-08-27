@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-27T05:02:22.746023+00:00",
+  "fetched_at": "2026-08-27T05:03:18.757080+00:00",
   "articles": [
+    {
+      "title": "Swiss Franc steadies as US Dollar holds ground following robust economic data",
+      "url": "https://www.fxstreet.com/news/swiss-franc-steadies-as-us-dollar-holds-ground-following-robust-economic-data-202608270502",
+      "source": "FXStreet",
+      "published_at": "2026-08-27T05:02:30+00:00"
+    },
     {
       "title": "India Gold price today: Gold rises, according to FXStreet data",
       "url": "https://www.fxstreet.com/news/india-gold-price-today-gold-rises-according-to-fxstreet-data-202608270435",
@@ -54,12 +60,6 @@
       "url": "https://www.fxstreet.com/news/ukmto-says-tanker-hit-by-unknown-projectile-in-strait-of-hormuz-202608270208",
       "source": "FXStreet",
       "published_at": "2026-08-27T02:08:09+00:00"
-    },
-    {
-      "title": "Australian Dollar holds strong due to RBA rate hike bets",
-      "url": "https://www.fxstreet.com/news/australian-dollar-holds-strong-due-to-rba-rate-hike-bets-202608270203",
-      "source": "FXStreet",
-      "published_at": "2026-08-27T02:03:00+00:00"
     }
   ]
 }
