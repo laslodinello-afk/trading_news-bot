@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-27T10:05:30.934229+00:00",
+  "fetched_at": "2026-08-27T10:06:26.756123+00:00",
   "articles": [
+    {
+      "title": "Canadian Dollar: Trade war complicates BoC path – Standard Chartered",
+      "url": "https://www.fxstreet.com/news/canadian-dollar-trade-war-complicates-boc-path-standard-chartered-202608271005",
+      "source": "FXStreet",
+      "published_at": "2026-08-27T10:05:21+00:00"
+    },
     {
       "title": "Euro steadies against Japanese Yen as German sentiment beats expectations",
       "url": "https://www.fxstreet.com/news/euro-steadies-against-japanese-yen-as-german-sentiment-beats-expectations-202608270951",
@@ -162,12 +168,6 @@
       "url": "https://www.fxstreet.com/news/australian-dollar-rba-hike-repricing-supports-gains-dbs-202608270717",
       "source": "FXStreet",
       "published_at": "2026-08-27T07:17:49+00:00"
-    },
-    {
-      "title": "EUR/USD Price Forecast: Correcting lower with the near-term bullish trend intact",
-      "url": "https://www.fxstreet.com/news/eur-usd-price-forecast-corrects-lower-with-the-near-term-bullish-trend-intact-202608270717",
-      "source": "FXStreet",
-      "published_at": "2026-08-27T07:17:47+00:00"
     }
   ]
 }
