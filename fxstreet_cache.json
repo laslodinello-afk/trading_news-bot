@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-27T13:58:22.277311+00:00",
+  "fetched_at": "2026-08-27T13:59:18.419563+00:00",
   "articles": [
+    {
+      "title": "Gold eases as traders await clearer signals on the Fed interest rate path",
+      "url": "https://www.fxstreet.com/news/gold-eases-as-traders-await-clearer-signals-on-the-fed-interest-rate-path-202608271115",
+      "source": "FXStreet",
+      "published_at": "2026-08-27T11:15:51+00:00"
+    },
     {
       "title": "European Central Bank: September hike prospects strengthen – Nordea",
       "url": "https://www.fxstreet.com/news/european-central-bank-september-hike-prospects-strengthen-nordea-202608271347",
@@ -42,12 +48,6 @@
       "url": "https://www.fxstreet.com/news/euro-choppy-range-trading-outlook-rabobank-202608271245",
       "source": "FXStreet",
       "published_at": "2026-08-27T12:45:55+00:00"
-    },
-    {
-      "title": "Gold eases as traders await clearer signals on the Fed interest rate path",
-      "url": "https://www.fxstreet.com/news/gold-eases-as-traders-await-clearer-signals-on-the-fed-interest-rate-path-202608271115",
-      "source": "FXStreet",
-      "published_at": "2026-08-27T11:15:51+00:00"
     },
     {
       "title": "US Initial Jobless Claims dropped to 203K last week",
