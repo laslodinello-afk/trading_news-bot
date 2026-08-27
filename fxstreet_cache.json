@@ -1,4 +1,113 @@
 {
-  "fetched_at": "2026-08-27T07:31:09.263873+00:00",
-  "articles": []
+  "fetched_at": "2026-08-27T07:31:21.283459+00:00",
+  "articles": [
+    {
+      "title": "Forex Today: Markets quiet down ahead of Jackson Hole Symposium",
+      "url": "https://www.fxstreet.com/news/forex-today-markets-quiet-down-ahead-of-jackson-hole-symposium-202608270730",
+      "source": "FXStreet",
+      "published_at": "2026-08-27T07:30:39+00:00"
+    },
+    {
+      "title": "New Zealand Dollar hangs near weekly low, below 0.5950 as Fed hike bets lift USD",
+      "url": "https://www.fxstreet.com/news/new-zealand-dollar-hangs-near-weekly-low-below-05950-as-fed-hike-bets-lift-usd-202608270730",
+      "source": "FXStreet",
+      "published_at": "2026-08-27T07:30:32+00:00"
+    },
+    {
+      "title": "Australian Dollar: RBA hike repricing supports gains – DBS",
+      "url": "https://www.fxstreet.com/news/australian-dollar-rba-hike-repricing-supports-gains-dbs-202608270717",
+      "source": "FXStreet",
+      "published_at": "2026-08-27T07:17:49+00:00"
+    },
+    {
+      "title": "EUR/USD Price Forecast: Correcting lower with the near-term bullish trend intact",
+      "url": "https://www.fxstreet.com/news/eur-usd-price-forecast-corrects-lower-with-the-near-term-bullish-trend-intact-202608270717",
+      "source": "FXStreet",
+      "published_at": "2026-08-27T07:17:47+00:00"
+    },
+    {
+      "title": "Equities: Tech earnings lift futures after quiet session – Deutsche Bank",
+      "url": "https://www.fxstreet.com/news/equities-tech-earnings-lift-futures-after-quiet-session-deutsche-bank-202608270706",
+      "source": "FXStreet",
+      "published_at": "2026-08-27T07:06:48+00:00"
+    },
+    {
+      "title": "Euro: Lower against US Dollar after PCE surprise – Danske Bank",
+      "url": "https://www.fxstreet.com/news/euro-lower-against-us-dollar-after-pce-surprise-danske-bank-202608270648",
+      "source": "FXStreet",
+      "published_at": "2026-08-27T06:48:45+00:00"
+    },
+    {
+      "title": "Indian Rupee drops as stronger US Dollar outweighs lower crude prices",
+      "url": "https://www.fxstreet.com/news/indian-rupee-opens-flat-as-stronger-us-dollar-offsets-lower-crude-prices-202608270512",
+      "source": "FXStreet",
+      "published_at": "2026-08-27T05:12:57+00:00"
+    },
+    {
+      "title": "US Dollar: Inflation data supports gains – UOB",
+      "url": "https://www.fxstreet.com/news/us-dollar-inflation-data-supports-gains-uob-202608270630",
+      "source": "FXStreet",
+      "published_at": "2026-08-27T06:30:42+00:00"
+    },
+    {
+      "title": "Euro trims gains against British Pound despite upbeat German Consumer Confidence data",
+      "url": "https://www.fxstreet.com/news/euro-edges-down-against-british-pound-despite-upbeat-german-consumer-confidence-data-202608270630",
+      "source": "FXStreet",
+      "published_at": "2026-08-27T06:30:16+00:00"
+    },
+    {
+      "title": "WTI falls below $81.00 as Iran-Oman talks fuel hopes of Hormuz reopening",
+      "url": "https://www.fxstreet.com/news/wti-falls-below-8100-as-iran-oman-talks-fuel-hopes-of-hormuz-reopening-202608270629",
+      "source": "FXStreet",
+      "published_at": "2026-08-27T06:29:05+00:00"
+    },
+    {
+      "title": "AUD/USD Price Forecast: Hawkish RBA bets support rally towards 0.7275",
+      "url": "https://www.fxstreet.com/news/aud-usd-price-forecast-hawkish-rba-bets-support-rally-towards-07275-202608270626",
+      "source": "FXStreet",
+      "published_at": "2026-08-27T06:26:48+00:00"
+    },
+    {
+      "title": "Indonesian Rupiah weakens as domestic protests, inflation risks loom",
+      "url": "https://www.fxstreet.com/news/indonesian-rupiah-weakens-as-domestic-protests-inflation-risks-loom-202608270605",
+      "source": "FXStreet",
+      "published_at": "2026-08-27T06:05:39+00:00"
+    },
+    {
+      "title": "BoJ’s Himino says will balance economic data and inflation risks on rates",
+      "url": "https://www.fxstreet.com/news/bojs-himino-says-will-balance-economic-data-and-inflation-risks-on-rates-202608270553",
+      "source": "FXStreet",
+      "published_at": "2026-08-27T05:53:38+00:00"
+    },
+    {
+      "title": "United States Dollar holds gains near 99, all eyes on Jackson Hole Symposium",
+      "url": "https://www.fxstreet.com/news/united-states-dollar-holds-gains-near-99-all-eyes-on-jackson-hole-symposium-202608270539",
+      "source": "FXStreet",
+      "published_at": "2026-08-27T05:39:20+00:00"
+    },
+    {
+      "title": "Euro drifts higher above 1.1650 on hawkish ECB stance",
+      "url": "https://www.fxstreet.com/news/euro-drifts-higher-above-11650-on-hawkish-ecb-stance-202608270520",
+      "source": "FXStreet",
+      "published_at": "2026-08-27T05:20:49+00:00"
+    },
+    {
+      "title": "USD/JPY Price Forecast: Bulls await breakout above 50% Fibo. hurdle near 159.65",
+      "url": "https://www.fxstreet.com/news/usd-jpy-price-forecast-bulls-await-breakout-above-50-fibo-hurdle-near-15965-202608270509",
+      "source": "FXStreet",
+      "published_at": "2026-08-27T05:09:53+00:00"
+    },
+    {
+      "title": "Swiss Franc steadies as US Dollar holds ground following robust economic data",
+      "url": "https://www.fxstreet.com/news/swiss-franc-steadies-as-us-dollar-holds-ground-following-robust-economic-data-202608270502",
+      "source": "FXStreet",
+      "published_at": "2026-08-27T05:02:30+00:00"
+    },
+    {
+      "title": "India Gold price today: Gold rises, according to FXStreet data",
+      "url": "https://www.fxstreet.com/news/india-gold-price-today-gold-rises-according-to-fxstreet-data-202608270435",
+      "source": "FXStreet",
+      "published_at": "2026-08-27T04:35:20+00:00"
+    }
+  ]
 }
