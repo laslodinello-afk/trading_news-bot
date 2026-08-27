@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-27T14:42:21.326392+00:00",
+  "fetched_at": "2026-08-27T14:43:20.637424+00:00",
   "articles": [
+    {
+      "title": "Chinese Yuan: Structural export drivers outweigh CNY – Commerzbank",
+      "url": "https://www.fxstreet.com/news/chinese-yuan-structural-export-drivers-outweigh-cny-commerzbank-202608271441",
+      "source": "FXStreet",
+      "published_at": "2026-08-27T14:41:52+00:00"
+    },
     {
       "title": "Fed's Hammack says “now” is the time to tackle inflation",
       "url": "https://www.fxstreet.com/news/feds-hammack-says-now-is-the-time-to-tackle-inflation-202608271435",
@@ -102,12 +108,6 @@
       "url": "https://www.fxstreet.com/news/silver-price-forecast-xag-usd-remains-sideways-near-6850-fed-warshs-speech-awaited-202608271143",
       "source": "FXStreet",
       "published_at": "2026-08-27T11:43:39+00:00"
-    },
-    {
-      "title": "NZD/USD Price Forecast: Kiwi dips below 0.5950 as US Dollar strengthens",
-      "url": "https://www.fxstreet.com/news/nzd-usd-price-forecast-kiwi-dips-below-05950-as-us-dollar-strengthens-202608271142",
-      "source": "FXStreet",
-      "published_at": "2026-08-27T11:42:39+00:00"
     }
   ]
 }
