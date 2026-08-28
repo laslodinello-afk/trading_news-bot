@@ -1,89 +1,53 @@
 {
-  "fetched_at": "2026-08-28T14:47:22.865954+00:00",
+  "fetched_at": "2026-08-28T21:20:52.481430+00:00",
   "articles": [
     {
-      "title": "Poland: Growth supported by investment rebound – ING",
-      "url": "https://www.fxstreet.com/news/poland-growth-supported-by-investment-rebound-ing-202608281444",
+      "title": "South Korean Won: Higher rates and chip boom support gains – ING",
+      "url": "https://www.fxstreet.com/news/south-korean-won-higher-rates-and-chip-boom-support-gains-ing-202608282118",
       "source": "FXStreet",
-      "published_at": "2026-08-28T14:44:58+00:00"
+      "published_at": "2026-08-28T21:18:00+00:00"
     },
     {
-      "title": "Japan: Tokyo  CPI data supports BoJ hawkish stance – Societe Generale",
-      "url": "https://www.fxstreet.com/news/japan-tokyo-cpi-data-supports-boj-hawkish-stance-societe-generale-202608281419",
+      "title": "Malaysian Ringgit: BNM seen on steady policy path – DBS",
+      "url": "https://www.fxstreet.com/news/malaysian-ringgit-bnm-seen-on-steady-policy-path-dbs-202608282039",
       "source": "FXStreet",
-      "published_at": "2026-08-28T14:19:58+00:00"
+      "published_at": "2026-08-28T20:39:00+00:00"
     },
     {
-      "title": "Germany: Growth recovery stays moderate – Commerzbank",
-      "url": "https://www.fxstreet.com/news/germany-growth-recovery-stays-moderate-commerzbank-202608281352",
+      "title": "Mexican Peso tumbles as Warsh embarks on inflation fight",
+      "url": "https://www.fxstreet.com/news/mexican-peso-tumbles-as-warsh-embarks-on-inflation-fight-202608282024",
       "source": "FXStreet",
-      "published_at": "2026-08-28T13:52:42+00:00"
+      "published_at": "2026-08-28T20:24:56+00:00"
     },
     {
-      "title": "Euro drifts lower as Fed hawks set the stage for Warsh",
-      "url": "https://www.fxstreet.com/news/euro-drifts-lower-as-fed-hawks-set-the-stage-for-warsh-202608281338",
+      "title": "Chinese Yuan: Undervaluation and export gains questioned – Commerzbank",
+      "url": "https://www.fxstreet.com/news/chinese-yuan-undervaluation-and-export-gains-questioned-commerzbank-202608282001",
       "source": "FXStreet",
-      "published_at": "2026-08-28T13:38:42+00:00"
+      "published_at": "2026-08-28T20:01:00+00:00"
     },
     {
-      "title": "Canada: Economic risks and sector strains – RBC",
-      "url": "https://www.fxstreet.com/news/canada-economic-risks-and-sector-strains-rbc-202608281333",
+      "title": "South Korean Won: Strong exports support KRW and KOSPI – DBS",
+      "url": "https://www.fxstreet.com/news/south-korean-won-strong-exports-support-krw-and-kospi-dbs-202608281931",
       "source": "FXStreet",
-      "published_at": "2026-08-28T13:33:18+00:00"
+      "published_at": "2026-08-28T19:31:34+00:00"
     },
     {
-      "title": "Hungary: Retail data may offer upside surprise – ING",
-      "url": "https://www.fxstreet.com/news/hungary-retail-data-may-offer-upside-surprise-ing-202608281317",
+      "title": "BoE’s Bailey sees muted inflation effects ahead of policy meeting",
+      "url": "https://www.fxstreet.com/news/boes-bailey-sees-muted-inflation-effects-ahead-of-boes-meeting-202608281848",
       "source": "FXStreet",
-      "published_at": "2026-08-28T13:17:08+00:00"
+      "published_at": "2026-08-28T18:48:19+00:00"
     },
     {
-      "title": "Fed's Hammack: Time for Fed to act with rate hikes",
-      "url": "https://www.fxstreet.com/news/feds-hammack-time-for-fed-to-act-with-rate-hikes-202608281316",
+      "title": "ECB Kocher says Europe economy shows momentum, threats price stability",
+      "url": "https://www.fxstreet.com/news/ecb-kocher-says-europe-economy-shows-momentum-threats-price-stability-202608281830",
       "source": "FXStreet",
-      "published_at": "2026-08-28T13:16:12+00:00"
+      "published_at": "2026-08-28T18:30:08+00:00"
     },
     {
-      "title": "Japanese Yen retreats despite hotter inflation as focus shifts to Jackson Hole",
-      "url": "https://www.fxstreet.com/news/japanese-yen-retreats-despite-hotter-inflation-as-focus-shifts-to-jackson-hole-202608281313",
+      "title": "Fed’s Goolsbee says inflation is the main issue right now",
+      "url": "https://www.fxstreet.com/news/feds-goolsbee-says-inflation-is-the-main-issue-right-now-202608281823",
       "source": "FXStreet",
-      "published_at": "2026-08-28T13:13:26+00:00"
-    },
-    {
-      "title": "Reserve Bank of New Zealand: Gradual hiking path into 2027 – TD Securities",
-      "url": "https://www.fxstreet.com/news/reserve-bank-of-new-zealand-gradual-hiking-path-into-2027-td-securities-202608281300",
-      "source": "FXStreet",
-      "published_at": "2026-08-28T13:00:56+00:00"
-    },
-    {
-      "title": "European Central Bank: September hike seen with energy risks – Nomura",
-      "url": "https://www.fxstreet.com/news/european-central-bank-september-hike-seen-with-energy-risks-nomura-202608281243",
-      "source": "FXStreet",
-      "published_at": "2026-08-28T12:43:38+00:00"
-    },
-    {
-      "title": "Canada’s economy surprises with 0.8% growth in second quarter",
-      "url": "https://www.fxstreet.com/news/canadas-economy-surprises-with-08-growth-in-the-second-quarter-202608281242",
-      "source": "FXStreet",
-      "published_at": "2026-08-28T12:42:43+00:00"
-    },
-    {
-      "title": "British Pound: Month-end rebalancing and UK policy mix – BNY",
-      "url": "https://www.fxstreet.com/news/british-pound-month-end-rebalancing-and-uk-policy-mix-bny-202608281226",
-      "source": "FXStreet",
-      "published_at": "2026-08-28T12:26:01+00:00"
-    },
-    {
-      "title": "US Dollar: Dovish Fed repricing risk grows – BBH",
-      "url": "https://www.fxstreet.com/news/us-dollar-dovish-fed-repricing-risk-grows-bbh-202608281209",
-      "source": "FXStreet",
-      "published_at": "2026-08-28T12:09:24+00:00"
-    },
-    {
-      "title": "Federal Reserve: Markets eye Warsh signals – Rabobank",
-      "url": "https://www.fxstreet.com/news/federal-reserve-markets-eye-warsh-signals-rabobank-202608281154",
-      "source": "FXStreet",
-      "published_at": "2026-08-28T11:54:52+00:00"
+      "published_at": "2026-08-28T18:23:13+00:00"
     }
   ]
 }
