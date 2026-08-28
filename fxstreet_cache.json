@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-28T00:53:17.193664+00:00",
+  "fetched_at": "2026-08-28T00:54:23.044563+00:00",
   "articles": [
+    {
+      "title": "Japanese Yen strengthens as Tokyo core CPI inflatin bolsters BoJ rate hike chance",
+      "url": "https://www.fxstreet.com/news/japanese-yen-strengthens-as-tokyo-core-cpi-inflatin-bolsters-boj-rate-hike-chance-202608280053",
+      "source": "FXStreet",
+      "published_at": "2026-08-28T00:53:39+00:00"
+    },
     {
       "title": "Iran says preparing list of conditions to open Strait of Hormuz",
       "url": "https://www.fxstreet.com/news/iran-says-preparing-list-of-conditions-to-open-strait-of-hormuz-202608272348",
@@ -30,12 +36,6 @@
       "url": "https://www.fxstreet.com/news/australian-dollar-hits-three-month-peak-on-risk-on-mood-eyes-on-warsh-202608272246",
       "source": "FXStreet",
       "published_at": "2026-08-27T22:46:57+00:00"
-    },
-    {
-      "title": "The Japanese Yen gets its hike whatever Tokyo CPI prints",
-      "url": "https://www.fxstreet.com/news/the-japanese-yen-gets-its-hike-whatever-tokyo-cpi-prints-202608272154",
-      "source": "FXStreet",
-      "published_at": "2026-08-27T21:54:19+00:00"
     }
   ]
 }
