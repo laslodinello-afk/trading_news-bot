@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-28T09:45:36.484282+00:00",
+  "fetched_at": "2026-08-28T09:46:22.831675+00:00",
   "articles": [
+    {
+      "title": "Silver Price Forecasts: XAG/USD hits fresh two-month highs with all eyes on Jackson Hole",
+      "url": "https://www.fxstreet.com/news/silver-price-forecasts-xag-usd-hits-fresh-two-month-highs-with-all-eyes-on-jackson-hole-202608280945",
+      "source": "FXStreet",
+      "published_at": "2026-08-28T09:45:31+00:00"
+    },
     {
       "title": "Australian Dollar: Bulls challenge 0.7200 against US Dollar – UOB",
       "url": "https://www.fxstreet.com/news/australian-dollar-bulls-challenge-07200-against-us-dollar-uob-202608280945",
@@ -144,12 +150,6 @@
       "url": "https://www.fxstreet.com/news/nzd-usd-price-forecast-strengthens-above-05950-with-bullish-technical-backdrop-202608280655",
       "source": "FXStreet",
       "published_at": "2026-08-28T06:55:25+00:00"
-    },
-    {
-      "title": "Gold: Jackson Hole keeps consolidation risk elevated - OCBC",
-      "url": "https://www.fxstreet.com/news/gold-jackson-hole-keeps-consolidation-risk-elevated-ocbc-202608280645",
-      "source": "FXStreet",
-      "published_at": "2026-08-28T06:45:39+00:00"
     }
   ]
 }
