@@ -435,7 +435,13 @@ complément :
 ```bash
 sudo pmset repeat wake MTWRFSU 23:57:00   # réveille le Mac tous les jours à 23h57
 ```
-(demande le mot de passe admin — à lancer une seule fois). Le script remet
+(demande le mot de passe admin — à lancer une seule fois). Comme le Mac vient
+peut-être de se réveiller, le script attend aussi jusqu'à 60s qu'une vraie
+connexion réseau soit disponible avant de lancer quoi que ce soit (bug réel
+constaté le 27/08 : le WiFi n'était pas encore reconnecté à 23h59, la synchro
+Render ET Turso ont échoué par timeout — voir `curl` de test en tête de
+`daily_debrief_to_icloud.sh`) ; il continue quand même après ce délai plutôt
+que de rester bloqué si le réseau reste indisponible. Le script remet
 ensuite le Mac en veille tout seul une fois la vidéo copiée sur iCloud, mais
 **seulement s'il détecte au moins 5 minutes d'inactivité clavier/souris**
 (via `ioreg`/`HIDIdleTime`) — s'il y a une activité récente, la remise en

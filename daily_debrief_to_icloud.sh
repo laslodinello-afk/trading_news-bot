@@ -15,6 +15,27 @@ LOG_FILE="daily_debrief.log"
 
 echo "=== $(date '+%Y-%m-%d %H:%M:%S') — Génération DEBRIEF automatique pour $TODAY ===" >> "$LOG_FILE"
 
+# Le Mac vient peut-être de se réveiller (pmset repeat wake, voir README) — le
+# WiFi met parfois plusieurs secondes/dizaines de secondes à se reconnecter,
+# et un lancement trop tôt a déjà fait échouer la synchro Render ET Turso par
+# timeout un soir (constaté en conditions réelles le 27/08 : "Read timed out"
+# sur les deux, script généré sans aucune vraie donnée). Attend jusqu'à 60s
+# qu'une vraie connexion soit dispo avant de lancer la génération ; continue
+# quand même après ce délai (best-effort, comme le reste du pipeline) plutôt
+# que de bloquer indéfiniment si le réseau reste indisponible.
+NETWORK_READY=0
+for i in $(seq 1 12); do
+    if curl -s --max-time 3 -o /dev/null https://github.com; then
+        NETWORK_READY=1
+        echo "Réseau disponible après $(( (i - 1) * 5 ))s d'attente." >> "$LOG_FILE"
+        break
+    fi
+    sleep 5
+done
+if [ "$NETWORK_READY" -eq 0 ]; then
+    echo "⚠️  Réseau toujours indisponible après 60s — on continue quand même (best-effort)." >> "$LOG_FILE"
+fi
+
 ./generate_debrief.sh "$TODAY" >> "$LOG_FILE" 2>&1
 
 VIDEO_SRC="video_output/$TODAY/debrief.mp4"
