@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-08-28T09:29:21.951823+00:00",
+  "fetched_at": "2026-08-28T09:30:49.012317+00:00",
   "articles": [
+    {
+      "title": "British Pound: Energy-driven inflation risks support GBP against US Dollar – MUFG",
+      "url": "https://www.fxstreet.com/news/british-pound-energy-driven-inflation-risks-support-gbp-against-us-dollar-mufg-202608280929",
+      "source": "FXStreet",
+      "published_at": "2026-08-28T09:29:39+00:00"
+    },
     {
       "title": "Euro: Options show benefits from US policy doubts – Commerzbank",
       "url": "https://www.fxstreet.com/news/euro-options-show-benefits-from-us-policy-doubts-commerzbank-202608280920",
@@ -132,12 +138,6 @@
       "url": "https://www.fxstreet.com/news/indonesian-rupiah-strengthens-despite-market-caution-202608280642",
       "source": "FXStreet",
       "published_at": "2026-08-28T06:42:43+00:00"
-    },
-    {
-      "title": "Equities: Tech gains conceal broader market weakness - Deutsche Bank",
-      "url": "https://www.fxstreet.com/news/equities-tech-gains-conceal-broader-market-weakness-deutsche-bank-202608280629",
-      "source": "FXStreet",
-      "published_at": "2026-08-28T06:29:29+00:00"
     }
   ]
 }
