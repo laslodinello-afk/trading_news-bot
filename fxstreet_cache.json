@@ -1,4 +1,23 @@
 {
-  "fetched_at": "2026-08-30T22:25:24.620464+00:00",
-  "articles": []
+  "fetched_at": "2026-08-31T00:47:03.026570+00:00",
+  "articles": [
+    {
+      "title": "US Treasury Secretary Bessent: Japanese Yen moves 'pretty contained' and not disorderly",
+      "url": "https://www.fxstreet.com/news/us-treasury-secretary-bessent-japanese-yen-moves-pretty-contained-and-not-disorderly-202608302347",
+      "source": "FXStreet",
+      "published_at": "2026-08-30T23:47:20+00:00"
+    },
+    {
+      "title": "Australian Dollar weakens to near 0.7150 as Fed's Warsh signals rate hikes, China's PMI data loom",
+      "url": "https://www.fxstreet.com/news/australian-dollar-weakens-to-near-07150-as-feds-warsh-signals-rate-hikes-chinas-pmi-data-loom-202608302332",
+      "source": "FXStreet",
+      "published_at": "2026-08-30T23:32:48+00:00"
+    },
+    {
+      "title": "US military strikes Iranian rocket launchers in first attack in week",
+      "url": "https://www.fxstreet.com/news/us-military-strikes-iranian-rocket-launchers-in-first-attack-in-week-202608302226",
+      "source": "FXStreet",
+      "published_at": "2026-08-30T22:26:31+00:00"
+    }
+  ]
 }
