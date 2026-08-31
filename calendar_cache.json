@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-08-30T20:16:36.719036+00:00",
+  "fetched_at": "2026-08-31T02:17:40.870440+00:00",
   "events": [
     {
       "title": "G20 Meetings",
@@ -687,7 +687,7 @@
       "date": "2026-09-03T05:03:00-04:00",
       "impact": "Low",
       "forecast": "",
-      "previous": ""
+      "previous": "3.54|2.4"
     },
     {
       "title": "French 10-y Bond Auction",
@@ -695,7 +695,7 @@
       "date": "2026-09-03T05:18:00-04:00",
       "impact": "Low",
       "forecast": "",
-      "previous": ""
+      "previous": "3.86|3.7"
     },
     {
       "title": "Challenger Job Cuts y/y",
@@ -784,6 +784,22 @@
       "impact": "Low",
       "forecast": "",
       "previous": "15B"
+    },
+    {
+      "title": "FOMC Member Hammack Speaks",
+      "country": "USD",
+      "date": "2026-09-03T15:00:00-04:00",
+      "impact": "Low",
+      "forecast": "",
+      "previous": ""
+    },
+    {
+      "title": "FOMC Member Goolsbee Speaks",
+      "country": "USD",
+      "date": "2026-09-03T15:05:00-04:00",
+      "impact": "Low",
+      "forecast": "",
+      "previous": ""
     },
     {
       "title": "Household Spending y/y",
