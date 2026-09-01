@@ -1,83 +1,53 @@
 {
-  "fetched_at": "2026-09-01T17:27:51.984646+00:00",
+  "fetched_at": "2026-09-01T20:07:28.269431+00:00",
   "articles": [
     {
-      "title": "Forex Today: Enter the US labour market",
-      "url": "https://www.fxstreet.com/news/forex-today-enter-the-us-labour-market-202609011705",
+      "title": "India: Growth outlook revised higher – Standard Chartered",
+      "url": "https://www.fxstreet.com/news/india-growth-outlook-revised-higher-standard-chartered-202609011951",
       "source": "FXStreet",
-      "published_at": "2026-09-01T17:05:33+00:00"
+      "published_at": "2026-09-01T19:51:00+00:00"
     },
     {
-      "title": "Dow Jones Industrial Average finds no bid under confirmed strikes",
-      "url": "https://www.fxstreet.com/news/dow-jones-industrial-average-finds-no-bid-under-confirmed-strikes-202609011704",
+      "title": "Gold collapses as US-Iran strikes send Oil, US yields higher",
+      "url": "https://www.fxstreet.com/news/gold-collapses-as-us-iran-strikes-send-oil-us-yields-higher-202609011930",
       "source": "FXStreet",
-      "published_at": "2026-09-01T17:04:53+00:00"
+      "published_at": "2026-09-01T19:30:49+00:00"
     },
     {
-      "title": "Crude Oil goes vertical on fresh explosions in southern Iran",
-      "url": "https://www.fxstreet.com/news/crude-oil-goes-vertical-on-fresh-explosions-in-southern-iran-202609011642",
+      "title": "China: Trade imbalances and weak demand – Rabobank",
+      "url": "https://www.fxstreet.com/news/china-trade-imbalances-and-weak-demand-rabobank-202609011923",
       "source": "FXStreet",
-      "published_at": "2026-09-01T16:42:20+00:00"
+      "published_at": "2026-09-01T19:23:00+00:00"
     },
     {
-      "title": "Explosions in Iran renew Hormuz war fears – Iran International",
-      "url": "https://www.fxstreet.com/news/explosions-in-iran-renew-hormuz-war-fears-iran-international-202609011635",
+      "title": "Equities: Fragile advance under energy and yield risks – NBC",
+      "url": "https://www.fxstreet.com/news/equities-fragile-advance-under-energy-and-yield-risks-nbc-202609011843",
       "source": "FXStreet",
-      "published_at": "2026-09-01T16:35:48+00:00"
+      "published_at": "2026-09-01T18:43:00+00:00"
     },
     {
-      "title": "US Treasury Secretary Bessent backs Yen support, urges BoJ clarity",
-      "url": "https://www.fxstreet.com/news/us-treasury-secretary-bessent-backs-yen-support-urges-boj-clarity-202609011621",
+      "title": "United States Treasury yields read Iran strikes as inflation",
+      "url": "https://www.fxstreet.com/news/united-states-treasury-yields-read-iran-strikes-as-inflation-202609011824",
       "source": "FXStreet",
-      "published_at": "2026-09-01T16:21:02+00:00"
+      "published_at": "2026-09-01T18:24:15+00:00"
     },
     {
-      "title": "New Zealand Dollar struggles to rebound despite softer US data",
-      "url": "https://www.fxstreet.com/news/new-zealand-dollar-struggles-to-rebound-despite-softer-us-data-202609011602",
+      "title": "US Dollar Index gains as US-Iran tensions escalate, Treasury yields rise",
+      "url": "https://www.fxstreet.com/news/us-dollar-index-gains-as-us-iran-tensions-escalate-treasury-yields-rise-202609011821",
       "source": "FXStreet",
-      "published_at": "2026-09-01T16:02:58+00:00"
+      "published_at": "2026-09-01T18:21:21+00:00"
     },
     {
-      "title": "US Treasury Secretary Bessent backs Japan's steps, presses G20 on Iran",
-      "url": "https://www.fxstreet.com/news/us-treasury-secretary-bessent-backs-japans-steps-presses-g20-on-iran-202609011545",
+      "title": "Hungary: Growth strengthens but structural limits remain - ING",
+      "url": "https://www.fxstreet.com/news/hungary-growth-strengthens-but-structural-limits-remain-ing-202609011806",
       "source": "FXStreet",
-      "published_at": "2026-09-01T15:45:33+00:00"
+      "published_at": "2026-09-01T18:06:27+00:00"
     },
     {
-      "title": "Australian Dollar trades cautiously as Fed and RBA rate hike bets clash",
-      "url": "https://www.fxstreet.com/news/australian-dollar-trades-cautiously-as-fed-and-rba-rate-hike-bets-clash-202609011544",
+      "title": "US President Trump says US striking Iranian targets near Hormuz",
+      "url": "https://www.fxstreet.com/news/us-president-trump-says-us-striking-iranian-targets-near-hormuz-202609011734",
       "source": "FXStreet",
-      "published_at": "2026-09-01T15:44:23+00:00"
-    },
-    {
-      "title": "Germany: Coalition risks and reform hurdles – Commerzbank",
-      "url": "https://www.fxstreet.com/news/germany-coalition-risks-and-reform-hurdles-commerzbank-202609011538",
-      "source": "FXStreet",
-      "published_at": "2026-09-01T15:38:00+00:00"
-    },
-    {
-      "title": "British Pound stalls as mixed US data keeps Fed hawkish bets alive",
-      "url": "https://www.fxstreet.com/news/british-pound-stalls-as-mixed-us-data-keeps-fed-hawkish-bets-alive-202609011533",
-      "source": "FXStreet",
-      "published_at": "2026-09-01T15:33:09+00:00"
-    },
-    {
-      "title": "United Kingdom: Growth cools as inflation risks build – Deutsche Bank",
-      "url": "https://www.fxstreet.com/news/united-kingdom-growth-cools-as-inflation-risks-build-deutsche-bank-202609011504",
-      "source": "FXStreet",
-      "published_at": "2026-09-01T15:04:23+00:00"
-    },
-    {
-      "title": "Euro struggles as softer-than-expected US econoomic data offer little relief",
-      "url": "https://www.fxstreet.com/news/euro-struggles-as-softer-than-expected-us-econoomic-data-offer-little-relief-202609011445",
-      "source": "FXStreet",
-      "published_at": "2026-09-01T14:45:57+00:00"
-    },
-    {
-      "title": "US Dollar: Fed risks and election scenarios – TD Securities",
-      "url": "https://www.fxstreet.com/news/us-dollar-fed-risks-and-election-scenarios-td-securities-202609011441",
-      "source": "FXStreet",
-      "published_at": "2026-09-01T14:41:15+00:00"
+      "published_at": "2026-09-01T17:34:32+00:00"
     }
   ]
 }
