@@ -1,137 +1,71 @@
 {
-  "fetched_at": "2026-09-02T13:50:46.154423+00:00",
+  "fetched_at": "2026-09-02T17:33:28.325325+00:00",
   "articles": [
     {
-      "title": "Japanese Yen: BoJ hawks raise hike risk – BBH",
-      "url": "https://www.fxstreet.com/news/japanese-yen-boj-hawks-raise-hike-risk-bbh-202609021345",
+      "title": "British Pound: Break below 1.35 shifts focus lower against US Dollar – Scotiabank",
+      "url": "https://www.fxstreet.com/news/british-pound-break-below-135-shifts-focus-lower-against-us-dollar-scotiabank-202609021724",
       "source": "FXStreet",
-      "published_at": "2026-09-02T13:45:46+00:00"
+      "published_at": "2026-09-02T17:24:00+00:00"
     },
     {
-      "title": "US Dollar: Fed hike risk and yields back in focus – MUFG",
-      "url": "https://www.fxstreet.com/news/us-dollar-fed-hike-risk-and-yields-back-in-focus-mufg-202609021322",
+      "title": "British Pound hits three-week low as US yields, Iran risks weigh",
+      "url": "https://www.fxstreet.com/news/british-pound-hits-three-week-low-as-us-yields-iran-risks-weigh-202609021707",
       "source": "FXStreet",
-      "published_at": "2026-09-02T13:22:13+00:00"
+      "published_at": "2026-09-02T17:07:07+00:00"
     },
     {
-      "title": "Silver rebounds above $64 as weak US jobs data challenges hawkish Fed bets",
-      "url": "https://www.fxstreet.com/news/silver-rebounds-above-64-as-weak-us-jobs-data-challenges-hawkish-fed-bets-202609021313",
+      "title": "BoC recap: Risks are shifting as oil prices and US trade actions complicate outlook",
+      "url": "https://www.fxstreet.com/news/boc-recap-risks-are-shifting-as-oil-prices-and-us-trade-actions-complicate-outlook-202609021702",
       "source": "FXStreet",
-      "published_at": "2026-09-02T13:13:45+00:00"
+      "published_at": "2026-09-02T17:02:00+00:00"
     },
     {
-      "title": "Euro stays under pressure against US Dollar despite softer ADP data",
-      "url": "https://www.fxstreet.com/news/euro-stays-under-pressure-against-us-dollar-despite-softer-adp-data-202609021313",
+      "title": "Dow Jones Industrial Average borrows its rebound from the bond market",
+      "url": "https://www.fxstreet.com/news/dow-jones-industrial-average-borrows-its-rebound-from-the-bond-market-202609021613",
       "source": "FXStreet",
-      "published_at": "2026-09-02T13:13:22+00:00"
+      "published_at": "2026-09-02T16:13:52+00:00"
     },
     {
-      "title": "European Central Bank: Dovish hike path as energy drives inflation – ING",
-      "url": "https://www.fxstreet.com/news/european-central-bank-dovish-hike-path-as-energy-drives-inflation-ing-202609021310",
+      "title": "Indian Rupee: September gains face structural tests – Societe Generale",
+      "url": "https://www.fxstreet.com/news/indian-rupee-september-gains-face-structural-tests-societe-generale-202609021608",
       "source": "FXStreet",
-      "published_at": "2026-09-02T13:10:50+00:00"
+      "published_at": "2026-09-02T16:08:00+00:00"
     },
     {
-      "title": "Reserve Bank of Australia: September hike expectations strengthen – TD Securities",
-      "url": "https://www.fxstreet.com/news/reserve-bank-of-australia-september-hike-expectations-strengthen-td-securities-202609021302",
+      "title": "United States Dollar Index loses ground on possible Yen intervention",
+      "url": "https://www.fxstreet.com/news/united-states-dollar-index-loses-ground-on-possible-yen-intervention-202609021601",
       "source": "FXStreet",
-      "published_at": "2026-09-02T13:02:12+00:00"
+      "published_at": "2026-09-02T16:01:03+00:00"
     },
     {
-      "title": "Canadian Dollar: Weak fundamentals cap gains against US Dollar - BNY",
-      "url": "https://www.fxstreet.com/news/canadian-dollar-weak-fundamentals-cap-gains-against-us-dollar-bny-202609021253",
+      "title": "Euro: Downside risks build against US Dollar as oil rises – Scotiabank",
+      "url": "https://www.fxstreet.com/news/euro-downside-risks-build-against-us-dollar-as-oil-rises-scotiabank-202609021539",
       "source": "FXStreet",
-      "published_at": "2026-09-02T12:53:16+00:00"
+      "published_at": "2026-09-02T15:39:25+00:00"
     },
     {
-      "title": "Gold recovers modestly, but hawkish Fed bets limit upside",
-      "url": "https://www.fxstreet.com/news/gold-declines-as-us-iran-escalation-drives-oil-prices-global-bond-yields-higher-202609021114",
+      "title": "Australian Dollar: Strong GDP and carry support – BBH",
+      "url": "https://www.fxstreet.com/news/australian-dollar-strong-gdp-and-carry-support-bbh-202609021520",
       "source": "FXStreet",
-      "published_at": "2026-09-02T11:14:59+00:00"
+      "published_at": "2026-09-02T15:20:07+00:00"
     },
     {
-      "title": "New Zealand Dollar: Dovish RBNZ hike weighs – BBH",
-      "url": "https://www.fxstreet.com/news/new-zealand-dollar-dovish-rbnz-hike-weighs-bbh-202609021243",
+      "title": "Euro tumbles against the Yen as intervention fears hit crosses",
+      "url": "https://www.fxstreet.com/news/euro-tumbles-against-the-yen-as-intervention-fears-hit-crosses-202609021518",
       "source": "FXStreet",
-      "published_at": "2026-09-02T12:43:28+00:00"
+      "published_at": "2026-09-02T15:18:40+00:00"
     },
     {
-      "title": "US Dollar: Hawkish Fed expectations underpin strength – OCBC",
-      "url": "https://www.fxstreet.com/news/us-dollar-hawkish-fed-expectations-underpin-strength-ocbc-202609021233",
+      "title": "British Pound slides against Japanese Yen as suspected intervention rattles markets",
+      "url": "https://www.fxstreet.com/news/british-pound-slides-against-japanese-yen-as-suspected-intervention-rattles-markets-202609021504",
       "source": "FXStreet",
-      "published_at": "2026-09-02T12:33:59+00:00"
+      "published_at": "2026-09-02T15:04:03+00:00"
     },
     {
-      "title": "Fed's Williams: Recent data have been encouraging on inflation",
-      "url": "https://www.fxstreet.com/news/feds-williams-recent-data-have-been-encouraging-on-inflation-202609021231",
+      "title": "Euro: Headwinds from Fed and energy – ING",
+      "url": "https://www.fxstreet.com/news/euro-headwinds-from-fed-and-energy-ing-202609021454",
       "source": "FXStreet",
-      "published_at": "2026-09-02T12:31:44+00:00"
-    },
-    {
-      "title": "Japanese Yen: Fed hawkishness offsets BoJ talk – ING",
-      "url": "https://www.fxstreet.com/news/japanese-yen-fed-hawkishness-offsets-boj-talk-ing-202609021224",
-      "source": "FXStreet",
-      "published_at": "2026-09-02T12:24:21+00:00"
-    },
-    {
-      "title": "Euro outperforms Pound Sterling as ECB prepares for another rate hike",
-      "url": "https://www.fxstreet.com/news/euro-outperforms-pound-sterling-as-ecb-prepares-for-another-rate-hike-202609021215",
-      "source": "FXStreet",
-      "published_at": "2026-09-02T12:15:41+00:00"
-    },
-    {
-      "title": "Canadian Dollar: US tensions overshadow BoC stance – Commerzbank",
-      "url": "https://www.fxstreet.com/news/canadian-dollar-us-tensions-overshadow-boc-stance-commerzbank-202609021215",
-      "source": "FXStreet",
-      "published_at": "2026-09-02T12:15:03+00:00"
-    },
-    {
-      "title": "Federal Reserve: Election-year hikes and long-end rates risks – TD Securities",
-      "url": "https://www.fxstreet.com/news/federal-reserve-election-year-hikes-and-long-end-rates-risks-td-securities-202609021205",
-      "source": "FXStreet",
-      "published_at": "2026-09-02T12:05:16+00:00"
-    },
-    {
-      "title": "Euro: Nagel backs September hike path – BNY",
-      "url": "https://www.fxstreet.com/news/euro-nagel-backs-september-hike-path-bny-202609021155",
-      "source": "FXStreet",
-      "published_at": "2026-09-02T11:55:29+00:00"
-    },
-    {
-      "title": "Japanese Yen rebounds against US Dollar as intervention risks resurface",
-      "url": "https://www.fxstreet.com/news/japanese-yen-rebounds-against-us-dollar-as-intervention-risks-resurface-202609021147",
-      "source": "FXStreet",
-      "published_at": "2026-09-02T11:47:15+00:00"
-    },
-    {
-      "title": "US Dollar: Fed expectations support gains – BBH",
-      "url": "https://www.fxstreet.com/news/us-dollar-fed-expectations-support-gains-bbh-202609021142",
-      "source": "FXStreet",
-      "published_at": "2026-09-02T11:42:56+00:00"
-    },
-    {
-      "title": "US Commerce Secretary Lutnick: Canada treated US 'disrespectfully'",
-      "url": "https://www.fxstreet.com/news/us-commerce-secretary-lutnick-canada-treated-the-us-disrespectfully-202609021130",
-      "source": "FXStreet",
-      "published_at": "2026-09-02T11:30:07+00:00"
-    },
-    {
-      "title": "Gold: Oil-driven rate repricing weighs on bullion – ING",
-      "url": "https://www.fxstreet.com/news/gold-oil-driven-rate-repricing-weighs-on-bullion-ing-202609021117",
-      "source": "FXStreet",
-      "published_at": "2026-09-02T11:17:25+00:00"
-    },
-    {
-      "title": "United States Dollar Index rises to near 99.85 ahead of US ADP Employment data",
-      "url": "https://www.fxstreet.com/news/united-states-dollar-index-rises-to-near-9985-ahead-of-us-adp-employment-data-202609021116",
-      "source": "FXStreet",
-      "published_at": "2026-09-02T11:16:17+00:00"
-    },
-    {
-      "title": "1.3990: Why the Canadian Dollar is sliding toward the resistance zone that could decide the next move",
-      "url": "https://www.fxstreet.com/news/13990-why-the-canadian-dollar-is-sliding-toward-the-resistance-zone-that-could-decide-the-next-move-202609021058",
-      "source": "FXStreet",
-      "published_at": "2026-09-02T10:58:07+00:00"
+      "published_at": "2026-09-02T14:54:17+00:00"
     }
   ]
 }
