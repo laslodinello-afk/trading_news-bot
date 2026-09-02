@@ -414,13 +414,11 @@ def analyze_before(event: dict, concerned_pairs: list[str]) -> dict | None:
 - Paires concernées : {", ".join(concerned_pairs)}
 
 Réponds avec :
-- "resume" : 2-3 phrases qui expliquent l'enjeu de cette news pour un trader — pourquoi
-  elle compte, ce qui est attendu, et ce qui se jouerait en cas de surprise
+- "resume" : 2 phrases courtes et concrètes sur l'enjeu de cette news pour un trader
 - "biais" : pour CHAQUE paire concernée, un objet {{"paire": "...", "direction": "haussier" | "baissier" | "neutre"}}
-- "raisonnement" : 2-3 phrases détaillant le biais le plus probable, le mécanisme
-  économique derrière, et ce qu'il faut surveiller
+- "raisonnement" : 1 phrase concrète expliquant le biais le plus probable et pourquoi
 - "danger" : "ok" | "prudence" | "danger" """
-    result = call_gemini(prompt, _ANALYSIS_SCHEMA, max_tokens=550)
+    result = call_gemini(prompt, _ANALYSIS_SCHEMA, max_tokens=400)
     return _format_analysis(result)
 
 
@@ -437,12 +435,12 @@ def analyze_after(event: dict, concerned_pairs: list[str], actual: str | None) -
 - Paires concernées : {", ".join(concerned_pairs)}
 
 Analyse la surprise (réel vs prévision) et son effet probable. Réponds avec :
-- "resume" : 5-6 lignes détaillées en français sur la surprise (meilleur/pire que prévu,
+- "resume" : 2-3 phrases courtes et concrètes sur la surprise (meilleur/pire que prévu,
   de combien) et pourquoi elle compte pour un trader
 - "biais" : pour CHAQUE paire concernée, un objet {{"paire": "...", "direction": "haussier" | "baissier" | "neutre"}}
-- "raisonnement" : 2-3 phrases détaillant le biais, le mécanisme derrière, et ce qu'il faut surveiller
+- "raisonnement" : 1 phrase concrète expliquant le biais
 - "danger" : "ok" | "prudence" | "danger" """
-    result = call_gemini(prompt, _ANALYSIS_SCHEMA, max_tokens=550)
+    result = call_gemini(prompt, _ANALYSIS_SCHEMA, max_tokens=400)
     return _format_analysis(result)
 
 
@@ -637,12 +635,12 @@ def analyze_speech(event: dict, concerned_pairs: list[str], summary: str) -> dic
 - Paires concernées : {", ".join(concerned_pairs)}
 
 Analyse le ton (accommodant/restrictif) et le sens probable pour le marché. Réponds avec :
-- "resume" : 5-6 lignes détaillées en français sur ce qui a été dit (le ton, les points clés
-  abordés) et pourquoi ça compte pour un trader
+- "resume" : 2-3 phrases courtes et concrètes sur ce qui a été dit (le ton, le point clé)
+  et pourquoi ça compte pour un trader
 - "biais" : pour CHAQUE paire concernée, un objet {{"paire": "...", "direction": "haussier" | "baissier" | "neutre"}}
-- "raisonnement" : 2-3 phrases détaillant le biais, le mécanisme derrière, et ce qu'il faut surveiller
+- "raisonnement" : 1 phrase concrète expliquant le biais
 - "danger" : "ok" | "prudence" | "danger" """
-    result = call_gemini(prompt, _ANALYSIS_SCHEMA, max_tokens=550)
+    result = call_gemini(prompt, _ANALYSIS_SCHEMA, max_tokens=400)
     return _format_analysis(result)
 
 
@@ -715,10 +713,10 @@ Renvoie un tableau "items" (vide si rien de pertinent). Pour chaque article rete
 - "titre_fr" : le titre de l'article (souvent en anglais, ces flux sont anglophones)
   traduit en français, fidèle et naturel — pas une paraphrase ni un résumé,
   une vraie traduction du titre
-- "resume" : 2-3 phrases en français qui résument la news et son contexte (pas juste
-  le fait brut : pourquoi ça se produit, ce que ça change)
+- "resume" : 1-2 phrases courtes en français qui résument la news et son contexte (pas juste
+  le fait brut : pourquoi ça se produit)
 - "biais" : un objet {{"paire": "...", "direction": "haussier"|"baissier"|"neutre"}} par paire concernée
-- "raisonnement" : 2-3 phrases CONCRÈTES sur ce qui va probablement se passer sur les marchés
+- "raisonnement" : 1 phrase CONCRÈTE sur ce qui va probablement se passer sur les marchés
   dans les prochaines heures à cause de cette news (pas juste "pourquoi", mais "et donc quoi
   ensuite" — ex : "Le dollar devrait s'affaiblir à court terme, les indices US pourraient
   monter sur fond d'anticipation de baisse des taux.")

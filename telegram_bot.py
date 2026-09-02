@@ -133,11 +133,15 @@ def _ai_block(ai: dict | None) -> str:
         return "💡 _Analyse IA indisponible pour cette news._"
     lines = [f"💡 {ai['resume']}"]
     if ai.get("biais"):
-        # Une paire par ligne plutôt qu'une liste séparée par virgules : reste
-        # lisible sur mobile même quand une news USD concerne 8-9 paires
-        # (XAUUSD, indices, BTC/ETH...) d'un coup.
-        lines.append("📐 Biais :")
-        lines.extend(f"   {pair} {label}" for pair, label in ai["biais"].items())
+        # Regroupées par direction (une ligne par direction, pas par paire) :
+        # même info complète (chaque paire reste nommée), mais une news USD
+        # qui concerne 8-9 paires ne prend plus 8-9 lignes verticales — juste
+        # 1 à 3 selon le nombre de directions différentes réellement présentes.
+        groups: dict[str, list[str]] = {}
+        for pair, label in ai["biais"].items():
+            groups.setdefault(label, []).append(pair)
+        for label, pairs in groups.items():
+            lines.append(f"📐 {label} : {', '.join(pairs)}")
     if ai.get("raisonnement"):
         lines.append(f"🧠 {ai['raisonnement']}")
     if ai.get("danger"):
@@ -215,11 +219,11 @@ def format_before_alert(event: dict, concerned_pairs: list[str], ai: dict | None
     # Courte à dessein (retour utilisateur : messages trop denses) — l'IA
     # (_ai_block) porte le vrai contenu, cette ligne n'est qu'un repère visuel.
     risk_line = "⚠️ Attention à la volatilité"
-    pairs_line = f"📌 Paires concernées : {', '.join(concerned_pairs)}" if concerned_pairs else ""
 
+    # Pas de ligne "Paires concernées" séparée : chaque paire est de toute
+    # façon nommée dans le bloc biais juste en dessous (retour utilisateur :
+    # ne pas répéter deux fois la même info).
     parts = [header, meta, data_line, risk_line]
-    if pairs_line:
-        parts.append(pairs_line)
     parts.append(_ai_block(ai))
     return "\n".join(p for p in parts if p)
 
