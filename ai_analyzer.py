@@ -493,6 +493,47 @@ un autre indicateur, même du même pays."""
     return actual
 
 
+def extract_speech_summary_from_headlines(event: dict, headlines: list[dict]) -> str | None:
+    """
+    Source privilégiée pour le résumé d'une intervention/discours (voir
+    calendar_fetcher.fetch_speech_summary_from_news) : ForexLive/FXStreet
+    publient souvent des titres-citations peu après une intervention (ex:
+    "Fed's Daly: Further rate cuts appropriate if inflation keeps cooling").
+    Ne fait AUCUNE recherche web (pas de use_search_grounding) — fonctionne
+    sur le palier gratuit Gemini sans facturation, contrairement à
+    search_speech_summary ci-dessous (grounding, toujours en échec 429 sur ce
+    compte, voir sa docstring). Même sentinel _ACTUAL_NOT_FOUND que
+    extract_actual_from_headlines : force l'IA à expliciter l'absence de
+    correspondance plutôt que de deviner.
+    """
+    if not headlines:
+        return None
+    titles_block = "\n".join(f"- {h['title']}" for h in headlines)
+    prompt = f"""Intervention/discours qui vient d'avoir lieu :
+- Titre : {event['title']}
+- Devise/banque centrale concernée : {event['currency']}
+
+Titres d'articles récents (flux RSS forex) :
+{titles_block}
+
+Un ou plusieurs de ces titres rapportent-ils des propos tenus lors de CETTE
+intervention précise (même intervenant, même occasion) ? Si oui, renvoie
+"actual" = un résumé factuel en français (maximum 4 lignes courtes) de ce qui
+a été dit, basé UNIQUEMENT sur le contenu de ces titres — n'invente aucun
+détail qui n'y figure pas. Si aucun titre ne correspond avec certitude à
+cette intervention précise, renvoie "actual" = "{_ACTUAL_NOT_FOUND}" — ne
+devine jamais et ne confonds pas avec une autre intervention du même
+intervenant à une autre date."""
+
+    result = call_gemini(prompt, _ACTUAL_FROM_NEWS_SCHEMA, max_tokens=400)
+    if not result:
+        return None
+    summary = (result.get("actual") or "").strip()
+    if not summary or summary.upper() == _ACTUAL_NOT_FOUND:
+        return None
+    return summary
+
+
 def search_actual_result(currency: str, title: str, event_dt_utc, forecast: str | None = None, previous: str | None = None) -> str | None:
     """
     TOUT dernier recours pour le "résultat réel" (voir calendar_fetcher.
@@ -534,12 +575,21 @@ confonds pas avec un autre indicateur ou une autre date."""
 
 def search_speech_summary(title: str, currency: str, event_dt_utc) -> str | None:
     """
-    Résumé factuel (recherche web réelle via Gemini, use_search_grounding) de ce
-    qui a été dit lors d'une intervention/discours (event calendrier détecté par
-    config.is_speech_event) — ces events n'ont ni prévision ni résultat chiffré
-    à comparer, le signal vient du contenu. Même discipline que
-    search_actual_result : jamais une réponse tirée de la seule mémoire du
-    modèle, renvoie None si aucune source fiable et datée n'est trouvée.
+    TOUT dernier recours (voir calendar_fetcher.fetch_speech_summary_from_news,
+    source privilégiée) : résumé via une vraie recherche web Gemini
+    (use_search_grounding), pas une réponse tirée de sa mémoire. Même
+    discipline que search_actual_result : jamais une réponse tirée de la seule
+    mémoire du modèle, renvoie None si aucune source fiable et datée n'est trouvée.
+
+    Constaté en conditions réelles (main.py job_check_after_alerts, 15/15
+    discours envoyés avec speech_summary NULL depuis le lancement) : le
+    grounding Gemini échoue systématiquement en 429 RESOURCE_EXHAUSTED sur un
+    projet Google Cloud sans facturation activée, même très en dessous du
+    quota gratuit nominal de 5000 recherches/mois — Google exige un compte de
+    facturation lié pour débloquer ce quota, même s'il reste à 0€ tant qu'on
+    ne le dépasse pas. Gardée en dernier recours au cas où la facturation
+    serait activée un jour (voir README) ; en attendant, échoue vite et
+    n'empêche jamais fetch_speech_summary_from_news de faire le travail.
     """
     date_str = event_dt_utc.strftime("%d/%m/%Y à %Hh%M UTC")
     prompt = f"""Recherche sur le web ce qui a été dit lors de cette intervention :

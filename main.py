@@ -255,11 +255,20 @@ def job_check_after_alerts() -> None:
 
             if config.is_speech_event(event["title"]):
                 # Pas de prévision/résultat chiffré pour une intervention : on
-                # cherche à la place un résumé IA (recherche web) de ce qui a
-                # été dit, voir ai_analyzer.search_speech_summary/analyze_speech.
+                # cherche à la place un résumé IA de ce qui a été dit. Titres
+                # RSS ForexLive/FXStreet d'abord (fonctionne sans facturation
+                # Gemini, voir calendar_fetcher.fetch_speech_summary_from_news) ;
+                # recherche web groundée en tout dernier recours (voir
+                # ai_analyzer.search_speech_summary — actuellement toujours en
+                # échec 429 sans facturation activée sur ce compte, gardée au
+                # cas où ça change).
                 summary = event["speech_summary"]
                 if not summary:
-                    summary = ai_analyzer.search_speech_summary(event["title"], event["currency"], event_dt)
+                    summary = calendar_fetcher.fetch_speech_summary_from_news(
+                        event["title"], event["currency"], event_dt
+                    )
+                    if not summary:
+                        summary = ai_analyzer.search_speech_summary(event["title"], event["currency"], event_dt)
                     if summary:
                         db.set_event_speech_summary(event["event_key"], summary)
 

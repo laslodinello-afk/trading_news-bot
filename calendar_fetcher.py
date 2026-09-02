@@ -595,6 +595,36 @@ def fetch_actual_from_news(
     return ai_analyzer.extract_actual_from_headlines(event, published_after)
 
 
+def fetch_speech_summary_from_news(title: str, currency: str, event_dt_utc: datetime) -> str | None:
+    """
+    Résumé d'une intervention/discours via les titres RSS ForexLive/FXStreet
+    (voir ai_analyzer.extract_speech_summary_from_headlines) — même principe
+    que fetch_actual_from_news ci-dessus, mais pour le contenu d'un discours
+    plutôt qu'un chiffre. Source privilégiée pour ai_analyzer.search_speech_
+    summary (recherche web groundée) : constaté en conditions réelles que le
+    grounding Gemini renvoie systématiquement 429 RESOURCE_EXHAUSTED sur un
+    projet Google Cloud sans facturation activée, même très en dessous du
+    quota gratuit nominal de 5000 recherches/mois — donc jamais un seul
+    résultat obtenu par grounding depuis le lancement de la fonctionnalité
+    (15/15 discours envoyés avec speech_summary NULL, vérifié en base).
+    """
+    try:
+        headlines = news_watcher.fetch_rss_headlines(NEWS_ACTUAL_LOOKBACK_MINUTES)
+    except Exception as exc:
+        logger.warning("Impossible de récupérer les titres RSS pour le résumé de discours: %s", exc)
+        return None
+
+    published_after = [
+        h for h in headlines
+        if h.get("published_at") and datetime.fromisoformat(h["published_at"]) >= event_dt_utc
+    ]
+    if not published_after:
+        return None
+
+    event = {"title": title, "currency": currency}
+    return ai_analyzer.extract_speech_summary_from_headlines(event, published_after)
+
+
 def fetch_actual_result(
     currency: str,
     title: str,
