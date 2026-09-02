@@ -212,7 +212,9 @@ def format_before_alert(event: dict, concerned_pairs: list[str], ai: dict | None
     # positions") : le canal touche aussi bien des intraday que des swing
     # traders, et "ferme les positions en cours" n'a pas de sens pour ces
     # derniers — on signale le risque, chacun adapte selon son propre style.
-    risk_line = "⚠️ Publication à risque imminente — vigilance sur tes positions ouvertes et le spread"
+    # Courte à dessein (retour utilisateur : messages trop denses) — l'IA
+    # (_ai_block) porte le vrai contenu, cette ligne n'est qu'un repère visuel.
+    risk_line = "⚠️ Attention à la volatilité"
     pairs_line = f"📌 Paires concernées : {', '.join(concerned_pairs)}" if concerned_pairs else ""
 
     parts = [header, meta, data_line, risk_line]
@@ -233,7 +235,7 @@ def format_after_alert(event: dict, actual: str | None, concerned_pairs: list[st
     # Même logique que format_before_alert : on décrit le risque (volatilité,
     # spread élargi) sans dicter une action ("attends X min avant de retrader"
     # ne concerne que l'intraday) — utile aussi bien en intraday qu'en swing.
-    risk_line = f"⚠️ Volatilité et spread élargi possibles dans les {config.NO_TRADE_WINDOW_MINUTES} min qui suivent"
+    risk_line = f"⚠️ Attention volatilité {config.NO_TRADE_WINDOW_MINUTES} min"
 
     if not actual and ai:
         # Sans résultat réel, un biais "➖ Neutre" ressemblerait à un vrai jugement
@@ -257,7 +259,7 @@ def format_speech_after_alert(event: dict, concerned_pairs: list[str], ai: dict 
     emoji = IMPACT_EMOJI.get(event["impact"], "🔴")
     header = f"{emoji} *{escape_md(_display_title(event))} — {event['currency']}*{_reclassified_marker(event)} (résumé)"
     meta = f"🕒 {_time_local(event['event_dt_utc'])} (Bruxelles)"
-    risk_line = f"⚠️ Volatilité et spread élargi possibles dans les {config.NO_TRADE_WINDOW_MINUTES} min qui suivent"
+    risk_line = f"⚠️ Attention volatilité {config.NO_TRADE_WINDOW_MINUTES} min"
     parts = [header, meta, risk_line, _ai_block(ai)]
     return "\n".join(p for p in parts if p)
 

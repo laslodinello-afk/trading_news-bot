@@ -409,11 +409,13 @@ def analyze_before(event: dict, concerned_pairs: list[str]) -> dict | None:
 - Paires concernées : {", ".join(concerned_pairs)}
 
 Réponds avec :
-- "resume" : 1 phrase courte expliquant l'enjeu de cette news pour un trader
+- "resume" : 2-3 phrases qui expliquent l'enjeu de cette news pour un trader — pourquoi
+  elle compte, ce qui est attendu, et ce qui se jouerait en cas de surprise
 - "biais" : pour CHAQUE paire concernée, un objet {{"paire": "...", "direction": "haussier" | "baissier" | "neutre"}}
-- "raisonnement" : 1 phrase expliquant le biais le plus probable et pourquoi
+- "raisonnement" : 2-3 phrases détaillant le biais le plus probable, le mécanisme
+  économique derrière, et ce qu'il faut surveiller
 - "danger" : "ok" | "prudence" | "danger" """
-    result = call_gemini(prompt, _ANALYSIS_SCHEMA, max_tokens=400)
+    result = call_gemini(prompt, _ANALYSIS_SCHEMA, max_tokens=550)
     return _format_analysis(result)
 
 
@@ -430,11 +432,12 @@ def analyze_after(event: dict, concerned_pairs: list[str], actual: str | None) -
 - Paires concernées : {", ".join(concerned_pairs)}
 
 Analyse la surprise (réel vs prévision) et son effet probable. Réponds avec :
-- "resume" : résumé de la surprise et de son sens (meilleur/pire que prévu, etc.), maximum 4 lignes courtes en français
+- "resume" : 5-6 lignes détaillées en français sur la surprise (meilleur/pire que prévu,
+  de combien) et pourquoi elle compte pour un trader
 - "biais" : pour CHAQUE paire concernée, un objet {{"paire": "...", "direction": "haussier" | "baissier" | "neutre"}}
-- "raisonnement" : 1 phrase expliquant le biais
+- "raisonnement" : 2-3 phrases détaillant le biais, le mécanisme derrière, et ce qu'il faut surveiller
 - "danger" : "ok" | "prudence" | "danger" """
-    result = call_gemini(prompt, _ANALYSIS_SCHEMA, max_tokens=400)
+    result = call_gemini(prompt, _ANALYSIS_SCHEMA, max_tokens=550)
     return _format_analysis(result)
 
 
@@ -629,11 +632,12 @@ def analyze_speech(event: dict, concerned_pairs: list[str], summary: str) -> dic
 - Paires concernées : {", ".join(concerned_pairs)}
 
 Analyse le ton (accommodant/restrictif) et le sens probable pour le marché. Réponds avec :
-- "resume" : reformulation courte (maximum 4 lignes) de ce qui a été dit et de son sens pour le marché
+- "resume" : 5-6 lignes détaillées en français sur ce qui a été dit (le ton, les points clés
+  abordés) et pourquoi ça compte pour un trader
 - "biais" : pour CHAQUE paire concernée, un objet {{"paire": "...", "direction": "haussier" | "baissier" | "neutre"}}
-- "raisonnement" : 1 phrase expliquant le biais
+- "raisonnement" : 2-3 phrases détaillant le biais, le mécanisme derrière, et ce qu'il faut surveiller
 - "danger" : "ok" | "prudence" | "danger" """
-    result = call_gemini(prompt, _ANALYSIS_SCHEMA, max_tokens=400)
+    result = call_gemini(prompt, _ANALYSIS_SCHEMA, max_tokens=550)
     return _format_analysis(result)
 
 
@@ -706,16 +710,17 @@ Renvoie un tableau "items" (vide si rien de pertinent). Pour chaque article rete
 - "titre_fr" : le titre de l'article (souvent en anglais, ces flux sont anglophones)
   traduit en français, fidèle et naturel — pas une paraphrase ni un résumé,
   une vraie traduction du titre
-- "resume" : 1 phrase en français qui résume la news elle-même
+- "resume" : 2-3 phrases en français qui résument la news et son contexte (pas juste
+  le fait brut : pourquoi ça se produit, ce que ça change)
 - "biais" : un objet {{"paire": "...", "direction": "haussier"|"baissier"|"neutre"}} par paire concernée
-- "raisonnement" : 1 phrase CONCRÈTE sur ce qui va probablement se passer sur les marchés
+- "raisonnement" : 2-3 phrases CONCRÈTES sur ce qui va probablement se passer sur les marchés
   dans les prochaines heures à cause de cette news (pas juste "pourquoi", mais "et donc quoi
   ensuite" — ex : "Le dollar devrait s'affaiblir à court terme, les indices US pourraient
   monter sur fond d'anticipation de baisse des taux.")
 - "danger" : "ok"|"prudence"|"danger" — "ok" si le choc est confirmé mais sans urgence de trading
   immédiate, ne force pas "prudence" par défaut."""
 
-    result = call_gemini(prompt, _BREAKING_NEWS_SCHEMA, max_tokens=1500)
+    result = call_gemini(prompt, _BREAKING_NEWS_SCHEMA, max_tokens=3000)
     items = (result or {}).get("items", [])
 
     enriched = []
