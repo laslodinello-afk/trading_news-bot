@@ -36,7 +36,32 @@ if [ "$NETWORK_READY" -eq 0 ]; then
     echo "⚠️  Réseau toujours indisponible après 60s — on continue quand même (best-effort)." >> "$LOG_FILE"
 fi
 
-./generate_debrief.sh "$TODAY" >> "$LOG_FILE" 2>&1
+# Plafond dur de 10 minutes (une génération normale prend 1-3 min) : un vrai
+# blocage a été constaté en conditions réelles (02/09 — le processus de
+# synchro Render est resté bloqué 16h+ sans avancer, probablement un souci
+# Turso qui bloque au lieu d'échouer proprement — voir db.py). macOS n'a pas
+# la commande `timeout` par défaut, donc ce garde-fou est fait à la main :
+# lance generate_debrief.sh dans son propre groupe de processus (set -m),
+# un "chien de garde" en parallèle tue tout le groupe (pas juste le process
+# principal, sinon un sous-processus python bloqué survivrait) s'il dépasse
+# le délai. Sans ça, un futur blocage similaire paralyserait l'automatisation
+# indéfiniment, nuit après nuit, jusqu'à intervention manuelle.
+GENERATE_TIMEOUT_SECONDS=600
+set -m
+./generate_debrief.sh "$TODAY" >> "$LOG_FILE" 2>&1 &
+GENERATE_PID=$!
+(
+    sleep "$GENERATE_TIMEOUT_SECONDS"
+    if kill -0 "$GENERATE_PID" 2>/dev/null; then
+        echo "⚠️  Génération bloquée depuis plus de ${GENERATE_TIMEOUT_SECONDS}s — arrêt forcé du groupe de processus." >> "$LOG_FILE"
+        kill -9 -- -"$GENERATE_PID" 2>/dev/null
+    fi
+) &
+WATCHDOG_PID=$!
+wait "$GENERATE_PID" 2>/dev/null
+kill "$WATCHDOG_PID" 2>/dev/null
+wait "$WATCHDOG_PID" 2>/dev/null
+set +m
 
 VIDEO_SRC="video_output/$TODAY/debrief.mp4"
 JSON_SRC="video_output/$TODAY/debrief.json"
