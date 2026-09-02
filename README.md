@@ -501,7 +501,7 @@ launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.laslodinello.debrief
 
 **Rattrapage automatique si la tâche du soir échoue :** un second LaunchAgent
 (`com.laslodinello.debrief-catchup.plist`, `StartInterval` — se relance
-environ toutes les heures tant que le Mac est éveillé, y compris s'il était
+environ toutes les 5 min tant que le Mac est éveillé, y compris s'il était
 éteint/endormi à 23h59) exécute `catchup_missed_debrief.sh` : s'il manque une
 vidéo pour la veille dans iCloud Drive ET qu'une vraie connexion réseau est
 disponible à ce moment-là, il retente la génération pour cette date-là.

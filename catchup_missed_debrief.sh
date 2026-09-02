@@ -1,6 +1,6 @@
 #!/bin/bash
 # Rattrapage automatique (voir com.laslodinello.debrief-catchup.plist,
-# StartInterval — se relance environ toutes les heures tant que le Mac est
+# StartInterval — se relance environ toutes les 5 min tant que le Mac est
 # éveillé) : si la tâche du soir (daily_debrief_to_icloud.sh) a échoué la
 # veille (pas de wifi au réveil, blocage réseau...), retente dès qu'une vraie
 # connexion est là. Best-effort et silencieux : ne fait rien de visible si la
