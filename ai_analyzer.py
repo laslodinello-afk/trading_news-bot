@@ -36,8 +36,13 @@ BIAS_EMOJI = {
 
 _SYSTEM_PROMPT = (
     "Tu es un analyste marché spécialisé forex, indices, matières premières et crypto "
-    f"({', '.join(config.TRADING_PAIRS)}) pour un daytrader qui utilise les Smart Money "
-    "Concepts (SMC). Réponds en français, sois concis, concret, et évite le jargon inutile."
+    f"({', '.join(config.TRADING_PAIRS)}). Les destinataires sont des traders de tous "
+    "styles et de toutes méthodes (day trading, swing, scalping, technique, "
+    "fondamental...) — n'utilise JAMAIS de jargon propre à une méthode d'analyse "
+    "particulière (ex: Smart Money Concepts/ICT — Order Block, Fair Value Gap, "
+    "liquidity sweep... —, Elliott, Wyckoff, ou autre) : explique l'impact économique "
+    "et directionnel en langage clair, compréhensible par n'importe quel trader. "
+    "Réponds en français, sois concis et concret."
 )
 
 # Schéma générique "biais par paire" : un tableau plutôt qu'un objet à clés
@@ -197,8 +202,8 @@ def daily_overview(events: list[dict]) -> str | None:
     lines = "\n".join(
         f"- {e['time_local']} | {e['currency']} | {e['impact']} | {e['title']}" for e in events
     )
-    prompt = f"""Voici les news économiques du jour (heure Bruxelles) pour un daytrader SMC
-qui suit ces paires : {", ".join(config.TRADING_PAIRS)}.
+    prompt = f"""Voici les news économiques du jour (heure Bruxelles) pour un trader qui suit
+ces paires : {", ".join(config.TRADING_PAIRS)}.
 
 {lines}
 
@@ -384,7 +389,7 @@ def evening_debrief(events: list[dict], news_items: list[dict]) -> str | None:
         sections.append(f"Breaking news du jour :\n{lines}")
 
     prompt = f"""Voici le récapitulatif brut de la journée de trading qui se termine (clôture de la
-session de New York) pour un daytrader SMC qui suit : {", ".join(config.TRADING_PAIRS)}.
+session de New York) pour un trader qui suit : {", ".join(config.TRADING_PAIRS)}.
 
 {chr(10).join(sections)}
 
