@@ -1,65 +1,77 @@
 {
-  "fetched_at": "2026-09-03T20:36:41.189855+00:00",
+  "fetched_at": "2026-09-03T22:48:48.895441+00:00",
   "articles": [
+    {
+      "title": "The Australian Dollar thanks Waller's comments, which sink the USD",
+      "url": "https://www.fxstreet.com/news/the-australian-dollar-thanks-wallers-comments-which-sink-the-usd-202609032243",
+      "source": "FXStreet",
+      "published_at": "2026-09-03T22:43:32+00:00"
+    },
+    {
+      "title": "New Zealand's Kiwi gets most of Wednesday back without earning it",
+      "url": "https://www.fxstreet.com/news/new-zealands-kiwi-gets-most-of-wednesday-back-without-earning-it-202609032223",
+      "source": "FXStreet",
+      "published_at": "2026-09-03T22:23:48+00:00"
+    },
+    {
+      "title": "Chinese Yuan: Underheld positions unwind with reflation risks – BNY",
+      "url": "https://www.fxstreet.com/news/chinese-yuan-underheld-positions-unwind-with-reflation-risks-bny-202609032222",
+      "source": "FXStreet",
+      "published_at": "2026-09-03T22:22:00+00:00"
+    },
+    {
+      "title": "The Japanese Yen finally rallies on something Tokyo did not pay for",
+      "url": "https://www.fxstreet.com/news/the-japanese-yen-finally-rallies-on-something-tokyo-did-not-pay-for-202609032155",
+      "source": "FXStreet",
+      "published_at": "2026-09-03T21:55:53+00:00"
+    },
+    {
+      "title": "Banxico’s Heath says rate cuts can wait as core inflation persists",
+      "url": "https://www.fxstreet.com/news/banxicos-heath-says-rate-cuts-can-wait-as-core-inflation-persists-202609032153",
+      "source": "FXStreet",
+      "published_at": "2026-09-03T21:53:27+00:00"
+    },
+    {
+      "title": "Mexican Peso rescued by Waller’s dovish tilt, appreciates ahead of NFP",
+      "url": "https://www.fxstreet.com/news/mexican-peso-rescued-by-wallers-dovish-tilt-appreciates-ahead-of-nfp-202609032142",
+      "source": "FXStreet",
+      "published_at": "2026-09-03T21:42:47+00:00"
+    },
+    {
+      "title": "Singapore: PMI points to transitory weakness – UOB",
+      "url": "https://www.fxstreet.com/news/singapore-pmi-points-to-transitory-weakness-uob-202609032141",
+      "source": "FXStreet",
+      "published_at": "2026-09-03T21:41:00+00:00"
+    },
+    {
+      "title": "The British Pound bounces on a hike argument that lost 6-3 in July",
+      "url": "https://www.fxstreet.com/news/the-british-pound-bounces-on-a-hike-argument-that-lost-6-3-in-july-202609032140",
+      "source": "FXStreet",
+      "published_at": "2026-09-03T21:40:25+00:00"
+    },
+    {
+      "title": "Dow Jones Industrial Average rallies into a payrolls print it cannot win",
+      "url": "https://www.fxstreet.com/news/dow-jones-industrial-average-rallies-into-a-payrolls-print-it-cannot-win-202609032139",
+      "source": "FXStreet",
+      "published_at": "2026-09-03T21:39:07+00:00"
+    },
+    {
+      "title": "Indonesian Rupiah: Depreciation trend persists as oil shock weighs – MUFG",
+      "url": "https://www.fxstreet.com/news/indonesian-rupiah-depreciation-trend-persists-as-oil-shock-weighs-mufg-202609032113",
+      "source": "FXStreet",
+      "published_at": "2026-09-03T21:13:49+00:00"
+    },
+    {
+      "title": "Malaysian Ringgit: Stable policy underpins growth narrative – BNY",
+      "url": "https://www.fxstreet.com/news/malaysian-ringgit-stable-policy-underpins-growth-narrative-bny-202609032055",
+      "source": "FXStreet",
+      "published_at": "2026-09-03T20:55:00+00:00"
+    },
     {
       "title": "Silver Price Forecast: XAG eyes 100-day SMA after Waller-led rally",
       "url": "https://www.fxstreet.com/news/silver-price-forecast-xag-eyes-100-day-sma-after-waller-rally-202609031957",
       "source": "FXStreet",
       "published_at": "2026-09-03T19:57:43+00:00"
-    },
-    {
-      "title": "Singapore Dollar: Stronger Singapore growth with contained inflation – Commerzbank",
-      "url": "https://www.fxstreet.com/news/singapore-dollar-stronger-singapore-growth-with-contained-inflation-commerzbank-202609031938",
-      "source": "FXStreet",
-      "published_at": "2026-09-03T19:38:00+00:00"
-    },
-    {
-      "title": "Chinese Yuan: Range trade persists against US Dollar – UOB",
-      "url": "https://www.fxstreet.com/news/chinese-yuan-range-trade-persists-against-us-dollar-uob-202609031852",
-      "source": "FXStreet",
-      "published_at": "2026-09-03T18:52:00+00:00"
-    },
-    {
-      "title": "USD/CHF Price Forecast: Break of 50-day SMA exposes 0.8040",
-      "url": "https://www.fxstreet.com/news/usd-chf-price-forecast-50-day-sma-break-exposes-08040-202609031847",
-      "source": "FXStreet",
-      "published_at": "2026-09-03T18:47:07+00:00"
-    },
-    {
-      "title": "US Dollar extends decline as NFP takes centre stage",
-      "url": "https://www.fxstreet.com/news/us-dollar-extends-decline-as-nfp-takes-centre-stage-202609031822",
-      "source": "FXStreet",
-      "published_at": "2026-09-03T18:22:23+00:00"
-    },
-    {
-      "title": "Gold soars as Waller's dovish tone hurts Fed hike bets ahead of NFP",
-      "url": "https://www.fxstreet.com/news/gold-soars-as-wallers-dovish-tone-hurts-fed-hike-bets-ahead-of-nfp-202609031820",
-      "source": "FXStreet",
-      "published_at": "2026-09-03T18:20:30+00:00"
-    },
-    {
-      "title": "European gas: Low storage keeps a floor under prices into winter - ING",
-      "url": "https://www.fxstreet.com/news/european-gas-low-storage-keeps-a-floor-under-prices-into-winter-ing-202609031812",
-      "source": "FXStreet",
-      "published_at": "2026-09-03T18:12:07+00:00"
-    },
-    {
-      "title": "Equities: AI-led upside and income focus – HSBC",
-      "url": "https://www.fxstreet.com/news/equities-ai-led-upside-and-income-focus-hsbc-202609031752",
-      "source": "FXStreet",
-      "published_at": "2026-09-03T17:52:10+00:00"
-    },
-    {
-      "title": "Forex Today: US Nonfarm Payrolls take centre stage",
-      "url": "https://www.fxstreet.com/news/forex-today-us-nonfarm-payrolls-take-centre-stage-202609031741",
-      "source": "FXStreet",
-      "published_at": "2026-09-03T17:41:44+00:00"
-    },
-    {
-      "title": "Japanese Yen: Intervention ceiling guides BoJ path – BNY",
-      "url": "https://www.fxstreet.com/news/japanese-yen-intervention-ceiling-guides-boj-path-bny-202609031739",
-      "source": "FXStreet",
-      "published_at": "2026-09-03T17:39:08+00:00"
     }
   ]
 }
