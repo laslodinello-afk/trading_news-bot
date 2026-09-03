@@ -121,22 +121,41 @@ def _format_telegram_messages_block(messages: list[dict]) -> str:
     return "\n\n".join(lines)
 
 
-_RECENT_SCRIPTS_LOOKBACK_DAYS = 5  # au-delà, la probabilité qu'un sujet revienne texto est faible
+_RECENT_SCRIPTS_COUNT = 5  # les N derniers DEBRIEF RÉELLEMENT générés, pas les N derniers jours calendaires
 
 
 def _format_recent_scripts_block(target_date: date) -> str:
-    """Texte déjà dit dans les DEBRIEF des derniers jours (voir video_output/<date>/
-    debrief.json — écrits par _write_files) : sert à repérer un sujet récurrent
-    (ex. le même dossier géopolitique plusieurs jours de suite) pour que le LLM
-    varie sa formulation au lieu de répéter le même angle/la même phrase — voir
-    debrief.txt. Jamais bloquant : un jour sans script précédent (premier lancement,
-    fichier manquant/corrompu) est simplement ignoré."""
+    """Texte déjà dit dans les N derniers DEBRIEF réellement générés avant
+    target_date (voir video_output/<date>/debrief.json — écrits par _write_files) :
+    sert à repérer un sujet récurrent (ex. le même dossier géopolitique qui
+    continue) pour que le LLM varie sa formulation au lieu de répéter le même
+    angle/la même phrase, et rappelle brièvement le contexte s'il a évolué —
+    voir debrief.txt, règles 6 et 7.
+
+    Compte les N derniers jours où un script existe VRAIMENT, pas les N
+    derniers jours calendaires : un compte par jours calendaires casse dès
+    qu'il y a un trou (jour sans breaking news, panne réseau, génération
+    manuelle espacée...) — constaté en conditions réelles le 02/09, où la
+    dernière vraie couverture du même dossier (26/08) est tombée hors d'une
+    fenêtre de 5 jours calendaires alors que c'était bien la dernière fois
+    qu'on en avait parlé. Jamais bloquant : sans aucun script précédent
+    (premier lancement, dossier absent), renvoie simplement une chaîne vide."""
+    if not os.path.isdir(config.VIDEO_OUTPUT_DIR):
+        return ""
+
+    candidate_days = []
+    for entry in os.listdir(config.VIDEO_OUTPUT_DIR):
+        try:
+            day = date.fromisoformat(entry)
+        except ValueError:
+            continue  # dossier qui n'est pas une date (ex. .DS_Store) — ignoré
+        if day < target_date and os.path.isfile(os.path.join(config.VIDEO_OUTPUT_DIR, entry, "debrief.json")):
+            candidate_days.append(day)
+    candidate_days.sort(reverse=True)  # le plus récent d'abord
+
     lines = []
-    for days_back in range(1, _RECENT_SCRIPTS_LOOKBACK_DAYS + 1):
-        day = target_date - timedelta(days=days_back)
+    for day in candidate_days[:_RECENT_SCRIPTS_COUNT]:
         json_path = os.path.join(config.VIDEO_OUTPUT_DIR, day.isoformat(), "debrief.json")
-        if not os.path.isfile(json_path):
-            continue
         try:
             with open(json_path, "r", encoding="utf-8") as f:
                 script = json.load(f)

@@ -216,12 +216,35 @@ def test_format_recent_scripts_block_empty_when_no_previous_files(temp_video_out
     assert video_scripts._format_recent_scripts_block(date(2026, 8, 27)) == ""
 
 
-def test_format_recent_scripts_block_ignores_days_beyond_lookback(temp_video_output):
+def test_format_recent_scripts_block_ignores_days_beyond_count(temp_video_output):
+    """Compte les N derniers scripts RÉELLEMENT générés, pas les N derniers
+    jours calendaires (voir _format_recent_scripts_block) : avec plus de
+    scripts que _RECENT_SCRIPTS_COUNT, seuls les plus récents apparaissent."""
     target_date = date(2026, 8, 27)
-    too_old = target_date - timedelta(days=video_scripts._RECENT_SCRIPTS_LOOKBACK_DAYS + 1)
-    _write_fake_debrief_json(temp_video_output, too_old, ["Ne devrait pas apparaître."])
+    for i in range(1, video_scripts._RECENT_SCRIPTS_COUNT + 2):
+        day = target_date - timedelta(days=i)
+        marker = "Le plus ancien, ne devrait pas apparaître." if i == video_scripts._RECENT_SCRIPTS_COUNT + 1 else f"Jour -{i}."
+        _write_fake_debrief_json(temp_video_output, day, [marker])
+
     block = video_scripts._format_recent_scripts_block(target_date)
-    assert "Ne devrait pas apparaître." not in block
+
+    assert "Le plus ancien, ne devrait pas apparaître." not in block
+    assert "Jour -1." in block
+    assert f"Jour -{video_scripts._RECENT_SCRIPTS_COUNT}." in block
+
+
+def test_format_recent_scripts_block_reaches_past_a_gap(temp_video_output):
+    """Bug réel constaté le 02/09 : un trou de plusieurs jours calendaires
+    sans script (jour sans breaking news, panne...) ne doit pas faire
+    disparaître la dernière VRAIE couverture d'un sujet — seul le nombre de
+    scripts existants compte, pas l'écart de dates."""
+    target_date = date(2026, 9, 2)
+    last_real_coverage = date(2026, 8, 26)  # 7 jours calendaires avant target_date
+    _write_fake_debrief_json(temp_video_output, last_real_coverage, ["Tensions dans le détroit d'Ormuz."])
+
+    block = video_scripts._format_recent_scripts_block(target_date)
+
+    assert "Tensions dans le détroit d'Ormuz." in block
 
 
 def test_format_recent_scripts_block_skips_corrupted_json(temp_video_output):
