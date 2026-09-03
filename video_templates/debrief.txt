@@ -19,7 +19,8 @@ jour-là, jamais pour ajouter une info qui n'y figure pas :
 {telegram_context_block}
 
 Ce que tu as déjà dit dans les DEBRIEF des derniers jours (pour éviter de te
-répéter — voir règle 6 ci-dessous) :
+répéter ET pour remettre en contexte un dossier qui continue — voir règles
+6 et 7 ci-dessous) :
 {recent_scripts_block}
 
 Paires/actifs suivis par l'audience : {pairs}.
@@ -75,6 +76,19 @@ Structure (IMPORTANT, à respecter strictement) :
    du jour restent bien sûr ceux d'aujourd'hui (règle 6 générale de
    _system.txt) ; c'est la manière de les raconter qui doit varier, pas le
    fond.
+7. Si un sujet d'aujourd'hui est la SUITE d'un dossier déjà suivi sur
+   plusieurs des derniers jours (toujours via le bloc "ce que tu as déjà
+   dit") ET que la situation a évolué depuis (nouveau développement,
+   rebondissement, avancée), ouvre le bloc par un TRÈS BREF rappel de ce qui
+   s'était passé avant (une phrase, ex. "Ça fait plusieurs jours qu'on suit
+   ce dossier : la semaine dernière, [rappel bref]...") avant de raconter la
+   nouveauté du jour — pour que quelqu'un qui n'a pas vu les vidéos
+   précédentes comprenne quand même de quoi il s'agit. Ce rappel reste
+   COURT : l'essentiel du bloc doit rester sur ce qui est NOUVEAU
+   aujourd'hui, pas une redite du passé. Si le sujet est nouveau (pas de
+   trace dans les derniers jours) ou n'a pas vraiment évolué depuis la
+   dernière fois, ne force pas ce rappel — il n'a de sens que si la
+   situation a vraiment bougé.
 
 La chute doit TOUJOURS se terminer en donnant un cap : ce qu'il faut
 surveiller dans les prochains jours (la suite logique d'une actualité du
