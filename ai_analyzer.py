@@ -713,8 +713,12 @@ Renvoie un tableau "items" (vide si rien de pertinent). Pour chaque article rete
 - "titre_fr" : le titre de l'article (souvent en anglais, ces flux sont anglophones)
   traduit en français, fidèle et naturel — pas une paraphrase ni un résumé,
   une vraie traduction du titre
-- "resume" : 1-2 phrases courtes en français qui résument la news et son contexte (pas juste
-  le fait brut : pourquoi ça se produit)
+- "resume" : 1-2 phrases courtes en français, en mots simples (comme si tu l'expliquais à
+  quelqu'un sans culture financière), qui résument la news et son contexte (pas juste le
+  fait brut : pourquoi ça se produit). Si le titre mentionne une organisation, une
+  agence ou un sigle que le grand public ne connaît pas forcément (ex: UKMTO, CGRI,
+  OFAC, AIEA...), explique en quelques mots ce que c'est/ce qu'elle fait — jamais un
+  sigle balancé sans explication, même si le titre lui-même le garde tel quel
 - "biais" : un objet {{"paire": "...", "direction": "haussier"|"baissier"|"neutre"}} par paire concernée
 - "raisonnement" : 1 phrase CONCRÈTE sur ce qui va probablement se passer sur les marchés
   dans les prochaines heures à cause de cette news (pas juste "pourquoi", mais "et donc quoi
