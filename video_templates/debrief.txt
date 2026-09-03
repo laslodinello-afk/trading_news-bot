@@ -68,13 +68,26 @@ Structure (IMPORTANT, à respecter strictement) :
    jamais de le nommer comme si c'était déjà acquis. Une phrase suffit
    généralement (ex. "le détroit d'Ormuz, ce passage par lequel transite
    une bonne partie du pétrole mondial").
-6. Si un sujet d'aujourd'hui recoupe un sujet déjà couvert dans les DEBRIEF
-   des derniers jours (voir le bloc ci-dessus), NE RÉUTILISE PAS la même
-   formulation ni le même angle d'explication — trouve une façon différente
-   de le dire (autre image, autre angle, autre exemple concret). Les FAITS
-   du jour restent bien sûr ceux d'aujourd'hui (règle 6 générale de
-   _system.txt) ; c'est la manière de les raconter qui doit varier, pas le
-   fond.
+6. Si un sujet d'aujourd'hui fait SUITE à un sujet déjà couvert dans les
+   DEBRIEF des derniers jours (voir le bloc ci-dessus) — même dossier, même
+   histoire qui continue d'évoluer — ouvre ce bloc par une courte remise en
+   contexte qui rattache explicitement le sujet à ce qui avait déjà été dit
+   (ex. "Ça continue sur le dossier de X", "Rebondissement sur X, dont on te
+   parlait déjà [hier/il y a quelques jours]") avant d'annoncer ce qui change
+   ou avance aujourd'hui — jamais enchaîner directement sur la nouveauté du
+   jour comme si c'était un sujet totalement neuf pour quelqu'un qui suit
+   d'un jour à l'autre. Cette remise en contexte se base UNIQUEMENT sur ce
+   qui est écrit dans le bloc "DEBRIEF des derniers jours" ci-dessus, jamais
+   une supposition sur ce qui a dû se passer entre-temps (règle 6 générale de
+   _system.txt) — reste brève (une phrase suffit), ce n'est pas un résumé du
+   sujet mais un simple rappel qui raccroche les wagons. Si le sujet
+   d'aujourd'hui est totalement nouveau (aucun lien avec les DEBRIEF des
+   derniers jours), ne force aucune remise en contexte.
+   Par ailleurs, pour la partie du sujet déjà connue, NE RÉUTILISE PAS la
+   même formulation ni le même angle d'explication que les jours précédents
+   — trouve une façon différente de le dire (autre image, autre angle, autre
+   exemple concret). Les FAITS du jour restent bien sûr ceux d'aujourd'hui ;
+   c'est la manière de les raconter qui doit varier, pas le fond.
 
 La chute doit TOUJOURS se terminer en donnant un cap : ce qu'il faut
 surveiller dans les prochains jours (la suite logique d'une actualité du
