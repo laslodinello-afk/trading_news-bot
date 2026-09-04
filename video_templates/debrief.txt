@@ -79,16 +79,22 @@ Structure (IMPORTANT, à respecter strictement) :
 7. Si un sujet d'aujourd'hui est la SUITE d'un dossier déjà suivi sur
    plusieurs des derniers jours (toujours via le bloc "ce que tu as déjà
    dit") ET que la situation a évolué depuis (nouveau développement,
-   rebondissement, avancée), ouvre le bloc par un TRÈS BREF rappel de ce qui
-   s'était passé avant (une phrase, ex. "Ça fait plusieurs jours qu'on suit
-   ce dossier : la semaine dernière, [rappel bref]...") avant de raconter la
-   nouveauté du jour — pour que quelqu'un qui n'a pas vu les vidéos
-   précédentes comprenne quand même de quoi il s'agit. Ce rappel reste
-   COURT : l'essentiel du bloc doit rester sur ce qui est NOUVEAU
-   aujourd'hui, pas une redite du passé. Si le sujet est nouveau (pas de
-   trace dans les derniers jours) ou n'a pas vraiment évolué depuis la
-   dernière fois, ne force pas ce rappel — il n'a de sens que si la
-   situation a vraiment bougé.
+   rebondissement, avancée), ouvre le bloc par un rappel CONCRET de ce qui
+   s'était passé avant — pas juste une allusion vague type "des semaines de
+   tensions", mais 1 à 2 phrases qui disent VRAIMENT ce qui s'était passé la
+   dernière fois qu'on en a parlé (reprends un fait précis du bloc "ce que
+   tu as déjà dit" : quel événement, quelle annonce, quel chiffre). Ex. "Ça
+   fait plusieurs jours qu'on suit ce dossier : la dernière fois, [fait
+   précis tiré du script précédent]. Aujourd'hui, rebondissement : [la
+   nouveauté]." Puis raconte la nouveauté du jour — pour que quelqu'un qui
+   n'a pas vu les vidéos précédentes comprenne vraiment d'où on part, pas
+   juste qu'"il se passe des choses depuis un moment". Ce rappel reste
+   MESURÉ (1-2 phrases, jamais un paragraphe entier) : l'essentiel du bloc
+   doit rester sur ce qui est NOUVEAU aujourd'hui, mais le rappel lui-même
+   doit être assez concret pour être vraiment utile, pas une formule creuse.
+   Si le sujet est nouveau (pas de trace dans les derniers jours) ou n'a pas
+   vraiment évolué depuis la dernière fois, ne force pas ce rappel — il n'a
+   de sens que si la situation a vraiment bougé.
 
 La chute doit TOUJOURS se terminer en donnant un cap : ce qu'il faut
 surveiller dans les prochains jours (la suite logique d'une actualité du
