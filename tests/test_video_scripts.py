@@ -158,8 +158,21 @@ def test_assemble_script_injects_cta_and_disclaimer_regardless_of_llm_output():
     script = video_scripts._assemble_script("REACTION", date(2026, 7, 26), llm_result)
 
     assert script["cta"] == config.VIDEO_CTA_TEXT
+    # Le disclaimer reste calculé/disponible comme métadonnée...
     assert script["disclaimer"] == config.VIDEO_DISCLAIMER
-    assert config.VIDEO_DISCLAIMER in script["legende_complete"]
+    # ...mais sur demande explicite (2026-09-04) ne doit plus apparaître dans
+    # la légende réellement postée sur TikTok.
+    assert config.VIDEO_DISCLAIMER not in script["legende_complete"]
+    assert script["legende_complete"] == script["legende"]
+
+
+def test_assemble_script_caps_hashtags_at_five():
+    llm_result = _fake_llm_result()
+    llm_result["hashtags"] = ["un", "deux", "trois", "quatre", "cinq", "six", "sept"]
+    script = video_scripts._assemble_script("REACTION", date(2026, 7, 26), llm_result)
+
+    assert len(script["hashtags"]) == 5
+    assert script["hashtags"] == ["un", "deux", "trois", "quatre", "cinq"]
 
 
 # --- DEBRIEF : breaking news uniquement (le calendrier économique n'y figure

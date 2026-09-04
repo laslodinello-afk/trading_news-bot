@@ -106,13 +106,14 @@ FORMAT DE SORTIE (JSON strict, un seul objet) :
   lisible. Ces emojis sont RÉSERVÉS À CE CHAMP UNIQUEMENT : jamais dans
   "hook", "oral", "ecran" ou "chute" (le contenu de la vidéo elle-même reste
   tel que décrit dans les règles ci-dessus, sans emoji).
-- "hashtags" : 5 à 8 hashtags pertinents pour le référencement, en minuscules,
-  SANS le symbole # : au moins la MOITIÉ doivent être spécifiques au sujet du
-  jour (le nom d'une devise ou d'un actif concerné, d'un événement macro,
-  d'un pays impliqué dans une actualité géopolitique) — le reste peut être
-  générique (finance, trading, bourse). Objectif explicite : la liste de
-  hashtags ne doit PAS se ressembler d'un jour à l'autre, seuls 2-3
-  génériques peuvent revenir, tout le reste doit changer avec le sujet.
+- "hashtags" : 5 hashtags MAXIMUM (jamais plus), pertinents pour le
+  référencement, en minuscules, SANS le symbole # : au moins la MOITIÉ
+  doivent être spécifiques au sujet du jour (le nom d'une devise ou d'un
+  actif concerné, d'un événement macro, d'un pays impliqué dans une actualité
+  géopolitique) — le reste peut être générique (finance, trading, bourse).
+  Objectif explicite : la liste de hashtags ne doit PAS se ressembler d'un
+  jour à l'autre, seuls 2 génériques peuvent revenir, tout le reste doit
+  changer avec le sujet.
 
 Ne mentionne jamais le CTA (appel à l'action) ni de disclaimer légal dans ta
 réponse — ils sont ajoutés automatiquement après coup, ne les anticipe pas.

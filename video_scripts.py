@@ -373,7 +373,10 @@ def _assemble_script(fmt: str, target_date: date, llm_result: dict) -> dict:
 
     legende = llm_result.get("legende", "").strip()
     disclaimer = config.VIDEO_DISCLAIMER  # jamais généré par le LLM non plus
-    hashtags = [str(h).lstrip("#") for h in llm_result.get("hashtags", []) if h]
+    # Gardé en métadonnée (usage interne éventuel) mais plus concaténé dans
+    # legende_complete : sur demande explicite, la légende TikTok postée ne
+    # doit plus jamais afficher ce texte de disclaimer.
+    hashtags = [str(h).lstrip("#") for h in llm_result.get("hashtags", []) if h][:5]  # 5 max, filet de sécurité si le LLM en génère trop malgré la consigne
 
     return {
         "format": fmt,
@@ -384,7 +387,7 @@ def _assemble_script(fmt: str, target_date: date, llm_result: dict) -> dict:
         "cta": cta,
         "legende": legende,
         "disclaimer": disclaimer,
-        "legende_complete": f"{legende}\n\n{disclaimer}" if legende else disclaimer,
+        "legende_complete": legende,
         "hashtags": hashtags,
         "recommended_post_time": config.VIDEO_RECOMMENDED_POST_TIME.get(fmt, ""),
         "estimated_duration_seconds": estimated_seconds,
