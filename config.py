@@ -162,6 +162,15 @@ EVENING_DEBRIEF_HOUR = 23
 EVENING_DEBRIEF_MINUTE = 30
 
 ALERT_BEFORE_MINUTES = 30  # rappel avant news (impact High + Medium)
+
+# En-dessous de ce seuil (minutes restantes avant l'event), l'alerte "avant"
+# part même si l'analyse IA a échoué (indisponible affiché), pour ne jamais
+# rater l'alerte elle-même faute d'analyse — au-dessus, un échec IA (Gemini
+# temporairement indisponible/limité, constaté en conditions réelles) fait
+# juste retenter au prochain tick plutôt que d'afficher "indisponible" pour
+# de bon sans seconde chance (voir main.py job_check_before_alerts). Reste <
+# ALERT_BEFORE_MINUTES pour garder de la marge de retenue.
+BEFORE_ALERT_AI_RETRY_FLOOR_MINUTES = 10
 NO_TRADE_WINDOW_MINUTES = 15  # conseil "éviter le spread / ne pas trader X min après"
 AFTER_ALERT_MAX_AGE_MINUTES = 60  # au-delà, une news publiée est considérée trop vieille pour être alertée (évite un backlog au premier démarrage)
 

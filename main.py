@@ -233,7 +233,24 @@ def job_check_before_alerts() -> None:
         for row in rows:
             event = _event_row_to_dict(row)
             concerned_pairs = config.pairs_for_currency(event["currency"])
+            event_dt = datetime.fromisoformat(event["event_dt_utc"])
+            minutes_until = (event_dt - now).total_seconds() / 60
+
             ai = ai_analyzer.analyze_before(event, concerned_pairs)
+            if ai is None and minutes_until > config.BEFORE_ALERT_AI_RETRY_FLOOR_MINUTES:
+                # Gemini temporairement indisponible/limité (429/503, constaté en
+                # conditions réelles) : l'event reste éligible tant qu'il n'est
+                # pas passé (voir db.get_events_needing_before_alert), donc on
+                # retente au prochain tick plutôt que d'envoyer "indisponible"
+                # sans seconde chance. En-dessous du seuil, on envoie quand même
+                # (ai=None -> "indisponible" affiché) : mieux vaut ça que rater
+                # complètement l'alerte "avant" faute d'analyse à temps.
+                logger.warning(
+                    "Analyse IA indisponible pour l'alerte 'avant' de %s, nouvel essai au prochain tick (%.0f min avant l'event).",
+                    event["title"], minutes_until,
+                )
+                continue
+
             if telegram_bot.broadcast(telegram_bot.format_before_alert(event, concerned_pairs, ai)):
                 db.mark_sent(event["event_key"], "before")
                 logger.info("Alerte 'avant' envoyée: %s", event["title"])
