@@ -19,6 +19,7 @@ import json
 import logging
 import sqlite3
 import threading
+import time as time_module  # `time` (le nom) est déjà pris par datetime.time ci-dessous
 from contextlib import contextmanager
 from datetime import date, datetime, time, timedelta, timezone
 
@@ -117,14 +118,62 @@ def get_conn():
                 )
                 conn.row_factory = Row
                 conn.pull()
+                # connect_sync()+pull() peuvent réussir alors qu'une vraie
+                # requête échoue juste après (constaté en conditions réelles :
+                # Turso bloque les lectures une fois un plafond du plan
+                # gratuit atteint — "SQL read operations are forbidden... do
+                # you need to upgrade your plan?" — alors que pull() lui-même
+                # passe). Une requête sacrificielle ici détecte ce cas AVANT
+                # de rendre la main à l'appelant : sinon l'exception
+                # surviendrait au milieu de son "with get_conn()", trop tard
+                # pour retomber sur SQLite local (le except ci-dessous ne
+                # couvre que l'établissement de la connexion).
+                conn.execute("SELECT 1").fetchone()
                 use_turso = True
             except Exception as exc:  # noqa: BLE001 - repli local, jamais bloquant
                 logger.warning("Turso indisponible (%s), repli sur SQLite local pour cette connexion.", exc)
+                # Fermer la connexion Turso ratée AVANT de l'abandonner : sinon
+                # son verrou sur config.DB_PATH (même fichier que la réplique
+                # locale libsql) reste tenu, et la connexion sqlite3 de repli
+                # ci-dessous échoue à son tour avec "database is locked" —
+                # constaté en conditions réelles, exactement ce que ce repli
+                # est censé éviter.
+                if conn is not None:
+                    try:
+                        conn.close()
+                    except Exception:  # noqa: BLE001 - connexion déjà cassée, rien à faire de plus
+                        pass
                 conn = None
 
         if conn is None:
-            conn = sqlite3.connect(config.DB_PATH)
-            conn.row_factory = sqlite3.Row
+            # Une connexion Turso qui vient d'échouer sur ce même fichier
+            # (config.DB_PATH sert de réplique locale ET de base SQLite pure)
+            # ne relâche pas son verrou OS instantanément à la fermeture —
+            # constaté en conditions réelles : sqlite3.connect() lève
+            # "database is locked" (puis parfois "disk I/O error") sur les
+            # premières tentatives, avant de réussir normalement quelques
+            # secondes plus tard. Ni un problème de fichier réellement
+            # corrompu (PRAGMA integrity_check reste "ok"), ni un simple
+            # SQLITE_BUSY (le busy_timeout natif de sqlite3.connect() ne
+            # suffit pas ici) : un vrai nettoyage différé côté bibliothèque
+            # Turso. Ré-essaie donc explicitement avec des pauses, plutôt que
+            # de remonter une erreur à l'appelant pour un verrou qui va se
+            # libérer tout seul.
+            last_exc = None
+            for attempt in range(5):
+                if attempt > 0:
+                    time_module.sleep(2)
+                try:
+                    conn = sqlite3.connect(config.DB_PATH, timeout=10)
+                    conn.row_factory = sqlite3.Row
+                    conn.execute("SELECT 1").fetchone()
+                    break
+                except Exception as exc:  # noqa: BLE001 - on retente, voir plus bas si ça persiste
+                    last_exc = exc
+                    conn = None
+            else:
+                logger.error("Repli SQLite local également verrouillé après 5 tentatives (%s) — abandon pour ce cycle.", last_exc)
+                raise last_exc
 
         try:
             yield conn
