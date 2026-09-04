@@ -422,6 +422,44 @@ Réponds avec :
     return _format_analysis(result)
 
 
+# Sans "biais" (contrairement à _ANALYSIS_SCHEMA) : voir analyze_speech_before.
+_ANALYSIS_NO_BIAS_SCHEMA = {
+    "type": "OBJECT",
+    "required": ["resume", "raisonnement", "danger"],
+    "properties": {
+        "resume": {"type": "STRING"},
+        "raisonnement": {"type": "STRING"},
+        "danger": {"type": "STRING"},
+    },
+}
+
+
+def analyze_speech_before(event: dict) -> dict | None:
+    """
+    Alerte "avant" pour une intervention/discours à venir (voir
+    config.is_speech_event) : contrairement à analyze_before (events
+    chiffrés), pas de "biais" demandé ici — deviner une direction de marché
+    avant même que l'intervention ait eu lieu inventerait un jugement sans
+    aucune base réelle (le biais n'arrive qu'après coup, une fois le contenu
+    réellement connu, voir analyze_speech). Seulement du contexte : qui
+    parle, pourquoi c'est surveillé, quoi guetter — jamais une prévision du
+    contenu ni une direction de marché.
+    """
+    prompt = f"""Intervention/discours à venir dans {config.ALERT_BEFORE_MINUTES} minutes :
+- Titre : {event['title']}
+- Devise/banque centrale concernée : {event['currency']}
+- Impact : {event['impact']}
+
+Réponds avec :
+- "resume" : 2 phrases courtes sur qui parle et pourquoi cette intervention est surveillée par les marchés
+- "raisonnement" : 1 phrase concrète sur ce qu'il faut guetter dans cette intervention (quel thème,
+  quel ton attendu vu le contexte récent) — sans jamais deviner ce qui va être dit ni annoncer une
+  direction de marché avant que l'intervention ait eu lieu
+- "danger" : "ok" | "prudence" | "danger" """
+    result = call_gemini(prompt, _ANALYSIS_NO_BIAS_SCHEMA, max_tokens=300)
+    return _format_analysis(result)
+
+
 # --- Alerte "juste après publication" --------------------------------------------
 
 def analyze_after(event: dict, concerned_pairs: list[str], actual: str | None) -> dict | None:

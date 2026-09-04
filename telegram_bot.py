@@ -228,6 +228,23 @@ def format_before_alert(event: dict, concerned_pairs: list[str], ai: dict | None
     return "\n".join(p for p in parts if p)
 
 
+def format_speech_before_alert(event: dict, ai: dict | None) -> str:
+    """
+    Variante de format_before_alert pour les events "discours" (voir
+    config.is_speech_event) : pas de prévision/précédent à afficher (n'existe
+    pas pour une intervention à venir), et le bloc IA (voir ai_analyzer.
+    analyze_speech_before) ne contient pas de biais — rien à deviner sur la
+    direction du marché avant que l'intervention ait eu lieu.
+    """
+    emoji = IMPACT_EMOJI.get(event["impact"], "🔴")
+    minutes = _minutes_until(event["event_dt_utc"])
+    header = f"{emoji} *{escape_md(_display_title(event))} — {event['currency']}*{_reclassified_marker(event)}"
+    meta = f"🕒 {_time_local(event['event_dt_utc'])} (Bruxelles) — dans {minutes} min"
+    risk_line = "⚠️ Attention à la volatilité"
+    parts = [header, meta, risk_line, _ai_block(ai)]
+    return "\n".join(p for p in parts if p)
+
+
 def format_after_alert(event: dict, actual: str | None, concerned_pairs: list[str], ai: dict | None) -> str:
     emoji = IMPACT_EMOJI.get(event["impact"], "🔴")
     header = f"{emoji} *{escape_md(_display_title(event))} — {event['currency']}*{_reclassified_marker(event)} (résultat)"

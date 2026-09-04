@@ -236,6 +236,27 @@ def job_check_before_alerts() -> None:
             event_dt = datetime.fromisoformat(event["event_dt_utc"])
             minutes_until = (event_dt - now).total_seconds() / 60
 
+            if config.is_speech_event(event["title"]):
+                # Pas de prévision/précédent pour une intervention à venir, et
+                # pas de biais non plus (voir ai_analyzer.analyze_speech_before
+                # et telegram_bot.format_speech_before_alert) : rien à deviner
+                # sur la direction du marché avant que l'intervention ait eu
+                # lieu — seulement du contexte (qui parle, quoi guetter).
+                ai = ai_analyzer.analyze_speech_before(event)
+                if ai is None and minutes_until > config.BEFORE_ALERT_AI_RETRY_FLOOR_MINUTES:
+                    logger.warning(
+                        "Analyse IA indisponible pour l'alerte 'avant' (discours) de %s, nouvel essai au prochain tick (%.0f min avant l'event).",
+                        event["title"], minutes_until,
+                    )
+                    continue
+
+                if telegram_bot.broadcast(telegram_bot.format_speech_before_alert(event, ai)):
+                    db.mark_sent(event["event_key"], "before")
+                    logger.info("Alerte 'avant' (discours) envoyée: %s", event["title"])
+                else:
+                    logger.warning("Échec d'envoi de l'alerte 'avant' (discours) pour %s, nouvel essai au prochain tick.", event["title"])
+                continue
+
             ai = ai_analyzer.analyze_before(event, concerned_pairs)
             if ai is None and minutes_until > config.BEFORE_ALERT_AI_RETRY_FLOOR_MINUTES:
                 # Gemini temporairement indisponible/limité (429/503, constaté en
