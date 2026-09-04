@@ -173,6 +173,18 @@ AFTER_ALERT_MAX_AGE_MINUTES = 60  # au-delà, une news publiée est considérée
 # AFTER_ALERT_MAX_AGE_MINUTES ci-dessus.
 ACTUAL_RESULT_GRACE_MINUTES = 45
 
+# Même principe que ACTUAL_RESULT_GRACE_MINUTES ci-dessus, mais pour le résumé
+# d'un discours (voir main.py job_check_after_alerts, config.is_speech_event) :
+# beaucoup plus long, volontairement AU-DELÀ de AFTER_ALERT_MAX_AGE_MINUTES —
+# constaté en conditions réelles qu'un titre RSS pertinent peut mettre
+# plusieurs heures à sortir (ex: 9h pour un discours FOMC secondaire), largement
+# au-delà du délai des résultats chiffrés classiques. Contrairement à un
+# résultat chiffré, il n'y a aucune urgence à envoyer vite : un résumé tardif
+# mais réel vaut mieux qu'un "indisponible" rapide (retour utilisateur explicite,
+# 2026-09-04). main.py interroge la base avec cette borne plus large PUIS
+# réapplique lui-même AFTER_ALERT_MAX_AGE_MINUTES pour les events non-discours.
+SPEECH_SUMMARY_GRACE_MINUTES = 8 * 60
+
 CALENDAR_CHECK_INTERVAL_MINUTES = 5  # fréquence de vérification avant/après
 CALENDAR_REFRESH_HOURS = 6  # fréquence de re-téléchargement du calendrier complet
 

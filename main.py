@@ -246,7 +246,14 @@ def job_check_before_alerts() -> None:
 def job_check_after_alerts() -> None:
     try:
         now = datetime.now(timezone.utc)
-        rows = db.get_events_needing_after_alert(now)
+        # Borne large (le max des deux délais) pour laisser passer les discours,
+        # dont le délai de grâce (SPEECH_SUMMARY_GRACE_MINUTES) dépasse largement
+        # AFTER_ALERT_MAX_AGE_MINUTES — celui-ci est réappliqué explicitement
+        # ci-dessous pour les events non-discours, qui doivent rester bornés
+        # à AFTER_ALERT_MAX_AGE_MINUTES comme avant.
+        rows = db.get_events_needing_after_alert(
+            now, max_age_minutes=max(config.AFTER_ALERT_MAX_AGE_MINUTES, config.SPEECH_SUMMARY_GRACE_MINUTES)
+        )
         for row in rows:
             event = _event_row_to_dict(row)
             event_dt = datetime.fromisoformat(event["event_dt_utc"])
@@ -272,7 +279,7 @@ def job_check_after_alerts() -> None:
                     if summary:
                         db.set_event_speech_summary(event["event_key"], summary)
 
-                if not summary and age_minutes < config.ACTUAL_RESULT_GRACE_MINUTES:
+                if not summary and age_minutes < config.SPEECH_SUMMARY_GRACE_MINUTES:
                     continue  # laisse une chance au(x) prochain(s) tick(s) de trouver une couverture
 
                 ai = ai_analyzer.analyze_speech(event, concerned_pairs, summary) if summary else None
@@ -281,6 +288,12 @@ def job_check_after_alerts() -> None:
                     logger.info("Alerte 'après' (discours) envoyée: %s", event["title"])
                 else:
                     logger.warning("Échec d'envoi de l'alerte 'après' (discours) pour %s, nouvel essai au prochain tick.", event["title"])
+                continue
+
+            # La requête ci-dessus est bornée large (voir plus haut) pour laisser
+            # passer les discours : un event "classique" au-delà de
+            # AFTER_ALERT_MAX_AGE_MINUTES doit rester ignoré comme avant.
+            if age_minutes > config.AFTER_ALERT_MAX_AGE_MINUTES:
                 continue
 
             actual = event["actual"]

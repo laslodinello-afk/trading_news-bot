@@ -383,13 +383,20 @@ def get_events_needing_before_alert(window_start_utc: datetime, window_end_utc: 
         return cur.fetchall()
 
 
-def get_events_needing_after_alert(published_before_utc: datetime) -> list[sqlite3.Row]:
+def get_events_needing_after_alert(published_before_utc: datetime, max_age_minutes: int | None = None) -> list[sqlite3.Row]:
     """
     News High/Medium déjà publiées (event_dt_utc <= maintenant) sans alerte 'after'.
-    Bornée à AFTER_ALERT_MAX_AGE_MINUTES pour ne jamais alerter sur de vieilles news
-    (typiquement au tout premier démarrage, quand le calendrier contient des jours passés).
+    Bornée à max_age_minutes (par défaut AFTER_ALERT_MAX_AGE_MINUTES) pour ne
+    jamais alerter sur de vieilles news (typiquement au tout premier démarrage,
+    quand le calendrier contient des jours passés). main.py appelle avec une
+    borne plus large pour laisser passer les discours, qui ont leur propre
+    délai de grâce plus long (SPEECH_SUMMARY_GRACE_MINUTES) — voir
+    job_check_after_alerts, qui réapplique lui-même AFTER_ALERT_MAX_AGE_MINUTES
+    pour les events non-discours avant de les traiter.
     """
-    oldest_allowed = published_before_utc - timedelta(minutes=config.AFTER_ALERT_MAX_AGE_MINUTES)
+    if max_age_minutes is None:
+        max_age_minutes = config.AFTER_ALERT_MAX_AGE_MINUTES
+    oldest_allowed = published_before_utc - timedelta(minutes=max_age_minutes)
     with get_conn() as conn:
         cur = conn.execute(
             """
