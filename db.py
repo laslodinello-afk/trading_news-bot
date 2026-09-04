@@ -37,6 +37,27 @@ logger = logging.getLogger("db")
 # faible volume de cet agent (quelques requêtes toutes les 5 min).
 _conn_lock = threading.Lock()
 
+# Chaque appel à get_conn() faisait un pull() complet, même quand un job
+# (ex: job_check_before_alerts) enchaîne 3-4 appels en l'espace de quelques
+# millisecondes, ou quand deux jobs tournent quasi en même temps sur des
+# threads séparés — constaté en conditions réelles : ça a fait dépasser le
+# quota de lectures gratuit Turso (500M/mois) et bloqué toutes les lectures
+# ("SQL read operations are forbidden... do you need to upgrade your
+# plan?") alors que le volume réel de CHANGEMENTS à synchroniser est minime.
+# Un seul writer (ce process) en usage normal : les données ne peuvent pas
+# changer côté Turso plus vite que cet intervalle, donc sauter un pull() qui
+# suit de trop près le précédent ne coûte aucune fraîcheur réelle, seulement
+# des lectures facturées en double. Horloge monotone (jamais affectée par un
+# ajustement de l'heure système) ; lu/écrit uniquement sous _conn_lock, donc
+# jamais de race entre threads sur cette variable. None (pas 0.0) au départ :
+# time.monotonic() ne part pas forcément d'une grande valeur arbitraire selon
+# la plateforme (constaté : proche de 0 juste après le démarrage du process
+# sur macOS) — initialiser à 0.0 risquerait de sauter le tout premier pull()
+# après un (re)démarrage si l'horloge du système démarre elle aussi près de
+# 0. None force sans ambiguïté un premier pull avant toute lecture.
+_TURSO_PULL_MIN_INTERVAL_SECONDS = 60
+_last_turso_pull_monotonic: float | None = None
+
 SCHEMA = """
 CREATE TABLE IF NOT EXISTS events (
     event_key TEXT PRIMARY KEY,
@@ -101,8 +122,12 @@ def get_conn():
     doit jamais bloquer le fonctionnement de base, voir message_log.py).
 
     Tout le corps tourne sous _conn_lock (voir plus haut) : un seul accès à
-    la fois, même entre threads différents.
+    la fois, même entre threads différents. pull() est sauté si le précédent
+    date de moins de _TURSO_PULL_MIN_INTERVAL_SECONDS (voir ce commentaire) :
+    ça ne change rien à la fraîcheur des données en usage normal, seulement
+    au volume de lectures facturées par Turso.
     """
+    global _last_turso_pull_monotonic
     with _conn_lock:
         conn = None
         use_turso = False
@@ -117,7 +142,10 @@ def get_conn():
                     auth_token=config.TURSO_AUTH_TOKEN,
                 )
                 conn.row_factory = Row
-                conn.pull()
+                now = time_module.monotonic()
+                if _last_turso_pull_monotonic is None or now - _last_turso_pull_monotonic >= _TURSO_PULL_MIN_INTERVAL_SECONDS:
+                    conn.pull()
+                    _last_turso_pull_monotonic = now
                 # connect_sync()+pull() peuvent réussir alors qu'une vraie
                 # requête échoue juste après (constaté en conditions réelles :
                 # Turso bloque les lectures une fois un plafond du plan
