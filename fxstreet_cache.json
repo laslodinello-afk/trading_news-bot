@@ -1,6 +1,24 @@
 {
-  "fetched_at": "2026-09-03T22:48:48.895441+00:00",
+  "fetched_at": "2026-09-04T00:29:55.194260+00:00",
   "articles": [
+    {
+      "title": "RBNZ's Hansen: Future policy moves hinge on trends across broad economic data sets",
+      "url": "https://www.fxstreet.com/news/rbnzs-hansen-future-policy-moves-hinge-on-trends-across-broad-economic-data-sets-202609032344",
+      "source": "FXStreet",
+      "published_at": "2026-09-03T23:44:45+00:00"
+    },
+    {
+      "title": "Gold rebounds above $4,450 as Waller tempers Fed rate hike bets ahead US jobs data",
+      "url": "https://www.fxstreet.com/news/gold-rebounds-above-4-450-as-waller-tempers-fed-rate-hike-bets-ahead-us-jobs-data-202609032336",
+      "source": "FXStreet",
+      "published_at": "2026-09-03T23:36:51+00:00"
+    },
+    {
+      "title": "GBP/JPY Price Forecast: Intervention shock exposes 210.00",
+      "url": "https://www.fxstreet.com/news/gbp-jpy-price-forecast-intervention-shock-exposes-21000-202609032301",
+      "source": "FXStreet",
+      "published_at": "2026-09-03T23:01:56+00:00"
+    },
     {
       "title": "The Australian Dollar thanks Waller's comments, which sink the USD",
       "url": "https://www.fxstreet.com/news/the-australian-dollar-thanks-wallers-comments-which-sink-the-usd-202609032243",
@@ -54,24 +72,6 @@
       "url": "https://www.fxstreet.com/news/dow-jones-industrial-average-rallies-into-a-payrolls-print-it-cannot-win-202609032139",
       "source": "FXStreet",
       "published_at": "2026-09-03T21:39:07+00:00"
-    },
-    {
-      "title": "Indonesian Rupiah: Depreciation trend persists as oil shock weighs – MUFG",
-      "url": "https://www.fxstreet.com/news/indonesian-rupiah-depreciation-trend-persists-as-oil-shock-weighs-mufg-202609032113",
-      "source": "FXStreet",
-      "published_at": "2026-09-03T21:13:49+00:00"
-    },
-    {
-      "title": "Malaysian Ringgit: Stable policy underpins growth narrative – BNY",
-      "url": "https://www.fxstreet.com/news/malaysian-ringgit-stable-policy-underpins-growth-narrative-bny-202609032055",
-      "source": "FXStreet",
-      "published_at": "2026-09-03T20:55:00+00:00"
-    },
-    {
-      "title": "Silver Price Forecast: XAG eyes 100-day SMA after Waller-led rally",
-      "url": "https://www.fxstreet.com/news/silver-price-forecast-xag-eyes-100-day-sma-after-waller-rally-202609031957",
-      "source": "FXStreet",
-      "published_at": "2026-09-03T19:57:43+00:00"
     }
   ]
 }
