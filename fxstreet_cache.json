@@ -1,6 +1,36 @@
 {
-  "fetched_at": "2026-09-04T19:38:55.995938+00:00",
+  "fetched_at": "2026-09-04T21:50:42.681280+00:00",
   "articles": [
+    {
+      "title": "Malaysian Ringgit: BNM hawkish tilt supports MYR – Commerzbank",
+      "url": "https://www.fxstreet.com/news/malaysian-ringgit-bnm-hawkish-tilt-supports-myr-commerzbank-202609042128",
+      "source": "FXStreet",
+      "published_at": "2026-09-04T21:28:00+00:00"
+    },
+    {
+      "title": "USD/CHF Price Forecast: NFP rally stalls at 0.8100, retraces",
+      "url": "https://www.fxstreet.com/news/usd-chf-price-forecast-nfp-rally-stalls-at-08100-retraces-202609042127",
+      "source": "FXStreet",
+      "published_at": "2026-09-04T21:27:24+00:00"
+    },
+    {
+      "title": "Indonesian Rupiah: Two-way risks around support levels – OCBC",
+      "url": "https://www.fxstreet.com/news/indonesian-rupiah-two-way-risks-around-support-levels-ocbc-202609042043",
+      "source": "FXStreet",
+      "published_at": "2026-09-04T20:43:00+00:00"
+    },
+    {
+      "title": "Chinese Yuan: Services PMI rebound keeps PBoC cautious – Commerzbank",
+      "url": "https://www.fxstreet.com/news/chinese-yuan-services-pmi-rebound-keeps-pboc-cautious-commerzbank-202609042003",
+      "source": "FXStreet",
+      "published_at": "2026-09-04T20:03:31+00:00"
+    },
+    {
+      "title": "Sterling’s rally stalls as US jobs data reopens Fed debate",
+      "url": "https://www.fxstreet.com/news/sterlings-rally-stalls-as-us-jobs-data-reopens-fed-debate-202609041952",
+      "source": "FXStreet",
+      "published_at": "2026-09-04T19:52:26+00:00"
+    },
     {
       "title": "Malaysia: Hawkish pause keeps options open – DBS",
       "url": "https://www.fxstreet.com/news/malaysia-hawkish-pause-keeps-options-open-dbs-202609041934",
@@ -12,42 +42,6 @@
       "url": "https://www.fxstreet.com/news/indian-rupee-dollar-inflows-support-inr-but-impulse-may-fade-ocbc-202609041932",
       "source": "FXStreet",
       "published_at": "2026-09-04T19:32:00+00:00"
-    },
-    {
-      "title": "Eurozone: Inflation above target into 2027 – Nordea",
-      "url": "https://www.fxstreet.com/news/eurozone-inflation-above-target-into-2027-nordea-202609041850",
-      "source": "FXStreet",
-      "published_at": "2026-09-04T18:50:36+00:00"
-    },
-    {
-      "title": "Fed’s Hammack says policy is not restrictive enough",
-      "url": "https://www.fxstreet.com/news/feds-hammack-says-policy-is-not-restrictive-enough-202609041816",
-      "source": "FXStreet",
-      "published_at": "2026-09-04T18:16:53+00:00"
-    },
-    {
-      "title": "Turkey: CBRT likely to hold before two Q4 rate cuts - ING",
-      "url": "https://www.fxstreet.com/news/turkey-cbrt-likely-to-hold-before-two-q4-rate-cuts-ing-202609041810",
-      "source": "FXStreet",
-      "published_at": "2026-09-04T18:10:56+00:00"
-    },
-    {
-      "title": "Australian Dollar resumes advance as US Dollar loses post-NFP momentum",
-      "url": "https://www.fxstreet.com/news/australian-dollar-resumes-advance-as-us-dollar-loses-post-nfp-momentum-202609041810",
-      "source": "FXStreet",
-      "published_at": "2026-09-04T18:10:40+00:00"
-    },
-    {
-      "title": "Gold falls as traders increase Fed hawkish bets after stellar NFP",
-      "url": "https://www.fxstreet.com/news/gold-falls-as-traders-increase-fed-hawkish-bets-after-stellar-nfp-202609041808",
-      "source": "FXStreet",
-      "published_at": "2026-09-04T18:08:17+00:00"
-    },
-    {
-      "title": "Dow Jones Industrial Average falls on a jobs number the president loves",
-      "url": "https://www.fxstreet.com/news/dow-jones-industrial-average-falls-on-a-jobs-number-the-president-loves-202609041736",
-      "source": "FXStreet",
-      "published_at": "2026-09-04T17:36:34+00:00"
     }
   ]
 }
