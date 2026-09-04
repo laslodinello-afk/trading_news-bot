@@ -1,5 +1,11 @@
 python-dotenv>=1.0.1
 requests>=2.31.0
 APScheduler>=3.10.4,<4.0.0
-google-genai>=1.0.0
+# <2.0.0 : la 2.x (sortie 2026-09-02) exige Python >=3.10 et change l'API
+# (constaté : a cassé un déploiement Render, qui tourne sous Python 3.14 et
+# a donc pu installer 2.x alors qu'un venv local sous Python 3.9 reste
+# bloqué sur la dernière 1.x compatible, ce qui masque le problème en local).
+# Code jamais testé contre la 2.x : ne relever ce plafond qu'après un test
+# réel contre cette nouvelle version.
+google-genai>=1.0.0,<2.0.0
 pyturso>=0.5.1,<0.6
