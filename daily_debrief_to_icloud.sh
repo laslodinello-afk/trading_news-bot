@@ -11,7 +11,21 @@ cd "$(dirname "$0")" || exit 1
 source ./_debrief_generate_and_copy.sh
 
 LOG_FILE="daily_debrief.log"
-TODAY=$(date +%Y-%m-%d)
+# Cette tâche est programmée à 23h59 (StartCalendarInterval) pour débriefer le
+# jour qui se termine. Mais si le Mac dort et que pmset repeat wake le réveille
+# en retard (constaté en conditions réelles les 05, 06 et 07/09 : exécution
+# réelle entre 00h08 et 00h14, donc 8 à 14 min APRÈS minuit), `date` calculé à
+# ce moment donne déjà le jour SUIVANT (à peine commencé, sans aucune donnée)
+# au lieu du jour qui vient de se terminer (qui a, lui, toute la journée de
+# données) — 3 nuits de vidéos non générées à cause de ce seul décalage. Cette
+# tâche ne tournant jamais qu'autour de minuit, une heure < 12 signe sans
+# ambiguïté un déclenchement débordé après minuit : on vise alors hier.
+CURRENT_HOUR=$(date +%H)
+if [ "$CURRENT_HOUR" -lt 12 ]; then
+    TODAY=$(date -v-1d +%Y-%m-%d)
+else
+    TODAY=$(date +%Y-%m-%d)
+fi
 
 # Verrou simple : évite de tourner en même temps qu'un rattrapage en cours
 # (catchup_missed_debrief.sh, voir ce fichier) qui écrirait dans les mêmes
