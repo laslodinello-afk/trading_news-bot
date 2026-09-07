@@ -67,6 +67,11 @@ def test_get_messages_for_day_returns_empty_when_not_configured(monkeypatch):
 
 
 def test_get_messages_for_day_pulls_and_returns_rows(monkeypatch):
+    # Force un pull() considéré comme "pas fait depuis longtemps", sinon ce
+    # test dépendrait de l'ordre d'exécution et du timing des autres tests
+    # partageant le même état module-level (_last_pull_monotonic, voir le
+    # throttle anti-quota Turso ci-dessous).
+    monkeypatch.setattr(message_log, "_last_pull_monotonic", 0.0)
     fake_conn = Mock()
     fake_conn.execute.return_value.fetchall.return_value = [
         {"id": 1, "sent_at": "2026-08-01T10:00:00+00:00", "chat_target": "perso", "raw_text": "Bonjour"},
@@ -82,9 +87,34 @@ def test_get_messages_for_day_pulls_and_returns_rows(monkeypatch):
     assert query_args[1][0] < query_args[1][1]
 
 
-def test_get_messages_for_day_returns_empty_on_exception():
+def test_get_messages_for_day_returns_empty_on_exception(monkeypatch):
+    monkeypatch.setattr(message_log, "_last_pull_monotonic", 0.0)
     fake_conn = Mock()
     fake_conn.pull.side_effect = RuntimeError("panne réseau")
     with patch("message_log._connect", return_value=fake_conn):
         result = message_log.get_messages_for_day(date(2026, 8, 1))
     assert result == []
+
+
+# --- Throttle anti-quota Turso (voir commentaire au-dessus de _PULL_MIN_INTERVAL_SECONDS) ---
+
+def test_get_messages_for_day_skips_pull_within_throttle_window(monkeypatch):
+    monkeypatch.setattr(message_log, "_last_pull_monotonic", message_log.time_module.monotonic())
+    fake_conn = Mock()
+    fake_conn.execute.return_value.fetchall.return_value = []
+    with patch("message_log._connect", return_value=fake_conn):
+        message_log.get_messages_for_day(date(2026, 8, 1))
+
+    fake_conn.pull.assert_not_called()
+
+
+def test_get_messages_for_day_pulls_again_after_throttle_window(monkeypatch):
+    monkeypatch.setattr(
+        message_log, "_last_pull_monotonic", message_log.time_module.monotonic() - message_log._PULL_MIN_INTERVAL_SECONDS
+    )
+    fake_conn = Mock()
+    fake_conn.execute.return_value.fetchall.return_value = []
+    with patch("message_log._connect", return_value=fake_conn):
+        message_log.get_messages_for_day(date(2026, 8, 1))
+
+    fake_conn.pull.assert_called_once()

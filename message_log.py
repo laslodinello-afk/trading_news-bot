@@ -17,10 +17,24 @@ import logging
 from datetime import date, timezone
 from datetime import datetime as dt
 
+import time as time_module
+
 import config
 import db
 
 logger = logging.getLogger("message_log")
+
+# Ce module a son propre pull() indépendant de celui de db.get_conn() — mais
+# les deux tapent sur le MÊME compte Turso (même TURSO_DATABASE_URL/
+# TURSO_AUTH_TOKEN, juste une réplique locale différente). Constaté en
+# conditions réelles (07/09) : le throttle ajouté côté db.get_conn() n'a pas
+# suffi à éviter un blocage des lectures Turso qui a duré 4 jours, parce que
+# CE pull()-ci, appelé à chaque génération vidéo (et potentiellement par
+# Render lui-même pour ses résumés quotidiens), n'était pas concerné et
+# continuait de consommer le même quota sans limite. Même logique de
+# throttle ici, voir db.py pour le raisonnement complet.
+_PULL_MIN_INTERVAL_SECONDS = 60
+_last_pull_monotonic = 0.0
 
 _SCHEMA = """
 CREATE TABLE IF NOT EXISTS telegram_messages (
@@ -81,8 +95,12 @@ def get_messages_for_day(target_date: date) -> list[dict]:
     conn = _connect()
     if conn is None:
         return []
+    global _last_pull_monotonic
     try:
-        conn.pull()
+        now = time_module.monotonic()
+        if now - _last_pull_monotonic >= _PULL_MIN_INTERVAL_SECONDS:
+            conn.pull()
+            _last_pull_monotonic = now
         day_start_utc, day_end_utc = db.local_day_bounds_utc(target_date)
         rows = conn.execute(
             "SELECT * FROM telegram_messages WHERE sent_at >= ? AND sent_at < ? ORDER BY sent_at ASC",
