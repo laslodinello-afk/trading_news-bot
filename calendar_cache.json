@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-06T19:44:36.710734+00:00",
+  "fetched_at": "2026-09-07T01:50:29.053487+00:00",
   "events": [
     {
       "title": "ANZ Job Advertisements m/m",
@@ -226,6 +226,14 @@
       "previous": "99.8"
     },
     {
+      "title": "Monetary Policy Report Hearings",
+      "country": "GBP",
+      "date": "2026-09-08T09:15:00-04:00",
+      "impact": "Medium",
+      "forecast": "",
+      "previous": ""
+    },
+    {
       "title": "Consumer Credit m/m",
       "country": "USD",
       "date": "2026-09-08T15:00:00-04:00",
@@ -296,6 +304,14 @@
       "impact": "Low",
       "forecast": "",
       "previous": "11.8K"
+    },
+    {
+      "title": "ECB President Lagarde Speaks",
+      "country": "EUR",
+      "date": "2026-09-09T13:00:00-04:00",
+      "impact": "Medium",
+      "forecast": "",
+      "previous": ""
     },
     {
       "title": "German Buba President Nagel Speaks",
@@ -576,6 +592,14 @@
       "impact": "High",
       "forecast": "3.4%",
       "previous": "3.4%"
+    },
+    {
+      "title": "ECB President Lagarde Speaks",
+      "country": "EUR",
+      "date": "2026-09-11T10:00:00-04:00",
+      "impact": "Medium",
+      "forecast": "",
+      "previous": ""
     },
     {
       "title": "Prelim UoM Consumer Sentiment",
