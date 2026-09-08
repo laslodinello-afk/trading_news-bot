@@ -1,6 +1,30 @@
 {
-  "fetched_at": "2026-09-07T23:32:42.091981+00:00",
+  "fetched_at": "2026-09-08T01:22:10.733457+00:00",
   "articles": [
+    {
+      "title": "WTI slips below $90.50 despite rising Middle East supply risks",
+      "url": "https://www.fxstreet.com/news/wti-slips-below-9050-despite-rising-middle-east-supply-risks-202609080121",
+      "source": "FXStreet",
+      "published_at": "2026-09-08T01:21:52+00:00"
+    },
+    {
+      "title": "Japanese Yen rallies to February 18 high as upbeat wage data and GDP lift BoJ hike bets",
+      "url": "https://www.fxstreet.com/news/japanese-yen-rallies-to-february-18-high-as-upbeat-wage-data-and-gdp-lift-boj-hike-bets-202609080116",
+      "source": "FXStreet",
+      "published_at": "2026-09-08T01:16:12+00:00"
+    },
+    {
+      "title": "PBOC sets USD/CNY reference rate at 6.7804 vs. 6.7795 previous",
+      "url": "https://www.fxstreet.com/news/pboc-sets-usd-cny-reference-rate-at-67804-vs-67795-previous-202609080115",
+      "source": "FXStreet",
+      "published_at": "2026-09-08T01:15:35+00:00"
+    },
+    {
+      "title": "Euro holds gains above 1.1600 on ECB tightening prospects",
+      "url": "https://www.fxstreet.com/news/euro-holds-gains-above-11600-on-ecb-tightening-prospects-202609080039",
+      "source": "FXStreet",
+      "published_at": "2026-09-08T00:39:21+00:00"
+    },
     {
       "title": "Gold declines to near $4,400 as robust US jobs data lifts Fed hike odds",
       "url": "https://www.fxstreet.com/news/gold-declines-to-near-4-400-as-robust-us-jobs-data-lifts-fed-hike-odds-202609072326",
@@ -24,42 +48,6 @@
       "url": "https://www.fxstreet.com/news/australian-dollar-rides-thin-trading-lift-as-fed-test-looms-202609072253",
       "source": "FXStreet",
       "published_at": "2026-09-07T22:53:16+00:00"
-    },
-    {
-      "title": "Chinese Yuan: Hong Kong’s offshore gateway role expands – Commerzbank",
-      "url": "https://www.fxstreet.com/news/chinese-yuan-hong-kongs-offshore-gateway-role-expands-commerzbank-202609072217",
-      "source": "FXStreet",
-      "published_at": "2026-09-07T22:17:00+00:00"
-    },
-    {
-      "title": "The Canadian Dollar gains as Oil rally offsets jobs gloom",
-      "url": "https://www.fxstreet.com/news/the-canadian-dollar-gains-as-oil-rally-offsets-jobs-gloom-202609072208",
-      "source": "FXStreet",
-      "published_at": "2026-09-07T22:08:39+00:00"
-    },
-    {
-      "title": "South Korean Won: Authorities signal pause in KRW strength – ING",
-      "url": "https://www.fxstreet.com/news/south-korean-won-authorities-signal-pause-in-krw-strength-ing-202609072139",
-      "source": "FXStreet",
-      "published_at": "2026-09-07T21:39:00+00:00"
-    },
-    {
-      "title": "Tuesday tells the Japanese Yen more than next week will",
-      "url": "https://www.fxstreet.com/news/tonight-tells-the-japanese-yen-more-than-next-week-will-202609072138",
-      "source": "FXStreet",
-      "published_at": "2026-09-07T21:38:47+00:00"
-    },
-    {
-      "title": "Indonesian Rupiah: Oil and US inflation pose risks – MUFG",
-      "url": "https://www.fxstreet.com/news/indonesian-rupiah-oil-and-us-inflation-pose-risks-mufg-202609072101",
-      "source": "FXStreet",
-      "published_at": "2026-09-07T21:01:00+00:00"
-    },
-    {
-      "title": "Pound Sterling's rate advantage buys it no say this week",
-      "url": "https://www.fxstreet.com/news/pound-sterlings-rate-advantage-buys-it-no-say-this-week-202609072058",
-      "source": "FXStreet",
-      "published_at": "2026-09-07T20:58:45+00:00"
     }
   ]
 }
