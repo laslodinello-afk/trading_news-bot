@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-08T02:01:19.395997+00:00",
+  "fetched_at": "2026-09-08T10:16:13.517284+00:00",
   "events": [
     {
       "title": "ANZ Job Advertisements m/m",
@@ -164,7 +164,7 @@
     {
       "title": "Trade Balance",
       "country": "CNY",
-      "date": "2026-09-07T22:03:00-04:00",
+      "date": "2026-09-07T22:35:00-04:00",
       "impact": "Low",
       "forecast": "805B",
       "previous": "767B"
@@ -172,7 +172,7 @@
     {
       "title": "USD-Denominated Trade Balance",
       "country": "CNY",
-      "date": "2026-09-07T22:04:00-04:00",
+      "date": "2026-09-07T22:35:00-04:00",
       "impact": "Low",
       "forecast": "118.6B",
       "previous": "112.5B"
