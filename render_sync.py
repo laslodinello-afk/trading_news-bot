@@ -19,6 +19,7 @@ import requests
 
 import config
 import db
+import message_log
 
 logger = logging.getLogger("render_sync")
 
@@ -54,8 +55,20 @@ def sync_from_render(target_date: date) -> bool:
     for article in news_items:
         db.mark_sent_news(article["news_key"], title=article["title"], resume=article.get("resume"))
 
+    # messages : texte Telegram réel du jour (voir message_log.py), pour
+    # l'ancrage "ce qui a vraiment été dit" du DEBRIEF (voir video_scripts.
+    # _gather_data). Relayé via /sync pour ne plus dépendre de la synchro
+    # Turso de CE Mac (qui peut être bloquée — voir message_log._connect —
+    # alors que Render, lui, a ces messages fraîchement écrits en local).
+    # replay_message() est idempotent (index unique sent_at+chat_target+
+    # raw_text) : rappeler sync_from_render() plusieurs fois pour la même
+    # date ne duplique rien.
+    messages = payload.get("messages", [])
+    for msg in messages:
+        message_log.replay_message(msg["sent_at"], msg["chat_target"], msg["raw_text"])
+
     logger.info(
-        "Synchro Render OK pour %s : %d evenement(s), %d breaking news.",
-        target_date, len(events), len(news_items),
+        "Synchro Render OK pour %s : %d evenement(s), %d breaking news, %d message(s) Telegram.",
+        target_date, len(events), len(news_items), len(messages),
     )
     return True

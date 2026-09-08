@@ -5,10 +5,12 @@ ouvrir de vrai socket. Aucun réseau, aucun serveur HTTP réel ici.
 """
 import json
 from datetime import date, datetime, time, timezone
+from unittest.mock import patch
 
 import config
 import db
 import main
+import message_log
 
 
 def test_sync_rejects_when_no_key_configured(monkeypatch, temp_db):
@@ -38,6 +40,7 @@ def test_sync_accepts_correct_key_defaults_to_today(monkeypatch, temp_db):
     assert payload["date"] == datetime.now(config.TIMEZONE).date().isoformat()
     assert payload["events"] == []
     assert payload["news"] == []
+    assert payload["messages"] == []
 
 
 def test_sync_rejects_invalid_date_format(monkeypatch, temp_db):
@@ -71,6 +74,28 @@ def test_sync_returns_real_events_and_news_for_requested_date(monkeypatch, temp_
     assert payload["events"][0]["actual"] == "142K"
     assert len(payload["news"]) == 1
     assert payload["news"][0]["title"] == "Déclaration surprise de la Fed"
+    assert payload["messages"] == []  # Turso désactivé sous temp_db, voir test dédié ci-dessous
+
+
+def test_sync_returns_real_messages_for_requested_date(monkeypatch, temp_db, tmp_path):
+    monkeypatch.setattr(config, "SYNC_API_KEY", "le-bon-secret")
+    # Turso "configuré mais injoignable" (pas "non configuré") pour que
+    # message_log._connect() utilise vraiment sa réplique locale plutôt que
+    # de se désactiver — voir message_log.py.
+    monkeypatch.setattr(config, "TURSO_DATABASE_URL", "libsql://example.turso.io")
+    monkeypatch.setattr(config, "TURSO_AUTH_TOKEN", "une-cle")
+    monkeypatch.setattr(config, "MESSAGE_LOG_REPLICA_PATH", str(tmp_path / "message_log.db"))
+
+    target_date = date.today()
+    with patch("turso.lib_sync.connect_sync", side_effect=ConnectionError("injoignable")):
+        message_log.log_message("canal", "🚨 *Breaking News* ⭐⭐⭐\n📰 Test")
+
+        status, _, body = main.build_sync_response(f"date={target_date.isoformat()}", "le-bon-secret")
+
+    assert status == 200
+    payload = json.loads(body)
+    assert len(payload["messages"]) == 1
+    assert payload["messages"][0]["raw_text"] == "🚨 *Breaking News* ⭐⭐⭐\n📰 Test"
 
 
 def test_sync_uses_constant_time_comparison_not_equality_shortcut(monkeypatch, temp_db):

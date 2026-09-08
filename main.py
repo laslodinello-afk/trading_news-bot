@@ -33,6 +33,7 @@ import ai_analyzer
 import calendar_fetcher
 import config
 import db
+import message_log
 import news_watcher
 import telegram_bot
 import video_scripts
@@ -76,7 +77,15 @@ def build_sync_response(query_string: str, auth_header: str | None) -> tuple[int
     day_start_utc, day_end_utc = db.local_day_bounds_utc(target_date)
     events = [dict(row) for row in db.get_events_for_day(day_start_utc, day_end_utc)]
     news = [dict(row) for row in db.get_news_for_day(day_start_utc, day_end_utc)]
-    payload = {"date": target_date.isoformat(), "events": events, "news": news}
+    # messages : texte Telegram réel du jour (voir message_log.py), pour le
+    # "ce qui a vraiment été dit" du DEBRIEF local. Relayé ici pour la même
+    # raison que events/news : ce service a ses propres écritures locales
+    # toujours fraîches (voir message_log.log_message), même quand la synchro
+    # Turso vers l'extérieur est bloquée (constaté en conditions réelles le
+    # 07/09 — voir message_log._connect) — /sync évite au script local de
+    # dépendre de cette même synchro Turso pour lire cette donnée.
+    messages = message_log.get_messages_for_day(target_date)
+    payload = {"date": target_date.isoformat(), "events": events, "news": news, "messages": messages}
     return 200, "application/json", json.dumps(payload).encode("utf-8")
 
 

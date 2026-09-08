@@ -2,13 +2,14 @@
 render_sync.sync_from_render() : best-effort, jamais de réseau réel ici
 (requests.get mocké). Vérifie le repli propre (False) quand la synchro n'est
 pas configurée/échoue, et que les données reçues sont bien écrites en local
-via les mêmes fonctions db.* que le reste de l'agent.
+via les mêmes fonctions db.*/message_log.* que le reste de l'agent.
 """
 from datetime import date, datetime, time, timezone
 from unittest.mock import Mock, patch
 
 import config
 import db
+import message_log
 import render_sync
 
 
@@ -92,6 +93,71 @@ def test_sync_from_render_upserts_events_and_news(monkeypatch, temp_db):
     news = db.get_news_for_day(day_start, day_end)
     assert len(news) == 1
     assert news[0]["title"] == "Déclaration surprise de la Fed"
+
+
+def test_sync_from_render_replays_messages(monkeypatch, temp_db, tmp_path):
+    # Turso "configuré mais injoignable" (pas "non configuré") pour que
+    # message_log._connect() tente vraiment le repli SQLite local plutôt que
+    # de se désactiver immédiatement (voir message_log.py) — c'est le
+    # scénario réel du 07/09 que ce relais est censé couvrir.
+    monkeypatch.setattr(config, "TURSO_DATABASE_URL", "libsql://example.turso.io")
+    monkeypatch.setattr(config, "TURSO_AUTH_TOKEN", "une-cle")
+    monkeypatch.setattr(config, "MESSAGE_LOG_REPLICA_PATH", str(tmp_path / "message_log.db"))
+    monkeypatch.setattr(config, "RENDER_SYNC_URL", "https://example.onrender.com")
+    monkeypatch.setattr(config, "SYNC_API_KEY", "une-cle")
+
+    target_date = date(2026, 9, 6)
+    fake_resp = Mock()
+    fake_resp.raise_for_status = Mock()
+    fake_resp.json.return_value = {
+        "date": target_date.isoformat(),
+        "events": [],
+        "news": [],
+        "messages": [
+            {
+                "sent_at": "2026-09-06T16:00:52.544125+00:00",
+                "chat_target": "canal",
+                "raw_text": "🚨 *Breaking News* ⭐⭐⭐\n📰 Test relayé depuis Render",
+            }
+        ],
+    }
+
+    with patch("render_sync.requests.get", return_value=fake_resp), \
+         patch("turso.lib_sync.connect_sync", side_effect=ConnectionError("injoignable")):
+        result = render_sync.sync_from_render(target_date)
+    assert result is True
+
+    messages = message_log.get_messages_for_day(target_date)
+    assert len(messages) == 1
+    assert messages[0]["raw_text"] == "🚨 *Breaking News* ⭐⭐⭐\n📰 Test relayé depuis Render"
+
+
+def test_sync_from_render_replaying_messages_twice_does_not_duplicate(monkeypatch, temp_db, tmp_path):
+    monkeypatch.setattr(config, "TURSO_DATABASE_URL", "libsql://example.turso.io")
+    monkeypatch.setattr(config, "TURSO_AUTH_TOKEN", "une-cle")
+    monkeypatch.setattr(config, "MESSAGE_LOG_REPLICA_PATH", str(tmp_path / "message_log.db"))
+    monkeypatch.setattr(config, "RENDER_SYNC_URL", "https://example.onrender.com")
+    monkeypatch.setattr(config, "SYNC_API_KEY", "une-cle")
+
+    target_date = date(2026, 9, 6)
+    fake_resp = Mock()
+    fake_resp.raise_for_status = Mock()
+    fake_resp.json.return_value = {
+        "date": target_date.isoformat(),
+        "events": [],
+        "news": [],
+        "messages": [
+            {"sent_at": "2026-09-06T16:00:52.544125+00:00", "chat_target": "canal", "raw_text": "Même message"}
+        ],
+    }
+
+    with patch("render_sync.requests.get", return_value=fake_resp), \
+         patch("turso.lib_sync.connect_sync", side_effect=ConnectionError("injoignable")):
+        render_sync.sync_from_render(target_date)
+        render_sync.sync_from_render(target_date)  # re-synchro (ex: rattrapage) : ne doit pas dupliquer
+
+    messages = message_log.get_messages_for_day(target_date)
+    assert len(messages) == 1
 
 
 def test_sync_from_render_strips_trailing_slash_from_url(monkeypatch, temp_db):
