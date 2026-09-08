@@ -1,6 +1,48 @@
 {
-  "fetched_at": "2026-09-08T18:49:11.196901+00:00",
+  "fetched_at": "2026-09-08T21:30:34.792978+00:00",
   "articles": [
+    {
+      "title": "Forex Today: China’s inflation looms as Lagarde tees up ECB decision",
+      "url": "https://www.fxstreet.com/news/forex-today-chinas-inflation-looms-as-lagarde-tees-up-ecb-decision-202609082014",
+      "source": "FXStreet",
+      "published_at": "2026-09-08T20:14:01+00:00"
+    },
+    {
+      "title": "Chinese Yuan: PBoC fix slows downside pace – OCBC",
+      "url": "https://www.fxstreet.com/news/chinese-yuan-pboc-fix-slows-downside-pace-ocbc-202609081945",
+      "source": "FXStreet",
+      "published_at": "2026-09-08T19:45:38+00:00"
+    },
+    {
+      "title": "British Pound: Short term bias tilts higher against US Dollar – UOB",
+      "url": "https://www.fxstreet.com/news/british-pound-short-term-bias-tilts-higher-against-us-dollar-uob-202609081930",
+      "source": "FXStreet",
+      "published_at": "2026-09-08T19:30:54+00:00"
+    },
+    {
+      "title": "United States: Core inflation stays contained as goods soften – TD Securities",
+      "url": "https://www.fxstreet.com/news/united-states-core-inflation-stays-contained-as-goods-soften-td-securities-202609081917",
+      "source": "FXStreet",
+      "published_at": "2026-09-08T19:17:12+00:00"
+    },
+    {
+      "title": "Mexican Peso flatlines as traders brace for Mexico’s fiscal package",
+      "url": "https://www.fxstreet.com/news/mexican-peso-flatlines-as-traders-brace-for-mexicos-fiscal-package-202609081907",
+      "source": "FXStreet",
+      "published_at": "2026-09-08T19:07:28+00:00"
+    },
+    {
+      "title": "Japanese Yen: Intervention risk and key levels in focus against US Dollar – Scotiabank",
+      "url": "https://www.fxstreet.com/news/japanese-yen-intervention-risk-and-key-levels-in-focus-against-us-dollar-scotiabank-202609081907",
+      "source": "FXStreet",
+      "published_at": "2026-09-08T19:07:18+00:00"
+    },
+    {
+      "title": "Swiss Franc: Sideways consolidation inside tight band against US Dollar – UOB",
+      "url": "https://www.fxstreet.com/news/swiss-franc-sideways-consolidation-inside-tight-band-against-us-dollar-uob-202609081857",
+      "source": "FXStreet",
+      "published_at": "2026-09-08T18:57:18+00:00"
+    },
     {
       "title": "United Kingdom: Backloaded consolidation risks – Deutsche Bank",
       "url": "https://www.fxstreet.com/news/united-kingdom-backloaded-consolidation-risks-deutsche-bank-202609081848",
@@ -12,72 +54,6 @@
       "url": "https://www.fxstreet.com/news/us-dollar-mixed-performance-with-fed-and-trade-risks-scotiabank-202609081833",
       "source": "FXStreet",
       "published_at": "2026-09-08T18:33:59+00:00"
-    },
-    {
-      "title": "Gold price wilts as Oil shock puts CPI in Fed crosshairs",
-      "url": "https://www.fxstreet.com/news/gold-price-wilts-as-oil-shock-puts-cpi-in-fed-crosshairs-202609081801",
-      "source": "FXStreet",
-      "published_at": "2026-09-08T18:01:43+00:00"
-    },
-    {
-      "title": "Euro: Upside bias within defined range against US Dollar – UOB",
-      "url": "https://www.fxstreet.com/news/euro-upside-bias-within-defined-range-against-us-dollar-uob-202609081751",
-      "source": "FXStreet",
-      "published_at": "2026-09-08T17:51:16+00:00"
-    },
-    {
-      "title": "Euro rebounds against British Pound on diverging ECB-BoE interest rate paths",
-      "url": "https://www.fxstreet.com/news/euro-rebounds-against-british-pound-on-diverging-ecb-boe-interest-rate-paths-202609081741",
-      "source": "FXStreet",
-      "published_at": "2026-09-08T17:41:38+00:00"
-    },
-    {
-      "title": "Japanese Yen: Policy scenarios favor stronger JPY against US Dollar – BBH",
-      "url": "https://www.fxstreet.com/news/japanese-yen-policy-scenarios-favor-stronger-jpy-against-us-dollar-bbh-202609081740",
-      "source": "FXStreet",
-      "published_at": "2026-09-08T17:40:11+00:00"
-    },
-    {
-      "title": "British Pound: Supportive BoE outlook with range trade against US Dollar – Scotiabank",
-      "url": "https://www.fxstreet.com/news/british-pound-supportive-boe-outlook-with-range-trade-against-us-dollar-scotiabank-202609081721",
-      "source": "FXStreet",
-      "published_at": "2026-09-08T17:21:40+00:00"
-    },
-    {
-      "title": "The Japanese Yen spikes and unwinds on the best pay data in decades",
-      "url": "https://www.fxstreet.com/news/the-japanese-yen-spikes-and-unwinds-on-the-best-pay-data-in-decades-202609081639",
-      "source": "FXStreet",
-      "published_at": "2026-09-08T16:39:50+00:00"
-    },
-    {
-      "title": "Canadian Dollar trims gains as risk aversion supports US Dollar despite higher Oil prices",
-      "url": "https://www.fxstreet.com/news/canadian-dollar-trims-gains-as-risk-aversion-supports-us-dollar-despite-higher-oil-prices-202609081632",
-      "source": "FXStreet",
-      "published_at": "2026-09-08T16:32:51+00:00"
-    },
-    {
-      "title": "The Euro's rate hike does not come with a gas cargo",
-      "url": "https://www.fxstreet.com/news/the-euros-rate-hike-does-not-come-with-a-gas-cargo-202609081627",
-      "source": "FXStreet",
-      "published_at": "2026-09-08T16:27:06+00:00"
-    },
-    {
-      "title": "Dow Jones Industrial Average is paying for a sixth day of Crude Oil",
-      "url": "https://www.fxstreet.com/news/dow-jones-industrial-average-is-paying-for-a-sixth-day-of-crude-oil-202609081554",
-      "source": "FXStreet",
-      "published_at": "2026-09-08T15:54:39+00:00"
-    },
-    {
-      "title": "NY Fed Survey of Consumers shows inflation relief, jobs-market unease",
-      "url": "https://www.fxstreet.com/news/ny-fed-survey-of-consumers-shows-inflation-relief-jobs-market-unease-202609081558",
-      "source": "FXStreet",
-      "published_at": "2026-09-08T15:58:07+00:00"
-    },
-    {
-      "title": "Colombian Peso: Downside risk bias against US Dollar – TD Securities",
-      "url": "https://www.fxstreet.com/news/colombian-peso-downside-risk-bias-against-us-dollar-td-securities-202609081558",
-      "source": "FXStreet",
-      "published_at": "2026-09-08T15:58:00+00:00"
     }
   ]
 }
