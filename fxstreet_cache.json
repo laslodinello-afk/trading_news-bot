@@ -1,6 +1,48 @@
 {
-  "fetched_at": "2026-09-08T23:38:49.724989+00:00",
+  "fetched_at": "2026-09-09T01:34:15.585125+00:00",
   "articles": [
+    {
+      "title": "0.8%: China’s CPI inflation rises in August",
+      "url": "https://www.fxstreet.com/news/08-chinas-cpi-inflation-rises-in-august-202609090131",
+      "source": "FXStreet",
+      "published_at": "2026-09-09T01:31:26+00:00"
+    },
+    {
+      "title": "US President Donald Trump bans Canadian autos, dairy and alcohol",
+      "url": "https://www.fxstreet.com/news/us-president-donald-trump-bans-canadian-autos-dairy-and-alcohol-202609090120",
+      "source": "FXStreet",
+      "published_at": "2026-09-09T01:20:13+00:00"
+    },
+    {
+      "title": "WTI surges as US strikes Iranian tankers",
+      "url": "https://www.fxstreet.com/news/wti-surges-as-us-strikes-iranian-tankers-202609090117",
+      "source": "FXStreet",
+      "published_at": "2026-09-09T01:17:33+00:00"
+    },
+    {
+      "title": "PBOC sets USD/CNY reference rate at 6.7769 vs. 6.7804 previous",
+      "url": "https://www.fxstreet.com/news/pboc-sets-usd-cny-reference-rate-at-67769-vs-67804-previous-202609090115",
+      "source": "FXStreet",
+      "published_at": "2026-09-09T01:15:37+00:00"
+    },
+    {
+      "title": "British Pound holds steady near mid-1.3500s vs USD as traders eye UK GDP and US inflation",
+      "url": "https://www.fxstreet.com/news/british-pound-holds-steady-near-mid-13500s-vs-usd-as-traders-eye-uk-gdp-and-us-inflation-202609090110",
+      "source": "FXStreet",
+      "published_at": "2026-09-09T01:10:42+00:00"
+    },
+    {
+      "title": "Euro grinds higher above 1.1600, traders await ECB rate decision, US inflation data",
+      "url": "https://www.fxstreet.com/news/euro-grinds-higher-above-11600-traders-await-ecb-rate-decision-us-inflation-data-202609090058",
+      "source": "FXStreet",
+      "published_at": "2026-09-09T00:58:02+00:00"
+    },
+    {
+      "title": "US targets Iranian oil tankers in response to attacks on US ships",
+      "url": "https://www.fxstreet.com/news/us-targets-iranian-oil-tankers-in-response-to-attacks-on-us-ships-202609090001",
+      "source": "FXStreet",
+      "published_at": "2026-09-09T00:01:25+00:00"
+    },
     {
       "title": "Gold slumps to near $4,350 amid oil-driven inflation fears, US inflation data in focus",
       "url": "https://www.fxstreet.com/news/gold-slumps-to-near-4-350-amid-oil-driven-inflation-fears-us-inflation-data-in-focus-202609082332",
@@ -18,24 +60,6 @@
       "url": "https://www.fxstreet.com/news/the-japanese-yen-spikes-on-a-generational-wage-print-and-balks-by-the-closing-bell-202609082315",
       "source": "FXStreet",
       "published_at": "2026-09-08T23:15:00+00:00"
-    },
-    {
-      "title": "The Pound sits still through a hawkish hearing and the priciest gilt sale",
-      "url": "https://www.fxstreet.com/news/the-pound-sits-still-through-a-hawkish-hearing-and-the-priciest-gilt-sale-202609082221",
-      "source": "FXStreet",
-      "published_at": "2026-09-08T22:21:05+00:00"
-    },
-    {
-      "title": "USD/JPY Price Forecast: Hammer teases rebound after 650-pip slide",
-      "url": "https://www.fxstreet.com/news/usd-jpy-price-forecast-hammer-teases-rebound-after-650-pip-slide-202609082231",
-      "source": "FXStreet",
-      "published_at": "2026-09-08T22:31:06+00:00"
-    },
-    {
-      "title": "Silver Price Forecast: Head-and-Shoulders risk builds below $67",
-      "url": "https://www.fxstreet.com/news/silver-price-forecast-head-and-shoulders-risk-builds-below-67-202609082205",
-      "source": "FXStreet",
-      "published_at": "2026-09-08T22:05:00+00:00"
     }
   ]
 }
