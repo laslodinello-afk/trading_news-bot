@@ -1,6 +1,12 @@
 {
-  "fetched_at": "2026-09-09T21:47:22.021011+00:00",
+  "fetched_at": "2026-09-09T23:33:31.735707+00:00",
   "articles": [
+    {
+      "title": "Gold rebounds above $4,400 on weaker Dollar, US PPI inflation data looms",
+      "url": "https://www.fxstreet.com/news/gold-rebounds-above-4-400-on-weaker-dollar-us-ppi-inflation-data-looms-202609092322",
+      "source": "FXStreet",
+      "published_at": "2026-09-09T23:22:42+00:00"
+    },
     {
       "title": "Australian Dollar flatlines as US yield ripples meet RBA hawks",
       "url": "https://www.fxstreet.com/news/australian-dollar-flatlines-as-us-yield-ripples-meet-rba-hawks-202609092136",
@@ -36,30 +42,6 @@
       "url": "https://www.fxstreet.com/news/nzd-usd-price-forecast-sma-cluster-wobbles-as-us-yields-bite-202609092034",
       "source": "FXStreet",
       "published_at": "2026-09-09T20:34:03+00:00"
-    },
-    {
-      "title": "Chinese Yuan: Uptrend intact with muted inflation against US Dollar – BBH",
-      "url": "https://www.fxstreet.com/news/chinese-yuan-uptrend-intact-with-muted-inflation-against-us-dollar-bbh-202609091954",
-      "source": "FXStreet",
-      "published_at": "2026-09-09T19:54:00+00:00"
-    },
-    {
-      "title": "Mexican Peso holds firm as inflation cools, fiscal plan lands",
-      "url": "https://www.fxstreet.com/news/mexican-peso-holds-firm-as-inflation-cools-fiscal-plan-lands-202609091949",
-      "source": "FXStreet",
-      "published_at": "2026-09-09T19:49:41+00:00"
-    },
-    {
-      "title": "Crude Oil rallies into 14-week highs as US and Iran spend the week attacking tankers",
-      "url": "https://www.fxstreet.com/news/crude-oil-rallies-into-14-week-highs-as-us-and-iran-spend-the-week-attacking-tankers-202609091917",
-      "source": "FXStreet",
-      "published_at": "2026-09-09T19:17:17+00:00"
-    },
-    {
-      "title": "Taiwan Dollar: Range trade expected after CPI surprise against US Dollar – Commerzbank",
-      "url": "https://www.fxstreet.com/news/taiwan-dollar-range-trade-expected-after-cpi-surprise-against-us-dollar-commerzbank-202609091912",
-      "source": "FXStreet",
-      "published_at": "2026-09-09T19:12:00+00:00"
     }
   ]
 }
