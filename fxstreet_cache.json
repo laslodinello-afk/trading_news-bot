@@ -1,41 +1,89 @@
 {
-  "fetched_at": "2026-09-10T01:26:14.894313+00:00",
+  "fetched_at": "2026-09-10T06:35:35.259113+00:00",
   "articles": [
     {
-      "title": "Japanese Yen retreats from multi-month top vs USD as traders await US inflation data",
-      "url": "https://www.fxstreet.com/news/japanese-yen-retreats-from-multi-month-top-vs-usd-as-traders-await-us-inflation-data-202609100118",
+      "title": "Brent: Geopolitics keep rally supported – ING",
+      "url": "https://www.fxstreet.com/news/brent-geopolitics-keep-rally-supported-ing-202609100629",
       "source": "FXStreet",
-      "published_at": "2026-09-10T01:18:00+00:00"
+      "published_at": "2026-09-10T06:29:32+00:00"
     },
     {
-      "title": "PBOC sets USD/CNY reference rate at 6.7766 vs. 6.7769 previous",
-      "url": "https://www.fxstreet.com/news/pboc-sets-usd-cny-reference-rate-at-67766-vs-67769-previous-202609100115",
+      "title": "Euro holds recent gains despite high Oil prices with ECB decision in focus",
+      "url": "https://www.fxstreet.com/news/euro-holds-recent-gains-despite-high-oil-prices-with-ecb-decision-on-focus-202609100627",
       "source": "FXStreet",
-      "published_at": "2026-09-10T01:15:29+00:00"
+      "published_at": "2026-09-10T06:27:27+00:00"
     },
     {
-      "title": "WTI declines despite rising US-Iran tensions threaten",
-      "url": "https://www.fxstreet.com/news/wti-declines-despite-rising-us-iran-tensions-threaten-202609100108",
+      "title": "British Pound strengthens above 1.3550, all eyes on US PPI inflation release",
+      "url": "https://www.fxstreet.com/news/british-pound-strengthens-above-13550-all-eyes-on-us-ppi-inflation-release-202609100624",
       "source": "FXStreet",
-      "published_at": "2026-09-10T01:08:22+00:00"
+      "published_at": "2026-09-10T06:24:52+00:00"
     },
     {
-      "title": "BoJ to raise rates to 1.25% this month — Reuters poll",
-      "url": "https://www.fxstreet.com/news/boj-to-raise-rates-to-125-this-month-reuters-poll-202609100040",
+      "title": "Euro: Firms against US Dollar as ECB hike in focus – Danske Bank",
+      "url": "https://www.fxstreet.com/news/euro-firms-against-us-dollar-as-ecb-hike-in-focus-danske-bank-202609100614",
       "source": "FXStreet",
-      "published_at": "2026-09-10T00:40:31+00:00"
+      "published_at": "2026-09-10T06:14:50+00:00"
     },
     {
-      "title": "Euro steadies above 1.1600 ahead of ECB rate decision, US PPI data",
-      "url": "https://www.fxstreet.com/news/euro-steadies-above-11600-ahead-of-ecb-rate-decision-us-ppi-data-202609100026",
+      "title": "Gold sticks to gains, eyes $4,450 as USD remains depressed ahead of US inflation data",
+      "url": "https://www.fxstreet.com/news/gold-holds-steady-above-4-400-as-traders-seem-hesitant-ahead-of-us-inflation-data-202609100351",
       "source": "FXStreet",
-      "published_at": "2026-09-10T00:26:47+00:00"
+      "published_at": "2026-09-10T03:51:09+00:00"
     },
     {
-      "title": "Gold rebounds above $4,400 on weaker Dollar, US PPI inflation data looms",
-      "url": "https://www.fxstreet.com/news/gold-rebounds-above-4-400-on-weaker-dollar-us-ppi-inflation-data-looms-202609092322",
+      "title": "Japanese Yen remains firm against US Dollar amid hawkish BoJ bets, US PPI data eyed",
+      "url": "https://www.fxstreet.com/news/japanese-yen-remains-firm-against-us-dollar-amid-hawkish-boj-bets-us-ppi-data-eyed-202609100554",
       "source": "FXStreet",
-      "published_at": "2026-09-09T23:22:42+00:00"
+      "published_at": "2026-09-10T05:54:15+00:00"
+    },
+    {
+      "title": "BoJ’s Masu: Underlying inflation gradually approaching 2% but don't see it overshooting",
+      "url": "https://www.fxstreet.com/news/bojs-masu-underlying-inflation-gradually-approaching-2-but-dont-see-it-overshooting-202609100550",
+      "source": "FXStreet",
+      "published_at": "2026-09-10T05:50:13+00:00"
+    },
+    {
+      "title": "AUD/JPY Price Forecast: Softens below 111.00, bearish vibe prevails below 100-day SMA",
+      "url": "https://www.fxstreet.com/news/aud-jpy-price-forecast-softens-below-11100-bearish-vibe-prevails-below-100-day-sma-202609100525",
+      "source": "FXStreet",
+      "published_at": "2026-09-10T05:25:28+00:00"
+    },
+    {
+      "title": "Indian Rupee extends its downward streak as oil prices keep rising",
+      "url": "https://www.fxstreet.com/news/indian-rupee-extends-its-downward-streak-as-oil-prices-keep-rising-202609100524",
+      "source": "FXStreet",
+      "published_at": "2026-09-10T05:24:41+00:00"
+    },
+    {
+      "title": "EUR/JPY Price Forecast: Stays near 178.50 amid ongoing bearish bias",
+      "url": "https://www.fxstreet.com/news/eur-jpy-price-forecast-stays-near-17850-amid-ongoing-bearish-bias-202609100510",
+      "source": "FXStreet",
+      "published_at": "2026-09-10T05:10:36+00:00"
+    },
+    {
+      "title": "AUD/USD Price Forecast: Sits near May 14 high, above 0.7200 as US inflation data looms",
+      "url": "https://www.fxstreet.com/news/aud-usd-price-forecast-sits-near-may-14-high-above-07200-as-us-inflation-data-looms-202609100438",
+      "source": "FXStreet",
+      "published_at": "2026-09-10T04:38:45+00:00"
+    },
+    {
+      "title": "India Gold price today: Gold rises, according to FXStreet data",
+      "url": "https://www.fxstreet.com/news/india-gold-price-today-gold-rises-according-to-fxstreet-data-202609100435",
+      "source": "FXStreet",
+      "published_at": "2026-09-10T04:35:09+00:00"
+    },
+    {
+      "title": "Swiss Franc gains as US Dollar weakens on Fed uncertainty",
+      "url": "https://www.fxstreet.com/news/swiss-franc-gains-as-us-dollar-weakens-on-fed-uncertainty-202609100417",
+      "source": "FXStreet",
+      "published_at": "2026-09-10T04:17:38+00:00"
+    },
+    {
+      "title": "EUR/USD Price Forecast: Sticks to gains above 1.1600 as bulls await ECB, US PPI",
+      "url": "https://www.fxstreet.com/news/eur-usd-price-forecast-sticks-to-gains-above-11600-as-bulls-await-ecb-us-ppi-202609100407",
+      "source": "FXStreet",
+      "published_at": "2026-09-10T04:07:11+00:00"
     }
   ]
 }
