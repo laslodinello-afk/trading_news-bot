@@ -1,113 +1,59 @@
 {
-  "fetched_at": "2026-09-10T15:27:14.967743+00:00",
+  "fetched_at": "2026-09-10T18:39:17.920882+00:00",
   "articles": [
     {
-      "title": "British Pound: Consolidation against US Dollar before UK data and BoE – Scotiabank",
-      "url": "https://www.fxstreet.com/news/british-pound-consolidation-against-us-dollar-before-uk-data-and-boe-scotiabank-202609101508",
+      "title": "WTI Oil nears $100 as Middle East tensions keep supply concerns elevated",
+      "url": "https://www.fxstreet.com/news/wti-oil-nears-100-as-middle-east-tensions-keep-supply-concerns-elevated-202609101806",
       "source": "FXStreet",
-      "published_at": "2026-09-10T15:08:52+00:00"
+      "published_at": "2026-09-10T18:06:36+00:00"
     },
     {
-      "title": "United States: Higher August forecast with methodology shift – TD Securities",
-      "url": "https://www.fxstreet.com/news/united-states-higher-august-forecast-with-methodology-shift-td-securities-202609101450",
+      "title": "ECB sources say further tightening remains likely – Reuters",
+      "url": "https://www.fxstreet.com/news/ecb-sources-say-further-tightening-remains-likely-reuters-202609101738",
       "source": "FXStreet",
-      "published_at": "2026-09-10T14:50:59+00:00"
+      "published_at": "2026-09-10T17:38:10+00:00"
     },
     {
-      "title": "Australian Dollar eases from four-month high",
-      "url": "https://www.fxstreet.com/news/australian-dollar-eases-from-four-month-high-202609101447",
+      "title": "Gold bulls blink as hot US PPI, $100 Oil send yields flying",
+      "url": "https://www.fxstreet.com/news/gold-bulls-blink-as-hot-us-ppi-100-oil-send-yields-flying-202609101729",
       "source": "FXStreet",
-      "published_at": "2026-09-10T14:47:46+00:00"
+      "published_at": "2026-09-10T17:29:00+00:00"
     },
     {
-      "title": "European Central Bank: Two more hikes remain the baseline – Nordea",
-      "url": "https://www.fxstreet.com/news/european-central-bank-two-more-hikes-remain-the-baseline-nordea-202609101440",
+      "title": "Euro steadies against the Yen after ECB lifts rates",
+      "url": "https://www.fxstreet.com/news/euro-steadies-against-the-yen-after-ecb-lifts-rates-202609101727",
       "source": "FXStreet",
-      "published_at": "2026-09-10T14:40:11+00:00"
+      "published_at": "2026-09-10T17:27:51+00:00"
     },
     {
-      "title": "Euro gains modestly against British Pound after ECB delivers widely expected hike",
-      "url": "https://www.fxstreet.com/news/uro-gains-modestly-against-british-pound-after-ecb-delivers-widely-expected-hike-202609101426",
+      "title": "ECB recap: A hawkish hike despite downside growth risks",
+      "url": "https://www.fxstreet.com/news/ecb-recap-a-hawkish-hike-despite-downside-growth-risks-202609101721",
       "source": "FXStreet",
-      "published_at": "2026-09-10T14:26:40+00:00"
+      "published_at": "2026-09-10T17:21:03+00:00"
     },
     {
-      "title": "Canadian Dollar: Range trade with upside bias against US Dollar – Scotiabank",
-      "url": "https://www.fxstreet.com/news/canadian-dollar-range-trade-with-upside-bias-against-us-dollar-scotiabank-202609101421",
+      "title": "Japanese Yen: Defensive Yen as BoJ turns hawkish – Scotiabank",
+      "url": "https://www.fxstreet.com/news/japanese-yen-defensive-yen-as-boj-turns-hawkish-scotiabank-202609101637",
       "source": "FXStreet",
-      "published_at": "2026-09-10T14:21:05+00:00"
+      "published_at": "2026-09-10T16:37:00+00:00"
     },
     {
-      "title": "Japanese Yen: BoJ risks skewed to stronger Yen – BBH",
-      "url": "https://www.fxstreet.com/news/japanese-yen-boj-risks-skewed-to-stronger-yen-bbh-202609101405",
+      "title": "Canadian Dollar firms as US Dollar loses momentum, Oil prices extend rally",
+      "url": "https://www.fxstreet.com/news/canadian-dollar-trades-under-pressure-as-us-ppi-data-supports-fed-hike-bets-202609101551",
       "source": "FXStreet",
-      "published_at": "2026-09-10T14:05:13+00:00"
+      "published_at": "2026-09-10T15:51:03+00:00"
     },
     {
-      "title": "Japanese Yen comes under pressure as US PPI data boost US Dollar",
-      "url": "https://www.fxstreet.com/news/japanese-yen-comes-under-pressure-as-us-ppi-data-boost-us-dollar-202609101358",
+      "title": "Copper: Tariff uncertainty and max CTA length – TD Securities",
+      "url": "https://www.fxstreet.com/news/copper-tariff-uncertainty-and-max-cta-length-td-securities-202609101551",
       "source": "FXStreet",
-      "published_at": "2026-09-10T13:58:08+00:00"
+      "published_at": "2026-09-10T15:51:00+00:00"
     },
     {
-      "title": "Copper: Record prices with real constraints – NBC",
-      "url": "https://www.fxstreet.com/news/copper-record-prices-with-real-constraints-nbc-202609101343",
+      "title": "Silver slides below $65 as US PPI reinforces Fed rate-hike bets",
+      "url": "https://www.fxstreet.com/news/silver-slides-below-65-as-us-ppi-revives-fed-rate-hike-bets-202609101543",
       "source": "FXStreet",
-      "published_at": "2026-09-10T13:43:37+00:00"
-    },
-    {
-      "title": "Lagarde speech: Surprised by economic resilience",
-      "url": "https://www.fxstreet.com/news/lagarde-speech-surprised-by-economic-resilience-202609101324",
-      "source": "FXStreet",
-      "published_at": "2026-09-10T13:24:07+00:00"
-    },
-    {
-      "title": "Gold: Near-term selling may only delay next leg higher - TD Securities",
-      "url": "https://www.fxstreet.com/news/gold-near-term-selling-may-only-delay-next-leg-higher-td-securities-202609101317",
-      "source": "FXStreet",
-      "published_at": "2026-09-10T13:17:08+00:00"
-    },
-    {
-      "title": "Lagarde speech: Can't anticipate what will be the next move",
-      "url": "https://www.fxstreet.com/news/lagarde-speech-cant-anticipate-what-will-be-the-next-move-202609101314",
-      "source": "FXStreet",
-      "published_at": "2026-09-10T13:14:22+00:00"
-    },
-    {
-      "title": "WTI US Oil rebounds toward $97 as US-Iran conflict escalates",
-      "url": "https://www.fxstreet.com/news/wti-us-oil-rebounds-toward-97-as-us-iran-conflict-escalates-202609101306",
-      "source": "FXStreet",
-      "published_at": "2026-09-10T13:06:46+00:00"
-    },
-    {
-      "title": "Lagarde speech: Inflation to return to target towards end of 2027",
-      "url": "https://www.fxstreet.com/news/lagarde-speech-inflation-to-return-to-target-towards-end-of-2027-202609101306",
-      "source": "FXStreet",
-      "published_at": "2026-09-10T13:06:37+00:00"
-    },
-    {
-      "title": "Euro weakens despite ECB rate hike as US PPI comes in hot",
-      "url": "https://www.fxstreet.com/news/euro-weakens-despite-ecb-rate-hike-as-us-ppi-comes-in-hot-202609101256",
-      "source": "FXStreet",
-      "published_at": "2026-09-10T12:56:45+00:00"
-    },
-    {
-      "title": "US headline Producer Price Index rose by 5.4% in August",
-      "url": "https://www.fxstreet.com/news/us-headline-producer-prices-rose-by-54-in-august-202609101241",
-      "source": "FXStreet",
-      "published_at": "2026-09-10T12:41:21+00:00"
-    },
-    {
-      "title": "Canada: Limited trade shock from new U.S. tariffs – RBC",
-      "url": "https://www.fxstreet.com/news/canada-limited-trade-shock-from-new-us-tariffs-rbc-202609101239",
-      "source": "FXStreet",
-      "published_at": "2026-09-10T12:39:27+00:00"
-    },
-    {
-      "title": "US Initial Jobless Claims dropped to 206K last week",
-      "url": "https://www.fxstreet.com/news/us-initial-jobless-claims-dropped-to-206k-last-week-202609101233",
-      "source": "FXStreet",
-      "published_at": "2026-09-10T12:33:36+00:00"
+      "published_at": "2026-09-10T15:43:46+00:00"
     }
   ]
 }
