@@ -1,47 +1,41 @@
 {
-  "fetched_at": "2026-09-09T23:33:31.735707+00:00",
+  "fetched_at": "2026-09-10T01:26:14.894313+00:00",
   "articles": [
+    {
+      "title": "Japanese Yen retreats from multi-month top vs USD as traders await US inflation data",
+      "url": "https://www.fxstreet.com/news/japanese-yen-retreats-from-multi-month-top-vs-usd-as-traders-await-us-inflation-data-202609100118",
+      "source": "FXStreet",
+      "published_at": "2026-09-10T01:18:00+00:00"
+    },
+    {
+      "title": "PBOC sets USD/CNY reference rate at 6.7766 vs. 6.7769 previous",
+      "url": "https://www.fxstreet.com/news/pboc-sets-usd-cny-reference-rate-at-67766-vs-67769-previous-202609100115",
+      "source": "FXStreet",
+      "published_at": "2026-09-10T01:15:29+00:00"
+    },
+    {
+      "title": "WTI declines despite rising US-Iran tensions threaten",
+      "url": "https://www.fxstreet.com/news/wti-declines-despite-rising-us-iran-tensions-threaten-202609100108",
+      "source": "FXStreet",
+      "published_at": "2026-09-10T01:08:22+00:00"
+    },
+    {
+      "title": "BoJ to raise rates to 1.25% this month — Reuters poll",
+      "url": "https://www.fxstreet.com/news/boj-to-raise-rates-to-125-this-month-reuters-poll-202609100040",
+      "source": "FXStreet",
+      "published_at": "2026-09-10T00:40:31+00:00"
+    },
+    {
+      "title": "Euro steadies above 1.1600 ahead of ECB rate decision, US PPI data",
+      "url": "https://www.fxstreet.com/news/euro-steadies-above-11600-ahead-of-ecb-rate-decision-us-ppi-data-202609100026",
+      "source": "FXStreet",
+      "published_at": "2026-09-10T00:26:47+00:00"
+    },
     {
       "title": "Gold rebounds above $4,400 on weaker Dollar, US PPI inflation data looms",
       "url": "https://www.fxstreet.com/news/gold-rebounds-above-4-400-on-weaker-dollar-us-ppi-inflation-data-looms-202609092322",
       "source": "FXStreet",
       "published_at": "2026-09-09T23:22:42+00:00"
-    },
-    {
-      "title": "Australian Dollar flatlines as US yield ripples meet RBA hawks",
-      "url": "https://www.fxstreet.com/news/australian-dollar-flatlines-as-us-yield-ripples-meet-rba-hawks-202609092136",
-      "source": "FXStreet",
-      "published_at": "2026-09-09T21:36:18+00:00"
-    },
-    {
-      "title": "Pound Sterling awaits the Fed's two-strike inflation test",
-      "url": "https://www.fxstreet.com/news/pound-sterling-awaits-the-feds-two-strike-inflation-test-202609092119",
-      "source": "FXStreet",
-      "published_at": "2026-09-09T21:19:26+00:00"
-    },
-    {
-      "title": "US President Trump pins Iran endgame on midterms, open to talks",
-      "url": "https://www.fxstreet.com/news/us-president-trump-pins-iran-endgame-on-midterms-open-to-talks-202609092100",
-      "source": "FXStreet",
-      "published_at": "2026-09-09T21:00:24+00:00"
-    },
-    {
-      "title": "GBP/JPY Price Forecast: Bears Eye 207.00 as downtrend holds",
-      "url": "https://www.fxstreet.com/news/gbp-jpy-price-forecast-bears-eye-20700-as-downtrend-holds-202609092050",
-      "source": "FXStreet",
-      "published_at": "2026-09-09T20:50:09+00:00"
-    },
-    {
-      "title": "South Korean Won: Gains seen moderating after sharp repricing – DBS",
-      "url": "https://www.fxstreet.com/news/south-korean-won-gains-seen-moderating-after-sharp-repricing-dbs-202609092041",
-      "source": "FXStreet",
-      "published_at": "2026-09-09T20:41:00+00:00"
-    },
-    {
-      "title": "NZD/USD Price Forecast: SMA cluster wobbles as US yields bite",
-      "url": "https://www.fxstreet.com/news/nzd-usd-price-forecast-sma-cluster-wobbles-as-us-yields-bite-202609092034",
-      "source": "FXStreet",
-      "published_at": "2026-09-09T20:34:03+00:00"
     }
   ]
 }
