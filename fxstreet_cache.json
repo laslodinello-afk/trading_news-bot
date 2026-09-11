@@ -1,29 +1,77 @@
 {
-  "fetched_at": "2026-09-11T01:11:23.814953+00:00",
+  "fetched_at": "2026-09-11T06:03:50.463159+00:00",
   "articles": [
     {
-      "title": "Euro flatlines above 1.1600 despite ECB hawkish hike, traders brace for US CPI data",
-      "url": "https://www.fxstreet.com/news/euro-flatlines-above-11600-despite-ecb-hawkish-hike-traders-brace-for-us-cpi-data-202609110042",
+      "title": "United Kingdom GDP grows by 0.4% MoM in July, vs. 0% expected",
+      "url": "https://www.fxstreet.com/news/united-kingdom-gdp-grows-by-04-mom-in-july-vs-0-expected-202609110601",
       "source": "FXStreet",
-      "published_at": "2026-09-11T00:42:21+00:00"
+      "published_at": "2026-09-11T06:01:54+00:00"
     },
     {
-      "title": "Australian Dollar slides as US yields jump before pivotal CPI",
-      "url": "https://www.fxstreet.com/news/australian-dollar-slides-as-us-yields-jump-before-pivotal-cpi-202609102348",
+      "title": "USD/CAD Price Forecast: Trades near 1.3850 after breaking above nine-day EMA",
+      "url": "https://www.fxstreet.com/news/usd-cad-price-forecast-trades-near-13850-after-breaking-above-nine-day-ema-202609110553",
       "source": "FXStreet",
-      "published_at": "2026-09-10T23:48:04+00:00"
+      "published_at": "2026-09-11T05:53:47+00:00"
     },
     {
-      "title": "Gold falls below $4,350 as rising oil prices, US PPI reinforces Fed hike bets",
-      "url": "https://www.fxstreet.com/news/gold-falls-below-4-350-as-rising-oil-prices-us-ppi-reinforces-fed-hike-bets-202609102336",
+      "title": "Indian Rupee extends decline on fresh escalation in hawkish Fed bets",
+      "url": "https://www.fxstreet.com/news/indian-rupee-extends-decline-on-fresh-escalation-in-hawkish-fed-bets-202609110534",
       "source": "FXStreet",
-      "published_at": "2026-09-10T23:36:31+00:00"
+      "published_at": "2026-09-11T05:34:21+00:00"
     },
     {
-      "title": "AUD/JPY Price Forecast: Yen strength keeps 110.00 in sight",
-      "url": "https://www.fxstreet.com/news/aud-jpy-price-forecast-yen-strength-keeps-11000-in-sight-202609102252",
+      "title": "Gold bounces off one-week low as USD bulls await US CPI; Fed hike bets to cap gains",
+      "url": "https://www.fxstreet.com/news/gold-eyes-4-300-break-as-usd-sticks-to-gains-amid-fed-hike-bets-ahead-of-us-cpi-202609110345",
       "source": "FXStreet",
-      "published_at": "2026-09-10T22:52:43+00:00"
+      "published_at": "2026-09-11T03:45:50+00:00"
+    },
+    {
+      "title": "Indonesian Rupiah weakens against US Dollar amid budget pressures",
+      "url": "https://www.fxstreet.com/news/indonesian-rupiah-weakens-against-us-dollar-amid-budget-pressures-202609110523",
+      "source": "FXStreet",
+      "published_at": "2026-09-11T05:23:10+00:00"
+    },
+    {
+      "title": "Euro struggles near 1.1600 vs USD as Fed hike bets and hawkish ECB clash ahead of US CPI",
+      "url": "https://www.fxstreet.com/news/euro-struggles-near-11600-vs-usd-as-fed-hike-bets-and-hawkish-ecb-clash-ahead-of-us-cpi-202609110509",
+      "source": "FXStreet",
+      "published_at": "2026-09-11T05:09:38+00:00"
+    },
+    {
+      "title": "Iran and Gulf states will meet to secure deal for Strait of Hormuz shipping — FT",
+      "url": "https://www.fxstreet.com/news/iran-and-gulf-states-will-meet-to-secure-deal-for-strait-of-hormuz-shipping-ft-202609110452",
+      "source": "FXStreet",
+      "published_at": "2026-09-11T04:52:06+00:00"
+    },
+    {
+      "title": "EUR/JPY Price Forecast: Softens to near 179.00, bearish bias remains intact below 100-day SMA",
+      "url": "https://www.fxstreet.com/news/eur-jpy-price-forecast-softens-to-near-17900-bearish-bias-remains-intact-below-100-day-sma-202609110441",
+      "source": "FXStreet",
+      "published_at": "2026-09-11T04:41:13+00:00"
+    },
+    {
+      "title": "India Gold price today: Gold falls, according to FXStreet data",
+      "url": "https://www.fxstreet.com/news/india-gold-price-today-gold-falls-according-to-fxstreet-data-202609110438",
+      "source": "FXStreet",
+      "published_at": "2026-09-11T04:38:21+00:00"
+    },
+    {
+      "title": "Asian Stocks decline as surging oil prices stoke inflation fears and lift Fed hike bets",
+      "url": "https://www.fxstreet.com/news/asian-stocks-decline-as-surging-oil-prices-stoke-inflation-fears-and-lift-fed-hike-bets-202609110423",
+      "source": "FXStreet",
+      "published_at": "2026-09-11T04:23:31+00:00"
+    },
+    {
+      "title": "Swiss Franc declines as US Dollar strengthens on rising Fed hike bets",
+      "url": "https://www.fxstreet.com/news/swiss-franc-declines-as-us-dollar-strengthens-on-rising-fed-hike-bets-202609110404",
+      "source": "FXStreet",
+      "published_at": "2026-09-11T04:04:18+00:00"
+    },
+    {
+      "title": "United States Dollar Index holds onto gains above 99 ahead of US CPI data",
+      "url": "https://www.fxstreet.com/news/united-states-dollar-index-holds-onto-gains-above-99-ahead-of-us-cpi-data-202609110324",
+      "source": "FXStreet",
+      "published_at": "2026-09-11T03:24:40+00:00"
     }
   ]
 }
