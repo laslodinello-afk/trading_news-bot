@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-11T15:30:05.095899+00:00",
+  "fetched_at": "2026-09-11T20:12:05.551764+00:00",
   "events": [
     {
       "title": "ANZ Job Advertisements m/m",
@@ -628,7 +628,7 @@
     {
       "title": "Federal Budget Balance",
       "country": "USD",
-      "date": "2026-09-11T14:00:00-04:00",
+      "date": "2026-09-11T13:58:00-04:00",
       "impact": "Low",
       "forecast": "-221.1B",
       "previous": "-432.3B"
