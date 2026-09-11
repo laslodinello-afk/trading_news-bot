@@ -1,23 +1,29 @@
 {
-  "fetched_at": "2026-09-10T23:13:35.150351+00:00",
+  "fetched_at": "2026-09-11T01:11:23.814953+00:00",
   "articles": [
+    {
+      "title": "Euro flatlines above 1.1600 despite ECB hawkish hike, traders brace for US CPI data",
+      "url": "https://www.fxstreet.com/news/euro-flatlines-above-11600-despite-ecb-hawkish-hike-traders-brace-for-us-cpi-data-202609110042",
+      "source": "FXStreet",
+      "published_at": "2026-09-11T00:42:21+00:00"
+    },
+    {
+      "title": "Australian Dollar slides as US yields jump before pivotal CPI",
+      "url": "https://www.fxstreet.com/news/australian-dollar-slides-as-us-yields-jump-before-pivotal-cpi-202609102348",
+      "source": "FXStreet",
+      "published_at": "2026-09-10T23:48:04+00:00"
+    },
+    {
+      "title": "Gold falls below $4,350 as rising oil prices, US PPI reinforces Fed hike bets",
+      "url": "https://www.fxstreet.com/news/gold-falls-below-4-350-as-rising-oil-prices-us-ppi-reinforces-fed-hike-bets-202609102336",
+      "source": "FXStreet",
+      "published_at": "2026-09-10T23:36:31+00:00"
+    },
     {
       "title": "AUD/JPY Price Forecast: Yen strength keeps 110.00 in sight",
       "url": "https://www.fxstreet.com/news/aud-jpy-price-forecast-yen-strength-keeps-11000-in-sight-202609102252",
       "source": "FXStreet",
       "published_at": "2026-09-10T22:52:43+00:00"
-    },
-    {
-      "title": "New Zealand Dollar steadies after two-month low slide",
-      "url": "https://www.fxstreet.com/news/new-zealand-dollar-steadies-after-two-month-low-slide-202609102145",
-      "source": "FXStreet",
-      "published_at": "2026-09-10T21:45:24+00:00"
-    },
-    {
-      "title": "WTI blasts past $100 as Red Sea, Hormuz risks collide",
-      "url": "https://www.fxstreet.com/news/wti-blasts-past-100-as-red-sea-hormuz-risks-collide-202609102126",
-      "source": "FXStreet",
-      "published_at": "2026-09-10T21:26:35+00:00"
     }
   ]
 }
