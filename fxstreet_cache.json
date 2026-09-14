@@ -1,161 +1,113 @@
 {
-  "fetched_at": "2026-09-14T10:36:51.274833+00:00",
+  "fetched_at": "2026-09-14T16:33:57.916252+00:00",
   "articles": [
     {
-      "title": "USD/CAD Price Forecast: US Dollar gains momentum and targets 1.3940 area",
-      "url": "https://www.fxstreet.com/news/usd-cad-price-forecast-us-dollar-gains-momentum-and-targets-13940-area-202609141010",
+      "title": "The Dollar Index climbs on Fed hike bets and stalls at its usual ceiling",
+      "url": "https://www.fxstreet.com/news/the-dollar-index-climbs-on-fed-hike-bets-and-stalls-at-its-usual-ceiling-202609141622",
       "source": "FXStreet",
-      "published_at": "2026-09-14T10:10:42+00:00"
+      "published_at": "2026-09-14T16:22:13+00:00"
     },
     {
-      "title": "British Pound: Downside pressure persists against US Dollar - UOB",
-      "url": "https://www.fxstreet.com/news/british-pound-downside-pressure-persists-against-us-dollar-uob-202609141005",
+      "title": "Japanese Yen weakens at the start of a central bank-heavy week",
+      "url": "https://www.fxstreet.com/news/japanese-yen-weakens-against-us-dollar-at-the-start-of-a-central-bank-heavy-week-202609141607",
       "source": "FXStreet",
-      "published_at": "2026-09-14T10:05:40+00:00"
+      "published_at": "2026-09-14T16:07:14+00:00"
     },
     {
-      "title": "Japanese Yen: BoJ guidance crucial for further gains against US Dollar – OCBC",
-      "url": "https://www.fxstreet.com/news/japanese-yen-boj-guidance-crucial-for-further-gains-against-us-dollar-ocbc-202609140943",
+      "title": "Dow Jones Industrial Average loses another round to rising bond yields",
+      "url": "https://www.fxstreet.com/news/dow-jones-industrial-average-loses-another-round-to-rising-bond-yields-202609141557",
       "source": "FXStreet",
-      "published_at": "2026-09-14T09:43:44+00:00"
+      "published_at": "2026-09-14T15:57:44+00:00"
     },
     {
-      "title": "WTI extend opening gains amid fears of further energy supply risks",
-      "url": "https://www.fxstreet.com/news/wti-extend-opening-gains-amid-fears-of-further-energy-supply-risks-202609140932",
+      "title": "Euro area: Supply chain risks and core goods outlook – Societe Generale",
+      "url": "https://www.fxstreet.com/news/euro-area-supply-chain-risks-and-core-goods-outlook-societe-generale-202609141547",
       "source": "FXStreet",
-      "published_at": "2026-09-14T09:32:05+00:00"
+      "published_at": "2026-09-14T15:47:00+00:00"
     },
     {
-      "title": "Swiss Franc nears yearly lows as Fed rate hike bets boost US Dollar",
-      "url": "https://www.fxstreet.com/news/swiss-franc-nears-yearly-lows-as-fed-rate-hike-bets-boost-us-dollar-202609140932",
+      "title": "Australian Dollar slides to monthly low as Fed hike odds firm",
+      "url": "https://www.fxstreet.com/news/australian-dollar-slides-to-monthly-low-as-fed-hike-odds-firm-202609141528",
       "source": "FXStreet",
-      "published_at": "2026-09-14T09:32:02+00:00"
+      "published_at": "2026-09-14T15:28:26+00:00"
     },
     {
-      "title": "Silver price today: Silver falls, according to FXStreet data",
-      "url": "https://www.fxstreet.com/news/silver-price-today-silver-falls-according-to-fxstreet-data-202609140930",
+      "title": "Japanese Yen: JPY underperforms into BoJ – Scotiabank",
+      "url": "https://www.fxstreet.com/news/japanese-yen-jpy-underperforms-into-boj-scotiabank-202609141524",
       "source": "FXStreet",
-      "published_at": "2026-09-14T09:30:18+00:00"
+      "published_at": "2026-09-14T15:24:22+00:00"
     },
     {
-      "title": "Brent: Supply risks keep prices elevated – Danske Bank",
-      "url": "https://www.fxstreet.com/news/brent-supply-risks-keep-prices-elevated-danske-bank-202609140929",
+      "title": "Federal Reserve: Forward guidance impact – Commerzbank",
+      "url": "https://www.fxstreet.com/news/federal-reserve-forward-guidance-impact-commerzbank-202609141515",
       "source": "FXStreet",
-      "published_at": "2026-09-14T09:29:36+00:00"
+      "published_at": "2026-09-14T15:15:59+00:00"
     },
     {
-      "title": "Euro advances against Japanese Yen despite BoJ rate hike expectations",
-      "url": "https://www.fxstreet.com/news/euro-advances-against-japanese-yen-despite-boj-rate-hike-expectations-202609140915",
+      "title": "Crude Oil: Elevated upside risk with CTAs max long – TD Securities",
+      "url": "https://www.fxstreet.com/news/crude-oil-elevated-upside-risk-with-ctas-max-long-td-securities-202609141507",
       "source": "FXStreet",
-      "published_at": "2026-09-14T09:15:40+00:00"
+      "published_at": "2026-09-14T15:07:09+00:00"
     },
     {
-      "title": "Japanese Yen weakens as rising risk aversion lifts US Dollar",
-      "url": "https://www.fxstreet.com/news/japanese-yen-weakens-as-rising-risk-aversion-lifts-us-dollar-202609140910",
+      "title": "Euro: Support seen near 1.15 against US Dollar – Scotiabank",
+      "url": "https://www.fxstreet.com/news/euro-support-seen-near-115-against-us-dollar-scotiabank-202609141452",
       "source": "FXStreet",
-      "published_at": "2026-09-14T09:10:52+00:00"
+      "published_at": "2026-09-14T14:52:12+00:00"
     },
     {
-      "title": "Euro: Further downside favoured against US Dollar - ING",
-      "url": "https://www.fxstreet.com/news/euro-further-downside-favoured-against-us-dollar-ing-202609140910",
+      "title": "Japanese Yen: Further gains favored against US Dollar - BBH",
+      "url": "https://www.fxstreet.com/news/japanese-yen-further-gains-favored-against-us-dollar-bbh-202609141442",
       "source": "FXStreet",
-      "published_at": "2026-09-14T09:10:21+00:00"
+      "published_at": "2026-09-14T14:42:31+00:00"
     },
     {
-      "title": "GBP/USD Price Forecast: Bears flirt with monthly low, near 1.3480-1.3470 confluence",
-      "url": "https://www.fxstreet.com/news/gbp-usd-price-forecast-bears-flirt-with-monthly-low-near-13480-13470-confluence-202609140901",
+      "title": "US 10-year yield crosses 5% rubicon as Fed hike looks locked",
+      "url": "https://www.fxstreet.com/news/us-10-year-yield-crosses-5-rubicon-as-fed-hike-looks-locked-202609141440",
       "source": "FXStreet",
-      "published_at": "2026-09-14T09:01:21+00:00"
+      "published_at": "2026-09-14T14:40:28+00:00"
     },
     {
-      "title": "New Zealand Dollar: Growth check and scope for dovish repricing – BBH",
-      "url": "https://www.fxstreet.com/news/new-zealand-dollar-growth-check-and-scope-for-dovish-repricing-bbh-202609140853",
+      "title": "Euro tumbles to one-month low as Fed rate hike bets dominate",
+      "url": "https://www.fxstreet.com/news/euro-tumbles-to-one-month-low-as-fed-rate-hike-bets-dominate-202609141433",
       "source": "FXStreet",
-      "published_at": "2026-09-14T08:53:44+00:00"
+      "published_at": "2026-09-14T14:33:34+00:00"
     },
     {
-      "title": "Swiss Franc: Downtrend capped with 0.8185 against US Dollar – UOB",
-      "url": "https://www.fxstreet.com/news/swiss-franc-downtrend-capped-with-08185-against-us-dollar-uob-202609140846",
+      "title": "Canada: Contained inflation pressures support steady BoC – RBC",
+      "url": "https://www.fxstreet.com/news/canada-contained-inflation-pressures-support-steady-boc-rbc-202609141432",
       "source": "FXStreet",
-      "published_at": "2026-09-14T08:46:03+00:00"
+      "published_at": "2026-09-14T14:32:53+00:00"
     },
     {
-      "title": "Euro drops against Canadian Dollar amid energy shocks, growing Fed rate hike pressures",
-      "url": "https://www.fxstreet.com/news/euro-drops-against-canadian-dollar-amid-energy-shocks-growing-fed-rate-hike-pressures-202609140843",
+      "title": "Federal Reserve: One-off September hike view – ING",
+      "url": "https://www.fxstreet.com/news/federal-reserve-one-off-september-hike-view-ing-202609141417",
       "source": "FXStreet",
-      "published_at": "2026-09-14T08:43:02+00:00"
+      "published_at": "2026-09-14T14:17:38+00:00"
     },
     {
-      "title": "ECB’s Kazimir: Will consider all options for next policy decision",
-      "url": "https://www.fxstreet.com/news/ecbs-kazimir-will-consider-all-options-for-next-policy-decision-202609140837",
+      "title": "British Pound: BoE risks in focus – Scotiabank",
+      "url": "https://www.fxstreet.com/news/british-pound-boe-risks-in-focus-scotiabank-202609141404",
       "source": "FXStreet",
-      "published_at": "2026-09-14T08:37:59+00:00"
+      "published_at": "2026-09-14T14:04:46+00:00"
     },
     {
-      "title": "US Dollar: Inflation-driven rate risks and premium – Commerzbank",
-      "url": "https://www.fxstreet.com/news/us-dollar-inflation-driven-rate-risks-and-premium-commerzbank-202609140833",
+      "title": "British Pound loses ground as markets brace for Fed, BoE monetary decisions",
+      "url": "https://www.fxstreet.com/news/british-pound-loses-ground-as-markets-brace-for-fed-boe-monetary-decisions-202609141348",
       "source": "FXStreet",
-      "published_at": "2026-09-14T08:33:03+00:00"
+      "published_at": "2026-09-14T13:48:56+00:00"
     },
     {
-      "title": "GBP/JPY Price Forecast: Clings to gains above 208.00; bearish bias intact ahead of BoE/BoJ",
-      "url": "https://www.fxstreet.com/news/gbp-jpy-price-forecast-clings-to-gains-above-20800-bearish-bias-intact-ahead-of-boe-boj-202609140827",
+      "title": "Brent: Covert tanker flows may ease supply pressure - Commerzbank",
+      "url": "https://www.fxstreet.com/news/brent-covert-tanker-flows-may-ease-supply-pressure-commerzbank-202609141347",
       "source": "FXStreet",
-      "published_at": "2026-09-14T08:27:01+00:00"
+      "published_at": "2026-09-14T13:47:02+00:00"
     },
     {
-      "title": "ECB Simkus: Can't exclude action at any meeting",
-      "url": "https://www.fxstreet.com/news/ecb-simkus-cant-exclude-action-at-any-meeting-202609140824",
+      "title": "Euro: ECB credibility may offer support against Dollar – DBS",
+      "url": "https://www.fxstreet.com/news/euro-ecb-credibility-may-offer-support-against-dollar-dbs-202609141335",
       "source": "FXStreet",
-      "published_at": "2026-09-14T08:24:39+00:00"
-    },
-    {
-      "title": "Indian Rupee: Reserve buffer and carry dynamics – Societe Generale",
-      "url": "https://www.fxstreet.com/news/indian-rupee-reserve-buffer-and-carry-dynamics-societe-generale-202609140821",
-      "source": "FXStreet",
-      "published_at": "2026-09-14T08:21:09+00:00"
-    },
-    {
-      "title": "Euro drops to monthly lows below 1.1550 amid high Oil pisces, Fed hiking bets",
-      "url": "https://www.fxstreet.com/news/euro-drops-to-monthly-lows-below-11550-amid-high-oil-pisces-fed-hiking-bets-202609140819",
-      "source": "FXStreet",
-      "published_at": "2026-09-14T08:19:46+00:00"
-    },
-    {
-      "title": "Australian Dollar underperforms amid risk-off mood",
-      "url": "https://www.fxstreet.com/news/australian-dollar-underperforms-amid-risk-off-mood-202609140817",
-      "source": "FXStreet",
-      "published_at": "2026-09-14T08:17:26+00:00"
-    },
-    {
-      "title": "Dow Jones futures dip as Fed hike bets, AI safety concerns weigh on markets",
-      "url": "https://www.fxstreet.com/news/dow-jones-futures-dip-as-fed-hike-bets-ai-safety-concerns-weigh-on-markets-202609140811",
-      "source": "FXStreet",
-      "published_at": "2026-09-14T08:11:12+00:00"
-    },
-    {
-      "title": "US Dollar Index: Fed guidance key for next leg – OCBC",
-      "url": "https://www.fxstreet.com/news/us-dollar-index-fed-guidance-key-for-next-leg-ocbc-202609140800",
-      "source": "FXStreet",
-      "published_at": "2026-09-14T08:00:43+00:00"
-    },
-    {
-      "title": "Iran’s Foreign Ministry: Reports about nuclear activity in Iran are baseless",
-      "url": "https://www.fxstreet.com/news/irans-foreign-ministry-reports-about-nuclear-activity-in-iran-are-baseless-202609140752",
-      "source": "FXStreet",
-      "published_at": "2026-09-14T07:52:35+00:00"
-    },
-    {
-      "title": "Silver Price Forecast: XAG/USD falls to near $63.50 amid Fed hike bets, higher oil prices",
-      "url": "https://www.fxstreet.com/news/silver-price-forecast-xag-usd-falls-to-near-6350-amid-fed-hike-bets-higher-oil-prices-202609140747",
-      "source": "FXStreet",
-      "published_at": "2026-09-14T07:47:04+00:00"
-    },
-    {
-      "title": "Canadian Dollar: CPI test for BoC inflation warning – BBH",
-      "url": "https://www.fxstreet.com/news/canadian-dollar-cpi-test-for-boc-inflation-warning-bbh-202609140742",
-      "source": "FXStreet",
-      "published_at": "2026-09-14T07:42:26+00:00"
+      "published_at": "2026-09-14T13:35:15+00:00"
     }
   ]
 }
