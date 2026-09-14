@@ -1,4 +1,23 @@
 {
-  "fetched_at": "2026-09-13T22:09:38.059310+00:00",
-  "articles": []
+  "fetched_at": "2026-09-14T00:13:22.731535+00:00",
+  "articles": [
+    {
+      "title": "Australian Dollar declines to near 0.7150 as hot US inflation data boost case for Fed rate hike",
+      "url": "https://www.fxstreet.com/news/australian-dollar-declines-to-near-07150-as-hot-us-inflation-data-boost-case-for-fed-rate-hike-202609132339",
+      "source": "FXStreet",
+      "published_at": "2026-09-13T23:39:47+00:00"
+    },
+    {
+      "title": "Iran says commercial vessel struck in Strait of Hormuz",
+      "url": "https://www.fxstreet.com/news/iran-says-commercial-vessel-struck-in-strait-of-hormuz-202609132306",
+      "source": "FXStreet",
+      "published_at": "2026-09-13T23:06:53+00:00"
+    },
+    {
+      "title": "Oman meeting between Gulf states and Iran delayed — Reuters",
+      "url": "https://www.fxstreet.com/news/oman-meeting-between-gulf-states-and-iran-delayed-reuters-202609132229",
+      "source": "FXStreet",
+      "published_at": "2026-09-13T22:29:21+00:00"
+    }
+  ]
 }
