@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-14T17:13:49.697996+00:00",
+  "fetched_at": "2026-09-14T21:10:08.655788+00:00",
   "events": [
     {
       "title": "BRICS Summit",
@@ -142,7 +142,7 @@
       "country": "CNY",
       "date": "2026-09-14T22:00:00-04:00",
       "impact": "Low",
-      "forecast": "-7.0%",
+      "forecast": "-7.1%",
       "previous": "-6.7%"
     },
     {
@@ -166,7 +166,7 @@
       "country": "CNY",
       "date": "2026-09-14T22:00:00-04:00",
       "impact": "Low",
-      "forecast": "0.8%",
+      "forecast": "0.7%",
       "previous": "0.6%"
     },
     {
@@ -214,7 +214,7 @@
       "country": "GBP",
       "date": "2026-09-15T02:00:00-04:00",
       "impact": "Low",
-      "forecast": "4.9%",
+      "forecast": "5.0%",
       "previous": "4.9%"
     },
     {
@@ -254,7 +254,7 @@
       "country": "EUR",
       "date": "2026-09-15T05:00:00-04:00",
       "impact": "Low",
-      "forecast": "42.7",
+      "forecast": "39.8",
       "previous": "34.2"
     },
     {
@@ -262,7 +262,7 @@
       "country": "EUR",
       "date": "2026-09-15T05:00:00-04:00",
       "impact": "Low",
-      "forecast": "39.9",
+      "forecast": "39.2",
       "previous": "31.4"
     },
     {
@@ -286,7 +286,7 @@
       "country": "USD",
       "date": "2026-09-15T08:30:00-04:00",
       "impact": "Low",
-      "forecast": "14.1",
+      "forecast": "14.8",
       "previous": "20.6"
     },
     {
@@ -318,7 +318,7 @@
       "country": "NZD",
       "date": "2026-09-15T18:45:00-04:00",
       "impact": "Low",
-      "forecast": "-2.37B",
+      "forecast": "-2.57B",
       "previous": "-1.01B"
     },
     {
@@ -326,7 +326,7 @@
       "country": "JPY",
       "date": "2026-09-15T19:50:00-04:00",
       "impact": "Low",
-      "forecast": "-1.1%",
+      "forecast": "-1.2%",
       "previous": "9.7%"
     },
     {
@@ -334,7 +334,7 @@
       "country": "JPY",
       "date": "2026-09-15T19:50:00-04:00",
       "impact": "Low",
-      "forecast": "-0.98T",
+      "forecast": "-1.00T",
       "previous": "-0.69T"
     },
     {
@@ -366,7 +366,7 @@
       "country": "GBP",
       "date": "2026-09-16T02:00:00-04:00",
       "impact": "Low",
-      "forecast": "-0.6%",
+      "forecast": "0.6%",
       "previous": "-1.7%"
     },
     {
@@ -374,7 +374,7 @@
       "country": "GBP",
       "date": "2026-09-16T02:00:00-04:00",
       "impact": "Low",
-      "forecast": "0.1%",
+      "forecast": "0.5%",
       "previous": "0.2%"
     },
     {
@@ -398,7 +398,7 @@
       "country": "EUR",
       "date": "2026-09-16T05:00:00-04:00",
       "impact": "Low",
-      "forecast": "-0.5%",
+      "forecast": "-0.2%",
       "previous": "0.0%"
     },
     {
@@ -414,7 +414,7 @@
       "country": "CAD",
       "date": "2026-09-16T08:15:00-04:00",
       "impact": "Low",
-      "forecast": "239K",
+      "forecast": "243K",
       "previous": "229K"
     },
     {
@@ -422,7 +422,7 @@
       "country": "CAD",
       "date": "2026-09-16T08:30:00-04:00",
       "impact": "Low",
-      "forecast": "-5.8%",
+      "forecast": "-4.5%",
       "previous": "18.5%"
     },
     {
@@ -446,7 +446,7 @@
       "country": "USD",
       "date": "2026-09-16T08:30:00-04:00",
       "impact": "Low",
-      "forecast": "0.0%",
+      "forecast": "0.4%",
       "previous": "-0.4%"
     },
     {
@@ -454,7 +454,7 @@
       "country": "USD",
       "date": "2026-09-16T10:00:00-04:00",
       "impact": "Low",
-      "forecast": "0.3%",
+      "forecast": "0.6%",
       "previous": "0.0%"
     },
     {
@@ -472,6 +472,14 @@
       "impact": "Low",
       "forecast": "",
       "previous": "-0.4M"
+    },
+    {
+      "title": "German Buba President Nagel Speaks",
+      "country": "EUR",
+      "date": "2026-09-16T12:00:00-04:00",
+      "impact": "Low",
+      "forecast": "",
+      "previous": ""
     },
     {
       "title": "BOC Summary of Deliberations",
@@ -598,7 +606,7 @@
       "country": "CAD",
       "date": "2026-09-17T08:30:00-04:00",
       "impact": "Low",
-      "forecast": "0.3%",
+      "forecast": "0.0%",
       "previous": "0.6%"
     },
     {
@@ -606,7 +614,7 @@
       "country": "CAD",
       "date": "2026-09-17T08:30:00-04:00",
       "impact": "Low",
-      "forecast": "-0.8%",
+      "forecast": "0.7%",
       "previous": "-2.2%"
     },
     {
@@ -614,7 +622,7 @@
       "country": "USD",
       "date": "2026-09-17T08:30:00-04:00",
       "impact": "Medium",
-      "forecast": "28.9",
+      "forecast": "31.3",
       "previous": "47.4"
     },
     {
@@ -622,7 +630,7 @@
       "country": "USD",
       "date": "2026-09-17T08:30:00-04:00",
       "impact": "Medium",
-      "forecast": "209K",
+      "forecast": "208K",
       "previous": "206K"
     },
     {
@@ -638,7 +646,7 @@
       "country": "USD",
       "date": "2026-09-17T08:30:00-04:00",
       "impact": "Low",
-      "forecast": "1.32M",
+      "forecast": "1.31M",
       "previous": "1.24M"
     },
     {
@@ -646,7 +654,7 @@
       "country": "USD",
       "date": "2026-09-17T10:00:00-04:00",
       "impact": "Low",
-      "forecast": "0.3%",
+      "forecast": "-0.2%",
       "previous": "-2.3%"
     },
     {
@@ -678,7 +686,7 @@
       "country": "NZD",
       "date": "2026-09-17T18:45:00-04:00",
       "impact": "Low",
-      "forecast": "-1275M",
+      "forecast": "-1775M",
       "previous": "-1949M"
     },
     {
@@ -790,7 +798,7 @@
       "country": "USD",
       "date": "2026-09-18T09:15:00-04:00",
       "impact": "Low",
-      "forecast": "0.1%",
+      "forecast": "0.3%",
       "previous": "0.2%"
     },
     {
@@ -806,7 +814,7 @@
       "country": "USD",
       "date": "2026-09-18T10:00:00-04:00",
       "impact": "Low",
-      "forecast": "0.2%",
+      "forecast": "0.1%",
       "previous": "0.2%"
     },
     {
