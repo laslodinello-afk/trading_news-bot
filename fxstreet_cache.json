@@ -1,113 +1,47 @@
 {
-  "fetched_at": "2026-09-14T16:33:57.916252+00:00",
+  "fetched_at": "2026-09-14T20:32:46.616625+00:00",
   "articles": [
     {
-      "title": "The Dollar Index climbs on Fed hike bets and stalls at its usual ceiling",
-      "url": "https://www.fxstreet.com/news/the-dollar-index-climbs-on-fed-hike-bets-and-stalls-at-its-usual-ceiling-202609141622",
+      "title": "Crude Oil spikes on a shut Saudi pipeline and unwinds on Trump's posts",
+      "url": "https://www.fxstreet.com/news/crude-oil-spikes-on-a-shut-saudi-pipeline-and-unwinds-on-trumps-posts-202609142014",
       "source": "FXStreet",
-      "published_at": "2026-09-14T16:22:13+00:00"
+      "published_at": "2026-09-14T20:14:09+00:00"
     },
     {
-      "title": "Japanese Yen weakens at the start of a central bank-heavy week",
-      "url": "https://www.fxstreet.com/news/japanese-yen-weakens-against-us-dollar-at-the-start-of-a-central-bank-heavy-week-202609141607",
+      "title": "Forex Today: US Dollar firms ahead of UK jobs and a midweek Fed decision",
+      "url": "https://www.fxstreet.com/news/forex-today-us-dollar-firms-ahead-of-uk-jobs-and-a-midweek-fed-decision-202609141929",
       "source": "FXStreet",
-      "published_at": "2026-09-14T16:07:14+00:00"
+      "published_at": "2026-09-14T19:29:51+00:00"
     },
     {
-      "title": "Dow Jones Industrial Average loses another round to rising bond yields",
-      "url": "https://www.fxstreet.com/news/dow-jones-industrial-average-loses-another-round-to-rising-bond-yields-202609141557",
+      "title": "Silver Price Forecast: Neckline rejection keeps $60 in sight",
+      "url": "https://www.fxstreet.com/news/silver-price-forecast-neckline-rejection-keeps-60-in-sight-202609141925",
       "source": "FXStreet",
-      "published_at": "2026-09-14T15:57:44+00:00"
+      "published_at": "2026-09-14T19:25:56+00:00"
     },
     {
-      "title": "Euro area: Supply chain risks and core goods outlook – Societe Generale",
-      "url": "https://www.fxstreet.com/news/euro-area-supply-chain-risks-and-core-goods-outlook-societe-generale-202609141547",
+      "title": "Gold gets squeezed by 5% Treasury yields as FOMC week begins",
+      "url": "https://www.fxstreet.com/news/gold-gets-squeezed-by-5-treasury-yields-as-fomc-week-begins-202609141909",
       "source": "FXStreet",
-      "published_at": "2026-09-14T15:47:00+00:00"
+      "published_at": "2026-09-14T19:09:48+00:00"
     },
     {
-      "title": "Australian Dollar slides to monthly low as Fed hike odds firm",
-      "url": "https://www.fxstreet.com/news/australian-dollar-slides-to-monthly-low-as-fed-hike-odds-firm-202609141528",
+      "title": "US Dollar Index: Fed pricing supports gains – Scotiabank",
+      "url": "https://www.fxstreet.com/news/us-dollar-index-fed-pricing-supports-gains-scotiabank-202609141858",
       "source": "FXStreet",
-      "published_at": "2026-09-14T15:28:26+00:00"
+      "published_at": "2026-09-14T18:58:14+00:00"
     },
     {
-      "title": "Japanese Yen: JPY underperforms into BoJ – Scotiabank",
-      "url": "https://www.fxstreet.com/news/japanese-yen-jpy-underperforms-into-boj-scotiabank-202609141524",
+      "title": "US Dollar: Hawkish Fed may offer only limited gains - BBH",
+      "url": "https://www.fxstreet.com/news/us-dollar-hawkish-fed-may-offer-only-limited-gains-bbh-202609141851",
       "source": "FXStreet",
-      "published_at": "2026-09-14T15:24:22+00:00"
+      "published_at": "2026-09-14T18:51:09+00:00"
     },
     {
-      "title": "Federal Reserve: Forward guidance impact – Commerzbank",
-      "url": "https://www.fxstreet.com/news/federal-reserve-forward-guidance-impact-commerzbank-202609141515",
+      "title": "USD/CAD Price Forecast: Buyers challenge 100-day SMA after double-bottom formation",
+      "url": "https://www.fxstreet.com/news/usd-cad-price-forecast-buyers-challenge-100-day-sma-after-double-bottom-formation-202609141818",
       "source": "FXStreet",
-      "published_at": "2026-09-14T15:15:59+00:00"
-    },
-    {
-      "title": "Crude Oil: Elevated upside risk with CTAs max long – TD Securities",
-      "url": "https://www.fxstreet.com/news/crude-oil-elevated-upside-risk-with-ctas-max-long-td-securities-202609141507",
-      "source": "FXStreet",
-      "published_at": "2026-09-14T15:07:09+00:00"
-    },
-    {
-      "title": "Euro: Support seen near 1.15 against US Dollar – Scotiabank",
-      "url": "https://www.fxstreet.com/news/euro-support-seen-near-115-against-us-dollar-scotiabank-202609141452",
-      "source": "FXStreet",
-      "published_at": "2026-09-14T14:52:12+00:00"
-    },
-    {
-      "title": "Japanese Yen: Further gains favored against US Dollar - BBH",
-      "url": "https://www.fxstreet.com/news/japanese-yen-further-gains-favored-against-us-dollar-bbh-202609141442",
-      "source": "FXStreet",
-      "published_at": "2026-09-14T14:42:31+00:00"
-    },
-    {
-      "title": "US 10-year yield crosses 5% rubicon as Fed hike looks locked",
-      "url": "https://www.fxstreet.com/news/us-10-year-yield-crosses-5-rubicon-as-fed-hike-looks-locked-202609141440",
-      "source": "FXStreet",
-      "published_at": "2026-09-14T14:40:28+00:00"
-    },
-    {
-      "title": "Euro tumbles to one-month low as Fed rate hike bets dominate",
-      "url": "https://www.fxstreet.com/news/euro-tumbles-to-one-month-low-as-fed-rate-hike-bets-dominate-202609141433",
-      "source": "FXStreet",
-      "published_at": "2026-09-14T14:33:34+00:00"
-    },
-    {
-      "title": "Canada: Contained inflation pressures support steady BoC – RBC",
-      "url": "https://www.fxstreet.com/news/canada-contained-inflation-pressures-support-steady-boc-rbc-202609141432",
-      "source": "FXStreet",
-      "published_at": "2026-09-14T14:32:53+00:00"
-    },
-    {
-      "title": "Federal Reserve: One-off September hike view – ING",
-      "url": "https://www.fxstreet.com/news/federal-reserve-one-off-september-hike-view-ing-202609141417",
-      "source": "FXStreet",
-      "published_at": "2026-09-14T14:17:38+00:00"
-    },
-    {
-      "title": "British Pound: BoE risks in focus – Scotiabank",
-      "url": "https://www.fxstreet.com/news/british-pound-boe-risks-in-focus-scotiabank-202609141404",
-      "source": "FXStreet",
-      "published_at": "2026-09-14T14:04:46+00:00"
-    },
-    {
-      "title": "British Pound loses ground as markets brace for Fed, BoE monetary decisions",
-      "url": "https://www.fxstreet.com/news/british-pound-loses-ground-as-markets-brace-for-fed-boe-monetary-decisions-202609141348",
-      "source": "FXStreet",
-      "published_at": "2026-09-14T13:48:56+00:00"
-    },
-    {
-      "title": "Brent: Covert tanker flows may ease supply pressure - Commerzbank",
-      "url": "https://www.fxstreet.com/news/brent-covert-tanker-flows-may-ease-supply-pressure-commerzbank-202609141347",
-      "source": "FXStreet",
-      "published_at": "2026-09-14T13:47:02+00:00"
-    },
-    {
-      "title": "Euro: ECB credibility may offer support against Dollar – DBS",
-      "url": "https://www.fxstreet.com/news/euro-ecb-credibility-may-offer-support-against-dollar-dbs-202609141335",
-      "source": "FXStreet",
-      "published_at": "2026-09-14T13:35:15+00:00"
+      "published_at": "2026-09-14T18:18:27+00:00"
     }
   ]
 }
