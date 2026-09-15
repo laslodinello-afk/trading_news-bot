@@ -1,53 +1,47 @@
 {
-  "fetched_at": "2026-09-14T23:25:57.339990+00:00",
+  "fetched_at": "2026-09-15T01:49:04.397904+00:00",
   "articles": [
+    {
+      "title": "PBOC sets USD/CNY reference rate at 6.7670 vs. 6.7698 previous",
+      "url": "https://www.fxstreet.com/news/pboc-sets-usd-cny-reference-rate-at-67670-vs-67698-previous-202609150115",
+      "source": "FXStreet",
+      "published_at": "2026-09-15T01:15:36+00:00"
+    },
+    {
+      "title": "Canadian Dollar consolidates near 1.3900 as oil gains offset bullish USD ahead of Fed",
+      "url": "https://www.fxstreet.com/news/canadian-dollar-consolidates-near-13900-as-oil-gains-offset-bullish-usd-ahead-of-fed-202609150112",
+      "source": "FXStreet",
+      "published_at": "2026-09-15T01:12:51+00:00"
+    },
+    {
+      "title": "WTI rises above $98.50 amid Middle East supply fears",
+      "url": "https://www.fxstreet.com/news/wti-rises-above-9850-amid-middle-east-supply-fears-202609150105",
+      "source": "FXStreet",
+      "published_at": "2026-09-15T01:05:19+00:00"
+    },
+    {
+      "title": "Japanese Yen weakens as Fed rate hike looms",
+      "url": "https://www.fxstreet.com/news/japanese-yen-weakens-as-fed-rate-hike-looms-202609150041",
+      "source": "FXStreet",
+      "published_at": "2026-09-15T00:41:37+00:00"
+    },
+    {
+      "title": "Iran's President Pezeshkian: Our demands are the same as our previous demands",
+      "url": "https://www.fxstreet.com/news/irans-president-pezeshkian-our-demands-are-the-same-as-our-previous-demands-202609142353",
+      "source": "FXStreet",
+      "published_at": "2026-09-14T23:53:40+00:00"
+    },
+    {
+      "title": "Saudi Arabia issues emergency alert for Khamis Mushait, Abha",
+      "url": "https://www.fxstreet.com/news/saudi-arabia-issues-emergency-alert-for-khamis-mushait-abha-202609142332",
+      "source": "FXStreet",
+      "published_at": "2026-09-14T23:32:35+00:00"
+    },
     {
       "title": "Gold falls below $4,300 as higher US yields bolster Fed rate hike bets",
       "url": "https://www.fxstreet.com/news/gold-falls-below-4-300-as-higher-us-yields-bolster-fed-rate-hike-bets-202609142314",
       "source": "FXStreet",
       "published_at": "2026-09-14T23:14:36+00:00"
-    },
-    {
-      "title": "Australian Dollar gets caught between AI selloff and 5% US yields",
-      "url": "https://www.fxstreet.com/news/australian-dollar-gets-caught-between-ai-selloff-and-5-us-yields-202609142246",
-      "source": "FXStreet",
-      "published_at": "2026-09-14T22:46:21+00:00"
-    },
-    {
-      "title": "The Euro breaks both its moving averages as the Fed's hike becomes certain",
-      "url": "https://www.fxstreet.com/news/the-euro-breaks-both-its-moving-averages-as-the-feds-hike-becomes-certain-202609142226",
-      "source": "FXStreet",
-      "published_at": "2026-09-14T22:26:58+00:00"
-    },
-    {
-      "title": "The Pound tests an August low on the Fed's hike odds",
-      "url": "https://www.fxstreet.com/news/the-pound-tests-an-august-low-on-the-feds-hike-odds-202609142206",
-      "source": "FXStreet",
-      "published_at": "2026-09-14T22:06:01+00:00"
-    },
-    {
-      "title": "GBP/JPY Price Forecast: Bears circle 207.00 as RSI rebounds",
-      "url": "https://www.fxstreet.com/news/gbp-jpy-price-forecast-bears-circle-20700-as-rsi-rebounds-202609142156",
-      "source": "FXStreet",
-      "published_at": "2026-09-14T21:56:58+00:00"
-    },
-    {
-      "title": "New Zealand Dollar sinks to two-month low as Greenback firms",
-      "url": "https://www.fxstreet.com/news/new-zealand-dollar-sinks-to-two-month-low-as-greenback-firms-202609142139",
-      "source": "FXStreet",
-      "published_at": "2026-09-14T21:39:35+00:00"
-    },
-    {
-      "title": "Japanese Yen recedes as Fed and BoJ decisions loom",
-      "url": "https://www.fxstreet.com/news/japanese-yen-recedes-as-fed-and-boj-decisions-loom-202609142100",
-      "source": "FXStreet",
-      "published_at": "2026-09-14T21:00:42+00:00"
-    },
-    {
-      "title": "USD/CHF Price Forecast: Shooting star warns bulls below 0.8200",
-      "url": "https://www.fxstreet.com/news/usd-chf-price-forecast-shooting-star-warns-bulls-below-08200-202609142048",
-      "source": "FXStreet",
-      "published_at": "2026-09-14T20:48:23+00:00"
     }
   ]
 }
