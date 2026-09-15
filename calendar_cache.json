@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-15T02:25:21.963686+00:00",
+  "fetched_at": "2026-09-15T10:40:19.399379+00:00",
   "events": [
     {
       "title": "BRICS Summit",
@@ -216,14 +216,6 @@
       "impact": "Low",
       "forecast": "5.0%",
       "previous": "4.9%"
-    },
-    {
-      "title": "Foreign Direct Investment ytd/y",
-      "country": "CNY",
-      "date": "2026-09-15T02:02:00-04:00",
-      "impact": "Low",
-      "forecast": "",
-      "previous": "-6.2%"
     },
     {
       "title": "French Final CPI m/m",
@@ -536,6 +528,14 @@
       "impact": "High",
       "forecast": "0.1%",
       "previous": "0.8%"
+    },
+    {
+      "title": "Foreign Direct Investment ytd/y",
+      "country": "CNY",
+      "date": "2026-09-17T02:02:00-04:00",
+      "impact": "Low",
+      "forecast": "",
+      "previous": "-6.2%"
     },
     {
       "title": "SECO Economic Forecasts",
