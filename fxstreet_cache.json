@@ -1,113 +1,83 @@
 {
-  "fetched_at": "2026-09-15T12:36:38.236510+00:00",
+  "fetched_at": "2026-09-15T17:16:35.937205+00:00",
   "articles": [
     {
-      "title": "British Pound: Uptrend sustainability questioned versus Euro – ING",
-      "url": "https://www.fxstreet.com/news/british-pound-uptrend-sustainability-questioned-versus-euro-ing-202609151231",
+      "title": "Canadian Dollar remains vulnerable aas Fed takes centre stage",
+      "url": "https://www.fxstreet.com/news/canadian-dollar-remains-vulnerable-aas-fed-takes-centre-stage-202609151714",
       "source": "FXStreet",
-      "published_at": "2026-09-15T12:31:49+00:00"
+      "published_at": "2026-09-15T17:14:16+00:00"
     },
     {
-      "title": "GBP/JPY Price Forecast: Bearish structure remains intact ahead of BoE and BoJ decisions",
-      "url": "https://www.fxstreet.com/news/gbp-jpy-price-forecast-bearish-structure-remains-intact-ahead-of-boe-and-boj-decisions-202609151225",
+      "title": "Silver attempts cautious rebound ahead of closely watched Fed decision",
+      "url": "https://www.fxstreet.com/news/silver-attempts-cautious-rebound-ahead-of-closely-watched-fed-decision-202609151659",
       "source": "FXStreet",
-      "published_at": "2026-09-15T12:25:16+00:00"
+      "published_at": "2026-09-15T16:59:26+00:00"
     },
     {
-      "title": "US ADP Employment Change 4-week average increases to 16.25K",
-      "url": "https://www.fxstreet.com/news/us-adp-employment-change-4-week-average-increases-to-1625k-202609151224",
+      "title": "Dow Jones Industrial Average slides as yields beat the Fed to tomorrow's hike",
+      "url": "https://www.fxstreet.com/news/dow-jones-industrial-average-slides-as-yields-beat-the-fed-to-tomorrows-hike-202609151624",
       "source": "FXStreet",
-      "published_at": "2026-09-15T12:24:21+00:00"
+      "published_at": "2026-09-15T16:24:29+00:00"
     },
     {
-      "title": "Canada: Growth resilience and rate risks – RBC",
-      "url": "https://www.fxstreet.com/news/canada-growth-resilience-and-rate-risks-rbc-202609151215",
+      "title": "British Pound wilts as Oil shock sends US yields past 5%",
+      "url": "https://www.fxstreet.com/news/british-pound-wilts-as-oil-shock-sends-us-yields-past-5-202609151604",
       "source": "FXStreet",
-      "published_at": "2026-09-15T12:15:51+00:00"
+      "published_at": "2026-09-15T16:04:53+00:00"
     },
     {
-      "title": "Swiss Franc: 0.8205 caps losses against US Dollar - UOB",
-      "url": "https://www.fxstreet.com/news/swiss-franc-08205-caps-losses-against-us-dollar-uob-202609151204",
+      "title": "Euro stays neutral against Pound ahead of UK inflation data",
+      "url": "https://www.fxstreet.com/news/euro-stays-neutral-against-pound-ahead-of-uk-inflation-data-202609151531",
       "source": "FXStreet",
-      "published_at": "2026-09-15T12:04:10+00:00"
+      "published_at": "2026-09-15T15:31:29+00:00"
     },
     {
-      "title": "New Zealand Dollar tests two-month lows below 0.5765 amid Fed hiking bets",
-      "url": "https://www.fxstreet.com/news/new-zealand-dollar-tests-two-month-lows-below-05765-amid-fed-hiking-bets-202609151151",
+      "title": "Japanese Yen: Weak as markets price BoJ hike against US Dollar – Scotiabank",
+      "url": "https://www.fxstreet.com/news/japanese-yen-weak-as-markets-price-boj-hike-against-us-dollar-scotiabank-202609151506",
       "source": "FXStreet",
-      "published_at": "2026-09-15T11:51:41+00:00"
+      "published_at": "2026-09-15T15:06:27+00:00"
     },
     {
-      "title": "Natural Gas: Higher winter curve and risk ranges – Rabobank",
-      "url": "https://www.fxstreet.com/news/natural-gas-higher-winter-curve-and-risk-ranges-rabobank-202609151151",
+      "title": "United Kingdom: Wage momentum complicates the BoE outlook - Nomura",
+      "url": "https://www.fxstreet.com/news/united-kingdom-wage-momentum-complicates-the-boe-outlook-nomura-202609151457",
       "source": "FXStreet",
-      "published_at": "2026-09-15T11:51:15+00:00"
+      "published_at": "2026-09-15T14:57:43+00:00"
     },
     {
-      "title": "Gold bears retain control as markets brace for Fed rate hike",
-      "url": "https://www.fxstreet.com/news/gold-bears-retain-control-as-markets-brace-for-fed-rate-hike-202609151131",
+      "title": "British Pound: Further weakness eyed toward 1.3410 against US Dollar – UOB",
+      "url": "https://www.fxstreet.com/news/british-pound-further-weakness-eyed-toward-13410-against-us-dollar-uob-202609151450",
       "source": "FXStreet",
-      "published_at": "2026-09-15T11:31:53+00:00"
+      "published_at": "2026-09-15T14:50:31+00:00"
     },
     {
-      "title": "Copper: AI slowdown fears pressure prices – ING",
-      "url": "https://www.fxstreet.com/news/copper-ai-slowdown-fears-pressure-prices-ing-202609151130",
+      "title": "Australian Dollar continues recent slide ahead of Fed decision",
+      "url": "https://www.fxstreet.com/news/australian-dollar-continues-recent-slide-ahead-of-fed-decision-202609151450",
       "source": "FXStreet",
-      "published_at": "2026-09-15T11:30:38+00:00"
+      "published_at": "2026-09-15T14:50:10+00:00"
     },
     {
-      "title": "Experts agree: Fed will follow monetary tightening path even beyond September meeting",
-      "url": "https://www.fxstreet.com/news/experts-agree-fed-will-follow-monetary-tightening-path-even-beyond-september-meeting-202609151129",
+      "title": "Natural gas: European prices stay elevated – ING",
+      "url": "https://www.fxstreet.com/news/natural-gas-european-prices-stay-elevated-ing-202609151441",
       "source": "FXStreet",
-      "published_at": "2026-09-15T11:29:52+00:00"
+      "published_at": "2026-09-15T14:41:28+00:00"
     },
     {
-      "title": "Japanese Yen: Two-way risks into BoJ meeting – OCBC",
-      "url": "https://www.fxstreet.com/news/japanese-yen-two-way-risks-into-boj-meeting-ocbc-202609151121",
+      "title": "USD/CHF Price Forecast: RSI and MACD signal firm upside momentum",
+      "url": "https://www.fxstreet.com/news/usd-chf-price-forecast-rsi-and-macd-signal-firm-upside-momentum-202609151433",
       "source": "FXStreet",
-      "published_at": "2026-09-15T11:21:54+00:00"
+      "published_at": "2026-09-15T14:33:40+00:00"
     },
     {
-      "title": "Swiss Franc struggles near lows as monetary policy divergence boosts US Dollar",
-      "url": "https://www.fxstreet.com/news/swiss-franc-struggles-near-lows-as-monetary-policy-divergence-boosts-us-dollar-202609151121",
+      "title": "Euro: Support holds near 1.15 against US Dollar – Scotiabank",
+      "url": "https://www.fxstreet.com/news/euro-support-holds-near-115-against-us-dollar-scotiabank-202609151425",
       "source": "FXStreet",
-      "published_at": "2026-09-15T11:21:15+00:00"
+      "published_at": "2026-09-15T14:25:19+00:00"
     },
     {
-      "title": "Australian Dollar: Looking for 0.7100 break against US Dollar – UOB",
-      "url": "https://www.fxstreet.com/news/australian-dollar-looking-for-07100-break-against-us-dollar-uob-202609151112",
+      "title": "Gold: CTA selling intensifies ahead of Fed decision - TD Securities",
+      "url": "https://www.fxstreet.com/news/gold-cta-selling-intensifies-ahead-of-fed-decision-td-securities-202609151417",
       "source": "FXStreet",
-      "published_at": "2026-09-15T11:12:46+00:00"
-    },
-    {
-      "title": "British Pound trades mixed after steady UK employment report, CPI data eyed",
-      "url": "https://www.fxstreet.com/news/british-pound-trades-mixed-after-steady-uk-employment-report-cpi-data-eyed-202609151045",
-      "source": "FXStreet",
-      "published_at": "2026-09-15T10:45:00+00:00"
-    },
-    {
-      "title": "Bank of Japan: Gradual normalisation path outlined – Standard Chartered",
-      "url": "https://www.fxstreet.com/news/bank-of-japan-gradual-normalisation-path-outlined-standard-chartered-202609151006",
-      "source": "FXStreet",
-      "published_at": "2026-09-15T10:06:08+00:00"
-    },
-    {
-      "title": "Bank Of England: Jobs data supports steady policy – ING",
-      "url": "https://www.fxstreet.com/news/bank-of-england-jobs-data-supports-steady-policy-ing-202609150958",
-      "source": "FXStreet",
-      "published_at": "2026-09-15T09:58:31+00:00"
-    },
-    {
-      "title": "Euro remains depressed as Eurozone sentiment and trade data fail to inspire",
-      "url": "https://www.fxstreet.com/news/euro-remains-depressed-as-eurozone-sentiment-and-trade-data-fail-to-inspire-202609150951",
-      "source": "FXStreet",
-      "published_at": "2026-09-15T09:51:10+00:00"
-    },
-    {
-      "title": "Euro: Downside pressure targets 1.1490 against US Dollar – UOB",
-      "url": "https://www.fxstreet.com/news/euro-downside-pressure-targets-11490-against-us-dollar-uob-202609150942",
-      "source": "FXStreet",
-      "published_at": "2026-09-15T09:42:54+00:00"
+      "published_at": "2026-09-15T14:17:10+00:00"
     }
   ]
 }
