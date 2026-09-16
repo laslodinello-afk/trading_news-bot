@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-16T10:28:13.766450+00:00",
+  "fetched_at": "2026-09-16T15:45:18.627583+00:00",
   "events": [
     {
       "title": "BRICS Summit",
@@ -404,7 +404,7 @@
     {
       "title": "German 30-y Bond Auction",
       "country": "EUR",
-      "date": "2026-09-16T05:34:00-04:00",
+      "date": "2026-09-16T05:35:00-04:00",
       "impact": "Low",
       "forecast": "",
       "previous": "3.65|1.3"
