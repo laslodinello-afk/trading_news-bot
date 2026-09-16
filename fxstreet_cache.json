@@ -1,95 +1,47 @@
 {
-  "fetched_at": "2026-09-16T19:25:31.279799+00:00",
+  "fetched_at": "2026-09-16T22:16:31.864657+00:00",
   "articles": [
     {
-      "title": "The Dollar Index breaks out and stays out after the Fed hikes",
-      "url": "https://www.fxstreet.com/news/the-federal-reserve-hikes-into-a-dollar-index-basket-that-also-raised-rates-202609161815",
+      "title": "The Euro's losing streak runs on as the Fed matches the ECB's rate hike",
+      "url": "https://www.fxstreet.com/news/the-euros-losing-streak-runs-on-as-the-fed-matches-the-ecbs-rate-hike-202609162201",
       "source": "FXStreet",
-      "published_at": "2026-09-16T18:15:39+00:00"
+      "published_at": "2026-09-16T22:01:20+00:00"
     },
     {
-      "title": "The Canadian Dollar slips to a summer low on the Fed's rate hike",
-      "url": "https://www.fxstreet.com/news/fed-hike-sends-the-loonie-to-a-six-week-low-202609161841",
+      "title": "The Japanese Yen gives back more of its rally as the Fed raises rates",
+      "url": "https://www.fxstreet.com/news/the-japanese-yen-gives-back-more-of-its-rally-as-the-fed-raises-rates-202609162118",
       "source": "FXStreet",
-      "published_at": "2026-09-16T18:41:40+00:00"
+      "published_at": "2026-09-16T21:18:26+00:00"
     },
     {
-      "title": "Dow Jones Industrial Average slides behind a Federal Reserve hike",
-      "url": "https://www.fxstreet.com/news/the-federal-reserve-raises-rates-on-the-dow-jones-30-corporate-borrowers-202609161815",
+      "title": "New Zealand GDP in the barrel with the Kiwi at July lows",
+      "url": "https://www.fxstreet.com/news/new-zealand-gdp-in-the-barrel-with-the-kiwi-at-july-lows-202609162114",
       "source": "FXStreet",
-      "published_at": "2026-09-16T18:15:09+00:00"
+      "published_at": "2026-09-16T21:14:20+00:00"
     },
     {
-      "title": "Silver slides as hawkish Fed lifts US Dollar and Treasury yields",
-      "url": "https://www.fxstreet.com/news/silver-slides-as-hawkish-fed-lifts-us-dollar-and-treasury-yields-202609161916",
+      "title": "Trump demands 1% rates hours after the Fed raised them",
+      "url": "https://www.fxstreet.com/news/trump-demands-1-rates-hours-after-the-fed-raised-them-202609162104",
       "source": "FXStreet",
-      "published_at": "2026-09-16T19:16:07+00:00"
+      "published_at": "2026-09-16T21:04:26+00:00"
     },
     {
-      "title": "Forex Today: Investors now look at the BoE",
-      "url": "https://www.fxstreet.com/news/forex-today-investors-now-look-at-the-boe-202609161909",
+      "title": "New Zealand Dollar sinks toward its July low after the Fed hikes",
+      "url": "https://www.fxstreet.com/news/new-zealand-dollar-sinks-toward-its-july-low-after-the-fed-hikes-202609162101",
       "source": "FXStreet",
-      "published_at": "2026-09-16T19:09:53+00:00"
+      "published_at": "2026-09-16T21:01:18+00:00"
     },
     {
-      "title": "Federal Reserve Chair Warsh: Inflation trends were not passing the test",
-      "url": "https://www.fxstreet.com/news/federal-reserve-chair-warsh-inflation-trends-were-not-passing-the-test-202609161900",
+      "title": "The Australian Dollar continues to slide as the Fed enters hike country",
+      "url": "https://www.fxstreet.com/news/the-australian-dollar-continues-to-slide-as-the-fed-enters-hike-country-202609162056",
       "source": "FXStreet",
-      "published_at": "2026-09-16T19:00:22+00:00"
+      "published_at": "2026-09-16T20:56:22+00:00"
     },
     {
-      "title": "Fed raises 2026 interest rate forecast to 4.1%, lifts PCE inflation projections",
-      "url": "https://www.fxstreet.com/news/fed-raises-2026-interest-rate-forecast-to-41-lifts-pce-inflation-projections-202609161858",
+      "title": "US Federal Reserve sends Gold to fresh one-month lows",
+      "url": "https://www.fxstreet.com/news/us-federal-reserve-sends-gold-to-fresh-one-month-lows-202609161943",
       "source": "FXStreet",
-      "published_at": "2026-09-16T18:58:33+00:00"
-    },
-    {
-      "title": "Australian Dollar slides below 0.7100 as Warsh strikes hawkish tone",
-      "url": "https://www.fxstreet.com/news/australian-dollar-falls-against-us-dollar-after-hawkish-fed-rate-hike-202609161823",
-      "source": "FXStreet",
-      "published_at": "2026-09-16T18:23:34+00:00"
-    },
-    {
-      "title": "The Fed hikes six days after the ECB, weighing on the Euro",
-      "url": "https://www.fxstreet.com/news/the-federal-reserve-hikes-to-4-six-days-after-the-ecb-202609161808",
-      "source": "FXStreet",
-      "published_at": "2026-09-16T18:08:49+00:00"
-    },
-    {
-      "title": "WTI holds near daily low as Fed decision draws muted reaction",
-      "url": "https://www.fxstreet.com/news/wti-holds-near-daily-low-as-fed-decision-draws-muted-reaction-202609161837",
-      "source": "FXStreet",
-      "published_at": "2026-09-16T18:37:24+00:00"
-    },
-    {
-      "title": "The Federal Reserve hikes back above Britain's cash rate",
-      "url": "https://www.fxstreet.com/news/the-federal-reserve-hikes-to-4-back-above-britains-375-202609161809",
-      "source": "FXStreet",
-      "published_at": "2026-09-16T18:09:44+00:00"
-    },
-    {
-      "title": "Japanese Yen falls as US Federal Reserve delivers",
-      "url": "https://www.fxstreet.com/news/japanese-yen-falls-as-us-federal-reserve-delivers-202609161832",
-      "source": "FXStreet",
-      "published_at": "2026-09-16T18:32:44+00:00"
-    },
-    {
-      "title": "Federal Reserve hawkish hike sent Gold price lower",
-      "url": "https://www.fxstreet.com/news/federal-reserve-hawkish-hike-sent-gold-price-lower-202609161814",
-      "source": "FXStreet",
-      "published_at": "2026-09-16T18:14:26+00:00"
-    },
-    {
-      "title": "The Fed hikes to 4% as the 10-year yield toys with 5%",
-      "url": "https://www.fxstreet.com/news/the-federal-reserve-hikes-to-4-with-the-10-year-yield-at-5-202609161814",
-      "source": "FXStreet",
-      "published_at": "2026-09-16T18:14:16+00:00"
-    },
-    {
-      "title": "WTI pulls back below $100 as Saudi Arabia steps up efforts to restore Oil flows",
-      "url": "https://www.fxstreet.com/news/wti-pulls-back-below-100-as-saudi-arabia-steps-up-efforts-to-restore-oil-flows-202609161652",
-      "source": "FXStreet",
-      "published_at": "2026-09-16T16:52:46+00:00"
+      "published_at": "2026-09-16T19:43:08+00:00"
     }
   ]
 }
