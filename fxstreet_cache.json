@@ -1,6 +1,42 @@
 {
-  "fetched_at": "2026-09-15T22:58:41.493849+00:00",
+  "fetched_at": "2026-09-16T01:19:57.789743+00:00",
   "articles": [
+    {
+      "title": "PBOC sets USD/CNY reference rate at 6.7628 vs. 6.7670 previous",
+      "url": "https://www.fxstreet.com/news/pboc-sets-usd-cny-reference-rate-at-67628-vs-67670-previous-202609160115",
+      "source": "FXStreet",
+      "published_at": "2026-09-16T01:15:46+00:00"
+    },
+    {
+      "title": "Canadian Dollar languishes near two-week low as bullish USD offsets oil gains ahead of Fed",
+      "url": "https://www.fxstreet.com/news/canadian-dollar-languishes-near-two-week-low-as-bullish-usd-offsets-oil-gains-ahead-of-fed-202609160108",
+      "source": "FXStreet",
+      "published_at": "2026-09-16T01:08:18+00:00"
+    },
+    {
+      "title": "WTI slips to near $100.50 despite escalating Middle East supply disruptions",
+      "url": "https://www.fxstreet.com/news/wti-slips-to-near-10050-despite-escalating-middle-east-supply-disruptions-202609160054",
+      "source": "FXStreet",
+      "published_at": "2026-09-16T00:54:00+00:00"
+    },
+    {
+      "title": "Saudi air defenses intercept Houthi drone near Mecca",
+      "url": "https://www.fxstreet.com/news/saudi-air-defenses-intercept-houthi-drone-near-mecca-202609160033",
+      "source": "FXStreet",
+      "published_at": "2026-09-16T00:33:41+00:00"
+    },
+    {
+      "title": "Japanese Yen flatlines ahead of Fed rate decicion",
+      "url": "https://www.fxstreet.com/news/japanese-yen-flatlines-ahead-of-fed-rate-decicion-202609160022",
+      "source": "FXStreet",
+      "published_at": "2026-09-16T00:22:36+00:00"
+    },
+    {
+      "title": "Gold declines below $4,300 as US yields climb, Fed rate decision looms",
+      "url": "https://www.fxstreet.com/news/gold-declines-below-4-300-as-us-yields-climb-fed-rate-decision-looms-202609152313",
+      "source": "FXStreet",
+      "published_at": "2026-09-15T23:13:14+00:00"
+    },
     {
       "title": "Australian Dollar softens as risk-off mood meets FOMC countdown",
       "url": "https://www.fxstreet.com/news/australian-dollar-as-risk-off-mood-meets-fomc-countdown-202609152255",
@@ -18,36 +54,6 @@
       "url": "https://www.fxstreet.com/news/gbp-jpy-price-forecast-rebounds-above-20700-as-oversold-risk-eases-202609152222",
       "source": "FXStreet",
       "published_at": "2026-09-15T22:22:04+00:00"
-    },
-    {
-      "title": "The Pound drifts lower as the Fed lines up a rate above the Bank of England's",
-      "url": "https://www.fxstreet.com/news/the-pound-drifts-lower-as-the-fed-lines-up-a-rate-above-the-bank-of-englands-202609152209",
-      "source": "FXStreet",
-      "published_at": "2026-09-15T22:09:57+00:00"
-    },
-    {
-      "title": "Mexican Peso retreats as USD/MXN bounces from near YTD low",
-      "url": "https://www.fxstreet.com/news/mexican-peso-retreats-as-usd-mxn-bounces-from-near-ytd-low-202609152036",
-      "source": "FXStreet",
-      "published_at": "2026-09-15T20:36:09+00:00"
-    },
-    {
-      "title": "New Zealand Dollar slides ahead of Fed’s decision",
-      "url": "https://www.fxstreet.com/news/new-zealand-dollar-slides-ahead-of-feds-decision-202609152129",
-      "source": "FXStreet",
-      "published_at": "2026-09-15T21:29:27+00:00"
-    },
-    {
-      "title": "Chinese Yuan: Range-bound with slight downside bias against US Dollar – UOB",
-      "url": "https://www.fxstreet.com/news/chinese-yuan-range-bound-with-slight-downside-bias-against-us-dollar-uob-202609152121",
-      "source": "FXStreet",
-      "published_at": "2026-09-15T21:21:00+00:00"
-    },
-    {
-      "title": "Indonesian Rupiah: Market tests Indonesia policy credibility – Commerzbank",
-      "url": "https://www.fxstreet.com/news/indonesian-rupiah-market-tests-indonesia-policy-credibility-commerzbank-202609152027",
-      "source": "FXStreet",
-      "published_at": "2026-09-15T20:27:00+00:00"
     }
   ]
 }
