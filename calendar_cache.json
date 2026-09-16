@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-15T20:38:02.797967+00:00",
+  "fetched_at": "2026-09-16T02:19:08.768776+00:00",
   "events": [
     {
       "title": "BRICS Summit",
@@ -308,7 +308,7 @@
     {
       "title": "Westpac Consumer Sentiment",
       "country": "NZD",
-      "date": "2026-09-15T17:00:00-04:00",
+      "date": "2026-09-15T17:04:00-04:00",
       "impact": "Low",
       "forecast": "",
       "previous": "80.4"
@@ -430,7 +430,7 @@
       "country": "USD",
       "date": "2026-09-16T08:30:00-04:00",
       "impact": "Medium",
-      "forecast": "0.5%",
+      "forecast": "0.6%",
       "previous": "-0.3%"
     },
     {
@@ -470,7 +470,7 @@
       "country": "USD",
       "date": "2026-09-16T10:30:00-04:00",
       "impact": "Low",
-      "forecast": "",
+      "forecast": "-1.6M",
       "previous": "-0.4M"
     },
     {
@@ -638,7 +638,7 @@
       "country": "USD",
       "date": "2026-09-17T08:30:00-04:00",
       "impact": "Medium",
-      "forecast": "208K",
+      "forecast": "207K",
       "previous": "206K"
     },
     {
@@ -654,7 +654,7 @@
       "country": "USD",
       "date": "2026-09-17T08:30:00-04:00",
       "impact": "Low",
-      "forecast": "1.31M",
+      "forecast": "1.32M",
       "previous": "1.24M"
     },
     {
@@ -678,7 +678,7 @@
       "country": "USD",
       "date": "2026-09-17T10:30:00-04:00",
       "impact": "Low",
-      "forecast": "",
+      "forecast": "49B",
       "previous": "40B"
     },
     {
@@ -770,7 +770,7 @@
       "previous": "35.1B"
     },
     {
-      "title": "Eurogroup Meetings",
+      "title": "ECOFIN Meetings",
       "country": "EUR",
       "date": "2026-09-18T06:15:00-04:00",
       "impact": "Low",
@@ -778,7 +778,7 @@
       "previous": ""
     },
     {
-      "title": "ECOFIN Meetings",
+      "title": "Eurogroup Meetings",
       "country": "EUR",
       "date": "2026-09-18T06:15:00-04:00",
       "impact": "Low",
