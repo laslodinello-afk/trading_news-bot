@@ -1,47 +1,41 @@
 {
-  "fetched_at": "2026-09-16T22:16:31.864657+00:00",
+  "fetched_at": "2026-09-17T00:39:36.502394+00:00",
   "articles": [
+    {
+      "title": "US President Donald Trump to hold Iran talks with Gulf leaders next week — Reuters",
+      "url": "https://www.fxstreet.com/news/us-president-donald-trump-to-hold-iran-talks-with-gulf-leaders-next-week-reuters-202609170015",
+      "source": "FXStreet",
+      "published_at": "2026-09-17T00:15:03+00:00"
+    },
+    {
+      "title": "New Zealand Dollar remains weak below 0.5750 despite better-than-expected GDP data",
+      "url": "https://www.fxstreet.com/news/new-zealand-dollar-remains-weak-below-05750-despite-better-than-expected-gdp-data-202609170006",
+      "source": "FXStreet",
+      "published_at": "2026-09-17T00:06:28+00:00"
+    },
+    {
+      "title": "Gold falls to near $4,250 after Fed delivers rate hike",
+      "url": "https://www.fxstreet.com/news/gold-falls-to-near-4-250-after-fed-delivers-rate-hike-202609162325",
+      "source": "FXStreet",
+      "published_at": "2026-09-16T23:25:30+00:00"
+    },
+    {
+      "title": "0.2%: New Zealand’s Gross Domestic Product grows more than expected in Q2",
+      "url": "https://www.fxstreet.com/news/02-new-zealands-gross-domestic-product-grows-more-than-expected-in-q2-202609162246",
+      "source": "FXStreet",
+      "published_at": "2026-09-16T22:46:19+00:00"
+    },
+    {
+      "title": "The Pound drops below its long-run average as the Fed's rate passes Britain's",
+      "url": "https://www.fxstreet.com/news/the-pound-drops-below-its-long-run-average-as-the-feds-rate-passes-britains-202609162219",
+      "source": "FXStreet",
+      "published_at": "2026-09-16T22:19:29+00:00"
+    },
     {
       "title": "The Euro's losing streak runs on as the Fed matches the ECB's rate hike",
       "url": "https://www.fxstreet.com/news/the-euros-losing-streak-runs-on-as-the-fed-matches-the-ecbs-rate-hike-202609162201",
       "source": "FXStreet",
       "published_at": "2026-09-16T22:01:20+00:00"
-    },
-    {
-      "title": "The Japanese Yen gives back more of its rally as the Fed raises rates",
-      "url": "https://www.fxstreet.com/news/the-japanese-yen-gives-back-more-of-its-rally-as-the-fed-raises-rates-202609162118",
-      "source": "FXStreet",
-      "published_at": "2026-09-16T21:18:26+00:00"
-    },
-    {
-      "title": "New Zealand GDP in the barrel with the Kiwi at July lows",
-      "url": "https://www.fxstreet.com/news/new-zealand-gdp-in-the-barrel-with-the-kiwi-at-july-lows-202609162114",
-      "source": "FXStreet",
-      "published_at": "2026-09-16T21:14:20+00:00"
-    },
-    {
-      "title": "Trump demands 1% rates hours after the Fed raised them",
-      "url": "https://www.fxstreet.com/news/trump-demands-1-rates-hours-after-the-fed-raised-them-202609162104",
-      "source": "FXStreet",
-      "published_at": "2026-09-16T21:04:26+00:00"
-    },
-    {
-      "title": "New Zealand Dollar sinks toward its July low after the Fed hikes",
-      "url": "https://www.fxstreet.com/news/new-zealand-dollar-sinks-toward-its-july-low-after-the-fed-hikes-202609162101",
-      "source": "FXStreet",
-      "published_at": "2026-09-16T21:01:18+00:00"
-    },
-    {
-      "title": "The Australian Dollar continues to slide as the Fed enters hike country",
-      "url": "https://www.fxstreet.com/news/the-australian-dollar-continues-to-slide-as-the-fed-enters-hike-country-202609162056",
-      "source": "FXStreet",
-      "published_at": "2026-09-16T20:56:22+00:00"
-    },
-    {
-      "title": "US Federal Reserve sends Gold to fresh one-month lows",
-      "url": "https://www.fxstreet.com/news/us-federal-reserve-sends-gold-to-fresh-one-month-lows-202609161943",
-      "source": "FXStreet",
-      "published_at": "2026-09-16T19:43:08+00:00"
     }
   ]
 }
