@@ -1,59 +1,47 @@
 {
-  "fetched_at": "2026-09-17T22:06:37.392940+00:00",
+  "fetched_at": "2026-09-18T00:17:04.134514+00:00",
   "articles": [
     {
-      "title": "Bank of Japan is expected to deliver a hawkish hike, pressured by rising inflation",
+      "title": "Iran’s IRGC claims attack on Togolese oil tanker for 'illegal transit' in Strait of Hormuz",
+      "url": "https://www.fxstreet.com/news/irans-irgc-claims-attack-on-togolese-oil-tanker-for-illegal-transit-in-strait-of-hormuz-202609172354",
+      "source": "FXStreet",
+      "published_at": "2026-09-17T23:54:18+00:00"
+    },
+    {
+      "title": "RBA's Bullock: At August board meeting, risks to outlook were skewed to the upside",
+      "url": "https://www.fxstreet.com/news/rbas-bullock-at-august-board-meeting-risks-to-outlook-were-skewed-to-the-upside-202609172341",
+      "source": "FXStreet",
+      "published_at": "2026-09-17T23:41:14+00:00"
+    },
+    {
+      "title": "1.9%: Japan’s National CPI steadies in August",
+      "url": "https://www.fxstreet.com/news/19-japans-national-cpi-steadies-in-august-202609172333",
+      "source": "FXStreet",
+      "published_at": "2026-09-17T23:33:27+00:00"
+    },
+    {
+      "title": "Bank of Japan is set to raise interest rates as inflation, economic growth support tighter policy",
       "url": "https://www.fxstreet.com/news/bank-of-japan-is-expected-to-deliver-a-hawkish-hike-pressured-by-rising-inflation-202609172200",
       "source": "FXStreet",
       "published_at": "2026-09-17T22:00:00+00:00"
+    },
+    {
+      "title": "Gold rebounds to near $4,350 on weaker US Dollar, falling oil prices",
+      "url": "https://www.fxstreet.com/news/gold-rebounds-to-near-4-350-on-weaker-us-dollar-falling-oil-prices-202609172320",
+      "source": "FXStreet",
+      "published_at": "2026-09-17T23:20:22+00:00"
+    },
+    {
+      "title": "Australian Dollar finds a floor as Oil retreat loosens USD’s grip",
+      "url": "https://www.fxstreet.com/news/australian-dollar-finds-a-floor-as-oil-retreat-loosens-usds-grip-202609172315",
+      "source": "FXStreet",
+      "published_at": "2026-09-17T23:15:56+00:00"
     },
     {
       "title": "EUR/JPY Price Forecast: Spinning tops warn bulls near 180.00",
       "url": "https://www.fxstreet.com/news/eur-jpy-price-forecast-spinning-tops-warn-bulls-near-18000-202609172144",
       "source": "FXStreet",
       "published_at": "2026-09-17T21:44:51+00:00"
-    },
-    {
-      "title": "US Dollar slips against the Japanese Yen before the Bank of Japan raises rates",
-      "url": "https://www.fxstreet.com/news/us-dollar-slips-against-the-japanese-yen-before-the-bank-of-japan-raises-rates-202609172057",
-      "source": "FXStreet",
-      "published_at": "2026-09-17T20:57:07+00:00"
-    },
-    {
-      "title": "British Pound slides after the Bank of England stays put",
-      "url": "https://www.fxstreet.com/news/british-pound-sterling-slides-after-the-bank-of-england-stays-put-202609172056",
-      "source": "FXStreet",
-      "published_at": "2026-09-17T20:56:24+00:00"
-    },
-    {
-      "title": "GBP/JPY Price Forecast: Evening star puts 207.00 back in play",
-      "url": "https://www.fxstreet.com/news/gbp-jpy-price-forecast-evening-star-puts-20700-back-in-play-202609172047",
-      "source": "FXStreet",
-      "published_at": "2026-09-17T20:47:09+00:00"
-    },
-    {
-      "title": "Singapore Dollar: Strong Dollar keeps pair supported – OCBC",
-      "url": "https://www.fxstreet.com/news/singapore-dollar-strong-dollar-keeps-pair-supported-ocbc-202609172012",
-      "source": "FXStreet",
-      "published_at": "2026-09-17T20:12:00+00:00"
-    },
-    {
-      "title": "Thai Baht: Electronics boom offers limited FX support – MUFG",
-      "url": "https://www.fxstreet.com/news/thai-baht-electronics-boom-offers-limited-fx-support-mufg-202609171937",
-      "source": "FXStreet",
-      "published_at": "2026-09-17T19:37:00+00:00"
-    },
-    {
-      "title": "Forex Today: US Dollar eases ahead of Bank of Japan decision",
-      "url": "https://www.fxstreet.com/news/forex-today-us-dollar-eases-ahead-of-bank-of-japan-decision-202609171933",
-      "source": "FXStreet",
-      "published_at": "2026-09-17T19:33:58+00:00"
-    },
-    {
-      "title": "Silver Price Forecast: Bulls threaten bearish setup after Fed hike",
-      "url": "https://www.fxstreet.com/news/silver-price-forecast-bulls-threaten-bearish-setup-after-fed-hike-202609171915",
-      "source": "FXStreet",
-      "published_at": "2026-09-17T19:15:23+00:00"
     }
   ]
 }
