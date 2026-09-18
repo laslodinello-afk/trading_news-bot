@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-18T02:09:21.519774+00:00",
+  "fetched_at": "2026-09-18T10:13:52.775888+00:00",
   "events": [
     {
       "title": "BRICS Summit",
@@ -716,7 +716,7 @@
     {
       "title": "BOJ Policy Rate",
       "country": "JPY",
-      "date": "2026-09-17T23:00:00-04:00",
+      "date": "2026-09-17T22:54:00-04:00",
       "impact": "High",
       "forecast": "<1.25%",
       "previous": "<1.00%"
@@ -724,15 +724,7 @@
     {
       "title": "Monetary Policy Statement",
       "country": "JPY",
-      "date": "2026-09-17T23:00:00-04:00",
-      "impact": "High",
-      "forecast": "",
-      "previous": ""
-    },
-    {
-      "title": "BOJ Press Conference",
-      "country": "JPY",
-      "date": "2026-09-18T01:30:00-04:00",
+      "date": "2026-09-17T22:54:00-04:00",
       "impact": "High",
       "forecast": "",
       "previous": ""
@@ -754,12 +746,12 @@
       "previous": "-0.5%"
     },
     {
-      "title": "Foreign Direct Investment ytd/y",
-      "country": "CNY",
-      "date": "2026-09-18T02:02:00-04:00",
-      "impact": "Low",
+      "title": "BOJ Press Conference",
+      "country": "JPY",
+      "date": "2026-09-18T02:30:00-04:00",
+      "impact": "High",
       "forecast": "",
-      "previous": "-6.2%"
+      "previous": ""
     },
     {
       "title": "Current Account",
