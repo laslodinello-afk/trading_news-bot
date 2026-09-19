@@ -1,6 +1,30 @@
 {
-  "fetched_at": "2026-09-18T21:57:20.379667+00:00",
+  "fetched_at": "2026-09-19T00:09:52.704761+00:00",
   "articles": [
+    {
+      "title": "Taiwan Dollar: Mildly hawkish CBC but flows drive – OCBC",
+      "url": "https://www.fxstreet.com/news/taiwan-dollar-mildly-hawkish-cbc-but-flows-drive-ocbc-202609182355",
+      "source": "FXStreet",
+      "published_at": "2026-09-18T23:55:00+00:00"
+    },
+    {
+      "title": "Taiwan Dollar: CBC holds rates but flags inflation risks – Commerzbank",
+      "url": "https://www.fxstreet.com/news/taiwan-dollar-cbc-holds-rates-but-flags-inflation-risks-commerzbank-202609182332",
+      "source": "FXStreet",
+      "published_at": "2026-09-18T23:32:00+00:00"
+    },
+    {
+      "title": "South Korean Won: Foreign equity flows keep KRW heavy against US Dollar – OCBC",
+      "url": "https://www.fxstreet.com/news/south-korean-won-foreign-equity-flows-keep-krw-heavy-against-us-dollar-ocbc-202609182327",
+      "source": "FXStreet",
+      "published_at": "2026-09-18T23:27:00+00:00"
+    },
+    {
+      "title": "Japanese Yen: Dovish BoJ hike weighs on yen – Scotiabank",
+      "url": "https://www.fxstreet.com/news/japanese-yen-dovish-boj-hike-weighs-on-yen-scotiabank-202609182307",
+      "source": "FXStreet",
+      "published_at": "2026-09-18T23:07:00+00:00"
+    },
     {
       "title": "Singapore Dollar: Strong NODX but USD still drives USD/SGD – OCBC",
       "url": "https://www.fxstreet.com/news/singapore-dollar-strong-nodx-but-usd-still-drives-usd-sgd-ocbc-202609182149",
@@ -18,42 +42,6 @@
       "url": "https://www.fxstreet.com/news/chinese-yuan-pre-summit-support-and-firmer-bias-dbs-202609182112",
       "source": "FXStreet",
       "published_at": "2026-09-18T21:12:00+00:00"
-    },
-    {
-      "title": "NZD/USD Price Forecast: Kiwi reversal puts 0.5700 under pressure",
-      "url": "https://www.fxstreet.com/news/nzd-usd-price-forecast-kiwi-reversal-puts-05700-under-pressure-202609182044",
-      "source": "FXStreet",
-      "published_at": "2026-09-18T20:44:54+00:00"
-    },
-    {
-      "title": "Singapore Dollar: Range trade persists against US Dollar – UOB",
-      "url": "https://www.fxstreet.com/news/singapore-dollar-range-trade-persists-against-us-dollar-uob-202609182038",
-      "source": "FXStreet",
-      "published_at": "2026-09-18T20:38:00+00:00"
-    },
-    {
-      "title": "Malaysian Ringgit: External pressure but scope for reversal – OCBC",
-      "url": "https://www.fxstreet.com/news/malaysian-ringgit-external-pressure-but-scope-for-reversal-ocbc-202609181954",
-      "source": "FXStreet",
-      "published_at": "2026-09-18T19:54:00+00:00"
-    },
-    {
-      "title": "British Pound: Limited upside after hawkish BoE hold – Scotiabank",
-      "url": "https://www.fxstreet.com/news/british-pound-limited-upside-after-hawkish-boe-hold-scotiabank-202609181919",
-      "source": "FXStreet",
-      "published_at": "2026-09-18T19:19:58+00:00"
-    },
-    {
-      "title": "10-year Treasury yield rises back to 5% as global tightening wave pushes",
-      "url": "https://www.fxstreet.com/news/us-10-year-back-at-5-as-global-tightening-wave-pushes-202609181903",
-      "source": "FXStreet",
-      "published_at": "2026-09-18T19:03:12+00:00"
-    },
-    {
-      "title": "Eurozone: Energy shock reshapes outlook – Rabobank",
-      "url": "https://www.fxstreet.com/news/eurozone-energy-shock-reshapes-outlook-rabobank-202609181858",
-      "source": "FXStreet",
-      "published_at": "2026-09-18T18:58:47+00:00"
     }
   ]
 }
