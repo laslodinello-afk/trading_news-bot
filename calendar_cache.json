@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-21T11:24:41.810272+00:00",
+  "fetched_at": "2026-09-21T17:24:10.845303+00:00",
   "events": [
     {
       "title": "Bank Holiday",
@@ -512,6 +512,14 @@
       "impact": "Holiday",
       "forecast": "",
       "previous": ""
+    },
+    {
+      "title": "BOJ Core CPI y/y",
+      "country": "JPY",
+      "date": "2026-09-25T01:00:00-04:00",
+      "impact": "Low",
+      "forecast": "",
+      "previous": "1.6%"
     },
     {
       "title": "German GfK Consumer Climate",
