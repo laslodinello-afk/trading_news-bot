@@ -1,6 +1,60 @@
 {
-  "fetched_at": "2026-09-22T21:17:17.103707+00:00",
+  "fetched_at": "2026-09-22T23:38:43.152597+00:00",
   "articles": [
+    {
+      "title": "Explosion heard near Iran’s Qeshm Island",
+      "url": "https://www.fxstreet.com/news/explosion-heard-near-irans-qeshm-island-202609222337",
+      "source": "FXStreet",
+      "published_at": "2026-09-22T23:37:11+00:00"
+    },
+    {
+      "title": "Gold recovers above $4,350 on US–Iran diplomacy hopes",
+      "url": "https://www.fxstreet.com/news/gold-recovers-above-4-350-on-us-iran-diplomacy-hopes-202609222322",
+      "source": "FXStreet",
+      "published_at": "2026-09-22T23:22:59+00:00"
+    },
+    {
+      "title": "49.3: Australia’s S&P Global Manufacturing PMI declines in September",
+      "url": "https://www.fxstreet.com/news/493-australias-sp-global-manufacturing-pmi-declines-in-september-202609222301",
+      "source": "FXStreet",
+      "published_at": "2026-09-22T23:01:34+00:00"
+    },
+    {
+      "title": "The New Zealand Dollar dips to a new low and bounces as Crude Oil gets cheaper",
+      "url": "https://www.fxstreet.com/news/the-new-zealand-dollar-dips-to-a-new-low-and-bounces-as-crude-oil-gets-cheaper-202609222254",
+      "source": "FXStreet",
+      "published_at": "2026-09-22T22:54:38+00:00"
+    },
+    {
+      "title": "Australian Dollar remains subdued as Fed and RBA hawks collide",
+      "url": "https://www.fxstreet.com/news/australian-dollar-remains-subdued-as-fed-and-rba-hawks-collide-202609222249",
+      "source": "FXStreet",
+      "published_at": "2026-09-22T22:49:21+00:00"
+    },
+    {
+      "title": "The Japanese Yen spikes and unwinds as Iran offers to reopen Hormuz",
+      "url": "https://www.fxstreet.com/news/the-japanese-yen-spikes-and-unwinds-as-iran-offers-to-reopen-hormuz-202609222245",
+      "source": "FXStreet",
+      "published_at": "2026-09-22T22:45:42+00:00"
+    },
+    {
+      "title": "The Euro drops to its lowest since July as the Dollar keeps climbing",
+      "url": "https://www.fxstreet.com/news/the-euro-drops-to-its-lowest-since-july-as-the-dollar-keeps-climbing-202609222219",
+      "source": "FXStreet",
+      "published_at": "2026-09-22T22:19:16+00:00"
+    },
+    {
+      "title": "The British Pound sets a new September low as Fed officials argue for more",
+      "url": "https://www.fxstreet.com/news/the-british-pound-sets-a-new-september-low-as-fed-officials-argue-for-more-202609222204",
+      "source": "FXStreet",
+      "published_at": "2026-09-22T22:04:34+00:00"
+    },
+    {
+      "title": "Chinese Yuan: RMB gains hinge on PBoC fix – OCBC",
+      "url": "https://www.fxstreet.com/news/chinese-yuan-rmb-gains-hinge-on-pboc-fix-ocbc-202609222154",
+      "source": "FXStreet",
+      "published_at": "2026-09-22T21:54:00+00:00"
+    },
     {
       "title": "Singapore Dollar: Sideways bias holds above support against US Dollar – UOB",
       "url": "https://www.fxstreet.com/news/singapore-dollar-sideways-bias-holds-above-support-against-us-dollar-uob-202609222112",
@@ -12,60 +66,6 @@
       "url": "https://www.fxstreet.com/news/banxico-expected-to-stay-put-as-inflation-risks-block-easing-reuters-202609222051",
       "source": "FXStreet",
       "published_at": "2026-09-22T20:51:36+00:00"
-    },
-    {
-      "title": "ECB’s Nagel says restrictive policy cannot be ruled out",
-      "url": "https://www.fxstreet.com/news/ecbs-nagel-says-restrictive-policy-cannot-be-ruled-out-202609222037",
-      "source": "FXStreet",
-      "published_at": "2026-09-22T20:37:39+00:00"
-    },
-    {
-      "title": "Mexican Peso carry cushion thins as USD/MXN breaks 100-day SMA",
-      "url": "https://www.fxstreet.com/news/mexican-peso-carry-cushion-thins-as-usd-mxn-breaks-100-day-sma-202609222024",
-      "source": "FXStreet",
-      "published_at": "2026-09-22T20:24:47+00:00"
-    },
-    {
-      "title": "South Korean Won: Export surge supports BoK stance – Commerzbank",
-      "url": "https://www.fxstreet.com/news/south-korean-won-export-surge-supports-bok-stance-commerzbank-202609222026",
-      "source": "FXStreet",
-      "published_at": "2026-09-22T20:26:00+00:00"
-    },
-    {
-      "title": "Taiwan Dollar: Equity inflows support TWD againt US Dollar – OCBC",
-      "url": "https://www.fxstreet.com/news/taiwan-dollar-equity-inflows-support-twd-againt-us-dollar-ocbc-202609221951",
-      "source": "FXStreet",
-      "published_at": "2026-09-22T19:51:00+00:00"
-    },
-    {
-      "title": "Gold losses altitude as peace hopes meet hawkish Fed bets",
-      "url": "https://www.fxstreet.com/news/gold-losses-altitude-as-peace-hopes-meet-hawkish-fed-bets-202609221936",
-      "source": "FXStreet",
-      "published_at": "2026-09-22T19:36:49+00:00"
-    },
-    {
-      "title": "Asia FX: AI-driven support for regional currencies – MUFG",
-      "url": "https://www.fxstreet.com/news/asia-fx-ai-driven-support-for-regional-currencies-mufg-202609221917",
-      "source": "FXStreet",
-      "published_at": "2026-09-22T19:17:00+00:00"
-    },
-    {
-      "title": "Forex Today: Advanced PMIs in the limelight, but what about the UN General Assembly?",
-      "url": "https://www.fxstreet.com/news/forex-today-advanced-pmis-in-the-limelight-but-what-about-the-un-general-assembly-202609221854",
-      "source": "FXStreet",
-      "published_at": "2026-09-22T18:54:38+00:00"
-    },
-    {
-      "title": "Chinese Yuan: Gradual decline within tight bands – UOB",
-      "url": "https://www.fxstreet.com/news/chinese-yuan-gradual-decline-within-tight-bands-uob-202609221839",
-      "source": "FXStreet",
-      "published_at": "2026-09-22T18:39:00+00:00"
-    },
-    {
-      "title": "WTI extends decline as Trump signals progress in talks with Iran",
-      "url": "https://www.fxstreet.com/news/wti-extends-decline-as-trump-signals-progress-in-talks-with-iran-202609221825",
-      "source": "FXStreet",
-      "published_at": "2026-09-22T18:25:01+00:00"
     }
   ]
 }
