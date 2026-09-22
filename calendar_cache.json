@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-22T10:33:31.204770+00:00",
+  "fetched_at": "2026-09-22T15:56:03.356798+00:00",
   "events": [
     {
       "title": "Bank Holiday",
@@ -120,6 +120,14 @@
       "impact": "Low",
       "forecast": "",
       "previous": "16.3K"
+    },
+    {
+      "title": "President Trump Speaks",
+      "country": "USD",
+      "date": "2026-09-22T09:55:00-04:00",
+      "impact": "Medium",
+      "forecast": "",
+      "previous": ""
     },
     {
       "title": "Consumer Confidence",
