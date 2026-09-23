@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-23T10:27:12.954409+00:00",
+  "fetched_at": "2026-09-23T15:45:33.391840+00:00",
   "events": [
     {
       "title": "Bank Holiday",
@@ -342,7 +342,7 @@
       "country": "AUD",
       "date": "2026-09-23T21:30:00-04:00",
       "impact": "High",
-      "forecast": "22.5K",
+      "forecast": "21.5K",
       "previous": "-15.8K"
     },
     {
