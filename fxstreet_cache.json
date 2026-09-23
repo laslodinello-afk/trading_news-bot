@@ -1,35 +1,53 @@
 {
-  "fetched_at": "2026-09-23T20:39:03.714224+00:00",
+  "fetched_at": "2026-09-23T23:10:46.179373+00:00",
   "articles": [
     {
-      "title": "USD/CHF Price Forecast: Bulls retake control, eye 0.8300 break",
-      "url": "https://www.fxstreet.com/news/usd-chf-price-forecast-bulls-retake-control-eye-08300-break-202609231936",
+      "title": "Australian Dollar tumbles amid soaring US yields, ahead of jobs data",
+      "url": "https://www.fxstreet.com/news/australian-dollar-tumbles-amid-soaring-us-yields-ahead-of-jobs-data-202609232306",
       "source": "FXStreet",
-      "published_at": "2026-09-23T19:36:09+00:00"
+      "published_at": "2026-09-23T23:06:51+00:00"
     },
     {
-      "title": "Gold buckles as 5% yields and Fed hawks take control",
-      "url": "https://www.fxstreet.com/news/gold-buckles-as-5-yields-and-fed-hawks-take-control-202609231837",
+      "title": "New Zealand Dollar slides toward its range floor as US yields climb",
+      "url": "https://www.fxstreet.com/news/new-zealand-dollar-slides-toward-its-range-floor-as-us-yields-climb-202609232300",
       "source": "FXStreet",
-      "published_at": "2026-09-23T18:37:39+00:00"
+      "published_at": "2026-09-23T23:00:00+00:00"
     },
     {
-      "title": "Silver Price Forecast: Fed hawks knock XAG/USD toward $64 support",
-      "url": "https://www.fxstreet.com/news/silver-price-forecast-fed-hawks-knock-xag-usd-toward-64-support-202609231823",
+      "title": "Japanese Yen gives back most of its rally as Fed hike talk grows",
+      "url": "https://www.fxstreet.com/news/japanese-yen-gives-back-most-of-its-rally-as-fed-hike-talk-grows-202609232245",
       "source": "FXStreet",
-      "published_at": "2026-09-23T18:23:41+00:00"
+      "published_at": "2026-09-23T22:45:00+00:00"
     },
     {
-      "title": "Forex Today: Australia’s jobs report comes to the fore",
-      "url": "https://www.fxstreet.com/news/forex-today-australias-jobs-report-comes-to-the-fore-202609231809",
+      "title": "Euro extends its slide as US surveys top Europe's strong reading",
+      "url": "https://www.fxstreet.com/news/euro-extends-its-slide-as-us-surveys-top-europes-strong-reading-202609232230",
       "source": "FXStreet",
-      "published_at": "2026-09-23T18:09:32+00:00"
+      "published_at": "2026-09-23T22:30:47+00:00"
     },
     {
-      "title": "Japanese Yen declines as upbeat US PMI lifts the US Dollar and yields",
-      "url": "https://www.fxstreet.com/news/japanese-yen-declines-as-upbeat-us-pmi-lifts-the-us-dollar-yields-202609231808",
+      "title": "British Pound sells off hard as US surveys outpace the UK's",
+      "url": "https://www.fxstreet.com/news/british-pound-sells-off-hard-as-us-surveys-outpace-the-uks-202609232224",
       "source": "FXStreet",
-      "published_at": "2026-09-23T18:08:37+00:00"
+      "published_at": "2026-09-23T22:24:19+00:00"
+    },
+    {
+      "title": "GBP/JPY Price Forecast: Bears press 209.00 as downtrend deepens",
+      "url": "https://www.fxstreet.com/news/gbp-jpy-price-forecast-bears-press-20900-as-downtrend-deepens-202609232135",
+      "source": "FXStreet",
+      "published_at": "2026-09-23T21:35:39+00:00"
+    },
+    {
+      "title": "Australia unemployment rate expected to remain unchanged at 4.5% in August",
+      "url": "https://www.fxstreet.com/news/australia-unemployment-rate-expected-to-remain-unchanged-at-45-in-august-202609232130",
+      "source": "FXStreet",
+      "published_at": "2026-09-23T21:30:00+00:00"
+    },
+    {
+      "title": "Mexican Peso selloff deepens as Fed hawks drive USD/MXN toward 17.50",
+      "url": "https://www.fxstreet.com/news/mexican-peso-selloff-deepens-as-fed-hawks-drive-usd-mxn-toward-1750-202609232057",
+      "source": "FXStreet",
+      "published_at": "2026-09-23T20:57:32+00:00"
     }
   ]
 }
