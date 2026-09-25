@@ -1,101 +1,41 @@
 {
-  "fetched_at": "2026-09-25T12:43:11.805879+00:00",
+  "fetched_at": "2026-09-25T17:34:33.016711+00:00",
   "articles": [
     {
-      "title": "Gold finds support as US Dollar and yields ease, weekly loss still in sight",
-      "url": "https://www.fxstreet.com/news/gold-gains-as-us-dollar-and-yields-pause-but-weekly-loss-remains-in-sight-202609251106",
+      "title": "New Zealand Dollar holds steady as US Dollar retreats",
+      "url": "https://www.fxstreet.com/news/new-zealand-dollar-holds-steady-as-us-dollar-retreats-202609251658",
       "source": "FXStreet",
-      "published_at": "2026-09-25T11:06:53+00:00"
+      "published_at": "2026-09-25T16:58:06+00:00"
     },
     {
-      "title": "Australian Dollar: Weakness may extend toward 0.6970 against US Dollar - UOB",
-      "url": "https://www.fxstreet.com/news/australian-dollar-weakness-may-extend-toward-06970-against-us-dollar-uob-202609251234",
+      "title": "Dow Jones Industrial Average bounces on Iran's latest Hormuz offer",
+      "url": "https://www.fxstreet.com/news/dow-jones-industrial-average-bounces-on-irans-latest-hormuz-offer-202609251628",
       "source": "FXStreet",
-      "published_at": "2026-09-25T12:34:05+00:00"
+      "published_at": "2026-09-25T16:28:49+00:00"
     },
     {
-      "title": "Swedish Krona: Riksbank facing delayed inflation rebound – Commerzbank",
-      "url": "https://www.fxstreet.com/news/swedish-krona-riksbank-facing-delayed-inflation-rebound-commerzbank-202609251223",
+      "title": "British Pound finds relief as USD pauses, but inflation risks linger",
+      "url": "https://www.fxstreet.com/news/british-pound-finds-relief-as-usd-pauses-but-inflation-risks-linger-202609251536",
       "source": "FXStreet",
-      "published_at": "2026-09-25T12:23:50+00:00"
+      "published_at": "2026-09-25T15:36:30+00:00"
     },
     {
-      "title": "EUR/GBP Price Forecast: Bulls challenge 0.8600 resistance after weeks of consolidation",
-      "url": "https://www.fxstreet.com/news/eur-gbp-price-forecast-bulls-challenge-08600-resistance-after-weeks-of-consolidation-202609251216",
+      "title": "Canadian Dollar: Undervalued near 1.41 against US Dollar – Scotiabank",
+      "url": "https://www.fxstreet.com/news/canadian-dollar-undervalued-near-141-against-us-dollar-scotiabank-202609251514",
       "source": "FXStreet",
-      "published_at": "2026-09-25T12:16:24+00:00"
+      "published_at": "2026-09-25T15:14:29+00:00"
     },
     {
-      "title": "CEE FX: Regional currencies weaken against Euro on policy risks - Societe Generale",
-      "url": "https://www.fxstreet.com/news/cee-fx-regional-currencies-weaken-against-euro-on-policy-risks-societe-generale-202609251207",
+      "title": "Euro: Correction seen near key averages against US Dollar – Societe Generale",
+      "url": "https://www.fxstreet.com/news/euro-correction-seen-near-key-averages-against-us-dollar-societe-generale-202609251501",
       "source": "FXStreet",
-      "published_at": "2026-09-25T12:07:31+00:00"
+      "published_at": "2026-09-25T15:01:59+00:00"
     },
     {
-      "title": "Japanese Yen extends recovery as Tokyo officials defend BoJ independence",
-      "url": "https://www.fxstreet.com/news/japanese-yen-extends-recovery-as-tokyo-officials-defend-boj-independence-202609251157",
+      "title": "Euro set for third weekly decline as hawkish Federal Reserve outlook weighs",
+      "url": "https://www.fxstreet.com/news/euro-set-for-third-weekly-decline-as-hawkish-federal-reserve-outlook-weighs-202609251451",
       "source": "FXStreet",
-      "published_at": "2026-09-25T11:57:13+00:00"
-    },
-    {
-      "title": "Euro: France spreads weigh on EUR – ING",
-      "url": "https://www.fxstreet.com/news/euro-france-spreads-weigh-on-eur-ing-202609251149",
-      "source": "FXStreet",
-      "published_at": "2026-09-25T11:49:17+00:00"
-    },
-    {
-      "title": "US Dollar: Rate differentials support but upside constrained – BBH",
-      "url": "https://www.fxstreet.com/news/us-dollar-rate-differentials-support-but-upside-constrained-bbh-202609251139",
-      "source": "FXStreet",
-      "published_at": "2026-09-25T11:39:53+00:00"
-    },
-    {
-      "title": "Silver Price Forecast: XAG/USD reclaims $65 as rally in bond yields, US Dollar hits pause",
-      "url": "https://www.fxstreet.com/news/silver-price-forecast-xag-usd-reclaims-65-as-rally-in-bond-yields-us-dollar-hits-pause-202609251116",
-      "source": "FXStreet",
-      "published_at": "2026-09-25T11:16:50+00:00"
-    },
-    {
-      "title": "British Pound: Risk of test of 1.3140 against US Dollar – UOB",
-      "url": "https://www.fxstreet.com/news/british-pound-risk-of-test-of-13140-against-us-dollar-uob-202609251115",
-      "source": "FXStreet",
-      "published_at": "2026-09-25T11:15:02+00:00"
-    },
-    {
-      "title": "Fed’s Williams: Persistent supply shocks cannot be ignored",
-      "url": "https://www.fxstreet.com/news/feds-williams-persistent-supply-shocks-cannot-be-ignored-202609251051",
-      "source": "FXStreet",
-      "published_at": "2026-09-25T10:51:11+00:00"
-    },
-    {
-      "title": "WTI Oil reversal stalls above $91.00 as Middle East tensions outweigh supply increases",
-      "url": "https://www.fxstreet.com/news/wti-oil-reversal-stalls-above-9100-as-middle-east-tensions-outweigh-supply-increases-202609251049",
-      "source": "FXStreet",
-      "published_at": "2026-09-25T10:49:49+00:00"
-    },
-    {
-      "title": "Japan’s Katayama: Takaichi very much respects the independence of the BoJ",
-      "url": "https://www.fxstreet.com/news/japans-katayama-takaichi-very-much-respects-the-independence-of-the-boj-202609251035",
-      "source": "FXStreet",
-      "published_at": "2026-09-25T10:35:31+00:00"
-    },
-    {
-      "title": "BoE’s Bailey warns persistent high energy prices could challenge rate stance",
-      "url": "https://www.fxstreet.com/news/boes-bailey-warns-persistent-high-energy-prices-could-challenge-rate-stance-202609251005",
-      "source": "FXStreet",
-      "published_at": "2026-09-25T10:05:17+00:00"
-    },
-    {
-      "title": "Indian Rupee: PMIs show growth and inflation risks – Commerzbank",
-      "url": "https://www.fxstreet.com/news/indian-rupee-pmis-show-growth-and-inflation-risks-commerzbank-202609251003",
-      "source": "FXStreet",
-      "published_at": "2026-09-25T10:03:14+00:00"
-    },
-    {
-      "title": "Gold Price Forecast: XAU/USD struggles below $4,300 level with bears still in control",
-      "url": "https://www.fxstreet.com/news/gold-price-forecast-xau-usd-struggles-below-4-300-level-with-bears-still-in-control-202609250952",
-      "source": "FXStreet",
-      "published_at": "2026-09-25T09:52:06+00:00"
+      "published_at": "2026-09-25T14:51:53+00:00"
     }
   ]
 }
