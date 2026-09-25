@@ -1,41 +1,65 @@
 {
-  "fetched_at": "2026-09-25T17:34:33.016711+00:00",
+  "fetched_at": "2026-09-25T20:44:35.660270+00:00",
   "articles": [
     {
-      "title": "New Zealand Dollar holds steady as US Dollar retreats",
-      "url": "https://www.fxstreet.com/news/new-zealand-dollar-holds-steady-as-us-dollar-retreats-202609251658",
+      "title": "US Treasury yields rise as 30-Year yield hits 22-year high",
+      "url": "https://www.fxstreet.com/news/us-treasury-yields-rise-as-30-year-yield-hits-22-year-high-202609252022",
       "source": "FXStreet",
-      "published_at": "2026-09-25T16:58:06+00:00"
+      "published_at": "2026-09-25T20:22:47+00:00"
     },
     {
-      "title": "Dow Jones Industrial Average bounces on Iran's latest Hormuz offer",
-      "url": "https://www.fxstreet.com/news/dow-jones-industrial-average-bounces-on-irans-latest-hormuz-offer-202609251628",
+      "title": "South Korean Won: Trade surplus seen widening – ING",
+      "url": "https://www.fxstreet.com/news/south-korean-won-trade-surplus-seen-widening-ing-202609252012",
       "source": "FXStreet",
-      "published_at": "2026-09-25T16:28:49+00:00"
+      "published_at": "2026-09-25T20:12:00+00:00"
     },
     {
-      "title": "British Pound finds relief as USD pauses, but inflation risks linger",
-      "url": "https://www.fxstreet.com/news/british-pound-finds-relief-as-usd-pauses-but-inflation-risks-linger-202609251536",
+      "title": "Chinese Yuan: PBoC keeps yuan broadly stable – Societe Generale",
+      "url": "https://www.fxstreet.com/news/chinese-yuan-pboc-keeps-yuan-broadly-stable-societe-generale-202609251931",
       "source": "FXStreet",
-      "published_at": "2026-09-25T15:36:30+00:00"
+      "published_at": "2026-09-25T19:31:00+00:00"
     },
     {
-      "title": "Canadian Dollar: Undervalued near 1.41 against US Dollar – Scotiabank",
-      "url": "https://www.fxstreet.com/news/canadian-dollar-undervalued-near-141-against-us-dollar-scotiabank-202609251514",
+      "title": "Fed’s Hammack says policy still isn’t restrictive despite high inflation",
+      "url": "https://www.fxstreet.com/news/feds-hammack-says-policy-still-isnt-restrictive-despite-high-inflation-202609251900",
       "source": "FXStreet",
-      "published_at": "2026-09-25T15:14:29+00:00"
+      "published_at": "2026-09-25T19:00:32+00:00"
     },
     {
-      "title": "Euro: Correction seen near key averages against US Dollar – Societe Generale",
-      "url": "https://www.fxstreet.com/news/euro-correction-seen-near-key-averages-against-us-dollar-societe-generale-202609251501",
+      "title": "Singapore Dollar: Consolidation near lows against US Dollar – UOB",
+      "url": "https://www.fxstreet.com/news/singapore-dollar-consolidation-near-lows-against-us-dollar-uob-202609251854",
       "source": "FXStreet",
-      "published_at": "2026-09-25T15:01:59+00:00"
+      "published_at": "2026-09-25T18:54:44+00:00"
     },
     {
-      "title": "Euro set for third weekly decline as hawkish Federal Reserve outlook weighs",
-      "url": "https://www.fxstreet.com/news/euro-set-for-third-weekly-decline-as-hawkish-federal-reserve-outlook-weighs-202609251451",
+      "title": "ECB’s Vujcic warns energy shock could keep inflation hot",
+      "url": "https://www.fxstreet.com/news/ecbs-vujcic-warns-energy-shock-could-keep-inflation-hot-202609251834",
       "source": "FXStreet",
-      "published_at": "2026-09-25T14:51:53+00:00"
+      "published_at": "2026-09-25T18:34:02+00:00"
+    },
+    {
+      "title": "Asian FX: Higher yields and Oil weigh – OCBC",
+      "url": "https://www.fxstreet.com/news/asian-fx-higher-yields-and-oil-weigh-ocbc-202609251822",
+      "source": "FXStreet",
+      "published_at": "2026-09-25T18:22:51+00:00"
+    },
+    {
+      "title": "Fed’s Hammack warns inflation mindset is the biggest risk",
+      "url": "https://www.fxstreet.com/news/feds-hammack-warns-inflation-mindset-is-the-biggest-risk-202609251815",
+      "source": "FXStreet",
+      "published_at": "2026-09-25T18:15:03+00:00"
+    },
+    {
+      "title": "Silver Price Forecast: XAG/USD lacks direction as RSI, ADX signal weak momentum",
+      "url": "https://www.fxstreet.com/news/silver-price-forecast-xag-usd-lacks-direction-as-rsi-adx-signal-weak-momentum-202609251805",
+      "source": "FXStreet",
+      "published_at": "2026-09-25T18:05:40+00:00"
+    },
+    {
+      "title": "Gold finds a pulse as WTI slump takes the edge off US Dollar",
+      "url": "https://www.fxstreet.com/news/gold-finds-a-pulse-as-wti-slump-takes-the-edge-off-us-dollar-202609251758",
+      "source": "FXStreet",
+      "published_at": "2026-09-25T17:58:33+00:00"
     }
   ]
 }
