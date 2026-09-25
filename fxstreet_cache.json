@@ -1,6 +1,42 @@
 {
-  "fetched_at": "2026-09-24T23:28:49.896503+00:00",
+  "fetched_at": "2026-09-25T01:50:46.018385+00:00",
   "articles": [
+    {
+      "title": "British Pound consolidates above 1.3200, its lowest since late June against a bullish USD",
+      "url": "https://www.fxstreet.com/news/british-pound-consolidates-above-13200-its-lowest-since-late-june-against-a-bullish-usd-202609250143",
+      "source": "FXStreet",
+      "published_at": "2026-09-25T01:43:35+00:00"
+    },
+    {
+      "title": "Euro posts modest lossess on rising Fed hike odds, Middle East tensions",
+      "url": "https://www.fxstreet.com/news/euro-posts-modest-lossess-on-rising-fed-hike-odds-middle-east-tensions-202609250123",
+      "source": "FXStreet",
+      "published_at": "2026-09-25T01:23:54+00:00"
+    },
+    {
+      "title": "WTI drops to near $92.50 on potential US-Iran deal",
+      "url": "https://www.fxstreet.com/news/wti-drops-to-near-9250-on-potential-us-iran-deal-202609250106",
+      "source": "FXStreet",
+      "published_at": "2026-09-25T01:06:30+00:00"
+    },
+    {
+      "title": "China's President Xi says Beijing and US should seek new ways for major countries to coexist",
+      "url": "https://www.fxstreet.com/news/chinas-president-xi-says-beijing-and-us-should-seek-new-ways-for-major-countries-to-coexist-202609250023",
+      "source": "FXStreet",
+      "published_at": "2026-09-25T00:23:58+00:00"
+    },
+    {
+      "title": "Saudi Civil Defence issues warning over possible threat in Jazan",
+      "url": "https://www.fxstreet.com/news/saudi-civil-defence-issues-warning-over-possible-threat-in-jazan-202609250006",
+      "source": "FXStreet",
+      "published_at": "2026-09-25T00:06:21+00:00"
+    },
+    {
+      "title": "Iran’s President says US ‘must choose’ whether to end war",
+      "url": "https://www.fxstreet.com/news/irans-president-says-us-must-choose-whether-to-end-war-202609242353",
+      "source": "FXStreet",
+      "published_at": "2026-09-24T23:53:26+00:00"
+    },
     {
       "title": "Gold declines below $4,300 as rising oil prices and hawkish Fed stance dampen appeal",
       "url": "https://www.fxstreet.com/news/gold-declines-below-4-300-as-rising-oil-prices-and-hawkish-fed-stance-dampen-appeal-202609242323",
@@ -18,42 +54,6 @@
       "url": "https://www.fxstreet.com/news/australian-dollar-tests-200-day-sma-amid-soaring-us-yields-202609242255",
       "source": "FXStreet",
       "published_at": "2026-09-24T22:55:44+00:00"
-    },
-    {
-      "title": "Mexican Peso : Range view with downside risks against US Dollar – Rabobank",
-      "url": "https://www.fxstreet.com/news/mexican-peso-range-view-with-downside-risks-against-us-dollar-rabobank-202609242239",
-      "source": "FXStreet",
-      "published_at": "2026-09-24T22:39:00+00:00"
-    },
-    {
-      "title": "New Zealand Dollar grinds lower as US bond yields climb to new highs",
-      "url": "https://www.fxstreet.com/news/new-zealand-dollar-grinds-lower-as-us-bond-yields-climb-to-new-highs-202609242230",
-      "source": "FXStreet",
-      "published_at": "2026-09-24T22:30:00+00:00"
-    },
-    {
-      "title": "Dow Jones Industrial Average falls a third day as bond yields climb",
-      "url": "https://www.fxstreet.com/news/dow-jones-industrial-average-falls-a-third-day-as-bond-yields-climb-202609242211",
-      "source": "FXStreet",
-      "published_at": "2026-09-24T22:11:04+00:00"
-    },
-    {
-      "title": "Pound Sterling slides again as Fed speakers go full hawkish",
-      "url": "https://www.fxstreet.com/news/pound-sterling-slides-again-as-fed-speakers-line-up-behind-another-hike-202609242209",
-      "source": "FXStreet",
-      "published_at": "2026-09-24T22:09:42+00:00"
-    },
-    {
-      "title": "Indonesian Rupiah: BI prioritizes IDR stability – Commerzbank",
-      "url": "https://www.fxstreet.com/news/indonesian-rupiah-bi-prioritizes-idr-stability-commerzbank-202609242151",
-      "source": "FXStreet",
-      "published_at": "2026-09-24T21:51:00+00:00"
-    },
-    {
-      "title": "Banxico: Flexible stance with upside risks – Rabobank",
-      "url": "https://www.fxstreet.com/news/banxico-flexible-stance-with-upside-risks-rabobank-202609242108",
-      "source": "FXStreet",
-      "published_at": "2026-09-24T21:08:11+00:00"
     }
   ]
 }
