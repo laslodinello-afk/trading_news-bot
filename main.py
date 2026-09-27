@@ -538,9 +538,9 @@ def main() -> None:
     args = parser.parse_args()
 
     setup_logging()
-    db.init_db()
 
     if args.test:
+        db.init_db()
         run_test_mode()
         return
 
@@ -549,7 +549,18 @@ def main() -> None:
         logger.error("Variables .env manquantes : %s — l'agent ne peut pas démarrer.", ", ".join(missing))
         sys.exit(1)
 
+    # Priorité absolue : répond aux pings de garde (cron-job.org) dès que
+    # possible, AVANT toute initialisation réseau potentiellement lente
+    # (db.init_db() se connecte à Turso). Constaté en conditions réelles :
+    # avec l'ancien ordre, un cold start lent (Turso injoignable/lent au
+    # réveil) empêchait le serveur de garde de répondre à temps, le ping
+    # échouait, cron-job.org finissait par désactiver le cron de garde après
+    # trop d'échecs — et sans lui, le service (plan gratuit Render) se
+    # rendort faute de trafic, un vrai silence complet du bot jusqu'à la
+    # prochaine visite. Démarrer ce serveur en tout premier casse ce cercle :
+    # il répond immédiatement même si le reste met du temps à s'initialiser.
     start_keepalive_server()
+    db.init_db()
 
     job_refresh_calendar()
     telegram_bot.send(telegram_bot.format_startup_message())
