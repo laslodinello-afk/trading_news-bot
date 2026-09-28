@@ -1,4 +1,35 @@
 {
-  "fetched_at": "2026-09-27T22:20:56.404069+00:00",
-  "articles": []
+  "fetched_at": "2026-09-28T00:59:46.936575+00:00",
+  "articles": [
+    {
+      "title": "Euro declines below 1.1400 on hawkish Fed stance, ongoing Middle East tensions",
+      "url": "https://www.fxstreet.com/news/euro-declines-below-11400-on-hawkish-fed-stance-ongoing-middle-east-tensions-202609280053",
+      "source": "FXStreet",
+      "published_at": "2026-09-28T00:53:33+00:00"
+    },
+    {
+      "title": "US President Donald Trump says he will not rule out more Iran strikes",
+      "url": "https://www.fxstreet.com/news/us-president-donald-trump-says-he-will-not-rule-out-more-iran-strikes-202609280019",
+      "source": "FXStreet",
+      "published_at": "2026-09-28T00:19:49+00:00"
+    },
+    {
+      "title": "BoJ Minutes: Members agree financial conditions remain accommodative",
+      "url": "https://www.fxstreet.com/news/boj-minutes-members-agree-financial-conditions-remain-accommodative-202609272353",
+      "source": "FXStreet",
+      "published_at": "2026-09-27T23:53:51+00:00"
+    },
+    {
+      "title": "Australian Dollar softens to near 0.7000 on hawkish Fed signals, RBA rate decision looms",
+      "url": "https://www.fxstreet.com/news/australian-dollar-softens-to-near-07000-on-hawkish-fed-signals-rba-rate-decision-looms-202609272323",
+      "source": "FXStreet",
+      "published_at": "2026-09-27T23:23:33+00:00"
+    },
+    {
+      "title": "Middle East War updates: Trump says he expects renewed Iran talks this week",
+      "url": "https://www.fxstreet.com/news/middle-east-war-updates-trump-says-he-expects-renewed-iran-talks-this-week-202609272231",
+      "source": "FXStreet",
+      "published_at": "2026-09-27T22:31:35+00:00"
+    }
+  ]
 }
