@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-09-30T02:57:34.543933+00:00",
+  "fetched_at": "2026-09-30T11:33:37.268906+00:00",
   "events": [
     {
       "title": "Monetary Policy Meeting Minutes",
@@ -402,14 +402,6 @@
       "previous": "0.2%"
     },
     {
-      "title": "German Retail Sales m/m",
-      "country": "EUR",
-      "date": "2026-09-30T02:00:00-04:00",
-      "impact": "Low",
-      "forecast": "1.6%",
-      "previous": "-3.4%"
-    },
-    {
       "title": "Current Account",
       "country": "GBP",
       "date": "2026-09-30T02:00:00-04:00",
@@ -432,6 +424,14 @@
       "impact": "Low",
       "forecast": "1.7%",
       "previous": "1.7%"
+    },
+    {
+      "title": "German Retail Sales m/m",
+      "country": "EUR",
+      "date": "2026-09-30T02:04:00-04:00",
+      "impact": "Low",
+      "forecast": "1.6%",
+      "previous": "-3.4%"
     },
     {
       "title": "German Prelim CPI m/m",
@@ -500,7 +500,7 @@
     {
       "title": "German 10-y Bond Auction",
       "country": "EUR",
-      "date": "2026-09-30T05:42:00-04:00",
+      "date": "2026-09-30T05:32:00-04:00",
       "impact": "Low",
       "forecast": "",
       "previous": "3.39|1.5"
@@ -626,6 +626,14 @@
       "previous": ""
     },
     {
+      "title": "President Trump Speaks",
+      "country": "USD",
+      "date": "2026-09-30T15:30:00-04:00",
+      "impact": "Medium",
+      "forecast": "",
+      "previous": ""
+    },
+    {
       "title": "FOMC Member Goolsbee Speaks",
       "country": "USD",
       "date": "2026-09-30T17:10:00-04:00",
@@ -645,7 +653,7 @@
       "title": "FOMC Member Kashkari Speaks",
       "country": "USD",
       "date": "2026-09-30T18:00:00-04:00",
-      "impact": "Low",
+      "impact": "Medium",
       "forecast": "",
       "previous": ""
     },
