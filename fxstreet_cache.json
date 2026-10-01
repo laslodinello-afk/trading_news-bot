@@ -1,29 +1,95 @@
 {
-  "fetched_at": "2026-09-30T23:10:00.252924+00:00",
+  "fetched_at": "2026-10-01T02:10:43.482446+00:00",
   "articles": [
     {
-      "title": "Aussie Dollar slips below 0.70 as Bullock dovishness trumps soft PCE",
-      "url": "https://www.fxstreet.com/news/aussie-dollar-slips-below-070-as-bullock-dovishness-trumps-soft-pce-202609302240",
+      "title": "Australian Dollar declines below 0.6959 as Trade Surplus shrinks sharply",
+      "url": "https://www.fxstreet.com/news/australian-dollar-declines-below-06959-as-trade-surplus-shrinks-sharply-202610010157",
       "source": "FXStreet",
-      "published_at": "2026-09-30T22:40:20+00:00"
+      "published_at": "2026-10-01T01:57:24+00:00"
     },
     {
-      "title": "Fed’s Kashkari questions policy tightness as economy stays strong",
-      "url": "https://www.fxstreet.com/news/feds-kashkari-questions-policy-tightness-as-economy-stays-strong-202609302210",
+      "title": "Reserve Bank of Australia: Households, businesses can weather slower economy, falling house prices",
+      "url": "https://www.fxstreet.com/news/reserve-bank-of-australia-households-businesses-can-weather-slower-economy-falling-house-prices-202610010141",
       "source": "FXStreet",
-      "published_at": "2026-09-30T22:10:04+00:00"
+      "published_at": "2026-10-01T01:41:16+00:00"
     },
     {
-      "title": "USD/JPY Price Forecast: 50-day SMA caps recovery near 158.00",
-      "url": "https://www.fxstreet.com/news/usd-jpy-price-forecast-50-day-sma-caps-recovery-near-15800-202609302154",
+      "title": "AUD495M: Australia’s Trade Surplus shrinks sharply in August",
+      "url": "https://www.fxstreet.com/news/aud495m-australias-trade-balance-shows-a-surplus-in-august-202610010133",
       "source": "FXStreet",
-      "published_at": "2026-09-30T21:54:48+00:00"
+      "published_at": "2026-10-01T01:33:24+00:00"
     },
     {
-      "title": "Fed’s Cook says inflation has stayed too high for too long",
-      "url": "https://www.fxstreet.com/news/feds-cook-says-inflation-has-stayed-too-high-for-too-long-202609302020",
+      "title": "Canadian Dollar seems vulnerable near two-month low as USD maintains bullish undertone",
+      "url": "https://www.fxstreet.com/news/canadian-dollar-seems-vulnerable-near-two-month-low-as-usd-maintains-bullish-undertone-202610010128",
       "source": "FXStreet",
-      "published_at": "2026-09-30T20:20:14+00:00"
+      "published_at": "2026-10-01T01:28:09+00:00"
+    },
+    {
+      "title": "US President Donald Trump announces $200 billion South Korean investment in US nuclear",
+      "url": "https://www.fxstreet.com/news/us-president-donald-trump-announces-200-billion-south-korean-investment-in-us-nuclear-202610010127",
+      "source": "FXStreet",
+      "published_at": "2026-10-01T01:27:31+00:00"
+    },
+    {
+      "title": "WTI falls to near $89.00 as Middle East oil shipments recover",
+      "url": "https://www.fxstreet.com/news/wti-falls-to-near-8900-as-middle-east-oil-shipments-recover-202610010120",
+      "source": "FXStreet",
+      "published_at": "2026-10-01T01:20:32+00:00"
+    },
+    {
+      "title": "US Secretary Rubio orders Iranian delegation to leave the country",
+      "url": "https://www.fxstreet.com/news/us-secretary-rubio-orders-iranian-delegation-to-leave-the-country-202610010035",
+      "source": "FXStreet",
+      "published_at": "2026-10-01T00:35:43+00:00"
+    },
+    {
+      "title": "BoJ Summary of Opinions: Member says appropriate to keep raising rates in line with economy, price",
+      "url": "https://www.fxstreet.com/news/boj-summary-of-opinions-member-says-appropriate-to-keep-raising-rates-in-line-with-economy-price-202610010002",
+      "source": "FXStreet",
+      "published_at": "2026-10-01T00:02:45+00:00"
+    },
+    {
+      "title": "The Japanese Yen spikes on softer US inflation and gives the gain back",
+      "url": "https://www.fxstreet.com/news/the-japanese-yen-spikes-on-softer-us-inflation-and-gives-the-gain-back-202610010000",
+      "source": "FXStreet",
+      "published_at": "2026-10-01T00:00:00+00:00"
+    },
+    {
+      "title": "Japan’s Tankan Large Manufacturing Index rises to 24 in Q3 vs. 25 expected",
+      "url": "https://www.fxstreet.com/news/japans-tankan-large-manufacturing-index-rises-to-24-in-q3-vs-25-expected-202609302353",
+      "source": "FXStreet",
+      "published_at": "2026-09-30T23:53:46+00:00"
+    },
+    {
+      "title": "The New Zealand Dollar edges lower as US yields outweigh China's beats",
+      "url": "https://www.fxstreet.com/news/the-new-zealand-dollar-edges-lower-as-us-yields-outweigh-chinas-beats-202609302345",
+      "source": "FXStreet",
+      "published_at": "2026-09-30T23:45:00+00:00"
+    },
+    {
+      "title": "The Euro slips as Europe's biggest economies report hotter inflation",
+      "url": "https://www.fxstreet.com/news/the-euro-slips-as-europes-biggest-economies-report-hotter-inflation-202609302331",
+      "source": "FXStreet",
+      "published_at": "2026-09-30T23:31:14+00:00"
+    },
+    {
+      "title": "Gold falls to near $4,150 as higher Treasury yields, oil prices outweigh softer PCE inflation",
+      "url": "https://www.fxstreet.com/news/gold-falls-to-near-4-150-as-higher-treasury-yields-oil-prices-outweigh-softer-pce-inflation-202609302330",
+      "source": "FXStreet",
+      "published_at": "2026-09-30T23:30:58+00:00"
+    },
+    {
+      "title": "The British Pound rallies on a UK growth upgrade and gives more than half back",
+      "url": "https://www.fxstreet.com/news/the-british-pound-rallies-on-a-uk-growth-upgrade-and-gives-more-than-half-back-202609302328",
+      "source": "FXStreet",
+      "published_at": "2026-09-30T23:28:33+00:00"
+    },
+    {
+      "title": "Dow Jones Industrial Average fades a soft-inflation bounce as yields climb",
+      "url": "https://www.fxstreet.com/news/dow-jones-industrial-average-fades-a-soft-inflation-bounce-as-yields-climb-202609302328",
+      "source": "FXStreet",
+      "published_at": "2026-09-30T23:28:11+00:00"
     }
   ]
 }
