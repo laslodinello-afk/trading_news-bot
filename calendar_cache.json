@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-10-02T11:33:46.905735+00:00",
+  "fetched_at": "2026-10-02T17:01:12.373120+00:00",
   "events": [
     {
       "title": "Monetary Policy Meeting Minutes",
@@ -1117,6 +1117,14 @@
       "title": "FOMC Member Logan Speaks",
       "country": "USD",
       "date": "2026-10-02T10:00:00-04:00",
+      "impact": "Low",
+      "forecast": "",
+      "previous": ""
+    },
+    {
+      "title": "FOMC Member Goolsbee Speaks",
+      "country": "USD",
+      "date": "2026-10-02T13:00:00-04:00",
       "impact": "Low",
       "forecast": "",
       "previous": ""
