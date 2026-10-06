@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-10-06T03:49:00.210295+00:00",
+  "fetched_at": "2026-10-06T12:24:21.554152+00:00",
   "events": [
     {
       "title": "OPEC-JMMC Meetings",
@@ -226,20 +226,20 @@
       "previous": "44.3"
     },
     {
-      "title": "MPC Member Mann Speaks",
-      "country": "GBP",
-      "date": "2026-10-06T04:30:00-04:00",
-      "impact": "Low",
-      "forecast": "",
-      "previous": ""
-    },
-    {
       "title": "Housing Equity Withdrawal q/q",
       "country": "GBP",
       "date": "2026-10-06T04:30:00-04:00",
       "impact": "Low",
       "forecast": "-11.9B",
       "previous": "-12.6B"
+    },
+    {
+      "title": "MPC Member Mann Speaks",
+      "country": "GBP",
+      "date": "2026-10-06T04:30:00-04:00",
+      "impact": "Low",
+      "forecast": "",
+      "previous": ""
     },
     {
       "title": "Retail Sales m/m",
