@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-10-07T03:16:39.483866+00:00",
+  "fetched_at": "2026-10-07T12:17:20.288566+00:00",
   "events": [
     {
       "title": "OPEC-JMMC Meetings",
@@ -392,6 +392,14 @@
       "impact": "Low",
       "forecast": "1.9M",
       "previous": "0.9M"
+    },
+    {
+      "title": "President Trump Speaks",
+      "country": "USD",
+      "date": "2026-10-07T13:00:00-04:00",
+      "impact": "Medium",
+      "forecast": "",
+      "previous": ""
     },
     {
       "title": "10-y Bond Auction",
