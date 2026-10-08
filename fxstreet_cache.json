@@ -1,131 +1,83 @@
 {
-  "fetched_at": "2026-10-08T07:24:11.612132+00:00",
+  "fetched_at": "2026-10-08T14:48:10.054191+00:00",
   "articles": [
     {
-      "title": "Gold bulls remain on the sidelines as hawkish Fed and Middle East jitters underpin USD",
-      "url": "https://www.fxstreet.com/news/gold-moves-away-from-two-month-low-not-out-of-the-woods-yet-amid-hawkish-fed-bullish-usd-202610080432",
+      "title": "Euro steadies as US yields retreat, traders assess Fed and ECB signals",
+      "url": "https://www.fxstreet.com/news/euro-steadies-as-us-yields-retreat-traders-assess-fed-and-ecb-signals-202610081419",
       "source": "FXStreet",
-      "published_at": "2026-10-08T04:32:31+00:00"
+      "published_at": "2026-10-08T14:19:40+00:00"
     },
     {
-      "title": "Forex Today: Euro stabilizes as markets await comments from central bankers",
-      "url": "https://www.fxstreet.com/news/forex-today-euro-stabilizes-as-markets-await-comments-from-central-bankers-202610080720",
+      "title": "Germany: Gradual recovery with energy risks – Deutsche Bank",
+      "url": "https://www.fxstreet.com/news/germany-gradual-recovery-with-energy-risks-deutsche-bank-202610081409",
       "source": "FXStreet",
-      "published_at": "2026-10-08T07:20:47+00:00"
+      "published_at": "2026-10-08T14:09:54+00:00"
     },
     {
-      "title": "NZD/USD Price Forecast: Drifting closer to 18-month lows at 0.5580",
-      "url": "https://www.fxstreet.com/news/nzd-usd-price-forecast-drifting-closer-to-18-month-lows-at-05580-202610080720",
+      "title": "Canadian Dollar: Consolidation near 1.42s against US Dollar – Scotiabank",
+      "url": "https://www.fxstreet.com/news/canadian-dollar-consolidation-near-142s-against-us-dollar-scotiabank-202610081346",
       "source": "FXStreet",
-      "published_at": "2026-10-08T07:20:35+00:00"
+      "published_at": "2026-10-08T13:46:04+00:00"
     },
     {
-      "title": "Equities: Bond stress triggers global stock retreat - Deutsche Bank",
-      "url": "https://www.fxstreet.com/news/equities-bond-stress-triggers-global-stock-retreat-deutsche-bank-202610080713",
+      "title": "European Central Bank: Neutral communication with upside inflation risks – Nordea",
+      "url": "https://www.fxstreet.com/news/european-central-bank-neutral-communication-with-upside-inflation-risks-nordea-202610081326",
       "source": "FXStreet",
-      "published_at": "2026-10-08T07:13:06+00:00"
+      "published_at": "2026-10-08T13:26:33+00:00"
     },
     {
-      "title": "Indian Rupee finds temporary support from likely RBI intervention",
-      "url": "https://www.fxstreet.com/news/indian-rupee-gets-relief-from-likely-rbis-intervention-202610080554",
+      "title": "Federal Reserve: More hikes ahead after October pause - UOB",
+      "url": "https://www.fxstreet.com/news/federal-reserve-more-hikes-ahead-after-october-pause-uob-202610081303",
       "source": "FXStreet",
-      "published_at": "2026-10-08T05:54:27+00:00"
+      "published_at": "2026-10-08T13:03:26+00:00"
     },
     {
-      "title": "Euro gains ground against British Pound despite French debt risks",
-      "url": "https://www.fxstreet.com/news/euro-gains-ground-against-british-pound-despite-french-debt-risks-202610080659",
+      "title": "BoE’s Bailey calls for stronger financial markets to absorb future shocks",
+      "url": "https://www.fxstreet.com/news/boes-bailey-calls-for-stronger-financial-markets-to-absorb-future-shocks-202610081249",
       "source": "FXStreet",
-      "published_at": "2026-10-08T06:59:14+00:00"
+      "published_at": "2026-10-08T12:49:27+00:00"
     },
     {
-      "title": "Oil: Prices supported by supply risks and Iran tensions – Danske Bank",
-      "url": "https://www.fxstreet.com/news/oil-prices-supported-by-supply-risks-and-iran-tensions-danske-bank-202610080654",
+      "title": "Euro: French debt risk weighs on EUR against US Dollar – ING",
+      "url": "https://www.fxstreet.com/news/euro-french-debt-risk-weighs-on-eur-against-us-dollar-ing-202610081243",
       "source": "FXStreet",
-      "published_at": "2026-10-08T06:54:30+00:00"
+      "published_at": "2026-10-08T12:43:19+00:00"
     },
     {
-      "title": "AUD/USD Price Forecast: A fresh downside leg looks likely below 0.6900",
-      "url": "https://www.fxstreet.com/news/aud-usd-price-forecast-a-fresh-downside-leg-looks-likely-below-06900-202610080653",
+      "title": "ECB expected to pause in October before hiking rates in December – Reuters poll",
+      "url": "https://www.fxstreet.com/news/ecb-expected-to-pause-in-october-before-hiking-rates-in-december-reuters-poll-202610081239",
       "source": "FXStreet",
-      "published_at": "2026-10-08T06:53:36+00:00"
+      "published_at": "2026-10-08T12:39:00+00:00"
     },
     {
-      "title": "Indian Rupee: RBI tightening cycle resumes – Commerzbank",
-      "url": "https://www.fxstreet.com/news/indian-rupee-rbi-tightening-cycle-resumes-commerzbank-202610080639",
+      "title": "US Initial Jobless Claims dropped to 197K last week",
+      "url": "https://www.fxstreet.com/news/us-initial-jobless-claims-dropped-to-197k-last-week-202610081232",
       "source": "FXStreet",
-      "published_at": "2026-10-08T06:39:22+00:00"
+      "published_at": "2026-10-08T12:32:50+00:00"
     },
     {
-      "title": "Silver Price Forecasts: XAG/USD dips to $59.00 amid high yields, geopolitical tensions",
-      "url": "https://www.fxstreet.com/news/silver-price-forecasts-xag-usd-dips-to-5900-amid-high-yields-geopolitical-tensions-202610080626",
+      "title": "Europe: Sovereign stress and China trade tensions – Rabobank",
+      "url": "https://www.fxstreet.com/news/europe-sovereign-stress-and-china-trade-tensions-rabobank-202610081221",
       "source": "FXStreet",
-      "published_at": "2026-10-08T06:26:32+00:00"
+      "published_at": "2026-10-08T12:21:47+00:00"
     },
     {
-      "title": "Euro: Downside risks persist toward 1.1140 against US Dollar - UOB",
-      "url": "https://www.fxstreet.com/news/euro-downside-risks-persist-toward-11140-against-us-dollar-uob-202610080621",
+      "title": "Euro slips against British Pound on France’s fiscal concerns, central bank signals",
+      "url": "https://www.fxstreet.com/news/euro-slips-against-british-pound-on-frances-fiscal-concerns-central-bank-signals-202610081216",
       "source": "FXStreet",
-      "published_at": "2026-10-08T06:21:34+00:00"
+      "published_at": "2026-10-08T12:16:40+00:00"
     },
     {
-      "title": "Canadian Dollar weakens despite higher oil prices",
-      "url": "https://www.fxstreet.com/news/canadian-dollar-weakens-despite-higher-oil-prices-202610080603",
+      "title": "Canadian Dollar nears 18-month lows as risk aversion buoys the US Dollar",
+      "url": "https://www.fxstreet.com/news/canadian-dollar-nears-18-month-lows-as-risk-aversion-buoys-the-us-dollar-202610081202",
       "source": "FXStreet",
-      "published_at": "2026-10-08T06:03:47+00:00"
+      "published_at": "2026-10-08T12:02:10+00:00"
     },
     {
-      "title": "EUR/USD Price Forecast: Holds below 1.1200, bearish tone prevails amid oversold conditions",
-      "url": "https://www.fxstreet.com/news/eur-usd-price-forecast-holds-below-11200-bearish-tone-prevails-amid-oversold-conditions-202610080602",
+      "title": "United Kingdom: GDP momentum seen slowing – Deutsche Bank",
+      "url": "https://www.fxstreet.com/news/united-kingdom-gdp-momentum-seen-slowing-deutsche-bank-202610081200",
       "source": "FXStreet",
-      "published_at": "2026-10-08T06:02:13+00:00"
-    },
-    {
-      "title": "USD/JPY Price Forecast: 20-day EMA provides cushion near 157.55",
-      "url": "https://www.fxstreet.com/news/usd-jpy-price-forecast-20-day-ema-provides-cushion-near-15755-202610080559",
-      "source": "FXStreet",
-      "published_at": "2026-10-08T05:59:04+00:00"
-    },
-    {
-      "title": "GBP/USD Price Forecast: Bears await break below trading range support near 1.3180",
-      "url": "https://www.fxstreet.com/news/gbp-usd-price-forecast-bears-await-break-below-trading-range-support-near-13180-202610080540",
-      "source": "FXStreet",
-      "published_at": "2026-10-08T05:40:33+00:00"
-    },
-    {
-      "title": "BoJ holds steady assessment for 7 of Japan's 9 regions",
-      "url": "https://www.fxstreet.com/news/boj-holds-steady-assessment-for-7-of-japans-9-regions-202610080517",
-      "source": "FXStreet",
-      "published_at": "2026-10-08T05:17:27+00:00"
-    },
-    {
-      "title": "Swiss Franc gains despite stable US Dollar amid ongoing inflation risks",
-      "url": "https://www.fxstreet.com/news/swiss-franc-gains-despite-stable-us-dollar-amid-ongoing-inflation-risks-202610080501",
-      "source": "FXStreet",
-      "published_at": "2026-10-08T05:01:10+00:00"
-    },
-    {
-      "title": "WTI Price Forecast: Bulls seem hesitant below $89.50 amid Middle East risks",
-      "url": "https://www.fxstreet.com/news/wti-price-forecast-bulls-seem-hesitant-below-8950-amid-middle-east-risks-202610080455",
-      "source": "FXStreet",
-      "published_at": "2026-10-08T04:55:54+00:00"
-    },
-    {
-      "title": "Japan’s Takaichi says does not require reflationary policy now",
-      "url": "https://www.fxstreet.com/news/japans-takaichi-says-does-not-require-reflationary-policy-now-202610080454",
-      "source": "FXStreet",
-      "published_at": "2026-10-08T04:54:25+00:00"
-    },
-    {
-      "title": "AUD/JPY Price Forecast: Steadies near 100.00, bearish technical bias persists below 100-day SMA",
-      "url": "https://www.fxstreet.com/news/aud-jpy-price-forecast-steadies-near-10000-bearish-technical-bias-persists-below-100-day-sma-202610080447",
-      "source": "FXStreet",
-      "published_at": "2026-10-08T04:47:54+00:00"
-    },
-    {
-      "title": "India Gold price today: Gold rises, according to FXStreet data",
-      "url": "https://www.fxstreet.com/news/india-gold-price-today-gold-rises-according-to-fxstreet-data-202610080435",
-      "source": "FXStreet",
-      "published_at": "2026-10-08T04:35:18+00:00"
+      "published_at": "2026-10-08T12:00:53+00:00"
     }
   ]
 }
