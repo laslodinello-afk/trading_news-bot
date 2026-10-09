@@ -1,107 +1,53 @@
 {
-  "fetched_at": "2026-10-09T13:47:29.985010+00:00",
+  "fetched_at": "2026-10-09T19:04:39.597958+00:00",
   "articles": [
     {
-      "title": "Indian Rupee: RBI seen keeping hike option open – DBS",
-      "url": "https://www.fxstreet.com/news/indian-rupee-rbi-seen-keeping-hike-option-open-dbs-202610091336",
+      "title": "Gold reclaims $4,200 as weak US sentiment revives bullion demand",
+      "url": "https://www.fxstreet.com/news/gold-reclaims-4-200-as-weak-us-sentiment-revives-bullion-demand-202610091804",
       "source": "FXStreet",
-      "published_at": "2026-10-09T13:36:10+00:00"
+      "published_at": "2026-10-09T18:04:49+00:00"
     },
     {
-      "title": "European Central Bank: Conditional support and French risks – Rabobank",
-      "url": "https://www.fxstreet.com/news/european-central-bank-conditional-support-and-french-risks-rabobank-202610091317",
+      "title": "Japanese Yen struggles as wide US-Japan yield gap weighs",
+      "url": "https://www.fxstreet.com/news/japanese-yen-struggles-as-wide-us-japan-yield-gap-weighs-202610091752",
       "source": "FXStreet",
-      "published_at": "2026-10-09T13:17:08+00:00"
+      "published_at": "2026-10-09T17:52:08+00:00"
     },
     {
-      "title": "Canadian Dollar underperforms after Canada sheds 68.3K jobs in September",
-      "url": "https://www.fxstreet.com/news/canadian-dollar-underperforms-after-canada-sheds-683k-jobs-in-september-202610091316",
+      "title": "Chinese Yuan: PBoC stance and valuation debate guide currency path – MUFG",
+      "url": "https://www.fxstreet.com/news/chinese-yuan-pboc-stance-and-valuation-debate-guide-currency-path-mufg-202610091738",
       "source": "FXStreet",
-      "published_at": "2026-10-09T13:16:32+00:00"
+      "published_at": "2026-10-09T17:38:45+00:00"
     },
     {
-      "title": "United States: Core CPI trend seen moderating – TD Securities",
-      "url": "https://www.fxstreet.com/news/united-states-core-cpi-trend-seen-moderating-td-securities-202610091256",
+      "title": "Asia FX: Trade negotiations and resilient macro backdrop – MUFG",
+      "url": "https://www.fxstreet.com/news/asia-fx-trade-negotiations-and-resilient-macro-backdrop-mufg-202610091702",
       "source": "FXStreet",
-      "published_at": "2026-10-09T12:56:18+00:00"
+      "published_at": "2026-10-09T17:02:10+00:00"
     },
     {
-      "title": "Norwegian Krone: Rate hike risks support currency – BBH",
-      "url": "https://www.fxstreet.com/news/norwegian-krone-rate-hike-risks-support-currency-bbh-202610091240",
+      "title": "Singapore: Policy slope tightening view – DBS",
+      "url": "https://www.fxstreet.com/news/singapore-policy-slope-tightening-view-dbs-202610091636",
       "source": "FXStreet",
-      "published_at": "2026-10-09T12:40:15+00:00"
+      "published_at": "2026-10-09T16:36:57+00:00"
     },
     {
-      "title": "Gold recovery stalls near $4,200 as US Dollar, Treasury yields stabilise",
-      "url": "https://www.fxstreet.com/news/gold-recovery-stalls-near-4-200-as-us-dollar-treasury-yields-stabilise-202610091100",
+      "title": "Canada loses 68.3K jobs and the Loonie falls to an 18-month low",
+      "url": "https://www.fxstreet.com/news/canada-loses-683k-jobs-and-the-loonie-falls-to-an-18-month-low-202610091617",
       "source": "FXStreet",
-      "published_at": "2026-10-09T11:00:03+00:00"
+      "published_at": "2026-10-09T16:17:14+00:00"
     },
     {
-      "title": "British Pound gains ground as Japanese Yen underperforms",
-      "url": "https://www.fxstreet.com/news/british-pound-gains-ground-as-japanese-yen-underperforms-202610091220",
+      "title": "British Pound holds ground as US Consumer Sentiment deteriorates",
+      "url": "https://www.fxstreet.com/news/british-pound-holds-its-ground-as-us-consumer-sentiment-deteriorates-202610091612",
       "source": "FXStreet",
-      "published_at": "2026-10-09T12:20:52+00:00"
+      "published_at": "2026-10-09T16:12:56+00:00"
     },
     {
-      "title": "Japanese Yen: Choppy trade inside defined range – UOB",
-      "url": "https://www.fxstreet.com/news/japanese-yen-choppy-trade-inside-defined-range-uob-202610091220",
+      "title": "France: Budget politics and market testing – Rabobank",
+      "url": "https://www.fxstreet.com/news/france-budget-politics-and-market-testing-rabobank-202610091612",
       "source": "FXStreet",
-      "published_at": "2026-10-09T12:20:01+00:00"
-    },
-    {
-      "title": "Oil: Iran tensions keep crude prices elevated - Rabobank",
-      "url": "https://www.fxstreet.com/news/oil-iran-tensions-keep-crude-prices-elevated-rabobank-202610091201",
-      "source": "FXStreet",
-      "published_at": "2026-10-09T12:01:34+00:00"
-    },
-    {
-      "title": "EUR/USD Price Forecast: Rallies fail above 1.1200 amid high Oil prices, debt woes",
-      "url": "https://www.fxstreet.com/news/eur-usd-price-forecast-rallies-fail-above-11200-amid-high-oil-prices-debt-woes-202610091156",
-      "source": "FXStreet",
-      "published_at": "2026-10-09T11:56:52+00:00"
-    },
-    {
-      "title": "Japanese Yen underperforms against its peers into the weekend",
-      "url": "https://www.fxstreet.com/news/japanese-yen-underperforms-against-its-peers-into-the-weekend-202610091149",
-      "source": "FXStreet",
-      "published_at": "2026-10-09T11:49:07+00:00"
-    },
-    {
-      "title": "Canadian Dollar: Labor data may trigger dovish repricing – BBH",
-      "url": "https://www.fxstreet.com/news/canadian-dollar-labor-data-may-trigger-dovish-repricing-bbh-202610091146",
-      "source": "FXStreet",
-      "published_at": "2026-10-09T11:46:30+00:00"
-    },
-    {
-      "title": "Euro: Elusive recovery prospects against US Dollar – ING",
-      "url": "https://www.fxstreet.com/news/euro-elusive-recovery-prospects-against-us-dollar-ing-202610091136",
-      "source": "FXStreet",
-      "published_at": "2026-10-09T11:36:43+00:00"
-    },
-    {
-      "title": "Mexican Peso: Banxico cautious on cuts as Peso risks linger – Commerzbank",
-      "url": "https://www.fxstreet.com/news/mexican-peso-banxico-cautious-on-cuts-as-peso-risks-linger-commerzbank-202610091127",
-      "source": "FXStreet",
-      "published_at": "2026-10-09T11:27:06+00:00"
-    },
-    {
-      "title": "US Dollar: Upside risks persist with strong demand – BBH",
-      "url": "https://www.fxstreet.com/news/us-dollar-upside-risks-persist-with-strong-demand-bbh-202610091118",
-      "source": "FXStreet",
-      "published_at": "2026-10-09T11:18:43+00:00"
-    },
-    {
-      "title": "Canadian Dollar: Policy divergence weighs on CAD against US Dollar – Rabobank",
-      "url": "https://www.fxstreet.com/news/canadian-dollar-policy-divergence-weighs-on-cad-against-us-dollar-rabobank-202610091110",
-      "source": "FXStreet",
-      "published_at": "2026-10-09T11:10:30+00:00"
-    },
-    {
-      "title": "Australian Dollar struggles to extend gains to near 0.7000, US CPI comes into focus",
-      "url": "https://www.fxstreet.com/news/australian-dollar-struggles-to-extend-gains-to-near-07000-us-cpi-comes-into-focus-202610091057",
-      "source": "FXStreet",
-      "published_at": "2026-10-09T10:57:47+00:00"
+      "published_at": "2026-10-09T16:12:43+00:00"
     }
   ]
 }
