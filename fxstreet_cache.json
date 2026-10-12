@@ -1,89 +1,41 @@
 {
-  "fetched_at": "2026-10-12T09:02:38.777776+00:00",
+  "fetched_at": "2026-10-12T18:57:35.805068+00:00",
   "articles": [
     {
-      "title": "Oil: Supply risks offset by Russia diesel deal – ING",
-      "url": "https://www.fxstreet.com/news/oil-supply-risks-offset-by-russia-diesel-deal-ing-202610120807",
+      "title": "Fed’s Hammack sees higher neutral rate, urges more policy restraint",
+      "url": "https://www.fxstreet.com/news/feds-hammack-sees-higher-neutral-rate-urges-more-policy-restraint-202610121753",
       "source": "FXStreet",
-      "published_at": "2026-10-12T08:07:22+00:00"
+      "published_at": "2026-10-12T17:53:52+00:00"
     },
     {
-      "title": "Indonesian Rupiah declines amid policy trade-offs",
-      "url": "https://www.fxstreet.com/news/indonesian-rupiah-declines-amid-policy-trade-offs-202610120805",
+      "title": "Singapore Dollar: Range bias holds near 1.2835 against US Dollar – UOB",
+      "url": "https://www.fxstreet.com/news/singapore-dollar-range-bias-holds-near-12835-against-us-dollar-uob-202610121738",
       "source": "FXStreet",
-      "published_at": "2026-10-12T08:05:05+00:00"
+      "published_at": "2026-10-12T17:38:00+00:00"
     },
     {
-      "title": "US Dollar Index Price Forecast: Turns sideways after hitting fresh yearly highs near 102.50",
-      "url": "https://www.fxstreet.com/news/us-dollar-index-price-forecast-turns-sideways-after-hitting-fresh-yearly-highs-near-10250-202610120740",
+      "title": "Fed’s Hammack calls for higher rates as inflation pressures broaden",
+      "url": "https://www.fxstreet.com/news/feds-hammack-calls-for-higher-rates-as-inflation-pressures-broaden-202610121702",
       "source": "FXStreet",
-      "published_at": "2026-10-12T07:40:24+00:00"
+      "published_at": "2026-10-12T17:02:26+00:00"
     },
     {
-      "title": "Euro: Bearish sentiment persists into year-end against US Dollar – MUFG",
-      "url": "https://www.fxstreet.com/news/euro-bearish-sentiment-persists-into-year-end-against-us-dollar-mufg-202610120733",
+      "title": "Swedish Krona: Riksbank outlook supports SEK against Euro – Rabobank",
+      "url": "https://www.fxstreet.com/news/swedish-krona-riksbank-outlook-supports-sek-against-euro-rabobank-202610121649",
       "source": "FXStreet",
-      "published_at": "2026-10-12T07:33:47+00:00"
+      "published_at": "2026-10-12T16:49:28+00:00"
     },
     {
-      "title": "British Pound approaches 210.00 vs weak Yen as range play remains intact",
-      "url": "https://www.fxstreet.com/news/british-pound-approaches-21000-vs-weak-yen-as-range-play-remains-intact-202610120729",
+      "title": "Japanese Yen struggles amid Oil rally, fiscal concerns",
+      "url": "https://www.fxstreet.com/news/japanese-yen-struggles-amid-oil-rally-fiscal-concerns-202610121614",
       "source": "FXStreet",
-      "published_at": "2026-10-12T07:29:48+00:00"
+      "published_at": "2026-10-12T16:14:50+00:00"
     },
     {
-      "title": "Euro hovers near 17-month low against the British Pound as debt woes weigh",
-      "url": "https://www.fxstreet.com/news/euro-hovers-near-17-month-low-against-the-british-pound-as-debt-woes-weigh-202610120728",
+      "title": "Euro hits fresh yearly low against British Pound as French fiscal concerns weigh",
+      "url": "https://www.fxstreet.com/news/euro-hits-fresh-yearly-low-against-british-pound-as-french-fiscal-concerns-weigh-202610121604",
       "source": "FXStreet",
-      "published_at": "2026-10-12T07:28:09+00:00"
-    },
-    {
-      "title": "Indian Rupee: RBI measures support gains against US Dollar - Commerzbank",
-      "url": "https://www.fxstreet.com/news/indian-rupee-rbi-measures-support-gains-against-us-dollar-commerzbank-202610120709",
-      "source": "FXStreet",
-      "published_at": "2026-10-12T07:09:17+00:00"
-    },
-    {
-      "title": "Forex Today: US Dollar softens amid hopes of Russia-Ukraine energy ceasefire",
-      "url": "https://www.fxstreet.com/news/forex-today-us-dollar-softens-amid-hopes-russia-ukraine-energy-ceasefire-202610120654",
-      "source": "FXStreet",
-      "published_at": "2026-10-12T06:54:58+00:00"
-    },
-    {
-      "title": "British Pound: Range-bound trading within a tight band against US Dollar – UOB",
-      "url": "https://www.fxstreet.com/news/british-pound-range-bound-trading-within-a-tight-band-against-us-dollar-uob-202610120648",
-      "source": "FXStreet",
-      "published_at": "2026-10-12T06:48:19+00:00"
-    },
-    {
-      "title": "USD/CAD Price Forecast: US Dollar eases within range in a quiet session",
-      "url": "https://www.fxstreet.com/news/usd-cad-price-forecast-us-dollar-eases-within-range-in-a-quiet-session-202610120634",
-      "source": "FXStreet",
-      "published_at": "2026-10-12T06:34:53+00:00"
-    },
-    {
-      "title": "Equities: Stable oil and yields support stock gains - Danske Bank",
-      "url": "https://www.fxstreet.com/news/equities-stable-oil-and-yields-support-stock-gains-danske-bank-202610120633",
-      "source": "FXStreet",
-      "published_at": "2026-10-12T06:33:45+00:00"
-    },
-    {
-      "title": "Brent: Houthi escalation keeps risk premium elevated – Commerzbank",
-      "url": "https://www.fxstreet.com/news/brent-houthi-escalation-keeps-risk-premium-elevated-commerzbank-202610120621",
-      "source": "FXStreet",
-      "published_at": "2026-10-12T06:21:19+00:00"
-    },
-    {
-      "title": "Euro: Downside risks toward 1.1145 against US Dollar – UOB",
-      "url": "https://www.fxstreet.com/news/euro-downside-risks-toward-11145-against-us-dollar-uob-202610120610",
-      "source": "FXStreet",
-      "published_at": "2026-10-12T06:10:33+00:00"
-    },
-    {
-      "title": "WTI falls to near $90.00 as Russia-Ukraine energy ceasefire fuels supply hopes",
-      "url": "https://www.fxstreet.com/news/wti-falls-to-near-9000-as-russia-ukraine-energy-ceasefire-fuels-supply-hopes-202610120603",
-      "source": "FXStreet",
-      "published_at": "2026-10-12T06:03:51+00:00"
+      "published_at": "2026-10-12T16:04:39+00:00"
     }
   ]
 }
