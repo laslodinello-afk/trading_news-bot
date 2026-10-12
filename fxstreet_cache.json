@@ -1,4 +1,23 @@
 {
-  "fetched_at": "2026-10-11T22:50:00.739377+00:00",
-  "articles": []
+  "fetched_at": "2026-10-12T01:56:55.990806+00:00",
+  "articles": [
+    {
+      "title": "Euro holds gains above 1.1200 despite France’s bond turmoil",
+      "url": "https://www.fxstreet.com/news/euro-holds-gains-above-11200-despite-frances-bond-turmoil-202610120100",
+      "source": "FXStreet",
+      "published_at": "2026-10-12T01:00:29+00:00"
+    },
+    {
+      "title": "WTI declines to near $90.00 despite escalating Middle East conflict, supply risks",
+      "url": "https://www.fxstreet.com/news/wti-declines-to-near-9000-despite-escalating-middle-east-conflict-supply-risks-202610120047",
+      "source": "FXStreet",
+      "published_at": "2026-10-12T00:47:20+00:00"
+    },
+    {
+      "title": "Australian Dollar edges higher to near 0.7000 on weak US Sentiment",
+      "url": "https://www.fxstreet.com/news/australian-dollar-edges-higher-to-near-07000-on-weak-us-sentiment-202610112344",
+      "source": "FXStreet",
+      "published_at": "2026-10-11T23:44:14+00:00"
+    }
+  ]
 }
