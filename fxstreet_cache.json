@@ -1,83 +1,71 @@
 {
-  "fetched_at": "2026-10-13T15:22:08.281204+00:00",
+  "fetched_at": "2026-10-13T20:46:11.815499+00:00",
   "articles": [
     {
-      "title": "Taiwan Dollar: Monetary tightening and housing recovery – DBS",
-      "url": "https://www.fxstreet.com/news/taiwan-dollar-monetary-tightening-and-housing-recovery-dbs-202610131516",
+      "title": "Fed's Collins backs September hike, sees Oil and AI driving inflation",
+      "url": "https://www.fxstreet.com/news/feds-collins-backs-september-hike-sees-oil-and-ai-driving-inflation-202610132016",
       "source": "FXStreet",
-      "published_at": "2026-10-13T15:16:38+00:00"
+      "published_at": "2026-10-13T20:16:22+00:00"
     },
     {
-      "title": "Euro finds support from softer US Dollar, French fiscal risks linger",
-      "url": "https://www.fxstreet.com/news/euro-finds-support-from-softer-us-dollar-french-fiscal-risks-linger-202610131509",
+      "title": "GBP/JPY Price Forecast: Bulls challenge 210.00 as breakout looms",
+      "url": "https://www.fxstreet.com/news/gbp-jpy-price-forecast-bulls-challenge-21000-as-breakout-looms-202610132007",
       "source": "FXStreet",
-      "published_at": "2026-10-13T15:09:19+00:00"
+      "published_at": "2026-10-13T20:07:15+00:00"
     },
     {
-      "title": "British Pound: Upside momentum builds against Euro – Societe Generale",
-      "url": "https://www.fxstreet.com/news/british-pound-upside-momentum-builds-against-euro-societe-generale-202610131459",
+      "title": "Japanese Yen: Choppy trade after JPY-supportive comments – Scotiabank",
+      "url": "https://www.fxstreet.com/news/japanese-yen-choppy-trade-after-jpy-supportive-comments-scotiabank-202610131951",
       "source": "FXStreet",
-      "published_at": "2026-10-13T14:59:20+00:00"
+      "published_at": "2026-10-13T19:51:24+00:00"
     },
     {
-      "title": "Canadian Dollar: Modest gains against US Dollar - Scotiabank",
-      "url": "https://www.fxstreet.com/news/canadian-dollar-modest-gains-against-us-dollar-scotiabank-202610131423",
+      "title": "Singapore Dollar: Priced-in MAS move limits gains against US Dollar - OCBC",
+      "url": "https://www.fxstreet.com/news/singapore-dollar-priced-in-mas-move-limits-gains-against-us-dollar-ocbc-202610131923",
       "source": "FXStreet",
-      "published_at": "2026-10-13T14:23:57+00:00"
+      "published_at": "2026-10-13T19:23:03+00:00"
     },
     {
-      "title": "Australian Dollar : Key support at 0.6935 in focus against US Dollar   – UOB",
-      "url": "https://www.fxstreet.com/news/australian-dollar-key-support-at-06935-in-focus-against-us-dollar-uob-202610131404",
+      "title": "US Dollar: Fed pricing leg looks stretched – Societe Generale",
+      "url": "https://www.fxstreet.com/news/us-dollar-fed-pricing-leg-looks-stretched-societe-generale-202610131857",
       "source": "FXStreet",
-      "published_at": "2026-10-13T14:04:33+00:00"
+      "published_at": "2026-10-13T18:57:48+00:00"
     },
     {
-      "title": "Australian Dollar edges higher amid softer US Dollar, hawkish RBA",
-      "url": "https://www.fxstreet.com/news/australian-dollar-edges-higher-as-softer-us-dollar-hawkish-rba-offer-support-202610131336",
+      "title": "Swiss Franc strengthens on dovish Fed rhetoric as US CPI looms",
+      "url": "https://www.fxstreet.com/news/swiss-franc-strengthens-on-dovish-feds-rhetoric-us-cpi-looms-202610131856",
       "source": "FXStreet",
-      "published_at": "2026-10-13T13:36:54+00:00"
+      "published_at": "2026-10-13T18:56:34+00:00"
     },
     {
-      "title": "Indian Rupee: RBI defense limits losses against US Dollar – Societe Generale",
-      "url": "https://www.fxstreet.com/news/indian-rupee-rbi-defense-limits-losses-against-us-dollar-societe-generale-202610131331",
+      "title": "Euro: Soft undertone but fair value higher against US Dollar – Scotiabank",
+      "url": "https://www.fxstreet.com/news/euro-soft-undertone-but-fair-value-higher-against-us-dollar-scotiabank-202610131836",
       "source": "FXStreet",
-      "published_at": "2026-10-13T13:31:02+00:00"
+      "published_at": "2026-10-13T18:36:36+00:00"
     },
     {
-      "title": "US Dollar: Supported but capped by CPI risks – OCBC",
-      "url": "https://www.fxstreet.com/news/us-dollar-supported-but-capped-by-cpi-risks-ocbc-202610131316",
+      "title": "Fed’s Barkin says persistent inflation warrants policy action",
+      "url": "https://www.fxstreet.com/news/feds-barkin-says-persistent-inflation-warrants-policy-action-202610131831",
       "source": "FXStreet",
-      "published_at": "2026-10-13T13:16:33+00:00"
+      "published_at": "2026-10-13T18:31:49+00:00"
     },
     {
-      "title": "Euro: Lower year-end target at 1.13 against US Dollar – ING",
-      "url": "https://www.fxstreet.com/news/euro-lower-year-end-target-at-113-against-us-dollar-ing-202610131304",
+      "title": "Fed’s Williams sees one final 2026 rate hike, none in 2027",
+      "url": "https://www.fxstreet.com/news/feds-williams-sees-one-final-2026-rate-hike-none-in-2027-202610131821",
       "source": "FXStreet",
-      "published_at": "2026-10-13T13:04:42+00:00"
+      "published_at": "2026-10-13T18:21:24+00:00"
     },
     {
-      "title": "Australian Dollar: RBA inflation focus shapes outlook – Commerzbank",
-      "url": "https://www.fxstreet.com/news/australian-dollar-rba-inflation-focus-shapes-outlook-commerzbank-202610131251",
+      "title": "EUR/USD Price Forecast: RSI signals stretched selling pressure",
+      "url": "https://www.fxstreet.com/news/eur-usd-price-forecast-rsi-signals-stretched-selling-pressure-202610131812",
       "source": "FXStreet",
-      "published_at": "2026-10-13T12:51:41+00:00"
+      "published_at": "2026-10-13T18:12:34+00:00"
     },
     {
-      "title": "Japanese Yen: Weakness may deepen toward 159.05 against US Dollar – UOB",
-      "url": "https://www.fxstreet.com/news/japanese-yen-weakness-may-deepen-toward-15905-against-us-dollar-uob-202610131241",
+      "title": "Forex Today: US inflation comes to the fore",
+      "url": "https://www.fxstreet.com/news/forex-today-us-inflation-comes-to-the-fore-202610131757",
       "source": "FXStreet",
-      "published_at": "2026-10-13T12:41:01+00:00"
-    },
-    {
-      "title": "US ADP Employment Change 4-week average drops to 24.75K",
-      "url": "https://www.fxstreet.com/news/us-adp-employment-change-4-week-average-drops-to-2475k-202610131237",
-      "source": "FXStreet",
-      "published_at": "2026-10-13T12:37:35+00:00"
-    },
-    {
-      "title": "Copper: El Niño risks cap African supply growth – Societe Generale",
-      "url": "https://www.fxstreet.com/news/copper-el-nino-risks-cap-african-supply-growth-societe-generale-202610131231",
-      "source": "FXStreet",
-      "published_at": "2026-10-13T12:31:59+00:00"
+      "published_at": "2026-10-13T17:57:14+00:00"
     }
   ]
 }
