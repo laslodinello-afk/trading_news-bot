@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-10-14T02:39:56.304552+00:00",
+  "fetched_at": "2026-10-14T10:50:18.502231+00:00",
   "events": [
     {
       "title": "Bank Holiday",
@@ -228,7 +228,7 @@
     {
       "title": "Trade Balance",
       "country": "CNY",
-      "date": "2026-10-13T23:03:00-04:00",
+      "date": "2026-10-13T22:31:00-04:00",
       "impact": "Low",
       "forecast": "790B",
       "previous": "809B"
@@ -236,7 +236,7 @@
     {
       "title": "USD-Denominated Trade Balance",
       "country": "CNY",
-      "date": "2026-10-13T23:04:00-04:00",
+      "date": "2026-10-13T22:31:00-04:00",
       "impact": "Low",
       "forecast": "116.8B",
       "previous": "119.1B"
@@ -282,22 +282,6 @@
       "previous": ""
     },
     {
-      "title": "M2 Money Supply y/y",
-      "country": "CNY",
-      "date": "2026-10-14T04:03:00-04:00",
-      "impact": "Low",
-      "forecast": "7.4%",
-      "previous": "7.5%"
-    },
-    {
-      "title": "New Loans",
-      "country": "CNY",
-      "date": "2026-10-14T04:03:00-04:00",
-      "impact": "Low",
-      "forecast": "1025B",
-      "previous": "60B"
-    },
-    {
       "title": "ECB President Lagarde Speaks",
       "country": "EUR",
       "date": "2026-10-14T04:30:00-04:00",
@@ -306,9 +290,25 @@
       "previous": ""
     },
     {
+      "title": "M2 Money Supply y/y",
+      "country": "CNY",
+      "date": "2026-10-14T05:00:00-04:00",
+      "impact": "Low",
+      "forecast": "7.4%",
+      "previous": "7.5%"
+    },
+    {
+      "title": "New Loans",
+      "country": "CNY",
+      "date": "2026-10-14T05:01:00-04:00",
+      "impact": "Low",
+      "forecast": "1025B",
+      "previous": "60B"
+    },
+    {
       "title": "German 30-y Bond Auction",
       "country": "EUR",
-      "date": "2026-10-14T05:34:00-04:00",
+      "date": "2026-10-14T05:38:00-04:00",
       "impact": "Low",
       "forecast": "",
       "previous": "3.80|1.6"
@@ -806,7 +806,7 @@
       "country": "CAD",
       "date": "2026-10-16T08:30:00-04:00",
       "impact": "Low",
-      "forecast": "",
+      "forecast": "23.59B",
       "previous": "20.65B"
     },
     {
