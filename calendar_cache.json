@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-10-15T02:19:54.994924+00:00",
+  "fetched_at": "2026-10-15T10:32:39.558239+00:00",
   "events": [
     {
       "title": "Bank Holiday",
@@ -460,7 +460,7 @@
     {
       "title": "RBA Annual Report",
       "country": "AUD",
-      "date": "2026-10-15T00:25:00-04:00",
+      "date": "2026-10-15T00:30:00-04:00",
       "impact": "Low",
       "forecast": "",
       "previous": ""
