@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-10-16T15:45:25.673580+00:00",
+  "fetched_at": "2026-10-16T20:14:26.203697+00:00",
   "events": [
     {
       "title": "Bank Holiday",
@@ -844,7 +844,7 @@
     {
       "title": "Federal Budget Balance",
       "country": "USD",
-      "date": "2026-10-16T14:00:00-04:00",
+      "date": "2026-10-16T14:05:00-04:00",
       "impact": "Low",
       "forecast": "-34.7B",
       "previous": "-166.8B"
