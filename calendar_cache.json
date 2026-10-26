@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-10-26T11:50:54.711203+00:00",
+  "fetched_at": "2026-10-26T17:52:52.518925+00:00",
   "events": [
     {
       "title": "Bank Holiday",
@@ -62,7 +62,7 @@
       "country": "EUR",
       "date": "2026-10-27T04:00:00-04:00",
       "impact": "Low",
-      "forecast": "",
+      "forecast": "9.8%",
       "previous": "9.9%"
     },
     {
@@ -126,7 +126,7 @@
       "country": "USD",
       "date": "2026-10-27T10:00:00-04:00",
       "impact": "Medium",
-      "forecast": "80.5",
+      "forecast": "80.7",
       "previous": "81.9"
     },
     {
@@ -450,6 +450,14 @@
       "previous": "0.9%"
     },
     {
+      "title": "Gov Council Member Gravelle Speaks",
+      "country": "CAD",
+      "date": "2026-10-29T08:50:00-04:00",
+      "impact": "Low",
+      "forecast": "",
+      "previous": ""
+    },
+    {
       "title": "Main Refinancing Rate",
       "country": "EUR",
       "date": "2026-10-29T09:15:00-04:00",
@@ -484,7 +492,7 @@
     {
       "title": "Gov Council Member Vincent Speaks",
       "country": "CAD",
-      "date": "2026-10-29T10:50:00-04:00",
+      "date": "2026-10-29T11:30:00-04:00",
       "impact": "Low",
       "forecast": "",
       "previous": ""
