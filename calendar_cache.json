@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-23T04:42:58.581627+00:00",
+  "fetched_at": "2026-11-23T16:49:23.348260+00:00",
   "events": [
     {
       "title": "Core Retail Sales q/q",
@@ -116,7 +116,7 @@
     {
       "title": "Corporate Profits q/q",
       "country": "CAD",
-      "date": "2026-11-23T08:30:00-05:00",
+      "date": "2026-11-23T08:32:00-05:00",
       "impact": "Low",
       "forecast": "",
       "previous": "8.7%"
@@ -152,14 +152,6 @@
       "impact": "Low",
       "forecast": "53.5",
       "previous": "53.3"
-    },
-    {
-      "title": "Foreign Direct Investment ytd/y",
-      "country": "CNY",
-      "date": "2026-11-24T02:02:00-05:00",
-      "impact": "Low",
-      "forecast": "",
-      "previous": "-4.3%"
     },
     {
       "title": "German ifo Business Climate",
@@ -312,6 +304,14 @@
       "impact": "Low",
       "forecast": "0.2%",
       "previous": "0.2%"
+    },
+    {
+      "title": "Foreign Direct Investment ytd/y",
+      "country": "CNY",
+      "date": "2026-11-25T02:02:00-05:00",
+      "impact": "Low",
+      "forecast": "",
+      "previous": "-4.3%"
     },
     {
       "title": "UBS Economic Expectations",
