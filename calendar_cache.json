@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2026-11-26T01:18:26.296479+00:00",
+  "fetched_at": "2026-11-26T15:59:55.295232+00:00",
   "events": [
     {
       "title": "Core Retail Sales q/q",
@@ -472,6 +472,14 @@
       "impact": "Low",
       "forecast": "3.2%",
       "previous": "3.1%"
+    },
+    {
+      "title": "Euro Summit",
+      "country": "EUR",
+      "date": "2026-11-26T04:15:00-05:00",
+      "impact": "Low",
+      "forecast": "",
+      "previous": ""
     },
     {
       "title": "BOE Financial Stability Report",
